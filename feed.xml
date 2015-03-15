@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Greg I/Open</title>
+    <description>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, JBoss, Red Hat, REST/ROA
+</description>
+    <link>http://gautric.github.io/</link>
+    <atom:link href="http://gautric.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>2015-03-15T22:03:14+01:00</pubDate>
+    <lastBuildDate>2015-03-15T22:03:14+01:00</lastBuildDate>
+    
+      <item>
+        <title>Premier post</title>
+        <description>&lt;p&gt;Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.&lt;/p&gt;
+
+&lt;p&gt;I will post here my articles. I look forward to seeing you.&lt;/p&gt;
+
+&lt;p&gt;私は　ここに　私のブログを　書きます。&lt;/p&gt;
+</description>
+        <pubDate>2015-03-13T19:02:10+01:00</pubDate>
+        <link>http://gautric.github.io/blog/2015/03/13/premier-post.html</link>
+        <guid isPermaLink="true">http://gautric.github.io/blog/2015/03/13/premier-post.html</guid>
+        
+        <category>en</category>
+        
+        <category>fr</category>
+        
+        <category>jp</category>
+        
+        <category>divers</category>
+        
+      </item>
+    
+  </channel>
+</rss>
