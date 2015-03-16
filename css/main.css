@@ -395,6 +395,9 @@ pre {
       .post-content h4 {
         font-size: 18px; } }
 
+.post-social {
+  margin-bottom: 20px; }
+
 /**
  * Syntax highlighting styles
  */

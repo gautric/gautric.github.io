@@ -68,13 +68,21 @@
 
   </article>
 
+  <div class="post-social">
   
-     <a href="https://twitter.com/share" class="twitter-share-button" data-via="gautric_io">Tweet</a>
-     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+       <a href="https://twitter.com/share" class="twitter-share-button" data-via="gautric_io">Tweet</a>
+       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
   
 
+  
+</div>
+
+
   <div class="archive">
-  <div class="archive-per-tag">
+
+    <div class="archive-per-tag">
 <h2 id="archive-per-tag-title">Tag</h2>
 <div id="archive-per-tag-content" class="post-meta">
 
@@ -181,15 +189,15 @@
     </ul>
 
 </div>
-// <script>
-//   $( "#archive-per-tag-title" ).click(function() {
-//     $( "#archive-per-tag-content" ).toggle( "slow");
-//   });
-// </script>
+ <script>
+   $( "#archive-per-tag-content" ).hide();
+   $( "#archive-per-tag-title" ).click(function() {
+     $( "#archive-per-tag-content" ).toggle( "slow");
+   });
+ </script>
 </div>
 
-
-  <div class="archive-per-date">
+    <div class="archive-per-date">
 <h2 id="archive-per-date-title">Date</h2>
 <div id="archive-per-date-content" class="post-meta">
 
@@ -223,12 +231,14 @@
     
 
 </div>
-// <script>
-//   $( "#archive-per-date-title" ).click(function() {
-//     $( "#archive-per-date-content" ).toggle( "slow");
-//   });
-// </script>
+ <script>
+    $( "#archive-per-date-content" ).hide();
+    $( "#archive-per-date-title" ).click(function() {
+      $( "#archive-per-date-content" ).toggle( "slow");
+     });
+   </script>
 </div>
+
 
 </div>
 
@@ -269,7 +279,6 @@
     </div>
 
     <div class="copyright">Copyright © Greg Autric 2015</div>
-
 
   </div>
 

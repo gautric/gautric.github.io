@@ -67,7 +67,8 @@
         <h2>
           <a class="post-link" href="/blog/2015/03/18/il-y-a-un-siecle.html">Il y a un siècle</a>
         </h2>
-        <p>Il y a cent ans, « Le  bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l’Amirauté, Winston Churchill. L...
+        <p>Il y a cent ans, <a href="http://fr.wikipedia.org/wiki/Bouvet_%28cuirass%C3%A9%29">« Le Bouvet »</a> navire de <a href="http://fr.wikipedia.org/wiki/Marine_nationale_fran%C3%A7aise">la Royale (Marine Française)</a> était en expédition Franco-Britanique aux <a href="http://fr.wikipedia.org/wiki/D%C3%A9troit_des_Dardanelles">Dardanelles</a>. Suivant les plans du premier Lord de l’Amirauté, <a href="http://fr.wikipedia.org/wiki/Winston_Churchill">Winston Churchill</a>, l’expédition devait...
+
       </li>
     
       <li>
@@ -82,13 +83,15 @@
 
 <p>私は　ここに　私のブログを　書きます。</p>
 
+
       </li>
     
   </ul>
 
 
   <div class="archive">
-  <div class="archive-per-tag">
+
+    <div class="archive-per-tag">
 <h2 id="archive-per-tag-title">Tag</h2>
 <div id="archive-per-tag-content" class="post-meta">
 
@@ -195,15 +198,15 @@
     </ul>
 
 </div>
-// <script>
-//   $( "#archive-per-tag-title" ).click(function() {
-//     $( "#archive-per-tag-content" ).toggle( "slow");
-//   });
-// </script>
+ <script>
+   $( "#archive-per-tag-content" ).hide();
+   $( "#archive-per-tag-title" ).click(function() {
+     $( "#archive-per-tag-content" ).toggle( "slow");
+   });
+ </script>
 </div>
 
-
-  <div class="archive-per-date">
+    <div class="archive-per-date">
 <h2 id="archive-per-date-title">Date</h2>
 <div id="archive-per-date-content" class="post-meta">
 
@@ -237,12 +240,14 @@
     
 
 </div>
-// <script>
-//   $( "#archive-per-date-title" ).click(function() {
-//     $( "#archive-per-date-content" ).toggle( "slow");
-//   });
-// </script>
+ <script>
+    $( "#archive-per-date-content" ).hide();
+    $( "#archive-per-date-title" ).click(function() {
+      $( "#archive-per-date-content" ).toggle( "slow");
+     });
+   </script>
 </div>
+
 
 </div>
 
@@ -286,7 +291,6 @@
     </div>
 
     <div class="copyright">Copyright © Greg Autric 2015</div>
-
 
   </div>
 
