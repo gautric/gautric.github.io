@@ -18,7 +18,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Citations</title>
+  <title>Citation</title>
 </head>
 
   <body>
@@ -50,22 +50,52 @@
     <main class="page-content" role="main">
       <div class="wrapper">
           <header class="post-header">
-    <h1 class="post-title">Citations</h1>
+    <h1 class="post-title">Citation</h1>
   </header>
 
   <article class="post-content">
-    
+    <ul id="randomize" class="post-list">
+
+<li>
 <blockquote><p>In theory, there is no difference between theory and practice. But, in practice, there is.</p></blockquote>
-
+  
 <div class="author">Jan L. A. van de Snepscheut</div>
+  
+</li>
 
+<li>
 <blockquote><p>Il ne faut pas attendre d’être parfait pour commencer quelque chose de bien.</p></blockquote>
-
+  
 <div class="author">Abbé Pierre</div>
+  
+</li>
 
+<li>
 <blockquote><p>Pax melior est quam iustissimum bellum.</p></blockquote>
-
+  
 <div class="author">Anonyme</div>
+  
+</li>
+
+</ul>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+        $('#randomize li').each(function(){
+          $(this).hide();
+        });
+
+        setInterval(function () {
+          $('#randomize li').each(function(){
+      			$(this).hide();
+      		});
+          var min = 0;
+          var max = $('#randomize li').length;
+          var randomLi = Math.floor(Math.random() * (max - min)) + min;
+          $('#randomize li').eq(randomLi).fadeIn();
+        }, 5000);
+    });
+</script>
 
 
   </article>
