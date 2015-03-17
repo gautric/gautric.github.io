@@ -32,13 +32,23 @@
 
       <br/><br/>
 
-      <div class="trigger">
+      <div id="page-menu" class="trigger" style="visible:false">
         <a class="first-page-link" href="/apropos">A propos</a><a class="first-page-link" href="/blog">Blog</a><a class="first-page-link" href="/citations">Citations</a><a class="first-page-link" href="/contact">Contact</a>
       </div>
     </div>
   </div>
   <div class="copyright copyright-first-page" >Copyright © Greg Autric 2015</div>
 </div>
+
+
+<script>
+$(function(){
+
+    $('#page-menu').slideUp( 300 ).delay( 800 ).fadeIn( 400 );
+
+});
+
+</script>
 
   </body>
   <script>
