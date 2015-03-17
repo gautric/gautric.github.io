@@ -215,11 +215,16 @@ pre {
 .first-page-link {
   color: #111;
   line-height: 1.33;
-  text-shadow: 2px 2px 2px #aaa;
-  margin-left: 10px;
-  margin-right: 10px; }
+  text-shadow: 2px 2px 2px #aaa; }
   .first-page-link:visited {
     color: #2a7ae2; }
+  .first-page-link:after {
+    color: #111;
+    content: '  -  ';
+    margin-left: 10px;
+    margin-right: 10px; }
+  .first-page-link:last-child:after {
+    content: ''; }
 
 .site-nav {
   float: right;
