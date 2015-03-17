@@ -80,20 +80,19 @@
 </ul>
 
 <script type="text/javascript">
-  $(document).ready(function () {
-        $('#randomize li').each(function(){
-          $(this).hide();
-        });
+  function random() {
+    $('#randomize li').each(function(){
+      $(this).hide();
+    });
+    var min = 0;
+    var max = $('#randomize li').length;
+    var randomLi = Math.floor(Math.random() * (max - min)) + min;
+    $('#randomize li').eq(randomLi).fadeIn();
+  }
 
-        setInterval(function () {
-          $('#randomize li').each(function(){
-      			$(this).hide();
-      		});
-          var min = 0;
-          var max = $('#randomize li').length;
-          var randomLi = Math.floor(Math.random() * (max - min)) + min;
-          $('#randomize li').eq(randomLi).fadeIn();
-        }, 5000);
+  $(document).ready(function () {
+      random()
+      setInterval(random(), 5000);
     });
 </script>
 
