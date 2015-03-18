@@ -32,6 +32,10 @@ ul, ol, dl, figure,
 .highlight {
   margin-bottom: 10px; }
 
+p {
+  line-height: 150%;
+  margin-bottom: 20px; }
+
 /**
  * Images
  */
