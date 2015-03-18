@@ -176,6 +176,10 @@ pre {
     font-size: 58px;
     text-shadow: 4px 4px 4px #aaa; }
 
+.first-page-trigger {
+  clear: both;
+  display: none; }
+
 .copyright {
   text-align: center;
   margin-top: 10px;
