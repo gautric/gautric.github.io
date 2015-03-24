@@ -21,11 +21,11 @@
 </head>
 
   <body>
-        <header class="site-header">
+        <header class="site-header blog-header">
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -46,14 +46,16 @@
 </header>
 
 
+    <header class="post-header blog-title">
+      <div class="wrapper">
+      <h1 class="post-title">Yubico OTP et JBoss EAP 6 ou Wildfly 8</h1>
+    </div>
+    </header>
+
     <main class="page-content" role="main">
       <div class="wrapper">
-          <header class="post-header">
-    <h1 class="post-title">Yubico OTP et JBoss EAP 6 ou Wildfly 8</h1>
+          <article class="post-content">
     <p class="post-meta">Mar 19, 2015  <a href="#fr">fr</a>  <a href="#otp">otp</a>  <a href="#yubico">yubico</a>  <a href="#yubikey">yubikey</a>  <a href="#jboss">jboss</a>  <a href="#eap">eap</a>  <a href="#wildfly">wildfly</a> </p>
-  </header>
-
-  <article class="post-content">
     <p><a href="https://www.yubico.com/">Yubikey</a> est une clef de crypto qui permet d’avoir une authentification forte lors d’un processus de connexion à un site web (par ex : banque, web mail, etc….). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d’authentification à leur service.
 L’utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation. Si le mot de passe est intercepté par un tiers, ce dernier ne peut pas le rejouer pour s’authentifier.</p>
 
@@ -685,7 +687,7 @@ XXXXXXXXXXXX : the Public Id, the Yubico key user
       </div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer blog-footer">
 
   <div class="wrapper">
 

@@ -68,6 +68,14 @@ li > ol {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
 
+h1.post-title {
+  background-color: rgba(254, 254, 254, 0.15);
+  color: white;
+  border-radius: 8px;
+  padding: 6px 16px 6px 16px;
+  margin: 8px 8px 8px 8px;
+  display: inline-block; }
+
 /**
  * Links
  */
@@ -196,13 +204,11 @@ pre {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #424242;
-  border-bottom: 1px solid #e8e8e8;
   min-height: 56px;
   position: relative; }
 
 .first-page-header {
-  border-top: 5px solid #424242;
+  border-top: 2px solid #424242;
   min-height: 56px;
   position: relative; }
 
@@ -344,7 +350,7 @@ pre {
  * Page content
  */
 .page-content {
-  padding: 20px 0; }
+  padding: 0 0; }
   @media screen and (max-width: 600px) {
     .page-content {
       padding: 5px 0; } }
@@ -353,6 +359,7 @@ pre {
   font-size: 20px; }
 
 .post-list {
+  margin-top: 40px;
   margin-left: 0;
   list-style: none; }
 
@@ -380,7 +387,10 @@ pre {
  * Posts
  */
 .post-header {
-  margin-bottom: 40px; }
+  margin-bottom: 10px;
+  margin-top: 0;
+  padding-bottom: 5px;
+  padding-top: 5px; }
   @media screen and (max-width: 600px) {
     .post-header {
       margin-bottom: 0; } }
@@ -394,6 +404,7 @@ pre {
       font-size: 36px; } }
 
 .post-content {
+  margin-top: 40px;
   margin-bottom: 40px; }
   .post-content h2 {
     font-size: 32px; }
@@ -413,6 +424,66 @@ pre {
 
 .post-social {
   margin-bottom: 20px; }
+
+.apropos-title {
+  background-color: #6fb3d2; }
+
+.blog-title {
+  background-color: #76c7b7; }
+
+.citation-title {
+  background-color: #fd874b; }
+
+.contact-title {
+  background-color: #fda331; }
+
+.gpg-title {
+  background-color: #d890ca; }
+
+.apropos-header {
+  border-top: 2px solid #6fb3d2; }
+
+.blog-header {
+  border-top: 2px solid #76c7b7; }
+
+.citation-header {
+  border-top: 2px solid #fd874b; }
+
+.contact-header {
+  border-top: 2px solid #fda331; }
+
+.gpg-header {
+  border-top: 2px solid #d890ca; }
+
+.apropos-footer {
+  border-top: 2px solid #6fb3d2; }
+
+.blog-footer {
+  border-top: 2px solid #76c7b7; }
+
+.citation-footer {
+  border-top: 2px solid #fd874b; }
+
+.contact-footer {
+  border-top: 2px solid #fda331; }
+
+.gpg-footer {
+  border-top: 2px solid #d890ca; }
+
+.apropos-site-title {
+  color: #6fb3d2; }
+
+.blog-site-title {
+  color: #76c7b7; }
+
+.citation-site-title {
+  color: #fd874b; }
+
+.contact-site-title {
+  color: #fda331; }
+
+.gpg-site-title {
+  color: #d890ca; }
 
 /**
  * Syntax highlighting styles
