@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Le serveur d’application JBoss EAP est certifié JEE6, il implemente doncvia le framework IronJacamar le standard J2EE Connector Architecture (JCA).Ce standar..."/>
+  <meta name="description" content="Le serveur d’application JBoss EAP est certifié JEE6, il implémente doncvia le framework IronJacamar le standard J2EE Connector Architecture (JCA).Ce standar..."/>
 
   <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html"-->
 
@@ -56,13 +56,13 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Mar 25, 2015  <a href="#fr">fr</a>  <a href="#jboss">jboss</a>  <a href="#eap">eap</a>  <a href="#wildfly">wildfly</a>  <a href="#websphereMQ">websphereMQ</a>  <a href="#JCA">JCA</a> </p>
-    <p>Le serveur d’application <a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> est <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">certifié JEE6</a>, il implemente donc
+    <p>Le serveur d’application <a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> est <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">certifié JEE6</a>, il implémente donc
 via le framework <a href="http://www.ironjacamar.org/">IronJacamar</a> le standard J2EE Connector Architecture (JCA).
-Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un serveur JMS, un système de fichier ou un mainframe.
+Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe.
 Il est possible de faire l’analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel,
-JCA se veut beaucoup plus large, il permet d’integrer tout type de systèmes d’informations d’entreprise (EIS)</p>
+JCA se veut beaucoup plus large, il permet d’intégrer tout type de systèmes d’informations d’entreprise (EIS)</p>
 
-<p>Le standard JCA va prendre en charge l’ensemble de fonctionnalités suivantes (liste non-exhaustive) :</p>
+<p>Le standard JCA va prendre en charge l’ensemble des fonctionnalités suivantes (liste non-exhaustive) :</p>
 
 <ul>
   <li>Connexion au système (socket, IPC, …)</li>
@@ -71,7 +71,7 @@ JCA se veut beaucoup plus large, il permet d’integrer tout type de systèmes d
   <li>Management du cycle de vie et du threading</li>
 </ul>
 
-<p>Le fournisseur de service va fournir aux developpeurs et à l’intégrateur un driver appelé dans le contexte JCA : <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gipgl.html">Resource Adapter</a></p>
+<p>Le fournisseur de service va fournir aux développeurs et à l’intégrateur un driver appelé dans le contexte JCA : <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gipgl.html">Resource Adapter</a></p>
 
 <p>Nous allons voir dans notre exemple :</p>
 
@@ -98,11 +98,11 @@ Attention, il s'agit de version d'essai ou d'évaluation uniquement, le déploie
 
 <h2 id="dveloppement">Développement</h2>
 
-<p>Afin de pouvoir tester notre integration nous allons avoir besoin de developper un client pour l’envoi et un MDB pour la réception d’un message JMS.</p>
+<p>Afin de pouvoir tester notre intégration nous allons avoir besoin de développer un client pour l’envoi et un MDB pour la réception d’un message JMS.</p>
 
 <h3 id="pour-lenvoi">Pour l’envoi</h3>
 
-<p>Dans notre cas nous allons créer un EJB stateless pour envoyer le message JMS. Mais il est possible d’utiliser un autre mécanisme pour l’envoi, une servlet par exemple.</p>
+<p>Dans notre cas nous allons créer un EJB Stateless pour envoyer le message JMS. Mais il est possible d’utiliser un autre mécanisme pour l’envoi, une servlet par exemple.</p>
 
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// ..OMIT .. //</span>
 
@@ -119,19 +119,19 @@ Attention, il s'agit de version d'essai ou d'évaluation uniquement, le déploie
 
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">JMSException</span> <span class="o">{</span>
 
-  	<span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">createConnection</span><span class="o">();</span>
-		<span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&quot;Recuperation d&#39;une connexion {}&quot;</span><span class="o">,</span> <span class="n">connection</span><span class="o">);</span>
+            <span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">createConnection</span><span class="o">();</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&quot;Recuperation d&#39;une connexion {}&quot;</span><span class="o">,</span> <span class="n">connection</span><span class="o">);</span>
 
-		<span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createSession</span><span class="o">(</span><span class="kc">false</span><span class="o">,</span> <span class="n">AUTO_ACKNOWLEDGE</span><span class="o">);</span>
-		<span class="n">MessageProducer</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createProducer</span><span class="o">(</span><span class="n">queue</span><span class="o">);</span>
-		<span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&quot;Creation du sender {} sur la queue {}&quot;</span><span class="o">,</span> <span class="n">producer</span><span class="o">,</span> <span class="n">queue</span><span class="o">);</span>
+            <span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createSession</span><span class="o">(</span><span class="kc">false</span><span class="o">,</span> <span class="n">AUTO_ACKNOWLEDGE</span><span class="o">);</span>
+            <span class="n">MessageProducer</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createProducer</span><span class="o">(</span><span class="n">queue</span><span class="o">);</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&quot;Creation du sender {} sur la queue {}&quot;</span><span class="o">,</span> <span class="n">producer</span><span class="o">,</span> <span class="n">queue</span><span class="o">);</span>
 
-		<span class="n">TextMessage</span> <span class="n">textMessage</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createTextMessage</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
-		<span class="n">textMessage</span><span class="o">.</span><span class="na">setJMSCorrelationID</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-		<span class="n">producer</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">textMessage</span><span class="o">);</span>
-		<span class="n">producer</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-		<span class="n">session</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-		<span class="n">connection</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="n">TextMessage</span> <span class="n">textMessage</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createTextMessage</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
+            <span class="n">textMessage</span><span class="o">.</span><span class="na">setJMSCorrelationID</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+            <span class="n">producer</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">textMessage</span><span class="o">);</span>
+            <span class="n">producer</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="n">session</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="n">connection</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 	<span class="o">}</span>
 <span class="o">}</span></code></pre></div>
 
