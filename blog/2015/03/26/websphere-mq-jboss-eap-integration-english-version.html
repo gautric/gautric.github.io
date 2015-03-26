@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="JBoss EAP application server is JEE6 certified, it implements via IronJacamar framework,  the J2EE Connector Architecture (JCA) standard. This standard provi..."/>
+  <meta name="description" content="JBoss EAP application server is Java EE 6 certified, it implements via IronJacamar framework, the Java EE Connector Architecture (JCA) standard. This standar..."/>
 
   <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html"-->
 
@@ -56,7 +56,7 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Mar 26, 2015  <a href="#en">en</a>  <a href="#jboss">jboss</a>  <a href="#eap">eap</a>  <a href="#wildfly">wildfly</a>  <a href="#websphereMQ">websphereMQ</a>  <a href="#JCA">JCA</a> </p>
-    <p><a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> application server is <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">JEE6 certified</a>, it implements via <a href="http://www.ironjacamar.org/">IronJacamar</a> framework,  the J2EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).</p>
+    <p><a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> application server is <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">Java EE 6 certified</a>, it implements via <a href="http://www.ironjacamar.org/">IronJacamar</a> framework, the Java EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).</p>
 
 <p>JCA standard manages severals features like :</p>
 
@@ -139,7 +139,7 @@ Note in this code, JMS resources ( Factory and Queue ) are retrieved from the sc
 
 <h3 id="for-reception">For reception</h3>
 
-<p>In the JEE world, to allow applications to receive JMS messages asynchronously, we must develop a special bean. This bean is a Message Driven Bean (MDB), the object is called when a message is received in the JMS queue. The class has to implement <strong>javax.jms.MessageListener</strong> interface.</p>
+<p>In the Java EE world, to allow applications to receive JMS messages asynchronously, we must develop a special bean. This bean is a Message Driven Bean (MDB), the object is called when a message is received in the JMS queue. The class has to implement <strong>javax.jms.MessageListener</strong> interface.</p>
 
 <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// ..OMIT .. //</span>
 
@@ -161,7 +161,7 @@ Of course, it's possible to add ActivationSpec annotations to MDB, but these ann
 
 <p>Now, let’s configure the application to connect MDB to the correct JMS queue. First, we will use the <strong>ejb-jar.xml</strong> file to define main objects.</p>
 
-<h3 id="jee-definition-jee-ejb-jarxml">JEE Definition JEE (ejb-jar.xml)</h3>
+<h3 id="java-ee-definition-ejb-jarxml">Java EE Definition (ejb-jar.xml)</h3>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ejb-jar</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd&quot;</span> <span class="na">version=</span><span class="s">&quot;3.0&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;description&gt;</span>MoM Application EJB / MDB <span class="nt">&lt;/description&gt;</span>
@@ -324,7 +324,7 @@ BINDING mode is the second transport type available to connect to WebsphereMQ, b
 <p>JBoss can manage placeholder replacements for :</p>
 
 <ul>
-  <li>Standard JEE descriptor files.
+  <li>Standard Java EE descriptor files.
     <ul>
       <li><strong>spec-descriptor-property-replacement</strong></li>
       <li>web.xml, ejb-jar.xml, etc…</li>
@@ -352,7 +352,7 @@ BINDING mode is the second transport type available to connect to WebsphereMQ, b
 <span class="nt">&lt;/subsystem&gt;</span></code></pre></div>
 
 <div class="notice ">
-I prefer use replacement only for JBoss specific descriptor files. Because another application server couldn't manage placeholder replacements inside JEE standard descriptor files.
+I prefer use replacement only for JBoss specific descriptor files. Because another application server couldn't manage placeholder replacements inside Java EE standard descriptor files.
 </div>
 
 <h3 id="wmq-connection-and-resource-adapter-configuration">WMQ connection and resource adapter configuration</h3>
