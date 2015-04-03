@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html><!--<![-->
+<head>
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost ..."/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-integration.html"-->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-integration.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <title>Apache Camel RaspberryPi PoC</title>
+</head>
+
+  <body>
+        <header class="site-header blog-header">
+
+  <div class="wrapper">
+
+    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/apropos">A propos</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/citations">Citations</a><a class="page-link" href="/contact">Contact</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <header class="post-header blog-title">
+      <div class="wrapper">
+      <h1 class="post-title">Apache Camel RaspberryPi PoC</h1>
+    </div>
+    </header>
+
+    <main class="page-content" role="main">
+      <div class="wrapper">
+          <article class="post-content">
+    <p class="post-meta">Apr 3, 2015  <a href="#en">en</a>  <a href="#apache">apache</a>  <a href="#camel">camel</a>  <a href="#raspberry">raspberry</a>  <a href="#pi">pi</a>  <a href="#ProofOfConcept">ProofOfConcept</a> </p>
+    <p>Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.</p>
+
+<blockquote>
+  <p>Apache Camel and Raspberry Pi integration (proof of concept)</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>Before, coding and wiring, just let’s take a look inside both products.
+<a href="http://www.raspberrypi.org/">Raspberry Pi</a> is a smart computer with lots of features :</p>
+
+<table>
+<tr>
+<td>
+<img src="/img/raspberry_pi_logo.png" height="150" width="150" />
+</td>
+<td>
+<ul>
+<li>Broadcom BCM2835 - ARM1176JZF-S 700 MHz</li>
+<li>GPIO pin</li>
+<li>I2C / SPI protocol</li>
+<li>USB port</li>
+<li>HDMI port</li>
+<li>Audio output</li>
+</ul>
+</td>
+</tr>
+</table>
+<p><br /></p>
+
+<p><a href="http://camel.apache.org/">Camel</a> is a framework with severals features too :</p>
+
+<table>
+<tr>
+<td>
+<img src="/img/apache-camel-logo.jpg" height="150" width="150" />
+</td>
+<td>
+<ul>
+<li>Java framework from <a href="http://www.apache.org/">The Apache Software Foundation</a></li>
+<li>lots of Input/Output protocols</li>
+<li>HTTP, JMS, AMQP, MQTT, FTP, SSH, IMAP/POP, IRC, SMPP</li>
+<li>lots of languages</li>
+<li>groovy, xslt, javascript, python, php, xpath etc...</li>
+<li>EIP implementation</li>
+<li>message, wiretap, log, dispatch, broadcast, dead letter, splitter etc...</li>
+</ul>
+</td>
+</tr>
+</table>
+
+<p>In this lab, we will build an simple Camel route to accept a button event from GPIO input pin and transfer it to switch a LED on and off via a GPIO output pin. Let’s start and enjoy it ;-)</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>For this lab, you will need the following stuff :</p>
+
+<ul>
+  <li>a Raspberry Pi (<a href="http://www.raspberrypi.org/products/">Buy one</a>)
+    <ul>
+      <li>Tested with : B model</li>
+      <li>Should work with : A, A+, B+, 2B</li>
+    </ul>
+  </li>
+  <li>Raspbian OS installed (<a href="http://www.raspberrypi.org/downloads/">Download</a>)</li>
+  <li>1 - LED</li>
+  <li>1 - Button</li>
+  <li>1 - 220 Ω (ohms) Resistor</li>
+  <li>4 - Wires</li>
+  <li>1 - Breadboard</li>
+</ul>
+
+<h2 id="setup-your-raspberry-pi">Setup your Raspberry Pi</h2>
+
+<div class="error">
+Be carefull with your device, please shutdown power before wiring. Check twice before powering on or you could damage your device.
+</div>
+
+<p>Follow wiring:</p>
+
+<p><img src="/img/raspberrypi-camel-2.png" alt="Wire" /></p>
+
+<p>You can test your wiring with <a href="http://wiringpi.com">wiringpi</a> library</p>
+
+<h2 id="install-pi4j-library">Install Pi4j library</h2>
+
+<p>First, let’s install Pi4J library.</p>
+
+<p>Currently only 1.0-RC version is available directly for RaspberryPi</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+pi@rbpi&gt; curl -s get.pi4j.com <span class="p">|</span> sudo bash</code></pre></div>
+
+<div class="info">
+you should use a Public/Private key authentication for a faster connection to your RaspberryPi.
+</div>
+
+<p>More information about <a href="http://pi4j.com/install.html#Installation">installation</a> here</p>
+
+<h2 id="compile-raspberry-component">Compile Raspberry Component</h2>
+
+<p>The better place to build camel-raspberry component is on your personal computer. RaspberryPi is be too slow to compile.</p>
+
+<p>Checkout code and build it :</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> git clone git@github.com:gautric/camel.git
+<span class="nv">$&gt;</span> <span class="nb">cd </span>camel
+<span class="nv">$&gt;</span> mvn package -Praspberry -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span></code></pre></div>
+
+<div class="info">
+Camel-raspberrypi isn't yet merged into Camel master branch
+</div>
+<p>Please follow <a href="https://issues.apache.org/jira/browse/CAMEL-8567">CAMEL-8567</a> event and <a href="https://github.com/apache/camel/pull/452">#452 Github PR</a></p>
+
+<p><a href="https://github.com/gautric/camel/blob/master/components/camel-raspberrypi/src/main/java/org/apache/camel/component/raspberrypi/CamelMain.java#L29">A Main (tester) program</a> is included inside the camel-raspberry component. It needs some Camel dependencies (via Maven) to run. We have to activate <a href="https://github.com/gautric/camel/blob/master/components/camel-raspberrypi/pom.xml#L151"><strong><em>raspberry</em></strong> maven profile</a> and
+copy all dependencies to Raspberry Pi.</p>
+
+<p>Copy jar and dependencies files to your Raspberry Pi</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> <span class="nb">cd </span>components/camel-raspberrypi
+<span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span> <span class="s1">&#39;mkdir -p /home/pi/camel&#39;</span>
+<span class="nv">$&gt;</span> scp target/*.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>:/home/pi/camel</code></pre></div>
+
+<h2 id="install-program-camel-program-to-your-raspberry-pi">Install program Camel Program to your Raspberry Pi</h2>
+
+<p>Copy <strong>log4.properties</strong> to <strong>${PI_HOST}:/home/pi/camel</strong> directory</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#</span>
+<span class="c"># The logging properties used</span>
+<span class="c">#</span>
+log4j.rootLogger<span class="o">=</span>INFO, out
+
+<span class="c"># uncomment the following line to turn on Camel debugging</span>
+<span class="c">#log4j.logger.org.apache.camel=DEBUG</span>
+log4j.logger.org.pi4j<span class="o">=</span>ALL
+log4j.logger.org.apache.camel.component.raspberrypi<span class="o">=</span>ALL
+
+<span class="c"># CONSOLE appender not used by default</span>
+log4j.appender.out<span class="o">=</span>org.apache.log4j.ConsoleAppender
+log4j.appender.out.layout<span class="o">=</span>org.apache.log4j.PatternLayout
+log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class="o">{</span>ISO8601<span class="o">}</span> <span class="o">[</span>%30.30t<span class="o">]</span> %-30.30c<span class="o">{</span>1<span class="o">}</span> %-5p %m%n
+<span class="c">#log4j.appender.out.layout.ConversionPattern=%d [%-15.15t] %-5p %-30.30c{1} - %m%n</span></code></pre></div>
+
+<p><br /></p>
+
+<h2 id="st-prototype--timer--led">1st Prototype : timer + LED</h2>
+
+<p>The first prototype is to setup an Timer component for sending a message every second. When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.</p>
+
+<p><img src="/img/camel-timer.png" /></p>
+
+<h3 id="the-command-line">The command line</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+pi@rbpi&gt; pi4j -r org.apache.camel.component.raspberrypi.CamelMain  <span class="se">\</span>
+        <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=60&quot;</span>  <span class="se">\</span>
+        <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&amp;shutdownExport=true&quot;</span></code></pre></div>
+
+<h3 id="video-raspberry--led-20s">Video Raspberry + LED (&gt;20s)</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wxyPC5cbZrM?t=15s" frameborder="0"></iframe>
+
+<h3 id="video-command-line">Video command line</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0BtJDWUMOjc" frameborder="0"></iframe>
+
+<h3 id="devout">/dev/out</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r org.apache.camel.component.raspberrypi.CamelMain  <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=600&quot;</span> <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
++ sudo java -classpath <span class="s1">&#39;.:classes:*:classes:/opt/pi4j/lib/*&#39;</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">&#39;timer://foo?fixedRate=true&amp;repeatCount=600&#39;</span> <span class="s1">&#39;raspberrypi://pin/2?action=TOGGLE&amp;shutdownExport=true&#39;</span>
+2015-03-31 19:53:51,863 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  main
+2015-03-31 19:53:51,881 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>0<span class="o">]</span> <span class="o">=</span>timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">repeatCount</span><span class="o">=</span>600
+2015-03-31 19:53:51,882 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>1<span class="o">]</span> <span class="o">=</span>raspberrypi://pin/2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span>
+2015-03-31 19:53:55,306 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+2015-03-31 19:53:55,329 <span class="o">[</span>                          main<span class="o">]</span> ManagedManagementStrategy      INFO  JMX is enabled
+2015-03-31 19:54:00,329 <span class="o">[</span>                          main<span class="o">]</span> DefaultTypeConverter           INFO  Loaded <span class="m">185</span> <span class="nb">type </span>converters
+2015-03-31 19:54:04,078 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
+2015-03-31 19:54:04,080 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+2015-03-31 19:54:04,462 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG Endpoint<span class="o">[</span>raspberrypi://pin/2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 19:54:04,472 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 19:54:04,818 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiProducer            DEBUG Starting producer: Producer<span class="o">[</span>raspberrypi://pin/2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 19:54:05,811 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint<span class="o">[</span>timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">repeatCount</span><span class="o">=</span>600<span class="o">]</span>
+2015-03-31 19:54:05,872 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
+2015-03-31 19:54:05,936 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 10.612 seconds
+2015-03-31 19:54:07,212 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] raspberrypi                    INFO  Exchange[</span>
+, Id: ID-rbpi7-45066-1427831633096-0-2
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:06 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelTimerCounter</span><span class="o">=</span>1, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:06 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-1, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:06 UTC 2015<span class="o">}</span>
+, BodyType: null
+, Body: <span class="o">[</span>Body is null<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 19:54:07,283 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]</span>
+2015-03-31 19:54:07,285 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE</span>
+2015-03-31 19:54:07,886 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] raspberrypi                    INFO  Exchange[</span>
+, Id: ID-rbpi7-45066-1427831633096-0-4
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:07 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelTimerCounter</span><span class="o">=</span>2, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:07 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-3, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:07 UTC 2015<span class="o">}</span>
+, BodyType: null
+, Body: <span class="o">[</span>Body is null<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 19:54:07,890 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]</span>
+2015-03-31 19:54:07,891 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE</span>
+2015-03-31 19:54:08,895 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] raspberrypi                    INFO  Exchange[</span>
+, Id: ID-rbpi7-45066-1427831633096-0-6
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:08 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelTimerCounter</span><span class="o">=</span>3, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:08 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-5, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:08 UTC 2015<span class="o">}</span>
+, BodyType: null
+, Body: <span class="o">[</span>Body is null<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 19:54:08,899 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]</span>
+2015-03-31 19:54:08,901 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE</span></code></pre></div>
+
+<p><br /></p>
+
+<h2 id="nd-prototype--button--led">2nd Prototype : Button + LED</h2>
+
+<p>The second prototype is like the first one, but we remove timer endpoint to replace it with button for sending a message when pushed (HIGH state event*). When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.</p>
+
+<p><img src="/img/camel-button.png" /></p>
+
+<h3 id="the-command-line-1">The command line</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+pi@rbpi&gt; pi4j -r org.apache.camel.component.raspberrypi.CamelMain  <span class="se">\</span>
+        <span class="s2">&quot;raspberrypi://pin/1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="se">\</span>
+        <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&quot;</span></code></pre></div>
+
+<h3 id="video-raspberry--led">Video Raspberry + LED</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q-r8AP9q6tE" frameborder="0"></iframe>
+
+<h3 id="video-command-line-1">Video command line</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wufbxNkXx7s" frameborder="0"></iframe>
+
+<h3 id="devout-1">/dev/out</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r org.apache.camel.component.raspberrypi.CamelMain  <span class="s2">&quot;raspberrypi://pin/1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
++ sudo java -classpath <span class="s1">&#39;.:classes:*:classes:/opt/pi4j/lib/*&#39;</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">&#39;raspberrypi://pin/1?mode=DIGITAL_INPUT&amp;state=HIGH&#39;</span> <span class="s1">&#39;raspberrypi://pin/2?action=TOGGLE&amp;shutdownExport=true&#39;</span>
+2015-03-31 20:08:58,096 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  main
+2015-03-31 20:08:58,112 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>0<span class="o">]</span> <span class="o">=</span>raspberrypi://pin/1?mode<span class="o">=</span>DIGITAL_INPUT<span class="p">&amp;</span><span class="nv">state</span><span class="o">=</span>HIGH
+2015-03-31 20:08:58,115 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>1<span class="o">]</span> <span class="o">=</span>raspberrypi://pin/2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span>
+2015-03-31 20:09:01,619 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+2015-03-31 20:09:01,642 <span class="o">[</span>                          main<span class="o">]</span> ManagedManagementStrategy      INFO  JMX is enabled
+2015-03-31 20:09:06,678 <span class="o">[</span>                          main<span class="o">]</span> DefaultTypeConverter           INFO  Loaded <span class="m">185</span> <span class="nb">type </span>converters
+2015-03-31 20:09:10,264 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
+2015-03-31 20:09:10,266 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+2015-03-31 20:09:10,416 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG Endpoint<span class="o">[</span>raspberrypi://pin/1?mode<span class="o">=</span>DIGITAL_INPUT<span class="p">&amp;</span><span class="nv">state</span><span class="o">=</span>HIGH<span class="o">]</span>
+2015-03-31 20:09:10,426 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG  Pin Id &gt; 1
+2015-03-31 20:09:10,922 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG Endpoint<span class="o">[</span>raspberrypi://pin/2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 20:09:10,924 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 20:09:10,998 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiProducer            DEBUG Starting producer: Producer<span class="o">[</span>raspberrypi://pin/2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 20:09:11,990 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiConsumer            TRACE Start Listening GPIO 1
+2015-03-31 20:09:11,997 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint<span class="o">[</span>raspberrypi://pin/1?mode<span class="o">=</span>DIGITAL_INPUT<span class="p">&amp;</span><span class="nv">state</span><span class="o">=</span>HIGH<span class="o">]</span>
+2015-03-31 20:09:12,004 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
+2015-03-31 20:09:12,123 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 10.430 seconds
+2015-03-31 20:09:15,483 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:15,485 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:15,667 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:16,089 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+, Id: ID-rbpi7-46433-1427832539336-0-2
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:15 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-1, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 20:09:16,152 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
+2015-03-31 20:09:16,153 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:17,916 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:17,918 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:18,130 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:18,153 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+, Id: ID-rbpi7-46433-1427832539336-0-4
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:18 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-3, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 20:09:18,164 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
+2015-03-31 20:09:18,179 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:20,447 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:20,448 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:20,672 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:20,694 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+, Id: ID-rbpi7-46433-1427832539336-0-6
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:20 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-5, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 20:09:20,703 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
+2015-03-31 20:09:20,709 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:25,036 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:25,038 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:25,248 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:25,278 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+, Id: ID-rbpi7-46433-1427832539336-0-8
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:25 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-7, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 20:09:25,284 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
+2015-03-31 20:09:25,285 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:31,155 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:31,157 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:31,351 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:31,365 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+, Id: ID-rbpi7-46433-1427832539336-0-10
+, ExchangePattern: InOnly
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:31 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-9, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Out: null:
+<span class="o">]</span>
+2015-03-31 20:09:31,370 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
+2015-03-31 20:09:31,371 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE</code></pre></div>
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>As you can see , Integration Pi4j in Camel technology was really easy. With Camel technology you can communicate with lots of other devices or servers which use <em>HTTP</em>, <em>AMQP</em>, <em>EMAIL</em>, <em>MQTT</em> etc…
+Raspberry Pi can integrate and assemble severals electronics protocols like <em>i2c</em> or <em>SPI</em> (coming soon into camel-raspberrypi component).
+<em>RaspberryPi and Apache Camel can really rock !!!</em></p>
+
+<p><br /></p>
+
+<h2 id="more-links">More links</h2>
+
+<ul>
+  <li>more info <a href="/apropos/">about me</a></li>
+  <li>a colleague <a href="http://henryk-konsek.blogspot.fr/">blog Henryk Konsek</a> (IoT, MQTT etc…)</li>
+  <li><a href="https://issues.apache.org/jira/browse/CAMEL-8567">CAMEL-8567</a></li>
+  <li><a href="https://github.com/apache/camel/pull/452">Github Pull Request</a></li>
+  <li><a href="http://pi4j.com">Pi4j library</a></li>
+  <li><a href="http://raspberrypi.org">Raspberry Pi</a></li>
+  <li><a href="http://camel.apache.org">Apache-Camel</a></li>
+</ul>
+
+  </article>
+
+  <div class="post-social">
+    
+   <a href="https://twitter.com/share" class="twitter-share-button" data-via="gautric_io">Tweet</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'greg-iopen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+
+  <div class="archive">
+
+    <div class="archive-per-tag">
+<h2 id="archive-per-tag-title">Tag</h2>
+<div id="archive-per-tag-content" class="post-meta">
+
+
+    <h3 id="en">en (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="fr">fr (4)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="jp">jp (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="divers">divers (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="histoire">histoire (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="otp">otp (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="yubico">yubico (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="yubikey">yubikey (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="jboss">jboss (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="eap">eap (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="wildfly">wildfly (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="websphereMQ">websphereMQ (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="JCA">JCA (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="apache">apache (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="camel">camel (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="raspberry">raspberry (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="pi">pi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="ProofOfConcept">ProofOfConcept (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+</div>
+ <script>
+   $( "#archive-per-tag-content" ).hide();
+   $( "#archive-per-tag-title" ).click(function() {
+     $( "#archive-per-tag-content" ).toggle( "slow");
+   });
+ </script>
+</div>
+
+    <div class="archive-per-date">
+<h2 id="archive-per-date-title">Date</h2>
+<div id="archive-per-date-content" class="post-meta">
+
+  
+  
+  
+  
+  <h3 id="2015" class="post year title">2015</h3>
+  <div id="year-post-archive" class="post year">
+  
+    
+    
+        
+            
+            <h4 id="2015-04" class="post month title">April</h4><ul>
+        
+    <li><time id="2015-04-03"> 3</time> &mdash; <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html" class="post title" >Apache Camel RaspberryPi PoC</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-03" class="post month title">March</h4><ul>
+        
+    <li><time id="2015-03-26">26</time> &mdash; <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html" class="post title" >Best Practices Websphere MQ/JBoss EAP 6 English Version</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-25">25</time> &mdash; <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html" class="post title" >Best Practices Websphere MQ/JBoss EAP 6</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-19">19</time> &mdash; <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html" class="post title" >Yubico OTP et JBoss EAP 6 ou Wildfly 8</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-18">18</time> &mdash; <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html" class="post title" >Il y a un siècle aux Dardanelles</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-10">10</time> &mdash; <a href="/blog/2015/03/10/premier-post.html" class="post title" >Premier post</a></li>
+
+    
+  </ul></div>
+    
+
+</div>
+ <script>
+    $( "#archive-per-date-content" ).hide();
+    $( "#archive-per-date-title" ).click(function() {
+      $( "#archive-per-date-content" ).toggle( "slow");
+     });
+   </script>
+</div>
+
+
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="site-footer blog-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="#" title="Haut de la page / Head of page">Greg I/Open</a></h2>
+
+    <div class="footer-col-wrapper">
+      <p class="text">Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, JBoss, Red Hat, REST/ROA
+</p>
+
+      &mdash; 
+ <a href="https://twitter.com/gautric_io">
+    <span class="icon  icon--twitter">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+        c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash; 
+  <a href="https://github.com/gautric">
+    <span class="icon  icon--github">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash;
+    </div>
+
+    <div class="copyright">Copyright © Greg Autric 2015</div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60791597-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</html>
