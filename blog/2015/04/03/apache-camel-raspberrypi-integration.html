@@ -161,16 +161,15 @@ you should use a Public/Private key authentication for a faster connection to yo
 
 <p>Checkout code and build it :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> git clone git@github.com:gautric/camel.git
-<span class="nv">$&gt;</span> <span class="nb">cd </span>camel
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> git clone https://github.com/camel-labs/camel-labs.git
+<span class="nv">$&gt;</span> <span class="nb">cd </span>iot/components/camel-raspberrypi
 <span class="nv">$&gt;</span> mvn package -Praspberry -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span></code></pre></div>
 
 <div class="info">
-Camel-raspberrypi isn't yet merged into Camel master branch
+Camel-raspberrypi can't be merged into Camel master branch.
 </div>
-<p>Please follow <a href="https://issues.apache.org/jira/browse/CAMEL-8567">CAMEL-8567</a> event and <a href="https://github.com/apache/camel/pull/452">#452 Github PR</a></p>
 
-<p><a href="https://github.com/gautric/camel/blob/master/components/camel-raspberrypi/src/main/java/org/apache/camel/component/raspberrypi/CamelMain.java#L29">A Main (tester) program</a> is included inside the camel-raspberry component. It needs some Camel dependencies (via Maven) to run. We have to activate <a href="https://github.com/gautric/camel/blob/master/components/camel-raspberrypi/pom.xml#L151"><strong><em>raspberry</em></strong> maven profile</a> and
+<p><a href="https://github.com/camel-labs/camel-labs/blob/master/iot/components/camel-raspberrypi/src/main/java/org/apache/camel/labs/component/raspberrypi/CamelMain.java#L29">A Main (tester) program</a> is included inside the camel-raspberry component. It needs some Camel dependencies (via Maven) to run. We have to activate <a href="https://github.com/camel-labs/camel-labs/blob/master/iot/components/camel-raspberrypi/pom.xml#L153"><strong><em>raspberry</em></strong> maven profile</a> and
 copy all dependencies to Raspberry Pi.</p>
 
 <p>Copy jar and dependencies files to your Raspberry Pi</p>
@@ -191,7 +190,7 @@ log4j.rootLogger<span class="o">=</span>INFO, out
 <span class="c"># uncomment the following line to turn on Camel debugging</span>
 <span class="c">#log4j.logger.org.apache.camel=DEBUG</span>
 log4j.logger.org.pi4j<span class="o">=</span>ALL
-log4j.logger.org.apache.camel.component.raspberrypi<span class="o">=</span>ALL
+log4j.logger.org.apache.camel.labs.component.raspberrypi<span class="o">=</span>ALL
 
 <span class="c"># CONSOLE appender not used by default</span>
 log4j.appender.out<span class="o">=</span>org.apache.log4j.ConsoleAppender
@@ -210,7 +209,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 <h3 id="the-command-line">The command line</h3>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-pi@rbpi&gt; pi4j -r org.apache.camel.component.raspberrypi.CamelMain  <span class="se">\</span>
+pi@rbpi&gt; pi4j -r org.apache.camel.labs.component.raspberrypi.CamelMain  <span class="se">\</span>
         <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=60&quot;</span>  <span class="se">\</span>
         <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&amp;shutdownExport=true&quot;</span></code></pre></div>
 
@@ -285,7 +284,7 @@ pi@rbpi&gt; pi4j -r org.apache.camel.component.raspberrypi.CamelMain  <span clas
 <h3 id="the-command-line-1">The command line</h3>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-pi@rbpi&gt; pi4j -r org.apache.camel.component.raspberrypi.CamelMain  <span class="se">\</span>
+pi@rbpi&gt; pi4j -r org.apache.camel.labs.component.raspberrypi.CamelMain  <span class="se">\</span>
         <span class="s2">&quot;raspberrypi://pin/1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="se">\</span>
         <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&quot;</span></code></pre></div>
 
