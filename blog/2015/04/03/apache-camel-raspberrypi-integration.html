@@ -190,7 +190,7 @@ log4j.rootLogger<span class="o">=</span>INFO, out
 <span class="c"># uncomment the following line to turn on Camel debugging</span>
 <span class="c">#log4j.logger.org.apache.camel=DEBUG</span>
 log4j.logger.org.pi4j<span class="o">=</span>ALL
-log4j.logger.org.apache.camel.labs.component.raspberrypi<span class="o">=</span>ALL
+log4j.logger.com.github.camellabs.component.raspberrypi<span class="o">=</span>ALL
 
 <span class="c"># CONSOLE appender not used by default</span>
 log4j.appender.out<span class="o">=</span>org.apache.log4j.ConsoleAppender
@@ -209,7 +209,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 <h3 id="the-command-line">The command line</h3>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-pi@rbpi&gt; pi4j -r org.apache.camel.labs.component.raspberrypi.CamelMain  <span class="se">\</span>
+pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
         <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=60&quot;</span>  <span class="se">\</span>
         <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&amp;shutdownExport=true&quot;</span></code></pre></div>
 
@@ -284,7 +284,7 @@ pi@rbpi&gt; pi4j -r org.apache.camel.labs.component.raspberrypi.CamelMain  <span
 <h3 id="the-command-line-1">The command line</h3>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-pi@rbpi&gt; pi4j -r org.apache.camel.labs.component.raspberrypi.CamelMain  <span class="se">\</span>
+pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
         <span class="s2">&quot;raspberrypi://pin/1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="se">\</span>
         <span class="s2">&quot;raspberrypi://pin/2?action=TOGGLE&quot;</span></code></pre></div>
 
