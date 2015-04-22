@@ -223,7 +223,7 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span 
 
 <h3 id="devout">/dev/out</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r org.apache.camel.labs.component.raspberrypi.CamelMain  <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=600&quot;</span> <span class="s2">&quot;raspberrypi://gpio/2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=600&quot;</span> <span class="s2">&quot;raspberrypi://gpio/2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
 + sudo java -classpath <span class="s1">&#39;.:classes:*:classes:/opt/pi4j/lib/*&#39;</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">&#39;timer://foo?fixedRate=true&amp;repeatCount=600&#39;</span> <span class="s1">&#39;raspberrypi://gpio/2?action=TOGGLE&amp;shutdownExport=true&#39;</span>
 2015-03-31 19:53:51,863 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  main
 2015-03-31 19:53:51,881 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>0<span class="o">]</span> <span class="o">=</span>timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">repeatCount</span><span class="o">=</span>600
@@ -298,7 +298,7 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span 
 
 <h3 id="devout-1">/dev/out</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r org.apache.camel.labs.component.raspberrypi.CamelMain  <span class="s2">&quot;raspberrypi://gpio/1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="s2">&quot;raspberrypi://gpio/2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">&quot;raspberrypi://gpio/1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="s2">&quot;raspberrypi://gpio/2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
 + sudo java -classpath <span class="s1">&#39;.:classes:*:classes:/opt/pi4j/lib/*&#39;</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">&#39;raspberrypi://gpio/1?mode=DIGITAL_INPUT&amp;state=HIGH&#39;</span> <span class="s1">&#39;raspberrypi://gpio/2?action=TOGGLE&amp;shutdownExport=true&#39;</span>
 2015-03-31 20:08:58,096 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  main
 2015-03-31 20:08:58,112 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>0<span class="o">]</span> <span class="o">=</span>raspberrypi://gpio/1?mode<span class="o">=</span>DIGITAL_INPUT<span class="p">&amp;</span><span class="nv">state</span><span class="o">=</span>HIGH
