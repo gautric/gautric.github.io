@@ -158,7 +158,7 @@ you should use a Public/Private key authentication for a faster connection to yo
 <h2 id="compile-raspberry-component">Compile Raspberry Component</h2>
 
 <div class="error">
-Component is still under developpement. Please feel free to test and send your feed back. 
+Component is still under developpement. Please feel free to test and send your feed back.
 Some stuff could change anytime (URI for example).
 </div>
 
@@ -174,7 +174,60 @@ Some stuff could change anytime (URI for example).
 Camel-raspberrypi can't be merged into Camel master branch.
 </div>
 
-<p><a href="https://github.com/camel-labs/camel-labs/blob/master/iot/components/camel-raspberrypi/src/main/java/org/apache/camel/labs/component/raspberrypi/CamelMain.java#L29">A Main (tester) program</a> is included inside the camel-raspberry component. It needs some Camel dependencies (via Maven) to run. We have to activate <a href="https://github.com/camel-labs/camel-labs/blob/master/iot/components/camel-raspberrypi/pom.xml#L153"><strong><em>raspberry</em></strong> maven profile</a> and
+<p>You need to compile  Main (tester) program</p>
+
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">camellabs</span><span class="o">.</span><span class="na">component</span><span class="o">.</span><span class="na">pi4j</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.camel.CamelContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.camel.builder.RouteBuilder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.camel.impl.DefaultCamelContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A simple application to run RaspberryPi Camel</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">CamelMain</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">CamelMain</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="kd">private</span> <span class="nf">CamelMain</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">CommandLineRouteBuilder</span> <span class="kd">extends</span> <span class="n">RouteBuilder</span> <span class="o">{</span>
+
+        <span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">;</span>
+
+        <span class="n">CommandLineRouteBuilder</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">args</span> <span class="o">=</span> <span class="n">args</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+            <span class="n">from</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]).</span><span class="na">id</span><span class="o">(</span><span class="s">&quot;raspberrypi-route&quot;</span><span class="o">).</span><span class="na">to</span><span class="o">(</span><span class="n">Pi4jConstants</span><span class="o">.</span><span class="na">LOG_COMPONENT</span><span class="o">).</span><span class="na">to</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;main&quot;</span><span class="o">);</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;args[&quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;] =&quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+
+        <span class="n">CamelContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">DefaultCamelContext</span><span class="o">();</span>
+
+        <span class="n">context</span><span class="o">.</span><span class="na">addRoutes</span><span class="o">(</span><span class="k">new</span> <span class="nf">CommandLineRouteBuilder</span><span class="o">(</span><span class="n">args</span><span class="o">));</span>
+
+        <span class="n">context</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">600000</span><span class="o">);</span>
+        <span class="n">context</span><span class="o">.</span><span class="na">stop</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre></div>
+
+<p>It needs some Camel dependencies (via Maven) to run. We have to activate <a href="https://github.com/camel-labs/camel-labs/blob/master/iot/components/camel-raspberrypi/pom.xml#L153"><strong><em>raspberry</em></strong> maven profile</a> and
 copy all dependencies to Raspberry Pi.</p>
 
 <p>Copy jar and dependencies files to your Raspberry Pi</p>
@@ -449,13 +502,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (3)</h3>
+    <h3 id="en">en (4)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
       
         
       <li>
@@ -785,13 +844,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     </ul>
 
 
-    <h3 id="apache">apache (1)</h3>
+    <h3 id="apache">apache (2)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
       
         
       <li>
@@ -803,13 +868,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     </ul>
 
 
-    <h3 id="camel">camel (2)</h3>
+    <h3 id="camel">camel (3)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
       
         
       <li>
@@ -827,13 +898,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     </ul>
 
 
-    <h3 id="raspberry">raspberry (1)</h3>
+    <h3 id="raspberry">raspberry (2)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
       
         
       <li>
@@ -845,13 +922,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     </ul>
 
 
-    <h3 id="pi">pi (1)</h3>
+    <h3 id="pi">pi (2)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
       
         
       <li>
@@ -881,13 +964,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     </ul>
 
 
-    <h3 id="IoT">IoT (1)</h3>
+    <h3 id="IoT">IoT (2)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
       
         
       <li>
@@ -1024,6 +1113,78 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     
     </ul>
 
+
+    <h3 id="camellabs">camellabs (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="i2c">i2c (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="lcd">lcd (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="mqtt">mqtt (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -1049,6 +1210,16 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
         
             
             <h4 id="2015-05" class="post month title">May</h4><ul>
+        
+    <li><time id="2015-05-20">20</time> &mdash; <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html" class="post title" >Camel IoT Labs i2c gpio mqtt lcd</a></li>
+
+    
+
+  
+  
+  
+    
+    
         
     <li><time id="2015-05-04"> 4</time> &mdash; <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html" class="post title" >Sortie de wildfly 9.0 CR-01</a></li>
 
