@@ -204,7 +204,7 @@ INFO: pidfile created : <span class="s1">&#39;/Users/XXXXXX/Application/activemq
 
 <h2 id="start-up-accelerometer-and-mqtt-sender-part">Start Up Accelerometer and mqtt sender part</h2>
 
-<p>The first part of this lab is to collect every 2s X,Y,Z values from Accelerometer via I2C bus, flash a LED and send X,Y,Z vector to MQTT topic.</p>
+<p>The first part of this lab is to collect <a href="https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L27">every 2s X,Y,Z values from accelerometer via I2C bus</a>, <a href="https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L28">flash a LED</a> and <a href="https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L30">send X,Y,Z vector to MQTT topic</a>.</p>
 
 <p><img src="/img/LSM303_RPi_design.png" /></p>
 
@@ -267,7 +267,7 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.pij4.Accel2MQTT</code></pre><
 
 <h2 id="start-up-mqtt-reception-and-lcd-display-part">Start Up MQTT reception and LCD display part</h2>
 
-<p>The second part of this lab receives X,Y,Z vector from MQTT topic, check Z values (STABLE or ERROR zone) change color for LCD, and send message to LCD.</p>
+<p>The second part of this lab receives <a href="https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L34">X,Y,Z vector from MQTT topic</a>, <a href="https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L41">check Z value</a> (STABLE or ERROR zone) change color for LCD, and <a href="https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L60">send message to LCD</a>.</p>
 
 <p><img src="/img/LCD_RPi_design.png" /></p>
 
