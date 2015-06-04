@@ -35,10 +35,128 @@
       <div id="page-menu" class="first-page-trigger">
         <a class="first-page-link" href="/apropos">A propos</a><a class="first-page-link" href="/blog">Blog</a><a class="first-page-link" href="/citations">Citations</a><a class="first-page-link" href="/contact">Contact</a>
       </div>
-    </div>
+
+
+            <br/>
+      <div id="news-scroll">
+  <ul class="post-list">
+    <li id="toremove"></li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+        </h2>
+        <p>One month ago, Henryk, Claus and I’ve started Camel Labs project. This project provides some...
+          <br/>
+          <span class="post-meta">May 20, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">Sortie de wildfly 9.0 CR-01</a>
+        </h2>
+        <p>La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en...
+          <br/>
+          <span class="post-meta">May 4, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+        </h2>
+        <p>Aujourd’hui, l’internet des objets ou aussi appelé IoT prend de plus en plus de place...
+          <br/>
+          <span class="post-meta">Apr 25, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+        </h2>
+        <p>Raspberry Pi is a small computer. It costs just 35$. Five million have been already...
+          <br/>
+          <span class="post-meta">Apr 3, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+        </h2>
+        <p><a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> application server is <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">Java EE 6 certified</a>, it implements via <a...
+          <br/>
+          <span class="post-meta">Mar 26, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+        </h2>
+        <p>Le serveur d’application <a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> est <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">certifié JAVA EE 6</a>, il implémente donc...
+          <br/>
+          <span class="post-meta">Mar 25, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+        </h2>
+        <p><a href="https://www.yubico.com/">Yubikey</a> est une clef de crypto qui permet d’avoir une authentification forte lors d’un...
+          <br/>
+          <span class="post-meta">Mar 19, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+        </h2>
+        <p>Il y a cent ans, <a href="http://fr.wikipedia.org/wiki/Bouvet_%28cuirass%C3%A9%29">« Le Bouvet »</a> navire de <a href="http://fr.wikipedia.org/wiki/Marine_nationale_fran%C3%A7aise">la Royale (Marine Française)</a>...
+          <br/>
+          <span class="post-meta">Mar 18, 2015</span>
+      </li>
+    
+      <li class="post-list-item">
+        <h2>
+          <a class="post-link" href="/blog/2015/03/10/premier-post.html">Premier post</a>
+        </h2>
+        <p>Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.</p> <p>I will post...
+          <br/>
+          <span class="post-meta">Mar 10, 2015</span>
+      </li>
+    
+  </ul>
+</div>
+
   </div>
+ </div>
+
   <div class="copyright copyright-first-page" >Copyright © Greg Autric 2015</div>
 </div>
+<script type="text/javascript">
+
+function toRemove() {
+  $( "#toremove" ).remove()
+}
+
+$(function(){
+	$('#news-scroll').vTicker({
+		speed: 500,
+		pause: 3500,
+		animation: 'fade',
+		mousePause: false,
+		showItems: 1
+	});
+
+  setTimeout(toRemove, 10000);
+
+});
+
+/*
+* vertical news ticker
+* Tadas Juozapaitis ( kasp3rito@gmail.com )
+* http://plugins.jquery.com/project/vTicker
+*/
+(function(a){a.fn.vTicker=function(b){var c={speed:700,pause:4000,showItems:3,animation:"",mousePause:true,isPaused:false,direction:"up",height:0};var b=a.extend(c,b);moveUp=function(g,d,e){if(e.isPaused){return}var f=g.children("ul");var h=f.children("li:first").clone(true);if(e.height>0){d=f.children("li:first").height()}f.animate({top:"-="+d+"px"},e.speed,function(){a(this).children("li:first").remove();a(this).css("top","0px")});if(e.animation=="fade"){f.children("li:first").fadeOut(e.speed);if(e.height==0){f.children("li:eq("+e.showItems+")").hide().fadeIn(e.speed)}}h.appendTo(f)};moveDown=function(g,d,e){if(e.isPaused){return}var f=g.children("ul");var h=f.children("li:last").clone(true);if(e.height>0){d=f.children("li:first").height()}f.css("top","-"+d+"px").prepend(h);f.animate({top:0},e.speed,function(){a(this).children("li:last").remove()});if(e.animation=="fade"){if(e.height==0){f.children("li:eq("+e.showItems+")").fadeOut(e.speed)}f.children("li:first").hide().fadeIn(e.speed)}};return this.each(function(){var f=a(this);var e=0;f.css({overflow:"hidden",position:"relative"}).children("ul").css({position:"relative",margin:0,padding:0}).children("li").css({margin:0,padding:0});if(b.height==0){f.children("ul").children("li").each(function(){if(a(this).height()>e){e=a(this).height()}});f.children("ul").children("li").each(function(){a(this).height(e)});f.height(e*b.showItems)}else{f.height(b.height)}var d=setInterval(function(){if(b.direction=="up"){moveUp(f,e,b)}else{moveDown(f,e,b)}},b.pause);if(b.mousePause){f.bind("mouseenter",function(){b.isPaused=true}).bind("mouseleave",function(){b.isPaused=false})}})}})(jQuery);
+</script>
 
   </body>
   <script>
