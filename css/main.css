@@ -367,6 +367,9 @@ pre {
       font-size: 9.6vw;
       text-shadow: 2px 2px 2px #aaa; }
 
+  .first {
+    font-size: 70%; }
+
   .site-title {
     font-size: 4.5vw; }
 
