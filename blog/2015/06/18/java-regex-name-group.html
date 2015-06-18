@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Aujourd’hui, l’internet des objets ou aussi appelé IoT prend de plus en plus de place dans l’industrie informatique et non informatique. Des montres Withings..."/>
+  <meta name="description" content="Lors d’un développement d’un programme informatiaue, il est parfois nécessaire d’utiliser les expressions rationnelles. On traduit parfois regular expression..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Les premiers jours du projet Camel IoT Labs</title>
+  <title>Java Regex Group Name</title>
 </head>
 
   <body>
@@ -48,54 +48,69 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Les premiers jours du projet Camel IoT Labs</h1>
+      <h1 class="post-title">Java Regex Group Name</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Apr 25, 2015  <a href="#fr">fr</a>  <a href="#camel">camel</a>  <a href="#IoT">IoT</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#pi4j">pi4j</a>  <a href="#DeviceIO">DeviceIO</a>  <a href="#Tinkerforge">Tinkerforge</a>  <a href="#Kura">Kura</a> </p>
-    <p>Aujourd’hui, l’internet des objets ou aussi appelé IoT prend de plus en plus de place dans l’industrie informatique et non informatique. Des montres <a href="http://www.withings.com/fr/withings-activite.html">Withings</a>, aux <a href="http://raspberrypi.org">Raspberry Pi</a> vendus à 5M d’unités, en passant par les plaques <a href="http://www.arduino.cc/">Arduino</a> low cost et autres modules <a href="https://tessel.io/">Tessel</a>, le cout de production des objets électroniques baissant, a permis une large diffusion de ces nouveaux objets.</p>
+    <p class="post-meta">Jun 18, 2015  <a href="#fr">fr</a>  <a href="#java">java</a>  <a href="#regex">regex</a>  <a href="#group">group</a>  <a href="#name">name</a> </p>
+    <p>Lors d’un développement d’un programme informatiaue, il est parfois nécessaire d’utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L’utilisation d’un expression rationnelle est utile dans le cas où l’on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu’une chaine de caractères correspond bien à un schéma/motif particulier.</p>
 
-<p><img src="/img/camel-labs.png" style="max-width:120%;" align="left" height="110" hspace="30" /> En 2012, les premiers RaspberryPi sont lancés sur le marché, j’en ai acheté un. Depuis j’ai presque tout les modèles Brev1, Brev2, B+ et B2 ;-). J’ai aussi repris mon fer à souder, comme dans mes années lycée. Mais, à l’époque pas beaucoup d’internet, pas beaucoup de standard, pas beaucoup de matériel. Aujourd’hui il y a presque tout. Il ne reste plus qu’a assembler dans des briques physiques des briques logicielles plus ou moins évoluées.</p>
+<p>Dans tous les langages modernes (java, ruby, python), les librairies <em>regex</em> sont disponibles en standard. Nous allons voir comment utiliser une fonctionnalité interessante disponible dans la librairie standard de Java.</p>
 
-<p>Un précédent projet pour un constructeur automobile m’avait bien intéressé. Il s’agissait d’intégrer dans les voitures des applications web, un store d’application et de l’internet embarqué. J’ai commencé à me documenter sur les techno M2M et donc je me suis tourné naturellement vers les protocoles comme <a href="http://mqtt.org/">MQTT</a> ou bien <a href="https://www.amqp.org/">AMQP</a>, les frameworks EIP et le materiel autres que les RaspberryPi.</p>
+<h2 id="use-case--tester-les-url">Use case : tester les URL</h2>
 
-<p>Avec certains de mes amis de chez Red Hat (bonjour <a href="https://twitter.com/hekonsek">Henryk</a>, <a href="https://twitter.com/davsclaus">Claus</a> et <a href="https://twitter.com/rajdavies">Rob</a>), Nous avons commencé un nouveau projet lié à <a href="http://camel.apache.org">Apache-Camel</a> / ActiveMQ et à l’Internet des objets. Le projet est appelé <em><a href="https://github.com/camel-labs/camel-labs">Camel IoT Labs</a></em> et est disponible sur Github.</p>
+<p>Dans notre use case nous voulons vérifier la correspondance d’une chaine de caractères avec une URL. Pour cela nous allons créer une expression rationnel afin de vérifier la bonne correspondance.</p>
 
-<h2 id="ce-que-nous-sommes-en-train-de-raliser">Ce que nous sommes en train de réaliser</h2>
-<p>La premiere version de projet integrera differents composants pour Camel.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>?http<span class="p">|</span>ftp<span class="p">|</span>ssh<span class="p">|</span>amqp<span class="p">|</span>imap<span class="p">|</span>ws<span class="o">)(</span>?s<span class="o">)</span>?://<span class="o">(</span>?<span class="o">[</span>a-zA-Z.-<span class="o">]</span>+<span class="o">)(</span>:<span class="o">(</span>?<span class="o">[</span>0-9<span class="o">]</span>+<span class="o">))</span>?</code></pre></div>
 
-<ul>
-  <li>Raspberry Pi GPIO et  I2C basée sur la lib <a href="http://pi4j.com">Pi4j</a></li>
-  <li>Device IO basée sur l’API <a href="http://openjdk.java.net/projects/dio/">Device IO</a></li>
-  <li><a href="http://www.tinkerforge.com/">Tinkerforge</a></li>
-  <li><a href="https://eclipse.org/kura/">Eclipse Kura</a> WiFi</li>
-</ul>
+<p>Avec cette « regex », il est possible de vérifier les chaines suivantes par exemple :</p>
 
-<h2 id="le-matriel">Le Matériel</h2>
-<p>Nous sommes aussi en train de créer un <em>Camel IoT DevKit</em>. Ce kit de développement permettra de construire rapidement un exemple d’intégration des technologies suivantes : Camel, RaspberryPi, LED, GPS etc…
-Un premier exemple est disponible sur <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">ce blog ici</a>.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ftp://fileserver.domain:1223
+imaps://emailserver.domain:341</code></pre></div>
 
-<h2 id="backend-dans-le-cloud">Backend dans le cloud</h2>
-<p>Une solution IoT ne peut pas exister sans un backend sur le cloud. C’est pour cela que nous planifiions la création de <em>Cloudlets</em> (microservice basé sur Apache Camel intégrant un certain nombre de fonction de base backend). La première cible pour le moment sera Fabric8 avec OpenShift.</p>
+<h2 id="group-index"><em>Group</em> indexé</h2>
 
-<h2 id="envie-de-contribuer-">Envie de contribuer ?</h2>
-<p>Cela semble intéressant ? Conjuguons nos efforts ensemble ! Parcourez la <a href="https://github.com/camel-labs/camel-labs/issues">liste des demandes</a>, nous sommes ouverts à toutes les nouvelles idées. Les Pull Requests sont les bienvenues ;-).
-<br /></p>
+<p>Dans la plupart des langages, il est possible de récupérer les différentes parties avec la notion de <em>group</em> indexé. Par exemple, le premier <em>group</em> va correspondre au scheme à savoir http, ftp amqp, etc. ainsi de suite <em>group(1)</em>.</p>
 
-<h2 id="plus-de-liens">Plus de liens</h2>
+<h2 id="group-nomm"><em>Group</em> nommé</h2>
 
-<ul>
-  <li>Ce post est basé sur la <a href="http://henryk-konsek.blogspot.fr/2015/04/camel-iot-labs-project-arrived.html">version anglaise</a> d’Henryk Konsek (thx)</li>
-  <li>Le <a href="http://henryk-konsek.blogspot.fr/">blog d’Henryk Konsek</a> (IoT, MQTT etc…)</li>
-  <li><a href="https://github.com/camel-labs/camel-labs">Camel IoT Labs</a></li>
-  <li><a href="http://pi4j.com">Pi4j library</a></li>
-  <li><a href="http://raspberrypi.org">Raspberry Pi</a></li>
-  <li><a href="http://camel.apache.org">Apache-Camel</a></li>
-  <li><a href="/apropos/">Plus d’info sur moi</a></li>
-</ul>
+<p>Mais dans Java (je n’ai pas vérifié avec les autres langages), il est possible de nommé ces <em>group</em> comme ceci</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">&quot;(?&lt;scheme&gt;http|ftp|ssh|amqp|imap|ws)(?&lt;secure&gt;s)?://(?&lt;host&gt;[a-zA-Z.-]+)(:(?&lt;port&gt;[0-9]+))?&quot;</span></code></pre></div>
+
+<p>Ensuite, il est possible de retrouver la valeur récupérée du group capturé par l’expression rationnelle comme ceci <em>group(“scheme”)</em></p>
+
+<p>Voici un exemple complet de l’utilisation des group nommés avec Java.</p>
+
+<script src="https://gist.github.com/gautric/45c3f5c1a9566f83e50d.js"></script>
+
+<p>et voici l’output.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">scheme 	: ftp
+secure 	: <span class="nb">false</span>
+host 	: fileserver.domain
+port 	: 1223
+scheme 	: amqp
+secure 	: <span class="nb">false</span>
+host 	: momserver.domain
+port 	: 999
+scheme 	: imap
+secure 	: <span class="nb">true</span>
+host 	: emailserver.domain
+port 	: 341
+scheme 	: ws
+secure 	: <span class="nb">true</span>
+host 	: pushserver.domain
+port 	: 433</code></pre></div>
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>L’utilisation des <em>regex</em> permet de simplifier certains nombres de problematique de developpement. Malheureusement, elles sont parfois sous-utilisées par les developpeurs car elles sont parfois obscurent. En esperant, que les <em>group nommés</em> puissent les aider plus les utiliser.</p>
 
   </article>
 
