@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Il y a cent ans, « Le  Bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles. Suivant les plans du premier Lo..."/>
+  <meta name="description" content="La semaine dernière, j’étais à l’EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C’est à cet..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/06/25/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/06/25/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Il y a un siècle aux Dardanelles</title>
+  <title>Leshan et le standard Lightweight M2M à l'EclipseCon</title>
 </head>
 
   <body>
@@ -48,25 +48,302 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Il y a un siècle aux Dardanelles</h1>
+      <h1 class="post-title">Leshan et le standard Lightweight M2M à l'EclipseCon</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Mar 18, 2015  <a href="#fr">fr</a>  <a href="#histoire">histoire</a>  <a href="#divers">divers</a> </p>
-    <p>Il y a cent ans, <a href="http://fr.wikipedia.org/wiki/Bouvet_%28cuirass%C3%A9%29">« Le  Bouvet »</a> navire de <a href="http://fr.wikipedia.org/wiki/Marine_nationale_fran%C3%A7aise">la Royale (Marine Française)</a> était en expédition Franco-Britanique aux <a href="http://fr.wikipedia.org/wiki/D%C3%A9troit_des_Dardanelles">Dardanelles</a>. Suivant les plans du premier Lord de l’Amirauté, <a href="http://fr.wikipedia.org/wiki/Winston_Churchill">Winston Churchill</a>, l’expédition devait débarquer en Turquie dans le but de laisser libre l’accès à la Mer Noire libre, seul passage de ravitaillement vers la Russie Impériale.</p>
+    <p class="post-meta">Jun 25, 2015  <a href="#fr">fr</a>  <a href="#eclipsecon">eclipsecon</a>  <a href="#CoAP">CoAP</a>  <a href="#leshan">leshan</a>  <a href="#M2M">M2M</a>  <a href="#lightweight">lightweight</a>  <a href="#toulouse">toulouse</a> </p>
+    <p>La semaine dernière, j’étais à l’<a href="https://www.eclipsecon.org/france2015/">EclipseCon</a> qui se déroulait à Toulouse. Sponsor Bronze de cette édition <a href="https://www.redhat.com">Red Hat</a> (mon entreprise) avait <a href="https://www.flickr.com/groups/2812102@N25/pool/">un stand</a>. C’est à cette occasion que j’ai participé à un training concernant le protocole CoAP et notamment <a href="https://www.eclipsecon.org/france2015/session/hands-lightweight-m2m-run-smartwatch-internet-things">le standard LWM2M</a> dispensé par <a href="http://people.apache.org/~jvermillard/">Julien Vermillard</a> de chez <a href="http://www.sierrawireless.com/">Sierra Wireless</a>.</p>
 
-<p>Mais le navire percuta une mine sous-marine posée par les forces Ottomanes quelques jours auparavant. Le navire de la classe “Pré-Dreadnought”,  coula en quelques minutes seulement. Le commandant et son commandant en second, le capitaine de frégate <a href="http://fr.wikipedia.org/wiki/Jean_Autric">Jean-Baptiste Autric</a> périrent avec environs 650 autres marins du navire.</p>
+<h2 id="le-protocole-coap">Le protocole CoAP</h2>
 
-<p>Le capitaine de frégate “Jean-Baptiste Autric”, officier de la Légion d’Honneur, fut déclaré Mort pour la France le 18 mars 1915. Il avait senti que l’expédition allait virer à la catastrophe, il laissa donc à Toulon quelques effets personnels dont son sextant de marine. Le <a href="http://fr.wikipedia.org/wiki/Jean-Autric_(sous-marin)"> sous-marin Jean-Autric</a> ex-U-Boat 105 réquisitionné aux Allemands en dédommagement après la Première Guerre Mondiale fut baptisé en son honneur.</p>
+<p>Le protocole <a href="http://coap.technology/"><strong>CoAP</strong></a> pour Constrained Application Protocol  a été défini afin de répondre aux exigences très contraintes de l’internet des objets <em>IoT</em> et de la communication Machine 2 Machine <em>M2M</em> à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.
+Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :</p>
 
-<p>Il y a un siècle exactement aux Dardanelles des centaines de marins mourraient pour la France. Que leurs sacrifices nous servent aujourd’hui à construire une Europe plus unie et plus fraternelle que jamais.</p>
+<ul>
+  <li>Notion de resource via des URI</li>
+  <li>Verbe ou methode identique, GET, POST, DELETE, PUT (au format binaire)</li>
+  <li>Code retour similaire 2.01, 2.03, 4.01, 4.03, 4.04 (au format binaire)</li>
+</ul>
 
-<h4 id="liens-utiles-">Liens utiles :</h4>
+<h3 id="fonctionnalits">Fonctionnalités</h3>
 
-<p><a href="http://www.colsbleus.fr/articles/4133">La frégate La Fayette commémore le naufrage du Bouvet (Cols Bleus)</a></p>
+<p>Voici rapidement les principales fonctionalités du protocole (extrait de la <a href="https://tools.ietf.org/html/rfc7252">RFC 7252</a>) :</p>
+
+<ul>
+  <li>Protocole RESTful/<em>web-like</em> implementant l’ensemble des contraintes M2M,</li>
+  <li>Basé sur UDP (gestion de confimation, unicast, multicast),</li>
+  <li>Sécurité basé sur le Datagram Transport Layer Security version 1.2 (DTLS),</li>
+  <li>Notion d’URI et Content-type,</li>
+  <li>Message type Observe (mode push)</li>
+  <li>Faible empreinte réseau concernant les headers et metadata (format binaire),</li>
+  <li>Possibilité d’intégration d’un mécanisme de type proxy et cache,</li>
+  <li>Mapping transparent CoAP &lt;–&gt; HTTP.</li>
+</ul>
+
+<p>Nous allons voir maintenant le standard LWM2M.</p>
+
+<h2 id="le-standard-lwm2m">Le standard LWM2M</h2>
+
+<p>Le standard ajoute une couche d’abstraction au protocole CoAP permettant de gérer un certain nombre de problématique de l’Internet des Objets. En effet, les devices qui sont déployés dans le monde physique ont besoin de communiquer avec l’extérieur un certain nombre d’information. Ils (les devices) peuvent être relativement nombreux et nécessitent de pouvoir opérer des actions autres que les fonctionnalités pour lesquelles ils ont été conçus. Par exemple, il doit être possible de vérifier l’état de la batterie, rebooter le système, mettre à jour le firmware ou bien vérifier la valeur de tel ou tel attribut.
+Le standard s’occupe également de la gestion du parc des objets déployés avec des mécanismes de type :</p>
+
+<ul>
+  <li>Provisionning des devices,</li>
+  <li>Enregistrement des devices,
+<img src="/img/RDR.png" style="max-width:100%;" height="110" hspace="30" /></li>
+  <li>Management des devices,
+<img src="/img/RWE.png" style="max-width:100%;" height="110" hspace="30" /></li>
+  <li>Notification de changement.
+<img src="/img/ONCO.png" style="max-width:100%;" height="110" hspace="30" /></li>
+</ul>
+
+<h3 id="definitions">Definitions</h3>
+
+<p><a href="http://technical.openmobilealliance.org/Technical/technical-information/omna/lightweight-m2m-lwm2m-object-registry"><strong>LWM2M</strong></a> défini un certain nombre de concepts permettant de gérer l’ensemble de son spectre de compétence. Pour cela il normalise la notion de <em>Client</em>, d’<em>Object</em> et de <em>Resources</em>. Un <em>Client</em> peut être vu comme le device déployé et il possède un certain nombre d’<em>Object</em>, chacun de ces <em>Object</em> regroupe une collection de <em>Resources</em>. Par exemple, un GPS est un <em>Client</em> qui va posséder plusieurs <em>Objects</em> et donc plusieurs <em>Resources</em>. Un <em>Object</em> va regrouper un concept bien précis i.e : la localisation de l’objet (Long, Lat, Alt, Temps, etc) ou bien les informations concernant le device proprement dit (Model number, Serial number, firmware version, battery Level, temps, Memoire etc…). Le serveur LWM2M peut interroger aussi bien en lecture qu’en écriture les <em>Resources</em> de ces <em>Objects</em>, il peut aussi demander l’exécution d’un traitement (reboot, shutdown, etc…). Et grâce à l’utilisation des <em>URI</em>, le serveur peut récupérer l’ensemble des informations de l’<em>Object</em> (/3/0 –&gt; Device) ou bien la valeur d’une <em>Resource</em> bien précise (/3/0/2 –&gt; Serial Number).</p>
+
+<p>L’OMA normalise un certain nombre d’<em>Object</em> avec un ensemble de <em>Resources</em> associées.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object Name</th>
+      <th style="text-align: center">id</th>
+      <th style="text-align: center">singleton</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Security</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td>Server</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td>Access Control</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">false</td>
+    </tr>
+    <tr>
+      <td>Device</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td>Connectivity Monitoring</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td>Firmware</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">true</td>
+    </tr>
+    <tr>
+      <td>Connectivity Statistics</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">true</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+<strong>Connectivity Statistics</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th style="text-align: center">id</th>
+      <th style="text-align: center">type</th>
+      <th style="text-align: center">R/W/E</th>
+      <th style="text-align: right">units</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SMS Tx Counter</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: right"> </td>
+    </tr>
+    <tr>
+      <td>SMS Rx Counter</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: right"> </td>
+    </tr>
+    <tr>
+      <td>Tx Data</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: right">Kilo-Bytes</td>
+    </tr>
+    <tr>
+      <td>Rx Data</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: right">Kilo-Bytes</td>
+    </tr>
+    <tr>
+      <td>Max Message Size</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: right">Byte</td>
+    </tr>
+    <tr>
+      <td>Average Message Size</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">int</td>
+      <td style="text-align: center">R</td>
+      <td style="text-align: right">Byte</td>
+    </tr>
+    <tr>
+      <td>StartOrReset</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">E</td>
+      <td style="text-align: right"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<p>IPSO Alliance propose quant à lui un certain nombre d’<em>Objects</em> de plus haut niveau (GPIO A/N, Illuminance, Temperature, Accelerometre).
+<br /><br />
+<strong>IPSO Illuminance (3301)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribut</th>
+      <th style="text-align: center">id</th>
+      <th style="text-align: center">type</th>
+      <th style="text-align: center">R/W/E</th>
+      <th>units</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Min Measured Value</td>
+      <td style="text-align: center">5601</td>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">R</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Max Measured Value</td>
+      <td style="text-align: center">5602</td>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">R</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Min Range Value</td>
+      <td style="text-align: center">5603</td>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">R</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Max Range Value</td>
+      <td style="text-align: center">5604</td>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">R</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Reset Min and Max Measured Values</td>
+      <td style="text-align: center">5605</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">E</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sensor Value</td>
+      <td style="text-align: center">5606</td>
+      <td style="text-align: center">float</td>
+      <td style="text-align: center">R</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sensor Units</td>
+      <td style="text-align: center">5607</td>
+      <td style="text-align: center">string</td>
+      <td style="text-align: center">R</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="exemple">Exemple</h2>
+
+<p>Nous allons voir maintenant comment developper et utiliser notre le framework <a href="https://github.com/eclipse/leshan"><em>Leshan</em></a> qui est l’implémentation du standard LWM2M de la <a href="https://eclipse.org/org/"><em>Fondation Eclipse</em></a></p>
+
+<p>Pour cela commencons par la classe GPIOClient. Cette classe contient deux sous-classes interessantes <strong>Device</strong> qui représente les metadonnées de l’objet réel et la classe <strong>GPIO</strong> qui represente un broche de sortie de type numerique (ici elle sera simplement simulée).</p>
+
+<script src="https://gist.github.com/gautric/9db1570898c3487f3829.js##file-gpioclient-java-L102"></script>
+
+<p>Voici les captures d’écran du resultat lorsque le device s’enregistre au près du serveur.</p>
+
+<p><img src="/img/leshan_1.png" style="max-width:75%;" /></p>
+
+<p>Après un read de l’ensemble de la resource</p>
+
+<p><img src="/img/leshan_2.png" style="max-width:75%;" /></p>
+
+<div class="warn">
+L'instanciation de la GPIO / IPSO Digital Output se fait pour l'instant que depuis le serveur via une requete CREATE. Cette Fonctionnalité n'est pas encore présente directement depuis le client.
+</div>
+
+<p><img src="/img/leshan_3.png" style="max-width:75%;" /></p>
+
+<div class="warn">
+Les parametres ne sont pas encore bien envoyés lors de la création de l'objet, il est necessaire de les affecter/setter un par un.
+</div>
+
+<p><img src="/img/leshan_5.png" style="max-width:75%;" /></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">juil. 02, <span class="m">2015</span> 6:48:19 PM org.eclipse.californium.core.network.config.NetworkConfig createStandardWithFile
+INFOS: Loading standard properties from file Californium.properties
+juil. 02, <span class="m">2015</span> 6:48:19 PM org.eclipse.californium.core.CoapServer start
+INFOS: Starting server
+juil. 02, <span class="m">2015</span> 6:48:19 PM org.eclipse.californium.core.network.CoAPEndpoint start
+INFOS: Starting endpoint at /0.0.0.0:0
+Registered with id: /rd/FU6hLfHTXZ
+Write value state : <span class="nb">true</span>
+Write value polarity : <span class="nb">false</span>
+Write value applicationType : Ma nouvelle LED
+Read value state : <span class="nb">true</span>
+Read value state : <span class="nb">false</span>
+Read value applicationType : Ma nouvelle LED</code></pre></div>
+
+<div class="warn">
+Attention, le projet est encore jeune. Certaines fonctionnalités ne sont pas encore implémentées
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Le standard <a href="http://technical.openmobilealliance.org/Technical/technical-information/omna/lightweight-m2m-lwm2m-object-registry"><strong>LWM2M</strong></a> basé sur le protocole <a href="http://coap.technology/"><strong>CoAP</strong></a> permet de résoudre un certain nombre de problématique de l’Internet des Objets. Il offre un bon mix entre le monde Web <em>(RESTful)</em> et le monde IoT <em>(objet low-{cpu,battery,bantwith})</em>. En conservant la simplicité du monde Web (Uri, ressource, method HTTP-like, etc…), il abaisse le ticket d’entré de l’internet des objets aux mondes des développeurs venant du Web. Les faibles performances techniques sont aussi bien identifiés facilitant le de. La sécurité n’est pas en reste avec l’implémentation de certain mécanisme ou protocole comme le DTLS.
+La prochaine étape de mon travail sera d’intégrer ce framework dans le projet <a href="https://github.com/camel-labs/camel-labs"><strong>Camel IoT Labs</strong></a></p>
 
   </article>
 
@@ -77,6 +354,20 @@
 
 
     
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'greg-iopen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
 </div>
 
