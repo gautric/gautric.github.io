@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Yubikey est une clef de crypto qui permet d’avoir une authentification forte lors d’un processus de connexion à un site web (par ex : banque, web mail, etc…...."/>
+  <meta name="description" content="Yesterday, Wildfly community just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly the..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Yubico OTP et JBoss EAP 6 ou Wildfly 8</title>
+  <title>Wildfly 9.0 Offline CLI and HTTP/2</title>
 </head>
 
   <body>
@@ -48,326 +48,106 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Yubico OTP et JBoss EAP 6 ou Wildfly 8</h1>
+      <h1 class="post-title">Wildfly 9.0 Offline CLI and HTTP/2</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Mar 19, 2015  <a href="#fr">fr</a>  <a href="#otp">otp</a>  <a href="#yubico">yubico</a>  <a href="#yubikey">yubikey</a>  <a href="#jboss">jboss</a>  <a href="#eap">eap</a>  <a href="#wildfly">wildfly</a> </p>
-    <p><a href="https://www.yubico.com/">Yubikey</a> est une clef de crypto qui permet d’avoir une authentification forte lors d’un processus de connexion à un site web (par ex : banque, web mail, etc….). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d’authentification à leur service.
-L’utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation. Si le mot de passe est intercepté par un tiers, ce dernier ne peut pas le rejouer pour s’authentifier.</p>
+    <p class="post-meta">Jul 3, 2015  <a href="#en">en</a>  <a href="#wildfly">wildfly</a>  <a href="#9.0">9.0</a>  <a href="#Offline">Offline</a>  <a href="#CLI">CLI</a>  <a href="#HTTP/2">HTTP/2</a>  <a href="#JDK8">JDK8</a> </p>
+    <p>Yesterday, Wildfly community just released <a href="http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/"><strong><em>Wildfly 9.0.0.Final</em></strong></a>, the last Application Server version. As I talked on my previous <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">French post about Wildfly</a> they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup <a href="https://en.wikipedia.org/wiki/HTTP/2"><strong><em>HTTP/2</em></strong></a> with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.</p>
 
 <blockquote>
-  <p>But : Integration d’une authentification OTP via Yubico avec un serveur JBoss EAP.</p>
+  <p>How to setup HTTP/2 configuration into Wildfly 9.0.0.Final with offline mode.</p>
 </blockquote>
 
-<h2 id="premire-tape--le-matriel">Première étape : Le matériel</h2>
+<h2 id="download-wildfly">Download Wildfly</h2>
 
-<p>Pour cet exemple, les pré-requis suivants sont nécessaires :</p>
+<p>Please download it following <a href="http://wildfly.org/downloads/">this link</a>.</p>
 
-<ul>
-  <li>un clef Yubico (<a href="https://store.yubico.com/">à commander ici</a>)
-    <ul>
-      <li>testé avec YubiKey NEO-n,</li>
-      <li>cela doit fonctionner avec une YubiKey Nano ou YubiKey Neo</li>
-    </ul>
-  </li>
-  <li>une instance <a href="http://www.redhat.com/en">JBoss EAP</a> ou <a href="http://www.wildfly.org/">Wildlfy</a>
-    <ul>
-      <li>testé avec instance EAP 6.3</li>
-      <li>cela doit fonctionner avec toutes les versions JBoss EAP 6.X</li>
-      <li>cela doit fonctionner avec les Wildfly 8+</li>
-    </ul>
-  </li>
-</ul>
+<h2 id="installation">Installation</h2>
 
-<p>Cet exemple utilise le service Yubico Cloud Service, le serveur doit pouvoir se connecter à Internet afin de valider le token OTP.</p>
+<p>After downloading it, you just have to unzip it into your folder like this :</p>
 
-<h2 id="deuxime-tape--compiler-le-client-yubico-java">Deuxième étape : Compiler le client Yubico Java</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar -zxvf wildfly-9.0.0.Final.tar.gz</code></pre></div>
 
-<p>Recupérer le code source yubico-java-client et le compiler :</p>
+<h2 id="x509-certificate">X509 Certificate</h2>
 
-<pre><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
-greg@a.net&gt; cd yubico-java-client  
-greg@a.net&gt; mvn clean package  
+<p>HTTP/2 doesn’t need an encryption layer for transport, but we gonna implement it in this example.</p>
 
-.... OMIT .....  
+<p>Create a self-signed certificate</p>
 
-[INFO] ------------------------------------------------------------------------  
-[INFO] Reactor Summary:  
-[INFO]  
-[INFO] Yubico OTP validation client ....................... SUCCESS [  0.003 s]  
-[INFO] Yubico OTP validation client protocol 1 ............ SUCCESS [  2.254 s]  
-[INFO] Yubico OTP validation client protocol 2 ............ SUCCESS [  3.798 s]  
-[INFO] Yubico JAAS module ................................. SUCCESS [  0.710 s]  
-[INFO] yubico-demo-server ................................. SUCCESS [  2.782 s]  
-[INFO] ------------------------------------------------------------------------  
-[INFO] BUILD SUCCESS  
-[INFO] ------------------------------------------------------------------------  
-[INFO] Total time: 9.704 s  
-[INFO] Finished at: 2015-03-01T16:42:11+01:00  
-[INFO] Final Memory: 39M/228M  
-[INFO] ------------------------------------------------------------------------  
-greg@a.net&gt;  
-</code></pre>
+<script src="https://gist.github.com/gautric/0a1d6b33fef9778d83b0.js"></script>
 
-<p>Vous allez recuperer deux JARs</p>
+<p>Export it for your web browser</p>
 
-<p>Le premier JAR est le client au Cloud Yubico, le second est l’implementation du login module JAAS.</p>
+<script src="https://gist.github.com/gautric/0208abcfdedc78b6471f.js"></script>
 
-<ul>
-  <li>Le client Yubico Cloud controle et verifie l’OTP fourni par la clef Yubico et retourne une validation.
-    <ul>
-      <li><strong>Client OTP Yubico OTP</strong> (protocole 2) : yubico-validation-client2-{Version}.jar</li>
-    </ul>
-  </li>
-  <li>Le login module Yubico fourni l’implementation à plugger dans le serveur JBoss, il va faire appel à l’Yubico Cloud via son client et son API.
-    <ul>
-      <li><strong>Module JAAS Yubico</strong> : yubico-jaas-module-{Version}.jar</li>
-    </ul>
-  </li>
-</ul>
+<h2 id="secure-configuration">Secure configuration</h2>
 
-<h2 id="troisime-tape-creation-du-module-jboss-yubico">Troisième étape: Creation du Module JBoss Yubico</h2>
+<p>Due of some JDK 8 limitations, <a href="http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html">ALPN</a> isn’t supported natively by JDK 8. We will download it from the <a href="https://eclipse.org/org/"><em>Eclipse Foundation</em></a>. This feature is mandatory for the HTTP/2 protocol with encryption.</p>
 
-<p>JBoss ne propose pas par defaut de module Yubico, il faut le créer <em>module.xml</em> :</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">ALPN_VERSION</span><span class="o">=</span>8.1.3.v20150130
+curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar &gt; <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
+<span class="nb">export </span><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;$JAVA_OPTS -Xbootclasspath/p:`pwd`/alpn-boot-$ALPN_VERSION.jar&quot;</span></code></pre></div>
 
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
-&lt;!--  
-  ~ JBoss, Home of Professional Open Source.  
-  ~ Copyright 2014, Red Hat, Inc., and individual contributors  
-  ~ as indicated by the @author tags. See the copyright.txt file in the  
-  ~ distribution for a full listing of individual contributors.  
-  ~  
-  ~ This is free software; you can redistribute it and/or modify it  
-  ~ under the terms of the GNU Lesser General Public License as  
-  ~ published by the Free Software Foundation; either version 2.1 of  
-  ~ the License, or (at your option) any later version.  
-  ~  
-  ~ This software is distributed in the hope that it will be useful,  
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of  
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU  
-  ~ Lesser General Public License for more details.  
-  ~  
-  ~ You should have received a copy of the GNU Lesser General Public  
-  ~ License along with this software; if not, write to the Free  
-  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  
-  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.  
-  --&gt;  
+<h2 id="configure-the-http2-into-undertow">Configure the HTTP/2 into Undertow</h2>
 
-&lt;module xmlns="urn:jboss:module:1.1" name="com.yubico"&gt;  
-   &lt;resources&gt;  
-     &lt;resource-root path="yubico-jaas-module-3.0.0-SNAPSHOT.jar"/&gt;  
-     &lt;resource-root path="yubico-validation-client2-3.0.0-SNAPSHOT.jar"/&gt;  
-     &lt;resource-root path="vt-ldap-3.3.3.jar"/&gt;  
-   &lt;/resources&gt;  
-   &lt;dependencies&gt;  
-     &lt;module name="org.picketbox"/&gt;  
-     &lt;module name="javax.api"/&gt;  
-     &lt;module name="org.slf4j"/&gt;  
-     &lt;module name="org.apache.commons.codec" /&gt;  
-     &lt;module name="javax.security.jacc.api" /&gt;   &lt;!-- for a future propose --&gt;  
-     &lt;module name="javax.servlet.api"/&gt;          &lt;!-- for a future propose --&gt;  
-     &lt;module name="org.jboss.common-core"/&gt;      &lt;!-- for a future propose --&gt;  
-   &lt;/dependencies&gt;  
-&lt;/module&gt;  
-</code></pre>
+<p>Now, the best part, Wildly isn’t running yet and we will execute some Offline CLI commands to configure the standalone instance.
+To use the offline mode, we just have to use the <strong><em>embed-server</em></strong> command. This command runs an internal Wildly process and will interact directly with it.</p>
 
-<p>Copier le ainsi que les jar dans le répertoire suivant :</p>
+<script src="https://gist.github.com/gautric/546b92951b9e91195f84.js"></script>
 
-<pre><code>$JBOSS_HOME/module/com/yubico/main
-</code></pre>
+<p>As you should know <a href="http://undertow.io/"><strong><em>Undertow</em></strong></a> is now the JBoss embedded HTTP Webserver, we gonna configure it to enable http2 after we’ve configured the new security realm.
+You should get an output result like this</p>
 
-<p>Ne pas oublier le copier le jar suivant, à récupérer de son cache maven après compilation :</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">You are disconnected at the moment. Type <span class="s1">&#39;connect&#39;</span> to connect to the server or <span class="s1">&#39;help&#39;</span> <span class="k">for</span> the list of supported commands.
+<span class="o">[</span>disconnected /<span class="o">]</span> embed-server
+<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https:add<span class="o">()</span>
+<span class="o">{</span><span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span><span class="o">}</span>
+<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/authentication<span class="o">=</span>truststore:add<span class="o">(</span>keystore-path<span class="o">=</span>server.truststore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
+<span class="o">{</span>
+    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
+    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
+        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
+        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/server-identity<span class="o">=</span>ssl:add<span class="o">(</span>keystore-path<span class="o">=</span>server.keystore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
+<span class="o">{</span>
+    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
+    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
+        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
+        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="o">[</span>standalone@embedded /<span class="o">]</span> /subsystem<span class="o">=</span>undertow/server<span class="o">=</span>default-server/https-listener<span class="o">=</span>https:add<span class="o">(</span>socket-binding<span class="o">=</span>https, security-realm<span class="o">=</span>https, <span class="nb">enable</span>-http2<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
+    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span><span class="o">}</span>
+<span class="o">}</span>
+<span class="o">[</span>standalone@embedded /<span class="o">]</span> reload --admin-only<span class="o">=</span><span class="nb">false</span>
+<span class="o">[</span>standalone@embedded /<span class="o">]</span></code></pre></div>
 
-<pre><code>edu.vt.middleware:vt-ldap:3.3.3
-</code></pre>
+<h2 id="startup-jboss">Startup JBoss</h2>
 
-<p>Tips : Pour mode debug rapide, faire un lien symbolique (Unix like seulement)</p>
+<p>After a full correct configuration, you can startup the JBoss instance as usual.</p>
 
-<h2 id="me-tape--get-client-id--secret-key-for-your-jboss-instance">4ème étape : Get client Id &amp; Secret Key for your JBoss Instance</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$JBOSS_HOME</span>/bin/standalone.sh</code></pre></div>
 
-<p>Pour utiliser le Service Cloud Yubico, il est nécessaire de générer un Client Id et un Secret Key (ou aussi Client Key)</p>
+<h2 id="check-it">Check it</h2>
 
-<p><a href="https://upgrade.yubico.com/getapikey/">https://upgrade.yubico.com/getapikey/</a></p>
+<p>After a very quick JBoss startup (about 3s), you can check <a href="https://localhost:8443/"><strong><em>the welcome page</em></strong></a> with your favorite browser like Firefox .
+I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
 
-<p><img src="/img/yubico-api-1.png" alt="Yubico API step 1" /></p>
+<p><img src="/img/wildfly9-http2-offline.png" style="max-width:75%;" /></p>
 
-<p>–</p>
-
-<p><img src="/img/yubico-api-2.png" alt="Yubico API step 2" /></p>
-
-<p>Info utilisées en <a href="#me-tape--la-configuration-de-linstance-jboss">7ème étape</a></p>
-
-<h2 id="me-tape--le-publicid-des-yubico-key-de-vos-utilisateurs">5ème étape : Le PublicId des Yubico Key de vos utilisateurs</h2>
-
-<p>Chacun de vos utilisateurs doit vous fournir le PublicId de sa clef via la site suivant :</p>
-
-<p><a href="https://demo.yubico.com/start/otp/standard">https://demo.yubico.com/start/otp/standard</a></p>
-
-<p><img src="/img/yubico-key-1.png" alt="Yubico KEY step 1" /></p>
-
-<p>–</p>
-
-<p><img src="/img/yubico-key-2.png" alt="Yubico KEY step 2" /></p>
-
-<p>Utiliser le champ Identity comme <em>PublicId</em></p>
-
-<h2 id="me-tape--cration-de-la-correspondance-entre-le-publicid-et-le-login-de-lutilisateur">6ème étape : Création de la correspondance entre le PublicId et le Login de l’utilisateur</h2>
-
-<p>Créer un fichier de correspondance entre le PublicId de l’utilisateur et son login, comme ceci :</p>
-
-<pre><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
-yk.&lt;PublicId&gt;.user = &lt;login&gt;  
-</code></pre>
-
-<p>Il s’agit d’une option au module JAAS Yubico pour authentifier l’utilisateur.
-Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
-
-<h2 id="me-tape--la-configuration-de-linstance-jboss">7ème étape : La configuration de l’instance JBoss</h2>
-
-<p>Création d’un security domaine dans le fichier standalone.xml.</p>
-
-<pre><code>&lt;security-domain name="yubico-auth" cache-type="default"&gt;  
-      &lt;authentication&gt;  
-          &lt;login-module code="com.yubico.jaas.YubikeyLoginModule" flag="required" module="com.yubico"&gt;  
-              &lt;module-option name="clientId" value="12123"/&gt;  
-              &lt;module-option name="clientKey" value="U873jhsYT629uuh7gban65+p2Io="/&gt; &lt;!-- client Key aka secret Key --&gt;  
-              &lt;module-option name="id2name_textfile" value="${jboss.server.config.dir}/id2name_textfile.conf"/&gt;  
-          &lt;/login-module&gt;  
-      &lt;/authentication&gt;  
-      &lt;mapping&gt;  
-          &lt;mapping-module code="SimpleRoles" type="role"&gt;  &lt;!-- for example only --&gt;  
-              &lt;module-option name="&lt;PublicId&gt;" value="manager"/&gt;  
-          &lt;/mapping-module&gt;  
-      &lt;/mapping&gt;  
-&lt;/security-domain&gt;  
-</code></pre>
-
-<p>On configure ensuite un module mapping pour récuperer les rôles de l’utilisateur.
-Il est bien sûr possible de changer via une autre source de données.</p>
-
-<h2 id="me-tape--configuration-de-lapplication-java-ee">8ème étape : Configuration de l’application JAVA EE</h2>
-
-<p>Du pur standard JBoss, inclure le nom du security domain dans le fichier jboss-web.xml, comme suit :</p>
-
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
-&lt;jboss-web&gt;  
-   &lt;security-domain&gt;yubico-auth&lt;/security-domain&gt;  
-&lt;/jboss-web&gt;
-</code></pre>
-
-<h2 id="me-tape--cration-du-mcanisme-dauthentification">9ème étape : Création du mécanisme d’authentification</h2>
-
-<p>Dans la page de formulaire de login.</p>
-
-<pre><code>&lt;form method='post' action='j_security_check'&gt;  
-  &lt;input type='text' name='j_username'&gt;  
-  &lt;input type='password' name='j_password'&gt;  
-&lt;/form&gt;  
-</code></pre>
-
-<p>dans le fichier web.xml</p>
-
-<pre><code>&lt;web-app&gt;  
-&lt;security-constraint&gt;  
-  &lt;web-resource-collection&gt;  
-   &lt;web-resource-name&gt;User Auth&lt;/web-resource-name&gt;  
-   &lt;url-pattern&gt;/auth/*&lt;/url-pattern&gt;  
-  &lt;/web-resource-collection&gt;  
-&lt;auth-constraint&gt;  
-  &lt;role-name&gt;admin&lt;/role-name&gt;  
-  &lt;role-name&gt;manager&lt;/role-name&gt;  
-&lt;/auth-constraint&gt;  
-&lt;/security-constraint&gt;  
-
-&lt;login-config&gt;  
-&lt;auth-method&gt;FORM&lt;/auth-method&gt;  
-  &lt;realm-name&gt;User Auth&lt;/realm-name&gt;  
-  &lt;form-login-config&gt;  
-   &lt;form-login-page&gt;login.jsp&lt;/form-login-page&gt;  
-   &lt;form-error-page&gt;error.jsp&lt;/form-error-page&gt;  
-  &lt;/form-login-config&gt;  
-&lt;/login-config&gt;  
-
-&lt;security-role&gt;  
-  &lt;role-name&gt;admin&lt;/role-name&gt;  
-&lt;/security-role&gt;  
-&lt;security-role&gt;  
-  &lt;role-name&gt;manager&lt;/role-name&gt;  
-&lt;/security-role&gt;  
-&lt;/web-app&gt;  
-</code></pre>
-
-<p>NB : Il est possible dans notre exemple de configurer le mode BASIC authentication.</p>
-
-<h2 id="me-tape--test-et-mode-debug">10ème étape : Test et mode debug</h2>
-
-<p>Afin de contrôler le bon fonctionnement on passe en mode log verbeu</p>
-
-<pre><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
-DEBUG [org.apache.catalina.authenticator]  Security checking request GET /form-auth/  
-DEBUG [org.apache.catalina.authenticator]   Calling hasUserDataPermission()  
-DEBUG [org.apache.catalina.authenticator]   Calling authenticate()  
-DEBUG [org.apache.catalina.authenticator]  Save request in session 'bIbbT0CwH9ICDj-apERnL29O'  
-DEBUG [org.apache.catalina.authenticator]   Failed authenticate() test  
-TRACE [org.jboss.as.web.security]  End invoke, caller=null  
-TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
-DEBUG [org.apache.catalina.authenticator]  Security checking request POST /form-auth/j_security_check  
-DEBUG [org.apache.catalina.authenticator]  Authenticating username '&lt;LOGIN_USER&gt;'  
-DEBUG [com.yubico.jaas.YubikeyLoginModule]  Initializing YubikeyLoginModule  
-DEBUG [com.yubico.jaas.YubikeyLoginModule]  Trying to instantiate com.yubico.jaas.impl.YubikeyToUserMapImpl  
-DEBUG [com.yubico.jaas.YubikeyLoginModule]  Begin OTP login  
-TRACE [com.yubico.jaas.YubikeyLoginModule]  Checking OTP &lt;XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY&gt;  
-TRACE [com.yubico.jaas.YubikeyLoginModule]  OTP &lt;XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY&gt; verify result : OK  
-INFO  [com.yubico.jaas.YubikeyLoginModule]  OTP verified successfully (YubiKey id XXXXXXXXXXXX)  
-DEBUG [com.yubico.jaas.YubikeyLoginModule]  Check if YubiKey XXXXXXXXXXXX belongs to user LOGIN_USER  
-TRACE [com.yubico.jaas.YubikeyLoginModule]  In commit()  
-DEBUG [com.yubico.jaas.YubikeyLoginModule]  Committing principal &lt;YubikeyPrincipal&gt;XXXXXXXXXXXX  
-TRACE [org.jboss.as.web.security]  User: &lt;LOGIN_USER&gt; is authenticated  
-DEBUG [org.apache.catalina.authenticator]  Authentication of '&lt;LOGIN_USER&gt;' was successful  
-DEBUG [org.apache.catalina.authenticator]  Redirecting to original '/form-auth/'  
-DEBUG [org.apache.catalina.authenticator]   Failed authenticate() test ??/form-auth/j_security_check  
-TRACE [org.jboss.as.web.security]  End invoke, caller=null  
-TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
-TRACE [org.jboss.as.web.security]  Restoring principal info from cache  
-DEBUG [org.apache.catalina.authenticator]  Security checking request GET /form-auth/  
-DEBUG [org.apache.catalina.authenticator]   Calling hasUserDataPermission()  
-DEBUG [org.apache.catalina.authenticator]   Calling authenticate()  
-DEBUG [org.apache.catalina.authenticator]  Restore request from session 'bIbbT0CwH9ICDj-apERnL29O'  
-DEBUG [org.apache.catalina.authenticator]  Authenticated '&lt;LOGIN_USER&gt;' with type 'FORM'  
-DEBUG [org.apache.catalina.authenticator]  Proceed to restored request  
-DEBUG [org.apache.catalina.authenticator]   Calling accessControl()  
-TRACE [org.jboss.as.web.security]  hasRole:RealmBase says:true::Authz framework says:true:final=true  
-TRACE [org.jboss.as.web.security]  hasResourcePermission:RealmBase says:true::Authz framework says:true:final=true  
-DEBUG [org.apache.catalina.authenticator]   Successfully passed all security constraints  
-TRACE [org.jboss.as.web.security]  End invoke, caller=null  
-</code></pre>
-
-<p>Dans les traces, on retrouve les principales informations de l’utilisateur :</p>
-
-<pre><code>&lt;LOGIN_USER&gt; : the login user
-XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY : the OTP sent to Yubico Cloud Service
-XXXXXXXXXXXX : the Public Id, the Yubico key user
-</code></pre>
-
-<h4 id="liens-utiles-">Liens utiles :</h4>
+<h3 id="usefull-links">Usefull links</h3>
 
 <ul>
-  <li>
-    <p><img id="en" src="/img/flag-uk.png" width="23" height="23" alt="English version" /> <a href="https://developer.jboss.org/wiki/YubicoOTPAndJBossEAP6OrWildfly8">Yubico OTP and JBoss EAP 6 or Wildfly 8</a></p>
-  </li>
-  <li><a href="http://yubico.github.io/yubico-java-client/">http://yubico.github.io/yubico-java-client/</a></li>
-  <li><a href="https://docs.jboss.org/author/display/AS7/Authentication+Modules">Authentication Modules - JBoss AS 7.0</a></li>
-  <li><a href="https://developer.jboss.org/wiki/JBossAS7SecurityCustomLoginModules">JBoss AS7: Security : Custom Login Modules</a></li>
-  <li><a href="http://java.dzone.com/articles/creating-custom-login-modules">Creating Custom Login Modules In JBoss AS 7 (and Earlier)</a></li>
-</ul>
-
-<h4 id="glossaire-">Glossaire :</h4>
-<ul>
-  <li><a href="http://en.wikipedia.org/wiki/One-time_password">OTP</a></li>
+  <li><a href="https://developer.jboss.org/wiki/OfflineCLIWork">Offline CLI</a></li>
+  <li><a href="http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html">HTTP/2</a></li>
 </ul>
 
   </article>
