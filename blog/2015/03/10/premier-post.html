@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Aujourd’hui, l’internet des objets ou aussi appelé IoT prend de plus en plus de place dans l’industrie informatique et non informatique. Des montres Withings..."/>
+  <meta name="description" content="Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/10/premier-post.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/03/10/premier-post.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Les premiers jours du projet Camel IoT Labs</title>
+  <title>Premier post</title>
 </head>
 
   <body>
@@ -48,54 +48,19 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Les premiers jours du projet Camel IoT Labs</h1>
+      <h1 class="post-title">Premier post</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Apr 25, 2015  <a href="#fr">fr</a>  <a href="#camel">camel</a>  <a href="#IoT">IoT</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#pi4j">pi4j</a>  <a href="#DeviceIO">DeviceIO</a>  <a href="#Tinkerforge">Tinkerforge</a>  <a href="#Kura">Kura</a> </p>
-    <p>Aujourd’hui, l’internet des objets ou aussi appelé IoT prend de plus en plus de place dans l’industrie informatique et non informatique. Des montres <a href="http://www.withings.com/fr/withings-activite.html">Withings</a>, aux <a href="http://raspberrypi.org">Raspberry Pi</a> vendus à 5M d’unités, en passant par les plaques <a href="http://www.arduino.cc/">Arduino</a> low cost et autres modules <a href="https://tessel.io/">Tessel</a>, le cout de production des objets électroniques baissant, a permis une large diffusion de ces nouveaux objets.</p>
+    <p class="post-meta">Mar 10, 2015  <a href="#en">en</a>  <a href="#fr">fr</a>  <a href="#ja">ja</a>  <a href="#divers">divers</a> </p>
+    <p>Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.</p>
 
-<p><img src="/img/camel-labs.png" style="max-width:120%;" align="left" height="110" hspace="30" /> En 2012, les premiers RaspberryPi sont lancés sur le marché, j’en ai acheté un. Depuis j’ai presque tout les modèles Brev1, Brev2, B+ et B2 ;-). J’ai aussi repris mon fer à souder, comme dans mes années lycée. Mais, à l’époque pas beaucoup d’internet, pas beaucoup de standard, pas beaucoup de matériel. Aujourd’hui il y a presque tout. Il ne reste plus qu’a assembler dans des briques physiques des briques logicielles plus ou moins évoluées.</p>
+<p>I will post here my articles. I look forward to seeing you.</p>
 
-<p>Un précédent projet pour un constructeur automobile m’avait bien intéressé. Il s’agissait d’intégrer dans les voitures des applications web, un store d’application et de l’internet embarqué. J’ai commencé à me documenter sur les techno M2M et donc je me suis tourné naturellement vers les protocoles comme <a href="http://mqtt.org/">MQTT</a> ou bien <a href="https://www.amqp.org/">AMQP</a>, les frameworks EIP et le materiel autres que les RaspberryPi.</p>
-
-<p>Avec certains de mes amis de chez Red Hat (bonjour <a href="https://twitter.com/hekonsek">Henryk</a>, <a href="https://twitter.com/davsclaus">Claus</a> et <a href="https://twitter.com/rajdavies">Rob</a>), Nous avons commencé un nouveau projet lié à <a href="http://camel.apache.org">Apache-Camel</a> / ActiveMQ et à l’Internet des objets. Le projet est appelé <em><a href="https://github.com/camel-labs/camel-labs">Camel IoT Labs</a></em> et est disponible sur Github.</p>
-
-<h2 id="ce-que-nous-sommes-en-train-de-raliser">Ce que nous sommes en train de réaliser</h2>
-<p>La premiere version de projet integrera differents composants pour Camel.</p>
-
-<ul>
-  <li>Raspberry Pi GPIO et  I2C basée sur la lib <a href="http://pi4j.com">Pi4j</a></li>
-  <li>Device IO basée sur l’API <a href="http://openjdk.java.net/projects/dio/">Device IO</a></li>
-  <li><a href="http://www.tinkerforge.com/">Tinkerforge</a></li>
-  <li><a href="https://eclipse.org/kura/">Eclipse Kura</a> WiFi</li>
-</ul>
-
-<h2 id="le-matriel">Le Matériel</h2>
-<p>Nous sommes aussi en train de créer un <em>Camel IoT DevKit</em>. Ce kit de développement permettra de construire rapidement un exemple d’intégration des technologies suivantes : Camel, RaspberryPi, LED, GPS etc…
-Un premier exemple est disponible sur <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">ce blog ici</a>.</p>
-
-<h2 id="backend-dans-le-cloud">Backend dans le cloud</h2>
-<p>Une solution IoT ne peut pas exister sans un backend sur le cloud. C’est pour cela que nous planifiions la création de <em>Cloudlets</em> (microservice basé sur Apache Camel intégrant un certain nombre de fonction de base backend). La première cible pour le moment sera Fabric8 avec OpenShift.</p>
-
-<h2 id="envie-de-contribuer-">Envie de contribuer ?</h2>
-<p>Cela semble intéressant ? Conjuguons nos efforts ensemble ! Parcourez la <a href="https://github.com/camel-labs/camel-labs/issues">liste des demandes</a>, nous sommes ouverts à toutes les nouvelles idées. Les Pull Requests sont les bienvenues ;-).
-<br /></p>
-
-<h2 id="plus-de-liens">Plus de liens</h2>
-
-<ul>
-  <li>Ce post est basé sur la <a href="http://henryk-konsek.blogspot.fr/2015/04/camel-iot-labs-project-arrived.html">version anglaise</a> d’Henryk Konsek (thx)</li>
-  <li>Le <a href="http://henryk-konsek.blogspot.fr/">blog d’Henryk Konsek</a> (IoT, MQTT etc…)</li>
-  <li><a href="https://github.com/camel-labs/camel-labs">Camel IoT Labs</a></li>
-  <li><a href="http://pi4j.com">Pi4j library</a></li>
-  <li><a href="http://raspberrypi.org">Raspberry Pi</a></li>
-  <li><a href="http://camel.apache.org">Apache-Camel</a></li>
-  <li><a href="/apropos/">Plus d’info sur moi</a></li>
-</ul>
+<p>私は　ここに　私のブログを　書きます。</p>
 
   </article>
 
@@ -106,20 +71,6 @@ Un premier exemple est disponible sur <a href="/blog/2015/04/03/apache-camel-ras
 
 
     
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'greg-iopen';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
 
 </div>
 

@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture."/>
+  <meta name="description" content="After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.Yesterday, I update my favorite laptop it’s a MacbookPro [ja ..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/11/premier-post.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/03/11/premier-post.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Premier post</title>
+  <title>SSH tunnel through iCloud to MacOS X (El Capitan)</title>
 </head>
 
   <body>
@@ -48,19 +48,121 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Premier post</h1>
+      <h1 class="post-title">SSH tunnel through iCloud to MacOS X (El Capitan)</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Mar 11, 2015  <a href="#en">en</a>  <a href="#fr">fr</a>  <a href="#ja">ja</a>  <a href="#divers">divers</a> </p>
-    <p>Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.</p>
+    <p class="post-meta">Oct 3, 2015  <a href="#en">en</a>  <a href="#MacOS">MacOS</a>  <a href="#SSH">SSH</a>  <a href="#tunnel">tunnel</a>  <a href="#iCloud">iCloud</a>  <a href="#El-Capitan">El-Capitan</a> </p>
+    <p>After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.
+Yesterday, I update my favorite laptop it’s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box. For some time, I was looking for some out of the box stuff to connect to my MacMini with SSH via iCloud stack.
+Finally, I google it and I found some good infos/news about this issue.</p>
 
-<p>I will post here my articles. I look forward to seeing you.</p>
+<blockquote>
+  <p>How to setup a SSH tunnel via iCloud with 2 Macs</p>
+</blockquote>
 
-<p>私は　ここに　私のブログを　書きます。</p>
+<p>Let’s see how to do it.</p>
+
+<h2 id="requisites">Requisites</h2>
+
+<ul>
+  <li>Have two mac
+    <ul>
+      <li>laptop one (MacbookPro) directly connected or not to Internet</li>
+      <li>server one (MacMini) behind an Internet box</li>
+    </ul>
+  </li>
+  <li>Have an iCloud account</li>
+</ul>
+
+<h2 id="back-to-my-mac-setup-macmini">Back to my Mac setup (MacMini)</h2>
+
+<p>Check the correct option into your iCloud account inside the MacMini server configuration panel.</p>
+
+<p><img src="/img/icloudbacktomymac.png" width="50%" height="50%" /></p>
+
+<p>You should show now you MacMini server available into your Finder’s left panel.</p>
+
+<p><img src="/img/icloudselectmacmini.png" width="25%" height="25%" /></p>
+
+<p><a href="https://support.apple.com/en-us/HT204618">More information to the official Apple help center</a></p>
+
+<h2 id="locate-macmini-server">Locate MacMini server</h2>
+
+<p>First of all, we need to retrieve connection information to use ssh protocol.
+We gonna use some commands line to find your MacMini trough the iCloud.</p>
+
+<h3 id="first-step">First step</h3>
+
+<p>we need to find our iCloud account and our iCloud FQN DNS name</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> dns-sd -E
+
+Looking <span class="k">for</span> recommended registration domains:
+DATE: ---Fri <span class="m">02</span> Oct 2015---
+20:29:07.366  ...STARTING...
+Timestamp     Recommended Registration domain
+20:29:07.367  Added     <span class="o">(</span>More<span class="o">)</span>               <span class="nb">local</span>
+20:29:07.367  Added                          icloud.com
+                                             - &gt; btmm
+                                             - - &gt; members
+                                             - - - &gt; 1122334455</code></pre></div>
+
+<p>My iCloud FQN DNS name is <em>1122334455.members.btmm.icloud.com</em></p>
+
+<h3 id="second-step">Second step</h3>
+
+<p>After finding our iCloud DNS name, we gonna retrieve our MacMini server with ZeroConf/Boujour Protocol.
+To find it we will use an other command line. This command collects all machine plugged with your iCloud account and sharing <em>_ssh</em> service.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> dns-sd -B _ssh 1122334455.members.btmm.icloud.com
+
+Browsing <span class="k">for</span> _ssh._tcp.1122334455.members.btmm.icloud.com
+DATE: ---Fri <span class="m">02</span> Oct 2015---
+20:34:10.344  ...STARTING...
+Timestamp     A/R    Flags  <span class="k">if</span> Domain               Service Type         Instance Name
+20:34:10.345  Add        <span class="m">3</span>   <span class="m">0</span> 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacMini
+20:34:10.345  Add        <span class="m">2</span>   <span class="m">0</span> 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacBookPro</code></pre></div>
+
+<h3 id="last-but-not-least-step">Last but not least step</h3>
+
+<p>We find our iCloud FQN DNS and our MacMini name. Now we can connect to it through the iCloud tunnel.
+If your server name contains some “ “/space character, replace it with “-“/dash one (<em>sed -e “s/[[:space:]]/-/g”</em>).</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> ssh MacMini.1122334455.members.btmm.icloud.com
+Last login: Fri Oct  <span class="m">2</span> 21:18:27 <span class="m">2015</span> from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+<span class="o">[</span>mac-mini:~<span class="o">]</span><span class="nv">$&gt;</span></code></pre></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Connection through the iCloud service is quite easy. Unfortunately, there are few documentations for geek and tech user but with the Unix/Linux commands you can retrieve lot of familiar stuff you like.
+Now it is a really new service I’ve built and I don’t have a huge feedback, but let’s use it !!!</p>
+
+<h2 id="last-tip-cest-cadeau">Last tip (c’est cadeau)</h2>
+
+<p>To facilitate your ssh connection, you can use ssh config file (<em>.ssh/config</em>) to logon to your MacMini server.
+Just edit it with your personal text editor (atom for example).</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Host MacMini_iCloud
+  HostName MacMini.1122334455.members.btmm.icloud.com
+  User XXXXX
+  ServerAliveInterval 10
+  ServerAliveCountMax 6</code></pre></div>
+
+<p>and logon with :</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> ssh MacMini_iCloud
+Last login: Fri Oct  <span class="m">2</span> 21:25:00 <span class="m">2015</span> from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+<span class="o">[</span>mac-mini:~<span class="o">]</span><span class="nv">$&gt;</span></code></pre></div>
+
+<h3 id="useful-links">Useful links</h3>
+
+<ul>
+  <li><a href="https://support.apple.com/en-us/HT204618">Back to my Mac</a></li>
+</ul>
 
   </article>
 
@@ -71,6 +173,20 @@
 
 
     
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'greg-iopen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
 </div>
 
@@ -82,13 +198,19 @@
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (7)</h3>
+    <h3 id="en">en (8)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH tunnel through iCloud to MacOS X (El Capitan)</a>
+      </li>
+        
       
         
       <li>
@@ -128,7 +250,7 @@
       
         
       <li>
-        <a href="/blog/2015/03/11/premier-post.html">Premier post</a>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
       </li>
         
       
@@ -188,7 +310,7 @@
       
         
       <li>
-        <a href="/blog/2015/03/11/premier-post.html">Premier post</a>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
       </li>
         
       
@@ -212,7 +334,7 @@
       
         
       <li>
-        <a href="/blog/2015/03/11/premier-post.html">Premier post</a>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
       </li>
         
       
@@ -236,7 +358,7 @@
       
         
       <li>
-        <a href="/blog/2015/03/11/premier-post.html">Premier post</a>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
       </li>
         
       
@@ -1167,6 +1289,96 @@
     
     </ul>
 
+
+    <h3 id="MacOS">MacOS (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH tunnel through iCloud to MacOS X (El Capitan)</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="SSH">SSH (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH tunnel through iCloud to MacOS X (El Capitan)</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="tunnel">tunnel (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH tunnel through iCloud to MacOS X (El Capitan)</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="iCloud">iCloud (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH tunnel through iCloud to MacOS X (El Capitan)</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="El-Capitan">El-Capitan (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH tunnel through iCloud to MacOS X (El Capitan)</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -1191,6 +1403,19 @@
     
         
             
+            <h4 id="2015-10" class="post month title">October</h4><ul>
+        
+    <li><time id="2015-10-03"> 3</time> &mdash; <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html" class="post title" >SSH tunnel through iCloud to MacOS X (El Capitan)</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2015-08" class="post month title">August</h4><ul>
         
     <li><time id="2015-08-24">24</time> &mdash; <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html" class="post title" >UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a></li>
@@ -1348,7 +1573,7 @@
     
     
         
-    <li><time id="2015-03-11">11</time> &mdash; <a href="/blog/2015/03/11/premier-post.html" class="post title" >Premier post</a></li>
+    <li><time id="2015-03-10">10</time> &mdash; <a href="/blog/2015/03/10/premier-post.html" class="post title" >Premier post</a></li>
 
     
   </ul></div>
