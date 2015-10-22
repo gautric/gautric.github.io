@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Few years ago, my friends and I started a game we called the UNESCO challenge/Point UNESCO (fr). The goal of this game is very simple, we try to visit every ..."/>
+  <meta name="description" content="Yesterday, we’ve played with our MacBook Pro’s webcam. Today, we gonna see how to send images through an websocketdirectly in this page !!!. We gonna re-use ..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>UNESCO Challenge, point UNESCO, Le Havre</title>
+  <title>RHIOT Webcam and websocket components on MacbookPro in Groovy</title>
 </head>
 
   <body>
@@ -48,76 +48,178 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">UNESCO Challenge, point UNESCO, Le Havre</h1>
+      <h1 class="post-title">RHIOT Webcam and websocket components on MacbookPro in Groovy</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Aug 4, 2015  <a href="#en">en</a>  <a href="#UNESCO">UNESCO</a>  <a href="#challenge">challenge</a>  <a href="#miscellaneous">miscellaneous</a>  <a href="#voyage">voyage</a> </p>
-    <p>Few years ago, my friends and I started a game we called the UNESCO challenge/Point UNESCO (fr). The goal of this game is very simple, we try to visit every World Heritage Site (WHS), one visit == one UNESCO point. Sites could be a building, a city, a complex, a land, a monument, a mountain, etc.. and they are selected by UNESCO as being of special cultural or physical significance. We have to take the picture of signboard by UNESCO as a proof of our visit. We have got one more rule : Every place or site you have already visited which become a WHS, you also earn  a point.</p>
-
-<p>Today, I work for a customer in Le Havre (Seine-Maritime, France) and it is a World Heritage Site.</p>
+    <p class="post-meta">Oct 23, 2015  <a href="#en">en</a>  <a href="#rhiot">rhiot</a>  <a href="#MacbookPro">MacbookPro</a>  <a href="#camel">camel</a>  <a href="#webcam">webcam</a>  <a href="#websocket">websocket</a>  <a href="#groovy">groovy</a> </p>
+    <p>Yesterday, we’ve played with our MacBook Pro’s webcam. Today, we gonna see how to send images through an websocket
+directly in this page !!!. We gonna re-use the previous post and integrate camel Websocket component. Let’s play with Groovy language …</p>
 
 <blockquote>
-  <p>Le Havre, the City Rebuilt by Auguste Perret</p>
+  <p>Webcam image to Websocket w/ Camel &amp; Rhiot projects on MacbookPro</p>
 </blockquote>
 
-<h2 id="le-havre-unesco-summary">Le Havre UNESCO summary</h2>
+<p>Let’s start to broadcast yourself.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Title (fr)</td>
-      <td>Le Havre, la ville reconstruite par Auguste Perret</td>
-    </tr>
-    <tr>
-      <td>Title (en)</td>
-      <td>Le Havre, the City Rebuilt by Auguste Perret</td>
-    </tr>
-    <tr>
-      <td>Id</td>
-      <td>1181</td>
-    </tr>
-    <tr>
-      <td>Record date</td>
-      <td>2005</td>
-    </tr>
-    <tr>
-      <td>Seal localisation</td>
-      <td>Into the park in front a town hall</td>
-    </tr>
-    <tr>
-      <td>Visit Date</td>
-      <td>2015-08-04</td>
-    </tr>
-    <tr>
-      <td>Interest</td>
-      <td>Medium</td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="requisites">Requisites</h2>
 
-<h2 id="the-photo-proof">The photo proof</h2>
+<ul>
+  <li>Have a mac</li>
+  <li>tested MacBook Pro Retina, 13-inch, Mid 2014</li>
+  <li>Groovy Mac port installed</li>
+  <li>Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X</li>
+</ul>
 
-<p>Here is the photo proof :</p>
+<h2 id="program">Program</h2>
 
-<p><img src="/img/IMG_2018.JPG" style="max-width:75%;" /></p>
+<p>We gonna re-use our previous Groovy language program an we will change some stuff</p>
 
-<p><img src="/img/IMG_2020.JPG" style="max-width:75%;" /></p>
+<script src="https://gist.github.com/gautric/98dc4e37d57c9d1f1798.js"></script>
+
+<p>The key point of this program are :</p>
+
+<ul>
+  <li>the @Grab annotation to download camel-websocket component : @Grab(group=”org.apache.camel”,module=”camel-websocket”,version=”2.16.0”)</li>
+  <li>the <em>to</em> command to capture image every second : “websocket://localhost:8080/camel-webcam?sendToAll=true”</li>
+</ul>
+
+<p>Copy log4j.properties into the same directory</p>
+
+<script src="https://gist.github.com/gautric/cca1a01fb55ce5846422.js"></script>
+
+<p>In our case we need to develop a HTML page to receive broadcast img.</p>
+
+<script src="https://gist.github.com/gautric/6d58693e6cf21a8f4a4e.js"></script>
+
+<h2 id="execution">Execution</h2>
+
+<p>Let’s run it now</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Source/tmp/io/rhiot/test<span class="o">]</span><span class="nv">$&gt;</span> groovy  WebcamToWebSocket.groovy
+<span class="o">[</span>                          main<span class="o">]</span> MainSupport                    INFO  Apache Camel 2.16.0 starting
+<span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+<span class="o">[</span>                          main<span class="o">]</span> ManagedManagementStrategy      INFO  JMX is enabled
+<span class="o">[</span>                          main<span class="o">]</span> DefaultTypeConverter           INFO  Loaded <span class="m">182</span> <span class="nb">type </span>converters
+<span class="o">[</span>                          main<span class="o">]</span> DefaultRuntimeEndpointRegistry INFO  Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
+<span class="o">[</span>                          main<span class="o">]</span> WebcamEndpoint                 WARN  Driver not supported
+<span class="o">[</span>                          main<span class="o">]</span> Webcam                         INFO  WebcamDefaultDriver capture driver will be used
+<span class="o">[</span>            atomic-processor-1<span class="o">]</span> WebcamOpenTask                 INFO  Opening webcam FaceTime HD Camera CC242951XGLF6VVD4
+<span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
+<span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+<span class="o">[</span>                          main<span class="o">]</span> WebsocketComponent             INFO  Jetty Server starting on host: localhost:8080
+<span class="o">[</span>                          main<span class="o">]</span> Server                         INFO  jetty-8.1.17.v20150415
+<span class="o">[</span>                          main<span class="o">]</span> AbstractConnector              INFO  Started SelectChannelConnector@localhost:8080
+<span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Route: route1 started and consuming from: Endpoint<span class="o">[</span>webcam://cam?consumer.delay<span class="o">=</span>100<span class="o">]</span>
+<span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
+<span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 2.019 seconds
+<span class="o">[</span>                          main<span class="o">]</span> MainSupport                    INFO  Waiting <span class="k">for</span>: <span class="m">60</span> SECONDS
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] camel                          INFO  Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-2, ExchangePattern: OutOnly, BodyType: byte[]]</span>
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] camel                          INFO  Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-4, ExchangePattern: OutOnly, BodyType: byte[]]</span>
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] camel                          INFO  Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-6, ExchangePattern: OutOnly, BodyType: byte[]]</span>
+
+ ........................... OMIT ...........................
+
+
+OutOnly, BodyType: byte<span class="o">[]]</span>
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] camel                          INFO  Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-44, ExchangePattern: OutOnly, BodyType: byte[]]</span>
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] camel                          INFO  Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-46, ExchangePattern: OutOnly, BodyType: byte[]]</span>
+^C<span class="o">[</span>                      Thread-1<span class="o">]</span> MainSupport<span class="nv">$HangupInterceptor</span>  INFO  Received hang up - stopping the main instance.
+<span class="o">[</span>                      Thread-1<span class="o">]</span> MainSupport                    INFO  Apache Camel 2.16.0 stopping
+<span class="o">[</span>               shutdown-hook-1<span class="o">]</span> WebcamShutdownHook             INFO  Automatic FaceTime HD Camera CC242951XGLF6VVD4 deallocation
+<span class="o">[</span>                      Thread-1<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutting down
+<span class="o">[</span>               shutdown-hook-1<span class="o">]</span> Webcam                         INFO  Disposing webcam FaceTime HD Camera CC242951XGLF6VVD4
+<span class="o">[</span>                      Thread-1<span class="o">]</span> DefaultShutdownStrategy        INFO  Starting to graceful shutdown <span class="m">1</span> routes <span class="o">(</span>timeout <span class="m">300</span> seconds<span class="o">)</span>
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#1 - ShutdownTask] ContextHandler                 INFO  stopped o.e.j.s.ServletContextHandler{/,null}</span>
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[webcam://cam?consumer.delay=100]</span>
+<span class="o">[</span>                      Thread-1<span class="o">]</span> DefaultShutdownStrategy        INFO  Graceful shutdown of <span class="m">1</span> routes completed in <span class="m">0</span> seconds
+<span class="o">[</span>                      Thread-1<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> uptime 48.953 seconds
+<span class="o">[</span>                      Thread-1<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutdown in 0.101 seconds</code></pre></div>
+
+<h2 id="and-the-result">And the result</h2>
+
+<p>I propose to you three possibilities for the demo :</p>
+
+<ul>
+  <li>start groovy program above and use the live demo just below</li>
+  <li>start groovy program above and download <em>WebcamToWebSocket.html</em> for an offline use</li>
+  <li>or just play you tube video below</li>
+</ul>
+
+<p><strong>Live Demo</strong></p>
+<div style="border-style:solid;border-width:thin;">
+<div id="msg">No connection</div>
+<img id="webcamImgWS" src="" />
+<div>
+    <button type="button" onclick="openSocket();">Open</button>
+    <button type="button" onclick="closeSocket();">Close</button>
+</div>
+<!-- Script to utilise the WebSocket -->
+<!-- orginal source code from : https://blog.idrsolutions.com/2013/12/websockets-an-introduction/ -->
+<script type="text/javascript">
+
+    var webSocket;
+
+    function openSocket(){
+        // Ensures only one connection is open at a time
+        if(webSocket !== undefined && webSocket.readyState !== WebSocket.CLOSED){
+            writeResponse("WebSocket is already opened.");
+            return;
+        }
+        // Create a new instance of the websocket
+        webSocket = new WebSocket("ws://localhost:8080/camel-webcam");
+
+
+        webSocket.onopen = function(event){
+            if(event.data === undefined)
+                return;
+            document.getElementById("msg").innerHTML = "Websocket Ok";
+        };
+
+        webSocket.onmessage = function(event){
+          var reader = new window.FileReader();
+          reader.readAsDataURL(event.data);
+          reader.onloadend = function() {
+              document.getElementById("webcamImgWS").src = reader.result;
+              document.getElementById("msg").innerHTML = "Received Msg";
+              console.log(reader.result);
+          }
+        };
+
+        webSocket.onclose = function(event){
+        };
+    }
+
+    function closeSocket(){
+        webSocket.close();
+        document.getElementById("msg").innerHTML = "Websocket Closed";
+    }
+
+</script>
+</div>
+<p><br />
+<strong>YouTube Demo</strong></p>
+
+<iframe width="650" height="415" src="https://www.youtube.com/embed/uJU3zE7Rwt8" frameborder="0"></iframe>
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>As you can see Rhiot project and contributor are awesome, the IoT movement provides lot of interesting ideas we can implement really easily almost out-of-the box. On more time, I would like thanks a lot <a href="https://twitter.com/levackt">Taariq Levack</a> for this so cool component ;-). Next step is to implement this demo into a RaspberryPi.</p>
+
+<p>Stay tuned !!!</p>
 
 <h3 id="useful-links">Useful links</h3>
 
 <ul>
-  <li><a href="http://www.lehavre.fr/">Le Havre (fr)</a></li>
-  <li><a href="http://whc.unesco.org/en/list/1181/">Le Havre UNESCO WHS</a></li>
+  <li><a href="http://rhiot.io">rhiot projet</a></li>
+  <li><a href="https://github.com/rhiot/rhiot/issues/239">webcam component</a></li>
+  <li><a href="https://github.com/levackt">Taariq Levack’s github account</a></li>
+  <li><a href="https://twitter.com/levackt">Taariq Levack’s twitter account</a></li>
 </ul>
 
   </article>
