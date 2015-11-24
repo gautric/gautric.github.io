@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html><!--<![-->
+<head>
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing.  Sense-..."/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html"-->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://gautric.github.io/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <title>RHIOT RaspberryPi Sense-Hat display</title>
+</head>
+
+  <body>
+        <header class="site-header blog-header">
+
+  <div class="wrapper">
+
+    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/apropos">A propos</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/citations">Citations</a><a class="page-link" href="/contact">Contact</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <header class="post-header blog-title">
+      <div class="wrapper">
+      <h1 class="post-title">RHIOT RaspberryPi Sense-Hat display</h1>
+    </div>
+    </header>
+
+    <main class="page-content" role="main">
+      <div class="wrapper">
+          <article class="post-content">
+    <p class="post-meta">Nov 24, 2015  <a href="#en">en</a>  <a href="#rhiot">rhiot</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#Sense-Hat">Sense-Hat</a>  <a href="#camel">camel</a>  <a href="#display">display</a>  <a href="#framebuffer">framebuffer</a> </p>
+    <p>Recently, I bought the new an official <a href="https://www.raspberrypi.org/products/sense-hat/">Sense-HAT</a> from <a href="ttps://www.raspberrypi.org">RaspberryPi foundation</a>. This <a href="https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/">HAT</a> add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the <a href="https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver">rhiot camel-pi4j</a> component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of <a href="https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer">rhiot camel-framebuffer component</a>, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).</p>
+
+<blockquote>
+  <p>How to use Framebuffer component</p>
+</blockquote>
+
+<p>Let’s start to use the SenseHat framebuffer.</p>
+
+<h2 id="requisites">Requisites</h2>
+
+<ul>
+  <li>one <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">RaspberryPi</a>
+    <ul>
+      <li>tested w/ RPi 2</li>
+    </ul>
+  </li>
+  <li>one <a href="https://www.raspberrypi.org/products/sense-hat/">SenseHat</a></li>
+  <li>an Activemq Broker</li>
+  <li>a Laptop to run the generator program.</li>
+</ul>
+
+<h2 id="conception">Conception</h2>
+
+<p>A little quick conception
+First program generates images and send them through the ActiveMQ broker.
+The second one receives images from the broker and push them to the Framebuffer.</p>
+
+<h2 id="groovy-program">Groovy Program</h2>
+
+<h3 id="generator-program">Generator Program</h3>
+
+<script src="https://gist.github.com/gautric/0cb319481b24f405aa5b.js"></script>
+
+<h3 id="framebuffer-program">Framebuffer Program</h3>
+
+<script src="https://gist.github.com/gautric/e413a22b9644de88a15b.js"></script>
+
+<h2 id="execution">Execution</h2>
+
+<p>Let’s run it now</p>
+
+<h3 id="on-our-raspberrypi-2-w-sensehat">On our RaspberryPi 2 w/ SenseHat</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>rbpi-2:~<span class="o">]</span><span class="nv">$&gt;</span> groovy  ImageFramebufferRoute.groovy</code></pre></div>
+
+<h3 id="on-our-laptop">On our Laptop</h3>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Source/tmp/io/rhiot/test<span class="o">]</span><span class="nv">$&gt;</span> groovy GroovyMain.groovy</code></pre></div>
+
+<h2 id="and-the-result">And the result</h2>
+
+<p><br /></p>
+
+<p><strong>YouTube Demo</strong></p>
+
+<iframe width="650" height="415" src="https://www.youtube.com/embed/y3yAzqezXE4" frameborder="0"></iframe>
+
+<p><br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Framebuffer component is very young but functional, Rhiot.io project will release some new features as soon as possible.
+Rhiot.io project provides driver for Temperature, Barometric pressure and Humidity sensors shipped with SenseHat product, the Gyroscope, Accelerometer, Magnetometer driver is still under development.</p>
+
+<p>Stay tuned !!!</p>
+
+<h3 id="useful-links">Useful links</h3>
+
+<ul>
+  <li><a href="http://rhiot.io">rhiot projet</a></li>
+  <li><a href="https://rhiot.gitbooks.io/rhiotdocumentation/content/gateway/camel_components/camel_framebuffer_component.html">framebuffer component</a>
+ *</li>
+</ul>
+
+  </article>
+
+  <div class="post-social">
+    
+   <a href="https://twitter.com/share" class="twitter-share-button" data-via="gautric_io">Tweet</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'greg-iopen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+
+  <div class="archive">
+
+    <div class="archive-per-tag">
+<h2 id="archive-per-tag-title">Tag</h2>
+<div id="archive-per-tag-content" class="post-meta">
+
+
+    <h3 id="en">en (11)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="fr">fr (8)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">Sortie de wildfly 9.0 CR-01</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="ja">ja (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="divers">divers (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="histoire">histoire (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="otp">otp (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="yubico">yubico (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="yubikey">yubikey (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="jboss">jboss (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="eap">eap (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="wildfly">wildfly (6)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">Sortie de wildfly 9.0 CR-01</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="websphereMQ">websphereMQ (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="JCA">JCA (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="apache">apache (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="camel">camel (6)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="raspberry">raspberry (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="pi">pi (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="ProofOfConcept">ProofOfConcept (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="IoT">IoT (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="RaspberryPi">RaspberryPi (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="pi4j">pi4j (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="DeviceIO">DeviceIO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Tinkerforge">Tinkerforge (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Kura">Kura (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="camellabs">camellabs (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="i2c">i2c (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="lcd">lcd (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="mqtt">mqtt (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="java">java (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="regex">regex (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="group">group (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="name">name (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="eclipsecon">eclipsecon (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="CoAP">CoAP (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="leshan">leshan (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="M2M">M2M (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="lightweight">lightweight (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Toulouse">Toulouse (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Offline">Offline (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="CLI">CLI (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HTTP/2">HTTP/2 (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="JDK8">JDK8 (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Docker">Docker (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="UNESCO">UNESCO (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="challenge">challenge (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="miscellaneous">miscellaneous (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="voyage">voyage (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="MacOS">MacOS (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="SSH">SSH (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="tunnel">tunnel (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="iCloud">iCloud (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="El-Capitan">El-Capitan (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="rhiot">rhiot (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="X">X (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="webcam">webcam (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="groovy">groovy (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="MacbookPro">MacbookPro (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="websocket">websocket (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="javafx">javafx (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Sense-Hat">Sense-Hat (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="display">display (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="framebuffer">framebuffer (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+    
+    </ul>
+
+</div>
+ <script>
+   $( "#archive-per-tag-content" ).hide();
+   $( "#archive-per-tag-title" ).click(function() {
+     $( "#archive-per-tag-content" ).toggle( "slow");
+   });
+ </script>
+</div>
+
+    <div class="archive-per-date">
+<h2 id="archive-per-date-title">Date</h2>
+<div id="archive-per-date-content" class="post-meta">
+
+  
+  
+  
+  
+  <h3 id="2015" class="post year title">2015</h3>
+  <div id="year-post-archive" class="post year">
+  
+    
+    
+        
+            
+            <h4 id="2015-11" class="post month title">November</h4><ul>
+        
+    <li><time id="2015-11-24">24</time> &mdash; <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html" class="post title" >RHIOT RaspberryPi Sense-Hat display</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-10" class="post month title">October</h4><ul>
+        
+    <li><time id="2015-10-23">23</time> &mdash; <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html" class="post title" >RHIOT Webcam and websocket components on MacbookPro in Groovy</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-10-22">22</time> &mdash; <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html" class="post title" >RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-10-03"> 3</time> &mdash; <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html" class="post title" >SSH to MacOS X (El Capitan) through iCloud tunnel</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-08" class="post month title">August</h4><ul>
+        
+    <li><time id="2015-08-24">24</time> &mdash; <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html" class="post title" >UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-08-04"> 4</time> &mdash; <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html" class="post title" >UNESCO Challenge, point UNESCO, Le Havre</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-07" class="post month title">July</h4><ul>
+        
+    <li><time id="2015-07-09"> 9</time> &mdash; <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html" class="post title" >Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-07-03"> 3</time> &mdash; <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html" class="post title" >Wildfly 9.0 Offline CLI and HTTP/2</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-07-01"> 1</time> &mdash; <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html" class="post title" >Leshan et le standard Lightweight M2M à l'EclipseCon</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-06" class="post month title">June</h4><ul>
+        
+    <li><time id="2015-06-18">18</time> &mdash; <a href="/blog/2015/06/18/java-regex-name-group.html" class="post title" >Java Regex Group Name</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-05" class="post month title">May</h4><ul>
+        
+    <li><time id="2015-05-20">20</time> &mdash; <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html" class="post title" >Camel IoT Labs i2c gpio mqtt lcd</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-05-04"> 4</time> &mdash; <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html" class="post title" >Sortie de wildfly 9.0 CR-01</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-04" class="post month title">April</h4><ul>
+        
+    <li><time id="2015-04-25">25</time> &mdash; <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html" class="post title" >Les premiers jours du projet Camel IoT Labs</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-04-03"> 3</time> &mdash; <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html" class="post title" >Apache Camel RaspberryPi PoC</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-03" class="post month title">March</h4><ul>
+        
+    <li><time id="2015-03-26">26</time> &mdash; <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html" class="post title" >Best Practices Websphere MQ/JBoss EAP 6 English Version</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-25">25</time> &mdash; <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html" class="post title" >Best Practices Websphere MQ/JBoss EAP 6</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-19">19</time> &mdash; <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html" class="post title" >Yubico OTP et JBoss EAP 6 ou Wildfly 8</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-18">18</time> &mdash; <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html" class="post title" >Il y a un siècle aux Dardanelles</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-10">10</time> &mdash; <a href="/blog/2015/03/10/premier-post.html" class="post title" >Premier post</a></li>
+
+    
+  </ul></div>
+    
+
+</div>
+ <script>
+    $( "#archive-per-date-content" ).hide();
+    $( "#archive-per-date-title" ).click(function() {
+      $( "#archive-per-date-content" ).toggle( "slow");
+     });
+   </script>
+</div>
+
+
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="site-footer blog-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="#" title="Haut de la page / Head of page">Greg I/Open</a></h2>
+
+    <div class="footer-col-wrapper">
+      <p class="text">Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, JBoss, Red Hat, REST/ROA
+</p>
+
+      &mdash; 
+ <a href="https://twitter.com/gautric_io">
+    <span class="icon  icon--twitter">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+        c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash; 
+  <a href="https://github.com/gautric">
+    <span class="icon  icon--github">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash;
+    </div>
+
+    <div class="copyright">Copyright © Greg Autric 2015</div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60791597-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</html>
