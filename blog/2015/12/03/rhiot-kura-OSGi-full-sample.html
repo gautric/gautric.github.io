@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="For a while, I develop during my free time to RHIOT project with my colleague [Henryk]. We started to develop several Camel components like (kura, pi4j, blue..."/>
+  <meta name="description" content="For a while, I develop during my free time for RHIoT project with my Red Hat colleague Henryk. We started to develop several Camel components like (kura, pi4..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html"-->
 
@@ -17,7 +17,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </title>
+  <title>RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </title>
 </head>
 
   <body>
@@ -48,7 +48,7 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </h1>
+      <h1 class="post-title">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </h1>
     </div>
     </header>
 
@@ -56,9 +56,9 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Dec 3, 2015  <a href="#en">en</a>  <a href="#rhiot">rhiot</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#Kura">Kura</a>  <a href="#Gateway">Gateway</a> </p>
-    <p>For a while, I develop during my free time to <a href="http://rhiot.io">RHIOT project</a> with my colleague [Henryk]. We started to develop several <a href="http://camel.apache.org/components.html#Components-ExternalComponents">Camel components</a> like (kura, pi4j, bluetooth) with others volunteers.
-Now we focus to develop an integrate those components for <a href="http://www.eclipse.org/kura/">Kura Platform</a>. Kura is an <a href="http://www.osgi.org">OSGi Platform</a> designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device.
-Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C etc…)
+    <p>For a while, I develop during my free time for <a href="http://rhiot.io">RHIoT project</a> with my Red Hat colleague <a href="http://henryk-konsek.blogspot.fr/">Henryk</a>. We started to develop several <a href="http://camel.apache.org/components.html#Components-ExternalComponents">Camel components</a> like (kura, pi4j, bluetooth) with others volunteers.
+Now we focus to develop and integrate those components for <a href="http://www.eclipse.org/kura/">Kura Platform</a>. Kura is an <a href="http://www.osgi.org">OSGi Platform</a> designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device.
+Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc…)
 In this post we will see :</p>
 
 <blockquote>
@@ -135,7 +135,7 @@ You can test and configure your workspace with Heater Demo Project
 
 <p><img src="/img/kura-camel-rhiot-2.png" style="max-width:100%;" /></p>
 
-<p>Verify that Target Definition loads correct Camel and RHIoT libraries, click into <code>Content</code> tab to check.</p>
+<p>Verify that <code>Target Content</code> loads correctly Camel and RHIoT libraries, click into <code>Content</code> tab to check.</p>
 
 <p><img src="/img/kura-camel-rhiot-3.png" style="max-width:100%;" /></p>
 
@@ -143,7 +143,7 @@ You can test and configure your workspace with Heater Demo Project
 
 <h4 id="launch-configuration">Launch configuration</h4>
 
-<p>We just finish to setup Target Definition stack, now we will see how to run it with the <code>Launch</code> command.</p>
+<p>We just finish to setup <code>Target Definition</code> stack, now we will see how to run it with the <code>Launch</code> command.</p>
 
 <p><img src="/img/kura-camel-rhiot-4.png" style="max-width:33%;" />
 <img src="/img/kura-camel-rhiot-5.png" style="max-width:33%;" /></p>
@@ -188,7 +188,7 @@ osgi&gt;</code></pre></div>
 
 <p>This last file provides configuration attributes used by <code>GatewayRouter</code> route, like <code>camel.kura.gpio.ouput.id</code>.</p>
 
-<p>Compile via maven <code>mvn clean package</code> to regenerate some MANIFEST and OSGi configure via Bnd maven plugin.</p>
+<p>Compile via maven <code>mvn clean package</code> to regenerate some MANIFEST and OSGi stuff via Bnd maven plugin.</p>
 
 <p>You can also checkout remote branch <code>https://github.com/rhiot/quickstarts/tree/kura-gpio</code>.</p>
 
@@ -196,9 +196,9 @@ osgi&gt;</code></pre></div>
 
 <p>Use <code>Kura_Emulator_OSX</code> Eclipse to run Equinox OSGi.</p>
 
-<p>Output should looks like this with little log4j modification</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">a little log4j modification <span class="sb">`</span><span class="k">${</span><span class="nv">loc_workspace</span><span class="k">}</span>/org.eclipse.kura.emulator/src/main/resources/log4j.properties<span class="sb">`</span> file.
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">## eclipse</span>
+<span class="c">## eclipse</span>
 log4j.logger.org.eclipse.kura.emulator.position<span class="o">=</span>INFO
 log4j.logger.org.eclipse<span class="o">=</span>WARN
 log4j.logger.io.rhiot<span class="o">=</span>DEBUG
@@ -206,7 +206,7 @@ log4j.logger.org.eclipse.kura.emulator.gpio<span class="o">=</span>DEBUG
 log4j.logger.org.apache.camel<span class="o">=</span>INFO
 log4j.logger.org.apache.camel.core.osgi<span class="o">=</span>INFO</code></pre></div>
 
-<p>the Emulator output</p>
+<p>Output should looks like</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">SLF4J: Class path contains multiple SLF4J bindings.
 SLF4J: Found binding in <span class="o">[</span>bundleresource://28.fwk1988196802:1/org/slf4j/impl/StaticLoggerBinder.class<span class="o">]</span>
@@ -371,6 +371,8 @@ If we can plug Camel and RHIoT bundles, I think we can develop some cool new com
 Let’s develop and contribute more for <a href="http://www.eclipse.org/kura/">Kura</a> , <a href="http://camel.apache.org">Camel</a> and <a href="http://rhiot.io">RHIoT</a> project too.
 Stay tuned !!!</p>
 
+<p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
+
 <h3 id="useful-links">Useful links</h3>
 
 <ul>
@@ -423,25 +425,25 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
       </li>
         
       
@@ -867,19 +869,19 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
       </li>
         
       
@@ -1005,13 +1007,13 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
       </li>
         
       
@@ -1089,7 +1091,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
@@ -1575,7 +1577,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
       </li>
         
       
@@ -1671,25 +1673,25 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
       </li>
         
       
@@ -1707,7 +1709,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
       </li>
         
       
@@ -1725,13 +1727,13 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
       </li>
         
       
@@ -1749,13 +1751,13 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
         
       <li>
-        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
       </li>
         
       
@@ -1773,7 +1775,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
@@ -1791,7 +1793,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
@@ -1809,7 +1811,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIOT Webcam and websocket components on MacbookPro in Groovy</a>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
       </li>
         
       
@@ -1827,7 +1829,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
       </li>
         
       
@@ -1845,7 +1847,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
       </li>
         
       
@@ -1863,7 +1865,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIOT RaspberryPi Sense-Hat display</a>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
       </li>
         
       
@@ -1881,7 +1883,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
@@ -1914,7 +1916,7 @@ Stay tuned !!!</p>
             
             <h4 id="2015-12" class="post month title">December</h4><ul>
         
-    <li><time id="2015-12-03"> 3</time> &mdash; <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html" class="post title" >RHIOT Kura Gateway Sample (Emulator & RaspberryPi) </a></li>
+    <li><time id="2015-12-03"> 3</time> &mdash; <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html" class="post title" >RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a></li>
 
     
 
@@ -1927,7 +1929,7 @@ Stay tuned !!!</p>
             </ul>
             <h4 id="2015-11" class="post month title">November</h4><ul>
         
-    <li><time id="2015-11-24">24</time> &mdash; <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html" class="post title" >RHIOT RaspberryPi Sense-Hat display</a></li>
+    <li><time id="2015-11-24">24</time> &mdash; <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html" class="post title" >RHIoT RaspberryPi Sense-Hat display</a></li>
 
     
 
@@ -1940,7 +1942,7 @@ Stay tuned !!!</p>
             </ul>
             <h4 id="2015-10" class="post month title">October</h4><ul>
         
-    <li><time id="2015-10-23">23</time> &mdash; <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html" class="post title" >RHIOT Webcam and websocket components on MacbookPro in Groovy</a></li>
+    <li><time id="2015-10-23">23</time> &mdash; <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html" class="post title" >RHIoT Webcam and websocket components on MacbookPro in Groovy</a></li>
 
     
 
@@ -1950,7 +1952,7 @@ Stay tuned !!!</p>
     
     
         
-    <li><time id="2015-10-22">22</time> &mdash; <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html" class="post title" >RHIOT 0.1.2 Webcam component on MacOS X in Groovy</a></li>
+    <li><time id="2015-10-22">22</time> &mdash; <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html" class="post title" >RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a></li>
 
     
 
