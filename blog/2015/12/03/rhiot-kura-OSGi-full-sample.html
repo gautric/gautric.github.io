@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="For a while, I develop during my free time for RHIoT project with my Red Hat colleague Henryk. We started to develop several Camel components like (kura, pi4..."/>
+  <meta name="description" content="For a while, I develop during my free time for Rhiot project with my Red Hat colleague Henryk. We started to develop several Camel components like (kura, pi4..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html"-->
 
@@ -17,7 +17,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </title>
+  <title>Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </title>
 </head>
 
   <body>
@@ -48,7 +48,7 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </h1>
+      <h1 class="post-title">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </h1>
     </div>
     </header>
 
@@ -56,7 +56,7 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Dec 3, 2015  <a href="#en">en</a>  <a href="#rhiot">rhiot</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#Kura">Kura</a>  <a href="#Gateway">Gateway</a> </p>
-    <p>For a while, I develop during my free time for <a href="http://rhiot.io">RHIoT project</a> with my Red Hat colleague <a href="http://henryk-konsek.blogspot.fr/">Henryk</a>. We started to develop several <a href="http://camel.apache.org/components.html#Components-ExternalComponents">Camel components</a> like (kura, pi4j, bluetooth) with others volunteers.
+    <p>For a while, I develop during my free time for <a href="http://rhiot.io">Rhiot project</a> with my Red Hat colleague <a href="http://henryk-konsek.blogspot.fr/">Henryk</a>. We started to develop several <a href="http://camel.apache.org/components.html#Components-ExternalComponents">Camel components</a> like (kura, pi4j, bluetooth) with others volunteers.
 Now we focus to develop and integrate those components for <a href="http://www.eclipse.org/kura/">Kura Platform</a>. Kura is an <a href="http://www.osgi.org">OSGi Platform</a> designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device.
 Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc…)
 In this post we will see :</p>
@@ -98,11 +98,11 @@ To avoid any compilation problem please downgrade your JRE to a 1.7 version
 You can test and configure your workspace with Heater Demo Project
 </div>
 
-<h3 id="camel-and-rhiot-configuration-into-emulator">Camel and RHIOT configuration into Emulator</h3>
+<h3 id="camel-and-rhiot-configuration-into-emulator">Camel and Rhiot configuration into Emulator</h3>
 
 <h4 id="target-definition-configuration">Target Definition configuration</h4>
 
-<p>Before setup Camel and RHIOT into Kura Emulator, you have to download several java libraries :</p>
+<p>Before setup Camel and Rhiot into Kura Emulator, you have to download several java libraries :</p>
 
 <ul>
   <li>camel-core-2.16.0.jar
@@ -122,7 +122,7 @@ You can test and configure your workspace with Heater Demo Project
   </li>
   <li>camel-kura-0.1.3-SNAPSHOT.jar
     <ul>
-      <li>From <a href="http://rhiot.io">RHIoT Project Camel</a></li>
+      <li>From <a href="http://rhiot.io">Rhiot Project Camel</a></li>
     </ul>
   </li>
 </ul>
@@ -135,7 +135,7 @@ You can test and configure your workspace with Heater Demo Project
 
 <p><img src="/img/kura-camel-rhiot-2.png" style="max-width:100%;" /></p>
 
-<p>Verify that <code>Target Content</code> loads correctly Camel and RHIoT libraries, click into <code>Content</code> tab to check.</p>
+<p>Verify that <code>Target Content</code> loads correctly Camel and Rhiot libraries, click into <code>Content</code> tab to check.</p>
 
 <p><img src="/img/kura-camel-rhiot-3.png" style="max-width:100%;" /></p>
 
@@ -166,11 +166,11 @@ osgi&gt;</code></pre></div>
 
 <p><em>Cool everything looks good to run our example !!!</em></p>
 
-<h2 id="test-an-run-kura-rhiot-quickstart-into-emulator">Test an run Kura RHIoT quickstart into emulator.</h2>
+<h2 id="test-an-run-kura-rhiot-quickstart-into-emulator">Test an run Kura Rhiot quickstart into emulator.</h2>
 
 <h3 id="import-quickstart-sample">Import Quickstart Sample</h3>
 
-<p>Download our <a href="https://github.com/rhiot/quickstarts/tree/master/kura-camel">Kura RHIoT quickstart directly from github repository</a>.</p>
+<p>Download our <a href="https://github.com/rhiot/quickstarts/tree/master/kura-camel">Kura Rhiot quickstart directly from github repository</a>.</p>
 
 <p>Change <code>GatewayRouter</code> class with</p>
 
@@ -302,7 +302,7 @@ osgi&gt; Framework is running in emulation mode
 
 <h3 id="bundles-installation-into-raspberrypi">Bundles installation into RaspberryPi</h3>
 
-<p>Compile Kura-RHIoT Sample via common <code>mvn clean package</code></p>
+<p>Compile Kura-Rhiot Sample via common <code>mvn clean package</code></p>
 
 <p>After you have installed <a href="https://s3.amazonaws.com/kura_downloads/raspbian/release/1.3.0/kura_1.3.0_raspberry-pi-bplus-nn_installer.deb">Kua deb</a> into RaspberryPi you can start and install bundles.</p>
 
@@ -367,8 +367,8 @@ osgi&gt; install file:///home/pi/kura/rhiot-kura-camel-1.0.0-SNAPSHOT.jar</code>
 <h2 id="conclusion">Conclusion</h2>
 
 <p><a href="http://www.eclipse.org/kura/">Kura Platform</a> is really interesting OSGi Platform. As we prove today, the setup is not too complex if you know what you do.  I love OSGi technology for its modularity, its flexibility and its robustness.
-If we can plug Camel and RHIoT bundles, I think we can develop some cool new components, applications and products.
-Let’s develop and contribute more for <a href="http://www.eclipse.org/kura/">Kura</a> , <a href="http://camel.apache.org">Camel</a> and <a href="http://rhiot.io">RHIoT</a> project too.
+If we can plug Camel and Rhiot bundles, I think we can develop some cool new components, applications and products.
+Let’s develop and contribute more for <a href="http://www.eclipse.org/kura/">Kura</a> , <a href="http://camel.apache.org">Camel</a> and <a href="http://rhiot.io">Rhiot</a> project too.
 Stay tuned !!!</p>
 
 <p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
@@ -425,7 +425,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
@@ -1007,7 +1007,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
@@ -1091,7 +1091,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
@@ -1673,7 +1673,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
@@ -1883,7 +1883,7 @@ Stay tuned !!!</p>
       
         
       <li>
-        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
       </li>
         
       
@@ -1916,7 +1916,7 @@ Stay tuned !!!</p>
             
             <h4 id="2015-12" class="post month title">December</h4><ul>
         
-    <li><time id="2015-12-03"> 3</time> &mdash; <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html" class="post title" >RHIoT Kura Gateway Sample (Emulator & RaspberryPi) </a></li>
+    <li><time id="2015-12-03"> 3</time> &mdash; <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html" class="post title" >Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a></li>
 
     
 
