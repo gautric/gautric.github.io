@@ -220,6 +220,16 @@ Change gpio id/action/period as you want.</p>
 
 <p><img src="/img/docker-rhiot.png" width="75%" height="66%" /></p>
 
+<h2 id="debug-rpi-rhiot-image">Debug rpi-rhiot Image</h2>
+
+<p>If you need retrieve Rhiot Project and Kura platform log.
+Please use following commands :</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpiz1:~ <span class="nv">$ </span>sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                          NAMES
+00aa11bbccddeeff        gautric/rpi-rhiot   <span class="s2">&quot;/bin/sh -c ${RHIOT_B&quot;</span>   <span class="m">4</span> hours ago         Up <span class="m">4</span> hours          0.0.0.0:80-&gt;80/tcp, 5002/tcp   jolly_almeida
+pi@rbpiz1:~ <span class="nv">$ </span>sudo docker logs -f 00aa11bbccddeeff</code></pre></div>
+
 <h2 id="video">VIDEO</h2>
 
 <iframe width="650" height="415" src="https://www.youtube.com/embed/NXNyk9wlWmg" frameborder="0"></iframe>
