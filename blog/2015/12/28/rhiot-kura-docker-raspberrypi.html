@@ -201,7 +201,7 @@ mvn clean package</code></pre></div>
 
 <p>Now if everything goes well, we can run it via commands below</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -d --privileged --cap-add<span class="o">=</span>ALL <span class="se">\</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo docker run -d --privileged --cap-add<span class="o">=</span>ALL <span class="se">\</span>
            -v /dev:/dev <span class="se">\</span>
            -v /lib/modules:/lib/modules <span class="se">\</span>
            -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/opt/rhiot/plugins <span class="se">\</span>
