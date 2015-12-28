@@ -109,11 +109,15 @@ sudo dpkg -i docker-hypriot_1.9.1-1_armhf.deb</code></pre></div>
 
 <p>We gonna download docker file, and run correct command to built it.</p>
 
+<div class="warn">
+Please change RPI_VERSION with your correct RaspberryPi model
+</div>
+
+<p><code>RPI_VERSION</code> must be : <code>raspberry-pi-2-nn</code> or <code>raspberry-pi-bplus-nn</code> or <code>raspberry-pi-nn</code>. <code>nn</code> means Kura will not include network management (firewall, port, etc…), keep it cause we can ignore network management for a Docker environment.</p>
+
 <script src="https://gist.github.com/gautric/dbe4684a6b17186afe42.js"></script>
 
 <p>We download some helper scripts and files</p>
-
-<p>** Please change <code>RPI_VERSION</code> with your correct RaspberryPi model**</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir rpi-rhiot
 <span class="nb">cd </span>rpi-rhiot
