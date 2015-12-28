@@ -69,7 +69,8 @@
 <ul>
   <li><a href="https://www.raspberrypi.org/">RaspberryPi</a> device
     <ul>
-      <li>tested with Zero and B+ model</li>
+      <li>tested with Zero and B+ models</li>
+      <li>for other models you have to rebuilt  docker image</li>
     </ul>
   </li>
   <li><a href="https://docker.com">Docker</a> installation into Raspbian/Jessie or directly with <a href="http://blog.hypriot.com/downloads/">Hypriot</a>
@@ -112,6 +113,8 @@ sudo dpkg -i docker-hypriot_1.9.1-1_armhf.deb</code></pre></div>
 
 <p>We download some helper scripts and files</p>
 
+<p>** Please change <code>RPI_VERSION</code> with your correct RaspberryPi model**</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir rpi-rhiot
 <span class="nb">cd </span>rpi-rhiot
 curl https://gist.githubusercontent.com/gautric/dbe4684a6b17186afe42/raw/4aa24e22016e49b0982264845b7fe7e0311a3952/Dockerfile -O
@@ -148,83 +151,9 @@ Step <span class="m">6</span> : ENV KURA_VERSION <span class="k">${</span><span 
 Step <span class="m">7</span> : ENV RPI_VERSION <span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">:-</span><span class="nv">raspberry</span><span class="p">-pi-bplus-nn</span><span class="k">}</span>
  ---&gt; Using cache
  ---&gt; a584f9145729
-Step <span class="m">8</span> : ENV JAVA_HOME /usr/lib/jvm/java-<span class="k">${</span><span class="nv">JAVA_VERSION</span><span class="k">}</span>-openjdk-armhf
- ---&gt; Using cache
- ---&gt; 173254271ccf
-Step <span class="m">9</span> : ENV KURA_HOME /opt/eclipse/kura
- ---&gt; Using cache
- ---&gt; 9488377ed131
-Step <span class="m">10</span> : ENV RHIOT_FOLDER /opt/rhiot
- ---&gt; Using cache
- ---&gt; 5bbf022e802e
-Step <span class="m">11</span> : ENV RHIOT_EMBEDDED_PLUGINS_FOLDER <span class="k">${</span><span class="nv">RHIOT_FOLDER</span><span class="k">}</span>/plugins-embedded
- ---&gt; Using cache
- ---&gt; ea73d0c01f12
-Step <span class="m">12</span> : ENV RHIOT_BIN_FOLDER <span class="k">${</span><span class="nv">RHIOT_FOLDER</span><span class="k">}</span>/bin
- ---&gt; Using cache
- ---&gt; 6a2d5dd2d0ee
-Step <span class="m">13</span> : LABEL version <span class="s2">&quot;${RHIOT_VERSION}&quot;</span>
- ---&gt; Using cache
- ---&gt; e3b93d06fdb4
-Step <span class="m">14</span> : LABEL project <span class="s2">&quot;Rhiot&quot;</span>
- ---&gt; Using cache
- ---&gt; 203265bdcc62
-Step <span class="m">15</span> : LABEL projectURL <span class="s2">&quot;http://rhiot.io&quot;</span>
- ---&gt; Using cache
- ---&gt; 352eff28996e
-Step <span class="m">16</span> : LABEL description <span class="s2">&quot;Rhiot docker image&quot;</span>
- ---&gt; Using cache
- ---&gt; f86c4dfa13e3
-Step <span class="m">17</span> : RUN apt-get update <span class="o">&amp;&amp;</span> <span class="se">\</span>
-              apt-get install -y unzip ethtool <span class="se">\</span>
-                      dos2unix telnet bind9 hostapd <span class="se">\</span>
-                      isc-dhcp-server iw monit wget <span class="se">\</span>
-                      openjdk-<span class="k">${</span><span class="nv">JAVA_VERSION</span><span class="k">}</span>-jdk --no-install-recommends  <span class="o">&amp;&amp;</span> <span class="se">\</span>
-              rm -rf /var/lib/apt/lists/*
- ---&gt; Using cache
- ---&gt; 4b8b0fe785f3
-Step <span class="m">18</span> : RUN wget https://s3.amazonaws.com/kura_downloads/raspbian/release/<span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">}</span>/kura_<span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">}</span>_<span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">}</span>_installer.deb
- ---&gt; Using cache
- ---&gt; ea286a9f9014
-Step <span class="m">19</span> : RUN dpkg -i kura_<span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">}</span>_<span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">}</span>_installer.deb
- ---&gt; Using cache
- ---&gt; bc1ac6c1657a
-Step <span class="m">20</span> : RUN rm kura_<span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">}</span>_<span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">}</span>_installer.deb
- ---&gt; Using cache
- ---&gt; ada5c87aa431
-Step <span class="m">21</span> : RUN <span class="k">if</span> <span class="o">[</span> -d <span class="k">$(</span>dirname <span class="sb">`</span>find /lib -name libudev.so.1<span class="sb">`</span><span class="k">)</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> ! -f <span class="k">$(</span>dirname <span class="sb">`</span>find /lib -name libudev.so.1<span class="sb">`</span><span class="k">)</span>/libudev.so.0 <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> ln -sf <span class="sb">`</span>find /lib -name libudev.so.1<span class="sb">`</span> <span class="k">$(</span>dirname <span class="sb">`</span>find /lib -name libudev.so.1<span class="sb">`</span><span class="k">)</span>/libudev.so.0<span class="p">;</span> <span class="k">fi</span>
- ---&gt; Using cache
- ---&gt; 90c402f2abd9
-Step <span class="m">22</span> : RUN mkdir -p <span class="k">${</span><span class="nv">RHIOT_EMBEDDED_PLUGINS_FOLDER</span><span class="k">}</span>
- ---&gt; Using cache
- ---&gt; e7632be5b420
-Step <span class="m">23</span> : RUN mkdir -p <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>
- ---&gt; Using cache
- ---&gt; a5b90dce879c
-Step <span class="m">24</span> : RUN wget -P <span class="k">${</span><span class="nv">RHIOT_EMBEDDED_PLUGINS_FOLDER</span><span class="k">}</span> https://repo1.maven.org/maven2/org/apache/camel/camel-core/<span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">}</span>/camel-core-<span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">}</span>.jar
- ---&gt; Using cache
- ---&gt; 31697e45ed6f
-Step <span class="m">25</span> : RUN wget -P <span class="k">${</span><span class="nv">RHIOT_EMBEDDED_PLUGINS_FOLDER</span><span class="k">}</span> https://repo1.maven.org/maven2/org/apache/camel/camel-core-osgi/<span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">}</span>/camel-core-osgi-<span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">}</span>.jar
- ---&gt; Using cache
- ---&gt; 8b1e43e11ecc
-Step <span class="m">26</span> : RUN wget -P <span class="k">${</span><span class="nv">RHIOT_EMBEDDED_PLUGINS_FOLDER</span><span class="k">}</span> https://repo1.maven.org/maven2/org/apache/camel/camel-kura/<span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">}</span>/camel-kura-<span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">}</span>.jar
- ---&gt; Using cache
- ---&gt; 0bac1ea0a521
-Step <span class="m">27</span> : RUN wget -P <span class="k">${</span><span class="nv">RHIOT_EMBEDDED_PLUGINS_FOLDER</span><span class="k">}</span> https://repo1.maven.org/maven2/io/rhiot/camel-kura/<span class="k">${</span><span class="nv">RHIOT_VERSION</span><span class="k">}</span>/camel-kura-<span class="k">${</span><span class="nv">RHIOT_VERSION</span><span class="k">}</span>.jar
- ---&gt; Using cache
- ---&gt; 8871c52142fd
-Step <span class="m">28</span> : ADD ./config.ini.sh <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/
- ---&gt; Using cache
- ---&gt; 8d18940742fe
-Step <span class="m">29</span> : ADD ./start_kura_rhiot.sh <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/
- ---&gt; Using cache
- ---&gt; 68c22aca8baf
-Step <span class="m">30</span> : ADD ./log4j.properties /opt/eclipse/kura/kura
- ---&gt; Using cache
- ---&gt; 0e9b786ebfc7
-Step <span class="m">31</span> : RUN chmod <span class="m">755</span> <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/*.sh
- ---&gt; Using cache
- ---&gt; adec9b16b22d
+
+... OMIT ...
+
 Step <span class="m">32</span> : RUN <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/config.ini.sh
  ---&gt; Using cache
  ---&gt; 14deb381475f
