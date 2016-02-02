@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly..."/>
+  <meta name="description" content="En ce debut d’année 2016, je me suis rendu à Londres afin d’aller visiter des amis Londoniens. Nous avons pris le temps d’aller voir le Meridien de Greenwich..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Wildfly 9.0 Offline CLI and HTTP/2</title>
+  <title>UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</title>
 </head>
 
   <body>
@@ -48,106 +48,75 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Wildfly 9.0 Offline CLI and HTTP/2</h1>
+      <h1 class="post-title">UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Jul 3, 2015  <a href="#en">en</a>  <a href="#wildfly">wildfly</a>  <a href="#Offline">Offline</a>  <a href="#CLI">CLI</a>  <a href="#HTTP/2">HTTP/2</a>  <a href="#JDK8">JDK8</a> </p>
-    <p>Yesterday, Wildfly community has just released <a href="http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/"><strong><em>Wildfly 9.0.0.Final</em></strong></a>, the last Application Server version. As I talked on my previous <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">French post about Wildfly</a> they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup <a href="https://en.wikipedia.org/wiki/HTTP/2"><strong><em>HTTP/2</em></strong></a> with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.</p>
+    <p class="post-meta">Jan 29, 2016  <a href="#fr">fr</a>  <a href="#UNESCO">UNESCO</a>  <a href="#challenge">challenge</a>  <a href="#miscellaneous">miscellaneous</a>  <a href="#voyage">voyage</a> </p>
+    <p>En ce debut d’année 2016, je me suis rendu à Londres afin d’aller visiter des amis Londoniens. Nous avons pris le temps d’aller voir le Meridien de Greenwich qui est le meridien 0°. Ce Meridien est devenu très important depuis qu’il est devenu la référence mondiale topographique à la <a href="https://fr.wikipedia.org/wiki/Conf%C3%A9rence_internationale_de_Washington_de_1884">Conférence internationale de Washington de 1884</a>. Il est utilisé avec l’aide d’une horloge correctement synchronisée par les navigateurs du monde entier afin de connaitre leur longitude extacte sur le globe terrestre. Attention, le GPS utilise un méridien très très légerement différent de celui-ci, il s’agit du <a href="https://fr.wikipedia.org/wiki/M%C3%A9ridien_de_r%C3%A9f%C3%A9rence_de_l%27IERS">Meridien IERS</a></p>
 
 <blockquote>
-  <p>How to setup HTTP/2 configuration into Wildfly 9.0.0.Final with offline mode.</p>
+  <p>Maritime Greenwich</p>
 </blockquote>
 
-<h2 id="download-wildfly">Download Wildfly</h2>
+<h2 id="rsum-maritime-greenwich">Résumé Maritime Greenwich</h2>
 
-<p>Please download it following <a href="http://wildfly.org/downloads/">this link</a>.</p>
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Titre (fr)</td>
+      <td>Maritime Greenwich</td>
+    </tr>
+    <tr>
+      <td>Title (en)</td>
+      <td>Maritime Greenwich</td>
+    </tr>
+    <tr>
+      <td>Id</td>
+      <td>795</td>
+    </tr>
+    <tr>
+      <td>Date d’enregistrement</td>
+      <td>1997</td>
+    </tr>
+    <tr>
+      <td>Localisation de la stele</td>
+      <td>à coté de l’église St Alfege</td>
+    </tr>
+    <tr>
+      <td>Date de la visite</td>
+      <td>2016-01-30</td>
+    </tr>
+    <tr>
+      <td>Intérêt</td>
+      <td>Haute</td>
+    </tr>
+  </tbody>
+</table>
 
-<h2 id="installation">Installation</h2>
+<h2 id="les-photos">Les photos</h2>
 
-<p>After downloading it, you just have to unzip it into your folder like this :</p>
+<p>Voici les photos :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar -zxvf wildfly-9.0.0.Final.tar.gz</code></pre></div>
+<p><img src="/img/meridian_seal.jpg" style="max-width:75%;" />
+<img src="/img/meridian_clock.jpg" style="max-width:75%;" />
+<img src="/img/meridian_ball.jpg" style="max-width:75%;" />
+<img src="/img/meridian_line.jpg" style="max-width:75%;" /></p>
 
-<h2 id="x509-certificate">X509 Certificate</h2>
-
-<p>HTTP/2 doesn’t need an encryption layer for transport, but we gonna implement it in this example.</p>
-
-<p>Create a self-signed certificate</p>
-
-<script src="https://gist.github.com/gautric/0a1d6b33fef9778d83b0.js"></script>
-
-<p>Export it for your web browser</p>
-
-<script src="https://gist.github.com/gautric/0208abcfdedc78b6471f.js"></script>
-
-<h2 id="secure-configuration">Secure configuration</h2>
-
-<p>Due of some JDK 8 limitations, <a href="http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html">ALPN</a> isn’t supported natively by JDK 8. We will download it from the <a href="https://eclipse.org/org/"><em>Eclipse Foundation</em></a>. This feature is mandatory for the HTTP/2 protocol with encryption.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">ALPN_VERSION</span><span class="o">=</span>8.1.3.v20150130
-curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar &gt; <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
-<span class="nb">export </span><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;$JAVA_OPTS -Xbootclasspath/p:`pwd`/alpn-boot-$ALPN_VERSION.jar&quot;</span></code></pre></div>
-
-<h2 id="configure-the-http2-into-undertow">Configure the HTTP/2 into Undertow</h2>
-
-<p>Now, the best part, Wildly isn’t running yet and we will execute some Offline CLI commands to configure the standalone instance.
-To use the offline mode, we just have to use the <strong><em>embed-server</em></strong> command. This command runs an internal Wildly process and will interact directly with it.</p>
-
-<script src="https://gist.github.com/gautric/546b92951b9e91195f84.js"></script>
-
-<p>As you should know <a href="http://undertow.io/"><strong><em>Undertow</em></strong></a> is now the JBoss embedded HTTP Webserver, we gonna configure it to enable http2 after we’ve configured the new security realm.
-You should get an output result like this</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">You are disconnected at the moment. Type <span class="s1">&#39;connect&#39;</span> to connect to the server or <span class="s1">&#39;help&#39;</span> <span class="k">for</span> the list of supported commands.
-<span class="o">[</span>disconnected /<span class="o">]</span> embed-server
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https:add<span class="o">()</span>
-<span class="o">{</span><span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span><span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/authentication<span class="o">=</span>truststore:add<span class="o">(</span>keystore-path<span class="o">=</span>server.truststore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
-<span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/server-identity<span class="o">=</span>ssl:add<span class="o">(</span>keystore-path<span class="o">=</span>server.keystore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
-<span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /subsystem<span class="o">=</span>undertow/server<span class="o">=</span>default-server/https-listener<span class="o">=</span>https:add<span class="o">(</span>socket-binding<span class="o">=</span>https, security-realm<span class="o">=</span>https, <span class="nb">enable</span>-http2<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span><span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> reload --admin-only<span class="o">=</span><span class="nb">false</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span></code></pre></div>
-
-<h2 id="startup-jboss">Startup JBoss</h2>
-
-<p>After a full correct configuration, you can startup the JBoss instance as usual.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$JBOSS_HOME</span>/bin/standalone.sh</code></pre></div>
-
-<h2 id="check-it">Check it</h2>
-
-<p>After a very quick JBoss startup (about 3s), you can check <a href="https://localhost:8443/"><strong><em>the welcome page</em></strong></a> with your favorite browser like Firefox .
-I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
-
-<p><img src="/img/wildfly9-http2-offline.png" style="max-width:75%;" /></p>
-
-<h3 id="useful-links">Useful links</h3>
+<h3 id="liens">Liens</h3>
 
 <ul>
-  <li><a href="https://developer.jboss.org/wiki/OfflineCLIWork">Offline CLI</a></li>
-  <li><a href="http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html">HTTP/2</a></li>
+  <li><a href="https://fr.wikipedia.org/wiki/Premier_m%C3%A9ridien">Premier Meridien Wikipedia</a></li>
+  <li><a href="http://whc.unesco.org/fr/list/795">Maritime Greenwich UNESCO WHS</a></li>
 </ul>
 
   </article>
