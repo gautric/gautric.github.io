@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Few years ago, my friends and I started a game we called the UNESCO challenge/Point UNESCO (fr). The goal of this game is very simple, we try to visit every ..."/>
+  <meta name="description" content="Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C ..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>UNESCO Challenge, point UNESCO, Le Havre</title>
+  <title>Rhiot Kura Device IO GPIO and I2C</title>
 </head>
 
   <body>
@@ -48,76 +48,278 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">UNESCO Challenge, point UNESCO, Le Havre</h1>
+      <h1 class="post-title">Rhiot Kura Device IO GPIO and I2C</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Aug 4, 2015  <a href="#en">en</a>  <a href="#UNESCO">UNESCO</a>  <a href="#challenge">challenge</a>  <a href="#miscellaneous">miscellaneous</a>  <a href="#voyage">voyage</a> </p>
-    <p>Few years ago, my friends and I started a game we called the UNESCO challenge/Point UNESCO (fr). The goal of this game is very simple, we try to visit every World Heritage Site (WHS), one visit == one UNESCO point. Sites could be a building, a city, a complex, a land, a monument, a mountain, etc.. and they are selected by UNESCO as being of special cultural or physical significance. We have to take the picture of signboard by UNESCO as a proof of our visit. We have got one more rule : Every place or site you have already visited which become a WHS, you also earn  a point.</p>
-
-<p>Today, I work for a customer in Le Havre (Seine-Maritime, France) and it is a World Heritage Site.</p>
+    <p class="post-meta">Feb 29, 2016  <a href="#en">en</a>  <a href="#rhiot">rhiot</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#Kura">Kura</a>  <a href="#Gateway">Gateway</a>  <a href="#DIO">DIO</a>  <a href="#DeviceIO">DeviceIO</a>  <a href="#I2C">I2C</a>  <a href="#API">API</a> </p>
+    <p>Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the <a href="http://openjdk.java.net/projects/dio/">DeviceIO</a> <a href="https://en.wikipedia.org/wiki/I%C2%B2C">I2C</a> <a href="http://camel.apache.org">Camel</a>, I reuse a previous work from Camel-pi4j I’ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a <a href="https://www.raspberrypi.org/">RaspberryPi</a> and a <a href="http://activemq.apache.org/">ActiveMQ</a> broker too.</p>
 
 <blockquote>
-  <p>Le Havre, the City Rebuilt by Auguste Perret</p>
+  <p>How to use Kura Camel DIO from Rhiot Quickstart into RaspberryPi.</p>
 </blockquote>
 
-<h2 id="le-havre-unesco-summary">Le Havre UNESCO summary</h2>
+<h2 id="requisites">Requisites</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Title (fr)</td>
-      <td>Le Havre, la ville reconstruite par Auguste Perret</td>
-    </tr>
-    <tr>
-      <td>Title (en)</td>
-      <td>Le Havre, the City Rebuilt by Auguste Perret</td>
-    </tr>
-    <tr>
-      <td>Id</td>
-      <td>1181</td>
-    </tr>
-    <tr>
-      <td>Record date</td>
-      <td>2005</td>
-    </tr>
-    <tr>
-      <td>Seal localisation</td>
-      <td>Into the park in front a town hall</td>
-    </tr>
-    <tr>
-      <td>Visit Date</td>
-      <td>2015-08-04</td>
-    </tr>
-    <tr>
-      <td>Interest</td>
-      <td>Medium</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li>One <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">RaspberryPi</a>
+    <ul>
+      <li>tested w/ RPi B+</li>
+      <li>should works with all version</li>
+    </ul>
+  </li>
+  <li>One LED</li>
+  <li>One Resistor</li>
+  <li><a href="https://www.adafruit.com/products/1603">BMP180 from Adafruit</a> or <a href="http://www.st.com/web/en/resource/technical/document/datasheet/DM00116291.pdf">HTS221</a></li>
+  <li><a href="https://www.itead.cc/electronic-brick-magnetic-sensor-switch-brick.html">Hall/Magnetic Sensor from Itead</a></li>
+  <li>An <a href="http://activemq.apache.org/">ActiveMQ</a> broker</li>
+  <li>a <a href="http://mosquitto.org/man/mosquitto_sub-1.html">Mqtt Client Mosquitto</a></li>
+  <li>some Wires</li>
+</ul>
 
-<h2 id="the-photo-proof">The photo proof</h2>
+<h3 id="wire-led-raspberrypi">Wire, LED, RaspberryPi</h3>
 
-<p>Here is the photo proof :</p>
+<p>Follow Design below</p>
 
-<p><img src="/img/IMG_2018.JPG" style="max-width:75%;" /></p>
+<p><img src="/img/desgin-hall-sensor-bmp180.png" style="max-width:80%;" /></p>
 
-<p><img src="/img/IMG_2020.JPG" style="max-width:75%;" /></p>
+<p>and</p>
+
+<p><img src="/img/schema-hall-sensor-bmp180.png" style="max-width:80%;" /></p>
+
+<h3 id="startup-activemq">Startup ActiveMQ</h3>
+
+<p>To retrieve and collect data we gonna start an ActiveMQ instance with following command line.
+You can install it everywhere you want, your RaspberryPi must be able to ping and connect to it through <code>MQTT port = 1883</code>.
+<a href="http://activemq.apache.org/download.html">Download</a> and <a href="http://www.apache.org/dyn/closer.cgi?path=/activemq/5.13.2/apache-activemq-5.13.2-bin.tar.gz">install the latest version 5.13.2</a></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="k">${</span><span class="nv">ACTIVEMQ_HOME</span><span class="k">}</span>/bin
+./activemq start</code></pre></div>
+
+<p>Remember your <code>ActiveMQ Instance IP</code>.</p>
+
+<p><a href="http://activemq.apache.org/getting-started.html#GettingStarted-OnUnix:">More information into ActiveMQ Getting Started</a></p>
+
+<h3 id="bundles-installation-into-raspberrypi">Bundles installation into RaspberryPi</h3>
+
+<h4 id="install-kura-to-raspberrypi">Install Kura to RaspberryPi</h4>
+
+<p>Download Kura version depending your RaspberryPi version. <code>RPI_VERSION</code> can be <code>pi</code>, <code>pi-2</code>, <code>pi-bplus</code>.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">macos&gt; ssh pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>
+rbpi&gt; <span class="nb">export </span><span class="nv">KURA_VERSION</span><span class="o">=</span>1.4.0
+rbpi&gt;  <span class="nb">export </span><span class="nv">RPI_VERSION</span><span class="o">=</span>pi
+rbpi&gt;  wget https://s3.amazonaws.com/kura_downloads/raspbian/release/<span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">}</span>/kura_<span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">}</span>_raspberry-<span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">}</span>_installer.deb
+rbpi&gt; sudo dpkg -i kura_<span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">}</span>_raspberry-<span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">}</span>_installer.deb</code></pre></div>
+
+<h4 id="configure-it-for-camel-support">Configure it for Camel support</h4>
+
+<p>Just add property below to kura <code>config.ini</code></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; sudo sh -c <span class="s2">&quot;echo \&quot;org.osgi.framework.bootdelegation=sun.*,com.sun.*\&quot; &gt;&gt; /opt/eclipse/kura/kura/config.ini &quot;</span>
+rbpi&gt; sudo reboot</code></pre></div>
+
+<h4 id="configure-kura-cloud">Configure Kura Cloud</h4>
+
+<p>Now we will configure Kura service to connect to <em>ActiveMQ</em> instance.</p>
+
+<p>To start kura service:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rpbi&gt; sudo service kura start</code></pre></div>
+
+<p>Configure the broker address (MQTT server) via the <a href="http://RPI_IP_ADDR/kura">Kura Web UI</a> change ip address with your <code>RaspberryPi IP</code> into your browser.</p>
+
+<p>Change the <code>broker-url</code> parameter <code>ActiveMQ Instance IP</code></p>
+
+<p><img src="/img/kura-cloud-config.png" style="max-width:80%;" /></p>
+
+<p>Don’t forget to connect Kura Gateway to the Broker server</p>
+
+<p><img src="/img/kura-cloud-config-2.png" style="max-width:80%;" /></p>
+
+<h4 id="camel-route-design">Camel Route Design</h4>
+
+<p>Here is the Camel route design, this design is obvious simple, but could be more complex for a real life implementation.
+The Hall sensor sends a message when magnetic field is close. Temp and pressure sensors retrieve their metrics. Route logs a message and metrics. WireTap component copies message to GPIO provider to blink a LED. Last component will push message to <a href="http://eclipse.github.io/kura/doc/cloud-configuration.html">Kura Cloud Service</a>. This service stores message into a Database if network is unavailable and send to the cloud when network is accessible again</p>
+
+<p><img src="/img/camel-route-hall-sensor-bmp180.png" style="max-width:80%;" /></p>
+
+<h3 id="import-quickstart-sample">Import Quickstart Sample</h3>
+
+<p>Download our <a href="https://github.com/rhiot/quickstarts/tree/kura-camel-dio/kura-camel-dio">Kura Rhiot quickstart directly from github repository</a>.</p>
+
+<p>and compile Kura-Rhiot Sample via common <code>mvn clean package</code> and copy it to your RaspberryPi</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/rhiot/quickstarts.git
+git branch  kura-camel-dio
+<span class="nb">cd </span>kura-camel-dio
+mvn clean package
+scp target/camel-core-2.16.2.jar                   pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
+scp target/camel-core-osgi-2.16.2.jar              pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
+scp target/camel-kura-2.16.2.jar                   pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
+scp target/camel-kura-0.1.5-SNAPSHOT.jar           pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
+scp target/camel-device-io-0.1.5-SNAPSHOT.jar      pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
+scp target/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi</code></pre></div>
+
+<p>RaspberryPi you can start and install bundles.</p>
+
+<p>To start kura service:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rpbi&gt; sudo service kura start</code></pre></div>
+
+<p>you can use <code>tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
+
+<p>Copy to RaspberryPi and Install all bundles and connect to Kura OSGi via telnet protocol:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">macos&gt; telnet <span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span> 5002
+Trying <span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>...
+Connected to <span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>.
+Escape character is <span class="s1">&#39;^]&#39;</span>.
+
+ install file:///home/pi/camel-core-2.16.2.jar
+ install file:///home/pi/camel-core-osgi-2.16.2.jar
+ install file:///home/pi/camel-kura-2.16.2.jar     
+ install file:///home/pi/camel-kura-0.1.5-SNAPSHOT.jar    
+ install file:///home/pi/camel-device-io-0.1.5-SNAPSHOT.jar    
+ install file:///home/pi/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar</code></pre></div>
+
+<p>And start all INSTALLED bundle, use <code>ss</code> OSGi command to retrieve correct bundle ids.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">start <span class="m">68</span> <span class="m">69</span> <span class="m">70</span> <span class="m">71</span> <span class="m">72</span> 73</code></pre></div>
+
+<p>The Kura output should look like this</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">2016-02-28 17:39:18,154 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Initializing bundle 74.
+2016-02-28 17:39:20,218 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.u.CamelContextHelper - No existing PropertiesComponent has been configured, creating a new default PropertiesComponent with name: properties
+2016-02-28 17:39:20,475 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.2 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+2016-02-28 17:39:20,494 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.m.ManagedManagementStrategy - JMX is enabled
+2016-02-28 17:39:24,921 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.i.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
+2016-02-28 17:39:25,243 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance.
+2016-02-28 17:39:27,370 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
+2016-02-28 17:39:27,374 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+2016-02-28 17:39:27,756 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.c.d.i.I2CProducer - Starting producer: Producer<span class="o">[</span>deviceio-i2c://1/0x77?driver<span class="o">=</span>bmp180<span class="o">]</span>
+2016-02-28 17:39:27,776 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">bytesRead</span><span class="o">=</span>1
+2016-02-28 17:39:27,785 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">bytesRead</span><span class="o">=</span>22
+2016-02-28 17:39:27,793 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  i.r.c.d.i.d.BMP180Driver - AC1:8126, AC2:-1094, AC3:-14661, AC4:34005, AC5:25140, AC6:17181, B1:6515, B2:40,  MB:-32768, MC:-11786, MD:2735
+2016-02-28 17:39:27,867 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.cloud.CloudService in the registry. Kura component will use that instance.
+2016-02-28 17:39:28,072 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.c.k.c.KuraCloudProducer - Starting producer: Producer<span class="o">[</span>kura-cloud://demoAppId/tempMetric<span class="o">]</span>
+2016-02-28 17:39:29,805 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.c.k.g.KuraGPIOConsumer - Starting consumer: Consumer<span class="o">[</span>kura-gpio://17?direction<span class="o">=</span>INPUT<span class="p">&amp;</span><span class="nv">mode</span><span class="o">=</span>INPUT_PULL_DOWN<span class="p">&amp;</span><span class="nv">trigger</span><span class="o">=</span>FALLING_EDGE<span class="o">]</span>
+2016-02-28 17:39:29,961 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Route: route1 started and consuming from: Endpoint<span class="o">[</span>kura-gpio://17?direction<span class="o">=</span>INPUT<span class="p">&amp;</span><span class="nv">mode</span><span class="o">=</span>INPUT_PULL_DOWN<span class="p">&amp;</span><span class="nv">trigger</span><span class="o">=</span>FALLING_EDGE<span class="o">]</span>
+2016-02-28 17:39:29,990 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
+2016-02-28 17:39:30,027 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.2 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 9.526 seconds
+2016-02-28 17:39:30,090 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Bundle <span class="m">74</span> started.
+2016-02-28 17:39:30,098 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Refreshing SCR properties: org.eclipse.equinox.internal.ds.impl.ReadOnlyDictionary@fa147e
+2016-02-28 17:39:30,477 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x6185
+2016-02-28 17:39:30,501 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x80 BB A7
+2016-02-28 17:39:30,504 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5775
+2016-02-28 17:39:30,507 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -2836
+2016-02-28 17:39:30,510 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B5</span> <span class="o">=</span> 2939
+2016-02-28 17:39:30,512 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B6</span> <span class="o">=</span> -1061
+2016-02-28 17:39:30,515 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5
+2016-02-28 17:39:30,518 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> 566
+2016-02-28 17:39:30,521 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X3</span> <span class="o">=</span> 571
+2016-02-28 17:39:30,524 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B3</span> <span class="o">=</span> 16538
+2016-02-28 17:39:30,527 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 1898
+2016-02-28 17:39:30,530 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> 27
+2016-02-28 17:39:30,532 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X3</span> <span class="o">=</span> 481
+2016-02-28 17:39:30,535 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B4</span> <span class="o">=</span> 34504
+2016-02-28 17:39:30,538 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B7</span> <span class="o">=</span> 1733225000
+2016-02-28 17:39:30,541 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 7123
+2016-02-28 17:39:30,546 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -11278
+2016-02-28 17:39:30,549 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">p</span> <span class="o">=</span> 100441
+2016-02-28 17:39:30,626 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x6181
+2016-02-28 17:39:30,629 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">UT</span> <span class="o">=</span> 24705
+2016-02-28 17:39:30,632 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5772
+2016-02-28 17:39:30,635 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -2837
+2016-02-28 17:39:30,638 <span class="o">[</span>Thread-21<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B5</span> <span class="o">=</span> 2935
+2016-02-28 17:39:30,716 <span class="o">[</span>Thread-21<span class="o">]</span> INFO  i.r.k.heartbeat - Exchange<span class="o">[</span>ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: <span class="o">[</span>temperature:+18.30 ºC,pressure:1004.41 hPa<span class="o">]]</span>
+2016-02-28 17:39:30,776 <span class="o">[</span>Camel <span class="o">(</span>camel-1<span class="o">)</span> thread <span class="c">#0 - WireTap] INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance.</span>
+2016-02-28 17:39:30,840 <span class="o">[</span>Camel <span class="o">(</span>camel-1<span class="o">)</span> thread <span class="c">#0 - WireTap] DEBUG i.r.c.k.g.KuraGPIOProducer - Starting producer: Producer[kura-gpio://7?action=BLINK]</span>
+2016-02-28 17:40:24,057 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x6199
+2016-02-28 17:40:24,075 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x80 AB A7
+2016-02-28 17:40:24,077 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5790
+2016-02-28 17:40:24,081 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -2831
+2016-02-28 17:40:24,083 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B5</span> <span class="o">=</span> 2959
+2016-02-28 17:40:24,086 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B6</span> <span class="o">=</span> -1041
+2016-02-28 17:40:24,089 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5
+2016-02-28 17:40:24,091 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> 556
+2016-02-28 17:40:24,094 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X3</span> <span class="o">=</span> 561
+2016-02-28 17:40:24,097 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B3</span> <span class="o">=</span> 16533
+2016-02-28 17:40:24,100 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 1863
+2016-02-28 17:40:24,102 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> 26
+2016-02-28 17:40:24,105 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X3</span> <span class="o">=</span> 472
+2016-02-28 17:40:24,108 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B4</span> <span class="o">=</span> 34494
+2016-02-28 17:40:24,111 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B7</span> <span class="o">=</span> 1733350000
+2016-02-28 17:40:24,113 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 7123
+2016-02-28 17:40:24,116 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -11283
+2016-02-28 17:40:24,119 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">p</span> <span class="o">=</span> 100476
+2016-02-28 17:40:24,179 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x6195
+2016-02-28 17:40:24,182 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">UT</span> <span class="o">=</span> 24725
+2016-02-28 17:40:24,185 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5787
+2016-02-28 17:40:24,188 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -2832
+2016-02-28 17:40:24,190 <span class="o">[</span>Thread-23<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B5</span> <span class="o">=</span> 2955
+2016-02-28 17:40:24,201 <span class="o">[</span>Thread-23<span class="o">]</span> INFO  i.r.k.heartbeat - Exchange<span class="o">[</span>ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: <span class="o">[</span>temperature:+18.50 ºC,pressure:1004.76 hPa<span class="o">]]</span>
+2016-02-28 17:40:26,707 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x619D
+2016-02-28 17:40:26,725 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x00 A9 A7
+2016-02-28 17:40:26,728 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5793
+2016-02-28 17:40:26,731 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -2830
+2016-02-28 17:40:26,734 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B5</span> <span class="o">=</span> 2963
+2016-02-28 17:40:26,737 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B6</span> <span class="o">=</span> -1037
+2016-02-28 17:40:26,739 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5
+2016-02-28 17:40:26,742 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> 553
+2016-02-28 17:40:26,745 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X3</span> <span class="o">=</span> 558
+2016-02-28 17:40:26,747 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B3</span> <span class="o">=</span> 16531
+2016-02-28 17:40:26,750 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 1855
+2016-02-28 17:40:26,753 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> 26
+2016-02-28 17:40:26,756 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X3</span> <span class="o">=</span> 470
+2016-02-28 17:40:26,758 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B4</span> <span class="o">=</span> 34492
+2016-02-28 17:40:26,761 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B7</span> <span class="o">=</span> 1733400000
+2016-02-28 17:40:26,764 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 7123
+2016-02-28 17:40:26,766 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -11284
+2016-02-28 17:40:26,769 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">p</span> <span class="o">=</span> 100486
+2016-02-28 17:40:26,829 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - 0x619E
+2016-02-28 17:40:26,832 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">UT</span> <span class="o">=</span> 24734
+2016-02-28 17:40:26,835 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X1</span> <span class="o">=</span> 5794
+2016-02-28 17:40:26,838 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">X2</span> <span class="o">=</span> -2830
+2016-02-28 17:40:26,840 <span class="o">[</span>Thread-25<span class="o">]</span> DEBUG i.r.c.d.i.d.BMP180Driver - <span class="nv">B5</span> <span class="o">=</span> 2964
+2016-02-28 17:40:26,863 <span class="o">[</span>Thread-25<span class="o">]</span> INFO  i.r.k.heartbeat - Exchange<span class="o">[</span>ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: <span class="o">[</span>temperature:+18.50 ºC,pressure:1004.86 hPa<span class="o">]]</span></code></pre></div>
+
+<p><br /></p>
+
+<p>We can receive data from Broker Server via</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">bash&gt; bin/rhiot consumer  --brokerUrl failover://tcp://<span class="k">${</span><span class="nv">ACTIVEMQ_IP</span><span class="k">}</span>:61616
+ --destination topic://account-name.B8:27:EB:E8:4A:AC.rhiotAppId.rhiotTopicId --bytesAsText  <span class="nb">true</span>
+
+INFO <span class="p">|</span> Connecting to URL: failover://tcp://<span class="k">${</span><span class="nv">ACTIVEMQ_IP</span><span class="k">}</span>:61616 <span class="o">(</span>null:null<span class="o">)</span>
+INFO <span class="p">|</span> Consuming topic://account-name.B8:27:EB:E8:4A:AC.rhiotAppId.rhiotTopicId
+INFO <span class="p">|</span> Sleeping between receives <span class="m">0</span> ms
+INFO <span class="p">|</span> Running <span class="m">1</span> parallel threads
+INFO <span class="p">|</span> Successfully connected to tcp://<span class="k">${</span><span class="nv">ACTIVEMQ_IP</span><span class="k">}</span>:61616
+INFO <span class="p">|</span> consumer-1 <span class="nb">wait </span><span class="k">until</span> <span class="m">1000</span> messages are consumed
+INFO <span class="p">|</span> consumer-1 Received ID:mbp.g.a.net-60446-1457358139947-2:15:-1:1:24
+INFO <span class="p">|</span> BytesMessage as text string: <span class="o">[</span>temperature:+38.82 ºC,humidity:+23.22% rH<span class="o">]</span>
+INFO <span class="p">|</span> consumer-1 Received ID:mbp.g.a.net-60446-1457358139947-2:15:-1:1:25
+INFO <span class="p">|</span> BytesMessage as text string: <span class="o">[</span>temperature:+38.93 ºC,humidity:+23.34% rH<span class="o">]</span></code></pre></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><a href="http://www.eclipse.org/kura/">Kura Platform</a> as usual can manage lots of stuff. We discover today how <strong>Kura Platform</strong> cloud manage an <strong>i2c components</strong> via the <a href="http://camel.apache.org">Camel Framework</a> and <a href="http://rhiot.io">Rhiot</a> and <a href="http://openjdk.java.net/projects/dio/">DeviceIO</a> API.
+Let’s develop and contribute more for <a href="http://www.eclipse.org/kura/">Kura</a> , <a href="http://camel.apache.org">Camel</a> and <a href="http://rhiot.io">Rhiot</a> project too.</p>
+
+<p>Stay tuned, for other <em>i2c components</em> ;-)</p>
+
+<p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
 
 <h3 id="useful-links">Useful links</h3>
 
 <ul>
-  <li><a href="http://www.lehavre.fr/">Le Havre (fr)</a></li>
-  <li><a href="http://whc.unesco.org/en/list/1181/">Le Havre UNESCO WHS</a></li>
+  <li><a href="http://rhiot.io">rhiot projet</a></li>
+  <li><a href="https://github.com/rhiot/rhiot/tree/master/gateway/components/camel-kura">camel-kura component</a></li>
+  <li><a href="https://github.com/rhiot/rhiot/tree/master/gateway/components/camel-kura">camel-device-io component</a></li>
 </ul>
 
   </article>
