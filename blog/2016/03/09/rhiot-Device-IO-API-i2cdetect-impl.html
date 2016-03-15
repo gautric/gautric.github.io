@@ -83,7 +83,7 @@
 rbpi&gt; hg clone http://hg.openjdk.java.net/dio/dev jdkdio
 rbpi&gt; <span class="nb">cd </span>jdkdio</code></pre></div>
 
-<p>and change line below into the Makefile</p>
+<p>and we need to change line below into the Makefile, to disable some low level log information.</p>
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">diff -r ad12ae44e850 Makefile
 --- a/Makefile	Mon Feb <span class="m">29</span> 19:06:11 <span class="m">2016</span> +0300
