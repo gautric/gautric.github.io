@@ -81,8 +81,24 @@
 
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; sudo apt-get install mercurial oracle-java-8
 rbpi&gt; hg clone http://hg.openjdk.java.net/dio/dev jdkdio
-rbpi&gt; <span class="nb">cd </span>jdkdio
-rbpi&gt; <span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
+rbpi&gt; <span class="nb">cd </span>jdkdio</code></pre></div>
+
+<p>and change line below into the Makefile</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">diff -r ad12ae44e850 Makefile
+--- a/Makefile	Mon Feb <span class="m">29</span> 19:06:11 <span class="m">2016</span> +0300
++++ b/Makefile	Tue Mar <span class="m">15</span> 16:06:07 <span class="m">2016</span> +0000
+@@ -172,7 +172,7 @@
+ JAVAC :<span class="o">=</span> <span class="k">$(</span>JAVA_HOME<span class="k">)</span>/bin/javac
+ JAR :<span class="o">=</span> <span class="k">$(</span>JAVA_HOME<span class="k">)</span>/bin/jar
+ MKDIR :<span class="o">=</span> mkdir -p
+-TARGET_C_FLAGS <span class="o">=</span> <span class="k">$(</span>USER_C_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span><span class="m">0</span> -DENABLE_DEVICEACCESS -c -MMD -MF <span class="k">$(</span>NATIVE_OUT_DIR<span class="k">)</span>/<span class="k">$(</span>@<span class="k">)</span>.d
++TARGET_C_FLAGS <span class="o">=</span> <span class="k">$(</span>USER_C_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span><span class="m">4</span> -DENABLE_DEVICEACCESS -c -MMD -MF <span class="k">$(</span>NATIVE_OUT_DIR<span class="k">)</span>/<span class="k">$(</span>@<span class="k">)</span>.d
+ <span class="nv">TARGET_INCLUDES</span> <span class="o">=</span> <span class="k">$(</span>foreach d,<span class="k">$(</span>DIO_INCLUDE_DIRS<span class="k">)</span>,-I<span class="k">$(</span>d<span class="k">))</span> -I<span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include -I<span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include/linux
+ <span class="nv">TARGET_CXX_FLAGS</span> <span class="o">=</span> <span class="k">$(</span>USER_CXX_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span><span class="m">4</span> -DENABLE_DEVICEACCESS -c
+ <span class="nv">TARGET_LD_FLAGS</span><span class="o">=</span> <span class="k">$(</span>USER_LD_FLAGS<span class="k">)</span> -Xlinker -z -Xlinker defs -Xlinker -O1 <span class="se">\</span></code></pre></div>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; <span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
 rbpi&gt; <span class="nb">export </span><span class="nv">PI_TOOLS</span><span class="o">=</span>/usr
 rbpi&gt; make</code></pre></div>
 
