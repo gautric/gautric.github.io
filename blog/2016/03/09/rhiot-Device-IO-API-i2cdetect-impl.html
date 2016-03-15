@@ -98,6 +98,8 @@ rbpi&gt; <span class="nb">cd </span>jdkdio</code></pre></div>
  <span class="nv">TARGET_CXX_FLAGS</span> <span class="o">=</span> <span class="k">$(</span>USER_CXX_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span><span class="m">4</span> -DENABLE_DEVICEACCESS -c
  <span class="nv">TARGET_LD_FLAGS</span><span class="o">=</span> <span class="k">$(</span>USER_LD_FLAGS<span class="k">)</span> -Xlinker -z -Xlinker defs -Xlinker -O1 <span class="se">\</span></code></pre></div>
 
+<p>You can now compile DIO Api Library with</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; <span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
 rbpi&gt; <span class="nb">export </span><span class="nv">PI_TOOLS</span><span class="o">=</span>/usr
 rbpi&gt; make</code></pre></div>
