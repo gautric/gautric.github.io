@@ -5,19 +5,19 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Lors d’un développement d’un programme informatique, il est parfois nécessaire d’utiliser les expressions rationnelles. On traduit parfois regular expression..."/>
+  <meta name="description" content="Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The Eclipse Kura Project has ..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/03/18/rhiot-camel-kura.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2016/03/18/rhiot-camel-kura.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Java Regex Group Name</title>
+  <title>Camel is going into Eclipse Kura</title>
 </head>
 
   <body>
@@ -48,69 +48,30 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Java Regex Group Name</h1>
+      <h1 class="post-title">Camel is going into Eclipse Kura</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Jun 18, 2015  <a href="#fr">fr</a>  <a href="#java">java</a>  <a href="#regex">regex</a>  <a href="#group">group</a>  <a href="#name">name</a> </p>
-    <p>Lors d’un développement d’un programme informatique, il est parfois nécessaire d’utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L’utilisation d’une expression rationnelle est utile dans le cas où l’on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu’une chaine de caractères correspond bien à un schéma/motif particulier.</p>
+    <p class="post-meta">Mar 18, 2016  <a href="#en">en</a>  <a href="#Eclipse">Eclipse</a>  <a href="#Kura">Kura</a>  <a href="#Camel">Camel</a> </p>
+    <p>Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The <a href="http://www.eclipse.org/kura/">Eclipse Kura Project</a> has accept a <a href="https://github.com/eclipse/kura/pull/72">GitHub Pull Request</a> and now includes a new cool component to <code>develop</code> branch. This new component is <a href="http://camel.apache.org">Camel Framework</a> from <a href="http://apache.org/">Apache Foundation</a>.
+<a href="https://about.me/hekonsek">Henryk Konsek</a> a colleague of mine is the principal guy behind this new. The Camel and Kura integration starts from the first <a href="http://camel.apache.org/kura.html">Camel Kura component</a> available since Camel version 2.15</p>
 
-<p>Dans tous les langages modernes (java, ruby, python), les librairies <em>regex</em> sont disponibles en standard. Nous allons voir comment utiliser une fonctionnalité interessante disponible dans la librairie standard de Java.</p>
+<p>I love both Eclipse Kura and Apache Camel. The first one the Platform is OSGi compliant and is very modular. We can deploy it into small computer or device like RaspberryPi. This Platform provides lot of component already integrated like GPIO, Cloud, Data Store etc…. It manages also security (TLS, X509), Configuration and Upgrade management and Web Management too.
+Camel Framework is the Java reference of Open Source <a href="http://www.enterpriseintegrationpatterns.com/">EIP</a> when you start to connect several services together (HTTP/JMS/MQ/File) and you need to transform, compute, re-inject, (re)route those of messages too.</p>
 
-<h2 id="use-case--tester-les-url">Use case : tester les URL</h2>
+<p>I am convinced this news could provide both for Eclipse Kura and Apache Camel contributors/developers/architects to design, build, deploy new projects into the IoT field.</p>
 
-<p>Dans notre use case nous voulons vérifier la correspondance d’une chaine de caractères avec une URL. Pour cela nous allons créer une expression rationnel afin de vérifier la bonne correspondance.</p>
+<p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>?http<span class="p">|</span>ftp<span class="p">|</span>ssh<span class="p">|</span>amqp<span class="p">|</span>imap<span class="p">|</span>ws<span class="o">)(</span>?s<span class="o">)</span>?://<span class="o">(</span>?<span class="o">[</span>a-zA-Z.-<span class="o">]</span>+<span class="o">)(</span>:<span class="o">(</span>?<span class="o">[</span>0-9<span class="o">]</span>+<span class="o">))</span>?</code></pre></div>
+<h3 id="useful-links">Useful links</h3>
 
-<p>Avec cette « regex », il est possible de vérifier les chaines suivantes par exemple :</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ftp://fileserver.domain:1223
-imaps://emailserver.domain:341</code></pre></div>
-
-<h2 id="group-index"><em>Group</em> indexé</h2>
-
-<p>Dans la plupart des langages, il est possible de récupérer les différentes parties avec la notion de <em>group</em> indexé. Par exemple, le premier <em>group</em> va correspondre au scheme à savoir http, ftp amqp, etc. ainsi de suite <em>group(1)</em>.</p>
-
-<h2 id="group-nomm"><em>Group</em> nommé</h2>
-
-<p>Mais dans Java (je n’ai pas vérifié avec les autres langages), il est possible de nommé ces <em>group</em> comme ceci</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">&quot;(?&lt;scheme&gt;http|ftp|ssh|amqp|imap|ws)(?&lt;secure&gt;s)?://(?&lt;host&gt;[a-zA-Z.-]+)(:(?&lt;port&gt;[0-9]+))?&quot;</span></code></pre></div>
-
-<p>Ensuite, il est possible de retrouver la valeur récupérée du group capturé par l’expression rationnelle comme ceci <em>group(“scheme”)</em></p>
-
-<p>Voici un exemple complet de l’utilisation des group nommés avec Java.</p>
-
-<script src="https://gist.github.com/gautric/45c3f5c1a9566f83e50d.js"></script>
-
-<p>et voici l’output.</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">scheme 	: ftp
-secure 	: <span class="nb">false</span>
-host 	: fileserver.domain
-port 	: 1223
-scheme 	: amqp
-secure 	: <span class="nb">false</span>
-host 	: momserver.domain
-port 	: 999
-scheme 	: imap
-secure 	: <span class="nb">true</span>
-host 	: emailserver.domain
-port 	: 341
-scheme 	: ws
-secure 	: <span class="nb">true</span>
-host 	: pushserver.domain
-port 	: 433</code></pre></div>
-
-<p><br /></p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>L’utilisation des <em>regex</em> permet de simplifier certains nombres de problematique de developpement. Malheureusement, elles sont parfois sous-utilisées par les developpeurs car elles sont parfois obscurent. En esperant, que les <em>group nommés</em> puissent les aider plus les utiliser.</p>
+<ul>
+  <li><a href="http://www.eclipse.org/kura/">Eclipse Kura Project</a></li>
+  <li><a href="http://camel.apache.org">Camel Framework</a></li>
+</ul>
 
   </article>
 
