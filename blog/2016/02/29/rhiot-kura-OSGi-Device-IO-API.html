@@ -304,7 +304,7 @@ Escape character is <span class="s1">&#39;^]&#39;</span>.
 
 <p>We can receive data from Broker Server via</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">bash&gt; bin/rhiot consumer  --brokerUrl failover://tcp://<span class="k">${</span><span class="nv">ACTIVEMQ_IP</span><span class="k">}</span>:61616
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">bash&gt; bin/rhiot consumer  --brokerUrl failover://tcp://<span class="k">${</span><span class="nv">ACTIVEMQ_IP</span><span class="k">}</span>:61616 <span class="se">\</span>
  --destination topic://account-name.B8:27:EB:E8:4A:AC.rhiotAppId.rhiotTopicId --bytesAsText  <span class="nb">true</span>
 
 INFO <span class="p">|</span> Connecting to URL: failover://tcp://<span class="k">${</span><span class="nv">ACTIVEMQ_IP</span><span class="k">}</span>:61616 <span class="o">(</span>null:null<span class="o">)</span>
