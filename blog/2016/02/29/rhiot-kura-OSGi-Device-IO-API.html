@@ -166,10 +166,10 @@ The Hall sensor sends a message when magnetic field is close. Temp and pressure 
 
 <p>and compile Kura-Rhiot Sample via common <code>mvn clean package</code> and copy it to your RaspberryPi</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/rhiot/quickstarts.git
-git branch  kura-camel-dio
-<span class="nb">cd </span>kura-camel-dio
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone -b kura-camel-dio https://github.com/rhiot/quickstarts.git
+<span class="nb">cd </span>quickstarts/kura-camel-dio
 mvn clean package
+
 scp target/camel-core-2.16.2.jar                   pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
 scp target/camel-core-osgi-2.16.2.jar              pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
 scp target/camel-kura-2.16.2.jar                   pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>:/home/pi
