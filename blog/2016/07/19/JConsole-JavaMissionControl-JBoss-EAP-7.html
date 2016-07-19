@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly..."/>
+  <meta name="description" content="During Red Hat summit, Red Hat releases the new version of its JBoss Application Server. JBoss App server provides a new JMX Remote Management protocol to co..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- Icon bar -->
   <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
@@ -21,17 +21,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>Wildfly 9.0 Offline CLI and HTTP/2</title>
+  <title>JConsole & Java Mission Control with JBoss EAP 7</title>
 </head>
 
   <body>
@@ -62,107 +62,167 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">Wildfly 9.0 Offline CLI and HTTP/2</h1>
+      <h1 class="post-title">JConsole & Java Mission Control with JBoss EAP 7</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Jul 3, 2015  <a href="#en">en</a>  <a href="#wildfly">wildfly</a>  <a href="#Offline">Offline</a>  <a href="#CLI">CLI</a>  <a href="#HTTP/2">HTTP/2</a>  <a href="#JDK8">JDK8</a> </p>
-    <p>Yesterday, Wildfly community has just released <a href="http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/"><strong><em>Wildfly 9.0.0.Final</em></strong></a>, the last Application Server version. As I talked on my previous <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">French post about Wildfly</a> they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup <a href="https://en.wikipedia.org/wiki/HTTP/2"><strong><em>HTTP/2</em></strong></a> with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.</p>
+    <p class="post-meta">Jul 19, 2016  <a href="#en">en</a>  <a href="#JBoss">JBoss</a>  <a href="#redhat">redhat</a>  <a href="#EAP">EAP</a>  <a href="#7">7</a>  <a href="#jvm">jvm</a>  <a href="#jmc">jmc</a> </p>
+    <p>During Red Hat summit, <a href="http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432">Red Hat releases the new version of its JBoss Application Server</a>. JBoss App server provides a new JMX Remote Management protocol to connect with. A common JMX tool is <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html">JConsole</a> and we will see how to use it on remote. We also configure an other tool called <a href="http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html">Java Mission Control</a> for a cooler JMX monitoring stuff.
+Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.</p>
 
-<blockquote>
-  <p>How to setup HTTP/2 configuration into Wildfly 9.0.0.Final with offline mode.</p>
-</blockquote>
+<h2 id="jconsole">JConsole</h2>
 
-<h2 id="download-wildfly">Download Wildfly</h2>
+<p>JConsole is a graphical monitoring tool to monitor <a href="https://en.wikipedia.org/wiki/Java_virtual_machine">Java Virtual Machine</a> and Java applications both on a local or remote machine.
+JConsole uses underlying features of Java Virtual Machine to provide information on performance and resource consumption of applications running on the Java platform using <a href="https://en.wikipedia.org/wiki/Java_Management_Extensions">Java Management Extensions</a> technology. JConsole comes as part of <a href="https://en.wikipedia.org/wiki/Java_Development_Kit">Java Development Kit</a> and the graphical console can be started using “jconsole” command. <a href="https://en.wikipedia.org/wiki/JConsole">from wikipedia</a></p>
 
-<p>Please download it following <a href="http://wildfly.org/downloads/">this link</a>.</p>
+<p>JConsole is provided both with <a href="http://openjdk.java.net/">OpenJDK</a> and <a href="http://www.oracle.com/technetwork/java/javase/overview/index.html">Oracle JDK</a> virtual machine.</p>
 
-<h2 id="installation">Installation</h2>
+<h3 id="jmx-connection">JMX connection</h3>
 
-<p>After downloading it, you just have to unzip it into your folder like this :</p>
+<p>JConsole can connect directly with local Java process (via PID) or can also connect to remote application via a standard JMX protocol or a custom JMX protocol. Standard JMX protocol is not very flexible and should be not use directly, this protocol has got limitations about account management. JBoss EAP 7 provide more flexible protocol called <strong>remote+http</strong>. JBoss uses <a href="https://tools.ietf.org/html/rfc7230#section-6.7">HTTP Upgrade</a> to change protocol from <strong>HTTP</strong> to <strong>jboss-remoting</strong> without changing TCP port at all.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar -zxvf wildfly-9.0.0.Final.tar.gz</code></pre></div>
+<p>Here is a <em>tcpdump</em> capture</p>
 
-<h2 id="x509-certificate">X509 Certificate</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">GET / HTTP/1.1
+Sec-JbossRemoting-Key: t/V5HWbok5e1KAYs22zDrQ<span class="o">==</span>
+Upgrade: jboss-remoting
+Host: localhost:8080
+Connection: upgrade
 
-<p>HTTP/2 doesn’t need an encryption layer for transport, but we gonna implement it in this example.</p>
+HTTP/1.1 <span class="m">101</span> Switching Protocols
+Connection: Upgrade
+Upgrade: jboss-remoting
+Sec-JbossRemoting-Accept: +F31ah8B270e5BrbWr6Ig90t+NM<span class="o">=</span>
+Date: Tue, <span class="m">19</span> Jul <span class="m">2016</span> 16:40:28 GMT
 
-<p>Create a self-signed certificate</p>
+........localhost...3......endpoint....4.0.18.Final-redhat-1....
+.<span class="o">(</span>.....<span class="o">(</span>...R......localhost..JBOSS-LOCAL-USER...................
+DIGEST-MD5....4.0.18.Final-redhat-1.....<span class="o">(</span>.....<span class="o">(</span>.................
+DIGEST-MD5...k.realm<span class="o">=</span><span class="s2">&quot;ApplicationRealm&quot;</span>,nonce<span class="o">=</span><span class="s2">&quot;2LD3fnFJ3Nbsjfj+k</span>
+<span class="s2">XXXXXXXXXXXXXXXXXXXXXXX&quot;</span>,charset<span class="o">=</span>utf-8,algorithm<span class="o">=</span>md5-sess.....ch
+<span class="nv">arset</span><span class="o">=</span>utf-8,username<span class="o">=</span><span class="s2">&quot;appli&quot;</span>,realm<span class="o">=</span><span class="s2">&quot;ApplicationRealm&quot;</span>,nonce<span class="o">=</span><span class="s2">&quot;2LD</span>
+<span class="s2">3fnFJ3Nbsjfj+XXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>,nc<span class="o">=</span>00000001,cnonce<span class="o">=</span><span class="s2">&quot;bCz1B</span>
+<span class="s2">XXXXXXXXXXXXXXXXX/fnQTL5S279++KbxG2&quot;</span>,digest-uri<span class="o">=</span><span class="s2">&quot;remoting/localh</span>
+<span class="s2">ost&quot;</span>,maxbuf<span class="o">=</span>65536,response<span class="o">=</span>e723bee2cffaddd9c1a3fa8925a106ad,qop<span class="o">=</span>
+....</code></pre></div>
 
-<script src="https://gist.github.com/gautric/0a1d6b33fef9778d83b0.js"></script>
+<h3 id="jconsole-from-jboss-eap">JConsole from JBoss EAP</h3>
 
-<p>Export it for your web browser</p>
+<p>JBoss EAP 7 is shipped with a <em>JConsole</em> wrapped script. This script injects into the JConsole classpath CLI lib and <strong>remote+http</strong> protocol lib.
+It is available into <strong>${JBOSS_HOME}/bin</strong> directory.</p>
 
-<script src="https://gist.github.com/gautric/0208abcfdedc78b6471f.js"></script>
+<h2 id="jconsole-connection-to-jboss-eap">JConsole connection to JBoss EAP</h2>
 
-<h2 id="secure-configuration">Secure configuration</h2>
+<h3 id="with-managementrealm">with ManagementRealm</h3>
 
-<p>Due of some JDK 8 limitations, <a href="http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html">ALPN</a> isn’t supported natively by JDK 8. We will download it from the <a href="https://eclipse.org/org/"><em>Eclipse Foundation</em></a>. This feature is mandatory for the HTTP/2 protocol with encryption.</p>
+<p>Out of the box, JConsole could use <strong>remote+http</strong> protocol for connecting to JBoss Management port <strong>9990</strong>.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">ALPN_VERSION</span><span class="o">=</span>8.1.3.v20150130
-curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar &gt; <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
-<span class="nb">export </span><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;$JAVA_OPTS -Xbootclasspath/p:`pwd`/alpn-boot-$ALPN_VERSION.jar&quot;</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></div>
 
-<h2 id="configure-the-http2-into-undertow">Configure the HTTP/2 into Undertow</h2>
+<p>Configure correct JMX url (correct <strong>management</strong> interface and <strong>management-http</strong> port)</p>
 
-<p>Now, the best part, Wildly isn’t running yet and we will execute some Offline CLI commands to configure the standalone instance.
-To use the offline mode, we just have to use the <strong><em>embed-server</em></strong> command. This command runs an internal Wildly process and will interact directly with it.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">service:jmx:remote+http://localhost:9990</code></pre></div>
 
-<script src="https://gist.github.com/gautric/546b92951b9e91195f84.js"></script>
+<p>and use <em>ManagementRealm</em> account to connect with (don’t forget to use <strong>${JBOSS_HOME}/bin/add-user.sh</strong> to configure account)</p>
 
-<p>As you should know <a href="http://undertow.io/"><strong><em>Undertow</em></strong></a> is now the JBoss embedded HTTP Webserver, we gonna configure it to enable http2 after we’ve configured the new security realm.
-You should get an output result like this</p>
+<h3 id="with-applicationrealm">with ApplicationRealm</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">You are disconnected at the moment. Type <span class="s1">&#39;connect&#39;</span> to connect to the server or <span class="s1">&#39;help&#39;</span> <span class="k">for</span> the list of supported commands.
-<span class="o">[</span>disconnected /<span class="o">]</span> embed-server
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https:add<span class="o">()</span>
-<span class="o">{</span><span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span><span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/authentication<span class="o">=</span>truststore:add<span class="o">(</span>keystore-path<span class="o">=</span>server.truststore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
-<span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/server-identity<span class="o">=</span>ssl:add<span class="o">(</span>keystore-path<span class="o">=</span>server.keystore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
-<span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /subsystem<span class="o">=</span>undertow/server<span class="o">=</span>default-server/https-listener<span class="o">=</span>https:add<span class="o">(</span>socket-binding<span class="o">=</span>https, security-realm<span class="o">=</span>https, <span class="nb">enable</span>-http2<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span><span class="o">}</span>
-<span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> reload --admin-only<span class="o">=</span><span class="nb">false</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span></code></pre></div>
+<p>You can use an account from <em>ApplicationRealm</em> for connecting to JBoss EAP 7 server but you have to change port connection too.</p>
 
-<h2 id="startup-jboss">Startup JBoss</h2>
+<p>Change <em>standalone.xml</em> with CLI command below</p>
 
-<p>After a full correct configuration, you can startup the JBoss instance as usual.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">/subsystem<span class="o">=</span>jmx/remoting-connector<span class="o">=</span>jmx:write-attribute<span class="o">(</span><span class="nv">name</span><span class="o">=</span>use-management-endpoint,value<span class="o">=</span><span class="nb">false</span><span class="o">)</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$JBOSS_HOME</span>/bin/standalone.sh</code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></div>
 
-<h2 id="check-it">Check it</h2>
+<p>Configure correct JMX url (correct <strong>public</strong> interface and <strong>http</strong> port)</p>
 
-<p>After a very quick JBoss startup (about 3s), you can check <a href="https://localhost:8443/"><strong><em>the welcome page</em></strong></a> with your favorite browser like Firefox .
-I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">service:jmx:remote+http://localhost:8080</code></pre></div>
 
-<p><img src="/img/wildfly9-http2-offline.png" style="max-width:75%;" /></p>
+<p>and use <em>ApplicationRealm</em> account to connect with (don’t forget to use <strong>${JBOSS_HOME}/bin/add-user.sh</strong> to configure account)</p>
 
-<h3 id="useful-links">Useful links</h3>
+<div class="warn">
+Be careful, if you use this configuration you couldn't connect anymore via Management interface/port and ManagementRealm's account.
+</div>
 
-<ul>
-  <li><a href="https://developer.jboss.org/wiki/OfflineCLIWork">Offline CLI</a></li>
-  <li><a href="http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html">HTTP/2</a></li>
-</ul>
+<h2 id="java-mission-control">Java Mission Control</h2>
+
+<p><strong>Java Mission Control</strong> can collect low level (CPU, I/O, R/W file, etc…) informations about <strong>JVM</strong> and can record them (for offline diagnostic).
+It can also collect <strong>JMX</strong> information with JMX system.</p>
+
+<p>This tool comes with <strong>Oracle JDK</strong> and is based on <strong>Eclipse</strong> technology.</p>
+
+<h3 id="configuration-jmc">Configuration JMC</h3>
+
+<p>In order to use JMC with JBoss EAP 7, we have to configure JMC classpath for providing correct <strong>remote+http</strong> protocol lib.</p>
+
+<p>Edit <strong>jmc.ini</strong> file</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini</code></pre></div>
+
+<p>and add line below at this end of file</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">-Xbootclasspath/a:<span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/client/jboss-client.jar</code></pre></div>
+
+<p>File should look like</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> cat /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/lib/missioncontrol/Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini
+-startup
+../../../plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar
+--launcher.library
+../../../plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.1.200.v20141007-2033
+-ws
+cocoa
+--launcher.appendVmargs
+-vm
+../../../../../jre/bin/
+-vmargs
+-XX:+UseG1GC
+-XX:+UnlockCommercialFeatures
+-XX:+FlightRecorder
+-XX:FlightRecorderOptions<span class="o">=</span><span class="nv">defaultrecording</span><span class="o">=</span><span class="nb">true</span>
+-Djava.net.preferIPv4Stack<span class="o">=</span><span class="nb">true</span>
+-XstartOnFirstThread
+-Dorg.eclipse.swt.internal.carbon.smallFonts
+-Xbootclasspath/a:/Users/gautric/Application/redhat/eap/jboss-eap-7.0/bin/client/jboss-client.jar</code></pre></div>
+
+<h2 id="jmc-connection-to-jboss-eap">JMC connection to JBoss EAP</h2>
+
+<p>After that you could start <strong>JMC</strong> application and add a new connection :
+<img src="/img/jmc-1.png" style="max-width:75%;" /></p>
+
+<p>Configure correctly JVM connection parameters</p>
+
+<ol>
+  <li>to configure custom url</li>
+  <li>to choice custom protocol <em>(check it first)</em></li>
+  <li>for account credential</li>
+  <li>to test connection</li>
+  <li>to save and connect</li>
+</ol>
+
+<p><img src="/img/jmc-2.png" style="max-width:75%;" /></p>
+
+<p>Now you can now view live all informations about JVM and JBoss EAP 7 application</p>
+
+<p><img src="/img/jmc-3.png" style="max-width:75%;" /></p>
+
+<p>You can also check all JMX MBean.</p>
+
+<p><img src="/img/jmc-4.png" style="max-width:75%;" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>JBoss EAP 7</strong> simplifies remote JMX connection. With <em>port reduction</em> and <em>HTTP upgrade</em> features, <strong>JBoss EAP 7</strong> monitoring fits perfectly containerization (aka Docker) context. Now both developers and admin system guys can monitor JMX or low level with minimal configuration into constraint environment.</p>
+
+<p>Please feel free to send me your feed back below.</p>
+
+<h3 id="useful-link">Useful link</h3>
+
+<p><a href="https://docs.jboss.org/author/display/WFLY10/JMX+subsystem+configuration">JMX Wildlfy 10</a></p>
 
   </article>
 
