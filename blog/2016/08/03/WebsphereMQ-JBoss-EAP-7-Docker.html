@@ -1,0 +1,2865 @@
+<!DOCTYPE html>
+<html><!--<![-->
+<head>
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with..."/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Icon bar -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html"-->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <title>JBoss EAP 7 connected to WebsphereMQ running on Docker</title>
+</head>
+
+  <body>
+        <header class="site-header blog-header">
+
+  <div class="wrapper">
+
+    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/apropos">A propos</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/citations">Citations</a><a class="page-link" href="/contact">Contact</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <header class="post-header blog-title">
+      <div class="wrapper">
+      <h1 class="post-title">JBoss EAP 7 connected to WebsphereMQ running on Docker</h1>
+    </div>
+    </header>
+
+    <main class="page-content" role="main">
+      <div class="wrapper">
+          <article class="post-content">
+    <p class="post-meta">Aug 3, 2016  <a href="#en">en</a>  <a href="#JBoss">JBoss</a>  <a href="#redhat">redhat</a>  <a href="#EAP7">EAP7</a>  <a href="#WebsphereMQ">WebsphereMQ</a>  <a href="#Docker">Docker</a> </p>
+    <p>Last year for a previous customer I wrote an article/post about <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">WebsphereMQ Best Practice with JBoss EAP 6</a>. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.</p>
+
+<blockquote>
+  <p>Howto run JBoss EAP 7 connected to WebsphereMQ running on Docker</p>
+</blockquote>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>For this lab, you need the following software :</p>
+
+<ul>
+  <li>package of JBoss EAP 7 <a href="http://www.jboss.org/products/eap/download/">http://www.jboss.org/products/eap/download/</a></li>
+  <li>installed Docker for Linux, for Mac or Window <em>&gt;= 1.12</em></li>
+</ul>
+
+<div class="warn">
+Warning, it is trial / demo only, a production deployment requires the purchase of a subscription for JBoss and a license for IBM
+</div>
+
+<h2 id="clone-git-project">Clone git project</h2>
+
+<p>First of all, clone the git repo project.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.com:gautric/JBoss-WMQ.git
+<span class="nb">cd </span>JBoss-WMQ</code></pre></div>
+
+<h2 id="eap-7-image-creation">EAP 7 image creation</h2>
+
+<p>We have to <a href="https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&amp;downloadType=distributions">download the JBoss EAP 7 binary</a> and we will create the correct image of EAP 7.</p>
+
+<p>Copy binary file to JBoss-WMQ/jboss directory and go to this directory to build image.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>JBoss-WMQ
+docker build -t jboss-ivt jboss</code></pre></div>
+
+<p>the Dockerfile</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">### Set the base image to Fedora</span>
+FROM jboss/base-jdk:8
+
+<span class="c">## docker build -t jboss-ivt jboss</span>
+<span class="c">## docker run -p 8080:8080 -p 9990:9990 -t jboss-ivt</span>
+
+<span class="c">### File Author / Maintainer</span>
+MAINTAINER <span class="s2">&quot;Greg Autric&quot;</span> <span class="s2">&quot;gautric@redhat.com&quot;</span>
+
+<span class="c">### Set Environment</span>
+ENV JBOSS_HOME  /opt/jboss/jboss-eap-7.0
+ENV MQM_HOME    /opt/mqm
+ENV MQM_URL     http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz
+
+<span class="c">### Install EAP 7.0.0</span>
+COPY jboss-eap-7.0.0.zip /opt
+RUN unzip /opt/jboss-eap-7.0.0.zip  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;Install JBoss instance&quot;</span>
+
+<span class="c">## Change user to install some</span>
+USER root
+RUN <span class="nb">cd</span> /tmp <span class="o">&amp;&amp;</span> yum install -y wget <span class="o">&amp;&amp;</span> wget <span class="k">${</span><span class="nv">MQM_URL</span><span class="k">}</span> <span class="o">&amp;&amp;</span> tar -zxvf ./*.tar.gz  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">cd </span>MQServer <span class="o">&amp;&amp;</span> ./mqlicense.sh -text_only -accept  <span class="o">&amp;&amp;</span> rpm -ivh  MQSeriesJava*.rpm MQSeriesRuntime*.rpm
+RUN rm -rf /tmp/*
+
+<span class="c">### Create Admin EAP user</span>
+USER jboss
+RUN <span class="nv">$JBOSS_HOME</span>/bin/add-user.sh admin admin123! --silent
+
+<span class="c">## Copy EAR and RAR</span>
+RUN cp <span class="k">${</span><span class="nv">MQM_HOME</span><span class="k">}</span>/java/lib/jca/wmq.jmsra.ivt.ear <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/standalone/deployments
+RUN cp <span class="k">${</span><span class="nv">MQM_HOME</span><span class="k">}</span>/java/lib/jca/wmq.jmsra.rar     <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/standalone/deployments
+
+<span class="c">### JBoss configuration files</span>
+COPY jboss-overlay.cli  /opt
+COPY jboss-ejb3.xml     /opt
+COPY jboss-web.xml      /opt
+
+<span class="c">### Configure EAP</span>
+RUN <span class="nb">echo</span> <span class="s2">&quot;JAVA_OPTS=\&quot;\$JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0\&quot;&quot;</span> &gt;&gt; <span class="nv">$JBOSS_HOME</span>/bin/standalone.conf
+RUN <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jboss-cli.sh --file<span class="o">=</span>/opt/jboss-overlay.cli
+RUN rm -rf <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/standalone/configuration/standalone_xml_history/current
+RUN chown -R jboss:jboss <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>
+
+<span class="c">### Open Ports</span>
+EXPOSE <span class="m">8080</span> 9990
+
+<span class="c">### Start EAP</span>
+CMD  <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/standalone.sh -c standalone-full.xml</code></pre></div>
+
+<h4 id="information-about-this-image">Information about this image</h4>
+
+<ul>
+  <li>Admin User
+    <ul>
+      <li><em>admin</em> user is created</li>
+    </ul>
+  </li>
+  <li>Application and RAR
+    <ul>
+      <li>Demo application and WMQ Ressource Adapter come from <a href="http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz">official WMQ tgz</a>.</li>
+      <li>We download it and install Java rpm package only and copy <em>rar</em> and <em>ear</em> to correct JBoss deployment directory</li>
+    </ul>
+  </li>
+  <li>JBoss CLI
+    <ul>
+      <li>The CLI script is composed of two specific part :
+        <ul>
+          <li>Resource Adapter configuration
+            <ul>
+              <li>some system-property for configure RAR (user/pass/channel/queueManager, etc…)</li>
+            </ul>
+          </li>
+          <li>Deployment overlay is used to adapt/provide correct configuration from JBoss to application
+            <ul>
+              <li>jboss-web.xml to adapt <strong>war</strong> configuration</li>
+              <li>jboss-ejb3.xml for providing <strong>ejb</strong> configuration</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>It is running with embed-server mode (offline)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>the CLI file</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">embed-server --server-config<span class="o">=</span>standalone-full.xml
+
+deployment-overlay add --name<span class="o">=</span>jboss-ejb-overlay --content<span class="o">=</span>/WMQ_IVT_MDB.jar/META-INF/jboss-ejb3.xml<span class="o">=</span>/opt/jboss-ejb3.xml --deployments<span class="o">=</span>wmq.jmsra.ivt.ear --redeploy-affected
+deployment-overlay add --name<span class="o">=</span>jboss-web-overlay --content<span class="o">=</span>/WMQ_IVT.war/WEB-INF/jboss-web.xml<span class="o">=</span>/opt/jboss-web.xml --deployments<span class="o">=</span>wmq.jmsra.ivt.ear --redeploy-affected
+
+<span class="c"># Remove unused stuff</span>
+/subsystem<span class="o">=</span>datasources:remove
+/subsystem<span class="o">=</span>webservices:remove
+/subsystem<span class="o">=</span>jpa:remove
+/subsystem<span class="o">=</span>infinispan:remove
+
+/subsystem<span class="o">=</span>ejb3:write-attribute<span class="o">(</span><span class="nv">name</span><span class="o">=</span>default-resource-adapter-name, <span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">ejb</span><span class="p">.resource-adapter-name:</span><span class="nv">wmq</span><span class="p">.jmsra.rar</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar:add<span class="o">(</span><span class="nv">archive</span><span class="o">=</span>wmq.jmsra.rar,transaction-support<span class="o">=</span>LocalTransaction,statistics-enabled<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF:add<span class="o">(</span>class-name<span class="o">=</span>com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name<span class="o">=</span>JMS2CF, use-java-context<span class="o">=</span><span class="nb">false</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>hostName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.hostName:</span><span class="nv">localhost</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>password:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.password:</span><span class="nv">mqm</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>queueManager:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueManager:</span><span class="nv">QUEUE</span><span class="p">.MANAGER</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>port:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.port:</span><span class="nv">1414</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>channel:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.channel:</span><span class="nv">SYSTEM</span><span class="p">.AUTO.SVRCONN</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>transportType:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.transportType:</span><span class="nv">CLIENT</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>username:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.username:</span><span class="nv">mqm</span><span class="k">}</span><span class="o">)</span>
+
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF:add<span class="o">(</span>class-name<span class="o">=</span>com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name<span class="o">=</span>jms/ivt/IVTCF, use-java-context<span class="o">=</span><span class="nb">false</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>hostName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.hostName:</span><span class="nv">localhost</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>password:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.password:</span><span class="nv">mqm</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>queueManager:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueManager:</span><span class="nv">QUEUE</span><span class="p">.MANAGER</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>port:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.port:</span><span class="nv">1414</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>channel:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.channel:</span><span class="nv">SYSTEM</span><span class="p">.AUTO.SVRCONN</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>transportType:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.transportType:</span><span class="nv">CLIENT</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>username:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.username:</span><span class="nv">mqm</span><span class="k">}</span><span class="o">)</span>
+
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/admin-objects<span class="o">=</span>QueuePool:add<span class="o">(</span>class-name<span class="o">=</span>com.ibm.mq.connector.outbound.MQQueueProxy,jndi-name<span class="o">=</span>jms/ivt/IVTQueue,use-java-context<span class="o">=</span><span class="nb">true</span>,enabled<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/admin-objects<span class="o">=</span>QueuePool/config-properties<span class="o">=</span>baseQueueName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueName:</span><span class="nv">Q_QUEUE</span><span class="k">}</span><span class="o">)</span>
+/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/admin-objects<span class="o">=</span>QueuePool/config-properties<span class="o">=</span>baseQueueManagerName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueManager:</span><span class="nv">QUEUE</span><span class="p">.MANAGER</span><span class="k">}</span><span class="o">)</span>
+
+<span class="c"># Websphere MQ Host and Port</span>
+<span class="c">#/system-property=websphere.hostName:add(value=wmq-ivt)</span>
+<span class="c">#/system-property=websphere.port:add(value=1414)</span>
+
+<span class="c"># Websphere MQ configuration</span>
+/system-property<span class="o">=</span>websphere.transportType:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>CLIENT<span class="o">)</span>
+/system-property<span class="o">=</span>websphere.username:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>alice<span class="o">)</span>
+/system-property<span class="o">=</span>websphere.password:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>passw0rd<span class="o">)</span>
+/system-property<span class="o">=</span>websphere.channel:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>PASSWORD.SVRCONN<span class="o">)</span>
+/system-property<span class="o">=</span>websphere.queueManager:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>QM1<span class="o">)</span>
+/system-property<span class="o">=</span>websphere.queueName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>Q_QUEUE<span class="o">)</span>
+/system-property<span class="o">=</span>websphere.resource.adapter:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>wmq.jmsra.rar<span class="o">)</span>
+/system-property<span class="o">=</span>ejb.resource-adapter-name:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>wmq.jmsra.rar<span class="o">)</span>
+
+reload --admin-only<span class="o">=</span><span class="nb">false</span></code></pre></div>
+
+<h2 id="wmq-image-creation">WMQ image creation</h2>
+
+<p>Now we create the WMQ Docker image, we will re-use a public image to build our own version with custom stuff.
+Go back to our first git repo to build our own image</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>JBoss-WMQ
+docker build -t wmq-ivt wmq</code></pre></div>
+
+<p>the Dockerfile</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">FROM ibmcom/mq
+RUN useradd alice -G mqm <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    <span class="nb">echo </span>alice:passw0rd <span class="p">|</span> chpasswd
+COPY config.mqsc /etc/mqm/</code></pre></div>
+
+<p>We use a small configuration for WMQ, <strong>alice</strong> account can connect to wmq and we create a simple WMQ Queue too.</p>
+
+<p>the configuration file</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">DEFINE CHANNEL<span class="o">(</span>PASSWORD.SVRCONN<span class="o">)</span> CHLTYPE<span class="o">(</span>SVRCONN<span class="o">)</span>
+SET CHLAUTH<span class="o">(</span>PASSWORD.SVRCONN<span class="o">)</span> TYPE<span class="o">(</span>BLOCKUSER<span class="o">)</span> USERLIST<span class="o">(</span><span class="s1">&#39;nobody&#39;</span><span class="o">)</span> DESCR<span class="o">(</span><span class="s1">&#39;Allow privileged users on this channel&#39;</span><span class="o">)</span>
+SET CHLAUTH<span class="o">(</span><span class="s1">&#39;*&#39;</span><span class="o">)</span> TYPE<span class="o">(</span>ADDRESSMAP<span class="o">)</span> ADDRESS<span class="o">(</span><span class="s1">&#39;*&#39;</span><span class="o">)</span> USERSRC<span class="o">(</span>NOACCESS<span class="o">)</span> DESCR<span class="o">(</span><span class="s1">&#39;BackStop rule&#39;</span><span class="o">)</span>
+SET CHLAUTH<span class="o">(</span>PASSWORD.SVRCONN<span class="o">)</span> TYPE<span class="o">(</span>ADDRESSMAP<span class="o">)</span> ADDRESS<span class="o">(</span><span class="s1">&#39;*&#39;</span><span class="o">)</span> USERSRC<span class="o">(</span>CHANNEL<span class="o">)</span> CHCKCLNT<span class="o">(</span>REQUIRED<span class="o">)</span>
+ALTER AUTHINFO<span class="o">(</span>SYSTEM.DEFAULT.AUTHINFO.IDPWOS<span class="o">)</span> AUTHTYPE<span class="o">(</span>IDPWOS<span class="o">)</span> ADOPTCTX<span class="o">(</span>YES<span class="o">)</span>
+DEFINE QL<span class="o">(</span>Q_QUEUE<span class="o">)</span>
+REFRESH SECURITY TYPE<span class="o">(</span>CONNAUTH<span class="o">)</span></code></pre></div>
+
+<h2 id="docker-compose-to-run-demo">Docker compose to run demo</h2>
+
+<p>At the end, we use docker compose to run both parts (JBoss and WMQ). We setup some environment variable for more flexible configuration (websphere.hostName and websphere.port for exemple).</p>
+
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">version</span><span class="p-Indicator">:</span> <span class="s">&#39;2&#39;</span>
+<span class="l-Scalar-Plain">services</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">jboss-ivt</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">jboss-ivt</span>
+    <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">jboss</span>
+    <span class="l-Scalar-Plain">ports</span><span class="p-Indicator">:</span>
+     <span class="p-Indicator">-</span> <span class="s">&quot;8080:8080&quot;</span>
+     <span class="p-Indicator">-</span> <span class="s">&quot;9990:9990&quot;</span>
+    <span class="l-Scalar-Plain">environment</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">JAVA_OPTS</span><span class="p-Indicator">:</span> <span class="s">&quot;-Dwebsphere.hostName=wmq-ivt</span><span class="nv"> </span><span class="s">-Dwebsphere.port=1414&quot;</span>
+    <span class="l-Scalar-Plain">links</span><span class="p-Indicator">:</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">wmq-ivt</span>
+    <span class="l-Scalar-Plain">depends_on</span><span class="p-Indicator">:</span>
+      <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">wmq-ivt</span>
+  <span class="l-Scalar-Plain">wmq-ivt</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">image</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">wmq-ivt</span>
+    <span class="l-Scalar-Plain">build</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">wmq</span>
+    <span class="l-Scalar-Plain">environment</span><span class="p-Indicator">:</span>
+      <span class="l-Scalar-Plain">LICENSE</span><span class="p-Indicator">:</span> <span class="s">&quot;accept&quot;</span>
+      <span class="l-Scalar-Plain">MQ_QMGR_NAME</span><span class="p-Indicator">:</span> <span class="s">&quot;QM1&quot;</span>
+    <span class="l-Scalar-Plain">ports</span><span class="p-Indicator">:</span>
+     <span class="p-Indicator">-</span> <span class="s">&quot;1414:1414&quot;</span></code></pre></div>
+
+<h3 id="run-it-and-check-it">Run it and check it</h3>
+
+<p>Use docker-compose up to run both <strong>WMQ</strong> and <strong>JBoss</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Source/git/JBoss-WMQ<span class="o">]</span><span class="nv">$&gt;</span> docker-compose up</code></pre></div>
+
+<p>and go to <a href="http://localhost:8080/WMQ_IVT">IVT URL http://localhost:8080/WMQ_IVT/IVT</a> for the web result.</p>
+
+<h3 id="web-result">web result</h3>
+
+<h4 id="the-application-page">The Application page</h4>
+
+<p><img src="/img/jboss-wmq-1.png" style="max-width:75%;" /></p>
+
+<h4 id="the-result-page">The Result page</h4>
+
+<p><img src="/img/jboss-wmq-2.png" style="max-width:75%;" /></p>
+
+<h4 id="the-jms-inspection-view-message-contents-page">The JMS inspection (View Message Contents) page</h4>
+
+<p><img src="/img/jboss-wmq-3.png" style="max-width:75%;" /></p>
+
+<h3 id="and-output-log-result">and output log result</h3>
+
+<p>You should get an output like this</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Source/git/JBoss-WMQ<span class="o">]</span><span class="nv">$&gt;</span> docker-compose up
+Starting jbosswmq_wmq-ivt_1
+Starting jbosswmq_jboss-ivt_1
+Attaching to jbosswmq_wmq-ivt_1, jbosswmq_jboss-ivt_1
+wmq-ivt_1    <span class="p">|</span> ----------------------------------------
+wmq-ivt_1    <span class="p">|</span> Name:        IBM MQ
+wmq-ivt_1    <span class="p">|</span> Version:     9.0.0.0
+wmq-ivt_1    <span class="p">|</span> Level:       p900-L160520.DE
+wmq-ivt_1    <span class="p">|</span> BuildType:   IKAP - <span class="o">(</span>Production<span class="o">)</span>
+wmq-ivt_1    <span class="p">|</span> Platform:    IBM MQ <span class="k">for</span> Linux <span class="o">(</span>x86-64 platform<span class="o">)</span>
+wmq-ivt_1    <span class="p">|</span> Mode:        64-bit
+wmq-ivt_1    <span class="p">|</span> O/S:         Linux 4.4.15-moby
+wmq-ivt_1    <span class="p">|</span> InstName:    Installation1
+wmq-ivt_1    <span class="p">|</span> InstDesc:    
+wmq-ivt_1    <span class="p">|</span> Primary:     Yes
+wmq-ivt_1    <span class="p">|</span> InstPath:    /opt/mqm
+wmq-ivt_1    <span class="p">|</span> DataPath:    /var/mqm
+wmq-ivt_1    <span class="p">|</span> MaxCmdLevel: 900
+wmq-ivt_1    <span class="p">|</span> LicenseType: Developer
+wmq-ivt_1    <span class="p">|</span> ----------------------------------------
+wmq-ivt_1    <span class="p">|</span> IBM MQ queue manager <span class="s1">&#39;QM1&#39;</span> starting.
+wmq-ivt_1    <span class="p">|</span> The queue manager is associated with installation <span class="s1">&#39;Installation1&#39;</span>.
+wmq-ivt_1    <span class="p">|</span> <span class="m">5</span> log records accessed on queue manager <span class="s1">&#39;QM1&#39;</span> during the log replay phase.
+wmq-ivt_1    <span class="p">|</span> Log replay <span class="k">for</span> queue manager <span class="s1">&#39;QM1&#39;</span> complete.
+wmq-ivt_1    <span class="p">|</span> Transaction manager state recovered <span class="k">for</span> queue manager <span class="s1">&#39;QM1&#39;</span>.
+wmq-ivt_1    <span class="p">|</span> IBM MQ queue manager <span class="s1">&#39;QM1&#39;</span> started using V9.0.0.0.
+wmq-ivt_1    <span class="p">|</span> ----------------------------------------
+wmq-ivt_1    <span class="p">|</span> QMNAME<span class="o">(</span>QM1<span class="o">)</span>                                               STATUS<span class="o">(</span>Running<span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> JAVA_OPTS already <span class="nb">set </span>in environment<span class="p">;</span> overriding default settings with values: -Dwebsphere.hostName<span class="o">=</span>wmq-ivt -Dwebsphere.port<span class="o">=</span>1414
+jboss-ivt_1  <span class="p">|</span> <span class="o">=========================================================================</span>
+jboss-ivt_1  <span class="p">|</span>
+jboss-ivt_1  <span class="p">|</span>   JBoss Bootstrap Environment
+jboss-ivt_1  <span class="p">|</span>
+jboss-ivt_1  <span class="p">|</span>   JBOSS_HOME: /opt/jboss/jboss-eap-7.0
+jboss-ivt_1  <span class="p">|</span>
+jboss-ivt_1  <span class="p">|</span>   JAVA: /usr/lib/jvm/java/bin/java
+jboss-ivt_1  <span class="p">|</span>
+jboss-ivt_1  <span class="p">|</span>   JAVA_OPTS:  -server -verbose:gc -Xloggc:<span class="s2">&quot;/opt/jboss/jboss-eap-7.0/standalone/log/gc.log&quot;</span> -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles<span class="o">=</span><span class="m">5</span> -XX:GCLogFileSize<span class="o">=</span>3M -XX:-TraceClassUnloading -Dwebsphere.hostName<span class="o">=</span>wmq-ivt -Dwebsphere.port<span class="o">=</span><span class="m">1414</span> -Djboss.bind.address<span class="o">=</span>0.0.0.0 -Djboss.bind.address.management<span class="o">=</span>0.0.0.0
+jboss-ivt_1  <span class="p">|</span>
+jboss-ivt_1  <span class="p">|</span> <span class="o">=========================================================================</span>
+jboss-ivt_1  <span class="p">|</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:44,163 INFO  <span class="o">[</span>org.jboss.modules<span class="o">]</span> <span class="o">(</span>main<span class="o">)</span> JBoss Modules version 1.5.1.Final-redhat-1
+jboss-ivt_1  <span class="p">|</span> 12:44:44,405 INFO  <span class="o">[</span>org.jboss.msc<span class="o">]</span> <span class="o">(</span>main<span class="o">)</span> JBoss MSC version 1.2.6.Final-redhat-1
+jboss-ivt_1  <span class="p">|</span> 12:44:44,494 INFO  <span class="o">[</span>org.jboss.as<span class="o">]</span> <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYSRV0049: JBoss EAP 7.0.0.GA <span class="o">(</span>WildFly Core 2.1.2.Final-redhat-1<span class="o">)</span> starting
+jboss-ivt_1  <span class="p">|</span> 12:44:46,457 INFO  <span class="o">[</span>org.jboss.as.server<span class="o">]</span> <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0039: Creating http management service using socket-binding <span class="o">(</span>management-http<span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:46,487 INFO  <span class="o">[</span>org.xnio<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> XNIO version 3.3.6.Final-redhat-1
+jboss-ivt_1  <span class="p">|</span> 12:44:46,496 INFO  <span class="o">[</span>org.xnio.nio<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> XNIO NIO Implementation Version 3.3.6.Final-redhat-1
+jboss-ivt_1  <span class="p">|</span> 12:44:46,576 INFO  <span class="o">[</span>org.jboss.remoting<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> JBoss Remoting version 4.0.18.Final-redhat-1
+jboss-ivt_1  <span class="p">|</span> 12:44:46,638 INFO  <span class="o">[</span>org.wildfly.extension.io<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 35<span class="o">)</span> WFLYIO001: Worker <span class="s1">&#39;default&#39;</span> has auto-configured to <span class="m">4</span> core threads with <span class="m">32</span> task threads based on your <span class="m">2</span> available processors
+jboss-ivt_1  <span class="p">|</span> 12:44:46,691 INFO  <span class="o">[</span>org.jboss.as.jsf<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 41<span class="o">)</span> WFLYJSF0007: Activated the following JSF Implementations: <span class="o">[</span>main<span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:46,712 WARN  <span class="o">[</span>org.jboss.as.txn<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 53<span class="o">)</span> WFLYTX0013: Node identifier property is <span class="nb">set </span>to the default value. Please make sure it is unique.
+jboss-ivt_1  <span class="p">|</span> 12:44:46,914 INFO  <span class="o">[</span>org.wildfly.iiop.openjdk<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 36<span class="o">)</span> WFLYIIOP0001: Activating IIOP Subsystem
+jboss-ivt_1  <span class="p">|</span> 12:44:46,934 INFO  <span class="o">[</span>org.jboss.as.security<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 52<span class="o">)</span> WFLYSEC0002: Activating Security Subsystem
+jboss-ivt_1  <span class="p">|</span> 12:44:46,980 INFO  <span class="o">[</span>org.jboss.as.naming<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 45<span class="o">)</span> WFLYNAM0001: Activating Naming Subsystem
+jboss-ivt_1  <span class="p">|</span> 12:44:46,989 INFO  <span class="o">[</span>org.jboss.as.connector<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0009: Starting JCA Subsystem <span class="o">(</span>WildFly/IronJacamar 1.3.3.Final-redhat-1<span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:47,019 INFO  <span class="o">[</span>org.wildfly.extension.undertow<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 54<span class="o">)</span> WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting
+jboss-ivt_1  <span class="p">|</span> 12:44:47,023 INFO  <span class="o">[</span>org.wildfly.extension.undertow<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting
+jboss-ivt_1  <span class="p">|</span> 12:44:47,088 INFO  <span class="o">[</span>org.jboss.as.security<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYSEC0001: Current PicketBox <span class="nv">version</span><span class="o">=</span>4.9.6.Final-redhat-1
+jboss-ivt_1  <span class="p">|</span> 12:44:47,113 INFO  <span class="o">[</span>org.jboss.as.naming<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYNAM0003: Starting Naming Service
+jboss-ivt_1  <span class="p">|</span> 12:44:47,122 INFO  <span class="o">[</span>org.jboss.as.mail.extension<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYMAIL0001: Bound mail session <span class="o">[</span>java:jboss/mail/Default<span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:47,303 INFO  <span class="o">[</span>org.jboss.as.ejb3<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of <span class="m">8</span> <span class="o">(</span>per class<span class="o">)</span>, which is derived from the number of CPUs on this host.
+jboss-ivt_1  <span class="p">|</span> 12:44:47,310 INFO  <span class="o">[</span>org.jboss.as.ejb3<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of <span class="m">32</span> <span class="o">(</span>per class<span class="o">)</span>, which is derived from thread worker pool sizing.
+jboss-ivt_1  <span class="p">|</span> 12:44:47,311 INFO  <span class="o">[</span>org.wildfly.extension.undertow<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 54<span class="o">)</span> WFLYUT0014: Creating file handler <span class="k">for</span> path <span class="s1">&#39;/opt/jboss/jboss-eap-7.0/welcome-content&#39;</span> with options <span class="o">[</span>directory-listing: <span class="s1">&#39;false&#39;</span>, follow-symlink: <span class="s1">&#39;false&#39;</span>, <span class="k">case</span>-sensitive: <span class="s1">&#39;true&#39;</span>, safe-symlink-paths: <span class="s1">&#39;[]&#39;</span><span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:47,311 INFO  <span class="o">[</span>org.wildfly.extension.undertow<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYUT0012: Started server default-server.
+jboss-ivt_1  <span class="p">|</span> 12:44:47,316 INFO  <span class="o">[</span>org.wildfly.extension.undertow<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYUT0018: Host default-host starting
+jboss-ivt_1  <span class="p">|</span> 12:44:47,465 INFO  <span class="o">[</span>org.wildfly.extension.undertow<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYUT0006: Undertow HTTP listener default listening on <span class="o">[</span>0:0:0:0:0:0:0:0<span class="o">]</span>:8080
+jboss-ivt_1  <span class="p">|</span> 12:44:47,647 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYMSGAMQ0075: AIO wasn t located on this platform, it will fall back to using pure Java NIO. Your platform is Linux, install LibAIO to <span class="nb">enable </span>the AIO journal and achieve optimal performance.
+jboss-ivt_1  <span class="p">|</span> 12:44:47,698 INFO  <span class="o">[</span>org.jboss.as.server.deployment.scanner<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYDS0013: Started FileSystemDeploymentService <span class="k">for</span> directory /opt/jboss/jboss-eap-7.0/standalone/deployments
+jboss-ivt_1  <span class="p">|</span> 12:44:47,724 INFO  <span class="o">[</span>org.jboss.as.server.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYSRV0027: Starting deployment of <span class="s2">&quot;wmq.jmsra.rar&quot;</span> <span class="o">(</span>runtime-name: <span class="s2">&quot;wmq.jmsra.rar&quot;</span><span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:47,725 INFO  <span class="o">[</span>org.jboss.as.server.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYSRV0027: Starting deployment of <span class="s2">&quot;wmq.jmsra.ivt.ear&quot;</span> <span class="o">(</span>runtime-name: <span class="s2">&quot;wmq.jmsra.ivt.ear&quot;</span><span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:47,826 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221000: live Message Broker is starting with configuration Broker Configuration <span class="o">(</span><span class="nv">clustered</span><span class="o">=</span><span class="nb">false</span>,journalDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/journal,bindingsDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/bindings,largeMessagesDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/largemessages,pagingDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/paging<span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:47,827 INFO  <span class="o">[</span>org.wildfly.iiop.openjdk<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYIIOP0009: CORBA ORB Service started
+jboss-ivt_1  <span class="p">|</span> 12:44:47,858 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221013: Using NIO Journal
+jboss-ivt_1  <span class="p">|</span> 12:44:48,023 INFO  <span class="o">[</span>org.jboss.as.server.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYSRV0207: Starting subdeployment <span class="o">(</span>runtime-name: <span class="s2">&quot;WMQ_IVT_MDB.jar&quot;</span><span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:48,023 INFO  <span class="o">[</span>org.jboss.as.server.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYSRV0207: Starting subdeployment <span class="o">(</span>runtime-name: <span class="s2">&quot;WMQ_IVT.war&quot;</span><span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:48,254 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221043: Protocol module found: <span class="o">[</span>artemis-server<span class="o">]</span>. Adding protocol support <span class="k">for</span>: CORE
+jboss-ivt_1  <span class="p">|</span> 12:44:48,263 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221043: Protocol module found: <span class="o">[</span>artemis-hornetq-protocol<span class="o">]</span>. Adding protocol support <span class="k">for</span>: HORNETQ
+jboss-ivt_1  <span class="p">|</span> 12:44:50,003 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for</span> activemq-remoting protocol handled by http-acceptor acceptor
+jboss-ivt_1  <span class="p">|</span> 12:44:50,020 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for</span> activemq-remoting protocol handled by http-acceptor-throughput acceptor
+jboss-ivt_1  <span class="p">|</span> 12:44:50,021 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for</span> activemq-remoting protocol handled by http-acceptor acceptor
+jboss-ivt_1  <span class="p">|</span> 12:44:50,017 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for</span> activemq-remoting protocol handled by http-acceptor-throughput acceptor
+jboss-ivt_1  <span class="p">|</span> 12:44:50,243 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221007: Server is now live
+jboss-ivt_1  <span class="p">|</span> 12:44:50,243 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221001: Apache ActiveMQ Artemis Message Broker version 1.1.0.SP16-redhat-1 <span class="o">[</span><span class="nv">nodeID</span><span class="o">=</span>f4375749-5972-11e6-a7ea-75a84c3c44bb<span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:50,278 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
+jboss-ivt_1  <span class="p">|</span> 12:44:50,296 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 58<span class="o">)</span> AMQ221003: trying to deploy queue jms.queue.ExpiryQueue
+jboss-ivt_1  <span class="p">|</span> 12:44:50,333 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 59<span class="o">)</span> AMQ221003: trying to deploy queue jms.queue.DLQ
+jboss-ivt_1  <span class="p">|</span> 12:44:50,337 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 57<span class="o">)</span> WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+jboss-ivt_1  <span class="p">|</span> 12:44:50,472 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYJCA0007: Registered connection factory java:/JmsXA
+jboss-ivt_1  <span class="p">|</span> 12:44:50,615 INFO  <span class="o">[</span>org.apache.activemq.artemis.ra<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> Resource adaptor started
+jboss-ivt_1  <span class="p">|</span> 12:44:50,616 INFO  <span class="o">[</span>org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService<span class="nv">$ResourceAdapterActivator</span><span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> IJ020002: Deployed: file://RaActivatoractivemq-ra
+jboss-ivt_1  <span class="p">|</span> 12:44:50,618 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYJCA0002: Bound JCA ConnectionFactory <span class="o">[</span>java:/JmsXA<span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:50,618 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+jboss-ivt_1  <span class="p">|</span> 12:44:50,898 INFO  <span class="o">[</span>org.jboss.as.connector.deployers.RADeployer<span class="o">]</span> <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> IJ020001: Required license terms <span class="k">for</span> file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  <span class="p">|</span> 12:44:51,110 WARN  <span class="o">[</span>org.jboss.as.connector.deployers.RADeployer<span class="o">]</span> <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  <span class="p">|</span> 12:44:51,116 INFO  <span class="o">[</span>org.jboss.as.connector.deployers.RaXmlDeployer<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> IJ020001: Required license terms <span class="k">for</span> file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  <span class="p">|</span> 12:44:51,135 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0007: Registered connection factory java:/JMS2CF
+jboss-ivt_1  <span class="p">|</span> 12:44:51,136 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0007: Registered connection factory java:/jms/ivt/IVTCF
+jboss-ivt_1  <span class="p">|</span> 12:44:51,207 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0006: Registered admin object at java:/jms/ivt/IVTQueue
+jboss-ivt_1  <span class="p">|</span> 12:44:51,213 WARN  <span class="o">[</span>org.jboss.as.connector.deployers.RaXmlDeployer<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  <span class="p">|</span> 12:44:51,218 INFO  <span class="o">[</span>org.jboss.as.connector.deployers.RaXmlDeployer<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> IJ020002: Deployed: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  <span class="p">|</span> 12:44:51,221 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYJCA0002: Bound JCA ConnectionFactory <span class="o">[</span>java:/JMS2CF<span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:51,222 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYJCA0002: Bound JCA AdminObject <span class="o">[</span>java:/jms/ivt/IVTQueue<span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:51,222 INFO  <span class="o">[</span>org.jboss.as.connector.deployment<span class="o">]</span> <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYJCA0002: Bound JCA ConnectionFactory <span class="o">[</span>java:/jms/ivt/IVTCF<span class="o">]</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:51,236 WARN  <span class="o">[</span>org.jboss.as.ejb3<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0006: ActivationConfigProperty DestinationLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar
+jboss-ivt_1  <span class="p">|</span> 12:44:51,237 WARN  <span class="o">[</span>org.jboss.as.ejb3<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0006: ActivationConfigProperty ConnectionFactoryLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar
+jboss-ivt_1  <span class="p">|</span> 12:44:51,335 INFO  <span class="o">[</span>org.jboss.as.ejb3<span class="o">]</span> <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0042: Started message driven bean <span class="s1">&#39;WMQ_IVT_MDB&#39;</span> with <span class="s1">&#39;wmq.jmsra.rar&#39;</span> resource adapter
+jboss-ivt_1  <span class="p">|</span> 12:44:51,365 INFO  <span class="o">[</span>org.hibernate.validator.internal.util.Version<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 59<span class="o">)</span> HV000001: Hibernate Validator 5.2.4.Final-redhat-1
+jboss-ivt_1  <span class="p">|</span> 12:44:51,501 INFO  <span class="o">[</span>org.wildfly.extension.undertow<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 58<span class="o">)</span> WFLYUT0021: Registered web context: /WMQ_IVT
+jboss-ivt_1  <span class="p">|</span> 12:44:52,084 INFO  <span class="o">[</span>org.jboss.as.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 32<span class="o">)</span> WFLYSRV0010: Deployed <span class="s2">&quot;wmq.jmsra.rar&quot;</span> <span class="o">(</span>runtime-name : <span class="s2">&quot;wmq.jmsra.rar&quot;</span><span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:52,085 INFO  <span class="o">[</span>org.jboss.as.server<span class="o">]</span> <span class="o">(</span>ServerService Thread Pool -- 32<span class="o">)</span> WFLYSRV0010: Deployed <span class="s2">&quot;wmq.jmsra.ivt.ear&quot;</span> <span class="o">(</span>runtime-name : <span class="s2">&quot;wmq.jmsra.ivt.ear&quot;</span><span class="o">)</span>
+jboss-ivt_1  <span class="p">|</span> 12:44:52,240 INFO  <span class="o">[</span>org.jboss.as<span class="o">]</span> <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0060: Http management interface listening on http://<span class="o">[</span>0:0:0:0:0:0:0:0<span class="o">]</span>:9990/management
+jboss-ivt_1  <span class="p">|</span> 12:44:52,245 INFO  <span class="o">[</span>org.jboss.as<span class="o">]</span> <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0051: Admin console listening on http://<span class="o">[</span>0:0:0:0:0:0:0:0<span class="o">]</span>:9990
+jboss-ivt_1  <span class="p">|</span> 12:44:52,246 INFO  <span class="o">[</span>org.jboss.as<span class="o">]</span> <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0025: JBoss EAP 7.0.0.GA <span class="o">(</span>WildFly Core 2.1.2.Final-redhat-1<span class="o">)</span> started in 8403ms - Started <span class="m">471</span> of <span class="m">536</span> services <span class="o">(</span><span class="m">133</span> services are lazy, passive or on-demand<span class="o">)</span></code></pre></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><strong>JBoss EAP 7</strong> is very flexible. I used the first time the Deployment Overlay it is a very cool feature if you cannot modify the <strong>ear</strong> or <strong>war</strong> package. We also use the <strong>embed-server</strong> to configure JBoss instance offline and during the docker build. I would like also thx <em>IBM Messaging team</em> for <a href="https://hub.docker.com/r/ibmcom/mq/">WMQ Docker hub img</a>, because this image was very useful to prove the correct JBoss and WMQ integration for this demo.</p>
+
+<h3 id="useful-links">Useful links</h3>
+
+<ul>
+  <li><a href="https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&amp;downloadType=distributions">Download JBoss</a></li>
+  <li><a href="https://github.com/ibm-messaging/mq-docker">WMQ Docker repo</a></li>
+  <li><a href="http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz">WMQ tgz</a></li>
+  <li><a href="https://www.ibm.com/developerworks/community/blogs/messaging/entry/getting_going_without_turning_off_mq_security?lang=en">WMQ configuration</a></li>
+  <li>
+    <p><a href="http://www.ibm.com/developerworks/websphere/library/techarticles/1203_green/1203_green.html">WMQ info</a></p>
+  </li>
+  <li><a href="http://localhost:8080/WMQ_IVT">Demo URL http://localhost:8080/WMQ_IVT/IVT</a></li>
+</ul>
+
+  </article>
+
+  <div class="post-social">
+    
+   <a href="https://twitter.com/share" class="twitter-share-button" data-via="gautric_io">Tweet</a>
+   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+    
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'greg-iopen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+
+  <div class="archive">
+
+    <div class="archive-per-tag">
+<h2 id="archive-per-tag-title">Tag</h2>
+<div id="archive-per-tag-content" class="post-meta">
+
+
+    <h3 id="en">en (19)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">JBoss EAP 7 connected to WebsphereMQ running on Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">JConsole & Java Mission Control with JBoss EAP 7</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/03/18/apache-camel-eclipse-kura.html">Camel is going into Eclipse Kura</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html">Device IO and i2cdetect implementation</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html">Rhiot over Kura over Docker over RaspberryPi ;-)</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/23/kura-OSGi-docker-debian.html">Kura over Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="fr">fr (11)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/06/27/Lancement-JBoss-EAP-7.html">Lancement de JBoss EAP 7</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html">UNESCO Challenge, point UNESCO, Malte / Malta</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html">UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">Sortie de wildfly 9.0 CR-01</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="ja">ja (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="divers">divers (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/10/premier-post.html">Premier post</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="histoire">histoire (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html">Il y a un siècle aux Dardanelles</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="otp">otp (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="yubico">yubico (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="yubikey">yubikey (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="jboss">jboss (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="eap">eap (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="wildfly">wildfly (6)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">Sortie de wildfly 9.0 CR-01</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">Yubico OTP et JBoss EAP 6 ou Wildfly 8</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="websphereMQ">websphereMQ (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="JCA">JCA (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Best Practices Websphere MQ/JBoss EAP 6 English Version</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">Best Practices Websphere MQ/JBoss EAP 6</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="apache">apache (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="camel">camel (6)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="raspberry">raspberry (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="pi">pi (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="ProofOfConcept">ProofOfConcept (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html">Apache Camel RaspberryPi PoC</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="IoT">IoT (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html">Device IO and i2cdetect implementation</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html">Rhiot over Kura over Docker over RaspberryPi ;-)</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="pi4j">pi4j (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="DeviceIO">DeviceIO (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html">Device IO and i2cdetect implementation</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Tinkerforge">Tinkerforge (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Kura">Kura (6)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/18/apache-camel-eclipse-kura.html">Camel is going into Eclipse Kura</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html">Rhiot over Kura over Docker over RaspberryPi ;-)</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/23/kura-OSGi-docker-debian.html">Kura over Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html">Les premiers jours du projet Camel IoT Labs</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="camellabs">camellabs (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="i2c">i2c (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="lcd">lcd (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="mqtt">mqtt (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">Camel IoT Labs i2c gpio mqtt lcd</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="java">java (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="regex">regex (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="group">group (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="name">name (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/06/18/java-regex-name-group.html">Java Regex Group Name</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="eclipsecon">eclipsecon (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="CoAP">CoAP (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="leshan">leshan (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="M2M">M2M (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="lightweight">lightweight (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Toulouse">Toulouse (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html">Leshan et le standard Lightweight M2M à l'EclipseCon</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Offline">Offline (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="CLI">CLI (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HTTP/2">HTTP/2 (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="JDK8">JDK8 (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">Wildfly 9.0 Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Docker">Docker (4)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">JBoss EAP 7 connected to WebsphereMQ running on Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html">Rhiot over Kura over Docker over RaspberryPi ;-)</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/23/kura-OSGi-docker-debian.html">Kura over Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="UNESCO">UNESCO (4)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html">UNESCO Challenge, point UNESCO, Malte / Malta</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html">UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="challenge">challenge (4)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html">UNESCO Challenge, point UNESCO, Malte / Malta</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html">UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="miscellaneous">miscellaneous (4)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html">UNESCO Challenge, point UNESCO, Malte / Malta</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html">UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="voyage">voyage (4)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html">UNESCO Challenge, point UNESCO, Malte / Malta</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html">UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html">UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html">UNESCO Challenge, point UNESCO, Le Havre</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="MacOS">MacOS (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="SSH">SSH (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="tunnel">tunnel (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="iCloud">iCloud (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="El-Capitan">El-Capitan (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html">SSH to MacOS X (El Capitan) through iCloud tunnel</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="rhiot">rhiot (5)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="X">X (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="webcam">webcam (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="groovy">groovy (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html">RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="MacbookPro">MacbookPro (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="websocket">websocket (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="javafx">javafx (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">RHIoT Webcam and websocket components on MacbookPro in Groovy</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Sense-Hat">Sense-Hat (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="display">display (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="framebuffer">framebuffer (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html">RHIoT RaspberryPi Sense-Hat display</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Gateway">Gateway (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html">Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Rhiot">Rhiot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html">Rhiot over Kura over Docker over RaspberryPi ;-)</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="DIO">DIO (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html">Device IO and i2cdetect implementation</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="I2C">I2C (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html">Device IO and i2cdetect implementation</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="API">API (2)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html">Device IO and i2cdetect implementation</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html">Rhiot Kura Device IO GPIO and I2C</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Eclipse">Eclipse (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/18/apache-camel-eclipse-kura.html">Camel is going into Eclipse Kura</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Camel">Camel (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/03/18/apache-camel-eclipse-kura.html">Camel is going into Eclipse Kura</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="JBoss">JBoss (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">JBoss EAP 7 connected to WebsphereMQ running on Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">JConsole & Java Mission Control with JBoss EAP 7</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/06/27/Lancement-JBoss-EAP-7.html">Lancement de JBoss EAP 7</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="redhat">redhat (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">JBoss EAP 7 connected to WebsphereMQ running on Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">JConsole & Java Mission Control with JBoss EAP 7</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/06/27/Lancement-JBoss-EAP-7.html">Lancement de JBoss EAP 7</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="EAP7">EAP7 (3)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">JBoss EAP 7 connected to WebsphereMQ running on Docker</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">JConsole & Java Mission Control with JBoss EAP 7</a>
+      </li>
+        
+      
+        
+      <li>
+        <a href="/blog/2016/06/27/Lancement-JBoss-EAP-7.html">Lancement de JBoss EAP 7</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="jvm">jvm (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">JConsole & Java Mission Control with JBoss EAP 7</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="jmc">jmc (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">JConsole & Java Mission Control with JBoss EAP 7</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="WebsphereMQ">WebsphereMQ (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">JBoss EAP 7 connected to WebsphereMQ running on Docker</a>
+      </li>
+        
+      
+    
+    </ul>
+
+</div>
+ <script>
+   $( "#archive-per-tag-content" ).hide();
+   $( "#archive-per-tag-title" ).click(function() {
+     $( "#archive-per-tag-content" ).toggle( "slow");
+   });
+ </script>
+</div>
+
+    <div class="archive-per-date">
+<h2 id="archive-per-date-title">Date</h2>
+<div id="archive-per-date-content" class="post-meta">
+
+  
+  
+  
+  
+  <h3 id="2016" class="post year title">2016</h3>
+  <div id="year-post-archive" class="post year">
+  
+    
+    
+        
+            
+            <h4 id="2016-08" class="post month title">August</h4><ul>
+        
+    <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2016-07" class="post month title">July</h4><ul>
+        
+    <li><time id="2016-07-19">19</time> &mdash; <a href="/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html" class="post title" >JConsole & Java Mission Control with JBoss EAP 7</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2016-06" class="post month title">June</h4><ul>
+        
+    <li><time id="2016-06-27">27</time> &mdash; <a href="/blog/2016/06/27/Lancement-JBoss-EAP-7.html" class="post title" >Lancement de JBoss EAP 7</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2016-06-14">14</time> &mdash; <a href="/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html" class="post title" >UNESCO Challenge, point UNESCO, Malte / Malta</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2016-03" class="post month title">March</h4><ul>
+        
+    <li><time id="2016-03-18">18</time> &mdash; <a href="/blog/2016/03/18/apache-camel-eclipse-kura.html" class="post title" >Camel is going into Eclipse Kura</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2016-03-09"> 9</time> &mdash; <a href="/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html" class="post title" >Device IO and i2cdetect implementation</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2016-02" class="post month title">February</h4><ul>
+        
+    <li><time id="2016-02-29">29</time> &mdash; <a href="/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html" class="post title" >Rhiot Kura Device IO GPIO and I2C</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2016-01" class="post month title">January</h4><ul>
+        
+    <li><time id="2016-01-29">29</time> &mdash; <a href="/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html" class="post title" >UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</a></li>
+
+    
+
+  
+  
+  
+  </ul></div>
+  <h3 id="2015" class="post year title">2015</h3>
+  <div id="year-post-archive" class="post year">
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-12" class="post month title">December</h4><ul>
+        
+    <li><time id="2015-12-28">28</time> &mdash; <a href="/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html" class="post title" >Rhiot over Kura over Docker over RaspberryPi ;-)</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-12-23">23</time> &mdash; <a href="/blog/2015/12/23/kura-OSGi-docker-debian.html" class="post title" >Kura over Docker</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-12-03"> 3</time> &mdash; <a href="/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html" class="post title" >Rhiot Kura Gateway Sample (Emulator & RaspberryPi) </a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-11" class="post month title">November</h4><ul>
+        
+    <li><time id="2015-11-24">24</time> &mdash; <a href="/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html" class="post title" >RHIoT RaspberryPi Sense-Hat display</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-10" class="post month title">October</h4><ul>
+        
+    <li><time id="2015-10-23">23</time> &mdash; <a href="/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html" class="post title" >RHIoT Webcam and websocket components on MacbookPro in Groovy</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-10-22">22</time> &mdash; <a href="/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html" class="post title" >RHIoT 0.1.2 Webcam component on MacOS X in Groovy</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-10-03"> 3</time> &mdash; <a href="/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html" class="post title" >SSH to MacOS X (El Capitan) through iCloud tunnel</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-08" class="post month title">August</h4><ul>
+        
+    <li><time id="2015-08-24">24</time> &mdash; <a href="/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html" class="post title" >UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-08-04"> 4</time> &mdash; <a href="/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html" class="post title" >UNESCO Challenge, point UNESCO, Le Havre</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-07" class="post month title">July</h4><ul>
+        
+    <li><time id="2015-07-09"> 9</time> &mdash; <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html" class="post title" >Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-07-03"> 3</time> &mdash; <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html" class="post title" >Wildfly 9.0 Offline CLI and HTTP/2</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-07-01"> 1</time> &mdash; <a href="/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html" class="post title" >Leshan et le standard Lightweight M2M à l'EclipseCon</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-06" class="post month title">June</h4><ul>
+        
+    <li><time id="2015-06-18">18</time> &mdash; <a href="/blog/2015/06/18/java-regex-name-group.html" class="post title" >Java Regex Group Name</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-05" class="post month title">May</h4><ul>
+        
+    <li><time id="2015-05-20">20</time> &mdash; <a href="/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html" class="post title" >Camel IoT Labs i2c gpio mqtt lcd</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-05-04"> 4</time> &mdash; <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html" class="post title" >Sortie de wildfly 9.0 CR-01</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-04" class="post month title">April</h4><ul>
+        
+    <li><time id="2015-04-25">25</time> &mdash; <a href="/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html" class="post title" >Les premiers jours du projet Camel IoT Labs</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-04-03"> 3</time> &mdash; <a href="/blog/2015/04/03/apache-camel-raspberrypi-integration.html" class="post title" >Apache Camel RaspberryPi PoC</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
+            <h4 id="2015-03" class="post month title">March</h4><ul>
+        
+    <li><time id="2015-03-26">26</time> &mdash; <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html" class="post title" >Best Practices Websphere MQ/JBoss EAP 6 English Version</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-25">25</time> &mdash; <a href="/blog/2015/03/25/websphere-mq-jboss-eap-integration.html" class="post title" >Best Practices Websphere MQ/JBoss EAP 6</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-19">19</time> &mdash; <a href="/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html" class="post title" >Yubico OTP et JBoss EAP 6 ou Wildfly 8</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-18">18</time> &mdash; <a href="/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html" class="post title" >Il y a un siècle aux Dardanelles</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+    <li><time id="2015-03-10">10</time> &mdash; <a href="/blog/2015/03/10/premier-post.html" class="post title" >Premier post</a></li>
+
+    
+  </ul></div>
+    
+
+</div>
+ <script>
+    $( "#archive-per-date-content" ).hide();
+    $( "#archive-per-date-title" ).click(function() {
+      $( "#archive-per-date-content" ).toggle( "slow");
+     });
+   </script>
+</div>
+
+
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="site-footer blog-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="#" title="Haut de la page / Head of page">Greg I/Open</a></h2>
+
+    <div class="footer-col-wrapper">
+      <p class="text">Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, JBoss, Red Hat, REST/ROA
+</p>
+
+      &mdash; 
+ <a href="https://twitter.com/gautric_io">
+    <span class="icon  icon--twitter">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+        c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash; 
+  <a href="https://github.com/gautric">
+    <span class="icon  icon--github">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash;
+    </div>
+
+    <div class="copyright">Copyright © Greg Autric 2015 - 2016</div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60791597-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</html>
