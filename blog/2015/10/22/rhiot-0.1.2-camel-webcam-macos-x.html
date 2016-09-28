@@ -110,50 +110,50 @@ I found in list a cool stuff to test. We gonna check if our new commiter <a href
 
 <p>Let’s run it now</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Source/tmp/io/rhiot/test<span class="o">]</span><span class="nv">$&gt;</span> groovy MyRouteBuilder.groovy
-<span class="o">[</span>         main<span class="o">]</span> MainSupport                    INFO  Apache Camel 2.16.0 starting
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
-<span class="o">[</span>         main<span class="o">]</span> ManagedManagementStrategy      INFO  JMX is enabled
-<span class="o">[</span>         main<span class="o">]</span> DefaultTypeConverter           INFO  Loaded <span class="m">182</span> <span class="nb">type </span>converters
-<span class="o">[</span>         main<span class="o">]</span> DefaultRuntimeEndpointRegistry INFO  Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
-<span class="o">[</span>         main<span class="o">]</span> WebcamEndpoint                 WARN  Driver not supported
-<span class="o">[</span>         main<span class="o">]</span> Webcam                         INFO  WebcamDefaultDriver capture driver will be used
-<span class="o">[</span>            atomic-processor-1<span class="o">]</span> WebcamOpenTask                 INFO  Opening webcam FaceTime HD Camera CC242951XGLF6VVD4
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  Route: route1 started and consuming from: Endpoint<span class="o">[</span>webcam://cam?consumer.delay<span class="o">=</span>1000<span class="o">]</span>
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 1.754 seconds
-<span class="o">[</span>         main<span class="o">]</span> MainSupport                    INFO  Waiting <span class="k">for</span>: <span class="m">5</span> SECONDS
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~/Source/tmp/io/rhiot/test]$&gt; </span>groovy MyRouteBuilder.groovy
+<span class="o">[</span>         main] MainSupport                    INFO  Apache Camel 2.16.0 starting
+<span class="o">[</span>         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+<span class="o">[</span>         main] ManagedManagementStrategy      INFO  JMX is enabled
+<span class="o">[</span>         main] DefaultTypeConverter           INFO  Loaded 182 <span class="nb">type </span>converters
+<span class="o">[</span>         main] DefaultRuntimeEndpointRegistry INFO  Runtime endpoint registry is <span class="k">in </span>extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
+<span class="o">[</span>         main] WebcamEndpoint                 WARN  Driver not supported
+<span class="o">[</span>         main] Webcam                         INFO  WebcamDefaultDriver capture driver will be used
+<span class="o">[</span>            atomic-processor-1] WebcamOpenTask                 INFO  Opening webcam FaceTime HD Camera CC242951XGLF6VVD4
+<span class="o">[</span>         main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
+<span class="o">[</span>         main] DefaultCamelContext            INFO  StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+<span class="o">[</span>         main] DefaultCamelContext            INFO  Route: route1 started and consuming from: Endpoint[webcam://cam?consumer.delay<span class="o">=</span>1000]
+<span class="o">[</span>         main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
+<span class="o">[</span>         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started <span class="k">in </span>1.754 seconds
+<span class="o">[</span>         main] MainSupport                    INFO  Waiting <span class="k">for</span>: 5 SECONDS
 <span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] rhiot         INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-2, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:43 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-1, CamelFileName=ID-mbp-g-a-net-50581-1445506480782-IHDR@�O*&lt;�IDATx�ܽg�m�Y�~� DKj��[j����0��X6�c3�60�=06�A ux�^媛sNus�9V�W/����</span>
    ....................  OMIT ....................
        �����o�ů~�O~
-       ���...<span class="o">]</span>
-^<span class="o">[[</span>?1<span class="p">;</span>2c<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] rhiot INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-4, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:45 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-3, CamelFileName=ID-mbp-g-a-net-50581-144550�mcL;J�n��ܜ�&#39;�|�=7�J*UI��$����&lt;�}����=kf��t#����{n�����~�k��]+�</span>
+       ���...]
+^[[?1;2c[el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] rhiot INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-4, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:45 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-3, CamelFileName=ID-mbp-g-a-net-50581-144550�mcL;J�n��ܜ�'�|�=7�J*UI��$����&lt;�}����=kf��t#����{n�����~�k��]+�</span>
   ....................  OMIT ....................
-                    w�������7صv�HK��z�Y��F¤1�a�i�6͑̀��s�����Z1<span class="p">&amp;</span>���#*�L�%�1s,4
-<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] rhiot         INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-6, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:46 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-5, CamelFileName=ID-mbp-g-a-net-50581-1445506480782-IHDR@�O*&lt;�IDATx�ܽw���yߋ�l�$�$�&quot;�</span>
+                    w�������7صv�HK��z�Y��F¤1�a�i�6͑̀��s�����Z1&amp;���#<span class="k">*</span>�L�%�1s,4
+<span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] rhiot         INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-6, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:46 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-5, CamelFileName=ID-mbp-g-a-net-50581-1445506480782-IHDR@�O*&lt;�IDATx�ܽw���yߋ�l�$�$�"�</span>
 
 ....................  OMIT ....................
 
 
-<span class="o">[</span>��W�jCe����+��m����n�?�_���&lt;�ƺ���ftXZ�3������<span class="o">{]</span>�l���Z�c�ZG...<span class="o">]</span>
+<span class="o">[</span>��W�jCe����+��m����n�?�_���&lt;�ƺ���ftXZ�3������<span class="o">{]</span>�l���Z�c�ZG...]
 
 <span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#0 - webcam://cam] rhiot         INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-8, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:47 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-7,</span>
 
   ....................  OMIT ....................
 
-  <span class="nv">CamelFileName</span><span class="o">=</span>ID-mbp-g-a-net-50581-1445506480782-IHDR@�O*&lt;�IDATx�ܽy��gy%��2<span class="o">]</span>, Body�
-<span class="o">[</span>         main<span class="o">]</span> MainSupport                    INFO  Apache Camel 2.16.0 stopping
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutting down
-<span class="o">[</span>         main<span class="o">]</span> DefaultShutdownStrategy        INFO  Starting to graceful shutdown <span class="m">1</span> routes <span class="o">(</span>timeout <span class="m">300</span> seconds<span class="o">)</span>
+  <span class="nv">CamelFileName</span><span class="o">=</span>ID-mbp-g-a-net-50581-1445506480782-IHDR@�O<span class="k">*</span>&lt;�IDATx�ܽy��gy%��2], Body�
+<span class="o">[</span>         main] MainSupport                    INFO  Apache Camel 2.16.0 stopping
+<span class="o">[</span>         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutting down
+<span class="o">[</span>         main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes <span class="o">(</span>timeout 300 seconds<span class="o">)</span>
 <span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[webcam://cam?consumer.delay=1000]</span>
-<span class="o">[</span>         main<span class="o">]</span> DefaultShutdownStrategy        INFO  Graceful shutdown of <span class="m">1</span> routes completed in <span class="m">0</span> seconds
-<span class="o">[</span>            atomic-processor-1<span class="o">]</span> WebcamCloseTask                INFO  Closing FaceTime HD Camera CC242951XGLF6VVD4
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> uptime 6.833 seconds
-<span class="o">[</span>         main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutdown in 0.070 seconds
-<span class="o">[</span>     Thread-1<span class="o">]</span> MainSupport<span class="nv">$HangupInterceptor</span>  INFO  Received hang up - stopping the main instance.
-<span class="o">[</span>mbp:~/Source/tmp/io/rhiot/test<span class="o">]</span><span class="nv">$&gt;</span></code></pre></div>
+<span class="o">[</span>         main] DefaultShutdownStrategy        INFO  Graceful shutdown of 1 routes completed <span class="k">in </span>0 seconds
+<span class="o">[</span>            atomic-processor-1] WebcamCloseTask                INFO  Closing FaceTime HD Camera CC242951XGLF6VVD4
+<span class="o">[</span>         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> uptime 6.833 seconds
+<span class="o">[</span>         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutdown <span class="k">in </span>0.070 seconds
+<span class="o">[</span>     Thread-1] MainSupport<span class="nv">$HangupInterceptor</span>  INFO  Received hang up - stopping the main instance.
+<span class="o">[</span>mbp:~/Source/tmp/io/rhiot/test]<span class="nv">$&gt;</span></code></pre></figure>
 
 <h2 id="and-the-result">And the result</h2>
 
@@ -214,13 +214,19 @@ I found in list a cool stuff to test. We gonna check if our new commiter <a href
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -856,13 +862,19 @@ I found in list a cool stuff to test. We gonna check if our new commiter <a href
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2151,6 +2163,78 @@ I found in list a cool stuff to test. We gonna check if our new commiter <a href
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2175,6 +2259,19 @@ I found in list a cool stuff to test. We gonna check if our new commiter <a href
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

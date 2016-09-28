@@ -84,7 +84,7 @@
 
 <p>After downloading it, you just have to unzip it into your folder like this :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">tar -zxvf wildfly-9.0.0.Final.tar.gz</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">tar -zxvf wildfly-9.0.0.Final.tar.gz</code></pre></figure>
 
 <h2 id="x509-certificate">X509 Certificate</h2>
 
@@ -102,9 +102,9 @@
 
 <p>Due of some JDK 8 limitations, <a href="http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html">ALPN</a> isn’t supported natively by JDK 8. We will download it from the <a href="https://eclipse.org/org/"><em>Eclipse Foundation</em></a>. This feature is mandatory for the HTTP/2 protocol with encryption.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">ALPN_VERSION</span><span class="o">=</span>8.1.3.v20150130
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">ALPN_VERSION</span><span class="o">=</span>8.1.3.v20150130
 curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar &gt; <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
-<span class="nb">export </span><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;$JAVA_OPTS -Xbootclasspath/p:`pwd`/alpn-boot-$ALPN_VERSION.jar&quot;</span></code></pre></div>
+<span class="nb">export </span><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">"</span><span class="nv">$JAVA_OPTS</span><span class="s2"> -Xbootclasspath/p:</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="s2">/alpn-boot-</span><span class="nv">$ALPN_VERSION</span><span class="s2">.jar"</span></code></pre></figure>
 
 <h2 id="configure-the-http2-into-undertow">Configure the HTTP/2 into Undertow</h2>
 
@@ -116,39 +116,39 @@ To use the offline mode, we just have to use the <strong><em>embed-server</em></
 <p>As you should know <a href="http://undertow.io/"><strong><em>Undertow</em></strong></a> is now the JBoss embedded HTTP Webserver, we gonna configure it to enable http2 after we’ve configured the new security realm.
 You should get an output result like this</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">You are disconnected at the moment. Type <span class="s1">&#39;connect&#39;</span> to connect to the server or <span class="s1">&#39;help&#39;</span> <span class="k">for</span> the list of supported commands.
-<span class="o">[</span>disconnected /<span class="o">]</span> embed-server
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https:add<span class="o">()</span>
-<span class="o">{</span><span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span><span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/authentication<span class="o">=</span>truststore:add<span class="o">(</span>keystore-path<span class="o">=</span>server.truststore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">You are disconnected at the moment. Type <span class="s1">'connect'</span> to connect to the server or <span class="s1">'help'</span> <span class="k">for </span>the list of supported commands.
+<span class="o">[</span>disconnected /] embed-server
+<span class="o">[</span>standalone@embedded /] /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https:add<span class="o">()</span>
+<span class="o">{</span><span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span><span class="o">}</span>
+<span class="o">[</span>standalone@embedded /] /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/authentication<span class="o">=</span>truststore:add<span class="o">(</span>keystore-path<span class="o">=</span>server.truststore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
 <span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
+    <span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span>,
+    <span class="s2">"response-headers"</span> <span class="o">=</span>&gt; <span class="o">{</span>
+        <span class="s2">"operation-requires-reload"</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
+        <span class="s2">"process-state"</span> <span class="o">=</span>&gt; <span class="s2">"reload-required"</span>
     <span class="o">}</span>
 <span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/server-identity<span class="o">=</span>ssl:add<span class="o">(</span>keystore-path<span class="o">=</span>server.keystore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
+<span class="o">[</span>standalone@embedded /] /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/server-identity<span class="o">=</span>ssl:add<span class="o">(</span>keystore-path<span class="o">=</span>server.keystore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
 <span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">&quot;operation-requires-reload&quot;</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span>
+    <span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span>,
+    <span class="s2">"response-headers"</span> <span class="o">=</span>&gt; <span class="o">{</span>
+        <span class="s2">"operation-requires-reload"</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
+        <span class="s2">"process-state"</span> <span class="o">=</span>&gt; <span class="s2">"reload-required"</span>
     <span class="o">}</span>
 <span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> /subsystem<span class="o">=</span>undertow/server<span class="o">=</span>default-server/https-listener<span class="o">=</span>https:add<span class="o">(</span>socket-binding<span class="o">=</span>https, security-realm<span class="o">=</span>https, <span class="nb">enable</span>-http2<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+<span class="o">[</span>standalone@embedded /] /subsystem<span class="o">=</span>undertow/server<span class="o">=</span>default-server/https-listener<span class="o">=</span>https:add<span class="o">(</span>socket-binding<span class="o">=</span>https, security-realm<span class="o">=</span>https, <span class="nb">enable</span>-http2<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
 <span class="o">{</span>
-    <span class="s2">&quot;outcome&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;success&quot;</span>,
-    <span class="s2">&quot;response-headers&quot;</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">&quot;process-state&quot;</span> <span class="o">=</span>&gt; <span class="s2">&quot;reload-required&quot;</span><span class="o">}</span>
+    <span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span>,
+    <span class="s2">"response-headers"</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"process-state"</span> <span class="o">=</span>&gt; <span class="s2">"reload-required"</span><span class="o">}</span>
 <span class="o">}</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span> reload --admin-only<span class="o">=</span><span class="nb">false</span>
-<span class="o">[</span>standalone@embedded /<span class="o">]</span></code></pre></div>
+<span class="o">[</span>standalone@embedded /] reload --admin-only<span class="o">=</span><span class="nb">false</span>
+<span class="o">[</span>standalone@embedded /]</code></pre></figure>
 
 <h2 id="startup-jboss">Startup JBoss</h2>
 
 <p>After a full correct configuration, you can startup the JBoss instance as usual.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$JBOSS_HOME</span>/bin/standalone.sh</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$JBOSS_HOME</span>/bin/standalone.sh</code></pre></figure>
 
 <h2 id="check-it">Check it</h2>
 
@@ -198,13 +198,19 @@ I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -840,13 +846,19 @@ I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2135,6 +2147,78 @@ I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2159,6 +2243,19 @@ I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

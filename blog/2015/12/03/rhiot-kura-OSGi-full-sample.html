@@ -141,23 +141,23 @@ You can test and configure your workspace with Heater Demo Project
   </li>
 </ul>
 
-<p>After create a new folder into <code>target-definition</code> project like <code>camel/2.16.0</code> and copy all previous downloaded libraries into it.</p>
+<p>After create a new folder into <code class="highlighter-rouge">target-definition</code> project like <code class="highlighter-rouge">camel/2.16.0</code> and copy all previous downloaded libraries into it.</p>
 
 <p><img src="/img/kura-camel-rhiot-1.png" style="max-width:33%;" /></p>
 
-<p>Open Target Definition panel and <code>Add...</code> a new <code>Installation</code> mapped to the new <code>camel/2.16.0</code> folder.</p>
+<p>Open Target Definition panel and <code class="highlighter-rouge">Add...</code> a new <code class="highlighter-rouge">Installation</code> mapped to the new <code class="highlighter-rouge">camel/2.16.0</code> folder.</p>
 
 <p><img src="/img/kura-camel-rhiot-2.png" style="max-width:100%;" /></p>
 
-<p>Verify that <code>Target Content</code> loads correctly Camel and Rhiot libraries, click into <code>Content</code> tab to check.</p>
+<p>Verify that <code class="highlighter-rouge">Target Content</code> loads correctly Camel and Rhiot libraries, click into <code class="highlighter-rouge">Content</code> tab to check.</p>
 
 <p><img src="/img/kura-camel-rhiot-3.png" style="max-width:100%;" /></p>
 
-<p>Save configuration and click the <code>Set as Target Definition</code> action (top right).</p>
+<p>Save configuration and click the <code class="highlighter-rouge">Set as Target Definition</code> action (top right).</p>
 
 <h4 id="launch-configuration">Launch configuration</h4>
 
-<p>We just finish to setup <code>Target Definition</code> stack, now we will see how to run it with the <code>Launch</code> command.</p>
+<p>We just finish to setup <code class="highlighter-rouge">Target Definition</code> stack, now we will see how to run it with the <code class="highlighter-rouge">Launch</code> command.</p>
 
 <p><img src="/img/kura-camel-rhiot-4.png" style="max-width:33%;" />
 <img src="/img/kura-camel-rhiot-5.png" style="max-width:33%;" /></p>
@@ -166,15 +166,15 @@ You can test and configure your workspace with Heater Demo Project
 
 <p><img src="/img/kura-camel-rhiot-6.png" style="max-width:100%;" /></p>
 
-<p>In order to check Installation, just run the <code>Launch</code> command as usual and check bundles loading via OSGi <code>ss</code> command.</p>
+<p>In order to check Installation, just run the <code class="highlighter-rouge">Launch</code> command as usual and check bundles loading via OSGi <code class="highlighter-rouge">ss</code> command.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">osgi&gt; ss <span class="p">|</span> grep camel
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">osgi&gt; </span>ss | grep camel
 39	ACTIVE      org.apache.camel.camel-core_2.16.0
 47	ACTIVE      org.apache.camel.camel-core-osgi_2.16.0
 58	ACTIVE      org.apache.camel.camel-kura_2.16.0
 61	ACTIVE      io.rhiot.camel-kura_0.1.3.SNAPSHOT
-<span class="nb">true</span>
-osgi&gt;</code></pre></div>
+<span class="nb">true
+</span>osgi&gt;</code></pre></figure>
 
 <p><img src="/img/kura-camel-rhiot-7.png" style="max-width:100%;" /></p>
 
@@ -186,31 +186,31 @@ osgi&gt;</code></pre></div>
 
 <p>Download our <a href="https://github.com/rhiot/quickstarts/tree/master/kura-camel">Kura Rhiot quickstart directly from github repository</a>.</p>
 
-<p>Change <code>GatewayRouter</code> class with</p>
+<p>Change <code class="highlighter-rouge">GatewayRouter</code> class with</p>
 
 <script src="https://gist.github.com/gautric/e478b4b28b40c8270257.js"></script>
 
-<p><code>GatewayRouter</code> contains our Camel route as usual. It is a OSGi Service. Change <code>GatewayRouter.xml</code> file with</p>
+<p><code class="highlighter-rouge">GatewayRouter</code> contains our Camel route as usual. It is a OSGi Service. Change <code class="highlighter-rouge">GatewayRouter.xml</code> file with</p>
 
 <script src="https://gist.github.com/gautric/2134986bb6114b035cd5.js"></script>
 
 <p>This OSGi file is needed to start GatewayRouter service with <a href="https://osgi.org/xmlns/scr/v1.1.0/scr.xsd">Service Component Runtime</a> mechanism. Because we use SCR an not BundleActivation stuff.</p>
 
-<p>, change <code>io.rhiot.quickstarts.kura.camel.GatewayRouter.xml</code> file with</p>
+<p>, change <code class="highlighter-rouge">io.rhiot.quickstarts.kura.camel.GatewayRouter.xml</code> file with</p>
 
 <script src="https://gist.github.com/gautric/052adb5b2acf1b96c3cc.js"></script>
 
-<p>This last file provides configuration attributes used by <code>GatewayRouter</code> route, like <code>camel.kura.gpio.ouput.id</code>.</p>
+<p>This last file provides configuration attributes used by <code class="highlighter-rouge">GatewayRouter</code> route, like <code class="highlighter-rouge">camel.kura.gpio.ouput.id</code>.</p>
 
-<p>Compile via maven <code>mvn clean package -Dmaven.test.skip=true</code> to regenerate some MANIFEST and OSGi stuff via Bnd maven plugin.</p>
+<p>Compile via maven <code class="highlighter-rouge">mvn clean package -Dmaven.test.skip=true</code> to regenerate some MANIFEST and OSGi stuff via Bnd maven plugin.</p>
 
-<p>You can also checkout remote branch <code>https://github.com/rhiot/quickstarts/tree/kura-gpio</code>.</p>
+<p>You can also checkout remote branch <code class="highlighter-rouge">https://github.com/rhiot/quickstarts/tree/kura-gpio</code>.</p>
 
 <h4 id="emulator-run">Emulator run</h4>
 
-<p>Use <code>Kura_Emulator_OSX</code> Eclipse to run Equinox OSGi.</p>
+<p>Use <code class="highlighter-rouge">Kura_Emulator_OSX</code> Eclipse to run Equinox OSGi.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">a little log4j modification <span class="sb">`</span><span class="k">${</span><span class="nv">loc_workspace</span><span class="k">}</span>/org.eclipse.kura.emulator/src/main/resources/log4j.properties<span class="sb">`</span> file.
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">a little log4j modification <span class="sb">`</span><span class="k">${</span><span class="nv">loc_workspace</span><span class="k">}</span>/org.eclipse.kura.emulator/src/main/resources/log4j.properties<span class="sb">`</span> file.
 
 <span class="c">## eclipse</span>
 log4j.logger.org.eclipse.kura.emulator.position<span class="o">=</span>INFO
@@ -218,87 +218,87 @@ log4j.logger.org.eclipse<span class="o">=</span>WARN
 log4j.logger.io.rhiot<span class="o">=</span>DEBUG
 log4j.logger.org.eclipse.kura.emulator.gpio<span class="o">=</span>DEBUG
 log4j.logger.org.apache.camel<span class="o">=</span>INFO
-log4j.logger.org.apache.camel.core.osgi<span class="o">=</span>INFO</code></pre></div>
+log4j.logger.org.apache.camel.core.osgi<span class="o">=</span>INFO</code></pre></figure>
 
 <p>Output should looks like</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">SLF4J: Class path contains multiple SLF4J bindings.
-SLF4J: Found binding in <span class="o">[</span>bundleresource://28.fwk1988196802:1/org/slf4j/impl/StaticLoggerBinder.class<span class="o">]</span>
-SLF4J: Found binding in <span class="o">[</span>bundleresource://28.fwk1988196802:2/org/slf4j/impl/StaticLoggerBinder.class<span class="o">]</span>
-SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings <span class="k">for</span> an explanation.
-osgi&gt; Framework is running in emulation mode
-21:20:43,749 <span class="o">[</span>Start Level Event Dispatcher<span class="o">]</span> INFO  Activator:96  - Camel activator starting
-21:20:43,766 <span class="o">[</span>Start Level Event Dispatcher<span class="o">]</span> INFO  Activator:102  - Camel activator started
-21:20:44,114 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> DEBUG GpioServiceImpl:21  - activating emulated GPIOService
-21:20:44,825 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> WARN  SystemServiceImpl:769  - Maximum <span class="nb">command </span>line upload size not available. Set default to <span class="m">100</span> MB
-21:20:44,825 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> WARN  SystemServiceImpl:778  - Missing the parameter that specifies the maximum number of files uploadable using the <span class="nb">command </span>servlet. Set default to <span class="m">1024</span> files
-21:20:44,926 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> DEBUG GatewayRouter:46  - Initializing bundle 40.
-21:20:45,119 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  CamelContextHelper:583  - No existing PropertiesComponent has been configured, creating a new default PropertiesComponent with name: properties
-21:20:45,128 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  OsgiDefaultCamelContext:2750  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
-21:20:45,129 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  ManagedManagementStrategy:191  - JMX is enabled
-21:20:45,439 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  DefaultRuntimeEndpointRegistry:203  - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
-21:20:45,565 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  KuraServiceFactory:45  - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance.
-21:20:45,576 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  OsgiDefaultCamelContext:2983  - AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
-21:20:45,576 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  OsgiDefaultCamelContext:2993  - StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
-21:20:45,608 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> DEBUG KuraGPIOProducer:73  - Starting producer: Producer<span class="o">[</span>kura-gpio://6?action<span class="o">=</span>BLINK<span class="o">]</span>
-21:20:45,608 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  EmulatedPin:76  - Emulated GPIO Pin <span class="m">6</span> open.
-21:20:45,684 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  OsgiDefaultCamelContext:3514  - Route: route1 started and consuming from: Endpoint<span class="o">[</span>timer://io.rhiot.kura.timer?period<span class="o">=</span>5000<span class="o">]</span>
-21:20:45,686 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  OsgiDefaultCamelContext:2785  - Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
-21:20:45,687 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> INFO  OsgiDefaultCamelContext:2786  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 0.558 seconds
-21:20:45,690 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> DEBUG GatewayRouter:52  - Bundle <span class="m">40</span> started.
-21:20:45,690 <span class="o">[</span>Component Resolve Thread<span class="o">]</span> DEBUG GatewayRouter:48  - Refreshing SCR properties: org.eclipse.equinox.internal.ds.impl.ReadOnlyDictionary@283dd358
-<span class="s1">&#39;21:20:46,698 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:20:46,701 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on</span>
-<span class="s1">21:20:46,752 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off</span>
-<span class="s1">21:20:51,691 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:20:51,692 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on</span>
-<span class="s1">21:20:51,745 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off</span>
-<span class="s1">21:20:56,692 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:20:56,692 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on</span>
-<span class="s1">21:20:56,747 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off</span>
-<span class="s1">21:21:01,697 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:01,698 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on</span>
-<span class="s1">21:21:01,752 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off</span>
-<span class="s1">21:21:06,703 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:06,704 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on</span>
-<span class="s1">21:21:06,758 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off</span>
-<span class="s1">21:21:11,708 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:11,709 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on</span>
-<span class="s1">21:21:11,763 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off&#39;</span>
-21:21:13,798 <span class="o">[</span>qtp1872598749-36<span class="o">]</span> INFO  /:1947  - org.eclipse.kura.web.server.GwtSecurityTokenServiceImpl: Trying www resource2: /www/denali/CF261C606092B547DDA8A7EE4A5B1ADC.gwt.rpc
-21:21:13,821 <span class="o">[</span>qtp1872598749-34<span class="o">]</span> INFO  /:1947  - org.eclipse.kura.web.server.GwtComponentServiceImpl: Trying www resource2: /www/denali/48673E1A90F237B138F81C0DF07ED6D7.gwt.rpc
-21:21:13,914 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  DefaultShutdownStrategy:190  - Starting to graceful shutdown <span class="m">1</span> routes <span class="o">(</span>timeout <span class="m">10</span> seconds<span class="o">)</span>
-<span class="s1">&#39;21:21:13,920 [Camel (camel-1) thread #2 - ShutdownTask] INFO  DefaultShutdownStrategy:663  - Route: route1 shutdown complete, was consuming from: Endpoint[timer://io.rhiot.kura.timer?period=5000]&#39;</span>
-21:21:13,921 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  DefaultShutdownStrategy:254  - Graceful shutdown of <span class="m">1</span> routes completed in <span class="m">0</span> seconds
-21:21:13,930 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> DEBUG KuraGPIOProducer:82  - Stopping producer: Producer<span class="o">[</span>kura-gpio://6?action<span class="o">=</span>BLINK<span class="o">]</span>
-21:21:13,931 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  EmulatedPin:81  - Emulated GPIO Pin <span class="m">6</span> closed.
-21:21:13,933 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3311  - Route: route1 is stopped, was consuming from: Endpoint<span class="o">[</span>timer://io.rhiot.kura.timer?period<span class="o">=</span>5000<span class="o">]</span>
-21:21:13,947 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3311  - Route: route1 is shutdown and removed, was consuming from: Endpoint<span class="o">[</span>timer://io.rhiot.kura.timer?period<span class="o">=</span>5000<span class="o">]</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding <span class="k">in</span> <span class="o">[</span>bundleresource://28.fwk1988196802:1/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding <span class="k">in</span> <span class="o">[</span>bundleresource://28.fwk1988196802:2/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings <span class="k">for </span>an explanation.
+<span class="gp">osgi&gt; </span>Framework is running <span class="k">in </span>emulation mode
+21:20:43,749 <span class="o">[</span>Start Level Event Dispatcher] INFO  Activator:96  - Camel activator starting
+21:20:43,766 <span class="o">[</span>Start Level Event Dispatcher] INFO  Activator:102  - Camel activator started
+21:20:44,114 <span class="o">[</span>Component Resolve Thread] DEBUG GpioServiceImpl:21  - activating emulated GPIOService
+21:20:44,825 <span class="o">[</span>Component Resolve Thread] WARN  SystemServiceImpl:769  - Maximum <span class="nb">command </span>line upload size not available. Set default to 100 MB
+21:20:44,825 <span class="o">[</span>Component Resolve Thread] WARN  SystemServiceImpl:778  - Missing the parameter that specifies the maximum number of files uploadable using the <span class="nb">command </span>servlet. Set default to 1024 files
+21:20:44,926 <span class="o">[</span>Component Resolve Thread] DEBUG GatewayRouter:46  - Initializing bundle 40.
+21:20:45,119 <span class="o">[</span>Component Resolve Thread] INFO  CamelContextHelper:583  - No existing PropertiesComponent has been configured, creating a new default PropertiesComponent with name: properties
+21:20:45,128 <span class="o">[</span>Component Resolve Thread] INFO  OsgiDefaultCamelContext:2750  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+21:20:45,129 <span class="o">[</span>Component Resolve Thread] INFO  ManagedManagementStrategy:191  - JMX is enabled
+21:20:45,439 <span class="o">[</span>Component Resolve Thread] INFO  DefaultRuntimeEndpointRegistry:203  - Runtime endpoint registry is <span class="k">in </span>extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
+21:20:45,565 <span class="o">[</span>Component Resolve Thread] INFO  KuraServiceFactory:45  - Found Kura org.eclipse.kura.gpio.GPIOService <span class="k">in </span>the registry. Kura component will use that instance.
+21:20:45,576 <span class="o">[</span>Component Resolve Thread] INFO  OsgiDefaultCamelContext:2983  - AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
+21:20:45,576 <span class="o">[</span>Component Resolve Thread] INFO  OsgiDefaultCamelContext:2993  - StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+21:20:45,608 <span class="o">[</span>Component Resolve Thread] DEBUG KuraGPIOProducer:73  - Starting producer: Producer[kura-gpio://6?action<span class="o">=</span>BLINK]
+21:20:45,608 <span class="o">[</span>Component Resolve Thread] INFO  EmulatedPin:76  - Emulated GPIO Pin 6 open.
+21:20:45,684 <span class="o">[</span>Component Resolve Thread] INFO  OsgiDefaultCamelContext:3514  - Route: route1 started and consuming from: Endpoint[timer://io.rhiot.kura.timer?period<span class="o">=</span>5000]
+21:20:45,686 <span class="o">[</span>Component Resolve Thread] INFO  OsgiDefaultCamelContext:2785  - Total 1 routes, of which 1 is started.
+21:20:45,687 <span class="o">[</span>Component Resolve Thread] INFO  OsgiDefaultCamelContext:2786  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started <span class="k">in </span>0.558 seconds
+21:20:45,690 <span class="o">[</span>Component Resolve Thread] DEBUG GatewayRouter:52  - Bundle 40 started.
+21:20:45,690 <span class="o">[</span>Component Resolve Thread] DEBUG GatewayRouter:48  - Refreshing SCR properties: org.eclipse.equinox.internal.ds.impl.ReadOnlyDictionary@283dd358
+<span class="s1">'21:20:46,698 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:20:46,701 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on
+21:20:46,752 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off
+21:20:51,691 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:20:51,692 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on
+21:20:51,745 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off
+21:20:56,692 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:20:56,692 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on
+21:20:56,747 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off
+21:21:01,697 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:01,698 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on
+21:21:01,752 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off
+21:21:06,703 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:06,704 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on
+21:21:06,758 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off
+21:21:11,708 [Camel (camel-1) thread #0 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:11,709 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to on
+21:21:11,763 [Camel (camel-1) thread #1 - kura-gpio-camel] DEBUG EmulatedPin:58  - Emulated GPIO Pin 6 changed to off'</span>
+21:21:13,798 <span class="o">[</span>qtp1872598749-36] INFO  /:1947  - org.eclipse.kura.web.server.GwtSecurityTokenServiceImpl: Trying www resource2: /www/denali/CF261C606092B547DDA8A7EE4A5B1ADC.gwt.rpc
+21:21:13,821 <span class="o">[</span>qtp1872598749-34] INFO  /:1947  - org.eclipse.kura.web.server.GwtComponentServiceImpl: Trying www resource2: /www/denali/48673E1A90F237B138F81C0DF07ED6D7.gwt.rpc
+21:21:13,914 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  DefaultShutdownStrategy:190  - Starting to graceful shutdown 1 routes <span class="o">(</span>timeout 10 seconds<span class="o">)</span>
+<span class="s1">'21:21:13,920 [Camel (camel-1) thread #2 - ShutdownTask] INFO  DefaultShutdownStrategy:663  - Route: route1 shutdown complete, was consuming from: Endpoint[timer://io.rhiot.kura.timer?period=5000]'</span>
+21:21:13,921 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  DefaultShutdownStrategy:254  - Graceful shutdown of 1 routes completed <span class="k">in </span>0 seconds
+21:21:13,930 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> DEBUG KuraGPIOProducer:82  - Stopping producer: Producer[kura-gpio://6?action<span class="o">=</span>BLINK]
+21:21:13,931 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  EmulatedPin:81  - Emulated GPIO Pin 6 closed.
+21:21:13,933 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3311  - Route: route1 is stopped, was consuming from: Endpoint[timer://io.rhiot.kura.timer?period<span class="o">=</span>5000]
+21:21:13,947 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3311  - Route: route1 is shutdown and removed, was consuming from: Endpoint[timer://io.rhiot.kura.timer?period<span class="o">=</span>5000]
 21:21:13,949 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3010  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutting down
 21:21:13,957 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3095  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> uptime 28.829 seconds
-21:21:13,957 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3096  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutdown in 0.009 seconds
+21:21:13,957 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3096  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutdown <span class="k">in </span>0.009 seconds
 21:21:13,961 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> DEBUG GatewayRouter:48  - Refreshing SCR properties: org.eclipse.equinox.internal.ds.impl.ReadOnlyDictionary@283dd358
 21:21:13,961 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2750  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
 21:21:13,961 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  ManagedManagementStrategy:191  - JMX is enabled
-21:21:13,961 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  DefaultRuntimeEndpointRegistry:203  - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
-21:21:14,167 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  KuraServiceFactory:45  - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance.
-21:21:14,171 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2983  - AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
-21:21:14,171 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2993  - StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
-21:21:14,183 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> DEBUG KuraGPIOProducer:73  - Starting producer: Producer<span class="o">[</span>kura-gpio://3?action<span class="o">=</span>TOGGLE<span class="o">]</span>
-21:21:14,183 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  EmulatedPin:76  - Emulated GPIO Pin <span class="m">3</span> open.
-21:21:14,224 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3514  - Route: route1 started and consuming from: Endpoint<span class="o">[</span>timer://io.rhiot.kura.timer?period<span class="o">=</span>10000<span class="o">]</span>
-21:21:14,224 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2785  - Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
-21:21:14,225 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2786  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 0.263 seconds
-<span class="s1">&#39;21:21:15,228 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:15,228 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to on</span>
-<span class="s1">21:21:25,233 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:25,234 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to off</span>
-<span class="s1">21:21:35,238 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:35,239 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to on</span>
-<span class="s1">21:21:45,239 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:45,239 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to off</span>
-<span class="s1">21:21:55,244 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-<span class="s1">21:21:55,244 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to on&#39;</span></code></pre></div>
+21:21:13,961 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  DefaultRuntimeEndpointRegistry:203  - Runtime endpoint registry is <span class="k">in </span>extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
+21:21:14,167 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  KuraServiceFactory:45  - Found Kura org.eclipse.kura.gpio.GPIOService <span class="k">in </span>the registry. Kura component will use that instance.
+21:21:14,171 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2983  - AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
+21:21:14,171 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2993  - StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+21:21:14,183 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> DEBUG KuraGPIOProducer:73  - Starting producer: Producer[kura-gpio://3?action<span class="o">=</span>TOGGLE]
+21:21:14,183 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  EmulatedPin:76  - Emulated GPIO Pin 3 open.
+21:21:14,224 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:3514  - Route: route1 started and consuming from: Endpoint[timer://io.rhiot.kura.timer?period<span class="o">=</span>10000]
+21:21:14,224 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2785  - Total 1 routes, of which 1 is started.
+21:21:14,225 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 58<span class="o">)]</span> INFO  OsgiDefaultCamelContext:2786  - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started <span class="k">in </span>0.263 seconds
+<span class="s1">'21:21:15,228 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:15,228 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to on
+21:21:25,233 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:25,234 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to off
+21:21:35,238 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:35,239 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to on
+21:21:45,239 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:45,239 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to off
+21:21:55,244 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] INFO  heartbeat:96  - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]
+21:21:55,244 [Camel (camel-1) thread #3 - timer://io.rhiot.kura.timer] DEBUG EmulatedPin:58  - Emulated GPIO Pin 3 changed to on'</span></code></pre></figure>
 
 <p>You can change some parameter via the Kura WebUI</p>
 
@@ -316,61 +316,61 @@ osgi&gt; Framework is running in emulation mode
 
 <h3 id="bundles-installation-into-raspberrypi">Bundles installation into RaspberryPi</h3>
 
-<p>Compile Kura-Rhiot Sample via common <code>mvn clean package</code></p>
+<p>Compile Kura-Rhiot Sample via common <code class="highlighter-rouge">mvn clean package</code></p>
 
 <p>After you have installed <a href="https://s3.amazonaws.com/kura_downloads/raspbian/release/1.3.0/kura_1.3.0_raspberry-pi-bplus-nn_installer.deb">Kura deb</a> into RaspberryPi you can start and install bundles.</p>
 
 <p>To start kura service:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rpbi&gt; sudo service kura start</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">rpbi&gt; </span>sudo service kura start  </code></pre></figure>
 
-<p>you can use <code>tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
+<p>you can use <code class="highlighter-rouge">tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
 
 <p>Copy to RaspberryPi and Install all bundles via command line. Connect to Kura OSGi via telnet protocol:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rpbi&gt; telnet 127.0.0.1 5002
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">rpbi&gt; </span>telnet 127.0.0.1 5002
 Trying 127.0.0.1...
 Connected to 127.0.0.1.
-Escape character is <span class="s1">&#39;^]&#39;</span>.
+Escape character is <span class="s1">'^]'</span>.
 
 osgi&gt;
-osgi&gt; install file:///home/pi/kura/camel-core-2.16.0.jar
-osgi&gt; install file:///home/pi/kura/camel-core-osgi-2.16.0.jar
-osgi&gt; install file:///home/pi/kura/camel-kura-2.16.0.jar              
-osgi&gt; install file:///home/pi/kura/camel-kura-0.1.3-SNAPSHOT.jar      
-osgi&gt; install file:///home/pi/kura/rhiot-kura-camel-1.0.0-SNAPSHOT.jar</code></pre></div>
+<span class="gp">osgi&gt; </span>install file:///home/pi/kura/camel-core-2.16.0.jar
+<span class="gp">osgi&gt; </span>install file:///home/pi/kura/camel-core-osgi-2.16.0.jar
+<span class="gp">osgi&gt; </span>install file:///home/pi/kura/camel-kura-2.16.0.jar              
+<span class="gp">osgi&gt; </span>install file:///home/pi/kura/camel-kura-0.1.3-SNAPSHOT.jar      
+<span class="gp">osgi&gt; </span>install file:///home/pi/kura/rhiot-kura-camel-1.0.0-SNAPSHOT.jar</code></pre></figure>
 
 <p>And start all INSTALLED bundle</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">start <span class="m">69</span> <span class="m">70</span> <span class="m">71</span> <span class="m">72</span> <span class="m">73</span>  // <span class="k">for</span> example</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">start 69 70 71 72 73  // <span class="k">for </span>example</code></pre></figure>
 
 <p>Output should look like this</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">2015-12-02 21:37:24,414 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Initializing bundle 75.
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">2015-12-02 21:37:24,414 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Initializing bundle 75.
 2015-12-02 21:37:24,424 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.u.CamelContextHelper - No existing PropertiesComponent has been configured, creating a new default PropertiesComponent with name: properties
 2015-12-02 21:37:24,432 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-2<span class="o">)</span> is starting
 2015-12-02 21:37:24,433 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.m.ManagedManagementStrategy - JMX is enabled
-2015-12-02 21:37:24,934 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.i.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
-2015-12-02 21:37:25,242 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance.
-2015-12-02 21:37:25,260 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
-2015-12-02 21:37:25,263 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
-2015-12-02 21:37:25,330 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.c.k.g.KuraGPIOProducer - Starting producer: Producer<span class="o">[</span>kura-gpio://3?action<span class="o">=</span>BLINK<span class="o">]</span>
-2015-12-02 21:37:25,619 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Route: route2 started and consuming from: Endpoint<span class="o">[</span>timer://io.rhiot.kura.timer?period<span class="o">=</span>1000<span class="o">]</span>
-2015-12-02 21:37:25,622 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
-2015-12-02 21:37:25,624 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-2<span class="o">)</span> started in 1.191 seconds
-2015-12-02 21:37:25,639 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Bundle <span class="m">75</span> started.
+2015-12-02 21:37:24,934 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.i.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is <span class="k">in </span>extended mode gathering usage statistics of all incoming and outgoing endpoints <span class="o">(</span>cache limit: 1000<span class="o">)</span>
+2015-12-02 21:37:25,242 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService <span class="k">in </span>the registry. Kura component will use that instance.
+2015-12-02 21:37:25,260 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
+2015-12-02 21:37:25,263 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+2015-12-02 21:37:25,330 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.c.k.g.KuraGPIOProducer - Starting producer: Producer[kura-gpio://3?action<span class="o">=</span>BLINK]
+2015-12-02 21:37:25,619 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Route: route2 started and consuming from: Endpoint[timer://io.rhiot.kura.timer?period<span class="o">=</span>1000]
+2015-12-02 21:37:25,622 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Total 1 routes, of which 1 is started.
+2015-12-02 21:37:25,624 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-2<span class="o">)</span> started <span class="k">in </span>1.191 seconds
+2015-12-02 21:37:25,639 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Bundle 75 started.
 2015-12-02 21:37:25,640 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> DEBUG i.r.q.k.c.GatewayRouter - Refreshing SCR properties: org.eclipse.equinox.internal.ds.impl.ReadOnlyDictionary@18158f3
 2015-12-02 21:37:25,649 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.e.k.c.c.ConfigurableComponentTracker - Adding ConfigurableComponent io.rhiot.quickstarts.kura.camel.GatewayRouter
 2015-12-02 21:37:25,657 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.e.k.c.c.ConfigurationServiceImpl - Registration of ConfigurableComponent io.rhiot.quickstarts.kura.camel.GatewayRouter by org.eclipse.kura.core.configuration.ConfigurationServiceImpl@18b94e4...
 2015-12-02 21:37:25,700 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.e.k.c.c.ConfigurationServiceImpl - Registering io.rhiot.quickstarts.kura.camel.GatewayRouter with ocd: org.eclipse.kura.core.configuration.metatype.Tocd@1a80018 ...
-2015-12-02 21:37:25,701 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.e.k.c.c.ConfigurationServiceImpl - Registration Completed <span class="k">for</span> Component io.rhiot.quickstarts.kura.camel.GatewayRouter.
+2015-12-02 21:37:25,701 <span class="o">[</span>Component Resolve Thread <span class="o">(</span>Bundle 6<span class="o">)]</span> INFO  o.e.k.c.c.ConfigurationServiceImpl - Registration Completed <span class="k">for </span>Component io.rhiot.quickstarts.kura.camel.GatewayRouter.
 2015-12-02 21:37:26,625 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
 2015-12-02 21:37:27,735 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
 2015-12-02 21:37:28,735 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
 2015-12-02 21:37:29,736 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
 2015-12-02 21:37:30,736 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
 2015-12-02 21:37:31,736 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span>
-2015-12-02 21:37:32,736 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span></code></pre></div>
+2015-12-02 21:37:32,736 <span class="o">[</span>Camel <span class="o">(</span>camel-2<span class="o">)</span> thread <span class="c">#12 - timer://io.rhiot.kura.timer] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: null, Body: [Body is null]]</span></code></pre></figure>
 
 <h3 id="youtube-demo">YouTube Demo</h3>
 
@@ -429,13 +429,19 @@ Stay tuned !!!</p>
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -1071,13 +1077,19 @@ Stay tuned !!!</p>
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2366,6 +2378,78 @@ Stay tuned !!!</p>
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2390,6 +2474,19 @@ Stay tuned !!!</p>
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

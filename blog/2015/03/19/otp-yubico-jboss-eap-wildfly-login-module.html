@@ -103,7 +103,7 @@ L’utilisateur utilise un token généré par sa clef comme mot de passe. Ce mo
 
 <p>Recupérer le code source yubico-java-client et le compiler :</p>
 
-<pre><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
+<div class="highlighter-rouge"><pre class="highlight"><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
 greg@a.net&gt; cd yubico-java-client  
 greg@a.net&gt; mvn clean package  
 
@@ -126,6 +126,7 @@ greg@a.net&gt; mvn clean package
 [INFO] ------------------------------------------------------------------------  
 greg@a.net&gt;  
 </code></pre>
+</div>
 
 <p>Vous allez recuperer deux JARs</p>
 
@@ -148,8 +149,8 @@ greg@a.net&gt;
 
 <p>JBoss ne propose pas par defaut de module Yubico, il faut le créer <em>module.xml</em> :</p>
 
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
-&lt;!--  
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
+<span class="c">&lt;!--  
   ~ JBoss, Home of Professional Open Source.  
   ~ Copyright 2014, Red Hat, Inc., and individual contributors  
   ~ as indicated by the @author tags. See the copyright.txt file in the  
@@ -169,35 +170,38 @@ greg@a.net&gt;
   ~ License along with this software; if not, write to the Free  
   ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.  
-  --&gt;  
+  --&gt;</span>  
 
-&lt;module xmlns="urn:jboss:module:1.1" name="com.yubico"&gt;  
-   &lt;resources&gt;  
-     &lt;resource-root path="yubico-jaas-module-3.0.0-SNAPSHOT.jar"/&gt;  
-     &lt;resource-root path="yubico-validation-client2-3.0.0-SNAPSHOT.jar"/&gt;  
-     &lt;resource-root path="vt-ldap-3.3.3.jar"/&gt;  
-   &lt;/resources&gt;  
-   &lt;dependencies&gt;  
-     &lt;module name="org.picketbox"/&gt;  
-     &lt;module name="javax.api"/&gt;  
-     &lt;module name="org.slf4j"/&gt;  
-     &lt;module name="org.apache.commons.codec" /&gt;  
-     &lt;module name="javax.security.jacc.api" /&gt;   &lt;!-- for a future propose --&gt;  
-     &lt;module name="javax.servlet.api"/&gt;          &lt;!-- for a future propose --&gt;  
-     &lt;module name="org.jboss.common-core"/&gt;      &lt;!-- for a future propose --&gt;  
-   &lt;/dependencies&gt;  
-&lt;/module&gt;  
+<span class="nt">&lt;module</span> <span class="na">xmlns=</span><span class="s">"urn:jboss:module:1.1"</span> <span class="na">name=</span><span class="s">"com.yubico"</span><span class="nt">&gt;</span>  
+   <span class="nt">&lt;resources&gt;</span>  
+     <span class="nt">&lt;resource-root</span> <span class="na">path=</span><span class="s">"yubico-jaas-module-3.0.0-SNAPSHOT.jar"</span><span class="nt">/&gt;</span>  
+     <span class="nt">&lt;resource-root</span> <span class="na">path=</span><span class="s">"yubico-validation-client2-3.0.0-SNAPSHOT.jar"</span><span class="nt">/&gt;</span>  
+     <span class="nt">&lt;resource-root</span> <span class="na">path=</span><span class="s">"vt-ldap-3.3.3.jar"</span><span class="nt">/&gt;</span>  
+   <span class="nt">&lt;/resources&gt;</span>  
+   <span class="nt">&lt;dependencies&gt;</span>  
+     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.picketbox"</span><span class="nt">/&gt;</span>  
+     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"javax.api"</span><span class="nt">/&gt;</span>  
+     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.slf4j"</span><span class="nt">/&gt;</span>  
+     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.apache.commons.codec"</span> <span class="nt">/&gt;</span>  
+     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"javax.security.jacc.api"</span> <span class="nt">/&gt;</span>   <span class="c">&lt;!-- for a future propose --&gt;</span>  
+     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"javax.servlet.api"</span><span class="nt">/&gt;</span>          <span class="c">&lt;!-- for a future propose --&gt;</span>  
+     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.jboss.common-core"</span><span class="nt">/&gt;</span>      <span class="c">&lt;!-- for a future propose --&gt;</span>  
+   <span class="nt">&lt;/dependencies&gt;</span>  
+<span class="nt">&lt;/module&gt;</span>  
 </code></pre>
+</div>
 
 <p>Copier le ainsi que les jar dans le répertoire suivant :</p>
 
-<pre><code>$JBOSS_HOME/module/com/yubico/main
+<div class="highlighter-rouge"><pre class="highlight"><code>$JBOSS_HOME/module/com/yubico/main
 </code></pre>
+</div>
 
 <p>Ne pas oublier le copier le jar suivant, à récupérer de son cache maven après compilation :</p>
 
-<pre><code>edu.vt.middleware:vt-ldap:3.3.3
+<div class="highlighter-rouge"><pre class="highlight"><code>edu.vt.middleware:vt-ldap:3.3.3
 </code></pre>
+</div>
 
 <p>Tips : Pour mode debug rapide, faire un lien symbolique (Unix like seulement)</p>
 
@@ -233,9 +237,10 @@ greg@a.net&gt;
 
 <p>Créer un fichier de correspondance entre le PublicId de l’utilisateur et son login, comme ceci :</p>
 
-<pre><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
+<div class="highlighter-rouge"><pre class="highlight"><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
 yk.&lt;PublicId&gt;.user = &lt;login&gt;  
 </code></pre>
+</div>
 
 <p>Il s’agit d’une option au module JAAS Yubico pour authentifier l’utilisateur.
 Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
@@ -244,7 +249,7 @@ Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
 
 <p>Création d’un security domaine dans le fichier standalone.xml.</p>
 
-<pre><code>&lt;security-domain name="yubico-auth" cache-type="default"&gt;  
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;security-domain name="yubico-auth" cache-type="default"&gt;  
       &lt;authentication&gt;  
           &lt;login-module code="com.yubico.jaas.YubikeyLoginModule" flag="required" module="com.yubico"&gt;  
               &lt;module-option name="clientId" value="12123"/&gt;  
@@ -259,6 +264,7 @@ Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
       &lt;/mapping&gt;  
 &lt;/security-domain&gt;  
 </code></pre>
+</div>
 
 <p>On configure ensuite un module mapping pour récuperer les rôles de l’utilisateur.
 Il est bien sûr possible de changer via une autre source de données.</p>
@@ -267,25 +273,27 @@ Il est bien sûr possible de changer via une autre source de données.</p>
 
 <p>Du pur standard JBoss, inclure le nom du security domain dans le fichier jboss-web.xml, comme suit :</p>
 
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
-&lt;jboss-web&gt;  
-   &lt;security-domain&gt;yubico-auth&lt;/security-domain&gt;  
-&lt;/jboss-web&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
+<span class="nt">&lt;jboss-web&gt;</span>  
+   <span class="nt">&lt;security-domain&gt;</span>yubico-auth<span class="nt">&lt;/security-domain&gt;</span>  
+<span class="nt">&lt;/jboss-web&gt;</span>
 </code></pre>
+</div>
 
 <h2 id="me-tape--cration-du-mcanisme-dauthentification">9ème étape : Création du mécanisme d’authentification</h2>
 
 <p>Dans la page de formulaire de login.</p>
 
-<pre><code>&lt;form method='post' action='j_security_check'&gt;  
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;form method='post' action='j_security_check'&gt;  
   &lt;input type='text' name='j_username'&gt;  
   &lt;input type='password' name='j_password'&gt;  
 &lt;/form&gt;  
 </code></pre>
+</div>
 
 <p>dans le fichier web.xml</p>
 
-<pre><code>&lt;web-app&gt;  
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;web-app&gt;  
 &lt;security-constraint&gt;  
   &lt;web-resource-collection&gt;  
    &lt;web-resource-name&gt;User Auth&lt;/web-resource-name&gt;  
@@ -314,6 +322,7 @@ Il est bien sûr possible de changer via une autre source de données.</p>
 &lt;/security-role&gt;  
 &lt;/web-app&gt;  
 </code></pre>
+</div>
 
 <p>NB : Il est possible dans notre exemple de configurer le mode BASIC authentication.</p>
 
@@ -321,7 +330,7 @@ Il est bien sûr possible de changer via une autre source de données.</p>
 
 <p>Afin de contrôler le bon fonctionnement on passe en mode log verbeu</p>
 
-<pre><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
+<div class="highlighter-rouge"><pre class="highlight"><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
 DEBUG [org.apache.catalina.authenticator]  Security checking request GET /form-auth/  
 DEBUG [org.apache.catalina.authenticator]   Calling hasUserDataPermission()  
 DEBUG [org.apache.catalina.authenticator]   Calling authenticate()  
@@ -359,13 +368,15 @@ TRACE [org.jboss.as.web.security]  hasResourcePermission:RealmBase says:true::Au
 DEBUG [org.apache.catalina.authenticator]   Successfully passed all security constraints  
 TRACE [org.jboss.as.web.security]  End invoke, caller=null  
 </code></pre>
+</div>
 
 <p>Dans les traces, on retrouve les principales informations de l’utilisateur :</p>
 
-<pre><code>&lt;LOGIN_USER&gt; : the login user
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;LOGIN_USER&gt; : the login user
 XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY : the OTP sent to Yubico Cloud Service
 XXXXXXXXXXXX : the Public Id, the Yubico key user
 </code></pre>
+</div>
 
 <h4 id="liens-utiles-">Liens utiles :</h4>
 
@@ -418,13 +429,19 @@ XXXXXXXXXXXX : the Public Id, the Yubico key user
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -1060,13 +1077,19 @@ XXXXXXXXXXXX : the Public Id, the Yubico key user
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2355,6 +2378,78 @@ XXXXXXXXXXXX : the Public Id, the Yubico key user
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2379,6 +2474,19 @@ XXXXXXXXXXXX : the Public Id, the Yubico key user
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

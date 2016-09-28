@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with..."/>
+  <meta name="description" content="This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projec..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- Icon bar -->
   <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
@@ -21,17 +21,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html"-->
+  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html"-->
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">
+  <link rel="canonical" href="https://gautric.github.io/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <title>JBoss EAP 7 connected to WebsphereMQ running on Docker</title>
+  <title>Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</title>
 </head>
 
   <body>
@@ -62,18 +62,19 @@
 
     <header class="post-header blog-title">
       <div class="wrapper">
-      <h1 class="post-title">JBoss EAP 7 connected to WebsphereMQ running on Docker</h1>
+      <h1 class="post-title">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</h1>
     </div>
     </header>
 
     <main class="page-content" role="main">
       <div class="wrapper">
           <article class="post-content">
-    <p class="post-meta">Aug 3, 2016  <a href="#en">en</a>  <a href="#JBoss">JBoss</a>  <a href="#redhat">redhat</a>  <a href="#EAP7">EAP7</a>  <a href="#WebsphereMQ">WebsphereMQ</a>  <a href="#Docker">Docker</a> </p>
-    <p>Last year for a previous customer I wrote an article/post about <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">WebsphereMQ Best Practice with JBoss EAP 6</a>. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.</p>
+    <p class="post-meta">Sep 27, 2016  <a href="#en">en</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#Ansible">Ansible</a>  <a href="#Wifi">Wifi</a>  <a href="#HOWTO">HOWTO</a>  <a href="#Hotspot">Hotspot</a> </p>
+    <p>This September, RaspberryPi foundation has sold <a href="https://www.raspberrypi.org/blog/ten-millionth-raspberry-pi-new-kit/">ten (10) Millions of unit</a>. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions <a href="https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications">(B 256Mo, B 512Mo, B+, 2B, 3B)</a> of RaspberryPi. I am a big fan of this product and you can find into <a href="/blog/">this blog</a> some projects I’ve made on top of this little computer.
+RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a <a href="https://en.wikipedia.org/wiki/Hotspot_(Wi-Fi)">Wifi Hotspot</a>. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with <a href="https://www.ansible.com/">Ansible</a>.</p>
 
 <blockquote>
-  <p>Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker</p>
+  <p>Howto setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</p>
 </blockquote>
 
 <h2 id="prerequisites">Prerequisites</h2>
@@ -81,383 +82,243 @@
 <p>For this lab, you need the following software :</p>
 
 <ul>
-  <li>package of JBoss EAP 7 <a href="http://www.jboss.org/products/eap/download/">http://www.jboss.org/products/eap/download/</a></li>
-  <li>installed Docker for Linux, for Mac or Window <em>&gt;= 1.12</em></li>
+  <li>a RaspberryPi version 3
+    <ul>
+      <li>with <a href="https://www.raspbian.org/">Raspbian</a> and a ssh connection for pi user.</li>
+    </ul>
+  </li>
+  <li>Ansible installed  into our system.
+    <ul>
+      <li>for MacOS : via <a href="https://trac.macports.org/browser/trunk/dports/sysutils/ansible/Portfile">Macport</a>, <a href="http://brew.sh/index.html">Homebrew</a> or pip</li>
+    </ul>
+  </li>
 </ul>
-
-<div class="warn">
-Warning, it is trial / demo only, a production deployment requires the purchase of a subscription for JBoss and a license for IBM
-</div>
 
 <h2 id="clone-git-project">Clone git project</h2>
 
 <p>First of all, clone the git repo project.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.com:gautric/JBoss-WMQ.git
-<span class="nb">cd </span>JBoss-WMQ</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.com:gautric/ansible-raspberrypi.git
+<span class="nb">cd </span>ansible-raspberrypi</code></pre></figure>
 
-<h2 id="eap-7-image-creation">EAP 7 image creation</h2>
+<h2 id="ansible-playbook">Ansible playbook</h2>
 
-<p>We have to <a href="https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&amp;downloadType=distributions">download the JBoss EAP 7 binary</a> and we will create the correct image of EAP 7.</p>
+<p>To install and configure our Wifi Hotspot, we gonna use a YAML file used by Ansible. This file is realy simple to understand.
+It’s a list of tasks, and each task will perform only one action like :
+* installing package
+* coping file
+* enabling service
+* restart device</p>
 
-<p>Copy binary file to JBoss-WMQ/jboss directory and go to this directory to build image.</p>
+<p>By default Raspbian comes with <em>pi</em> user w/ correct <strong>sudo</strong> grant. In this playbook, Ansible uses <strong>pi</strong> user <em>(remote_user: pi)</em> and performs all commands with <strong>sudo</strong> <em>(become: true)</em>.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>JBoss-WMQ
-docker build -t jboss-ivt jboss</code></pre></figure>
+<div class="warn">
+As you can see wpa_passphrase and ssid must be defined. You will see how to do it with command line directly.
+</div>
 
-<p>the Dockerfile</p>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
+<span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Configure WIFI Hotspot for RaspberryPi 3</span>
+  <span class="s">hosts</span><span class="pi">:</span> <span class="s">raspberrypi</span>
+  <span class="s">remote_user</span><span class="pi">:</span> <span class="s">pi</span>
+  <span class="s">vars</span><span class="pi">:</span>
+    <span class="s">wpa_passphrase</span><span class="pi">:</span> <span class="s">XXXXXXX</span>
+    <span class="s">interface</span><span class="pi">:</span> <span class="s">wlan0</span>
+    <span class="s">ssid</span><span class="pi">:</span> <span class="s">YYYYYYYY</span>
+    <span class="s">ip_server</span><span class="pi">:</span> <span class="s">10.0.0.1</span>
+    <span class="s">netmask</span><span class="pi">:</span> <span class="s">255.255.255.0</span>
+    <span class="s">ip_dhcp_low</span><span class="pi">:</span> <span class="s">10.0.0.2</span>
+    <span class="s">ip_dhcp_high</span><span class="pi">:</span> <span class="s">10.0.0.15</span>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">### Set the base image to Fedora</span>
-FROM jboss/base-jdk:8
+  <span class="s">tasks</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd install</span>
+      <span class="s">apt</span><span class="pi">:</span> <span class="s">name=hostapd state=present force=yes</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">## docker build -t jboss-ivt jboss</span>
-<span class="c">## docker run -p 8080:8080 -p 9990:9990 -t jboss-ivt</span>
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">dnsmasq install</span>
+      <span class="s">apt</span><span class="pi">:</span> <span class="s">name=dnsmasq state=present force=yes</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">### File Author / Maintainer</span>
-MAINTAINER <span class="s2">"Greg Autric"</span> <span class="s2">"gautric@redhat.com"</span>
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">dnsmasq.conf</span>
+      <span class="s">template</span><span class="pi">:</span>
+        <span class="s">src</span><span class="pi">:</span> <span class="s">template/dnsmasq.conf.j2</span>
+        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/dnsmasq.conf</span>
+        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">### Set Environment</span>
-ENV JBOSS_HOME  /opt/jboss/jboss-eap-7.0
-ENV MQM_HOME    /opt/mqm
-ENV MQM_URL     http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd.conf</span>
+      <span class="s">template</span><span class="pi">:</span>
+        <span class="s">src</span><span class="pi">:</span> <span class="s">template/hostapd.conf.j2</span>
+        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/hostapd/hostapd.conf</span>
+        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">### Install EAP 7.0.0</span>
-COPY jboss-eap-7.0.0.zip /opt
-RUN unzip /opt/jboss-eap-7.0.0.zip  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"Install JBoss instance"</span>
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd</span>
+      <span class="s">template</span><span class="pi">:</span>
+        <span class="s">src</span><span class="pi">:</span> <span class="s">template/hostapd.j2</span>
+        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/default/hostapd</span>
+        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">## Change user to install some</span>
-USER root
-RUN <span class="nb">cd</span> /tmp <span class="o">&amp;&amp;</span> yum install -y wget <span class="o">&amp;&amp;</span> wget <span class="k">${</span><span class="nv">MQM_URL</span><span class="k">}</span> <span class="o">&amp;&amp;</span> tar -zxvf ./<span class="k">*</span>.tar.gz  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">cd </span>MQServer <span class="o">&amp;&amp;</span> ./mqlicense.sh -text_only -accept  <span class="o">&amp;&amp;</span> rpm -ivh  MQSeriesJava<span class="k">*</span>.rpm MQSeriesRuntime<span class="k">*</span>.rpm
-RUN rm -rf /tmp/<span class="k">*</span>
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">rc.local</span>
+      <span class="s">template</span><span class="pi">:</span>
+        <span class="s">src</span><span class="pi">:</span> <span class="s">template/rc.local.j2</span>
+        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/rc.local</span>
+        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">### Create Admin EAP user</span>
-USER jboss
-RUN <span class="nv">$JBOSS_HOME</span>/bin/add-user.sh admin admin123! --silent
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">dnsmasq service</span>
+      <span class="s">service</span><span class="pi">:</span> <span class="s">name=dnsmasq enabled=yes state=started</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">## Copy EAR and RAR</span>
-RUN cp <span class="k">${</span><span class="nv">MQM_HOME</span><span class="k">}</span>/java/lib/jca/wmq.jmsra.ivt.ear <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/standalone/deployments
-RUN cp <span class="k">${</span><span class="nv">MQM_HOME</span><span class="k">}</span>/java/lib/jca/wmq.jmsra.rar     <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/standalone/deployments
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd service</span>
+      <span class="s">service</span><span class="pi">:</span> <span class="s">name=hostapd enabled=yes state=started</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
 
-<span class="c">### JBoss configuration files</span>
-COPY jboss-overlay.cli  /opt
-COPY jboss-ejb3.xml     /opt
-COPY jboss-web.xml      /opt
+    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">restart machine</span>
+      <span class="s">shell</span><span class="pi">:</span> <span class="s">sleep 2 &amp;&amp; shutdown -r noww</span>
+      <span class="s">async</span><span class="pi">:</span> <span class="s">1</span>
+      <span class="s">poll</span><span class="pi">:</span> <span class="s">0</span>
+      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+      <span class="s">ignore_errors</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
 
-<span class="c">### Configure EAP</span>
-RUN <span class="nb">echo</span> <span class="s2">"JAVA_OPTS=</span><span class="se">\"\$</span><span class="s2">JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0</span><span class="se">\"</span><span class="s2">"</span> &gt;&gt; <span class="nv">$JBOSS_HOME</span>/bin/standalone.conf
-RUN <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jboss-cli.sh --file<span class="o">=</span>/opt/jboss-overlay.cli
-RUN rm -rf <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/standalone/configuration/standalone_xml_history/current
-RUN chown -R jboss:jboss <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>
+<p>We can also create template. Ansible will inject values into the template and copy the final file to destination.</p>
 
-<span class="c">### Open Ports</span>
-EXPOSE 8080 9990
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">interface</span><span class="o">={{</span> interface <span class="o">}}</span>
+<span class="nv">hw_mode</span><span class="o">=</span>g
+<span class="nv">channel</span><span class="o">=</span>10
+<span class="nv">auth_algs</span><span class="o">=</span>1
+<span class="nv">macaddr_acl</span><span class="o">=</span>0
+<span class="nv">wpa</span><span class="o">=</span>2
+<span class="nv">wpa_key_mgmt</span><span class="o">=</span>WPA-PSK
+<span class="nv">wpa_pairwise</span><span class="o">=</span>CCMP
+<span class="nv">rsn_pairwise</span><span class="o">=</span>CCMP
+<span class="nv">wpa_passphrase</span><span class="o">={{</span> wpa_passphrase <span class="o">}}</span>
+<span class="nv">ssid</span><span class="o">={{</span> ssid <span class="o">}}</span></code></pre></figure>
 
-<span class="c">### Start EAP</span>
-CMD  <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/standalone.sh -c standalone-full.xml</code></pre></figure>
+<h2 id="ansible-execution">Ansible Execution</h2>
 
-<h4 id="information-about-this-image">Information about this image</h4>
+<p>To deploy configuration, Ansible provides <strong>ansible-playbook</strong> command line. You must configure <strong>hosts</strong> file, it included all RaspberryPi hosts.</p>
 
-<ul>
-  <li>Admin User
-    <ul>
-      <li><em>admin</em> user is created</li>
-    </ul>
-  </li>
-  <li>Application and RAR
-    <ul>
-      <li>Demo application and WMQ Ressource Adapter come from <a href="http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz">official WMQ tgz</a>.</li>
-      <li>We download it and install Java rpm package only and copy <em>rar</em> and <em>ear</em> to correct JBoss deployment directory</li>
-    </ul>
-  </li>
-  <li>JBoss CLI
-    <ul>
-      <li>The CLI script is composed of two specific part :
-        <ul>
-          <li>Resource Adapter configuration
-            <ul>
-              <li>some system-property for configure RAR (user/pass/channel/queueManager, etc…)</li>
-            </ul>
-          </li>
-          <li>Deployment overlay is used to adapt/provide correct configuration from JBoss to application
-            <ul>
-              <li>jboss-web.xml to adapt <strong>war</strong> configuration</li>
-              <li>jboss-ejb3.xml for providing <strong>ejb</strong> configuration</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li>It is running with embed-server mode (offline)</li>
-    </ul>
-  </li>
-</ul>
+<h3 id="ansible-command-line">Ansible command line</h3>
 
-<p>the CLI file</p>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ansible-playbook pi_wifi.yml --inventory-file<span class="o">=</span>./hosts <span class="se">\</span>
+    -u pi  -v <span class="se">\</span>
+    -e <span class="s2">"ssid=RASPBERRY wpa_passphrase=1234567891011"</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">embed-server --server-config<span class="o">=</span>standalone-full.xml
+<div class="warn">
+Please change wpa_passphrase and ssid correctly.
+</div>
 
-deployment-overlay add --name<span class="o">=</span>jboss-ejb-overlay --content<span class="o">=</span>/WMQ_IVT_MDB.jar/META-INF/jboss-ejb3.xml<span class="o">=</span>/opt/jboss-ejb3.xml --deployments<span class="o">=</span>wmq.jmsra.ivt.ear --redeploy-affected
-deployment-overlay add --name<span class="o">=</span>jboss-web-overlay --content<span class="o">=</span>/WMQ_IVT.war/WEB-INF/jboss-web.xml<span class="o">=</span>/opt/jboss-web.xml --deployments<span class="o">=</span>wmq.jmsra.ivt.ear --redeploy-affected
+<h3 id="ansible-command-line-output">Ansible command line output</h3>
 
-<span class="c"># Remove unused stuff</span>
-/subsystem<span class="o">=</span>datasources:remove
-/subsystem<span class="o">=</span>webservices:remove
-/subsystem<span class="o">=</span>jpa:remove
-/subsystem<span class="o">=</span>infinispan:remove
+<p>The command line output should look like the same.</p>
 
-/subsystem<span class="o">=</span>ejb3:write-attribute<span class="o">(</span><span class="nv">name</span><span class="o">=</span>default-resource-adapter-name, <span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">ejb</span><span class="p">.resource-adapter-name</span>:wmq.jmsra.rar<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar:add<span class="o">(</span><span class="nv">archive</span><span class="o">=</span>wmq.jmsra.rar,transaction-support<span class="o">=</span>LocalTransaction,statistics-enabled<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ansible-playbook pi_wifi.yml --inventory-file<span class="o">=</span>./hosts -u pi  -v --diff -e <span class="s2">"ssid=RASPBERRY wpa_passphrase=12345"</span>
+No config file found; using defaults
 
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF:add<span class="o">(</span>class-name<span class="o">=</span>com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name<span class="o">=</span>JMS2CF, use-java-context<span class="o">=</span><span class="nb">false</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>hostName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.hostName</span>:localhost<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>password:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.password</span>:mqm<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>queueManager:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueManager</span>:QUEUE.MANAGER<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>port:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.port</span>:1414<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>channel:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.channel</span>:SYSTEM.AUTO.SVRCONN<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>transportType:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.transportType</span>:CLIENT<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>JMS2CF/config-properties<span class="o">=</span>username:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.username</span>:mqm<span class="k">}</span><span class="o">)</span>
+PLAY <span class="o">[</span>raspberrypi] <span class="k">*************************************************************</span>
 
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF:add<span class="o">(</span>class-name<span class="o">=</span>com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name<span class="o">=</span>jms/ivt/IVTCF, use-java-context<span class="o">=</span><span class="nb">false</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>hostName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.hostName</span>:localhost<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>password:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.password</span>:mqm<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>queueManager:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueManager</span>:QUEUE.MANAGER<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>port:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.port</span>:1414<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>channel:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.channel</span>:SYSTEM.AUTO.SVRCONN<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>transportType:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.transportType</span>:CLIENT<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/connection-definitions<span class="o">=</span>IVTCF/config-properties<span class="o">=</span>username:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.username</span>:mqm<span class="k">}</span><span class="o">)</span>
+TASK <span class="o">[</span>setup] <span class="k">*******************************************************************</span>
+ok: <span class="o">[</span>192.168.0.11]
 
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/admin-objects<span class="o">=</span>QueuePool:add<span class="o">(</span>class-name<span class="o">=</span>com.ibm.mq.connector.outbound.MQQueueProxy,jndi-name<span class="o">=</span>jms/ivt/IVTQueue,use-java-context<span class="o">=</span><span class="nb">true</span>,enabled<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/admin-objects<span class="o">=</span>QueuePool/config-properties<span class="o">=</span>baseQueueName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueName</span>:Q_QUEUE<span class="k">}</span><span class="o">)</span>
-/subsystem<span class="o">=</span>resource-adapters/resource-adapter<span class="o">=</span>wmq.jmsra.rar/admin-objects<span class="o">=</span>QueuePool/config-properties<span class="o">=</span>baseQueueManagerName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span><span class="k">${</span><span class="nv">websphere</span><span class="p">.queueManager</span>:QUEUE.MANAGER<span class="k">}</span><span class="o">)</span>
+TASK <span class="o">[</span>hostapd install] <span class="k">*********************************************************</span>
+ok: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"cache_update_time"</span>: 0, <span class="s2">"cache_updated"</span>: <span class="nb">false</span>, <span class="s2">"changed"</span>: <span class="nb">false</span><span class="o">}</span>
 
-<span class="c"># Websphere MQ Host and Port</span>
-<span class="c">#/system-property=websphere.hostName:add(value=wmq-ivt)</span>
-<span class="c">#/system-property=websphere.port:add(value=1414)</span>
+TASK <span class="o">[</span>dnsmasq install] <span class="k">*********************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"cache_update_time"</span>: 0, <span class="s2">"cache_updated"</span>: <span class="nb">false</span>, <span class="s2">"changed"</span>: <span class="nb">true</span>, <span class="s2">"stderr"</span>: <span class="s2">""</span>, <span class="s2">"stdout"</span>: <span class="s2">"Reading package lists...</span><span class="se">\n</span><span class="s2">Building dependency tree...</span><span class="se">\n</span><span class="s2">Reading state information...</span><span class="se">\n</span><span class="s2">The following extra packages will be installed:</span><span class="se">\n</span><span class="s2">  dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3</span><span class="se">\n</span><span class="s2">The following NEW packages will be installed:</span><span class="se">\n</span><span class="s2">  dns-root-data dnsmasq dnsmasq-base libmnl0 libnetfilter-conntrack3</span><span class="se">\n</span><span class="s2">0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.</span><span class="se">\n</span><span class="s2">Inst libmnl0 (1.0.3-5 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst dns-root-data (2014060201+2 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Inst dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Conf libmnl0 (1.0.3-5 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf dns-root-data (2014060201+2 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Conf dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"stdout_lines"</span>: <span class="o">[</span><span class="s2">"Reading package lists..."</span>, <span class="s2">"Building dependency tree..."</span>, <span class="s2">"Reading state information..."</span>, <span class="s2">"The following extra packages will be installed:"</span>, <span class="s2">"  dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3"</span>, <span class="s2">"The following NEW packages will be installed:"</span>, <span class="s2">"  dns-root-data dnsmasq dnsmasq-base libmnl0 libnetfilter-conntrack3"</span>, <span class="s2">"0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded."</span>, <span class="s2">"Inst libmnl0 (1.0.3-5 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst dns-root-data (2014060201+2 Raspbian:stable [all])"</span>, <span class="s2">"Inst dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])"</span>, <span class="s2">"Conf libmnl0 (1.0.3-5 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf dns-root-data (2014060201+2 Raspbian:stable [all])"</span>, <span class="s2">"Conf dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])"</span><span class="o">]}</span>
+The following extra packages will be installed:
+  dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3
+The following NEW packages will be installed:
+  dns-root-data dnsmasq dnsmasq-base libmnl0 libnetfilter-conntrack3
+0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
 
-<span class="c"># Websphere MQ configuration</span>
-/system-property<span class="o">=</span>websphere.transportType:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>CLIENT<span class="o">)</span>
-/system-property<span class="o">=</span>websphere.username:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>alice<span class="o">)</span>
-/system-property<span class="o">=</span>websphere.password:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>passw0rd<span class="o">)</span>
-/system-property<span class="o">=</span>websphere.channel:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>PASSWORD.SVRCONN<span class="o">)</span>
-/system-property<span class="o">=</span>websphere.queueManager:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>QM1<span class="o">)</span>
-/system-property<span class="o">=</span>websphere.queueName:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>Q_QUEUE<span class="o">)</span>
-/system-property<span class="o">=</span>websphere.resource.adapter:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>wmq.jmsra.rar<span class="o">)</span>
-/system-property<span class="o">=</span>ejb.resource-adapter-name:add<span class="o">(</span><span class="nv">value</span><span class="o">=</span>wmq.jmsra.rar<span class="o">)</span>
+TASK <span class="o">[</span>dnsmasq.conf] <span class="k">************************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+--- before
++++ after: dynamically generated
+@@ -0,0 +1,2 @@
++interface<span class="o">=</span>wlan0
++dhcp-range<span class="o">=</span>10.0.0.2,10.0.0.5,255.255.255.0,12h
 
-reload --admin-only<span class="o">=</span><span class="nb">false</span></code></pre></figure>
 
-<h2 id="wmq-image-creation">WMQ image creation</h2>
+TASK <span class="o">[</span>hostapd.conf] <span class="k">************************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+--- before
++++ after: dynamically generated
+@@ -0,0 +1,11 @@
++interface<span class="o">=</span>wlan0
++hw_mode<span class="o">=</span>g
++channel<span class="o">=</span>10
++auth_algs<span class="o">=</span>1
++macaddr_acl<span class="o">=</span>0
++wpa<span class="o">=</span>2
++wpa_key_mgmt<span class="o">=</span>WPA-PSK
++wpa_pairwise<span class="o">=</span>CCMP
++rsn_pairwise<span class="o">=</span>CCMP
++wpa_passphrase<span class="o">=</span>1234567891011
++ssid<span class="o">=</span>RASPBERRY
 
-<p>Now we create the WMQ Docker image, we will re-use a public image to build our own version with custom stuff.
-Go back to our first git repo to build our own image</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>JBoss-WMQ
-docker build -t wmq-ivt wmq</code></pre></figure>
+TASK <span class="o">[</span>hostapd] <span class="k">*****************************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+--- before: /etc/default/hostapd
++++ after: dynamically generated
+@@ -7,12 +7,12 @@
+ <span class="c"># file and hostapd will be started during system boot. An example configuration</span>
+ <span class="c"># file can be found at /usr/share/doc/hostapd/examples/hostapd.conf.gz</span>
+ <span class="c">#</span>
+-#DAEMON_CONF<span class="o">=</span><span class="s2">""</span>
++DAEMON_CONF<span class="o">=</span><span class="s2">"/etc/hostapd/hostapd.conf"</span>
 
-<p>the Dockerfile</p>
+ <span class="c"># Additional daemon options to be appended to hostapd command:-</span>
+<span class="gp">-# </span>	-d   show more debug messages <span class="o">(</span>-dd <span class="k">for </span>even more<span class="o">)</span>
+<span class="gp">-# </span>	-K   include key data <span class="k">in </span>debug messages
+<span class="gp">-# </span>	-t   include timestamps <span class="k">in </span>some debug messages
+<span class="gp">+#         </span>-d   show more debug messages <span class="o">(</span>-dd <span class="k">for </span>even more<span class="o">)</span>
+<span class="gp">+#         </span>-K   include key data <span class="k">in </span>debug messages
+<span class="gp">+#         </span>-t   include timestamps <span class="k">in </span>some debug messages
+ <span class="c">#</span>
+ <span class="c"># Note that -B (daemon mode) and -P (pidfile) options are automatically</span>
+ <span class="c"># configured by the init.d script and must not be added to DAEMON_OPTS.</span>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">FROM ibmcom/mq
-RUN useradd alice -G mqm <span class="o">&amp;&amp;</span> <span class="se">\</span>
-    <span class="nb">echo </span>alice:passw0rd | chpasswd
-COPY config.mqsc /etc/mqm/</code></pre></figure>
 
-<p>We use a small configuration for WMQ, <strong>alice</strong> account can connect to wmq and we create a simple WMQ Queue too.</p>
+TASK <span class="o">[</span>rc.local] <span class="k">****************************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+--- before: /etc/rc.local
++++ after: dynamically generated
+@@ -17,4 +17,12 @@
+   <span class="nb">printf</span> <span class="s2">"My IP address is %s</span><span class="se">\n</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$_IP</span><span class="s2">"</span>
+ <span class="k">fi</span>
 
-<p>the configuration file</p>
++ifconfig wlan0 down
++ifconfig wlan0 10.0.0.1 netmask 255.255.255.0 up
++#ifconfig wlan0 inet6 add fc00::7262:7069:0003/7
++iwconfig wlan0 power off
++
++service dnsmasq restart
++service hostapd restart
++
+ <span class="nb">exit </span>0
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">DEFINE CHANNEL<span class="o">(</span>PASSWORD.SVRCONN<span class="o">)</span> CHLTYPE<span class="o">(</span>SVRCONN<span class="o">)</span>
-SET CHLAUTH<span class="o">(</span>PASSWORD.SVRCONN<span class="o">)</span> TYPE<span class="o">(</span>BLOCKUSER<span class="o">)</span> USERLIST<span class="o">(</span><span class="s1">'nobody'</span><span class="o">)</span> DESCR<span class="o">(</span><span class="s1">'Allow privileged users on this channel'</span><span class="o">)</span>
-SET CHLAUTH<span class="o">(</span><span class="s1">'*'</span><span class="o">)</span> TYPE<span class="o">(</span>ADDRESSMAP<span class="o">)</span> ADDRESS<span class="o">(</span><span class="s1">'*'</span><span class="o">)</span> USERSRC<span class="o">(</span>NOACCESS<span class="o">)</span> DESCR<span class="o">(</span><span class="s1">'BackStop rule'</span><span class="o">)</span>
-SET CHLAUTH<span class="o">(</span>PASSWORD.SVRCONN<span class="o">)</span> TYPE<span class="o">(</span>ADDRESSMAP<span class="o">)</span> ADDRESS<span class="o">(</span><span class="s1">'*'</span><span class="o">)</span> USERSRC<span class="o">(</span>CHANNEL<span class="o">)</span> CHCKCLNT<span class="o">(</span>REQUIRED<span class="o">)</span>
-ALTER AUTHINFO<span class="o">(</span>SYSTEM.DEFAULT.AUTHINFO.IDPWOS<span class="o">)</span> AUTHTYPE<span class="o">(</span>IDPWOS<span class="o">)</span> ADOPTCTX<span class="o">(</span>YES<span class="o">)</span>
-DEFINE QL<span class="o">(</span>Q_QUEUE<span class="o">)</span>
-REFRESH SECURITY TYPE<span class="o">(</span>CONNAUTH<span class="o">)</span></code></pre></figure>
 
-<h2 id="docker-compose-to-run-demo">Docker compose to run demo</h2>
+TASK <span class="o">[</span>dnsmasq service] <span class="k">*********************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
 
-<p>At the end, we use docker compose to run both parts (JBoss and WMQ). We setup some environment variable for more flexible configuration (websphere.hostName and websphere.port for exemple).</p>
+TASK <span class="o">[</span>hostapd service] <span class="k">*********************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span>, <span class="s2">"msg"</span>: <span class="s2">"service state changed"</span><span class="o">}</span>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
-<span class="s">services</span><span class="pi">:</span>
-  <span class="s">jboss-ivt</span><span class="pi">:</span>
-    <span class="s">image</span><span class="pi">:</span> <span class="s">jboss-ivt</span>
-    <span class="s">build</span><span class="pi">:</span> <span class="s">jboss</span>
-    <span class="s">ports</span><span class="pi">:</span>
-     <span class="pi">-</span> <span class="s2">"</span><span class="s">8080:8080"</span>
-     <span class="pi">-</span> <span class="s2">"</span><span class="s">9990:9990"</span>
-    <span class="s">environment</span><span class="pi">:</span>
-      <span class="s">JAVA_OPTS</span><span class="pi">:</span> <span class="s2">"</span><span class="s">-Dwebsphere.hostName=wmq-ivt</span><span class="nv"> </span><span class="s">-Dwebsphere.port=1414"</span>
-    <span class="s">links</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">wmq-ivt</span>
-    <span class="s">depends_on</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">wmq-ivt</span>
-  <span class="s">wmq-ivt</span><span class="pi">:</span>
-    <span class="s">image</span><span class="pi">:</span> <span class="s">wmq-ivt</span>
-    <span class="s">build</span><span class="pi">:</span> <span class="s">wmq</span>
-    <span class="s">environment</span><span class="pi">:</span>
-      <span class="s">LICENSE</span><span class="pi">:</span> <span class="s2">"</span><span class="s">accept"</span>
-      <span class="s">MQ_QMGR_NAME</span><span class="pi">:</span> <span class="s2">"</span><span class="s">QM1"</span>
-    <span class="s">ports</span><span class="pi">:</span>
-     <span class="pi">-</span> <span class="s2">"</span><span class="s">1414:1414"</span></code></pre></figure>
-
-<h3 id="run-it-and-check-it">Run it and check it</h3>
-
-<p>Use docker-compose up to run both <strong>WMQ</strong> and <strong>JBoss</strong></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~/Source/git/JBoss-WMQ]$&gt; </span>docker-compose up</code></pre></figure>
-
-<p>and go to <a href="http://localhost:8080/WMQ_IVT">IVT URL http://localhost:8080/WMQ_IVT/IVT</a> for the web result.</p>
-
-<h3 id="web-result">web result</h3>
-
-<h4 id="the-application-page">The Application page</h4>
-
-<p><img src="/img/jboss-wmq-1.png" style="max-width:75%;" /></p>
-
-<h4 id="the-result-page">The Result page</h4>
-
-<p><img src="/img/jboss-wmq-2.png" style="max-width:75%;" /></p>
-
-<h4 id="the-jms-inspection-view-message-contents-page">The JMS inspection (View Message Contents) page</h4>
-
-<p><img src="/img/jboss-wmq-3.png" style="max-width:75%;" /></p>
-
-<h3 id="and-output-log-result">and output log result</h3>
-
-<p>You should get an output like this</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~/Source/git/JBoss-WMQ]$&gt; </span>docker-compose up
-Starting jbosswmq_wmq-ivt_1
-Starting jbosswmq_jboss-ivt_1
-Attaching to jbosswmq_wmq-ivt_1, jbosswmq_jboss-ivt_1
-wmq-ivt_1    | ----------------------------------------
-wmq-ivt_1    | Name:        IBM MQ
-wmq-ivt_1    | Version:     9.0.0.0
-wmq-ivt_1    | Level:       p900-L160520.DE
-wmq-ivt_1    | BuildType:   IKAP - <span class="o">(</span>Production<span class="o">)</span>
-wmq-ivt_1    | Platform:    IBM MQ <span class="k">for </span>Linux <span class="o">(</span>x86-64 platform<span class="o">)</span>
-wmq-ivt_1    | Mode:        64-bit
-wmq-ivt_1    | O/S:         Linux 4.4.15-moby
-wmq-ivt_1    | InstName:    Installation1
-wmq-ivt_1    | InstDesc:    
-wmq-ivt_1    | Primary:     Yes
-wmq-ivt_1    | InstPath:    /opt/mqm
-wmq-ivt_1    | DataPath:    /var/mqm
-wmq-ivt_1    | MaxCmdLevel: 900
-wmq-ivt_1    | LicenseType: Developer
-wmq-ivt_1    | ----------------------------------------
-wmq-ivt_1    | IBM MQ queue manager <span class="s1">'QM1'</span> starting.
-wmq-ivt_1    | The queue manager is associated with installation <span class="s1">'Installation1'</span>.
-wmq-ivt_1    | 5 log records accessed on queue manager <span class="s1">'QM1'</span> during the log replay phase.
-wmq-ivt_1    | Log replay <span class="k">for </span>queue manager <span class="s1">'QM1'</span> complete.
-wmq-ivt_1    | Transaction manager state recovered <span class="k">for </span>queue manager <span class="s1">'QM1'</span>.
-wmq-ivt_1    | IBM MQ queue manager <span class="s1">'QM1'</span> started using V9.0.0.0.
-wmq-ivt_1    | ----------------------------------------
-wmq-ivt_1    | QMNAME<span class="o">(</span>QM1<span class="o">)</span>                                               STATUS<span class="o">(</span>Running<span class="o">)</span>
-jboss-ivt_1  | JAVA_OPTS already <span class="nb">set </span><span class="k">in </span>environment; overriding default settings with values: -Dwebsphere.hostName<span class="o">=</span>wmq-ivt -Dwebsphere.port<span class="o">=</span>1414
-jboss-ivt_1  | <span class="o">=========================================================================</span>
-jboss-ivt_1  |
-jboss-ivt_1  |   JBoss Bootstrap Environment
-jboss-ivt_1  |
-jboss-ivt_1  |   JBOSS_HOME: /opt/jboss/jboss-eap-7.0
-jboss-ivt_1  |
-jboss-ivt_1  |   JAVA: /usr/lib/jvm/java/bin/java
-jboss-ivt_1  |
-jboss-ivt_1  |   JAVA_OPTS:  -server -verbose:gc -Xloggc:<span class="s2">"/opt/jboss/jboss-eap-7.0/standalone/log/gc.log"</span> -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles<span class="o">=</span>5 -XX:GCLogFileSize<span class="o">=</span>3M -XX:-TraceClassUnloading -Dwebsphere.hostName<span class="o">=</span>wmq-ivt -Dwebsphere.port<span class="o">=</span>1414 -Djboss.bind.address<span class="o">=</span>0.0.0.0 -Djboss.bind.address.management<span class="o">=</span>0.0.0.0
-jboss-ivt_1  |
-jboss-ivt_1  | <span class="o">=========================================================================</span>
-jboss-ivt_1  |
-jboss-ivt_1  | 12:44:44,163 INFO  <span class="o">[</span>org.jboss.modules] <span class="o">(</span>main<span class="o">)</span> JBoss Modules version 1.5.1.Final-redhat-1
-jboss-ivt_1  | 12:44:44,405 INFO  <span class="o">[</span>org.jboss.msc] <span class="o">(</span>main<span class="o">)</span> JBoss MSC version 1.2.6.Final-redhat-1
-jboss-ivt_1  | 12:44:44,494 INFO  <span class="o">[</span>org.jboss.as] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYSRV0049: JBoss EAP 7.0.0.GA <span class="o">(</span>WildFly Core 2.1.2.Final-redhat-1<span class="o">)</span> starting
-jboss-ivt_1  | 12:44:46,457 INFO  <span class="o">[</span>org.jboss.as.server] <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0039: Creating http management service using socket-binding <span class="o">(</span>management-http<span class="o">)</span>
-jboss-ivt_1  | 12:44:46,487 INFO  <span class="o">[</span>org.xnio] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> XNIO version 3.3.6.Final-redhat-1
-jboss-ivt_1  | 12:44:46,496 INFO  <span class="o">[</span>org.xnio.nio] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> XNIO NIO Implementation Version 3.3.6.Final-redhat-1
-jboss-ivt_1  | 12:44:46,576 INFO  <span class="o">[</span>org.jboss.remoting] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> JBoss Remoting version 4.0.18.Final-redhat-1
-jboss-ivt_1  | 12:44:46,638 INFO  <span class="o">[</span>org.wildfly.extension.io] <span class="o">(</span>ServerService Thread Pool -- 35<span class="o">)</span> WFLYIO001: Worker <span class="s1">'default'</span> has auto-configured to 4 core threads with 32 task threads based on your 2 available processors
-jboss-ivt_1  | 12:44:46,691 INFO  <span class="o">[</span>org.jboss.as.jsf] <span class="o">(</span>ServerService Thread Pool -- 41<span class="o">)</span> WFLYJSF0007: Activated the following JSF Implementations: <span class="o">[</span>main]
-jboss-ivt_1  | 12:44:46,712 WARN  <span class="o">[</span>org.jboss.as.txn] <span class="o">(</span>ServerService Thread Pool -- 53<span class="o">)</span> WFLYTX0013: Node identifier property is <span class="nb">set </span>to the default value. Please make sure it is unique.
-jboss-ivt_1  | 12:44:46,914 INFO  <span class="o">[</span>org.wildfly.iiop.openjdk] <span class="o">(</span>ServerService Thread Pool -- 36<span class="o">)</span> WFLYIIOP0001: Activating IIOP Subsystem
-jboss-ivt_1  | 12:44:46,934 INFO  <span class="o">[</span>org.jboss.as.security] <span class="o">(</span>ServerService Thread Pool -- 52<span class="o">)</span> WFLYSEC0002: Activating Security Subsystem
-jboss-ivt_1  | 12:44:46,980 INFO  <span class="o">[</span>org.jboss.as.naming] <span class="o">(</span>ServerService Thread Pool -- 45<span class="o">)</span> WFLYNAM0001: Activating Naming Subsystem
-jboss-ivt_1  | 12:44:46,989 INFO  <span class="o">[</span>org.jboss.as.connector] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0009: Starting JCA Subsystem <span class="o">(</span>WildFly/IronJacamar 1.3.3.Final-redhat-1<span class="o">)</span>
-jboss-ivt_1  | 12:44:47,019 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>ServerService Thread Pool -- 54<span class="o">)</span> WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting
-jboss-ivt_1  | 12:44:47,023 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting
-jboss-ivt_1  | 12:44:47,088 INFO  <span class="o">[</span>org.jboss.as.security] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYSEC0001: Current PicketBox <span class="nv">version</span><span class="o">=</span>4.9.6.Final-redhat-1
-jboss-ivt_1  | 12:44:47,113 INFO  <span class="o">[</span>org.jboss.as.naming] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYNAM0003: Starting Naming Service
-jboss-ivt_1  | 12:44:47,122 INFO  <span class="o">[</span>org.jboss.as.mail.extension] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYMAIL0001: Bound mail session <span class="o">[</span>java:jboss/mail/Default]
-jboss-ivt_1  | 12:44:47,303 INFO  <span class="o">[</span>org.jboss.as.ejb3] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 <span class="o">(</span>per class<span class="o">)</span>, which is derived from the number of CPUs on this host.
-jboss-ivt_1  | 12:44:47,310 INFO  <span class="o">[</span>org.jboss.as.ejb3] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 <span class="o">(</span>per class<span class="o">)</span>, which is derived from thread worker pool sizing.
-jboss-ivt_1  | 12:44:47,311 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>ServerService Thread Pool -- 54<span class="o">)</span> WFLYUT0014: Creating file handler <span class="k">for </span>path <span class="s1">'/opt/jboss/jboss-eap-7.0/welcome-content'</span> with options <span class="o">[</span>directory-listing: <span class="s1">'false'</span>, follow-symlink: <span class="s1">'false'</span>, <span class="k">case</span>-sensitive: <span class="s1">'true'</span>, safe-symlink-paths: <span class="s1">'[]'</span><span class="o">]</span>
-jboss-ivt_1  <span class="p">|</span> 12:44:47,311 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-2<span class="p">)</span> WFLYUT0012: Started server default-server.
-jboss-ivt_1  | 12:44:47,316 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYUT0018: Host default-host starting
-jboss-ivt_1  | 12:44:47,465 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYUT0006: Undertow HTTP listener default listening on <span class="o">[</span>0:0:0:0:0:0:0:0]:8080
-jboss-ivt_1  | 12:44:47,647 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYMSGAMQ0075: AIO wasn t located on this platform, it will fall back to using pure Java NIO. Your platform is Linux, install LibAIO to <span class="nb">enable </span>the AIO journal and achieve optimal performance.
-jboss-ivt_1  | 12:44:47,698 INFO  <span class="o">[</span>org.jboss.as.server.deployment.scanner] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYDS0013: Started FileSystemDeploymentService <span class="k">for </span>directory /opt/jboss/jboss-eap-7.0/standalone/deployments
-jboss-ivt_1  | 12:44:47,724 INFO  <span class="o">[</span>org.jboss.as.server.deployment] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYSRV0027: Starting deployment of <span class="s2">"wmq.jmsra.rar"</span> <span class="o">(</span>runtime-name: <span class="s2">"wmq.jmsra.rar"</span><span class="o">)</span>
-jboss-ivt_1  | 12:44:47,725 INFO  <span class="o">[</span>org.jboss.as.server.deployment] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYSRV0027: Starting deployment of <span class="s2">"wmq.jmsra.ivt.ear"</span> <span class="o">(</span>runtime-name: <span class="s2">"wmq.jmsra.ivt.ear"</span><span class="o">)</span>
-jboss-ivt_1  | 12:44:47,826 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221000: live Message Broker is starting with configuration Broker Configuration <span class="o">(</span><span class="nv">clustered</span><span class="o">=</span><span class="nb">false</span>,journalDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/journal,bindingsDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/bindings,largeMessagesDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/largemessages,pagingDirectory<span class="o">=</span>/opt/jboss/jboss-eap-7.0/standalone/data/activemq/paging<span class="o">)</span>
-jboss-ivt_1  | 12:44:47,827 INFO  <span class="o">[</span>org.wildfly.iiop.openjdk] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYIIOP0009: CORBA ORB Service started
-jboss-ivt_1  | 12:44:47,858 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221013: Using NIO Journal
-jboss-ivt_1  | 12:44:48,023 INFO  <span class="o">[</span>org.jboss.as.server.deployment] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYSRV0207: Starting subdeployment <span class="o">(</span>runtime-name: <span class="s2">"WMQ_IVT_MDB.jar"</span><span class="o">)</span>
-jboss-ivt_1  | 12:44:48,023 INFO  <span class="o">[</span>org.jboss.as.server.deployment] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYSRV0207: Starting subdeployment <span class="o">(</span>runtime-name: <span class="s2">"WMQ_IVT.war"</span><span class="o">)</span>
-jboss-ivt_1  | 12:44:48,254 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221043: Protocol module found: <span class="o">[</span>artemis-server]. Adding protocol support <span class="k">for</span>: CORE
-jboss-ivt_1  | 12:44:48,263 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221043: Protocol module found: <span class="o">[</span>artemis-hornetq-protocol]. Adding protocol support <span class="k">for</span>: HORNETQ
-jboss-ivt_1  | 12:44:50,003 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for </span>activemq-remoting protocol handled by http-acceptor acceptor
-jboss-ivt_1  | 12:44:50,020 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for </span>activemq-remoting protocol handled by http-acceptor-throughput acceptor
-jboss-ivt_1  | 12:44:50,021 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for </span>activemq-remoting protocol handled by http-acceptor acceptor
-jboss-ivt_1  | 12:44:50,017 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYMSGAMQ0016: Registered HTTP upgrade <span class="k">for </span>activemq-remoting protocol handled by http-acceptor-throughput acceptor
-jboss-ivt_1  | 12:44:50,243 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221007: Server is now live
-jboss-ivt_1  | 12:44:50,243 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> AMQ221001: Apache ActiveMQ Artemis Message Broker version 1.1.0.SP16-redhat-1 <span class="o">[</span><span class="nv">nodeID</span><span class="o">=</span>f4375749-5972-11e6-a7ea-75a84c3c44bb]
-jboss-ivt_1  | 12:44:50,278 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
-jboss-ivt_1  | 12:44:50,296 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 58<span class="o">)</span> AMQ221003: trying to deploy queue jms.queue.ExpiryQueue
-jboss-ivt_1  | 12:44:50,333 INFO  <span class="o">[</span>org.apache.activemq.artemis.core.server] <span class="o">(</span>ServerService Thread Pool -- 59<span class="o">)</span> AMQ221003: trying to deploy queue jms.queue.DLQ
-jboss-ivt_1  | 12:44:50,337 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>ServerService Thread Pool -- 57<span class="o">)</span> WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
-jboss-ivt_1  | 12:44:50,472 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYJCA0007: Registered connection factory java:/JmsXA
-jboss-ivt_1  | 12:44:50,615 INFO  <span class="o">[</span>org.apache.activemq.artemis.ra] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> Resource adaptor started
-jboss-ivt_1  | 12:44:50,616 INFO  <span class="o">[</span>org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService<span class="nv">$ResourceAdapterActivator</span><span class="o">]</span> <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> IJ020002: Deployed: file://RaActivatoractivemq-ra
-jboss-ivt_1  | 12:44:50,618 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYJCA0002: Bound JCA ConnectionFactory <span class="o">[</span>java:/JmsXA]
-jboss-ivt_1  | 12:44:50,618 INFO  <span class="o">[</span>org.wildfly.extension.messaging-activemq] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
-jboss-ivt_1  | 12:44:50,898 INFO  <span class="o">[</span>org.jboss.as.connector.deployers.RADeployer] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> IJ020001: Required license terms <span class="k">for </span>file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
-jboss-ivt_1  | 12:44:51,110 WARN  <span class="o">[</span>org.jboss.as.connector.deployers.RADeployer] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
-jboss-ivt_1  | 12:44:51,116 INFO  <span class="o">[</span>org.jboss.as.connector.deployers.RaXmlDeployer] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> IJ020001: Required license terms <span class="k">for </span>file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
-jboss-ivt_1  | 12:44:51,135 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0007: Registered connection factory java:/JMS2CF
-jboss-ivt_1  | 12:44:51,136 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0007: Registered connection factory java:/jms/ivt/IVTCF
-jboss-ivt_1  | 12:44:51,207 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYJCA0006: Registered admin object at java:/jms/ivt/IVTQueue
-jboss-ivt_1  | 12:44:51,213 WARN  <span class="o">[</span>org.jboss.as.connector.deployers.RaXmlDeployer] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
-jboss-ivt_1  | 12:44:51,218 INFO  <span class="o">[</span>org.jboss.as.connector.deployers.RaXmlDeployer] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> IJ020002: Deployed: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
-jboss-ivt_1  | 12:44:51,221 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYJCA0002: Bound JCA ConnectionFactory <span class="o">[</span>java:/JMS2CF]
-jboss-ivt_1  | 12:44:51,222 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> WFLYJCA0002: Bound JCA AdminObject <span class="o">[</span>java:/jms/ivt/IVTQueue]
-jboss-ivt_1  | 12:44:51,222 INFO  <span class="o">[</span>org.jboss.as.connector.deployment] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYJCA0002: Bound JCA ConnectionFactory <span class="o">[</span>java:/jms/ivt/IVTCF]
-jboss-ivt_1  | 12:44:51,236 WARN  <span class="o">[</span>org.jboss.as.ejb3] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0006: ActivationConfigProperty DestinationLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar
-jboss-ivt_1  | 12:44:51,237 WARN  <span class="o">[</span>org.jboss.as.ejb3] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0006: ActivationConfigProperty ConnectionFactoryLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar
-jboss-ivt_1  | 12:44:51,335 INFO  <span class="o">[</span>org.jboss.as.ejb3] <span class="o">(</span>MSC service thread 1-1<span class="o">)</span> WFLYEJB0042: Started message driven bean <span class="s1">'WMQ_IVT_MDB'</span> with <span class="s1">'wmq.jmsra.rar'</span> resource adapter
-jboss-ivt_1  | 12:44:51,365 INFO  <span class="o">[</span>org.hibernate.validator.internal.util.Version] <span class="o">(</span>ServerService Thread Pool -- 59<span class="o">)</span> HV000001: Hibernate Validator 5.2.4.Final-redhat-1
-jboss-ivt_1  | 12:44:51,501 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>ServerService Thread Pool -- 58<span class="o">)</span> WFLYUT0021: Registered web context: /WMQ_IVT
-jboss-ivt_1  | 12:44:52,084 INFO  <span class="o">[</span>org.jboss.as.server] <span class="o">(</span>ServerService Thread Pool -- 32<span class="o">)</span> WFLYSRV0010: Deployed <span class="s2">"wmq.jmsra.rar"</span> <span class="o">(</span>runtime-name : <span class="s2">"wmq.jmsra.rar"</span><span class="o">)</span>
-jboss-ivt_1  | 12:44:52,085 INFO  <span class="o">[</span>org.jboss.as.server] <span class="o">(</span>ServerService Thread Pool -- 32<span class="o">)</span> WFLYSRV0010: Deployed <span class="s2">"wmq.jmsra.ivt.ear"</span> <span class="o">(</span>runtime-name : <span class="s2">"wmq.jmsra.ivt.ear"</span><span class="o">)</span>
-jboss-ivt_1  | 12:44:52,240 INFO  <span class="o">[</span>org.jboss.as] <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0060: Http management interface listening on http://[0:0:0:0:0:0:0:0]:9990/management
-jboss-ivt_1  | 12:44:52,245 INFO  <span class="o">[</span>org.jboss.as] <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0051: Admin console listening on http://[0:0:0:0:0:0:0:0]:9990
-jboss-ivt_1  | 12:44:52,246 INFO  <span class="o">[</span>org.jboss.as] <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0025: JBoss EAP 7.0.0.GA <span class="o">(</span>WildFly Core 2.1.2.Final-redhat-1<span class="o">)</span> started <span class="k">in </span>8403ms - Started 471 of 536 services <span class="o">(</span>133 services are lazy, passive or on-demand<span class="o">)</span></code></pre></figure>
+PLAY RECAP <span class="k">*********************************************************************</span>
+192.168.0.11               : <span class="nv">ok</span><span class="o">=</span>10   <span class="nv">changed</span><span class="o">=</span>8    <span class="nv">unreachable</span><span class="o">=</span>0    <span class="nv">failed</span><span class="o">=</span>0</code></pre></figure>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p><strong>JBoss EAP 7</strong> is very flexible. I used the first time the Deployment Overlay it is a very cool feature if you cannot modify the <strong>ear</strong> or <strong>war</strong> package. We also use the <strong>embed-server</strong> to configure JBoss instance offline and during the docker build. I would like also thx <em>IBM Messaging team</em> for <a href="https://hub.docker.com/r/ibmcom/mq/">WMQ Docker hub img</a>, because this image was very useful to prove the correct JBoss and WMQ integration for this demo.</p>
+<p>I’ve created this Ansible playbook very quickly. The Ansible integration with a RaspberryPi is very easy because you just need a SSH connection to connect with. I think, I will continue to use Ansible with some of my RaspberryPi devices.</p>
 
 <h3 id="useful-links">Useful links</h3>
 
 <ul>
-  <li><a href="https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&amp;downloadType=distributions">Download JBoss</a></li>
-  <li><a href="https://wildscribe.github.io/Wildfly/10.0.0.Final/deployment-overlay/index.html">Deployment overlay model reference</a></li>
-  <li><a href="https://access.redhat.com/solutions/383393">Deployment overlay tip</a></li>
-  <li><a href="https://docs.jboss.org/author/display/AS72/Deployment+Overlays">Deployment overlay tutorial</a></li>
-  <li><a href="https://blog.akquinet.de/2013/06/08/deployment-overlays-a-new-feature-of-the-jboss-eap-6-1/">Deployment overlay sample</a></li>
-  <li><a href="https://github.com/ibm-messaging/mq-docker">WMQ Docker repo</a></li>
-  <li><a href="http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz">WMQ tgz</a></li>
-  <li><a href="https://www.ibm.com/developerworks/community/blogs/messaging/entry/getting_going_without_turning_off_mq_security?lang=en">WMQ configuration</a></li>
-  <li>
-    <p><a href="http://www.ibm.com/developerworks/websphere/library/techarticles/1203_green/1203_green.html">WMQ info</a></p>
-  </li>
-  <li><a href="http://localhost:8080/WMQ_IVT">Demo URL http://localhost:8080/WMQ_IVT/IVT</a></li>
+  <li><a href="https://www.ansible.com/">Ansible</a></li>
+  <li><a href="https://galaxy.ansible.com/">Galaxy Ansible</a></li>
 </ul>
 
   </article>

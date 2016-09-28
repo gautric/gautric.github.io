@@ -97,8 +97,8 @@ Kura runs on RaspberryPi, but if you don’t have yet a RaspberryPi device  we w
 <p>First of all, you have to setup your Docker environment, Docker’s documentation is very easy to understand.
 Just follow correct documentation depending about your architecture (Linux or MacOs)</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker-machine start default
-<span class="nb">eval</span> <span class="s2">&quot;$(docker-machine env default)&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker-machine start default
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>docker-machine env default<span class="k">)</span><span class="s2">"</span></code></pre></figure>
 
 <h2 id="build-kura-debian-image">Build Kura-Debian Image</h2>
 
@@ -109,26 +109,26 @@ We gonna download docker file, and run correct command to built it.</p>
 
 <p>Just build it via command below</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile -O
-docker build -t debian-kura .</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile -O
+docker build -t debian-kura .</code></pre></figure>
 
 <p>you should get an output like this</p>
 
-<p><code>Successfully built aabbccddee0011</code></p>
+<p><code class="highlighter-rouge">Successfully built aabbccddee0011</code></p>
 
 <h2 id="run-kura-debian-image">Run Kura-Debian Image</h2>
 
 <p>Now if everything goes well, we can run it via commands below</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -i -p 80:80 -t debian-kura</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -i -p 80:80 -t debian-kura</code></pre></figure>
 
 <p>or via the Docker Hub image</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -i -p 80:80 -t gautric/debian-kura</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -i -p 80:80 -t gautric/debian-kura</code></pre></figure>
 
-<p>You can change <code>-i</code> to <code>-d</code> to run image into daemon mode.</p>
+<p>You can change <code class="highlighter-rouge">-i</code> to <code class="highlighter-rouge">-d</code> to run image into daemon mode.</p>
 
-<p>If everything is ok, you should get <code>osgi&gt;</code> prompt.
+<p>If everything is ok, you should get <code class="highlighter-rouge">osgi&gt;</code> prompt.
 Now, you can use and deploy Kura Platform as you want.</p>
 
 <p>If you are on MacOs X platform, just use <a href="http://192.168.99.100">http://192.168.99.100</a>
@@ -192,13 +192,19 @@ Be careful, some low level api cannot be use directly. <a href="/blog/2015/12/23
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -834,13 +840,19 @@ Be careful, some low level api cannot be use directly. <a href="/blog/2015/12/23
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2129,6 +2141,78 @@ Be careful, some low level api cannot be use directly. <a href="/blog/2015/12/23
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2153,6 +2237,19 @@ Be careful, some low level api cannot be use directly. <a href="/blog/2015/12/23
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

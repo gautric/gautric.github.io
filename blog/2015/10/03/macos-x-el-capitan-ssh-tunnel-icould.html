@@ -113,17 +113,17 @@ We gonna use some commands line to find your MacMini trough the iCloud.</p>
 
 <p>we need to find our iCloud account and our iCloud FQN DNS name</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> dns-sd -E
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~]$&gt; </span>dns-sd -E
 
-Looking <span class="k">for</span> recommended registration domains:
-DATE: ---Fri <span class="m">02</span> Oct 2015---
+Looking <span class="k">for </span>recommended registration domains:
+DATE: ---Fri 02 Oct 2015---
 20:29:07.366  ...STARTING...
 Timestamp     Recommended Registration domain
-20:29:07.367  Added     <span class="o">(</span>More<span class="o">)</span>               <span class="nb">local</span>
-20:29:07.367  Added                          icloud.com
+20:29:07.367  Added     <span class="o">(</span>More<span class="o">)</span>               <span class="nb">local
+</span>20:29:07.367  Added                          icloud.com
                                              - &gt; btmm
                                              - - &gt; members
-                                             - - - &gt; 1122334455</code></pre></div>
+                                             - - - &gt; 1122334455</code></pre></figure>
 
 <p>My iCloud FQN DNS name is <em>1122334455.members.btmm.icloud.com</em></p>
 
@@ -132,23 +132,23 @@ Timestamp     Recommended Registration domain
 <p>After finding our iCloud DNS name, we gonna retrieve our MacMini server with ZeroConf/Boujour Protocol.
 To find it we will use an other command line. This command collects all machine plugged with your iCloud account and sharing <em>_ssh</em> service.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> dns-sd -B _ssh 1122334455.members.btmm.icloud.com
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~]$&gt; </span>dns-sd -B _ssh 1122334455.members.btmm.icloud.com
 
-Browsing <span class="k">for</span> _ssh._tcp.1122334455.members.btmm.icloud.com
-DATE: ---Fri <span class="m">02</span> Oct 2015---
+Browsing <span class="k">for </span>_ssh._tcp.1122334455.members.btmm.icloud.com
+DATE: ---Fri 02 Oct 2015---
 20:34:10.344  ...STARTING...
-Timestamp     A/R    Flags  <span class="k">if</span> Domain               Service Type         Instance Name
-20:34:10.345  Add        <span class="m">3</span>   <span class="m">0</span> 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacMini
-20:34:10.345  Add        <span class="m">2</span>   <span class="m">0</span> 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacBookPro</code></pre></div>
+Timestamp     A/R    Flags  <span class="k">if </span>Domain               Service Type         Instance Name
+20:34:10.345  Add        3   0 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacMini
+20:34:10.345  Add        2   0 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacBookPro</code></pre></figure>
 
 <h3 id="last-but-not-least-step">Last but not least step</h3>
 
 <p>We find our iCloud FQN DNS and our MacMini name. Now we can connect to it through the iCloud tunnel.
 If your server name contains some “ “/space character, replace it with “-“/dash one (<em>sed -e “s/[[:space:]]/-/g”</em>).</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> ssh MacMini.1122334455.members.btmm.icloud.com
-Last login: Fri Oct  <span class="m">2</span> 21:18:27 <span class="m">2015</span> from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
-<span class="o">[</span>mac-mini:~<span class="o">]</span><span class="nv">$&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~]$&gt; </span>ssh MacMini.1122334455.members.btmm.icloud.com
+Last login: Fri Oct  2 21:18:27 2015 from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+<span class="o">[</span>mac-mini:~]<span class="nv">$&gt;</span></code></pre></figure>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -160,17 +160,17 @@ Now it is a really new service I’ve built and I don’t have a huge feedback, 
 <p>To facilitate your ssh connection, you can use ssh config file (<em>.ssh/config</em>) to logon to your MacMini server.
 Just edit it with your personal text editor (atom for example).</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Host MacMini_iCloud
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Host MacMini_iCloud
   HostName MacMini.1122334455.members.btmm.icloud.com
   User XXXXX
   ServerAliveInterval 10
-  ServerAliveCountMax 6</code></pre></div>
+  ServerAliveCountMax 6</code></pre></figure>
 
 <p>and logon with :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> ssh MacMini_iCloud
-Last login: Fri Oct  <span class="m">2</span> 21:25:00 <span class="m">2015</span> from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
-<span class="o">[</span>mac-mini:~<span class="o">]</span><span class="nv">$&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~]$&gt; </span>ssh MacMini_iCloud
+Last login: Fri Oct  2 21:25:00 2015 from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+<span class="o">[</span>mac-mini:~]<span class="nv">$&gt;</span></code></pre></figure>
 
 <h3 id="useful-links">Useful links</h3>
 
@@ -212,13 +212,19 @@ Last login: Fri Oct  <span class="m">2</span> 21:25:00 <span class="m">2015</spa
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -854,13 +860,19 @@ Last login: Fri Oct  <span class="m">2</span> 21:25:00 <span class="m">2015</spa
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2149,6 +2161,78 @@ Last login: Fri Oct  <span class="m">2</span> 21:25:00 <span class="m">2015</spa
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2173,6 +2257,19 @@ Last login: Fri Oct  <span class="m">2</span> 21:25:00 <span class="m">2015</spa
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

@@ -78,12 +78,12 @@
 
 <p>Dans notre use case nous voulons vérifier la correspondance d’une chaine de caractères avec une URL. Pour cela nous allons créer une expression rationnel afin de vérifier la bonne correspondance.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>?http<span class="p">|</span>ftp<span class="p">|</span>ssh<span class="p">|</span>amqp<span class="p">|</span>imap<span class="p">|</span>ws<span class="o">)(</span>?s<span class="o">)</span>?://<span class="o">(</span>?<span class="o">[</span>a-zA-Z.-<span class="o">]</span>+<span class="o">)(</span>:<span class="o">(</span>?<span class="o">[</span>0-9<span class="o">]</span>+<span class="o">))</span>?</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>?http|ftp|ssh|amqp|imap|ws<span class="o">)(</span>?s<span class="o">)</span>?://<span class="o">(</span>?[a-zA-Z.-]+<span class="o">)(</span>:<span class="o">(</span>?[0-9]+<span class="o">))</span>?</code></pre></figure>
 
 <p>Avec cette « regex », il est possible de vérifier les chaines suivantes par exemple :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">ftp://fileserver.domain:1223
-imaps://emailserver.domain:341</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ftp://fileserver.domain:1223
+imaps://emailserver.domain:341</code></pre></figure>
 
 <h2 id="group-index"><em>Group</em> indexé</h2>
 
@@ -93,7 +93,7 @@ imaps://emailserver.domain:341</code></pre></div>
 
 <p>Mais dans Java (je n’ai pas vérifié avec les autres langages), il est possible de nommé ces <em>group</em> comme ceci</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">&quot;(?&lt;scheme&gt;http|ftp|ssh|amqp|imap|ws)(?&lt;secure&gt;s)?://(?&lt;host&gt;[a-zA-Z.-]+)(:(?&lt;port&gt;[0-9]+))?&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">"(?&lt;scheme&gt;http|ftp|ssh|amqp|imap|ws)(?&lt;secure&gt;s)?://(?&lt;host&gt;[a-zA-Z.-]+)(:(?&lt;port&gt;[0-9]+))?"</span></code></pre></figure>
 
 <p>Ensuite, il est possible de retrouver la valeur récupérée du group capturé par l’expression rationnelle comme ceci <em>group(“scheme”)</em></p>
 
@@ -103,22 +103,22 @@ imaps://emailserver.domain:341</code></pre></div>
 
 <p>et voici l’output.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">scheme 	: ftp
-secure 	: <span class="nb">false</span>
-host 	: fileserver.domain
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">scheme 	: ftp
+secure 	: <span class="nb">false
+</span>host 	: fileserver.domain
 port 	: 1223
 scheme 	: amqp
-secure 	: <span class="nb">false</span>
-host 	: momserver.domain
+secure 	: <span class="nb">false
+</span>host 	: momserver.domain
 port 	: 999
 scheme 	: imap
-secure 	: <span class="nb">true</span>
-host 	: emailserver.domain
+secure 	: <span class="nb">true
+</span>host 	: emailserver.domain
 port 	: 341
 scheme 	: ws
-secure 	: <span class="nb">true</span>
-host 	: pushserver.domain
-port 	: 433</code></pre></div>
+secure 	: <span class="nb">true
+</span>host 	: pushserver.domain
+port 	: 433</code></pre></figure>
 
 <p><br /></p>
 
@@ -160,13 +160,19 @@ port 	: 433</code></pre></div>
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -802,13 +808,19 @@ port 	: 433</code></pre></div>
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2097,6 +2109,78 @@ port 	: 433</code></pre></div>
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2121,6 +2205,19 @@ port 	: 433</code></pre></div>
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

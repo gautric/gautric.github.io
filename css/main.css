@@ -29,10 +29,14 @@ thead {
 td {
   padding: 0px 10px 0px 10px; }
 
-tbody > tr:nth-child(even) {
-  background: #CCC; }
-tbody > tr:nth-child(odd) {
-  background: #FFF; }
+tbody {
+  /**> tr:nth-child(even) {
+    background: #CCC;
+  }
+
+  > tr:nth-child(odd) {
+    background: #FFF;
+  }*/ }
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm

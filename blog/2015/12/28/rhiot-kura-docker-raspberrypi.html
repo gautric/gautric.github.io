@@ -108,16 +108,16 @@
 <h3 id="docker-setup">Docker setup</h3>
 
 <p>First of all, you have to startup your Docker environment.
-I prefer use <code>Hypriot</code> because Docker is already installed. <a href="http://blog.hypriot.com/getting-started-with-docker-and-linux-on-the-raspberry-pi/">More information to install Hypriot</a></p>
+I prefer use <code class="highlighter-rouge">Hypriot</code> because Docker is already installed. <a href="http://blog.hypriot.com/getting-started-with-docker-and-linux-on-the-raspberry-pi/">More information to install Hypriot</a></p>
 
 <p>If docker is not yet installed (Raspbian/Jessie Only) :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">wget http://downloads.hypriot.com/docker-hypriot_1.9.1-1_armhf.deb
-sudo dpkg -i docker-hypriot_1.9.1-1_armhf.deb</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget http://downloads.hypriot.com/docker-hypriot_1.9.1-1_armhf.deb
+sudo dpkg -i docker-hypriot_1.9.1-1_armhf.deb</code></pre></figure>
 
 <p>If docker is not started :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo service docker start</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo service docker start</code></pre></figure>
 
 <h3 id="build-rpi-rhiot-image-and-take-a-coffee-">Build rpi-rhiot Image and take a coffee …</h3>
 
@@ -127,19 +127,19 @@ sudo dpkg -i docker-hypriot_1.9.1-1_armhf.deb</code></pre></div>
 Please change RPI_VERSION with your correct RaspberryPi model
 </div>
 
-<p><code>RPI_VERSION</code> must be : <code>raspberry-pi-2-nn</code> or <code>raspberry-pi-bplus-nn</code> or <code>raspberry-pi-nn</code>. <code>nn</code> means Kura will not include network management (firewall, port, etc…), keep it cause we can ignore network management for a Docker environment.</p>
+<p><code class="highlighter-rouge">RPI_VERSION</code> must be : <code class="highlighter-rouge">raspberry-pi-2-nn</code> or <code class="highlighter-rouge">raspberry-pi-bplus-nn</code> or <code class="highlighter-rouge">raspberry-pi-nn</code>. <code class="highlighter-rouge">nn</code> means Kura will not include network management (firewall, port, etc…), keep it cause we can ignore network management for a Docker environment.</p>
 
 <script src="https://gist.github.com/gautric/dbe4684a6b17186afe42.js"></script>
 
 <p>We download some helper scripts and files</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir rpi-rhiot
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir rpi-rhiot
 <span class="nb">cd </span>rpi-rhiot
 curl https://gist.githubusercontent.com/gautric/dbe4684a6b17186afe42/raw/4aa24e22016e49b0982264845b7fe7e0311a3952/Dockerfile -O
 curl https://raw.githubusercontent.com/rhiot/rhiot/master/dockerfiles/rpi-rhiot/config.ini.sh -O
 curl https://raw.githubusercontent.com/rhiot/rhiot/master/dockerfiles/rpi-rhiot/log4j.properties -O
 curl https://raw.githubusercontent.com/rhiot/rhiot/master/dockerfiles/rpi-rhiot/start_kura_rhiot.sh -O
-sudo docker build -t rpi-rhiot .</code></pre></div>
+sudo docker build -t rpi-rhiot .</code></pre></figure>
 
 <p>Just build it via commands above</p>
 
@@ -147,44 +147,44 @@ sudo docker build -t rpi-rhiot .</code></pre></div>
 
 <p>You should get an output like this after a while to compile Rhiot Docker image.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpiz1:~/rpi-rhiot <span class="nv">$ </span>sudo docker build -t rpi-rhiot .
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpiz1:~/rpi-rhiot <span class="nv">$ </span>sudo docker build -t rpi-rhiot .
 Sending build context to Docker daemon 12.29 kB
-Step <span class="m">1</span> : FROM resin/rpi-raspbian:jessie
+Step 1 : FROM resin/rpi-raspbian:jessie
  ---&gt; e97a8531a526
-Step <span class="m">2</span> : MAINTAINER Greg AUTRIC &lt;gautric@redhat.com&gt;
+Step 2 : MAINTAINER Greg AUTRIC &lt;gautric@redhat.com&gt;
  ---&gt; Using cache
  ---&gt; 9f6d3dedf04a
-Step <span class="m">3</span> : ENV CAMEL_VERSION <span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">:-</span><span class="nv">2</span><span class="p">.16.1</span><span class="k">}</span>
+Step 3 : ENV CAMEL_VERSION <span class="k">${</span><span class="nv">CAMEL_VERSION</span><span class="k">:-</span><span class="nv">2</span><span class="p">.16.1</span><span class="k">}</span>
  ---&gt; Using cache
  ---&gt; 5695c4034847
-Step <span class="m">4</span> : ENV RHIOT_VERSION <span class="k">${</span><span class="nv">RHIOT_VERSION</span><span class="k">:-</span><span class="nv">0</span><span class="p">.1.3</span><span class="k">}</span>
+Step 4 : ENV RHIOT_VERSION <span class="k">${</span><span class="nv">RHIOT_VERSION</span><span class="k">:-</span><span class="nv">0</span><span class="p">.1.3</span><span class="k">}</span>
  ---&gt; Using cache
  ---&gt; 91fb37b40966
-Step <span class="m">5</span> : ENV JAVA_VERSION <span class="k">${</span><span class="nv">JAVA_VERSION</span><span class="k">:-</span><span class="nv">7</span><span class="k">}</span>
+Step 5 : ENV JAVA_VERSION <span class="k">${</span><span class="nv">JAVA_VERSION</span><span class="k">:-</span><span class="nv">7</span><span class="k">}</span>
  ---&gt; Using cache
  ---&gt; 5ce6f2fd7edd
-Step <span class="m">6</span> : ENV KURA_VERSION <span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">:-</span><span class="nv">1</span><span class="p">.3.0</span><span class="k">}</span>
+Step 6 : ENV KURA_VERSION <span class="k">${</span><span class="nv">KURA_VERSION</span><span class="k">:-</span><span class="nv">1</span><span class="p">.3.0</span><span class="k">}</span>
  ---&gt; Using cache
  ---&gt; 413de7f8e993
-Step <span class="m">7</span> : ENV RPI_VERSION <span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">:-</span><span class="nv">raspberry</span><span class="p">-pi-bplus-nn</span><span class="k">}</span>
+Step 7 : ENV RPI_VERSION <span class="k">${</span><span class="nv">RPI_VERSION</span><span class="k">:-</span><span class="nv">raspberry</span><span class="p">-pi-bplus-nn</span><span class="k">}</span>
  ---&gt; Using cache
  ---&gt; a584f9145729
 
 ... OMIT ...
 
-Step <span class="m">32</span> : RUN <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/config.ini.sh
+Step 32 : RUN <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/config.ini.sh
  ---&gt; Using cache
  ---&gt; 14deb381475f
-Step <span class="m">33</span> : EXPOSE 80
+Step 33 : EXPOSE 80
  ---&gt; Using cache
  ---&gt; b5dc47bd7f51
-Step <span class="m">34</span> : EXPOSE 5002
+Step 34 : EXPOSE 5002
  ---&gt; Using cache
  ---&gt; c95b9d1593bc
-Step <span class="m">35</span> : CMD <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/start_kura_rhiot.sh
+Step 35 : CMD <span class="k">${</span><span class="nv">RHIOT_BIN_FOLDER</span><span class="k">}</span>/start_kura_rhiot.sh
  ---&gt; Using cache
  ---&gt; 4d0e0a16f2c8
-Successfully built 4d0e0a16f2c8</code></pre></div>
+Successfully built 4d0e0a16f2c8</code></pre></figure>
 
 <h3 id="or-pull-rpi-rhiot-image-and-take-a-coffee-too">or Pull rpi-rhiot Image and take a coffee too</h3>
 
@@ -197,20 +197,20 @@ RaspberryPi B+ and Zero model only
 This image may be change soon
 </div>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker pull gautric/rpi-rhiot</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker pull gautric/rpi-rhiot</code></pre></figure>
 
 <h2 id="compile-and-upload-rhiot-quickstart">Compile and upload Rhiot quickstart</h2>
 
 <p>You have to compile and upload</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.com:rhiot/quickstarts.git
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.com:rhiot/quickstarts.git
 <span class="nb">cd </span>quickstarts/kura-camel
 git checkout kura-gpio
-mvn clean package</code></pre></div>
+mvn clean package</code></pre></figure>
 
-<p>and copy <code>target/rhiot-kura-camel-1.0.0-SNAPSHOT.jar</code> to your RaspberryPi Zero</p>
+<p>and copy <code class="highlighter-rouge">target/rhiot-kura-camel-1.0.0-SNAPSHOT.jar</code> to your RaspberryPi Zero</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">scp target/rhiot-kura-camel-1.0.0-SNAPSHOT.jar pi@<span class="o">{</span>RPIz_IP_ADDR<span class="o">}</span>:</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">scp target/rhiot-kura-camel-1.0.0-SNAPSHOT.jar pi@<span class="o">{</span>RPIz_IP_ADDR<span class="o">}</span>:</code></pre></figure>
 
 <h3 id="wire-led-raspberrypi">Wire, LED, RaspberryPi</h3>
 
@@ -222,16 +222,16 @@ mvn clean package</code></pre></div>
 
 <p>Now if everything goes well, we can run it via commands below</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo docker run -d --privileged --cap-add<span class="o">=</span>ALL <span class="se">\</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo docker run -d --privileged --cap-add<span class="o">=</span>ALL <span class="se">\</span>
            -v /dev:/dev <span class="se">\</span>
            -v /lib/modules:/lib/modules <span class="se">\</span>
            -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/opt/rhiot/plugins <span class="se">\</span>
            -p 80:80 <span class="se">\</span>
-           -t rpi-rhiot                       <span class="c">## or gautric/rpi-rhiot</span></code></pre></div>
+           -t rpi-rhiot                       <span class="c">## or gautric/rpi-rhiot</span></code></pre></figure>
 
-<p>You can change <code>-d</code> to <code>-i</code> to run image into interactive mode.</p>
+<p>You can change <code class="highlighter-rouge">-d</code> to <code class="highlighter-rouge">-i</code> to run image into interactive mode.</p>
 
-<p><code>start_kura_rhiot.sh</code> script (into Dockerfile) injects all <strong><code>pwd</code>/*.jar</strong> into Kura <code>config.ini</code> file.
+<p><code class="highlighter-rouge">start_kura_rhiot.sh</code> script (into Dockerfile) injects all <strong><code class="highlighter-rouge">pwd</code>/*.jar</strong> into Kura <code class="highlighter-rouge">config.ini</code> file.
 Kura platform will include them into the boot time.</p>
 
 <p>Now, you can use and deploy Kura Platform as you want.</p>
@@ -246,10 +246,10 @@ Change gpio id/action/period as you want.</p>
 <p>If you need retrieve Rhiot Project and Kura platform log.
 Please use following commands :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpiz1:~ <span class="nv">$ </span>sudo docker ps
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpiz1:~ <span class="nv">$ </span>sudo docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                          NAMES
-00aa11bbccddeeff        gautric/rpi-rhiot   <span class="s2">&quot;/bin/sh -c ${RHIOT_B&quot;</span>   <span class="m">4</span> hours ago         Up <span class="m">4</span> hours          0.0.0.0:80-&gt;80/tcp, 5002/tcp   jolly_almeida
-pi@rbpiz1:~ <span class="nv">$ </span>sudo docker logs -f 00aa11bbccddeeff</code></pre></div>
+00aa11bbccddeeff        gautric/rpi-rhiot   <span class="s2">"/bin/sh -c </span><span class="k">${</span><span class="nv">RHIOT_B</span><span class="s2">"   4 hours ago         Up 4 hours          0.0.0.0:80-&gt;80/tcp, 5002/tcp   jolly_almeida
+pi@rbpiz1:~ </span><span class="nv">$ </span><span class="s2">sudo docker logs -f 00aa11bbccddeeff</span></code></pre></figure>
 
 <h2 id="video">VIDEO</h2>
 
@@ -310,13 +310,19 @@ pi@rbpiz1:~ <span class="nv">$ </span>sudo docker logs -f 00aa11bbccddeeff</code
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -952,13 +958,19 @@ pi@rbpiz1:~ <span class="nv">$ </span>sudo docker logs -f 00aa11bbccddeeff</code
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2247,6 +2259,78 @@ pi@rbpiz1:~ <span class="nv">$ </span>sudo docker logs -f 00aa11bbccddeeff</code
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2271,6 +2355,19 @@ pi@rbpiz1:~ <span class="nv">$ </span>sudo docker logs -f 00aa11bbccddeeff</code
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

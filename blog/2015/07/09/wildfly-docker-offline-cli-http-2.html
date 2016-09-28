@@ -110,70 +110,72 @@ I will post soon an full shell script PKI generation ;-)
   </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://gist.githubusercontent.com/gautric/604e885885df0ed042f8/raw/f7d668edd82c35c23215a8a812074a4d47e1688b/offline-http2.cli -o offlinecli-http2.cli</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> curl https://gist.githubusercontent.com/gautric/604e885885df0ed042f8/raw/f7d668edd82c35c23215a8a812074a4d47e1688b/offline-http2.cli -o offlinecli-http2.cli
+ </code></pre></figure>
 
 <ul>
   <li><strong><em>Dockerfile</em></strong> file
  <script src="https://gist.github.com/gautric/c705e9e8572dd84b2bd9.js"></script></li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://gist.githubusercontent.com/gautric/c705e9e8572dd84b2bd9/raw/3ebfe805e767343f91104ef87ff3c0793f3efdd3/Dockerfile -o Dockerfile</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> curl https://gist.githubusercontent.com/gautric/c705e9e8572dd84b2bd9/raw/3ebfe805e767343f91104ef87ff3c0793f3efdd3/Dockerfile -o Dockerfile
+ </code></pre></figure>
 
 <p>Build your image with the next comand line sample</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker  build --rm<span class="o">=</span><span class="nb">true</span> --tag<span class="o">=</span>wildfly-http2   .</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker  build --rm<span class="o">=</span><span class="nb">true</span> --tag<span class="o">=</span>wildfly-http2   .</code></pre></figure>
 
 <p>You should retrieve an output like this</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Source/local/wildfly-docker<span class="o">]</span><span class="nv">$&gt;</span> docker --tlsverify<span class="o">=</span><span class="nb">false  </span>build --rm<span class="o">=</span><span class="nb">true</span> --tag<span class="o">=</span>wildfly-http2   .
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~/Source/local/wildfly-docker]$&gt; </span>docker --tlsverify<span class="o">=</span><span class="nb">false  </span>build --rm<span class="o">=</span><span class="nb">true</span> --tag<span class="o">=</span>wildfly-http2   .
 Sending build context to Docker daemon 74.75 kB
 Sending build context to Docker daemon
-Step <span class="m">0</span> : FROM jboss/wildfly
+Step 0 : FROM jboss/wildfly
  ---&gt; e908c8c95a8b
-Step <span class="m">1</span> : ENV ALPN_VERSION 8.1.3.v20150130
+Step 1 : ENV ALPN_VERSION 8.1.3.v20150130
  ---&gt; Using cache
  ---&gt; 87116bbedcb5
-Step <span class="m">2</span> : ENV ALPN_LIB_DIR /tmp/eclipse/lib
+Step 2 : ENV ALPN_LIB_DIR /tmp/eclipse/lib
  ---&gt; Using cache
  ---&gt; b4672d6008ee
-Step <span class="m">3</span> : ENV HTTP2_ENABLE_CLI offlinecli-http2.cli
+Step 3 : ENV HTTP2_ENABLE_CLI offlinecli-http2.cli
  ---&gt; Using cache
  ---&gt; 635ac811b927
-Step <span class="m">4</span> : ADD keystore.jks /opt/jboss/wildfly/standalone/configuration/keystore.jks
+Step 4 : ADD keystore.jks /opt/jboss/wildfly/standalone/configuration/keystore.jks
  ---&gt; Using cache
  ---&gt; d0e62373566c
-Step <span class="m">5</span> : ADD truststore.jks /opt/jboss/wildfly/standalone/configuration/truststore.jks
+Step 5 : ADD truststore.jks /opt/jboss/wildfly/standalone/configuration/truststore.jks
  ---&gt; Using cache
  ---&gt; f3e274485c1c
-Step <span class="m">6</span> : RUN mkdir -p <span class="nv">$ALPN_LIB_DIR</span>
+Step 6 : RUN mkdir -p <span class="nv">$ALPN_LIB_DIR</span>
  ---&gt; Using cache
  ---&gt; fd2da0f5ee22
-Step <span class="m">7</span> : RUN curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar &gt; <span class="nv">$ALPN_LIB_DIR</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
+Step 7 : RUN curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar &gt; <span class="nv">$ALPN_LIB_DIR</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
  ---&gt; Using cache
  ---&gt; f8032e23c9b5
-Step <span class="m">8</span> : ENV JAVA_OPTS <span class="s2">&quot;$JAVA_OPTS -Xbootclasspath/p:$ALPN_LIB_DIR/alpn-boot-$ALPN_VERSION.jar&quot;</span>
+Step 8 : ENV JAVA_OPTS <span class="s2">"</span><span class="nv">$JAVA_OPTS</span><span class="s2"> -Xbootclasspath/p:</span><span class="nv">$ALPN_LIB_DIR</span><span class="s2">/alpn-boot-</span><span class="nv">$ALPN_VERSION</span><span class="s2">.jar"</span>
  ---&gt; Using cache
  ---&gt; 3e49cf6ca1c6
-Step <span class="m">9</span> : ADD <span class="nv">$HTTP2_ENABLE_CLI</span> /tmp/
+Step 9 : ADD <span class="nv">$HTTP2_ENABLE_CLI</span> /tmp/
  ---&gt; Using cache
  ---&gt; e309bce6ec5a
-Step <span class="m">10</span> : RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file<span class="o">=</span>/tmp/<span class="nv">$HTTP2_ENABLE_CLI</span>
+Step 10 : RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file<span class="o">=</span>/tmp/<span class="nv">$HTTP2_ENABLE_CLI</span>
  ---&gt; Using cache
  ---&gt; 85fb55ecc742
-Step <span class="m">11</span> : RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history
+Step 11 : RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history
  ---&gt; Using cache
  ---&gt; 566da0a2cb80
-Step <span class="m">12</span> : CMD /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0
+Step 12 : CMD /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0
  ---&gt; Using cache
  ---&gt; 3372a817bfc1
-Successfully built 3372a817bfc1</code></pre></div>
+Successfully built 3372a817bfc1</code></pre></figure>
 
 <h2 id="startup-the-wilfly-docker-image">Startup the Wilfly Docker image</h2>
 
 <p>After a full an a correct configuration, you can startup the JBoss instance as a container via your container provider aka Docker.
 Startup like this</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -it -p 9990:9990 -p 8080:8080 -p 8443:8443 wildfly-http2</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> docker run -it -p 9990:9990 -p 8080:8080 -p 8443:8443 wildfly-http2</code></pre></figure>
 
 <h2 id="check-it">Check it</h2>
 
@@ -229,13 +231,19 @@ I use to check HTTP/2 protocol, the network panel available inside Chrome.</p>
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -871,13 +879,19 @@ I use to check HTTP/2 protocol, the network panel available inside Chrome.</p>
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2166,6 +2180,78 @@ I use to check HTTP/2 protocol, the network panel available inside Chrome.</p>
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2190,6 +2276,19 @@ I use to check HTTP/2 protocol, the network panel available inside Chrome.</p>
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

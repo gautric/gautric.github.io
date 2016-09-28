@@ -70,7 +70,7 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Mar 9, 2016  <a href="#en">en</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#DIO">DIO</a>  <a href="#DeviceIO">DeviceIO</a>  <a href="#I2C">I2C</a>  <a href="#API">API</a> </p>
-    <p>Today, we gonna implement a quick tool available into RaspberryPi with Java <a href="https://wiki.openjdk.java.net/display/dio/Main">Device IO API</a>. <code>i2cdetect</code> is a simple <a href="https://en.wikipedia.org/wiki/I%C2%B2C">i2c</a> device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.</p>
+    <p>Today, we gonna implement a quick tool available into RaspberryPi with Java <a href="https://wiki.openjdk.java.net/display/dio/Main">Device IO API</a>. <code class="highlighter-rouge">i2cdetect</code> is a simple <a href="https://en.wikipedia.org/wiki/I%C2%B2C">i2c</a> device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.</p>
 
 <blockquote>
   <p>i2cdetect with the Java Device I/O API implementation .</p>
@@ -93,52 +93,52 @@
 
 <p>Download  Device IO API and compile it.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; sudo apt-get install mercurial oracle-java-8
-rbpi&gt; hg clone http://hg.openjdk.java.net/dio/dev jdkdio
-rbpi&gt; <span class="nb">cd </span>jdkdio</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">rbpi&gt; </span>sudo apt-get install mercurial oracle-java-8
+<span class="gp">rbpi&gt; </span>hg clone http://hg.openjdk.java.net/dio/dev jdkdio
+<span class="gp">rbpi&gt; </span><span class="nb">cd </span>jdkdio</code></pre></figure>
 
 <p>and we need to change line below into the Makefile, to disable some low level log information.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">diff -r ad12ae44e850 Makefile
---- a/Makefile	Mon Feb <span class="m">29</span> 19:06:11 <span class="m">2016</span> +0300
-+++ b/Makefile	Tue Mar <span class="m">15</span> 16:06:07 <span class="m">2016</span> +0000
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">diff -r ad12ae44e850 Makefile
+--- a/Makefile	Mon Feb 29 19:06:11 2016 +0300
++++ b/Makefile	Tue Mar 15 16:06:07 2016 +0000
 @@ -172,7 +172,7 @@
  JAVAC :<span class="o">=</span> <span class="k">$(</span>JAVA_HOME<span class="k">)</span>/bin/javac
  JAR :<span class="o">=</span> <span class="k">$(</span>JAVA_HOME<span class="k">)</span>/bin/jar
  MKDIR :<span class="o">=</span> mkdir -p
--TARGET_C_FLAGS <span class="o">=</span> <span class="k">$(</span>USER_C_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span><span class="m">0</span> -DENABLE_DEVICEACCESS -c -MMD -MF <span class="k">$(</span>NATIVE_OUT_DIR<span class="k">)</span>/<span class="k">$(</span>@<span class="k">)</span>.d
-+TARGET_C_FLAGS <span class="o">=</span> <span class="k">$(</span>USER_C_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span><span class="m">4</span> -DENABLE_DEVICEACCESS -c -MMD -MF <span class="k">$(</span>NATIVE_OUT_DIR<span class="k">)</span>/<span class="k">$(</span>@<span class="k">)</span>.d
- <span class="nv">TARGET_INCLUDES</span> <span class="o">=</span> <span class="k">$(</span>foreach d,<span class="k">$(</span>DIO_INCLUDE_DIRS<span class="k">)</span>,-I<span class="k">$(</span>d<span class="k">))</span> -I<span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include -I<span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include/linux
- <span class="nv">TARGET_CXX_FLAGS</span> <span class="o">=</span> <span class="k">$(</span>USER_CXX_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span><span class="m">4</span> -DENABLE_DEVICEACCESS -c
- <span class="nv">TARGET_LD_FLAGS</span><span class="o">=</span> <span class="k">$(</span>USER_LD_FLAGS<span class="k">)</span> -Xlinker -z -Xlinker defs -Xlinker -O1 <span class="se">\</span></code></pre></div>
+-TARGET_C_FLAGS <span class="o">=</span> <span class="k">$(</span>USER_C_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span>0 -DENABLE_DEVICEACCESS -c -MMD -MF <span class="k">$(</span>NATIVE_OUT_DIR<span class="k">)</span>/<span class="k">$(</span>@<span class="k">)</span>.d
++TARGET_C_FLAGS <span class="o">=</span> <span class="k">$(</span>USER_C_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span>4 -DENABLE_DEVICEACCESS -c -MMD -MF <span class="k">$(</span>NATIVE_OUT_DIR<span class="k">)</span>/<span class="k">$(</span>@<span class="k">)</span>.d
+ TARGET_INCLUDES <span class="o">=</span> <span class="k">$(</span>foreach d,<span class="k">$(</span>DIO_INCLUDE_DIRS<span class="k">)</span>,-I<span class="k">$(</span>d<span class="k">))</span> -I<span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include -I<span class="k">$(</span>JAVA_HOME<span class="k">)</span>/include/linux
+ TARGET_CXX_FLAGS <span class="o">=</span> <span class="k">$(</span>USER_CXX_FLAGS<span class="k">)</span> -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL<span class="o">=</span>4 -DENABLE_DEVICEACCESS -c
+ <span class="nv">TARGET_LD_FLAGS</span><span class="o">=</span> <span class="k">$(</span>USER_LD_FLAGS<span class="k">)</span> -Xlinker -z -Xlinker defs -Xlinker -O1 <span class="se">\</span></code></pre></figure>
 
 <p>You can now compile DIO Api Library with</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; <span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
-rbpi&gt; <span class="nb">export </span><span class="nv">PI_TOOLS</span><span class="o">=</span>/usr
-rbpi&gt; make</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">rbpi&gt; </span><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
+<span class="gp">rbpi&gt; </span><span class="nb">export </span><span class="nv">PI_TOOLS</span><span class="o">=</span>/usr
+<span class="gp">rbpi&gt; </span>make</code></pre></figure>
 
 <h3 id="compile-program">Compile program</h3>
 
-<p>Now, we compile <code>i2cdetect</code> implementation as usual.</p>
+<p>Now, we compile <code class="highlighter-rouge">i2cdetect</code> implementation as usual.</p>
 
 <script src="https://gist.github.com/gautric/a239adfd06b51099c6a8.js"></script>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; wget https://gist.githubusercontent.com/gautric/a239adfd06b51099c6a8/raw/93abe18ce83b311a97300c718732088bce370ae2/I2CDetect.java
-rbpi&gt; javac -cp /home/pi/jdkdio/build/jar/dio.jar I2CDetect.java</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">rbpi&gt; </span>wget https://gist.githubusercontent.com/gautric/a239adfd06b51099c6a8/raw/93abe18ce83b311a97300c718732088bce370ae2/I2CDetect.java
+<span class="gp">rbpi&gt; </span>javac -cp /home/pi/jdkdio/build/jar/dio.jar I2CDetect.java</code></pre></figure>
 
 <h3 id="output-result">Output result</h3>
 
-<p>If everything looks good you could execute <code>I2CDetect</code> class with the following command.
+<p>If everything looks good you could execute <code class="highlighter-rouge">I2CDetect</code> class with the following command.
 I’ve bought <a href="https://www.raspberrypi.org/products/sense-hat/">Sense Hat</a> to plug it on top of my RaspberryPi.
 You should get this kind of output when running program.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpiv2-1:~ <span class="nv">$ </span>sudo java -Djava.library.path<span class="o">=</span>/home/pi/jdkdio/build/so <span class="se">\</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpiv2-1:~ <span class="nv">$ </span>sudo java -Djava.library.path<span class="o">=</span>/home/pi/jdkdio/build/so <span class="se">\</span>
  -Djava.security.policy<span class="o">=</span>/opt/eclipse/kura/kura/jdk.dio.policy <span class="se">\</span>
  -cp .:/home/pi/jdkdio/build/jar/dio.jar <span class="se">\</span>
  I2CDetect
 
-     <span class="m">0</span>  <span class="m">1</span>  <span class="m">2</span>  <span class="m">3</span>  <span class="m">4</span>  <span class="m">5</span>  <span class="m">6</span>  <span class="m">7</span>  <span class="m">8</span>  <span class="m">9</span>  a  b  c  d  e  f
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- --
 10: -- -- -- -- -- -- -- -- -- -- -- -- 1c -- -- --
 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -146,11 +146,11 @@ You should get this kind of output when running program.</p>
 40: -- -- -- -- -- -- UU -- -- -- -- -- -- -- -- --
 50: -- -- -- -- -- -- -- -- -- -- -- -- 5c -- -- 5f
 60: -- -- -- -- -- -- -- -- -- -- 6a -- -- -- -- --
-70: -- -- -- -- -- -- -- --</code></pre></div>
+70: -- -- -- -- -- -- -- --     </code></pre></figure>
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>This sample is a very quick hack for a Java implementation of <code>i2cdetect</code>. I have to investigate some stuff about DIO exception management to clarify this code.</p>
+<p>This sample is a very quick hack for a Java implementation of <code class="highlighter-rouge">i2cdetect</code>. I have to investigate some stuff about DIO exception management to clarify this code.</p>
 
 <p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
 
@@ -197,13 +197,19 @@ You should get this kind of output when running program.</p>
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -839,13 +845,19 @@ You should get this kind of output when running program.</p>
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2134,6 +2146,78 @@ You should get this kind of output when running program.</p>
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2158,6 +2242,19 @@ You should get this kind of output when running program.</p>
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

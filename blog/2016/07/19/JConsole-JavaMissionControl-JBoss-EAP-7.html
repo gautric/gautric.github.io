@@ -86,28 +86,28 @@ JConsole uses underlying features of Java Virtual Machine to provide information
 
 <p>Here is a <em>tcpdump</em> capture</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">GET / HTTP/1.1
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">GET / HTTP/1.1
 Sec-JbossRemoting-Key: t/V5HWbok5e1KAYs22zDrQ<span class="o">==</span>
 Upgrade: jboss-remoting
 Host: localhost:8080
 Connection: upgrade
 
-HTTP/1.1 <span class="m">101</span> Switching Protocols
+HTTP/1.1 101 Switching Protocols
 Connection: Upgrade
 Upgrade: jboss-remoting
 Sec-JbossRemoting-Accept: +F31ah8B270e5BrbWr6Ig90t+NM<span class="o">=</span>
-Date: Tue, <span class="m">19</span> Jul <span class="m">2016</span> 16:40:28 GMT
+Date: Tue, 19 Jul 2016 16:40:28 GMT
 
 ........localhost...3......endpoint....4.0.18.Final-redhat-1....
 .<span class="o">(</span>.....<span class="o">(</span>...R......localhost..JBOSS-LOCAL-USER...................
 DIGEST-MD5....4.0.18.Final-redhat-1.....<span class="o">(</span>.....<span class="o">(</span>.................
-DIGEST-MD5...k.realm<span class="o">=</span><span class="s2">&quot;ApplicationRealm&quot;</span>,nonce<span class="o">=</span><span class="s2">&quot;2LD3fnFJ3Nbsjfj+k</span>
-<span class="s2">XXXXXXXXXXXXXXXXXXXXXXX&quot;</span>,charset<span class="o">=</span>utf-8,algorithm<span class="o">=</span>md5-sess.....ch
-<span class="nv">arset</span><span class="o">=</span>utf-8,username<span class="o">=</span><span class="s2">&quot;appli&quot;</span>,realm<span class="o">=</span><span class="s2">&quot;ApplicationRealm&quot;</span>,nonce<span class="o">=</span><span class="s2">&quot;2LD</span>
-<span class="s2">3fnFJ3Nbsjfj+XXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>,nc<span class="o">=</span>00000001,cnonce<span class="o">=</span><span class="s2">&quot;bCz1B</span>
-<span class="s2">XXXXXXXXXXXXXXXXX/fnQTL5S279++KbxG2&quot;</span>,digest-uri<span class="o">=</span><span class="s2">&quot;remoting/localh</span>
-<span class="s2">ost&quot;</span>,maxbuf<span class="o">=</span>65536,response<span class="o">=</span>e723bee2cffaddd9c1a3fa8925a106ad,qop<span class="o">=</span>
-....</code></pre></div>
+DIGEST-MD5...k.realm<span class="o">=</span><span class="s2">"ApplicationRealm"</span>,nonce<span class="o">=</span><span class="s2">"2LD3fnFJ3Nbsjfj+k
+XXXXXXXXXXXXXXXXXXXXXXX"</span>,charset<span class="o">=</span>utf-8,algorithm<span class="o">=</span>md5-sess.....ch
+<span class="nv">arset</span><span class="o">=</span>utf-8,username<span class="o">=</span><span class="s2">"appli"</span>,realm<span class="o">=</span><span class="s2">"ApplicationRealm"</span>,nonce<span class="o">=</span><span class="s2">"2LD
+3fnFJ3Nbsjfj+XXXXXXXXXXXXXXXXXXXXXXXX"</span>,nc<span class="o">=</span>00000001,cnonce<span class="o">=</span><span class="s2">"bCz1B
+XXXXXXXXXXXXXXXXX/fnQTL5S279++KbxG2"</span>,digest-uri<span class="o">=</span><span class="s2">"remoting/localh
+ost"</span>,maxbuf<span class="o">=</span>65536,response<span class="o">=</span>e723bee2cffaddd9c1a3fa8925a106ad,qop<span class="o">=</span>
+....</code></pre></figure>
 
 <h3 id="jconsole-from-jboss-eap">JConsole from JBoss EAP</h3>
 
@@ -120,11 +120,11 @@ It is available into <strong>${JBOSS_HOME}/bin</strong> directory.</p>
 
 <p>Out of the box, JConsole could use <strong>remote+http</strong> protocol for connecting to JBoss Management port <strong>9990</strong>.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">&gt; </span><span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></figure>
 
 <p>Configure correct JMX url (correct <strong>management</strong> interface and <strong>management-http</strong> port)</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">service:jmx:remote+http://localhost:9990</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">service:jmx:remote+http://localhost:9990</code></pre></figure>
 
 <p>and use <em>ManagementRealm</em> account to connect with (don’t forget to use <strong>${JBOSS_HOME}/bin/add-user.sh</strong> to configure account)</p>
 
@@ -134,13 +134,13 @@ It is available into <strong>${JBOSS_HOME}/bin</strong> directory.</p>
 
 <p>Change <em>standalone.xml</em> with CLI command below</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">/subsystem<span class="o">=</span>jmx/remoting-connector<span class="o">=</span>jmx:write-attribute<span class="o">(</span><span class="nv">name</span><span class="o">=</span>use-management-endpoint,value<span class="o">=</span><span class="nb">false</span><span class="o">)</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">/subsystem<span class="o">=</span>jmx/remoting-connector<span class="o">=</span>jmx:write-attribute<span class="o">(</span><span class="nv">name</span><span class="o">=</span>use-management-endpoint,value<span class="o">=</span><span class="nb">false</span><span class="o">)</span></code></pre></figure>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">&gt; <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">&gt; </span><span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></figure>
 
 <p>Configure correct JMX url (correct <strong>public</strong> interface and <strong>http</strong> port)</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">service:jmx:remote+http://localhost:8080</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">service:jmx:remote+http://localhost:8080</code></pre></figure>
 
 <p>and use <em>ApplicationRealm</em> account to connect with (don’t forget to use <strong>${JBOSS_HOME}/bin/add-user.sh</strong> to configure account)</p>
 
@@ -161,15 +161,15 @@ It can also collect <strong>JMX</strong> information with JMX system.</p>
 
 <p>Edit <strong>jmc.ini</strong> file</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini</code></pre></figure>
 
 <p>and add line below at this end of file</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">-Xbootclasspath/a:<span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/client/jboss-client.jar</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">-Xbootclasspath/a:<span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/client/jboss-client.jar</code></pre></figure>
 
 <p>File should look like</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~<span class="o">]</span><span class="nv">$&gt;</span> cat /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/lib/missioncontrol/Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~]$&gt; </span>cat /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/lib/missioncontrol/Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini
 -startup
 ../../../plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar
 --launcher.library
@@ -187,7 +187,7 @@ cocoa
 -Djava.net.preferIPv4Stack<span class="o">=</span><span class="nb">true</span>
 -XstartOnFirstThread
 -Dorg.eclipse.swt.internal.carbon.smallFonts
--Xbootclasspath/a:/Users/gautric/Application/redhat/eap/jboss-eap-7.0/bin/client/jboss-client.jar</code></pre></div>
+-Xbootclasspath/a:/Users/gautric/Application/redhat/eap/jboss-eap-7.0/bin/client/jboss-client.jar</code></pre></figure>
 
 <h2 id="jmc-connection-to-jboss-eap">JMC connection to JBoss EAP</h2>
 
@@ -258,13 +258,19 @@ cocoa
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -900,13 +906,19 @@ cocoa
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2195,6 +2207,78 @@ cocoa
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2219,6 +2303,19 @@ cocoa
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

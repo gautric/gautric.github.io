@@ -160,8 +160,8 @@ Be carefull with your device, please shutdown power before wiring. Check twice b
 
 <p>Currently only 1.0-RC version is available directly for RaspberryPi</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-pi@rbpi&gt; curl -s get.pi4j.com <span class="p">|</span> sudo bash</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+<span class="gp">pi@rbpi&gt; </span>curl -s get.pi4j.com | sudo bash</code></pre></figure>
 
 <div class="info">
 you should use a Public/Private key authentication for a faster connection to your RaspberryPi.
@@ -180,9 +180,9 @@ Some stuff could change anytime (URI for example).
 
 <p>Checkout code and build it :</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> git clone https://github.com/camel-labs/camel-labs.git
-<span class="nv">$&gt;</span> <span class="nb">cd </span>camel-labs/iot/components/camel-raspberrypi
-<span class="nv">$&gt;</span> mvn package -Praspberry -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>git clone https://github.com/camel-labs/camel-labs.git
+<span class="gp">$&gt; </span><span class="nb">cd </span>camel-labs/iot/components/camel-raspberrypi
+<span class="gp">$&gt; </span>mvn package -Praspberry -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span></code></pre></figure>
 
 <div class="info">
 Camel-raspberrypi can't be merged into Camel master branch.
@@ -190,7 +190,7 @@ Camel-raspberrypi can't be merged into Camel master branch.
 
 <p>You need to compile  Main (tester) program</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">camellabs</span><span class="o">.</span><span class="na">component</span><span class="o">.</span><span class="na">pi4j</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">github</span><span class="o">.</span><span class="na">camellabs</span><span class="o">.</span><span class="na">component</span><span class="o">.</span><span class="na">pi4j</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">org.apache.camel.CamelContext</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.apache.camel.builder.RouteBuilder</span><span class="o">;</span>
@@ -198,9 +198,9 @@ Camel-raspberrypi can't be merged into Camel master branch.
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
 
-<span class="cm">/**</span>
-<span class="cm"> * A simple application to run RaspberryPi Camel</span>
-<span class="cm"> */</span>
+<span class="cm">/**
+ * A simple application to run RaspberryPi Camel
+ */</span>
 <span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">CamelMain</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">LOG</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">CamelMain</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -218,20 +218,20 @@ Camel-raspberrypi can't be merged into Camel master branch.
 
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-            <span class="n">from</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]).</span><span class="na">id</span><span class="o">(</span><span class="s">&quot;raspberrypi-route&quot;</span><span class="o">).</span><span class="na">to</span><span class="o">(</span><span class="n">Pi4jConstants</span><span class="o">.</span><span class="na">LOG_COMPONENT</span><span class="o">).</span><span class="na">to</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+            <span class="n">from</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]).</span><span class="na">id</span><span class="o">(</span><span class="s">"raspberrypi-route"</span><span class="o">).</span><span class="na">to</span><span class="o">(</span><span class="n">Pi4jConstants</span><span class="o">.</span><span class="na">LOG_COMPONENT</span><span class="o">).</span><span class="na">to</span><span class="o">(</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;main&quot;</span><span class="o">);</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"main"</span><span class="o">);</span>
 
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;args[&quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;] =&quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+            <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"args["</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">"] ="</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
         <span class="o">}</span>
 
-        <span class="n">CamelContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">DefaultCamelContext</span><span class="o">();</span>
+        <span class="n">CamelContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DefaultCamelContext</span><span class="o">();</span>
 
-        <span class="n">context</span><span class="o">.</span><span class="na">addRoutes</span><span class="o">(</span><span class="k">new</span> <span class="nf">CommandLineRouteBuilder</span><span class="o">(</span><span class="n">args</span><span class="o">));</span>
+        <span class="n">context</span><span class="o">.</span><span class="na">addRoutes</span><span class="o">(</span><span class="k">new</span> <span class="n">CommandLineRouteBuilder</span><span class="o">(</span><span class="n">args</span><span class="o">));</span>
 
         <span class="n">context</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
         <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">600000</span><span class="o">);</span>
@@ -239,22 +239,22 @@ Camel-raspberrypi can't be merged into Camel master branch.
         <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
     <span class="o">}</span>
 
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <p>It needs some Camel dependencies (via Maven) to run. We have to activate <a href="https://github.com/camel-labs/camel-labs/blob/master/iot/components/camel-raspberrypi/pom.xml#L153"><strong><em>raspberry</em></strong> maven profile</a> and
 copy all dependencies to Raspberry Pi.</p>
 
 <p>Copy jar and dependencies files to your Raspberry Pi</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> <span class="nb">cd </span>components/camel-raspberrypi
-<span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span> <span class="s1">&#39;mkdir -p /home/pi/camel&#39;</span>
-<span class="nv">$&gt;</span> scp target/*.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>:/home/pi/camel</code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span><span class="nb">cd </span>components/camel-raspberrypi
+<span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span> <span class="s1">'mkdir -p /home/pi/camel'</span>
+<span class="gp">$&gt; </span>scp target/<span class="k">*</span>.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>:/home/pi/camel</code></pre></figure>
 
 <h2 id="install-program-camel-program-to-your-raspberry-pi">Install program Camel Program to your Raspberry Pi</h2>
 
 <p>Copy <strong>log4.properties</strong> to <strong>${PI_HOST}:/home/pi/camel</strong> directory</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#</span>
 <span class="c"># The logging properties used</span>
 <span class="c">#</span>
 log4j.rootLogger<span class="o">=</span>INFO, out
@@ -267,8 +267,8 @@ log4j.logger.com.github.camellabs.component.raspberrypi<span class="o">=</span>A
 <span class="c"># CONSOLE appender not used by default</span>
 log4j.appender.out<span class="o">=</span>org.apache.log4j.ConsoleAppender
 log4j.appender.out.layout<span class="o">=</span>org.apache.log4j.PatternLayout
-log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class="o">{</span>ISO8601<span class="o">}</span> <span class="o">[</span>%30.30t<span class="o">]</span> %-30.30c<span class="o">{</span>1<span class="o">}</span> %-5p %m%n
-<span class="c">#log4j.appender.out.layout.ConversionPattern=%d [%-15.15t] %-5p %-30.30c{1} - %m%n</span></code></pre></div>
+log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class="o">{</span>ISO8601<span class="o">}</span> <span class="o">[</span>%30.30t] %-30.30c<span class="o">{</span>1<span class="o">}</span> %-5p %m%n
+<span class="c">#log4j.appender.out.layout.ConversionPattern=%d [%-15.15t] %-5p %-30.30c{1} - %m%n</span></code></pre></figure>
 
 <p><br /></p>
 
@@ -280,10 +280,10 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <h3 id="the-command-line">The command line</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
-        <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=60&quot;</span>  <span class="se">\</span>
-        <span class="s2">&quot;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+<span class="gp">pi@rbpi&gt; </span>pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
+        <span class="s2">"timer://foo?fixedRate=true&amp;repeatCount=60"</span>  <span class="se">\</span>
+        <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span></code></pre></figure>
 
 <h3 id="video-raspberry--led-20s">Video Raspberry + LED (&gt;20s)</h3>
 
@@ -295,29 +295,29 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span 
 
 <h3 id="devout">/dev/out</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">&quot;timer://foo?fixedRate=true&amp;repeatCount=600&quot;</span> <span class="s2">&quot;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
-+ sudo java -classpath <span class="s1">&#39;.:classes:*:classes:/opt/pi4j/lib/*&#39;</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">&#39;timer://foo?fixedRate=true&amp;repeatCount=600&#39;</span> <span class="s1">&#39;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&#39;</span>
-2015-03-31 19:53:51,863 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  main
-2015-03-31 19:53:51,881 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>0<span class="o">]</span> <span class="o">=</span>timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">repeatCount</span><span class="o">=</span>600
-2015-03-31 19:53:51,882 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>1<span class="o">]</span> <span class="o">=</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span>
-2015-03-31 19:53:55,306 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
-2015-03-31 19:53:55,329 <span class="o">[</span>                          main<span class="o">]</span> ManagedManagementStrategy      INFO  JMX is enabled
-2015-03-31 19:54:00,329 <span class="o">[</span>                          main<span class="o">]</span> DefaultTypeConverter           INFO  Loaded <span class="m">185</span> <span class="nb">type </span>converters
-2015-03-31 19:54:04,078 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
-2015-03-31 19:54:04,080 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
-2015-03-31 19:54:04,462 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG Endpoint<span class="o">[</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
-2015-03-31 19:54:04,472 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
-2015-03-31 19:54:04,818 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiProducer            DEBUG Starting producer: Producer<span class="o">[</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
-2015-03-31 19:54:05,811 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint<span class="o">[</span>timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">repeatCount</span><span class="o">=</span>600<span class="o">]</span>
-2015-03-31 19:54:05,872 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
-2015-03-31 19:54:05,936 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 10.612 seconds
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">"timer://foo?fixedRate=true&amp;repeatCount=600"</span> <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span>
++ sudo java -classpath <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">'timer://foo?fixedRate=true&amp;repeatCount=600'</span> <span class="s1">'raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true'</span>
+2015-03-31 19:53:51,863 <span class="o">[</span>                          main] CamelMain                      INFO  main
+2015-03-31 19:53:51,881 <span class="o">[</span>                          main] CamelMain                      INFO  args[0] <span class="o">=</span>timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span>&amp;repeatCount<span class="o">=</span>600
+2015-03-31 19:53:51,882 <span class="o">[</span>                          main] CamelMain                      INFO  args[1] <span class="o">=</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true
+</span>2015-03-31 19:53:55,306 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+2015-03-31 19:53:55,329 <span class="o">[</span>                          main] ManagedManagementStrategy      INFO  JMX is enabled
+2015-03-31 19:54:00,329 <span class="o">[</span>                          main] DefaultTypeConverter           INFO  Loaded 185 <span class="nb">type </span>converters
+2015-03-31 19:54:04,078 <span class="o">[</span>                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
+2015-03-31 19:54:04,080 <span class="o">[</span>                          main] DefaultCamelContext            INFO  StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+2015-03-31 19:54:04,462 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 19:54:04,472 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 19:54:04,818 <span class="o">[</span>                          main] RaspberryPiProducer            DEBUG Starting producer: Producer[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 19:54:05,811 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint[timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span>&amp;repeatCount<span class="o">=</span>600]
+2015-03-31 19:54:05,872 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
+2015-03-31 19:54:05,936 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started <span class="k">in </span>10.612 seconds
 2015-03-31 19:54:07,212 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] raspberrypi                    INFO  Exchange[</span>
 , Id: ID-rbpi7-45066-1427831633096-0-2
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:06 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelTimerCounter</span><span class="o">=</span>1, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:06 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-1, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:06 UTC 2015<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 19:54:06 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelTimerCounter</span><span class="o">=</span>1, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar 31 19:54:06 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-1, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar 31 19:54:06 UTC 2015<span class="o">}</span>
 , BodyType: null
-, Body: <span class="o">[</span>Body is null<span class="o">]</span>
+, Body: <span class="o">[</span>Body is null]
 , Out: null:
 <span class="o">]</span>
 2015-03-31 19:54:07,283 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]</span>
@@ -325,10 +325,10 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span 
 2015-03-31 19:54:07,886 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] raspberrypi                    INFO  Exchange[</span>
 , Id: ID-rbpi7-45066-1427831633096-0-4
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:07 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelTimerCounter</span><span class="o">=</span>2, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:07 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-3, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:07 UTC 2015<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 19:54:07 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelTimerCounter</span><span class="o">=</span>2, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar 31 19:54:07 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-3, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar 31 19:54:07 UTC 2015<span class="o">}</span>
 , BodyType: null
-, Body: <span class="o">[</span>Body is null<span class="o">]</span>
+, Body: <span class="o">[</span>Body is null]
 , Out: null:
 <span class="o">]</span>
 2015-03-31 19:54:07,890 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]</span>
@@ -336,14 +336,14 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span 
 2015-03-31 19:54:08,895 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] raspberrypi                    INFO  Exchange[</span>
 , Id: ID-rbpi7-45066-1427831633096-0-6
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:08 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelTimerCounter</span><span class="o">=</span>3, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:08 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-5, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar <span class="m">31</span> 19:54:08 UTC 2015<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 19:54:08 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelTimerCounter</span><span class="o">=</span>3, <span class="nv">CamelTimerFiredTime</span><span class="o">=</span>Tue Mar 31 19:54:08 UTC 2015, <span class="nv">CamelTimerName</span><span class="o">=</span>foo, <span class="nv">CamelTimerPeriod</span><span class="o">=</span>1000, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-45066-1427831633096-0-5, <span class="nv">firedTime</span><span class="o">=</span>Tue Mar 31 19:54:08 UTC 2015<span class="o">}</span>
 , BodyType: null
-, Body: <span class="o">[</span>Body is null<span class="o">]</span>
+, Body: <span class="o">[</span>Body is null]
 , Out: null:
 <span class="o">]</span>
 2015-03-31 19:54:08,899 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]</span>
-2015-03-31 19:54:08,901 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE</span></code></pre></div>
+2015-03-31 19:54:08,901 <span class="o">[</span>mel-1<span class="o">)</span> thread <span class="c">#0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE</span></code></pre></figure>
 
 <p><br /></p>
 
@@ -355,10 +355,10 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span 
 
 <h3 id="the-command-line-1">The command line</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
-        <span class="s2">&quot;raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="se">\</span>
-        <span class="s2">&quot;raspberrypi-gpio://2?action=TOGGLE&quot;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+<span class="gp">pi@rbpi&gt; </span>pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
+        <span class="s2">"raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH"</span> <span class="se">\</span>
+        <span class="s2">"raspberrypi-gpio://2?action=TOGGLE"</span></code></pre></figure>
 
 <h3 id="video-raspberry--led">Video Raspberry + LED</h3>
 
@@ -370,95 +370,95 @@ pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span 
 
 <h3 id="devout-1">/dev/out</h3>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">&quot;raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH&quot;</span> <span class="s2">&quot;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&quot;</span>
-+ sudo java -classpath <span class="s1">&#39;.:classes:*:classes:/opt/pi4j/lib/*&#39;</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">&#39;raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH&#39;</span> <span class="s1">&#39;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&#39;</span>
-2015-03-31 20:08:58,096 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  main
-2015-03-31 20:08:58,112 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>0<span class="o">]</span> <span class="o">=</span>raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT<span class="p">&amp;</span><span class="nv">state</span><span class="o">=</span>HIGH
-2015-03-31 20:08:58,115 <span class="o">[</span>                          main<span class="o">]</span> CamelMain                      INFO  args<span class="o">[</span>1<span class="o">]</span> <span class="o">=</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span>
-2015-03-31 20:09:01,619 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
-2015-03-31 20:09:01,642 <span class="o">[</span>                          main<span class="o">]</span> ManagedManagementStrategy      INFO  JMX is enabled
-2015-03-31 20:09:06,678 <span class="o">[</span>                          main<span class="o">]</span> DefaultTypeConverter           INFO  Loaded <span class="m">185</span> <span class="nb">type </span>converters
-2015-03-31 20:09:10,264 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then</span> its recommended to turn this option off as it may improve performance.
-2015-03-31 20:09:10,266 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  StreamCaching is not in use. If using streams <span class="k">then</span> its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
-2015-03-31 20:09:10,416 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG Endpoint<span class="o">[</span>raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT<span class="p">&amp;</span><span class="nv">state</span><span class="o">=</span>HIGH<span class="o">]</span>
-2015-03-31 20:09:10,426 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG  Pin Id &gt; 1
-2015-03-31 20:09:10,922 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG Endpoint<span class="o">[</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
-2015-03-31 20:09:10,924 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
-2015-03-31 20:09:10,998 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiProducer            DEBUG Starting producer: Producer<span class="o">[</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE<span class="p">&amp;</span><span class="nv">shutdownExport</span><span class="o">=</span><span class="nb">true</span><span class="o">]</span>
-2015-03-31 20:09:11,990 <span class="o">[</span>                          main<span class="o">]</span> RaspberryPiConsumer            TRACE Start Listening GPIO 1
-2015-03-31 20:09:11,997 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint<span class="o">[</span>raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT<span class="p">&amp;</span><span class="nv">state</span><span class="o">=</span>HIGH<span class="o">]</span>
-2015-03-31 20:09:12,004 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Total <span class="m">1</span> routes, of which <span class="m">1</span> is started.
-2015-03-31 20:09:12,123 <span class="o">[</span>                          main<span class="o">]</span> DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started in 10.430 seconds
-2015-03-31 20:09:15,483 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:15,485 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
-2015-03-31 20:09:15,667 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
-2015-03-31 20:09:16,089 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">"raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH"</span> <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span>
++ sudo java -classpath <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">'raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH'</span> <span class="s1">'raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true'</span>
+2015-03-31 20:08:58,096 <span class="o">[</span>                          main] CamelMain                      INFO  main
+2015-03-31 20:08:58,112 <span class="o">[</span>                          main] CamelMain                      INFO  args[0] <span class="o">=</span>raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT&amp;state<span class="o">=</span>HIGH
+2015-03-31 20:08:58,115 <span class="o">[</span>                          main] CamelMain                      INFO  args[1] <span class="o">=</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true
+</span>2015-03-31 20:09:01,619 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
+2015-03-31 20:09:01,642 <span class="o">[</span>                          main] ManagedManagementStrategy      INFO  JMX is enabled
+2015-03-31 20:09:06,678 <span class="o">[</span>                          main] DefaultTypeConverter           INFO  Loaded 185 <span class="nb">type </span>converters
+2015-03-31 20:09:10,264 <span class="o">[</span>                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
+2015-03-31 20:09:10,266 <span class="o">[</span>                          main] DefaultCamelContext            INFO  StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
+2015-03-31 20:09:10,416 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT&amp;state<span class="o">=</span>HIGH]
+2015-03-31 20:09:10,426 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 1
+2015-03-31 20:09:10,922 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 20:09:10,924 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 20:09:10,998 <span class="o">[</span>                          main] RaspberryPiProducer            DEBUG Starting producer: Producer[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
+2015-03-31 20:09:11,990 <span class="o">[</span>                          main] RaspberryPiConsumer            TRACE Start Listening GPIO 1
+2015-03-31 20:09:11,997 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint[raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT&amp;state<span class="o">=</span>HIGH]
+2015-03-31 20:09:12,004 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
+2015-03-31 20:09:12,123 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started <span class="k">in </span>10.430 seconds
+2015-03-31 20:09:15,483 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:15,485 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:15,667 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:16,089 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-2
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:15 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-1, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 20:09:15 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-1, CamelPi4j.pin<span class="o">=</span><span class="s2">"GPIO 1"</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
 , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
-, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
 , Out: null:
 <span class="o">]</span>
-2015-03-31 20:09:16,152 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
-2015-03-31 20:09:16,153 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
-2015-03-31 20:09:17,916 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:17,918 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
-2015-03-31 20:09:18,130 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
-2015-03-31 20:09:18,153 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+2015-03-31 20:09:16,152 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:16,153 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:17,916 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:17,918 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:18,130 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:18,153 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-4
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:18 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-3, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 20:09:18 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-3, CamelPi4j.pin<span class="o">=</span><span class="s2">"GPIO 1"</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
 , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
-, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
 , Out: null:
 <span class="o">]</span>
-2015-03-31 20:09:18,164 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
-2015-03-31 20:09:18,179 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
-2015-03-31 20:09:20,447 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:20,448 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
-2015-03-31 20:09:20,672 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
-2015-03-31 20:09:20,694 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+2015-03-31 20:09:18,164 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:18,179 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:20,447 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:20,448 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:20,672 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:20,694 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-6
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:20 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-5, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 20:09:20 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-5, CamelPi4j.pin<span class="o">=</span><span class="s2">"GPIO 1"</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
 , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
-, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
 , Out: null:
 <span class="o">]</span>
-2015-03-31 20:09:20,703 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
-2015-03-31 20:09:20,709 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
-2015-03-31 20:09:25,036 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:25,038 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
-2015-03-31 20:09:25,248 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
-2015-03-31 20:09:25,278 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+2015-03-31 20:09:20,703 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:20,709 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:25,036 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:25,038 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:25,248 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:25,278 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-8
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:25 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-7, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 20:09:25 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-7, CamelPi4j.pin<span class="o">=</span><span class="s2">"GPIO 1"</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
 , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
-, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
 , Out: null:
 <span class="o">]</span>
-2015-03-31 20:09:25,284 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
-2015-03-31 20:09:25,285 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
-2015-03-31 20:09:31,155 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:31,157 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
-2015-03-31 20:09:31,351 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
-2015-03-31 20:09:31,365 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> raspberrypi                    INFO  Exchange<span class="o">[</span>
+2015-03-31 20:09:25,284 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:25,285 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
+2015-03-31 20:09:31,155 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:31,157 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:31,351 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:31,365 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-10
 , ExchangePattern: InOnly
-, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar <span class="m">31</span> 20:09:31 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory<span class="o">[</span><span class="nv">routeId</span><span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1<span class="o">]]</span>, <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span><span class="p">&amp;</span><span class="nv">showAll</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>
-, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-9, CamelPi4j.pin<span class="o">=</span><span class="s2">&quot;GPIO 1&quot;</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
+, Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue Mar 31 20:09:31 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>raspberry-pi, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://org.apache.camel.component.raspberrypi?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
+, Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi7-46433-1427832539336-0-9, CamelPi4j.pin<span class="o">=</span><span class="s2">"GPIO 1"</span> &lt;GPIO 1&gt;, CamelPi4j.pinState<span class="o">=</span>HIGH, CamelPi4j.pinType<span class="o">=</span>DIGITAL_STATE_CHANGE<span class="o">}</span>
 , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
-, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]</span>
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
 , Out: null:
 <span class="o">]</span>
-2015-03-31 20:09:31,370 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            DEBUG Exchange<span class="o">[</span>Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent<span class="o">[</span><span class="nb">source</span><span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c<span class="o">]]</span>
-2015-03-31 20:09:31,371 <span class="o">[</span>               pool-1-thread-1<span class="o">]</span> RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE</code></pre></div>
+2015-03-31 20:09:31,370 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:31,371 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE</code></pre></figure>
 
 <p><br /></p>
 
@@ -516,13 +516,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -1158,13 +1164,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2453,6 +2465,78 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2477,6 +2561,19 @@ Raspberry Pi can integrate and assemble severals electronics protocols like <em>
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>

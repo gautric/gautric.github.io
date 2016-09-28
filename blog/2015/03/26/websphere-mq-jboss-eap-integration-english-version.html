@@ -114,27 +114,27 @@ Warning, it is trial or evaluation only, production deployment requires the purc
 
 <p>In our case we create a Stateless EJB to send the JMS message. It is possible to use another mechanism for the transmission, a servlet , for example.</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// ..OMIT .. //</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// ..OMIT .. //</span>
 
 <span class="nd">@Stateless</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MoMSenderBean</span> <span class="o">{</span>
 
   <span class="c1">// ..OMIT .. //</span>
 
-	<span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;jms/connectionFactory&quot;</span><span class="o">)</span>
+	<span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"jms/connectionFactory"</span><span class="o">)</span>
 	<span class="n">ConnectionFactory</span> <span class="n">factory</span><span class="o">;</span>
 
-	<span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;jms/queue/Queue&quot;</span><span class="o">)</span>
+	<span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"jms/queue/Queue"</span><span class="o">)</span>
 	<span class="n">Queue</span> <span class="n">queue</span><span class="o">;</span>
 
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">sendMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">JMSException</span> <span class="o">{</span>
 
             <span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">createConnection</span><span class="o">();</span>
-            <span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&quot;Recuperation d&#39;une connexion {}&quot;</span><span class="o">,</span> <span class="n">connection</span><span class="o">);</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">"Recuperation d'une connexion {}"</span><span class="o">,</span> <span class="n">connection</span><span class="o">);</span>
 
             <span class="n">Session</span> <span class="n">session</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createSession</span><span class="o">(</span><span class="kc">false</span><span class="o">,</span> <span class="n">AUTO_ACKNOWLEDGE</span><span class="o">);</span>
             <span class="n">MessageProducer</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createProducer</span><span class="o">(</span><span class="n">queue</span><span class="o">);</span>
-            <span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">&quot;Creation du sender {} sur la queue {}&quot;</span><span class="o">,</span> <span class="n">producer</span><span class="o">,</span> <span class="n">queue</span><span class="o">);</span>
+            <span class="n">LOGGER</span><span class="o">.</span><span class="na">trace</span><span class="o">(</span><span class="s">"Creation du sender {} sur la queue {}"</span><span class="o">,</span> <span class="n">producer</span><span class="o">,</span> <span class="n">queue</span><span class="o">);</span>
 
             <span class="n">TextMessage</span> <span class="n">textMessage</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">createTextMessage</span><span class="o">(</span><span class="n">message</span><span class="o">);</span>
             <span class="n">textMessage</span><span class="o">.</span><span class="na">setJMSCorrelationID</span><span class="o">(</span><span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
@@ -143,7 +143,7 @@ Warning, it is trial or evaluation only, production deployment requires the purc
             <span class="n">session</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
             <span class="n">connection</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 	<span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <div class="warn">
 Note in this code, JMS resources ( Factory and Queue ) are retrieved from the scope of the current module.
@@ -155,17 +155,17 @@ Note in this code, JMS resources ( Factory and Queue ) are retrieved from the sc
 
 <p>In the Java EE world, to allow applications to receive JMS messages asynchronously, we must develop a special bean. This bean is a Message Driven Bean (MDB), the object is called when a message is received in the JMS queue. The class has to implement <strong>javax.jms.MessageListener</strong> interface.</p>
 
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// ..OMIT .. //</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// ..OMIT .. //</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MoMMDB</span> <span class="kd">implements</span> <span class="n">MessageListener</span> <span class="o">{</span>
 
   <span class="c1">// ..OMIT .. //</span>
 
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onMessage</span><span class="o">(</span><span class="n">Message</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">LOGGER</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">&quot;Received Message from queue: {}&quot;</span> <span class="o">+</span> <span class="o">(</span><span class="n">TextMessage</span><span class="o">)</span> <span class="n">message</span><span class="o">);</span>
+		<span class="n">LOGGER</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Received Message from queue: {}"</span> <span class="o">+</span> <span class="o">(</span><span class="n">TextMessage</span><span class="o">)</span> <span class="n">message</span><span class="o">);</span>
 
 	<span class="o">}</span>
-<span class="o">}</span></code></pre></div>
+<span class="o">}</span></code></pre></figure>
 
 <div class="warn">
 Of course, it's possible to add ActivationSpec annotations to MDB, but these annotations drowns application contextual problematic  (environment outside the application, WMQ server hostname / port for example) into code. With other resource adapter/system provider it could be easier (HornetQ / ActiveMQ).
@@ -177,7 +177,7 @@ Of course, it's possible to add ActivationSpec annotations to MDB, but these ann
 
 <h3 id="java-ee-definition-ejb-jarxml">Java EE Definition (ejb-jar.xml)</h3>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ejb-jar</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee&quot;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd&quot;</span> <span class="na">version=</span><span class="s">&quot;3.0&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ejb-jar</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xmlns=</span><span class="s">"http://java.sun.com/xml/ns/javaee"</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"</span> <span class="na">version=</span><span class="s">"3.0"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;description&gt;</span>MoM Application EJB / MDB <span class="nt">&lt;/description&gt;</span>
   <span class="nt">&lt;display-name&gt;</span>MoM Application EJB / MDB<span class="nt">&lt;/display-name&gt;</span>
   <span class="nt">&lt;enterprise-beans&gt;</span>
@@ -193,17 +193,17 @@ Of course, it's possible to add ActivationSpec annotations to MDB, but these ann
       <span class="nt">&lt;ejb-class&gt;</span>net.a.g.jee.mom.ejb.MoMSenderBean<span class="nt">&lt;/ejb-class&gt;</span>
     <span class="nt">&lt;/session&gt;</span>
   <span class="nt">&lt;/enterprise-beans&gt;</span>
-<span class="nt">&lt;/ejb-jar&gt;</span></code></pre></div>
+<span class="nt">&lt;/ejb-jar&gt;</span></code></pre></figure>
 
 <h3 id="specific-wmq-and-jboss-implementation-configuration-jboss-ejb3xml">Specific WMQ and JBoss implementation configuration (jboss-ejb3.xml)</h3>
 
 <p>As we want to connect MDB to a server WebSphereMQ, we have to configure several WMQ specific properties. We also map environment resources from the application server to the resources of the application.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;jboss:ejb-jar</span> <span class="na">xmlns:jboss=</span><span class="s">&quot;http://www.jboss.com/xml/ns/javaee&quot;</span>
-  <span class="na">xmlns=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee&quot;</span> <span class="na">xmlns:jee=</span><span class="s">&quot;http://java.sun.com/xml/ns/javaee&quot;</span>
-  <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xmlns:mdb=</span><span class="s">&quot;urn:resource-adapter-binding&quot;</span>
-  <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd&quot;</span>
-  <span class="na">version=</span><span class="s">&quot;3.1&quot;</span> <span class="na">impl-version=</span><span class="s">&quot;2.0&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;jboss:ejb-jar</span> <span class="na">xmlns:jboss=</span><span class="s">"http://www.jboss.com/xml/ns/javaee"</span>
+  <span class="na">xmlns=</span><span class="s">"http://java.sun.com/xml/ns/javaee"</span> <span class="na">xmlns:jee=</span><span class="s">"http://java.sun.com/xml/ns/javaee"</span>
+  <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xmlns:mdb=</span><span class="s">"urn:resource-adapter-binding"</span>
+  <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"</span>
+  <span class="na">version=</span><span class="s">"3.1"</span> <span class="na">impl-version=</span><span class="s">"2.0"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;jee:enterprise-beans&gt;</span>
     <span class="nt">&lt;jee:message-driven&gt;</span>
       <span class="nt">&lt;jee:ejb-name&gt;</span>MessageDrivenBean<span class="nt">&lt;/jee:ejb-name&gt;</span>
@@ -273,7 +273,7 @@ Of course, it's possible to add ActivationSpec annotations to MDB, but these ann
       <span class="nt">&lt;mdb:resource-adapter-name&gt;</span>${websphere.resource.adapter}<span class="nt">&lt;/mdb:resource-adapter-name&gt;</span>
     <span class="nt">&lt;/mdb:resource-adapter-binding&gt;</span>
   <span class="nt">&lt;/jee:assembly-descriptor&gt;</span>
-<span class="nt">&lt;/jboss:ejb-jar&gt;</span></code></pre></div>
+<span class="nt">&lt;/jboss:ejb-jar&gt;</span></code></pre></figure>
 
 <p>Important information from this xml file :</p>
 
@@ -315,17 +315,17 @@ If application needs to interact with another JMS provider (ActiveMQ or HornetQ)
 
 <p>We set all WebSphereMQ connection environment settings we’ve seen in the <strong>jboss-ejb3.xml</strong> file.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;system-properties&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.hostName&quot;</span>         <span class="na">value=</span><span class="s">&quot;localhost&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.port&quot;</span>             <span class="na">value=</span><span class="s">&quot;1414&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.username&quot;</span>         <span class="na">value=</span><span class="s">&quot;mqm&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.password&quot;</span>         <span class="na">value=</span><span class="s">&quot;mqm&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.channel&quot;</span>          <span class="na">value=</span><span class="s">&quot;SYSTEM.AUTO.SVRCONN&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.transportType&quot;</span>    <span class="na">value=</span><span class="s">&quot;CLIENT&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.queueManager&quot;</span>     <span class="na">value=</span><span class="s">&quot;QUEUE.MANAGER&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.queueName&quot;</span>        <span class="na">value=</span><span class="s">&quot;Q_QUEUE&quot;</span><span class="nt">/&gt;</span>
-  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;websphere.resource.adapter&quot;</span> <span class="na">value=</span><span class="s">&quot;wmq.jmsra.rar&quot;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/system-properties&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;system-properties&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.hostName"</span>         <span class="na">value=</span><span class="s">"localhost"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.port"</span>             <span class="na">value=</span><span class="s">"1414"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.username"</span>         <span class="na">value=</span><span class="s">"mqm"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.password"</span>         <span class="na">value=</span><span class="s">"mqm"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.channel"</span>          <span class="na">value=</span><span class="s">"SYSTEM.AUTO.SVRCONN"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.transportType"</span>    <span class="na">value=</span><span class="s">"CLIENT"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.queueManager"</span>     <span class="na">value=</span><span class="s">"QUEUE.MANAGER"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.queueName"</span>        <span class="na">value=</span><span class="s">"Q_QUEUE"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"websphere.resource.adapter"</span> <span class="na">value=</span><span class="s">"wmq.jmsra.rar"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/system-properties&gt;</span></code></pre></figure>
 
 <div class="info">
 BINDING mode is the second transport type available to connect to WebsphereMQ, but operating-system binaries have to be installed.
@@ -359,11 +359,11 @@ BINDING mode is the second transport type available to connect to WebsphereMQ, b
 
 <p><br /></p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">&quot;urn:jboss:domain:ee:1.2&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">"urn:jboss:domain:ee:1.2"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;spec-descriptor-property-replacement&gt;</span>false<span class="nt">&lt;/spec-descriptor-property-replacement&gt;</span>
   <span class="nt">&lt;jboss-descriptor-property-replacement&gt;</span>true<span class="nt">&lt;/jboss-descriptor-property-replacement&gt;</span>
   <span class="nt">&lt;annotation-property-replacement&gt;</span>false<span class="nt">&lt;/annotation-property-replacement&gt;</span>
-<span class="nt">&lt;/subsystem&gt;</span></code></pre></div>
+<span class="nt">&lt;/subsystem&gt;</span></code></pre></figure>
 
 <div class="notice">
 I prefer use replacement only for JBoss specific descriptor files. Because another application server couldn't manage placeholder replacements inside Java EE standard descriptor files.
@@ -373,34 +373,34 @@ I prefer use replacement only for JBoss specific descriptor files. Because anoth
 
 <p>Finally, let’s configure the WMQ resource adapter inside JBoss instance <strong>standalone.xml</strong>.</p>
 
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">&quot;urn:jboss:domain:resource-adapters:1.1&quot;</span><span class="nt">&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">"urn:jboss:domain:resource-adapters:1.1"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;resource-adapters&gt;</span>
-    <span class="nt">&lt;resource-adapter</span> <span class="na">id=</span><span class="s">&quot;wmq.jmsra.rar&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;resource-adapter</span> <span class="na">id=</span><span class="s">"wmq.jmsra.rar"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;archive&gt;</span>wmq.jmsra.rar<span class="nt">&lt;/archive&gt;</span>
       <span class="nt">&lt;transaction-support&gt;</span>LocalTransaction<span class="nt">&lt;/transaction-support&gt;</span>
       <span class="nt">&lt;connection-definitions&gt;</span>
-        <span class="nt">&lt;connection-definition</span> <span class="na">class-name=</span><span class="s">&quot;com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl&quot;</span> <span class="na">jndi-name=</span><span class="s">&quot;java:/jboss/jms/wmq/connectionFactory&quot;</span> <span class="na">use-java-context=</span><span class="s">&quot;true&quot;</span> <span class="na">pool-name=</span><span class="s">&quot;MQConnectionFactory&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;port&quot;</span><span class="nt">&gt;</span>${websphere.port:1414}<span class="nt">&lt;/config-property&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;hostName&quot;</span><span class="nt">&gt;</span>${websphere.hostName:localhost}<span class="nt">&lt;/config-property&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span><span class="nt">&gt;</span>${websphere.username:mqm}<span class="nt">&lt;/config-property&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span><span class="nt">&gt;</span>${websphere.password:mqm}<span class="nt">&lt;/config-property&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;channel&quot;</span><span class="nt">&gt;</span>${websphere.channel:SYSTEM.AUTO.SVRCONN}<span class="nt">&lt;/config-property&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;transportType&quot;</span><span class="nt">&gt;</span>${websphere.transportType:CLIENT}<span class="nt">&lt;/config-property&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;queueManager&quot;</span><span class="nt">&gt;</span>${websphere.queueManager:QUEUE.MANAGER}<span class="nt">&lt;/config-property&gt;</span>
+        <span class="nt">&lt;connection-definition</span> <span class="na">class-name=</span><span class="s">"com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl"</span> <span class="na">jndi-name=</span><span class="s">"java:/jboss/jms/wmq/connectionFactory"</span> <span class="na">use-java-context=</span><span class="s">"true"</span> <span class="na">pool-name=</span><span class="s">"MQConnectionFactory"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"port"</span><span class="nt">&gt;</span>${websphere.port:1414}<span class="nt">&lt;/config-property&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"hostName"</span><span class="nt">&gt;</span>${websphere.hostName:localhost}<span class="nt">&lt;/config-property&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"username"</span><span class="nt">&gt;</span>${websphere.username:mqm}<span class="nt">&lt;/config-property&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"password"</span><span class="nt">&gt;</span>${websphere.password:mqm}<span class="nt">&lt;/config-property&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"channel"</span><span class="nt">&gt;</span>${websphere.channel:SYSTEM.AUTO.SVRCONN}<span class="nt">&lt;/config-property&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"transportType"</span><span class="nt">&gt;</span>${websphere.transportType:CLIENT}<span class="nt">&lt;/config-property&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"queueManager"</span><span class="nt">&gt;</span>${websphere.queueManager:QUEUE.MANAGER}<span class="nt">&lt;/config-property&gt;</span>
           <span class="nt">&lt;security&gt;</span>
             <span class="nt">&lt;application/&gt;</span>
           <span class="nt">&lt;/security&gt;</span>
         <span class="nt">&lt;/connection-definition&gt;</span>
       <span class="nt">&lt;/connection-definitions&gt;</span>
       <span class="nt">&lt;admin-objects&gt;</span>
-        <span class="nt">&lt;admin-object</span> <span class="na">class-name=</span><span class="s">&quot;com.ibm.mq.connector.outbound.MQQueueProxy&quot;</span> <span class="na">jndi-name=</span><span class="s">&quot;java:/jboss/jms/wmq/queue/Queue&quot;</span> <span class="na">use-java-context=</span><span class="s">&quot;true&quot;</span> <span class="na">pool-name=</span><span class="s">&quot;QueuePool&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;baseQueueManagerName&quot;</span><span class="nt">&gt;</span>${websphere.queueManager:QUEUE.MANAGER}<span class="nt">&lt;/config-property&gt;</span>
-          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&quot;baseQueueName&quot;</span><span class="nt">&gt;</span>${websphere.queueName:Q_QUEUE}<span class="nt">&lt;/config-property&gt;</span>
+        <span class="nt">&lt;admin-object</span> <span class="na">class-name=</span><span class="s">"com.ibm.mq.connector.outbound.MQQueueProxy"</span> <span class="na">jndi-name=</span><span class="s">"java:/jboss/jms/wmq/queue/Queue"</span> <span class="na">use-java-context=</span><span class="s">"true"</span> <span class="na">pool-name=</span><span class="s">"QueuePool"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"baseQueueManagerName"</span><span class="nt">&gt;</span>${websphere.queueManager:QUEUE.MANAGER}<span class="nt">&lt;/config-property&gt;</span>
+          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">"baseQueueName"</span><span class="nt">&gt;</span>${websphere.queueName:Q_QUEUE}<span class="nt">&lt;/config-property&gt;</span>
         <span class="nt">&lt;/admin-object&gt;</span>
       <span class="nt">&lt;/admin-objects&gt;</span>
     <span class="nt">&lt;/resource-adapter&gt;</span>
   <span class="nt">&lt;/resource-adapters&gt;</span>
-<span class="nt">&lt;/subsystem&gt;</span></code></pre></div>
+<span class="nt">&lt;/subsystem&gt;</span></code></pre></figure>
 
 <div class="info">
 You will notice we are still using placeholders into this part of JBoss configuration file.
@@ -468,13 +468,19 @@ You will notice we are still using placeholders into this part of JBoss configur
 <div id="archive-per-tag-content" class="post-meta">
 
 
-    <h3 id="en">en (19)</h3>
+    <h3 id="en">en (20)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -1110,13 +1116,19 @@ You will notice we are still using placeholders into this part of JBoss configur
     </ul>
 
 
-    <h3 id="RaspberryPi">RaspberryPi (6)</h3>
+    <h3 id="RaspberryPi">RaspberryPi (7)</h3>
     <ul>
     
       
         
       
     
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
       
         
       <li>
@@ -2405,6 +2417,78 @@ You will notice we are still using placeholders into this part of JBoss configur
     
     </ul>
 
+
+    <h3 id="Ansible">Ansible (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Wifi">Wifi (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="HOWTO">HOWTO (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
+
+    <h3 id="Hotspot">Hotspot (1)</h3>
+    <ul>
+    
+      
+        
+      
+    
+      
+        
+      <li>
+        <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a>
+      </li>
+        
+      
+    
+    </ul>
+
 </div>
  <script>
    $( "#archive-per-tag-content" ).hide();
@@ -2429,6 +2513,19 @@ You will notice we are still using placeholders into this part of JBoss configur
     
         
             
+            <h4 id="2016-09" class="post month title">September</h4><ul>
+        
+    <li><time id="2016-09-27">27</time> &mdash; <a href="/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" class="post title" >Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</a></li>
+
+    
+
+  
+  
+  
+    
+    
+        
+            </ul>
             <h4 id="2016-08" class="post month title">August</h4><ul>
         
     <li><time id="2016-08-03"> 3</time> &mdash; <a href="/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" class="post title" >JBoss EAP 7 connected to WebsphereMQ running on Docker</a></li>
