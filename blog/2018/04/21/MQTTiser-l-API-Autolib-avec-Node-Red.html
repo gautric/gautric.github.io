@@ -89,7 +89,7 @@
 
 <h2 id="api-de-paris">API de Paris</h2>
 
-<p>L’API de Paris propose un grand nombre l’<a href="https://opendata.paris.fr/explore/">Objet</a> sur lequels il est possible de requeter (PLU, liste des prénoms, Titularisations). La plupart du temps ces données sont des données froides, ceux sont des extracts de base de données interne à la Ville de Paris . Seules deux sources de données sont temps réel c’est à dire qu’elle sont mise à jour à chaque appel, il s’agit du status des stations <a href="https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/information/">Velib</a> et des stations <a href="https://opendata.paris.fr/explore/dataset/autolib-disponibilite-temps-reel/information/">Autolib</a>.
+<p>L’API de Paris propose un grand nombre d’<a href="https://opendata.paris.fr/explore/">Objets</a> sur lequels il est possible de requeter (PLU, liste des prénoms, Titularisations). La plupart du temps ces données sont des données froides, ceux sont des extracts de base de données interne à la Ville de Paris . Seules deux sources de données sont temps réel c’est à dire qu’elle sont mise à jour à chaque appel, il s’agit du status des stations <a href="https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/information/">Velib</a> et des stations <a href="https://opendata.paris.fr/explore/dataset/autolib-disponibilite-temps-reel/information/">Autolib</a>.
 Dans notre cas, nous allons utiliser cette dernière :</p>
 
 <p>Cette API indique en temps réel l’état des 1119 stations avec la requete HTTP suivante :</p>
@@ -338,7 +338,7 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 <h3 id="dashboard-homeassistant">Dashboard HomeAssistant</h3>
 
-<p>Mon Dashboard HomeAssistant commence à etre bien complet avec plusieurs onglets pour chaque problèmatique. J’ai un onglet particulièrement qui affiche l’ensemble des informations de transport dont Autolib, la RATP ainsi que le traffic de voiture en IDF.</p>
+<p>Mon Dashboard HomeAssistant commence à être bien complet avec plusieurs onglets pour chaque cas d’usage. J’ai un onglet en particuler qui affiche l’ensemble des informations de transport dont Autolib, la RATP ainsi que le traffic des voitures en IDF.</p>
 
 <h4 id="configuration">Configuration</h4>
 
@@ -384,12 +384,28 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 <p>En conclusion, pourquoi faire simple quand on peut faire compliquer. En fait, j’utilise un broker MQTT pour un autre cas d’usage dans ma domotique, donc je rentabilise bien l’utilisation de mon broker. Pour être totalement transparent, le broker Mosquitto est largement suffisant pour ma domotique, Artemis bien que beaucoup plus complet et un peu overkill pour mon usage. Je voulais simplement remercier la limite de l’API de Paris qui m’a permis de faire un petit projet d’intégration bien sympa je trouve et toujours dans la philosophie standard ouvert, interoperabilité et projet commumautaire OpenSource.</p>
 
+<p>En esperant, vous avoir intéressé par ce post, n’hésitez pas à me faire vos retours,</p>
+
   </article>
 
   <div class="post-social">
     
 
     
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'greg-iopen';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
 
 </div>
 
