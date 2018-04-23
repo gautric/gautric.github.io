@@ -81,7 +81,9 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Apr 21, 2018  <a href="#fr">fr</a>  <a href="#MQTT">MQTT</a>  <a href="#node-red">node-red</a>  <a href="#flow">flow</a>  <a href="#api">api</a>  <a href="#Paris">Paris</a>  <a href="#Autolib">Autolib</a> </p>
-    <p>Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’<a href="https://fr.wikipedia.org/wiki/Autolib%27_(Paris)">Autolib</a> j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib que je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier j’ai installé et configuré chez moi la solution HomeAssistant, j’utilisais pour cela l’<a href="https://opendata.paris.fr/page/home/">API de Paris</a> en mode <a href="https://fr.wikipedia.org/wiki/REST">REST</a>/<a href="https://en.wikipedia.org/wiki/HTTP">HTTP</a>. Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, <a href="https://www.home-assistant.io">HomeAssistant</a> étant un très bon produit mais un peu limité en terme de scripting du composant <a href="https://www.home-assistant.io/components/rest_command/">RESTful</a>. Je me suis dit, pourquoi ne pas :</p>
+    <p>Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’<a href="https://fr.wikipedia.org/wiki/Autolib%27_(Paris)">Autolib</a> j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution <a href="https://www.home-assistant.io">HomeAssistant</a>, j’utilisais pour cela l’<a href="https://opendata.paris.fr/page/home/">API de Paris</a> en mode <a href="https://fr.wikipedia.org/wiki/REST">REST</a>/<a href="https://en.wikipedia.org/wiki/HTTP">HTTP</a>.
+Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant <a href="https://www.home-assistant.io/components/rest_command/">RESTful</a>.
+Je me suis dit, pourquoi ne pas :</p>
 
 <blockquote>
   <p>MQTTiser l’API Autolib avec Node-Red</p>
@@ -89,10 +91,10 @@
 
 <h2 id="api-de-paris">API de Paris</h2>
 
-<p>L’API de Paris propose un grand nombre d’<a href="https://opendata.paris.fr/explore/">Objets</a> sur lequels il est possible de requeter (PLU, liste des prénoms, Titularisations). La plupart du temps ces données sont des données froides, ceux sont des extracts de base de données interne à la Ville de Paris . Seules deux sources de données sont temps réel c’est à dire qu’elle sont mise à jour à chaque appel, il s’agit du status des stations <a href="https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/information/">Velib</a> et des stations <a href="https://opendata.paris.fr/explore/dataset/autolib-disponibilite-temps-reel/information/">Autolib</a>.
+<p>L’API de Paris propose un grand nombre d’<a href="https://opendata.paris.fr/explore/">Objets</a> sur lequels il est possible de requeter (PLU, liste des prénoms, Titularisations). La plupart du temps ces données sont des données froides, ceux sont des extracts de base de données interne à la Ville de Paris . Seules deux sources de données sont temps réel c’est à dire qu’elles sont mise à jour lors de chaque appel, il s’agit du status des stations <a href="https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/information/">Velib</a> et des stations <a href="https://opendata.paris.fr/explore/dataset/autolib-disponibilite-temps-reel/information/">Autolib</a>.
 Dans notre cas, nous allons utiliser cette dernière :</p>
 
-<p>Cette API indique en temps réel l’état des 1119 stations avec la requete HTTP suivante :</p>
+<p>Cette API indique en temps réel l’état des 1119 stations avec la requete HTTP suivante (on se limitera ici à 2 stations) :</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://opendata.paris.fr/api/records/1.0/search/?dataset<span class="o">=</span>autolib-disponibilite-temps-reel&amp;rows<span class="o">=</span>2</code></pre></figure>
 
@@ -161,21 +163,22 @@ Dans notre cas, nous allons utiliser cette dernière :</p>
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<p>Il n’est pas difficile de comprendre le resultat obtenu, l’ensemble des informations necessaire à note besoin sont là :</p>
+<p>Il n’est pas difficile de comprendre le schéma et le resultat obtenu, l’ensemble des informations nécessaire à note besoin sont là :</p>
+
 <ul>
   <li>cars :
     <ul>
-      <li>nombre de voiture dispo,</li>
+      <li>nombre de voiture dispo sur la station.</li>
     </ul>
   </li>
   <li>slots :
     <ul>
-      <li>nombre de place libre.</li>
+      <li>nombre de place libre sur la station.</li>
     </ul>
   </li>
 </ul>
 
-<p>Nous avons aussi des informations de type descriptifs (nom de la station, coordonnées GPS, etc…).</p>
+<p>Nous avons aussi des informations de type descriptifs (nom de la station, coordonnées GPS, etc…). Elles pourront etre utilisés dans d’autres cas d’usage bien sûr, sur une carte par exemple.</p>
 
 <h2 id="mqtt">MQTT</h2>
 
@@ -233,7 +236,7 @@ Je n'ai pas encore trouvé de système de supervision un peu serieux, je suis pr
 </div>
 <p>Dans ce post nous allons simplement utilisé le client mosquitto qui est très facile d’utilisation.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mosquitto_sub -i &lt;id client&gt;      -h &lt;host&gt;    -t &lt;topic&gt; -v
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mosquitto_sub -i &lt;id client&gt; -h &lt;host&gt; -t &lt;topic&gt; -v
 
 mosquitto_sub -i mosquitto_client -h localhost -t <span class="s2">"/autolib/boulognebillancourt/#"</span> -v</code></pre></figure>
 
@@ -275,6 +278,7 @@ ActiveMQ Artemis vient en standard avec un outil de monitoring
 <p>Le project Node-Red est un outil de creation et d’execution <a href="http://www.enterpriseintegrationpatterns.com/">EIP</a> dédié à l’IoT et executé sur la plateforme <a href="https://nodejs.org/en/">NodeJs</a>. C’est un outil léger tout en disposant d’une IHM complete de création de flow. L’IHM permet de créer des flows de traitement en assemblant et reliant des composants d’entrée et/ou sortie en eux via des liens.</p>
 
 <p>Voici une liste non exhaustive des composants disponible :</p>
+
 <ul>
   <li>mqtt in/out.</li>
   <li>email in/out.</li>
@@ -336,6 +340,8 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 <p><img src="/img/mqtt-artemis-monitoring.png" /></p>
 
+<p>J’ai configuré les messages MQTT afin d’etre en mode retain à minima, c’est pour cela que l’on retrouve un prefix technique à l’adressage des topics des stations Autolib. Cette fonctionnalité permettra de conserver une dernière valeur si HomeAssistant tombe ou bien le flux Node-Red.</p>
+
 <h3 id="dashboard-homeassistant">Dashboard HomeAssistant</h3>
 
 <p>Mon Dashboard HomeAssistant commence à être bien complet avec plusieurs onglets pour chaque cas d’usage. J’ai un onglet en particuler qui affiche l’ensemble des informations de transport dont Autolib, la RATP ainsi que le traffic des voitures en IDF.</p>
@@ -344,24 +350,23 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 <p>Après avoir envoyé les messages dans le broker ActiveMQ Artemis, il faut que le Dashboard HomeAssistant puisse lire correctement les données. Pour cela, il suffira de rajouter dans sa liste dans le fichier sensor.yaml, les sensors de type MQTT. Il suffit de comprendre le schéma du message recu et de récuperer le bon élément du message.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">-</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="err">*</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
   <span class="s">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Autolib</span><span class="nv"> </span><span class="s">Boulogne-Billancourt/Henri</span><span class="nv"> </span><span class="s">Martin/2</span><span class="nv"> </span><span class="s">Cars"</span>
   <span class="s">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/boulognebillancourt/henrimartin/2"</span>
   <span class="s">value_template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">\{\{value_json.fields.cars\}\}'</span>
   <span class="s">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
-<span class="pi">-</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
+<span class="err">*</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
   <span class="s">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Autolib</span><span class="nv"> </span><span class="s">Boulogne-Billancourt/Henri</span><span class="nv"> </span><span class="s">Martin/2</span><span class="nv"> </span><span class="s">Slots"</span>
   <span class="s">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/boulognebillancourt/henrimartin/2"</span>
   <span class="s">value_template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">\{\{value_json.fields.slots\}\}'</span>
   <span class="s">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
-
 <span class="s">.....</span>
 
-<span class="pi">-</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
+<span class="err">*</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
   <span class="s">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Autolib</span><span class="nv"> </span><span class="s">Last</span><span class="nv"> </span><span class="s">Update"</span>
-  <span class="s">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/_lastCall"</span>
+  <span class="s">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/</span><span class="se">\_</span><span class="s">lastCall"</span>
   <span class="s">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span></code></pre></figure>
 
 <h4 id="screenshot">ScreenShot</h4>
