@@ -89,6 +89,23 @@ Je me suis dit, pourquoi ne pas :</p>
   <p>MQTTiser l’API Autolib avec Node-Red</p>
 </blockquote>
 
+<h2 id="architecture">Architecture</h2>
+
+<p>Voila en résumé l’architecture de la solution que l’on va mettre en place.</p>
+
+<p><img src="/img/mqtt-archi.png" /></p>
+
+<ul>
+  <li>Description du schéma de principe :
+    <ul>
+      <li>Un flux/flow Node-Red va consommer régulierement la <em>DataParis API</em>.</li>
+      <li>Le retour est parsé et découpé pour chacune des <em>stations Autolib</em>.</li>
+      <li>Chaque message est envoyé dans le <em>topic MQTT</em> correspond à sa station.</li>
+      <li>Le client <em>HomeAssistant</em> s’abonne ensuite aux topics des stations souhaitées.</li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="api-de-paris">API de Paris</h2>
 
 <p>L’API de Paris propose un grand nombre d’<a href="https://opendata.paris.fr/explore/">Objets</a> sur lequels il est possible de requeter (PLU, liste des prénoms, Titularisations). La plupart du temps ces données sont des données froides, ceux sont des extracts de base de données interne à la Ville de Paris . Seules deux sources de données sont temps réel c’est à dire qu’elles sont mise à jour lors de chaque appel, il s’agit du status des stations <a href="https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/information/">Velib</a> et des stations <a href="https://opendata.paris.fr/explore/dataset/autolib-disponibilite-temps-reel/information/">Autolib</a>.
