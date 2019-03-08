@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost ..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-integration.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-integration.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -171,8 +169,8 @@ Be carefull with your device, please shutdown power before wiring. Check twice b
 
 <p>Currently only 1.0-RC version is available directly for RaspberryPi</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-<span class="gp">pi@rbpi&gt; </span>curl -s get.pi4j.com | sudo bash</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+pi@rbpi&gt; curl <span class="nt">-s</span> get.pi4j.com | <span class="nb">sudo </span>bash</code></pre></figure>
 
 <div class="info">
 you should use a Public/Private key authentication for a faster connection to your RaspberryPi.
@@ -191,9 +189,9 @@ Some stuff could change anytime (URI for example).
 
 <p>Checkout code and build it :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>git clone https://github.com/camel-labs/camel-labs.git
-<span class="gp">$&gt; </span><span class="nb">cd </span>camel-labs/iot/components/camel-raspberrypi
-<span class="gp">$&gt; </span>mvn package -Praspberry -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> git clone https://github.com/camel-labs/camel-labs.git
+<span class="nv">$&gt;</span> <span class="nb">cd </span>camel-labs/iot/components/camel-raspberrypi
+<span class="nv">$&gt;</span> mvn package <span class="nt">-Praspberry</span> <span class="nt">-Dmaven</span>.test.skip<span class="o">=</span><span class="nb">true</span></code></pre></figure>
 
 <div class="info">
 Camel-raspberrypi can't be merged into Camel master branch.
@@ -257,9 +255,9 @@ copy all dependencies to Raspberry Pi.</p>
 
 <p>Copy jar and dependencies files to your Raspberry Pi</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span><span class="nb">cd </span>components/camel-raspberrypi
-<span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span> <span class="s1">'mkdir -p /home/pi/camel'</span>
-<span class="gp">$&gt; </span>scp target/<span class="k">*</span>.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>:/home/pi/camel</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> <span class="nb">cd </span>components/camel-raspberrypi
+<span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span> <span class="s1">'mkdir -p /home/pi/camel'</span>
+<span class="nv">$&gt;</span> scp target/<span class="k">*</span>.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>:/home/pi/camel</code></pre></figure>
 
 <h2 id="install-program-camel-program-to-your-raspberry-pi">Install program Camel Program to your Raspberry Pi</h2>
 
@@ -283,7 +281,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <p><br /></p>
 
-<h2 id="st-prototype--timer--led">1st Prototype : timer + LED</h2>
+<h2 id="1st-prototype--timer--led">1st Prototype : timer + LED</h2>
 
 <p>The first prototype is to setup an Timer component for sending a message every second. When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.</p>
 
@@ -291,8 +289,8 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <h3 id="the-command-line">The command line</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-<span class="gp">pi@rbpi&gt; </span>pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+pi@rbpi&gt; pi4j <span class="nt">-r</span> com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
         <span class="s2">"timer://foo?fixedRate=true&amp;repeatCount=60"</span>  <span class="se">\</span>
         <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span></code></pre></figure>
 
@@ -306,8 +304,8 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <h3 id="devout">/dev/out</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">"timer://foo?fixedRate=true&amp;repeatCount=600"</span> <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span>
-+ sudo java -classpath <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">'timer://foo?fixedRate=true&amp;repeatCount=600'</span> <span class="s1">'raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true'</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j <span class="nt">-r</span>  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">"timer://foo?fixedRate=true&amp;repeatCount=600"</span> <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span>
++ <span class="nb">sudo </span>java <span class="nt">-classpath</span> <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">'timer://foo?fixedRate=true&amp;repeatCount=600'</span> <span class="s1">'raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true'</span>
 2015-03-31 19:53:51,863 <span class="o">[</span>                          main] CamelMain                      INFO  main
 2015-03-31 19:53:51,881 <span class="o">[</span>                          main] CamelMain                      INFO  args[0] <span class="o">=</span>timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span>&amp;repeatCount<span class="o">=</span>600
 2015-03-31 19:53:51,882 <span class="o">[</span>                          main] CamelMain                      INFO  args[1] <span class="o">=</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true
@@ -317,7 +315,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 2015-03-31 19:54:04,078 <span class="o">[</span>                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
 2015-03-31 19:54:04,080 <span class="o">[</span>                          main] DefaultCamelContext            INFO  StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
 2015-03-31 19:54:04,462 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
-2015-03-31 19:54:04,472 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 19:54:04,472 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id <span class="o">&gt;</span> 2
 2015-03-31 19:54:04,818 <span class="o">[</span>                          main] RaspberryPiProducer            DEBUG Starting producer: Producer[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
 2015-03-31 19:54:05,811 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint[timer://foo?fixedRate<span class="o">=</span><span class="nb">true</span>&amp;repeatCount<span class="o">=</span>600]
 2015-03-31 19:54:05,872 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
@@ -358,7 +356,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <p><br /></p>
 
-<h2 id="nd-prototype--button--led">2nd Prototype : Button + LED</h2>
+<h2 id="2nd-prototype--button--led">2nd Prototype : Button + LED</h2>
 
 <p>The second prototype is like the first one, but we remove timer endpoint to replace it with button for sending a message when pushed (HIGH state event*). When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.</p>
 
@@ -366,8 +364,8 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <h3 id="the-command-line-1">The command line</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-<span class="gp">pi@rbpi&gt; </span>pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+pi@rbpi&gt; pi4j <span class="nt">-r</span> com.github.camellabs.component.raspberrypi.CamelMain  <span class="se">\</span>
         <span class="s2">"raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH"</span> <span class="se">\</span>
         <span class="s2">"raspberrypi-gpio://2?action=TOGGLE"</span></code></pre></figure>
 
@@ -381,8 +379,8 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <h3 id="devout-1">/dev/out</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">"raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH"</span> <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span>
-+ sudo java -classpath <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">'raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH'</span> <span class="s1">'raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true'</span>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi7 ~/camel <span class="nv">$ </span>pi4j <span class="nt">-r</span>  com.github.camellabs.component.raspberrypi.CamelMain  <span class="s2">"raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH"</span> <span class="s2">"raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true"</span>
++ <span class="nb">sudo </span>java <span class="nt">-classpath</span> <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> org.apache.camel.component.raspberrypi.CamelMain <span class="s1">'raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH'</span> <span class="s1">'raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true'</span>
 2015-03-31 20:08:58,096 <span class="o">[</span>                          main] CamelMain                      INFO  main
 2015-03-31 20:08:58,112 <span class="o">[</span>                          main] CamelMain                      INFO  args[0] <span class="o">=</span>raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT&amp;state<span class="o">=</span>HIGH
 2015-03-31 20:08:58,115 <span class="o">[</span>                          main] CamelMain                      INFO  args[1] <span class="o">=</span>raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true
@@ -392,16 +390,16 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 2015-03-31 20:09:10,264 <span class="o">[</span>                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
 2015-03-31 20:09:10,266 <span class="o">[</span>                          main] DefaultCamelContext            INFO  StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
 2015-03-31 20:09:10,416 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT&amp;state<span class="o">=</span>HIGH]
-2015-03-31 20:09:10,426 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 1
+2015-03-31 20:09:10,426 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id <span class="o">&gt;</span> 1
 2015-03-31 20:09:10,922 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
-2015-03-31 20:09:10,924 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 20:09:10,924 <span class="o">[</span>                          main] RaspberryPiEndpoint            DEBUG  Pin Id <span class="o">&gt;</span> 2
 2015-03-31 20:09:10,998 <span class="o">[</span>                          main] RaspberryPiProducer            DEBUG Starting producer: Producer[raspberrypi-gpio://2?action<span class="o">=</span>TOGGLE&amp;shutdownExport<span class="o">=</span><span class="nb">true</span><span class="o">]</span>
 2015-03-31 20:09:11,990 <span class="o">[</span>                          main] RaspberryPiConsumer            TRACE Start Listening GPIO 1
 2015-03-31 20:09:11,997 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint[raspberrypi-gpio://1?mode<span class="o">=</span>DIGITAL_INPUT&amp;state<span class="o">=</span>HIGH]
 2015-03-31 20:09:12,004 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
 2015-03-31 20:09:12,123 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started <span class="k">in </span>10.430 seconds
 2015-03-31 20:09:15,483 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:15,485 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:15,485 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH <span class="o">!=</span> LOW Event state <span class="nt">--</span><span class="o">&gt;</span> ignore Event
 2015-03-31 20:09:15,667 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
 2015-03-31 20:09:16,089 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-2
@@ -415,7 +413,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 2015-03-31 20:09:16,152 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
 2015-03-31 20:09:16,153 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
 2015-03-31 20:09:17,916 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:17,918 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:17,918 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH <span class="o">!=</span> LOW Event state <span class="nt">--</span><span class="o">&gt;</span> ignore Event
 2015-03-31 20:09:18,130 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
 2015-03-31 20:09:18,153 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-4
@@ -429,7 +427,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 2015-03-31 20:09:18,164 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
 2015-03-31 20:09:18,179 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
 2015-03-31 20:09:20,447 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:20,448 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:20,448 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH <span class="o">!=</span> LOW Event state <span class="nt">--</span><span class="o">&gt;</span> ignore Event
 2015-03-31 20:09:20,672 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
 2015-03-31 20:09:20,694 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-6
@@ -443,7 +441,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 2015-03-31 20:09:20,703 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
 2015-03-31 20:09:20,709 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
 2015-03-31 20:09:25,036 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:25,038 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:25,038 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH <span class="o">!=</span> LOW Event state <span class="nt">--</span><span class="o">&gt;</span> ignore Event
 2015-03-31 20:09:25,248 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
 2015-03-31 20:09:25,278 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-8
@@ -457,7 +455,7 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 2015-03-31 20:09:25,284 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source<span class="o">=</span>com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
 2015-03-31 20:09:25,285 <span class="o">[</span>               pool-1-thread-1] RaspberryPiProducer            TRACE <span class="nv">action</span><span class="o">=</span> TOGGLE
 2015-03-31 20:09:31,155 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
-2015-03-31 20:09:31,157 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH !<span class="o">=</span> LOW Event state --&gt; ignore Event
+2015-03-31 20:09:31,157 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH <span class="o">!=</span> LOW Event state <span class="nt">--</span><span class="o">&gt;</span> ignore Event
 2015-03-31 20:09:31,351 <span class="o">[</span>               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
 2015-03-31 20:09:31,365 <span class="o">[</span>               pool-1-thread-1] raspberrypi                    INFO  Exchange[
 , Id: ID-rbpi7-46433-1427832539336-0-10

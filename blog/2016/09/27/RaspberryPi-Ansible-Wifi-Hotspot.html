@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projec..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -130,69 +128,69 @@ As you can see wpa_passphrase and ssid must be defined. You will see how to do i
 </div>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="nn">---</span>
-<span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">Configure WIFI Hotspot for RaspberryPi 3</span>
-  <span class="s">hosts</span><span class="pi">:</span> <span class="s">raspberrypi</span>
-  <span class="s">remote_user</span><span class="pi">:</span> <span class="s">pi</span>
-  <span class="s">vars</span><span class="pi">:</span>
-    <span class="s">wpa_passphrase</span><span class="pi">:</span> <span class="s">XXXXXXX</span>
-    <span class="s">interface</span><span class="pi">:</span> <span class="s">wlan0</span>
-    <span class="s">ssid</span><span class="pi">:</span> <span class="s">YYYYYYYY</span>
-    <span class="s">ip_server</span><span class="pi">:</span> <span class="s">10.0.0.1</span>
-    <span class="s">netmask</span><span class="pi">:</span> <span class="s">255.255.255.0</span>
-    <span class="s">ip_dhcp_low</span><span class="pi">:</span> <span class="s">10.0.0.2</span>
-    <span class="s">ip_dhcp_high</span><span class="pi">:</span> <span class="s">10.0.0.15</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Configure WIFI Hotspot for RaspberryPi 3</span>
+  <span class="na">hosts</span><span class="pi">:</span> <span class="s">raspberrypi</span>
+  <span class="na">remote_user</span><span class="pi">:</span> <span class="s">pi</span>
+  <span class="na">vars</span><span class="pi">:</span>
+    <span class="na">wpa_passphrase</span><span class="pi">:</span> <span class="s">XXXXXXX</span>
+    <span class="na">interface</span><span class="pi">:</span> <span class="s">wlan0</span>
+    <span class="na">ssid</span><span class="pi">:</span> <span class="s">YYYYYYYY</span>
+    <span class="na">ip_server</span><span class="pi">:</span> <span class="s">10.0.0.1</span>
+    <span class="na">netmask</span><span class="pi">:</span> <span class="s">255.255.255.0</span>
+    <span class="na">ip_dhcp_low</span><span class="pi">:</span> <span class="s">10.0.0.2</span>
+    <span class="na">ip_dhcp_high</span><span class="pi">:</span> <span class="s">10.0.0.15</span>
 
-  <span class="s">tasks</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd install</span>
-      <span class="s">apt</span><span class="pi">:</span> <span class="s">name=hostapd state=present force=yes</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="na">tasks</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">hostapd install</span>
+      <span class="na">apt</span><span class="pi">:</span> <span class="s">name=hostapd state=present force=yes</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">dnsmasq install</span>
-      <span class="s">apt</span><span class="pi">:</span> <span class="s">name=dnsmasq state=present force=yes</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">dnsmasq install</span>
+      <span class="na">apt</span><span class="pi">:</span> <span class="s">name=dnsmasq state=present force=yes</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">dnsmasq.conf</span>
-      <span class="s">template</span><span class="pi">:</span>
-        <span class="s">src</span><span class="pi">:</span> <span class="s">template/dnsmasq.conf.j2</span>
-        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/dnsmasq.conf</span>
-        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">dnsmasq.conf</span>
+      <span class="na">template</span><span class="pi">:</span>
+        <span class="na">src</span><span class="pi">:</span> <span class="s">template/dnsmasq.conf.j2</span>
+        <span class="na">dest</span><span class="pi">:</span> <span class="s">/etc/dnsmasq.conf</span>
+        <span class="na">backup</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd.conf</span>
-      <span class="s">template</span><span class="pi">:</span>
-        <span class="s">src</span><span class="pi">:</span> <span class="s">template/hostapd.conf.j2</span>
-        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/hostapd/hostapd.conf</span>
-        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">hostapd.conf</span>
+      <span class="na">template</span><span class="pi">:</span>
+        <span class="na">src</span><span class="pi">:</span> <span class="s">template/hostapd.conf.j2</span>
+        <span class="na">dest</span><span class="pi">:</span> <span class="s">/etc/hostapd/hostapd.conf</span>
+        <span class="na">backup</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd</span>
-      <span class="s">template</span><span class="pi">:</span>
-        <span class="s">src</span><span class="pi">:</span> <span class="s">template/hostapd.j2</span>
-        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/default/hostapd</span>
-        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">hostapd</span>
+      <span class="na">template</span><span class="pi">:</span>
+        <span class="na">src</span><span class="pi">:</span> <span class="s">template/hostapd.j2</span>
+        <span class="na">dest</span><span class="pi">:</span> <span class="s">/etc/default/hostapd</span>
+        <span class="na">backup</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">rc.local</span>
-      <span class="s">template</span><span class="pi">:</span>
-        <span class="s">src</span><span class="pi">:</span> <span class="s">template/rc.local.j2</span>
-        <span class="s">dest</span><span class="pi">:</span> <span class="s">/etc/rc.local</span>
-        <span class="s">backup</span><span class="pi">:</span> <span class="s">true</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">rc.local</span>
+      <span class="na">template</span><span class="pi">:</span>
+        <span class="na">src</span><span class="pi">:</span> <span class="s">template/rc.local.j2</span>
+        <span class="na">dest</span><span class="pi">:</span> <span class="s">/etc/rc.local</span>
+        <span class="na">backup</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">dnsmasq service</span>
-      <span class="s">service</span><span class="pi">:</span> <span class="s">name=dnsmasq enabled=yes state=started</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">dnsmasq service</span>
+      <span class="na">service</span><span class="pi">:</span> <span class="s">name=dnsmasq enabled=yes state=started</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hostapd service</span>
-      <span class="s">service</span><span class="pi">:</span> <span class="s">name=hostapd enabled=yes state=started</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">hostapd service</span>
+      <span class="na">service</span><span class="pi">:</span> <span class="s">name=hostapd enabled=yes state=started</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
 
-    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">restart machine</span>
-      <span class="s">shell</span><span class="pi">:</span> <span class="s">sleep 2 &amp;&amp; shutdown -r noww</span>
-      <span class="s">async</span><span class="pi">:</span> <span class="s">1</span>
-      <span class="s">poll</span><span class="pi">:</span> <span class="s">0</span>
-      <span class="s">become</span><span class="pi">:</span> <span class="s">true</span>
-      <span class="s">ignore_errors</span><span class="pi">:</span> <span class="s">true</span></code></pre></figure>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">restart machine</span>
+      <span class="na">shell</span><span class="pi">:</span> <span class="s">sleep 2 &amp;&amp; shutdown -r noww</span>
+      <span class="na">async</span><span class="pi">:</span> <span class="s">1</span>
+      <span class="na">poll</span><span class="pi">:</span> <span class="s">0</span>
+      <span class="na">become</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">ignore_errors</span><span class="pi">:</span> <span class="no">true</span></code></pre></figure>
 
 <p>We can also create template. Ansible will inject values into the template and copy the final file to destination.</p>
 
@@ -214,9 +212,9 @@ As you can see wpa_passphrase and ssid must be defined. You will see how to do i
 
 <h3 id="ansible-command-line">Ansible command line</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ansible-playbook pi_wifi.yml --inventory-file<span class="o">=</span>./hosts <span class="se">\</span>
-    -u pi  -v <span class="se">\</span>
-    -e <span class="s2">"ssid=RASPBERRY wpa_passphrase=1234567891011"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ansible-playbook pi_wifi.yml <span class="nt">--inventory-file</span><span class="o">=</span>./hosts <span class="se">\</span>
+    <span class="nt">-u</span> pi  <span class="nt">-v</span> <span class="se">\</span>
+    <span class="nt">-e</span> <span class="s2">"ssid=RASPBERRY wpa_passphrase=1234567891011"</span></code></pre></figure>
 
 <div class="warn">
 Please change wpa_passphrase and ssid correctly.
@@ -226,19 +224,19 @@ Please change wpa_passphrase and ssid correctly.
 
 <p>The command line output should look like the same.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ansible-playbook pi_wifi.yml --inventory-file<span class="o">=</span>./hosts -u pi  -v --diff -e <span class="s2">"ssid=RASPBERRY wpa_passphrase=12345"</span>
-No config file found; using defaults
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ansible-playbook pi_wifi.yml <span class="nt">--inventory-file</span><span class="o">=</span>./hosts <span class="nt">-u</span> pi  <span class="nt">-v</span> <span class="nt">--diff</span> <span class="nt">-e</span> <span class="s2">"ssid=RASPBERRY wpa_passphrase=12345"</span>
+No config file found<span class="p">;</span> using defaults
 
 PLAY <span class="o">[</span>raspberrypi] <span class="k">*************************************************************</span>
 
 TASK <span class="o">[</span>setup] <span class="k">*******************************************************************</span>
 ok: <span class="o">[</span>192.168.0.11]
 
-TASK <span class="o">[</span>hostapd install] <span class="k">*********************************************************</span>
-ok: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"cache_update_time"</span>: 0, <span class="s2">"cache_updated"</span>: <span class="nb">false</span>, <span class="s2">"changed"</span>: <span class="nb">false</span><span class="o">}</span>
+TASK <span class="o">[</span>hostapd <span class="nb">install</span><span class="o">]</span> <span class="k">*********************************************************</span>
+ok: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"cache_update_time"</span>: 0, <span class="s2">"cache_updated"</span>: <span class="nb">false</span>, <span class="s2">"changed"</span>: <span class="nb">false</span><span class="o">}</span>
 
-TASK <span class="o">[</span>dnsmasq install] <span class="k">*********************************************************</span>
-changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"cache_update_time"</span>: 0, <span class="s2">"cache_updated"</span>: <span class="nb">false</span>, <span class="s2">"changed"</span>: <span class="nb">true</span>, <span class="s2">"stderr"</span>: <span class="s2">""</span>, <span class="s2">"stdout"</span>: <span class="s2">"Reading package lists...</span><span class="se">\n</span><span class="s2">Building dependency tree...</span><span class="se">\n</span><span class="s2">Reading state information...</span><span class="se">\n</span><span class="s2">The following extra packages will be installed:</span><span class="se">\n</span><span class="s2">  dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3</span><span class="se">\n</span><span class="s2">The following NEW packages will be installed:</span><span class="se">\n</span><span class="s2">  dns-root-data dnsmasq dnsmasq-base libmnl0 libnetfilter-conntrack3</span><span class="se">\n</span><span class="s2">0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.</span><span class="se">\n</span><span class="s2">Inst libmnl0 (1.0.3-5 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst dns-root-data (2014060201+2 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Inst dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Conf libmnl0 (1.0.3-5 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf dns-root-data (2014060201+2 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Conf dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"stdout_lines"</span>: <span class="o">[</span><span class="s2">"Reading package lists..."</span>, <span class="s2">"Building dependency tree..."</span>, <span class="s2">"Reading state information..."</span>, <span class="s2">"The following extra packages will be installed:"</span>, <span class="s2">"  dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3"</span>, <span class="s2">"The following NEW packages will be installed:"</span>, <span class="s2">"  dns-root-data dnsmasq dnsmasq-base libmnl0 libnetfilter-conntrack3"</span>, <span class="s2">"0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded."</span>, <span class="s2">"Inst libmnl0 (1.0.3-5 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst dns-root-data (2014060201+2 Raspbian:stable [all])"</span>, <span class="s2">"Inst dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])"</span>, <span class="s2">"Conf libmnl0 (1.0.3-5 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf dns-root-data (2014060201+2 Raspbian:stable [all])"</span>, <span class="s2">"Conf dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])"</span><span class="o">]}</span>
+TASK <span class="o">[</span>dnsmasq <span class="nb">install</span><span class="o">]</span> <span class="k">*********************************************************</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"cache_update_time"</span>: 0, <span class="s2">"cache_updated"</span>: <span class="nb">false</span>, <span class="s2">"changed"</span>: <span class="nb">true</span>, <span class="s2">"stderr"</span>: <span class="s2">""</span>, <span class="s2">"stdout"</span>: <span class="s2">"Reading package lists...</span><span class="se">\n</span><span class="s2">Building dependency tree...</span><span class="se">\n</span><span class="s2">Reading state information...</span><span class="se">\n</span><span class="s2">The following extra packages will be installed:</span><span class="se">\n</span><span class="s2">  dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3</span><span class="se">\n</span><span class="s2">The following NEW packages will be installed:</span><span class="se">\n</span><span class="s2">  dns-root-data dnsmasq dnsmasq-base libmnl0 libnetfilter-conntrack3</span><span class="se">\n</span><span class="s2">0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.</span><span class="se">\n</span><span class="s2">Inst libmnl0 (1.0.3-5 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst dns-root-data (2014060201+2 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Inst dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Inst dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Conf libmnl0 (1.0.3-5 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf dns-root-data (2014060201+2 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">Conf dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])</span><span class="se">\n</span><span class="s2">Conf dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])</span><span class="se">\n</span><span class="s2">"</span>, <span class="s2">"stdout_lines"</span>: <span class="o">[</span><span class="s2">"Reading package lists..."</span>, <span class="s2">"Building dependency tree..."</span>, <span class="s2">"Reading state information..."</span>, <span class="s2">"The following extra packages will be installed:"</span>, <span class="s2">"  dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3"</span>, <span class="s2">"The following NEW packages will be installed:"</span>, <span class="s2">"  dns-root-data dnsmasq dnsmasq-base libmnl0 libnetfilter-conntrack3"</span>, <span class="s2">"0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded."</span>, <span class="s2">"Inst libmnl0 (1.0.3-5 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst dns-root-data (2014060201+2 Raspbian:stable [all])"</span>, <span class="s2">"Inst dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])"</span>, <span class="s2">"Inst dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])"</span>, <span class="s2">"Conf libmnl0 (1.0.3-5 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf libnetfilter-conntrack3 (1.0.4-1 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf dns-root-data (2014060201+2 Raspbian:stable [all])"</span>, <span class="s2">"Conf dnsmasq-base (2.72-3+deb8u1 Raspbian:stable [armhf])"</span>, <span class="s2">"Conf dnsmasq (2.72-3+deb8u1 Raspbian:stable [all])"</span><span class="o">]}</span>
 The following extra packages will be installed:
   dns-root-data dnsmasq-base libmnl0 libnetfilter-conntrack3
 The following NEW packages will be installed:
@@ -246,19 +244,19 @@ The following NEW packages will be installed:
 0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
 
 TASK <span class="o">[</span>dnsmasq.conf] <span class="k">************************************************************</span>
-changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
---- before
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+<span class="nt">---</span> before
 +++ after: dynamically generated
-@@ -0,0 +1,2 @@
+@@ <span class="nt">-0</span>,0 +1,2 @@
 +interface<span class="o">=</span>wlan0
 +dhcp-range<span class="o">=</span>10.0.0.2,10.0.0.5,255.255.255.0,12h
 
 
 TASK <span class="o">[</span>hostapd.conf] <span class="k">************************************************************</span>
-changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
---- before
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+<span class="nt">---</span> before
 +++ after: dynamically generated
-@@ -0,0 +1,11 @@
+@@ <span class="nt">-0</span>,0 +1,11 @@
 +interface<span class="o">=</span>wlan0
 +hw_mode<span class="o">=</span>g
 +channel<span class="o">=</span>10
@@ -273,10 +271,10 @@ changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <spa
 
 
 TASK <span class="o">[</span>hostapd] <span class="k">*****************************************************************</span>
-changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
---- before: /etc/default/hostapd
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+<span class="nt">---</span> before: /etc/default/hostapd
 +++ after: dynamically generated
-@@ -7,12 +7,12 @@
+@@ <span class="nt">-7</span>,12 +7,12 @@
  <span class="c"># file and hostapd will be started during system boot. An example configuration</span>
  <span class="c"># file can be found at /usr/share/doc/hostapd/examples/hostapd.conf.gz</span>
  <span class="c">#</span>
@@ -284,22 +282,22 @@ changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <spa
 +DAEMON_CONF<span class="o">=</span><span class="s2">"/etc/hostapd/hostapd.conf"</span>
 
  <span class="c"># Additional daemon options to be appended to hostapd command:-</span>
-<span class="gp">-# </span>	-d   show more debug messages <span class="o">(</span>-dd <span class="k">for </span>even more<span class="o">)</span>
-<span class="gp">-# </span>	-K   include key data <span class="k">in </span>debug messages
-<span class="gp">-# </span>	-t   include timestamps <span class="k">in </span>some debug messages
-<span class="gp">+#         </span>-d   show more debug messages <span class="o">(</span>-dd <span class="k">for </span>even more<span class="o">)</span>
-<span class="gp">+#         </span>-K   include key data <span class="k">in </span>debug messages
-<span class="gp">+#         </span>-t   include timestamps <span class="k">in </span>some debug messages
+-# 	<span class="nt">-d</span>   show more debug messages <span class="o">(</span><span class="nt">-dd</span> <span class="k">for </span>even more<span class="o">)</span>
+-# 	<span class="nt">-K</span>   include key data <span class="k">in </span>debug messages
+-# 	<span class="nt">-t</span>   include timestamps <span class="k">in </span>some debug messages
++#         <span class="nt">-d</span>   show more debug messages <span class="o">(</span><span class="nt">-dd</span> <span class="k">for </span>even more<span class="o">)</span>
++#         <span class="nt">-K</span>   include key data <span class="k">in </span>debug messages
++#         <span class="nt">-t</span>   include timestamps <span class="k">in </span>some debug messages
  <span class="c">#</span>
  <span class="c"># Note that -B (daemon mode) and -P (pidfile) options are automatically</span>
  <span class="c"># configured by the init.d script and must not be added to DAEMON_OPTS.</span>
 
 
 TASK <span class="o">[</span>rc.local] <span class="k">****************************************************************</span>
-changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
---- before: /etc/rc.local
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+<span class="nt">---</span> before: /etc/rc.local
 +++ after: dynamically generated
-@@ -17,4 +17,12 @@
+@@ <span class="nt">-17</span>,4 +17,12 @@
    <span class="nb">printf</span> <span class="s2">"My IP address is %s</span><span class="se">\n</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$_IP</span><span class="s2">"</span>
  <span class="k">fi</span>
 
@@ -315,10 +313,10 @@ changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <spa
 
 
 TASK <span class="o">[</span>dnsmasq service] <span class="k">*********************************************************</span>
-changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span><span class="o">}</span>
 
 TASK <span class="o">[</span>hostapd service] <span class="k">*********************************************************</span>
-changed: <span class="o">[</span>192.168.0.11] <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span>, <span class="s2">"msg"</span>: <span class="s2">"service state changed"</span><span class="o">}</span>
+changed: <span class="o">[</span>192.168.0.11] <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"changed"</span>: <span class="nb">true</span>, <span class="s2">"msg"</span>: <span class="s2">"service state changed"</span><span class="o">}</span>
 
 PLAY RECAP <span class="k">*********************************************************************</span>
 192.168.0.11               : <span class="nv">ok</span><span class="o">=</span>10   <span class="nv">changed</span><span class="o">=</span>8    <span class="nv">unreachable</span><span class="o">=</span>0    <span class="nv">failed</span><span class="o">=</span>0</code></pre></figure>

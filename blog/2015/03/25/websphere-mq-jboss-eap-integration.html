@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="Le serveur d’application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). ..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -100,7 +98,7 @@
   <p>Best Pratice d’integration JMS entre Websphere MQ (WMQ) et JBoss EAP 6</p>
 </blockquote>
 
-<h2 id="matriels">Matériels</h2>
+<h2 id="matériels">Matériels</h2>
 
 <p>Pour ce lab, nous allons avoir besoin de deux logiciels :</p>
 
@@ -117,7 +115,7 @@
 Attention, il s'agit de version d'essai ou d'évaluation uniquement, le déploiement en production nécessite l'achat de souscription pour JBoss et de license pour IBM
 </div>
 
-<h2 id="dveloppement">Développement</h2>
+<h2 id="développement">Développement</h2>
 
 <p>Afin de pouvoir tester notre intégration nous allons avoir besoin de développer un client pour l’envoi et un MDB pour la réception d’un message JMS.</p>
 
@@ -162,7 +160,7 @@ On notera dans ce code que les ressources JMS (Factory et Queue) sont récupér�
 
 <p>Plus d’information sur <a href="https://docs.jboss.org/author/display/AS72/JNDI+Reference">JNDI avec JBoss</a></p>
 
-<h3 id="pour-la-rception">Pour la réception</h3>
+<h3 id="pour-la-réception">Pour la réception</h3>
 
 <p>Dans le monde Java EE, la réception de message JMS se fait par l’intermediaire d’un bean particulier.
 Ce bean est un Message Driven Bean (MDB), c’est à dire que l’objet est appelé quand un message est reçu dans la file JMS.
@@ -189,7 +187,7 @@ Il est bien sûr possible décorer le MDB avec les annotations ActivationSpec, m
 <p>Nous allons maintenant configurer l’application afin de nous connecter à la bonne file JMS.
 Dans un premier temps nous allons utiliser le fichier <em>ejb-jar.xml</em> afin de definir les principaux objets.</p>
 
-<h3 id="dfinition-java-ee-ejb-jarxml">Définition Java EE (ejb-jar.xml)</h3>
+<h3 id="définition-java-ee-ejb-jarxml">Définition Java EE (ejb-jar.xml)</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ejb-jar</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xmlns=</span><span class="s">"http://java.sun.com/xml/ns/javaee"</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"</span> <span class="na">version=</span><span class="s">"3.0"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;description&gt;</span>MoM Application EJB / MDB <span class="nt">&lt;/description&gt;</span>
@@ -209,7 +207,7 @@ Dans un premier temps nous allons utiliser le fichier <em>ejb-jar.xml</em> afin 
   <span class="nt">&lt;/enterprise-beans&gt;</span>
 <span class="nt">&lt;/ejb-jar&gt;</span></code></pre></figure>
 
-<h3 id="configuration-des-implementations-spcifiques-jboss-ejb3xml">Configuration des implementations spécifiques (jboss-ejb3.xml)</h3>
+<h3 id="configuration-des-implementations-spécifiques-jboss-ejb3xml">Configuration des implementations spécifiques (jboss-ejb3.xml)</h3>
 
 <p>Comme nous souhaitons pouvoir nous connecter à un serveur WebsphereMQ nous allons devoir configurer le MDB afin qu’il réceptionne les messages. On effectura aussi le mapping des ressources d’environnement du serveur d’application avec les resources de l’application.</p>
 
@@ -325,7 +323,7 @@ Si l'application doit se connecter à un autre système JMS, je preconise de rec
 
 <p>Dans ce chapitre nous allons voir comment configurer le fichier <strong>standalone.xml</strong> de l’instance JBoss EAP.</p>
 
-<h3 id="les-systmes-properties">Les systèmes properties</h3>
+<h3 id="les-systèmes-properties">Les systèmes properties</h3>
 
 <p>Nous reprennons ici l’ensembles des variables d’environnement de connexion à WebsphereMQ que nous avons vu dans le fichier <strong>jboss-ejb3.xml</strong>.</p>
 
@@ -345,7 +343,7 @@ Si l'application doit se connecter à un autre système JMS, je preconise de rec
 Le mode BINDING est le second type de transport possible pour la connexion à WebsphereMQ, mais il nécessite l'installation de composant binaires spécifiques aux systèmes d'exploitation.
 </div>
 
-<h3 id="le-mcanisme-de-remplacement">Le mécanisme de remplacement</h3>
+<h3 id="le-mécanisme-de-remplacement">Le mécanisme de remplacement</h3>
 
 <p>JBoss va utiliser les variables d’environnement et va les remplacer dans certain type objet de l’application.</p>
 
@@ -381,7 +379,7 @@ Le mode BINDING est le second type de transport possible pour la connexion à We
 Je préconise d'effectuer le remplacement uniquement pour les fichiers descripteurs JBoss, car cela est spécifique à JBoss.
 </div>
 
-<h3 id="le-ressource-adapteur-pour-la-connexion--wmq">Le ressource adapteur pour la connexion à WMQ</h3>
+<h3 id="le-ressource-adapteur-pour-la-connexion-à-wmq">Le ressource adapteur pour la connexion à WMQ</h3>
 
 <p>Enfin pour terminer, nous allons configurer le ressource adapteur dans l’instance JBoss.</p>
 

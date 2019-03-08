@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="Yesterday, we’ve played with our MacBook Pro’s webcam. Today, we gonna see how to send images through a websocketdirectly in this page !!! or via a JavaFx pr..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -128,7 +126,7 @@ directly in this page !!! or via a JavaFx program. We gonna re-use the previous 
 
 <p>Let’s run it now</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~/Source/tmp/io/rhiot/test]$&gt; </span>groovy  WebcamToWebSocket.groovy
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Source/tmp/io/rhiot/test]<span class="nv">$&gt;</span> groovy  WebcamToWebSocket.groovy
 <span class="o">[</span>                          main] MainSupport                    INFO  Apache Camel 2.16.0 starting
 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
 <span class="o">[</span>                          main] ManagedManagementStrategy      INFO  JMX is enabled
@@ -161,11 +159,11 @@ OutOnly, BodyType: byte[]]
 <span class="o">[</span>               shutdown-hook-1] WebcamShutdownHook             INFO  Automatic FaceTime HD Camera CC242951XGLF6VVD4 deallocation
 <span class="o">[</span>                      Thread-1] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutting down
 <span class="o">[</span>               shutdown-hook-1] Webcam                         INFO  Disposing webcam FaceTime HD Camera CC242951XGLF6VVD4
-<span class="o">[</span>                      Thread-1] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes <span class="o">(</span>timeout 300 seconds<span class="o">)</span>
+<span class="o">[</span>                      Thread-1] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes <span class="o">(</span><span class="nb">timeout </span>300 seconds<span class="o">)</span>
 <span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#1 - ShutdownTask] ContextHandler                 INFO  stopped o.e.j.s.ServletContextHandler{/,null}</span>
 <span class="o">[</span>el-1<span class="o">)</span> thread <span class="c">#1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[webcam://cam?consumer.delay=100]</span>
 <span class="o">[</span>                      Thread-1] DefaultShutdownStrategy        INFO  Graceful shutdown of 1 routes completed <span class="k">in </span>0 seconds
-<span class="o">[</span>                      Thread-1] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> uptime 48.953 seconds
+<span class="o">[</span>                      Thread-1] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> <span class="nb">uptime </span>48.953 seconds
 <span class="o">[</span>                      Thread-1] DefaultCamelContext            INFO  Apache Camel 2.16.0 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is shutdown <span class="k">in </span>0.101 seconds</code></pre></figure>
 
 <h2 id="and-the-result">And the result</h2>

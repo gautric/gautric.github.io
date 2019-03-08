@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionn..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -116,66 +114,66 @@ Dans notre cas, nous allons utiliser cette dernière :</p>
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://opendata.paris.fr/api/records/1.0/search/?dataset<span class="o">=</span>autolib-disponibilite-temps-reel&amp;rows<span class="o">=</span>2</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-    </span><span class="nt">"nhits"</span><span class="p">:</span><span class="w"> </span><span class="mi">1119</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"dataset"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autolib-disponibilite-temps-reel"</span><span class="p">],</span><span class="w">
-        </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"rows"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="w">
+    </span><span class="s2">"nhits"</span><span class="p">:</span><span class="w"> </span><span class="mi">1119</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"dataset"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"autolib-disponibilite-temps-reel"</span><span class="p">],</span><span class="w">
+        </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UTC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"records"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="nt">"datasetid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autolib-disponibilite-temps-reel"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"recordid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1c22a2c66ac55e6de9b0badcf5fe4f71c33e652"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATION"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"station_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"station"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"charging_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"rental_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars_counter_bluecar"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"public_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris/Ordener/65"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"geo_point"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">48.8913517</span><span class="p">,</span><span class="w"> </span><span class="mf">2.3507171</span><span class="p">],</span><span class="w">
-            </span><span class="nt">"charge_slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75018"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars_counter_utilib_1.4"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"subscription_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nonexistent"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paris-ordener-65"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"65 rue Ordener"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars_counter_utilib"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="s2">"records"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"datasetid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autolib-disponibilite-temps-reel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recordid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a1c22a2c66ac55e6de9b0badcf5fe4f71c33e652"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATION"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"station_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"station"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"charging_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rental_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars_counter_bluecar"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris/Ordener/65"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"geo_point"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">48.8913517</span><span class="p">,</span><span class="w"> </span><span class="mf">2.3507171</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"charge_slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75018"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars_counter_utilib_1.4"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subscription_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nonexistent"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paris-ordener-65"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"65 rue Ordener"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars_counter_utilib"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Point"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.3507171</span><span class="p">,</span><span class="w"> </span><span class="mf">48.8913517</span><span class="p">]</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Point"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.3507171</span><span class="p">,</span><span class="w"> </span><span class="mf">48.8913517</span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"datasetid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autolib-disponibilite-temps-reel"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"recordid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8b1396096c4c2761ec5120ffdd3fd824b18a824d"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATION"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"station_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"station"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"charging_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"rental_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars_counter_bluecar"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"public_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris/Raymond Losserand/229"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"geo_point"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">48.828</span><span class="p">,</span><span class="w"> </span><span class="mf">2.306022</span><span class="p">],</span><span class="w">
-            </span><span class="nt">"charge_slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75014"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars_counter_utilib_1.4"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"subscription_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nonexistent"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paris-raymondlosserand-229"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"229 Rue Raymond Losserand"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cars_counter_utilib"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"datasetid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"autolib-disponibilite-temps-reel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"recordid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8b1396096c4c2761ec5120ffdd3fd824b18a824d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STATION"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"station_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"station"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"charging_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rental_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"operational"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars_counter_bluecar"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"public_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris/Raymond Losserand/229"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"geo_point"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">48.828</span><span class="p">,</span><span class="w"> </span><span class="mf">2.306022</span><span class="p">],</span><span class="w">
+            </span><span class="s2">"charge_slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75014"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars_counter_utilib_1.4"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"subscription_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nonexistent"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"slots"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paris-raymondlosserand-229"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"229 Rue Raymond Losserand"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cars_counter_utilib"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Point"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.306022</span><span class="p">,</span><span class="w"> </span><span class="mf">48.828</span><span class="p">]</span><span class="w">
+        </span><span class="s2">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Point"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">2.306022</span><span class="p">,</span><span class="w"> </span><span class="mf">48.828</span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -220,7 +218,7 @@ Dans notre cas, nous allons utiliser cette dernière :</p>
 
 <p>Plusieurs Broker MQTT existent sur le marché, nous allons en voir deux OpenSource développé sur des langages différents. Nous allons comme cela testé leur interoperabilité.</p>
 
-<h4 id="mosquittohttpsmosquittoorg"><a href="https://mosquitto.org/">Mosquitto</a></h4>
+<h4 id="mosquitto"><a href="https://mosquitto.org/">Mosquitto</a></h4>
 
 <p>Développé par la Fondation Eclispe, il est écrit en C. Il possede une bon support de la communauté et est régulièrement mis à jour.
 Disponible sur l’ensemble des environement Unix like, il est distribué par les systemes de packaging de chaque OS.</p>
@@ -253,9 +251,9 @@ Je n'ai pas encore trouvé de système de supervision un peu serieux, je suis pr
 </div>
 <p>Dans ce post nous allons simplement utilisé le client mosquitto qui est très facile d’utilisation.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mosquitto_sub -i &lt;id client&gt; -h &lt;host&gt; -t &lt;topic&gt; -v
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mosquitto_sub <span class="nt">-i</span> &lt;<span class="nb">id </span>client&gt; <span class="nt">-h</span> &lt;host&gt; <span class="nt">-t</span> &lt;topic&gt; <span class="nt">-v</span>
 
-mosquitto_sub -i mosquitto_client -h localhost -t <span class="s2">"/autolib/boulognebillancourt/#"</span> -v</code></pre></figure>
+mosquitto_sub <span class="nt">-i</span> mosquitto_client <span class="nt">-h</span> localhost <span class="nt">-t</span> <span class="s2">"/autolib/boulognebillancourt/#"</span> <span class="nt">-v</span></code></pre></figure>
 
 <div class="info">
 Mosquitto est disponible en mode container Docker.
@@ -349,7 +347,7 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 <p><a href="https://github.com/gautric/mqtt-4-autolib">https://github.com/gautric/mqtt-4-autolib/blob/master/flows_mbp.g.a.net.json</a></p>
 
-<h2 id="rsultat">Résultat</h2>
+<h2 id="résultat">Résultat</h2>
 
 <h3 id="monitoring-activemq">Monitoring ActiveMQ</h3>
 
@@ -367,24 +365,24 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 <p>Après avoir envoyé les messages dans le broker ActiveMQ Artemis, il faut que le Dashboard HomeAssistant puisse lire correctement les données. Pour cela, il suffira de rajouter dans sa liste dans le fichier sensor.yaml, les sensors de type MQTT. Il suffit de comprendre le schéma du message recu et de récuperer le bon élément du message.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="err">*</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="err">*</span> <span class="na">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
   <span class="s">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Autolib</span><span class="nv"> </span><span class="s">Boulogne-Billancourt/Henri</span><span class="nv"> </span><span class="s">Martin/2</span><span class="nv"> </span><span class="s">Cars"</span>
-  <span class="s">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/boulognebillancourt/henrimartin/2"</span>
-  <span class="s">value_template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">\{\{value_json.fields.cars\}\}'</span>
-  <span class="s">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/boulognebillancourt/henrimartin/2"</span>
+  <span class="na">value_template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">\{\{value_json.fields.cars\}\}'</span>
+  <span class="na">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
-<span class="err">*</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
+<span class="err">*</span> <span class="na">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
   <span class="s">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Autolib</span><span class="nv"> </span><span class="s">Boulogne-Billancourt/Henri</span><span class="nv"> </span><span class="s">Martin/2</span><span class="nv"> </span><span class="s">Slots"</span>
-  <span class="s">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/boulognebillancourt/henrimartin/2"</span>
-  <span class="s">value_template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">\{\{value_json.fields.slots\}\}'</span>
-  <span class="s">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+  <span class="na">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/boulognebillancourt/henrimartin/2"</span>
+  <span class="na">value_template</span><span class="pi">:</span> <span class="s1">'</span><span class="s">\{\{value_json.fields.slots\}\}'</span>
+  <span class="na">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
 
 <span class="s">.....</span>
 
-<span class="err">*</span> <span class="s">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
+<span class="err">*</span> <span class="na">platform</span><span class="pi">:</span> <span class="s">mqtt</span>
   <span class="s">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Autolib</span><span class="nv"> </span><span class="s">Last</span><span class="nv"> </span><span class="s">Update"</span>
-  <span class="s">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/</span><span class="se">\_</span><span class="s">lastCall"</span>
-  <span class="s">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span></code></pre></figure>
+  <span class="na">state_topic</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/autolib/</span><span class="se">\_</span><span class="s">lastCall"</span>
+  <span class="na">unit_of_measurement</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span></code></pre></figure>
 
 <h4 id="screenshot">ScreenShot</h4>
 
@@ -396,7 +394,7 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 <p>L’utilisation du client mosquitto est interopérable facilement avec le broker ActiveMQ Artemis.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mosquitto_sub -i mosquitto_client -h localhost -t <span class="s2">"/autolib/boulognebillancourt/#"</span> -v
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mosquitto_sub <span class="nt">-i</span> mosquitto_client <span class="nt">-h</span> localhost <span class="nt">-t</span> <span class="s2">"/autolib/boulognebillancourt/#"</span> <span class="nt">-v</span>
 
 /autolib/boulognebillancourt/henrimartin/2 <span class="o">{</span><span class="s2">"datasetid"</span>:<span class="s2">"autolib-disponibilite-temps-reel"</span>,<span class="s2">"recordid"</span>:<span class="s2">"a165c1342525a1c27a24eb1cdf781eddf6aaa149"</span>,<span class="s2">"fields"</span>:<span class="o">{</span><span class="s2">"status"</span>:<span class="s2">"ok"</span>,<span class="s2">"city"</span>:<span class="s2">"Boulogne-Billancourt"</span>,<span class="s2">"kind"</span>:<span class="s2">"STATION"</span>,<span class="s2">"station_type"</span>:<span class="s2">"station"</span>,<span class="s2">"charging_status"</span>:<span class="s2">"nonexistent"</span>,<span class="s2">"rental_status"</span>:<span class="s2">"operational"</span>,<span class="s2">"cars_counter_bluecar"</span>:1,<span class="s2">"cars"</span>:1,<span class="s2">"public_name"</span>:<span class="s2">"Boulogne-Billancourt/Henri Martin/2"</span>,<span class="s2">"geo_point"</span>:[48.8365078,2.2524132],<span class="s2">"charge_slots"</span>:0,<span class="s2">"postal_code"</span>:<span class="s2">"92100"</span>,<span class="s2">"cars_counter_utilib_1.4"</span>:0,<span class="s2">"subscription_status"</span>:<span class="s2">"nonexistent"</span>,<span class="s2">"slots"</span>:1,<span class="s2">"id"</span>:<span class="s2">"boulognebillancourt-henrimartin-2"</span>,<span class="s2">"address"</span>:<span class="s2">"2 rue Henri Martin"</span>,<span class="s2">"cars_counter_utilib"</span>:0<span class="o">}</span>,<span class="s2">"geometry"</span>:<span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"Point"</span>,<span class="s2">"coordinates"</span>:[2.2524132,48.8365078]<span class="o">}}</span>
 

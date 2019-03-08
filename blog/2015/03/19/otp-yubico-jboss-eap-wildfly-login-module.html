@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="Yubikey est une clef de crypto qui permet d’avoir une authentification forte lors d’un processus de connexion à un site web (par ex : banque, web mail, etc…...." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -88,7 +86,7 @@ L’utilisateur utilise un token généré par sa clef comme mot de passe. Ce mo
   <p>But : Integration d’une authentification OTP via Yubico avec un serveur JBoss EAP.</p>
 </blockquote>
 
-<h2 id="premire-tape--le-matriel">Première étape : Le matériel</h2>
+<h2 id="première-étape--le-matériel">Première étape : Le matériel</h2>
 
 <p>Pour cet exemple, les pré-requis suivants sont nécessaires :</p>
 
@@ -110,11 +108,11 @@ L’utilisateur utilise un token généré par sa clef comme mot de passe. Ce mo
 
 <p>Cet exemple utilise le service Yubico Cloud Service, le serveur doit pouvoir se connecter à Internet afin de valider le token OTP.</p>
 
-<h2 id="deuxime-tape--compiler-le-client-yubico-java">Deuxième étape : Compiler le client Yubico Java</h2>
+<h2 id="deuxième-étape--compiler-le-client-yubico-java">Deuxième étape : Compiler le client Yubico Java</h2>
 
 <p>Recupérer le code source yubico-java-client et le compiler :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
 greg@a.net&gt; cd yubico-java-client  
 greg@a.net&gt; mvn clean package  
 
@@ -136,8 +134,7 @@ greg@a.net&gt; mvn clean package
 [INFO] Final Memory: 39M/228M  
 [INFO] ------------------------------------------------------------------------  
 greg@a.net&gt;  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Vous allez recuperer deux JARs</p>
 
@@ -156,11 +153,11 @@ greg@a.net&gt;
   </li>
 </ul>
 
-<h2 id="troisime-tape-creation-du-module-jboss-yubico">Troisième étape: Creation du Module JBoss Yubico</h2>
+<h2 id="troisième-étape-creation-du-module-jboss-yubico">Troisième étape: Creation du Module JBoss Yubico</h2>
 
 <p>JBoss ne propose pas par defaut de module Yubico, il faut le créer <em>module.xml</em> :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
 <span class="c">&lt;!--  
   ~ JBoss, Home of Professional Open Source.  
   ~ Copyright 2014, Red Hat, Inc., and individual contributors  
@@ -199,24 +196,21 @@ greg@a.net&gt;
      <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.jboss.common-core"</span><span class="nt">/&gt;</span>      <span class="c">&lt;!-- for a future propose --&gt;</span>  
    <span class="nt">&lt;/dependencies&gt;</span>  
 <span class="nt">&lt;/module&gt;</span>  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Copier le ainsi que les jar dans le répertoire suivant :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$JBOSS_HOME/module/com/yubico/main
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$JBOSS_HOME/module/com/yubico/main
+</code></pre></div></div>
 
 <p>Ne pas oublier le copier le jar suivant, à récupérer de son cache maven après compilation :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>edu.vt.middleware:vt-ldap:3.3.3
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>edu.vt.middleware:vt-ldap:3.3.3
+</code></pre></div></div>
 
 <p>Tips : Pour mode debug rapide, faire un lien symbolique (Unix like seulement)</p>
 
-<h2 id="me-tape--get-client-id--secret-key-for-your-jboss-instance">4ème étape : Get client Id &amp; Secret Key for your JBoss Instance</h2>
+<h2 id="4ème-étape--get-client-id--secret-key-for-your-jboss-instance">4ème étape : Get client Id &amp; Secret Key for your JBoss Instance</h2>
 
 <p>Pour utiliser le Service Cloud Yubico, il est nécessaire de générer un Client Id et un Secret Key (ou aussi Client Key)</p>
 
@@ -230,7 +224,7 @@ greg@a.net&gt;
 
 <p>Info utilisées en <a href="#me-tape--la-configuration-de-linstance-jboss">7ème étape</a></p>
 
-<h2 id="me-tape--le-publicid-des-yubico-key-de-vos-utilisateurs">5ème étape : Le PublicId des Yubico Key de vos utilisateurs</h2>
+<h2 id="5ème-étape--le-publicid-des-yubico-key-de-vos-utilisateurs">5ème étape : Le PublicId des Yubico Key de vos utilisateurs</h2>
 
 <p>Chacun de vos utilisateurs doit vous fournir le PublicId de sa clef via la site suivant :</p>
 
@@ -244,23 +238,22 @@ greg@a.net&gt;
 
 <p>Utiliser le champ Identity comme <em>PublicId</em></p>
 
-<h2 id="me-tape--cration-de-la-correspondance-entre-le-publicid-et-le-login-de-lutilisateur">6ème étape : Création de la correspondance entre le PublicId et le Login de l’utilisateur</h2>
+<h2 id="6ème-étape--création-de-la-correspondance-entre-le-publicid-et-le-login-de-lutilisateur">6ème étape : Création de la correspondance entre le PublicId et le Login de l’utilisateur</h2>
 
 <p>Créer un fichier de correspondance entre le PublicId de l’utilisateur et son login, comme ceci :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
 yk.&lt;PublicId&gt;.user = &lt;login&gt;  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Il s’agit d’une option au module JAAS Yubico pour authentifier l’utilisateur.
 Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
 
-<h2 id="me-tape--la-configuration-de-linstance-jboss">7ème étape : La configuration de l’instance JBoss</h2>
+<h2 id="7ème-étape--la-configuration-de-linstance-jboss">7ème étape : La configuration de l’instance JBoss</h2>
 
 <p>Création d’un security domaine dans le fichier standalone.xml.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;security-domain name="yubico-auth" cache-type="default"&gt;  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;security-domain name="yubico-auth" cache-type="default"&gt;  
       &lt;authentication&gt;  
           &lt;login-module code="com.yubico.jaas.YubikeyLoginModule" flag="required" module="com.yubico"&gt;  
               &lt;module-option name="clientId" value="12123"/&gt;  
@@ -274,37 +267,34 @@ Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
           &lt;/mapping-module&gt;  
       &lt;/mapping&gt;  
 &lt;/security-domain&gt;  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>On configure ensuite un module mapping pour récuperer les rôles de l’utilisateur.
 Il est bien sûr possible de changer via une autre source de données.</p>
 
-<h2 id="me-tape--configuration-de-lapplication-java-ee">8ème étape : Configuration de l’application JAVA EE</h2>
+<h2 id="8ème-étape--configuration-de-lapplication-java-ee">8ème étape : Configuration de l’application JAVA EE</h2>
 
 <p>Du pur standard JBoss, inclure le nom du security domain dans le fichier jboss-web.xml, comme suit :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
 <span class="nt">&lt;jboss-web&gt;</span>  
    <span class="nt">&lt;security-domain&gt;</span>yubico-auth<span class="nt">&lt;/security-domain&gt;</span>  
 <span class="nt">&lt;/jboss-web&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h2 id="me-tape--cration-du-mcanisme-dauthentification">9ème étape : Création du mécanisme d’authentification</h2>
+<h2 id="9ème-étape--création-du-mécanisme-dauthentification">9ème étape : Création du mécanisme d’authentification</h2>
 
 <p>Dans la page de formulaire de login.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;form method='post' action='j_security_check'&gt;  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method='post' action='j_security_check'&gt;  
   &lt;input type='text' name='j_username'&gt;  
   &lt;input type='password' name='j_password'&gt;  
 &lt;/form&gt;  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>dans le fichier web.xml</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;web-app&gt;  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;web-app&gt;  
 &lt;security-constraint&gt;  
   &lt;web-resource-collection&gt;  
    &lt;web-resource-name&gt;User Auth&lt;/web-resource-name&gt;  
@@ -332,16 +322,15 @@ Il est bien sûr possible de changer via une autre source de données.</p>
   &lt;role-name&gt;manager&lt;/role-name&gt;  
 &lt;/security-role&gt;  
 &lt;/web-app&gt;  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>NB : Il est possible dans notre exemple de configurer le mode BASIC authentication.</p>
 
-<h2 id="me-tape--test-et-mode-debug">10ème étape : Test et mode debug</h2>
+<h2 id="10ème-étape--test-et-mode-debug">10ème étape : Test et mode debug</h2>
 
 <p>Afin de contrôler le bon fonctionnement on passe en mode log verbeu</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
 DEBUG [org.apache.catalina.authenticator]  Security checking request GET /form-auth/  
 DEBUG [org.apache.catalina.authenticator]   Calling hasUserDataPermission()  
 DEBUG [org.apache.catalina.authenticator]   Calling authenticate()  
@@ -378,16 +367,14 @@ TRACE [org.jboss.as.web.security]  hasRole:RealmBase says:true::Authz framework 
 TRACE [org.jboss.as.web.security]  hasResourcePermission:RealmBase says:true::Authz framework says:true:final=true  
 DEBUG [org.apache.catalina.authenticator]   Successfully passed all security constraints  
 TRACE [org.jboss.as.web.security]  End invoke, caller=null  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Dans les traces, on retrouve les principales informations de l’utilisateur :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;LOGIN_USER&gt; : the login user
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;LOGIN_USER&gt; : the login user
 XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY : the OTP sent to Yubico Cloud Service
 XXXXXXXXXXXX : the Public Id, the Yubico key user
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="liens-utiles-">Liens utiles :</h4>
 

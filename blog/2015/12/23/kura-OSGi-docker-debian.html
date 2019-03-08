@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="Rhiot project decides recently to support mainly Kura Eclipse Platform. Our project will provides some code and extension for Kura like Camel integration and..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -109,7 +107,7 @@ Kura runs on RaspberryPi, but if you don’t have yet a RaspberryPi device  we w
 Just follow correct documentation depending about your architecture (Linux or MacOs)</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker-machine start default
-<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>docker-machine env default<span class="k">)</span><span class="s2">"</span></code></pre></figure>
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>docker-machine <span class="nb">env </span>default<span class="k">)</span><span class="s2">"</span></code></pre></figure>
 
 <h2 id="build-kura-debian-image">Build Kura-Debian Image</h2>
 
@@ -120,8 +118,8 @@ We gonna download docker file, and run correct command to built it.</p>
 
 <p>Just build it via command below</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile -O
-docker build -t debian-kura .</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">curl https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile <span class="nt">-O</span>
+docker build <span class="nt">-t</span> debian-kura .</code></pre></figure>
 
 <p>you should get an output like this</p>
 
@@ -131,11 +129,11 @@ docker build -t debian-kura .</code></pre></figure>
 
 <p>Now if everything goes well, we can run it via commands below</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -i -p 80:80 -t debian-kura</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run <span class="nt">-i</span> <span class="nt">-p</span> 80:80 <span class="nt">-t</span> debian-kura</code></pre></figure>
 
 <p>or via the Docker Hub image</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run -i -p 80:80 -t gautric/debian-kura</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">docker run <span class="nt">-i</span> <span class="nt">-p</span> 80:80 <span class="nt">-t</span> gautric/debian-kura</code></pre></figure>
 
 <p>You can change <code class="highlighter-rouge">-i</code> to <code class="highlighter-rouge">-d</code> to run image into daemon mode.</p>
 

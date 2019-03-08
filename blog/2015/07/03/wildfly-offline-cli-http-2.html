@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -95,7 +93,7 @@
 
 <p>After downloading it, you just have to unzip it into your folder like this :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">tar -zxvf wildfly-9.0.0.Final.tar.gz</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">tar</span> <span class="nt">-zxvf</span> wildfly-9.0.0.Final.tar.gz</code></pre></figure>
 
 <h2 id="x509-certificate">X509 Certificate</h2>
 
@@ -114,7 +112,7 @@
 <p>Due of some JDK 8 limitations, <a href="http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html">ALPN</a> isn’t supported natively by JDK 8. We will download it from the <a href="https://eclipse.org/org/"><em>Eclipse Foundation</em></a>. This feature is mandatory for the HTTP/2 protocol with encryption.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">export </span><span class="nv">ALPN_VERSION</span><span class="o">=</span>8.1.3.v20150130
-curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar &gt; <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
+curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/<span class="nv">$ALPN_VERSION</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar <span class="o">&gt;</span> <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/alpn-boot-<span class="nv">$ALPN_VERSION</span>.jar
 <span class="nb">export </span><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">"</span><span class="nv">$JAVA_OPTS</span><span class="s2"> -Xbootclasspath/p:</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span><span class="s2">/alpn-boot-</span><span class="nv">$ALPN_VERSION</span><span class="s2">.jar"</span></code></pre></figure>
 
 <h2 id="configure-the-http2-into-undertow">Configure the HTTP/2 into Undertow</h2>
@@ -130,29 +128,29 @@ You should get an output result like this</p>
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">You are disconnected at the moment. Type <span class="s1">'connect'</span> to connect to the server or <span class="s1">'help'</span> <span class="k">for </span>the list of supported commands.
 <span class="o">[</span>disconnected /] embed-server
 <span class="o">[</span>standalone@embedded /] /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https:add<span class="o">()</span>
-<span class="o">{</span><span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span><span class="o">}</span>
+<span class="o">{</span><span class="s2">"outcome"</span> <span class="o">=&gt;</span> <span class="s2">"success"</span><span class="o">}</span>
 <span class="o">[</span>standalone@embedded /] /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/authentication<span class="o">=</span>truststore:add<span class="o">(</span>keystore-path<span class="o">=</span>server.truststore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
 <span class="o">{</span>
-    <span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span>,
-    <span class="s2">"response-headers"</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">"operation-requires-reload"</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">"process-state"</span> <span class="o">=</span>&gt; <span class="s2">"reload-required"</span>
+    <span class="s2">"outcome"</span> <span class="o">=&gt;</span> <span class="s2">"success"</span>,
+    <span class="s2">"response-headers"</span> <span class="o">=&gt;</span> <span class="o">{</span>
+        <span class="s2">"operation-requires-reload"</span> <span class="o">=&gt;</span> <span class="nb">true</span>,
+        <span class="s2">"process-state"</span> <span class="o">=&gt;</span> <span class="s2">"reload-required"</span>
     <span class="o">}</span>
 <span class="o">}</span>
 <span class="o">[</span>standalone@embedded /] /core-service<span class="o">=</span>management/security-realm<span class="o">=</span>https/server-identity<span class="o">=</span>ssl:add<span class="o">(</span>keystore-path<span class="o">=</span>server.keystore, keystore-password<span class="o">=</span>password, keystore-relative-to<span class="o">=</span>jboss.server.config.dir<span class="o">)</span>
 <span class="o">{</span>
-    <span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span>,
-    <span class="s2">"response-headers"</span> <span class="o">=</span>&gt; <span class="o">{</span>
-        <span class="s2">"operation-requires-reload"</span> <span class="o">=</span>&gt; <span class="nb">true</span>,
-        <span class="s2">"process-state"</span> <span class="o">=</span>&gt; <span class="s2">"reload-required"</span>
+    <span class="s2">"outcome"</span> <span class="o">=&gt;</span> <span class="s2">"success"</span>,
+    <span class="s2">"response-headers"</span> <span class="o">=&gt;</span> <span class="o">{</span>
+        <span class="s2">"operation-requires-reload"</span> <span class="o">=&gt;</span> <span class="nb">true</span>,
+        <span class="s2">"process-state"</span> <span class="o">=&gt;</span> <span class="s2">"reload-required"</span>
     <span class="o">}</span>
 <span class="o">}</span>
-<span class="o">[</span>standalone@embedded /] /subsystem<span class="o">=</span>undertow/server<span class="o">=</span>default-server/https-listener<span class="o">=</span>https:add<span class="o">(</span>socket-binding<span class="o">=</span>https, security-realm<span class="o">=</span>https, <span class="nb">enable</span>-http2<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
+<span class="o">[</span>standalone@embedded /] /subsystem<span class="o">=</span>undertow/server<span class="o">=</span>default-server/https-listener<span class="o">=</span>https:add<span class="o">(</span>socket-binding<span class="o">=</span>https, security-realm<span class="o">=</span>https, enable-http2<span class="o">=</span><span class="nb">true</span><span class="o">)</span>
 <span class="o">{</span>
-    <span class="s2">"outcome"</span> <span class="o">=</span>&gt; <span class="s2">"success"</span>,
-    <span class="s2">"response-headers"</span> <span class="o">=</span>&gt; <span class="o">{</span><span class="s2">"process-state"</span> <span class="o">=</span>&gt; <span class="s2">"reload-required"</span><span class="o">}</span>
+    <span class="s2">"outcome"</span> <span class="o">=&gt;</span> <span class="s2">"success"</span>,
+    <span class="s2">"response-headers"</span> <span class="o">=&gt;</span> <span class="o">{</span><span class="s2">"process-state"</span> <span class="o">=&gt;</span> <span class="s2">"reload-required"</span><span class="o">}</span>
 <span class="o">}</span>
-<span class="o">[</span>standalone@embedded /] reload --admin-only<span class="o">=</span><span class="nb">false</span>
+<span class="o">[</span>standalone@embedded /] reload <span class="nt">--admin-only</span><span class="o">=</span><span class="nb">false</span>
 <span class="o">[</span>standalone@embedded /]</code></pre></figure>
 
 <h2 id="startup-jboss">Startup JBoss</h2>

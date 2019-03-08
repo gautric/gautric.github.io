@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="During Red Hat summit, Red Hat releases the new version of its JBoss Application Server. JBoss App Server provides a new JMX Remote Management protocol to co..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -131,7 +129,7 @@ It is available into <strong>${JBOSS_HOME}/bin</strong> directory.</p>
 
 <p>Out of the box, JConsole could use <strong>remote+http</strong> protocol for connecting to JBoss Management port <strong>9990</strong>.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">&gt; </span><span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">&gt;</span> <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></figure>
 
 <p>Configure correct JMX url (correct <strong>management</strong> interface and <strong>management-http</strong> port)</p>
 
@@ -147,7 +145,7 @@ It is available into <strong>${JBOSS_HOME}/bin</strong> directory.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">/subsystem<span class="o">=</span>jmx/remoting-connector<span class="o">=</span>jmx:write-attribute<span class="o">(</span><span class="nv">name</span><span class="o">=</span>use-management-endpoint,value<span class="o">=</span><span class="nb">false</span><span class="o">)</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">&gt; </span><span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">&gt;</span> <span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/jconsole.sh</code></pre></figure>
 
 <p>Configure correct JMX url (correct <strong>public</strong> interface and <strong>http</strong> port)</p>
 
@@ -176,29 +174,29 @@ It can also collect <strong>JMX</strong> information with JMX system.</p>
 
 <p>and add line below at this end of file</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">-Xbootclasspath/a:<span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/client/jboss-client.jar</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nt">-Xbootclasspath</span>/a:<span class="k">${</span><span class="nv">JBOSS_HOME</span><span class="k">}</span>/bin/client/jboss-client.jar</code></pre></figure>
 
 <p>File should look like</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~]$&gt; </span>cat /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/lib/missioncontrol/Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini
--startup
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~]<span class="nv">$&gt;</span> <span class="nb">cat</span> /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/lib/missioncontrol/Java<span class="se">\ </span>Mission<span class="se">\ </span>Control.app/Contents/MacOS/jmc.ini
+<span class="nt">-startup</span>
 ../../../plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar
---launcher.library
+<span class="nt">--launcher</span>.library
 ../../../plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.1.200.v20141007-2033
--ws
+<span class="nt">-ws</span>
 cocoa
---launcher.appendVmargs
--vm
+<span class="nt">--launcher</span>.appendVmargs
+<span class="nt">-vm</span>
 ../../../../../jre/bin/
--vmargs
--XX:+UseG1GC
--XX:+UnlockCommercialFeatures
--XX:+FlightRecorder
--XX:FlightRecorderOptions<span class="o">=</span><span class="nv">defaultrecording</span><span class="o">=</span><span class="nb">true</span>
--Djava.net.preferIPv4Stack<span class="o">=</span><span class="nb">true</span>
--XstartOnFirstThread
--Dorg.eclipse.swt.internal.carbon.smallFonts
--Xbootclasspath/a:/Users/gautric/Application/redhat/eap/jboss-eap-7.0/bin/client/jboss-client.jar</code></pre></figure>
+<span class="nt">-vmargs</span>
+<span class="nt">-XX</span>:+UseG1GC
+<span class="nt">-XX</span>:+UnlockCommercialFeatures
+<span class="nt">-XX</span>:+FlightRecorder
+<span class="nt">-XX</span>:FlightRecorderOptions<span class="o">=</span><span class="nv">defaultrecording</span><span class="o">=</span><span class="nb">true</span>
+<span class="nt">-Djava</span>.net.preferIPv4Stack<span class="o">=</span><span class="nb">true</span>
+<span class="nt">-XstartOnFirstThread</span>
+<span class="nt">-Dorg</span>.eclipse.swt.internal.carbon.smallFonts
+<span class="nt">-Xbootclasspath</span>/a:/Users/gautric/Application/redhat/eap/jboss-eap-7.0/bin/client/jboss-client.jar</code></pre></figure>
 
 <h2 id="jmc-connection-to-jboss-eap">JMC connection to JBoss EAP</h2>
 

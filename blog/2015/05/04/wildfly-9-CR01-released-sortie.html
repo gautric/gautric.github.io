@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en téléchargement ici. Cette version corrige un certain nombre de bug et e..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/05/04/wildfly-9-CR01-released-sortie.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -103,7 +101,7 @@ Je l'ai testé sans pb avec FF 37.0.2 et Java8u40, je ferai un post ASAP.
 
 <p>Il est maintenant possible de refuser nativement les nouvelles sessions utilisateur lorsqu’une instance s’arrete. Cela permet de ne plus interrompre les traitements des utilisateurs déjà connectés.</p>
 
-<h2 id="mise--jour-de-framework">Mise à jour de Framework</h2>
+<h2 id="mise-à-jour-de-framework">Mise à jour de Framework</h2>
 
 <ul>
   <li>Intégration de JBoss WS 5 basé sur CXF 3</li>
@@ -117,11 +115,11 @@ Je l'ai testé sans pb avec FF 37.0.2 et Java8u40, je ferai un post ASAP.
   <li><a href="https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12313721&amp;version=12325387">86 bugs corrigées depuis la version 9.0 Beta 2</a></li>
 </ul>
 
-<h3 id="dmarrage">Démarrage</h3>
+<h3 id="démarrage">Démarrage</h3>
 
 <p>Le demarrage se fait comme les versions précédentes :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">[mbp:~/Application/wildfly/wildfly-9.0.0.CR1]$&gt; </span>bin/standalone.sh
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>mbp:~/Application/wildfly/wildfly-9.0.0.CR1]<span class="nv">$&gt;</span> bin/standalone.sh
 <span class="o">=========================================================================</span>
 
   JBoss Bootstrap Environment
@@ -130,35 +128,35 @@ Je l'ai testé sans pb avec FF 37.0.2 et Java8u40, je ferai un post ASAP.
 
   JAVA: java
 
-  JAVA_OPTS:  -server -XX:+UseCompressedOops  -server -XX:+UseCompressedOops -Xms64m -Xmx512m -XX:MaxPermSize<span class="o">=</span>256m -Djava.net.preferIPv4Stack<span class="o">=</span><span class="nb">true</span> -Djboss.modules.system.pkgs<span class="o">=</span>org.jboss.byteman -Djava.awt.headless<span class="o">=</span><span class="nb">true</span>
+  JAVA_OPTS:  <span class="nt">-server</span> <span class="nt">-XX</span>:+UseCompressedOops  <span class="nt">-server</span> <span class="nt">-XX</span>:+UseCompressedOops <span class="nt">-Xms64m</span> <span class="nt">-Xmx512m</span> <span class="nt">-XX</span>:MaxPermSize<span class="o">=</span>256m <span class="nt">-Djava</span>.net.preferIPv4Stack<span class="o">=</span><span class="nb">true</span> <span class="nt">-Djboss</span>.modules.system.pkgs<span class="o">=</span>org.jboss.byteman <span class="nt">-Djava</span>.awt.headless<span class="o">=</span><span class="nb">true</span>
 
 <span class="o">=========================================================================</span>
 
-Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM warning: ignoring option <span class="nv">MaxPermSize</span><span class="o">=</span>256m; support was removed <span class="k">in </span>8.0
+Java HotSpot<span class="o">(</span>TM<span class="o">)</span> 64-Bit Server VM warning: ignoring option <span class="nv">MaxPermSize</span><span class="o">=</span>256m<span class="p">;</span> support was removed <span class="k">in </span>8.0
 13:31:40,503 INFO  <span class="o">[</span>org.jboss.modules] <span class="o">(</span>main<span class="o">)</span> JBoss Modules version 1.4.3.Final
 13:31:40,837 INFO  <span class="o">[</span>org.jboss.msc] <span class="o">(</span>main<span class="o">)</span> JBoss MSC version 1.2.4.Final
 13:31:40,941 INFO  <span class="o">[</span>org.jboss.as] <span class="o">(</span>MSC service thread 1-6<span class="o">)</span> WFLYSRV0049: WildFly Full 9.0.0.CR1 <span class="o">(</span>WildFly Core 1.0.0.CR1<span class="o">)</span> starting
-13:31:42,450 INFO  <span class="o">[</span>org.jboss.as.controller.management-deprecated] <span class="o">(</span>ServerService Thread Pool -- 11<span class="o">)</span> WFLYCTL0028: Attribute enabled is deprecated, and it might be removed <span class="k">in </span>future version!
+13:31:42,450 INFO  <span class="o">[</span>org.jboss.as.controller.management-deprecated] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 11<span class="o">)</span> WFLYCTL0028: Attribute enabled is deprecated, and it might be removed <span class="k">in </span>future version!
 13:31:42,479 INFO  <span class="o">[</span>org.jboss.as.server] <span class="o">(</span>Controller Boot Thread<span class="o">)</span> WFLYSRV0039: Creating http management service using socket-binding <span class="o">(</span>management-http<span class="o">)</span>
 13:31:42,515 INFO  <span class="o">[</span>org.xnio] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> XNIO version 3.3.1.Final
 13:31:42,534 INFO  <span class="o">[</span>org.xnio.nio] <span class="o">(</span>MSC service thread 1-4<span class="o">)</span> XNIO NIO Implementation Version 3.3.1.Final
-13:31:42,612 INFO  <span class="o">[</span>org.wildfly.extension.io] <span class="o">(</span>ServerService Thread Pool -- 37<span class="o">)</span> WFLYIO001: Worker <span class="s1">'default'</span> has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
-13:31:42,613 INFO  <span class="o">[</span>org.jboss.as.clustering.infinispan] <span class="o">(</span>ServerService Thread Pool -- 38<span class="o">)</span> WFLYCLINF0001: Activating Infinispan subsystem.
-13:31:42,629 INFO  <span class="o">[</span>org.jboss.as.jsf] <span class="o">(</span>ServerService Thread Pool -- 44<span class="o">)</span> WFLYJSF0007: Activated the following JSF Implementations: <span class="o">[</span>main]
-13:31:42,632 INFO  <span class="o">[</span>org.jboss.as.connector.subsystems.datasources] <span class="o">(</span>ServerService Thread Pool -- 33<span class="o">)</span> WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver <span class="o">(</span>version 1.3<span class="o">)</span>
+13:31:42,612 INFO  <span class="o">[</span>org.wildfly.extension.io] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 37<span class="o">)</span> WFLYIO001: Worker <span class="s1">'default'</span> has auto-configured to 8 core threads with 64 task threads based on your 4 available processors
+13:31:42,613 INFO  <span class="o">[</span>org.jboss.as.clustering.infinispan] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 38<span class="o">)</span> WFLYCLINF0001: Activating Infinispan subsystem.
+13:31:42,629 INFO  <span class="o">[</span>org.jboss.as.jsf] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 44<span class="o">)</span> WFLYJSF0007: Activated the following JSF Implementations: <span class="o">[</span>main]
+13:31:42,632 INFO  <span class="o">[</span>org.jboss.as.connector.subsystems.datasources] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 33<span class="o">)</span> WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver <span class="o">(</span>version 1.3<span class="o">)</span>
 13:31:42,679 INFO  <span class="o">[</span>org.jboss.as.connector] <span class="o">(</span>MSC service thread 1-6<span class="o">)</span> WFLYJCA0009: Starting JCA Subsystem <span class="o">(</span>IronJacamar 1.2.4.Final<span class="o">)</span>
 13:31:42,680 INFO  <span class="o">[</span>org.jboss.as.connector.deployers.jdbc] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYJCA0018: Started Driver service with driver-name <span class="o">=</span> h2
-13:31:42,723 INFO  <span class="o">[</span>org.jboss.as.naming] <span class="o">(</span>ServerService Thread Pool -- 46<span class="o">)</span> WFLYNAM0001: Activating Naming Subsystem
-13:31:42,736 INFO  <span class="o">[</span>org.jboss.as.security] <span class="o">(</span>ServerService Thread Pool -- 53<span class="o">)</span> WFLYSEC0002: Activating Security Subsystem
-13:31:42,739 WARN  <span class="o">[</span>org.jboss.as.txn] <span class="o">(</span>ServerService Thread Pool -- 54<span class="o">)</span> WFLYTX0013: Node identifier property is <span class="nb">set </span>to the default value. Please make sure it is unique.
+13:31:42,723 INFO  <span class="o">[</span>org.jboss.as.naming] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 46<span class="o">)</span> WFLYNAM0001: Activating Naming Subsystem
+13:31:42,736 INFO  <span class="o">[</span>org.jboss.as.security] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 53<span class="o">)</span> WFLYSEC0002: Activating Security Subsystem
+13:31:42,739 WARN  <span class="o">[</span>org.jboss.as.txn] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 54<span class="o">)</span> WFLYTX0013: Node identifier property is <span class="nb">set </span>to the default value. Please make sure it is unique.
 13:31:42,742 INFO  <span class="o">[</span>org.jboss.remoting] <span class="o">(</span>MSC service thread 1-8<span class="o">)</span> JBoss Remoting version 4.0.9.Final
 13:31:42,743 INFO  <span class="o">[</span>org.jboss.as.security] <span class="o">(</span>MSC service thread 1-3<span class="o">)</span> WFLYSEC0001: Current PicketBox <span class="nv">version</span><span class="o">=</span>4.9.0.Beta2
-13:31:42,756 INFO  <span class="o">[</span>org.jboss.as.webservices] <span class="o">(</span>ServerService Thread Pool -- 56<span class="o">)</span> WFLYWS0002: Activating WebServices Extension
+13:31:42,756 INFO  <span class="o">[</span>org.jboss.as.webservices] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 56<span class="o">)</span> WFLYWS0002: Activating WebServices Extension
 13:31:42,768 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-7<span class="o">)</span> WFLYUT0003: Undertow 1.2.4.Final starting
-13:31:42,769 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>ServerService Thread Pool -- 55<span class="o">)</span> WFLYUT0003: Undertow 1.2.4.Final starting
+13:31:42,769 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 55<span class="o">)</span> WFLYUT0003: Undertow 1.2.4.Final starting
 13:31:42,790 INFO  <span class="o">[</span>org.jboss.as.naming] <span class="o">(</span>MSC service thread 1-5<span class="o">)</span> WFLYNAM0003: Starting Naming Service
 13:31:42,791 INFO  <span class="o">[</span>org.jboss.as.mail.extension] <span class="o">(</span>MSC service thread 1-2<span class="o">)</span> WFLYMAIL0001: Bound mail session <span class="o">[</span>java:jboss/mail/Default]
-13:31:42,996 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>ServerService Thread Pool -- 55<span class="o">)</span> WFLYUT0014: Creating file handler <span class="k">for </span>path /Users/gautric/Application/wildfly/wildfly-9.0.0.CR1/welcome-content
+13:31:42,996 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>ServerService Thread Pool <span class="nt">--</span> 55<span class="o">)</span> WFLYUT0014: Creating file handler <span class="k">for </span>path /Users/gautric/Application/wildfly/wildfly-9.0.0.CR1/welcome-content
 13:31:43,010 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-7<span class="o">)</span> WFLYUT0012: Started server default-server.
 13:31:43,041 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-8<span class="o">)</span> WFLYUT0018: Host default-host starting
 13:31:43,158 INFO  <span class="o">[</span>org.wildfly.extension.undertow] <span class="o">(</span>MSC service thread 1-7<span class="o">)</span> WFLYUT0006: Undertow HTTP listener default listening on /127.0.0.1:8080

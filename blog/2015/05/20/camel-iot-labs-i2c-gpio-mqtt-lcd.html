@@ -32,10 +32,8 @@
   <meta name="twitter:description" content="One month ago, Henryk, Claus and I’ve started Camel Labs project. This project provides some cool new stuff for IoT community based on Camel technology/proje..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
-  <!--meta http-equiv="refresh" content="0; URL=https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html"-->
-
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://gautric.github.io/css/main.css">
   <link rel="canonical" href="https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html">
   <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="https://gautric.github.io/feed.xml" />
   <!--[if lt IE 9]>
@@ -50,7 +48,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+    <a class="site-title blog-site-title" href="https://gautric.github.io/">Greg I/Open</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -151,8 +149,8 @@ With RGB LCD 16x2 from Adafruit, you just have to plug LCD component directly to
 
 <p>Currently 1.0 version is available directly for RaspberryPi</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
-<span class="gp">pi@rbpi&gt; </span>curl -s get.pi4j.com | sudo bash</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST</span><span class="k">}</span>
+pi@rbpi&gt; curl <span class="nt">-s</span> get.pi4j.com | <span class="nb">sudo </span>bash</code></pre></figure>
 
 <div class="info">
 you should use a Public/Private key authentication for a faster connection to your RaspberryPi.
@@ -171,7 +169,7 @@ Some stuff could change anytime (URI for example).
 
 <p>Checkout code and build it :</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>git clone https://github.com/camel-labs/camel-labs.git</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> git clone https://github.com/camel-labs/camel-labs.git</code></pre></figure>
 
 <p>You need to compile Accelerometer part program  <strong>Accel2MQTT</strong> to <em>iot/components/camel-pi4j/src/main/java/com/github/camellabs/component/pi4j</em> directory
 <script src="https://gist.github.com/gautric/edba044d912d53e4bf31.js"></script></p>
@@ -181,16 +179,16 @@ Some stuff could change anytime (URI for example).
 
 <h3 id="compilation-command-line">Compilation command line</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>mvn package -Dmaven.test.skip<span class="o">=</span><span class="nb">true</span> -P CopyDependencyforLab</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> mvn package <span class="nt">-Dmaven</span>.test.skip<span class="o">=</span><span class="nb">true</span> <span class="nt">-P</span> CopyDependencyforLab</code></pre></figure>
 
 <h3 id="push-binaries-to-raspberrypis">Push binaries to RaspberryPis</h3>
 
 <p>Copy jar and dependencies files to your two Raspberry Pi devices.</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_ACCEL</span><span class="k">}</span> <span class="s1">'mkdir -p /home/pi/camel'</span>
-<span class="gp">$&gt; </span>scp iot/components/camel-pi4j/target/<span class="k">*</span>.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_ACCEL</span><span class="k">}</span>:/home/pi/camel
-<span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_LCD</span><span class="k">}</span> <span class="s1">'mkdir -p /home/pi/camel'</span>
-<span class="gp">$&gt; </span>scp iot/components/camel-pi4j/target/<span class="k">*</span>.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_LCD</span><span class="k">}</span>:/home/pi/camel</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_ACCEL</span><span class="k">}</span> <span class="s1">'mkdir -p /home/pi/camel'</span>
+<span class="nv">$&gt;</span> scp iot/components/camel-pi4j/target/<span class="k">*</span>.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_ACCEL</span><span class="k">}</span>:/home/pi/camel
+<span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_LCD</span><span class="k">}</span> <span class="s1">'mkdir -p /home/pi/camel'</span>
+<span class="nv">$&gt;</span> scp iot/components/camel-pi4j/target/<span class="k">*</span>.jar <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_LCD</span><span class="k">}</span>:/home/pi/camel</code></pre></figure>
 
 <h3 id="install-program-camel-program-to-your-raspberry-pi">Install program Camel Program to your Raspberry Pi</h3>
 
@@ -216,8 +214,8 @@ log4j.appender.out.layout.ConversionPattern<span class="o">=</span>%d<span class
 
 <p>Run MQTT broker via command line below</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$mqtt.acme.com&gt; </span><span class="nb">cd</span> <span class="nv">$ACTIVEMQ_HOME</span>/bin
-<span class="gp">$mqtt.acme.com&gt; </span>./activemq start
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$mqtt</span>.acme.com&gt; <span class="nb">cd</span> <span class="nv">$ACTIVEMQ_HOME</span>/bin
+<span class="nv">$mqtt</span>.acme.com&gt; ./activemq start
 INFO: Loading <span class="s1">'/Users/XXXXXX/Application/activemq/apache-activemq-5.11.1/bin/env'</span>
 INFO: Using java <span class="s1">'/usr/bin/java'</span>
 INFO: Starting - inspect logfiles specified <span class="k">in </span>logging.properties and log4j.properties to get details
@@ -233,26 +231,26 @@ INFO: pidfile created : <span class="s1">'/Users/XXXXXX/Application/activemq/apa
 
 <h3 id="the-command-line">The command line</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_ACCEL</span><span class="k">}</span>
-<span class="gp">pi@rbpi&gt; </span><span class="nb">cd </span>camel
-<span class="gp">pi@rbpi&gt; </span>pi4j -r com.github.camellabs.component.pij4.Accel2MQTT</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_ACCEL</span><span class="k">}</span>
+pi@rbpi&gt; <span class="nb">cd </span>camel
+pi@rbpi&gt; pi4j <span class="nt">-r</span> com.github.camellabs.component.pij4.Accel2MQTT</code></pre></figure>
 
-<h3 id="devout-from-pihostaccel">/dev/out from ${PI_HOST_ACCEL}</h3>
+<h3 id="devout-from-pi_host_accel">/dev/out from ${PI_HOST_ACCEL}</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi8 ~/camel <span class="nv">$ </span>pi4j -r com.github.camellabs.component.pi4j.Accel2MQTT
-+ sudo java -classpath <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> com.github.camellabs.component.pi4j.Accel2MQTT
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi8 ~/camel <span class="nv">$ </span>pi4j <span class="nt">-r</span> com.github.camellabs.component.pi4j.Accel2MQTT
++ <span class="nb">sudo </span>java <span class="nt">-classpath</span> <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> com.github.camellabs.component.pi4j.Accel2MQTT
 19:45:30,979 <span class="o">[</span>                          main] Accel2MQTT                     INFO  main
 19:45:33,185 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.15.2 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
 19:45:33,200 <span class="o">[</span>                          main] ManagedManagementStrategy      INFO  JMX is enabled
 19:45:36,620 <span class="o">[</span>                          main] DefaultTypeConverter           INFO  Loaded 188 <span class="nb">type </span>converters
 19:45:38,347 <span class="o">[</span>                          main] GPIOEndpoint                   DEBUG Endpoint[pi4j-gpio://12?action<span class="o">=</span>BLINK&amp;mode<span class="o">=</span>DIGITAL_OUTPUT&amp;state<span class="o">=</span>LOW]
-19:45:38,353 <span class="o">[</span>                          main] GPIOEndpoint                   DEBUG  Pin Id &gt; 12
+19:45:38,353 <span class="o">[</span>                          main] GPIOEndpoint                   DEBUG  Pin Id <span class="o">&gt;</span> 12
 19:45:38,360 <span class="o">[</span>                          main] GPIOEndpoint                   TRACE  Field 12 not found <span class="k">in </span>class class com.pi4j.io.gpio.RaspiPin
 19:45:40,048 <span class="o">[</span>                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
 19:45:40,050 <span class="o">[</span>                          main] DefaultCamelContext            INFO  StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
 19:45:40,115 <span class="o">[</span>                          main] GPIOProducer                   DEBUG Starting producer: Producer[pi4j-gpio://12?action<span class="o">=</span>BLINK&amp;mode<span class="o">=</span>DIGITAL_OUTPUT&amp;state<span class="o">=</span>LOW]
-19:45:40,499 <span class="o">[</span>                          main] MQTTEndpoint                   INFO  Connecting to tcp://mac-mini.autric.net:1883 using 10 seconds timeout
-19:45:40,895 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MQTTEndpoint                   WARN  No topic subscriptions were specified <span class="k">in </span>configuration
+19:45:40,499 <span class="o">[</span>                          main] MQTTEndpoint                   INFO  Connecting to tcp://mac-mini.autric.net:1883 using 10 seconds <span class="nb">timeout
+</span>19:45:40,895 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MQTTEndpoint                   WARN  No topic subscriptions were specified <span class="k">in </span>configuration
 19:45:40,909 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MQTTEndpoint                   INFO  MQTT Connection connected to tcp://mac-mini.autric.net:1883
 19:45:41,495 <span class="o">[</span>                          main] LSM303AccelerometerConsumer    DEBUG Starting consumer: Consumer[pi4j-i2c://1/0x19?delay<span class="o">=</span>500&amp;driver<span class="o">=</span>lsm303-accel]
 19:45:41,620 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Route: route1 started and consuming from: Endpoint[pi4j-i2c://1/0x19?delay<span class="o">=</span>500&amp;driver<span class="o">=</span>lsm303-accel]
@@ -296,14 +294,14 @@ INFO: pidfile created : <span class="s1">'/Users/XXXXXX/Application/activemq/apa
 
 <h3 id="the-command-line-1">The command line</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$&gt; </span>ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_LCD</span><span class="k">}</span>
-<span class="gp">pi@rbpi&gt; </span><span class="nb">cd </span>camel
-<span class="gp">pi@rbpi&gt; </span>pi4j -r com.github.camellabs.component.pi4j.MQTT2LCD</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> ssh <span class="k">${</span><span class="nv">PI_USER</span><span class="k">}</span>@<span class="k">${</span><span class="nv">PI_HOST_LCD</span><span class="k">}</span>
+pi@rbpi&gt; <span class="nb">cd </span>camel
+pi@rbpi&gt; pi4j <span class="nt">-r</span> com.github.camellabs.component.pi4j.MQTT2LCD</code></pre></figure>
 
-<h3 id="devout-from-pihostlcd">/dev/out from ${PI_HOST_LCD}</h3>
+<h3 id="devout-from-pi_host_lcd">/dev/out from ${PI_HOST_LCD}</h3>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi2 ~/camel <span class="nv">$ </span>pi4j -r com.github.camellabs.component.pi4j.MQTT2LCD
-+ sudo java -classpath <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> com.github.camellabs.component.pi4j.MQTT2LCD
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">pi@rbpi2 ~/camel <span class="nv">$ </span>pi4j <span class="nt">-r</span> com.github.camellabs.component.pi4j.MQTT2LCD
++ <span class="nb">sudo </span>java <span class="nt">-classpath</span> <span class="s1">'.:classes:*:classes:/opt/pi4j/lib/*'</span> com.github.camellabs.component.pi4j.MQTT2LCD
 19:45:33,277 <span class="o">[</span>                          main] MQTT2LCD                       INFO  main
 19:45:35,516 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.15.2 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> is starting
 19:45:35,530 <span class="o">[</span>                          main] ManagedManagementStrategy      INFO  JMX is enabled
@@ -311,8 +309,8 @@ INFO: pidfile created : <span class="s1">'/Users/XXXXXX/Application/activemq/apa
 19:45:41,902 <span class="o">[</span>                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, <span class="k">then </span>its recommended to turn this option off as it may improve performance.
 19:45:41,903 <span class="o">[</span>                          main] DefaultCamelContext            INFO  StreamCaching is not <span class="k">in </span>use. If using streams <span class="k">then </span>its recommended to <span class="nb">enable </span>stream caching. See more details at http://camel.apache.org/stream-caching.html
 19:45:42,117 <span class="o">[</span>                          main] MCP23017LCD                    DEBUG doStart
-19:45:43,007 <span class="o">[</span>                          main] MQTTEndpoint                   INFO  Connecting to tcp://mac-mini.autric.net:1883 using 10 seconds timeout
-19:45:44,655 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MQTTEndpoint                   INFO  MQTT Connection connected to tcp://mac-mini.autric.net:1883
+19:45:43,007 <span class="o">[</span>                          main] MQTTEndpoint                   INFO  Connecting to tcp://mac-mini.autric.net:1883 using 10 seconds <span class="nb">timeout
+</span>19:45:44,655 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MQTTEndpoint                   INFO  MQTT Connection connected to tcp://mac-mini.autric.net:1883
 19:45:44,789 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Route: route1 started and consuming from: Endpoint[mqtt://pi4j?subscribeTopicName<span class="o">=</span>i2c/accel&amp;host<span class="o">=</span>tcp://mac-mini.autric.net:1883]
 19:45:44,792 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
 19:45:44,843 <span class="o">[</span>                          main] DefaultCamelContext            INFO  Apache Camel 2.15.2 <span class="o">(</span>CamelContext: camel-1<span class="o">)</span> started <span class="k">in </span>9.314 seconds
@@ -325,7 +323,7 @@ INFO: pidfile created : <span class="s1">'/Users/XXXXXX/Application/activemq/apa
 , Body: <span class="o">[</span>12,147,1064]
 , Out: null:
 <span class="o">]</span>
-19:45:45,128 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG &gt;&gt; Exchange[Message: <span class="o">[</span>12,147,1064]]
+19:45:45,128 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG <span class="o">&gt;&gt;</span> Exchange[Message: <span class="o">[</span>12,147,1064]]
 19:45:45,403 <span class="o">[</span>        hawtdispatch-DEFAULT-1] pi4j                           INFO  Exchange[
 , Id: ID-rbpi2-56870-1432064734049-0-4
 , ExchangePattern: InOnly
@@ -335,17 +333,17 @@ INFO: pidfile created : <span class="s1">'/Users/XXXXXX/Application/activemq/apa
 , Body: <span class="o">[</span>3,136,1066]
 , Out: null:
 <span class="o">]</span>
-19:45:45,407 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG &gt;&gt; Exchange[Message: <span class="o">[</span>3,136,1066]]
+19:45:45,407 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG <span class="o">&gt;&gt;</span> Exchange[Message: <span class="o">[</span>3,136,1066]]
 19:45:45,965 <span class="o">[</span>        hawtdispatch-DEFAULT-1] pi4j                           INFO  Exchange[
 , Id: ID-rbpi2-56870-1432064734049-0-6
 , ExchangePattern: InOnly
 , Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue May 19 19:45:45 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>route1, <span class="nv">node</span><span class="o">=</span>process1], DefaultMessageHistory[routeId<span class="o">=</span>route1, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://com.github.camellabs.component.pi4j?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
 , Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi2-56870-1432064734049-0-5, <span class="nv">CamelLCDBlinkCursor</span><span class="o">=</span><span class="nb">false</span>, <span class="nv">CamelLCDColor</span><span class="o">=</span>GREEN, <span class="nv">CamelLCDCursor</span><span class="o">=</span><span class="nb">false</span>, <span class="nv">CamelMQTTSubscribeTopic</span><span class="o">=</span>i2c/accel<span class="o">}</span>
 , BodyType: String
-, Body: <span class="o">[</span>-3,133,1069]
+, Body: <span class="o">[</span><span class="nt">-3</span>,133,1069]
 , Out: null:
 <span class="o">]</span>
-19:45:45,969 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG &gt;&gt; Exchange[Message: <span class="o">[</span>-3,133,1069]]
+19:45:45,969 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG <span class="o">&gt;&gt;</span> Exchange[Message: <span class="o">[</span><span class="nt">-3</span>,133,1069]]
 
 ..... OMIT ......
 
@@ -355,10 +353,10 @@ INFO: pidfile created : <span class="s1">'/Users/XXXXXX/Application/activemq/apa
 , Properties: <span class="o">{</span><span class="nv">CamelCreatedTimestamp</span><span class="o">=</span>Tue May 19 19:45:57 UTC 2015, <span class="nv">CamelMessageHistory</span><span class="o">=[</span>DefaultMessageHistory[routeId<span class="o">=</span>route1, <span class="nv">node</span><span class="o">=</span>process1], DefaultMessageHistory[routeId<span class="o">=</span>route1, <span class="nv">node</span><span class="o">=</span>to1]], <span class="nv">CamelToEndpoint</span><span class="o">=</span>log://com.github.camellabs.component.pi4j?multiline<span class="o">=</span><span class="nb">true</span>&amp;showAll<span class="o">=</span><span class="nb">true</span><span class="o">}</span>
 , Headers: <span class="o">{</span><span class="nv">breadcrumbId</span><span class="o">=</span>ID-rbpi2-56870-1432064734049-0-43, <span class="nv">CamelLCDBlinkCursor</span><span class="o">=</span><span class="nb">false</span>, <span class="nv">CamelLCDColor</span><span class="o">=</span>YELLOW, <span class="nv">CamelLCDCursor</span><span class="o">=</span><span class="nb">false</span>, <span class="nv">CamelMQTTSubscribeTopic</span><span class="o">=</span>i2c/accel<span class="o">}</span>
 , BodyType: String
-, Body: <span class="o">[</span>-67,-411,993]
+, Body: <span class="o">[</span><span class="nt">-67</span>,-411,993]
 , Out: null:
 <span class="o">]</span>
-19:45:57,844 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG &gt;&gt; Exchange[Message: <span class="o">[</span>-67,-411,993]]</code></pre></figure>
+19:45:57,844 <span class="o">[</span>        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG <span class="o">&gt;&gt;</span> Exchange[Message: <span class="o">[</span><span class="nt">-67</span>,-411,993]]</code></pre></figure>
 
 <p><br /></p>
 
