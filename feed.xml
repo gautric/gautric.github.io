@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-05T09:48:21+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">Le standard DMN, un KYC en exemple</title><link href="http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe-standard-DMN-un-KYC-en-exemple.html" rel="alternate" type="text/html" title="Le standard DMN, un KYC en exemple" /><published>2020-06-04T17:00:00+02:00</published><updated>2020-06-04T17:00:00+02:00</updated><id>http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe%20standard%20DMN-un-KYC-en-exemple</id><content type="html" xml:base="http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe-standard-DMN-un-KYC-en-exemple.html">&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des editeurs Opensource ou Closesource fournisse une implémentation de ce standard.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-05T13:38:25+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">Le standard DMN, un KYC en exemple</title><link href="http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe-standard-DMN-un-KYC-en-exemple.html" rel="alternate" type="text/html" title="Le standard DMN, un KYC en exemple" /><published>2020-06-04T17:00:00+02:00</published><updated>2020-06-04T17:00:00+02:00</updated><id>http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe%20standard%20DMN-un-KYC-en-exemple</id><content type="html" xml:base="http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe-standard-DMN-un-KYC-en-exemple.html">&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -7,27 +7,27 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
 
 &lt;h1 id=&quot;introdution&quot;&gt;Introdution&lt;/h1&gt;
 
-&lt;p&gt;DMN est une norme de l’&lt;a href=&quot;https://www.omg.org/&quot;&gt;OMG&lt;/a&gt;. Cette norme a pour objectif de standardiser la modélisation et le réferentiel des règles de décision dans les applications ayant des besoins de scoring, d’évaluation et/ou d’aide à la décision.&lt;/p&gt;
+&lt;p&gt;DMN est une norme de l’&lt;a href=&quot;https://www.omg.org/&quot;&gt;OMG&lt;/a&gt;. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d’évaluation et/ou d’aide à la décision.&lt;/p&gt;
 
-&lt;p&gt;La norme se propose de facilité le developpement des règles avec des patterns de règles bien connues, comme par exemple les tables de décision. Elle propose un langage de programmation standardiser appellé FEEL &lt;em&gt;Friendly Enough Expression Language&lt;/em&gt;. Ce langage se veut très proche des macros Excel, facilitant l’appropriation du DMN par des équipes métiers.&lt;/p&gt;
+&lt;p&gt;La norme se propose de faciliter le développement des règles avec des patterns de règles bien connues, comme par exemple les tables de décision. Elle propose un langage de programmation standardiser appelé FEEL &lt;em&gt;Friendly Enough Expression Language&lt;/em&gt;. Ce langage se veut très proche des macros Excel, facilitant l’appropriation du DMN par des équipes métiers.&lt;/p&gt;
 
-&lt;p&gt;DMN est aussi une norme d’éléments graphique. Chaque élément graphique correspond à un pattern qui posséde des entrées, un traitement et une sortie. Les éléments graphique sont reliés entre eux dans un &lt;em&gt;arbre&lt;/em&gt; de dépendence d’éxécution des règles. Au fur et à mesure de l’execution des règles on opére une réduction du nombre d’élément pour arriver au dernier élément qui contiendra la décision finale.&lt;/p&gt;
+&lt;p&gt;DMN est aussi une norme d’éléments graphique. Chaque élément graphique correspond à un pattern qui possède des entrées, un traitement et une sortie. Les éléments graphique sont reliés entre eux dans un &lt;em&gt;arbre&lt;/em&gt; de dépendance d’exécution des règles. Au fur et à mesure de l’exécution des règles on opère une réduction du nombre d’élément pour arriver au dernier élément qui contiendra la décision finale.&lt;/p&gt;
 
 &lt;p&gt;Le standard DMN est disponible en suivant le lien : &lt;a href=&quot;http://www.omg.org/spec/DMN/1.0/&quot;&gt;http://www.omg.org/spec/DMN/1.0/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;tck&quot;&gt;TCK&lt;/h2&gt;
 
-&lt;p&gt;Il existe un outil en ligne listant l’ensemble des implémentation actuellement disponible et leur degrée de maturité.&lt;/p&gt;
+&lt;p&gt;Il existe un outil en ligne listant l’ensemble des implémentation actuellement disponible et leur degré de maturité.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dmn-tck.github.io/tck/&quot;&gt;https://dmn-tck.github.io/tck/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;un-exemple--kyc&quot;&gt;Un Exemple : KYC&lt;/h1&gt;
 
-&lt;p&gt;Dans notre exemple nous allons proceder à l’évalution d’un nouveau client bancaire. Ce processus d’évaluation est communément appeler KYC pour &lt;strong&gt;K&lt;/strong&gt;now &lt;strong&gt;Y&lt;/strong&gt;our &lt;strong&gt;C&lt;/strong&gt;ustomer. Ce processus va calculer un score en fonction de données en entrée. Le score sera par la suite interpreter par le conseiller bancaire afin accepter ou pas le nouveau client dans son fichier. Il ce peut que la note du score necessite simplement l’approbation à un niveau supérerieur.&lt;/p&gt;
+&lt;p&gt;Dans notre exemple nous allons procéder à l’évaluation d’un nouveau client bancaire. Ce processus d’évaluation est communément appeler KYC pour Know Your Customer. Ce processus va calculer un score en fonction de données en entrée. Le score sera par la suite interprété par le conseiller bancaire afin accepter ou pas le nouveau client dans son fichier. Il se peut que la note du score nécessite simplement l’approbation à un niveau supérieur.&lt;/p&gt;
 
 &lt;h2 id=&quot;les-input&quot;&gt;Les Input&lt;/h2&gt;
 
-&lt;p&gt;Afin de pouvoir calculer le score il est necessaire d’avoir les inputs. Pour cela nous allons avoir besoin de trois entrées :&lt;/p&gt;
+&lt;p&gt;Afin de pouvoir calculer le score il est nécessaire d’avoir les inputs. Pour cela nous allons avoir besoin de trois entrées :&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;PEP&lt;/em&gt;&lt;/strong&gt;
@@ -54,11 +54,11 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_input.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Il est bien sur possible de définir des types d’entrée plus complexe.&lt;/p&gt;
+&lt;p&gt;Il est bien sûr possible de définir des types d’entrée plus complexe.&lt;/p&gt;
 
 &lt;h2 id=&quot;les-decision&quot;&gt;Les Decision&lt;/h2&gt;
 
-&lt;p&gt;Le principal element du DMN est le concept de Decision. Cette &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; va calculer un resultat en fonction d’une ou plusieurs entrée.
+&lt;p&gt;Le principal élément du DMN est le concept de Decision. Cette &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; va calculer un résultat en fonction d’une ou plusieurs entrée.
 On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_decision_box.png&quot; /&gt;&lt;/p&gt;
@@ -85,7 +85,7 @@ On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt
   &lt;/li&gt;
   &lt;li&gt;Decision Table
     &lt;ul&gt;
-      &lt;li&gt;Il s’agit d’une liste de règle metier qui seront executées&lt;/li&gt;
+      &lt;li&gt;Il s’agit d’une liste de règle métier qui seront exécutées&lt;/li&gt;
       &lt;li&gt;ex: &lt;img src=&quot;/img/dmn_decisiontable.png&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -100,13 +100,13 @@ On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt
 
 &lt;h2 id=&quot;les-business-knowledge-model&quot;&gt;Les Business Knowledge Model&lt;/h2&gt;
 
-&lt;p&gt;Les &lt;code class=&quot;highlighter-rouge&quot;&gt;Business Knowledge Model&lt;/code&gt; fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un developpeur, les BKM peuvent etre vues comme des fonctions réutilisable dans une ou plusieurs &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;, notamment car elles s’appellent directment dans les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; et qu’elles possédent des parametres d’entrées.&lt;/p&gt;
+&lt;p&gt;Les &lt;code class=&quot;highlighter-rouge&quot;&gt;Business Knowledge Model&lt;/code&gt; fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un développeur, les &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; peuvent être vues comme des fonctions réutilisable dans une ou plusieurs &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;, notamment car elles s’appellent directement dans les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; et qu’elles possèdent des paramètres d’entrées.&lt;/p&gt;
 
 &lt;p&gt;Comme pour les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; il existe trois types de &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_bkm.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Dans notre cas nous allons utiliser une &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision Table&lt;/code&gt; pour calculer le score pour chaque regle.&lt;/p&gt;
+&lt;p&gt;Dans notre cas nous allons utiliser une &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision Table&lt;/code&gt; pour calculer le score pour chaque règle.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_function.png&quot; /&gt;&lt;/p&gt;
 
@@ -116,20 +116,22 @@ On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt
 
 &lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
 
-&lt;p&gt;C’est la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; KYC qui ca contenir le resultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; Level de chaque retour des &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; rule. Bien sur, cette fonction peut etre plus ou moins compliquée car elle utilise le langage de programmation FEEL &lt;em&gt;(Friendly Enough Expression Language)&lt;/em&gt;. Il s’agit d’un langage qui ressemble un peu aux macros Excel.&lt;/p&gt;
+&lt;p&gt;C’est la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; KYC qui va contenir le résultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; Level de chaque retour des &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; rule. Bien sur, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL &lt;em&gt;(Friendly Enough Expression Language)&lt;/em&gt;. Il s’agit d’un langage qui ressemble un peu aux macros Excel.
+.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_result.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Pour résumer, les &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt; sont donc utilisés dans les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;, ces &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; sont reliées à des &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; ou bien d’autres &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; qui au fur et à mesure se termine vers une seule &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;.
-Comme on la vue précedement, la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; finale peut avoir plusieurs type de retour.
+Comme on l’a vue précédemment, la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; finale peut avoir plusieurs type de retour.
 Par convention on partira du bas pour les &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt; puis étage par étage on empilera les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; jusqu’à les réduire en une seule.&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
-&lt;p&gt;J’espere que cette breve introduction à DMN vous auras convaincu de l’utiliser dans vos projects de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut etre automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.
-Nous verrons dans un prochain post comment executer le moteur de KYC.&lt;/p&gt;
+&lt;p&gt;J’espère que cette brève introduction à &lt;code class=&quot;highlighter-rouge&quot;&gt;DMN&lt;/code&gt; vous aura convaincu de l’utiliser dans vos projets de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut être automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.&lt;/p&gt;
 
-&lt;p&gt;Vous pouvez voir directement &lt;a href=&quot;https://kiegroup.github.io/kogito-online/?file=https://github.com/gautric/dmn-knative/blob/master/src/main/resources/KYC.dmn#/editor/dmn&quot;&gt;le resultat du DMN avec cet éditeur en ligne&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><summary type="html">Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des editeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.</summary></entry><entry><title type="html">MQTTiser l’API Autolib avec Node-Red</title><link href="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html" rel="alternate" type="text/html" title="MQTTiser l'API Autolib avec Node-Red" /><published>2018-04-21T17:00:00+02:00</published><updated>2018-04-21T17:00:00+02:00</updated><id>http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html">&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’&lt;a href=&quot;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&quot;&gt;Autolib&lt;/a&gt; j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution &lt;a href=&quot;https://www.home-assistant.io&quot;&gt;HomeAssistant&lt;/a&gt;, j’utilisais pour cela l’&lt;a href=&quot;https://opendata.paris.fr/page/home/&quot;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&quot;https://fr.wikipedia.org/wiki/REST&quot;&gt;REST&lt;/a&gt;/&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP&quot;&gt;HTTP&lt;/a&gt;.
+&lt;p&gt;Nous verrons dans un prochain post comment exécuter le moteur de KYC.&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez voir directement &lt;a href=&quot;https://kiegroup.github.io/kogito-online/?file=https://github.com/gautric/dmn-knative/blob/master/src/main/resources/KYC.dmn#/editor/dmn&quot;&gt;le resultat du DMN avec cet éditeur en ligne&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><summary type="html">Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.</summary></entry><entry><title type="html">MQTTiser l’API Autolib avec Node-Red</title><link href="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html" rel="alternate" type="text/html" title="MQTTiser l'API Autolib avec Node-Red" /><published>2018-04-21T17:00:00+02:00</published><updated>2018-04-21T17:00:00+02:00</updated><id>http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html">&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’&lt;a href=&quot;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&quot;&gt;Autolib&lt;/a&gt; j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution &lt;a href=&quot;https://www.home-assistant.io&quot;&gt;HomeAssistant&lt;/a&gt;, j’utilisais pour cela l’&lt;a href=&quot;https://opendata.paris.fr/page/home/&quot;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&quot;https://fr.wikipedia.org/wiki/REST&quot;&gt;REST&lt;/a&gt;/&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP&quot;&gt;HTTP&lt;/a&gt;.
 Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant &lt;a href=&quot;https://www.home-assistant.io/components/rest_command/&quot;&gt;RESTful&lt;/a&gt;.
 Je me suis dit, pourquoi ne pas :&lt;/p&gt;
 

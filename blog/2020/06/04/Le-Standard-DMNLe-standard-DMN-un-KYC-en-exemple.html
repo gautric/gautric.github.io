@@ -79,7 +79,7 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Jun 4, 2020  <a href="#fr">fr</a>  <a href="#DMN">DMN</a> </p>
-    <p>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des editeurs Opensource ou Closesource fournisse une implémentation de ce standard.
+    <p>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN.</p>
 
 <blockquote>
@@ -88,27 +88,27 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.</p>
 
 <h1 id="introdution">Introdution</h1>
 
-<p>DMN est une norme de l’<a href="https://www.omg.org/">OMG</a>. Cette norme a pour objectif de standardiser la modélisation et le réferentiel des règles de décision dans les applications ayant des besoins de scoring, d’évaluation et/ou d’aide à la décision.</p>
+<p>DMN est une norme de l’<a href="https://www.omg.org/">OMG</a>. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d’évaluation et/ou d’aide à la décision.</p>
 
-<p>La norme se propose de facilité le developpement des règles avec des patterns de règles bien connues, comme par exemple les tables de décision. Elle propose un langage de programmation standardiser appellé FEEL <em>Friendly Enough Expression Language</em>. Ce langage se veut très proche des macros Excel, facilitant l’appropriation du DMN par des équipes métiers.</p>
+<p>La norme se propose de faciliter le développement des règles avec des patterns de règles bien connues, comme par exemple les tables de décision. Elle propose un langage de programmation standardiser appelé FEEL <em>Friendly Enough Expression Language</em>. Ce langage se veut très proche des macros Excel, facilitant l’appropriation du DMN par des équipes métiers.</p>
 
-<p>DMN est aussi une norme d’éléments graphique. Chaque élément graphique correspond à un pattern qui posséde des entrées, un traitement et une sortie. Les éléments graphique sont reliés entre eux dans un <em>arbre</em> de dépendence d’éxécution des règles. Au fur et à mesure de l’execution des règles on opére une réduction du nombre d’élément pour arriver au dernier élément qui contiendra la décision finale.</p>
+<p>DMN est aussi une norme d’éléments graphique. Chaque élément graphique correspond à un pattern qui possède des entrées, un traitement et une sortie. Les éléments graphique sont reliés entre eux dans un <em>arbre</em> de dépendance d’exécution des règles. Au fur et à mesure de l’exécution des règles on opère une réduction du nombre d’élément pour arriver au dernier élément qui contiendra la décision finale.</p>
 
 <p>Le standard DMN est disponible en suivant le lien : <a href="http://www.omg.org/spec/DMN/1.0/">http://www.omg.org/spec/DMN/1.0/</a></p>
 
 <h2 id="tck">TCK</h2>
 
-<p>Il existe un outil en ligne listant l’ensemble des implémentation actuellement disponible et leur degrée de maturité.</p>
+<p>Il existe un outil en ligne listant l’ensemble des implémentation actuellement disponible et leur degré de maturité.</p>
 
 <p><a href="https://dmn-tck.github.io/tck/">https://dmn-tck.github.io/tck/</a></p>
 
 <h1 id="un-exemple--kyc">Un Exemple : KYC</h1>
 
-<p>Dans notre exemple nous allons proceder à l’évalution d’un nouveau client bancaire. Ce processus d’évaluation est communément appeler KYC pour <strong>K</strong>now <strong>Y</strong>our <strong>C</strong>ustomer. Ce processus va calculer un score en fonction de données en entrée. Le score sera par la suite interpreter par le conseiller bancaire afin accepter ou pas le nouveau client dans son fichier. Il ce peut que la note du score necessite simplement l’approbation à un niveau supérerieur.</p>
+<p>Dans notre exemple nous allons procéder à l’évaluation d’un nouveau client bancaire. Ce processus d’évaluation est communément appeler KYC pour Know Your Customer. Ce processus va calculer un score en fonction de données en entrée. Le score sera par la suite interprété par le conseiller bancaire afin accepter ou pas le nouveau client dans son fichier. Il se peut que la note du score nécessite simplement l’approbation à un niveau supérieur.</p>
 
 <h2 id="les-input">Les Input</h2>
 
-<p>Afin de pouvoir calculer le score il est necessaire d’avoir les inputs. Pour cela nous allons avoir besoin de trois entrées :</p>
+<p>Afin de pouvoir calculer le score il est nécessaire d’avoir les inputs. Pour cela nous allons avoir besoin de trois entrées :</p>
 
 <ol>
   <li><strong><em>PEP</em></strong>
@@ -135,11 +135,11 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.</p>
 
 <p><img src="/img/dmn_input.png" /></p>
 
-<p>Il est bien sur possible de définir des types d’entrée plus complexe.</p>
+<p>Il est bien sûr possible de définir des types d’entrée plus complexe.</p>
 
 <h2 id="les-decision">Les Decision</h2>
 
-<p>Le principal element du DMN est le concept de Decision. Cette <code class="highlighter-rouge">Decision</code> va calculer un resultat en fonction d’une ou plusieurs entrée.
+<p>Le principal élément du DMN est le concept de Decision. Cette <code class="highlighter-rouge">Decision</code> va calculer un résultat en fonction d’une ou plusieurs entrée.
 On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
 
 <p><img src="/img/dmn_decision_box.png" /></p>
@@ -166,7 +166,7 @@ On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
   </li>
   <li>Decision Table
     <ul>
-      <li>Il s’agit d’une liste de règle metier qui seront executées</li>
+      <li>Il s’agit d’une liste de règle métier qui seront exécutées</li>
       <li>ex: <img src="/img/dmn_decisiontable.png" /></li>
     </ul>
   </li>
@@ -181,13 +181,13 @@ On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
 
 <h2 id="les-business-knowledge-model">Les Business Knowledge Model</h2>
 
-<p>Les <code class="highlighter-rouge">Business Knowledge Model</code> fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un developpeur, les BKM peuvent etre vues comme des fonctions réutilisable dans une ou plusieurs <code class="highlighter-rouge">Decision</code>, notamment car elles s’appellent directment dans les <code class="highlighter-rouge">Decision</code> et qu’elles possédent des parametres d’entrées.</p>
+<p>Les <code class="highlighter-rouge">Business Knowledge Model</code> fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un développeur, les <code class="highlighter-rouge">BKM</code> peuvent être vues comme des fonctions réutilisable dans une ou plusieurs <code class="highlighter-rouge">Decision</code>, notamment car elles s’appellent directement dans les <code class="highlighter-rouge">Decision</code> et qu’elles possèdent des paramètres d’entrées.</p>
 
 <p>Comme pour les <code class="highlighter-rouge">Decision</code> il existe trois types de <code class="highlighter-rouge">BKM</code>.</p>
 
 <p><img src="/img/dmn_bkm.png" /></p>
 
-<p>Dans notre cas nous allons utiliser une <code class="highlighter-rouge">Decision Table</code> pour calculer le score pour chaque regle.</p>
+<p>Dans notre cas nous allons utiliser une <code class="highlighter-rouge">Decision Table</code> pour calculer le score pour chaque règle.</p>
 
 <p><img src="/img/dmn_function.png" /></p>
 
@@ -197,18 +197,20 @@ On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
 
 <h2 id="result">Result</h2>
 
-<p>C’est la <code class="highlighter-rouge">Decision</code> KYC qui ca contenir le resultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la <code class="highlighter-rouge">BKM</code> Level de chaque retour des <code class="highlighter-rouge">Decision</code> rule. Bien sur, cette fonction peut etre plus ou moins compliquée car elle utilise le langage de programmation FEEL <em>(Friendly Enough Expression Language)</em>. Il s’agit d’un langage qui ressemble un peu aux macros Excel.</p>
+<p>C’est la <code class="highlighter-rouge">Decision</code> KYC qui va contenir le résultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la <code class="highlighter-rouge">BKM</code> Level de chaque retour des <code class="highlighter-rouge">Decision</code> rule. Bien sur, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL <em>(Friendly Enough Expression Language)</em>. Il s’agit d’un langage qui ressemble un peu aux macros Excel.
+.</p>
 
 <p><img src="/img/dmn_result.png" /></p>
 
 <p>Pour résumer, les <code class="highlighter-rouge">Input</code> sont donc utilisés dans les <code class="highlighter-rouge">Decision</code>, ces <code class="highlighter-rouge">Decision</code> sont reliées à des <code class="highlighter-rouge">BKM</code> ou bien d’autres <code class="highlighter-rouge">Decision</code> qui au fur et à mesure se termine vers une seule <code class="highlighter-rouge">Decision</code>.
-Comme on la vue précedement, la <code class="highlighter-rouge">Decision</code> finale peut avoir plusieurs type de retour.
+Comme on l’a vue précédemment, la <code class="highlighter-rouge">Decision</code> finale peut avoir plusieurs type de retour.
 Par convention on partira du bas pour les <code class="highlighter-rouge">Input</code> puis étage par étage on empilera les <code class="highlighter-rouge">Decision</code> jusqu’à les réduire en une seule.</p>
 
 <h1 id="conclusion">Conclusion</h1>
 
-<p>J’espere que cette breve introduction à DMN vous auras convaincu de l’utiliser dans vos projects de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut etre automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.
-Nous verrons dans un prochain post comment executer le moteur de KYC.</p>
+<p>J’espère que cette brève introduction à <code class="highlighter-rouge">DMN</code> vous aura convaincu de l’utiliser dans vos projets de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut être automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.</p>
+
+<p>Nous verrons dans un prochain post comment exécuter le moteur de KYC.</p>
 
 <p>Vous pouvez voir directement <a href="https://kiegroup.github.io/kogito-online/?file=https://github.com/gautric/dmn-knative/blob/master/src/main/resources/KYC.dmn#/editor/dmn">le resultat du DMN avec cet éditeur en ligne</a></p>
 
