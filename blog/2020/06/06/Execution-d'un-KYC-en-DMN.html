@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html><!--<![-->
+<head>
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard DMN. Nous all..."/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- Icon bar -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <meta name="robots" content="index,follow,noarchive" />
+  <meta name="googlebot" content="noarchive" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="Greg I/O" />
+  <meta name="twitter:site:id" content="@gautric_io" />
+  <meta name="twitter:creator" content="@gautric_io" />
+  <meta name="twitter:title" content="Éxecution d'un moteur de KYC en DMN avec Kogito" />
+  <meta name="twitter:description" content="Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard DMN. Nous all..." />
+  <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="/blog/2020/06/06/Execution-d'un-KYC-en-DMN.html">
+  <link rel="alternate" type="application/rss+xml" title="Greg I/Open" href="/feed.xml" />
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <title>Éxecution d'un moteur de KYC en DMN avec Kogito</title>
+</head>
+
+  <body>
+        <header class="site-header blog-header">
+
+  <div class="wrapper">
+
+    <a class="site-title blog-site-title" href="/">Greg I/Open</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/apropos">A propos</a><a class="page-link" href="/blog">Blog</a><a class="page-link" href="/contact">Contact</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <header class="post-header blog-title">
+      <div class="wrapper">
+      <h1 class="post-title">Éxecution d'un moteur de KYC en DMN avec Kogito</h1>
+    </div>
+    </header>
+
+    <main class="page-content" role="main">
+      <div class="wrapper">
+          <article class="post-content">
+    <p class="post-meta">Jun 6, 2020  <a href="#fr">fr</a>  <a href="#DMN">DMN</a>  <a href="#Kogito">Kogito</a>  <a href="#KYC">KYC</a> </p>
+    <p>Dans le précedent <a href="/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html">post sur ce blog</a> nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard <a href="https://fr.wikipedia.org/wiki/Decision_Model_and_Notation">DMN</a>. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.</p>
+
+<blockquote>
+  <p>Éxecution d’un moteur KYC en DMN avec Kogito</p>
+</blockquote>
+
+<h1 id="introdution-kogito">Introdution Kogito</h1>
+
+<p>Faisons un focus rapide sur <a href="https://kogito.kie.org/">Kogito</a>. Kogito est un moteur de règle orienté cloud.
+Ce moteur de règle reprend en grande partie tout le coeur et le developpement de <a href="https://www.drools.org/">Drools</a> et <a href="https://jbpm.org/">jBPM</a> mais propose des fonctionnalités purement Cloud notamment le fait qu’il est prévu d’être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.</p>
+
+<h2 id="business-domain-first-approach">Business Domain first approach</h2>
+
+<p>Un apport de Kogito au moteur Drools, c’est qu’il génére automatiquement l’API REST des règles DMN. Dans notre exemple nous allons copier/coller le fichier DMN KYC du post précédent et le faire tourner tel quel avec Kogito. Kogito va proposer une API <code class="highlighter-rouge">KYC</code> acceptant le model des <code class="highlighter-rouge">Input</code>. Il sera donc possible de faire un appel REST / HTTP avec des données métiers sans tout le liant technique que nous aurions pu avoir avec l’implémentation purement Drools. Nous allons avoir donc une API orientée métier dépourvue de spécificité technique.</p>
+
+<h1 id="execution-du-projet">Execution du projet</h1>
+
+<p>Afin de pourvoir éxecuter le modele de règle KYC dans moteur Kogito il va falloir cloner le repository disponible sur Github.</p>
+
+<h2 id="compilation">Compilation</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">&gt;</span> git clone   <span class="nt">--depth</span> 1  <span class="nt">--branch</span> blog  https://github.com/gautric/dmn-knative.git
+<span class="o">&gt;</span> <span class="nb">cd </span>dmn-knative</code></pre></figure>
+
+<h2 id="execution">Execution</h2>
+
+<p>Nous allons copier le fichier KYC.dmn que nous avons fait dans le post précédent.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">&gt;</span> curl <span class="nt">-L</span> https://raw.githubusercontent.com/gautric/dmn-knative/master/src/main/resources/KYC.dmn <span class="se">\</span>
+<span class="nt">-o</span> src/main/resources/KYC.dmn 2&gt; /dev/null 
+
+<span class="o">&gt;</span> mvn clean package quarkus:dev 
+
+... OMIT ...
+
+__  ____  __  _____   ___  __ ____  ______ 
+ <span class="nt">--</span>/ __ <span class="se">\/</span> / / / _ | / _ <span class="se">\/</span> //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,&lt; / /_/ /<span class="se">\ \ </span>  
+<span class="nt">--</span><span class="se">\_</span>__<span class="se">\_\_</span>___/_/ |_/_/|_/_/|_|<span class="se">\_</span>___/___/   
+2020-06-05 17:22:27,522 INFO  <span class="o">[</span>io.quarkus] <span class="o">(</span>main<span class="o">)</span> dmn-knative 1.0-SNAPSHOT <span class="o">(</span>powered by Quarkus 1.3.2.Final<span class="o">)</span> started <span class="k">in </span>3.600s. Listening on: http://0.0.0.0:8080
+2020-06-05 17:22:27,525 INFO  <span class="o">[</span>io.quarkus] <span class="o">(</span>main<span class="o">)</span> Profile dev activated. Live Coding activated.
+2020-06-05 17:22:27,526 INFO  <span class="o">[</span>io.quarkus] <span class="o">(</span>main<span class="o">)</span> Installed features: <span class="o">[</span>cdi, kogito, resteasy, resteasy-jackson, smallrye-openapi, swagger-ui]</code></pre></figure>
+
+<h2 id="swagger">Swagger</h2>
+
+<p>Dès que vous avez correctment la sortie standard précédente, il est possible d’accéder à l’URL suivante : <a href="http://localhost:8080/">http://localhost:8080/</a></p>
+
+<p>Vous allez atterrir sur la page swagger du moteur Kogito, une API KYC est disponible et peut être utilisée directement via cette page ou bien un appel CURL.</p>
+
+<p><img src="/img/kogito_dmn.png" alt="Kogito DMN" /></p>
+
+<h2 id="lappel-curl">L’appel CURL</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">&gt;</span> <span class="nb">export </span><span class="nv">DMN_URL</span><span class="o">=</span>http://localhost:8080
+
+<span class="o">&gt;</span> curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>  <span class="k">${</span><span class="nv">DMN_URL</span><span class="k">}</span>/KYC  <span class="nt">--data-binary</span> @- <span class="o">&lt;&lt;</span> <span class="no">EOF</span><span class="sh">  2&gt; /dev/null | jq
+{
+  "Amount": 250000,
+  "PEP": false,
+  "Fiscal Residency": "JP"
+}
+EOF</span></code></pre></figure>
+
+<p>Attention la commande précédente utilise l’outil <a href="https://stedolan.github.io/jq/">jq</a></p>
+
+<p>Vous devriez obtenir le résultat suivant :</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nl">"Amount Rule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MEDIUM"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"KYC"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Fiscal Residency Rule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">250000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PEP Rule"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"PEP"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"function Level( input )"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Fiscal Residency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JP"</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+<p>Nous voyons qu’avec Kogito le détail de tous les calculs intermédiaires des <code class="highlighter-rouge">Decision</code> est disponible, jusqu’au calcul final au niveau de la valeur KYC ici dans notre exemple ci-dessus. Cela est intéressant à la fois pour du debugging ou bien pour une problématique d’auditabilité du moteur.</p>
+
+<h2 id="exemples">Exemples</h2>
+
+<p>Des exemples sont disponibles dans le répertoire <code class="highlighter-rouge">data</code> du projet que l’on vient de cloner.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Avec cette exemple, nous voyons que la complexité technique d’utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n’y a plus d’excuse pour ne pas utiliser à minima le standard <code class="highlighter-rouge">DMN</code> dans vos applications. Le projet Kogito est encore récent mais rien ne vous empeche de proposer des améliorations et/ou suggestions.</p>
+
+
+  </article>
+
+  <div class="post-social">
+    
+
+    
+
+</div>
+
+
+      </div>
+    </main>
+
+    <footer class="site-footer blog-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"><a href="#" title="Haut de la page / Head of page">Greg I/Open</a></h2>
+
+    <div class="footer-col-wrapper">
+      <p class="text">Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</p>
+
+      &mdash; 
+ <a href="https://twitter.com/gautric_io">
+    <span class="icon  icon--twitter">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+        c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash; 
+  <a href="https://github.com/gautric">
+    <span class="icon  icon--github">
+      <svg viewBox="0 0 16 16">
+        <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+      </svg>
+    </span>
+  </a>
+
+ &mdash;
+    </div>
+
+
+  </div>
+
+  <div class="copyright">Copyright © Greg Autric 2015 - 2020</div>
+
+
+</footer>
+
+
+  </body>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-60791597-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</html>
