@@ -1,4 +1,174 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-06-05T13:38:25+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">Le standard DMN, un KYC en exemple</title><link href="http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe-standard-DMN-un-KYC-en-exemple.html" rel="alternate" type="text/html" title="Le standard DMN, un KYC en exemple" /><published>2020-06-04T17:00:00+02:00</published><updated>2020-06-04T17:00:00+02:00</updated><id>http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe%20standard%20DMN-un-KYC-en-exemple</id><content type="html" xml:base="http://localhost:4000/blog/2020/06/04/Le-Standard-DMNLe-standard-DMN-un-KYC-en-exemple.html">&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-26T17:43:08+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">Keycloak, les clefs Yubico et le standard Webauthn</title><link href="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html" rel="alternate" type="text/html" title="Keycloak, les clefs Yubico et le standard Webauthn" /><published>2020-10-26T16:00:00+01:00</published><updated>2020-10-26T16:00:00+01:00</updated><id>http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn</id><content type="html" xml:base="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html">&lt;p&gt;Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de &lt;a href=&quot;https://en.wikipedia.org/wiki/Single_sign-on&quot;&gt;SSO&lt;/a&gt; c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
+
+&lt;p&gt;Il y a quelques temps déjà, j’ai acheté et configuré des clefs Yubico afin de faire du &lt;a href=&quot;https://en.wikipedia.org/wiki/Multi-factor_authentication&quot;&gt;2FA&lt;/a&gt; avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc…) proposent ce type d’authentification qui apporte une sécurité supplémentaire des comptes en ligne.&lt;/p&gt;
+
+&lt;p&gt;Keycloack depuis fin 2019 dispose d’une intégration du standard Webauthn du W3C. Nous allons voir comment faire cette configuration dans le produit.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Intégration/Configuration d’une authentification Webauthn avec Keycloak&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;installation-de-keycloak&quot;&gt;Installation de Keycloak&lt;/h2&gt;
+
+&lt;p&gt;L’installation de Keycloak est tout aussi simple que l’installation d’un serveur Wildfly/JBoss EAP, il suffit simplement &lt;a href=&quot;https://www.keycloak.org/downloads&quot;&gt;télécharger le zip serveur&lt;/a&gt; puis de le dezipper dans le repertoire de son choix.&lt;/p&gt;
+
+&lt;h3 id=&quot;utilisateur-root&quot;&gt;Utilisateur root&lt;/h3&gt;
+&lt;p&gt;Ajouter l’utilisateur root pour la gestion des Realm (Royaume) dans Keycloak via la commande suivante :&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$&amp;gt;&lt;/span&gt; bin/add-user-keycloak.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;demarrer-keycloakrhsso&quot;&gt;Demarrer Keycloak/RHSSO&lt;/h3&gt;
+&lt;p&gt;Le demarrage de Keycloak se fait comme un Wildfly/JBoss EAP via la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;standalone.sh&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$&amp;gt;&lt;/span&gt; bin/standalone.sh &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; 0.0.0.0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;configuration-du-realm-client-et-flow&quot;&gt;Configuration du Realm, Client et Flow&lt;/h2&gt;
+
+&lt;p&gt;Configurer maintenant le Realm qui va contenir l’ensemble des utilisateurs et des clients (applications).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-realm.png&quot; alt=&quot;Configuration Realm&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour la demo, nous utilisons une application de type Javascript donc n’oubliez pas de configurer en mode &lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt; de l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;Access Type&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-client.png&quot; alt=&quot;Configuration Client&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans Browser Flow il suffit de rajouter le &lt;code class=&quot;highlighter-rouge&quot;&gt;WebAuthn Authenticator&lt;/code&gt; executor dans le flow normal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-flow.png&quot; alt=&quot;Configuration Flow&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans la configuration du WebAuthn, n’oubliez pas de configurer le &lt;code class=&quot;highlighter-rouge&quot;&gt;Relying Party Entity Name&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-2fa.png&quot; alt=&quot;Configuration 2fa&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;enregistrement-dun-utilisateur&quot;&gt;Enregistrement d’un utilisateur&lt;/h2&gt;
+
+&lt;p&gt;Passons maintenant à l’enregistrement d’un utilisateur.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-register-user.png&quot; alt=&quot;Register User&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Le browser demande ensuite l’enregistrement de la clef pour l’authentification future (cf la dialogue box avec l’empreinte digitale).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-register-key.png&quot; alt=&quot;Register Key&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Il suffit d’inserer ca clef Yubico FIDO2 compatible WebAuthn.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-yubico.jpg&quot; alt=&quot;Yubico Key&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ensuite il est possible de configurer un label pour ce processus d’authentification &lt;code class=&quot;highlighter-rouge&quot;&gt;WebAuthn Yubico Blue&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-register-key-label.png&quot; alt=&quot;Register Key Label&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;authentification-de-lutilisateur&quot;&gt;Authentification de l’utilisateur&lt;/h2&gt;
+
+&lt;p&gt;L’authentification de l’utilisateur est maintenant possible.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-authn-client.png&quot; alt=&quot;Authn User&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans ce cas le browser demande cette fois une authentification via la clef Yubico (cf la dialogue box avec l’empreinte digitale).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-authn-client-key.png&quot; alt=&quot;Authn User Key&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans le cas où l’utilisateur s’est trompé de clef ou bien à oublié ca clef, voici le message d’erreur&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-authn-client-key-failed.png&quot; alt=&quot;Authn User Key Failed&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mais dans le cas où tout ce passe bien l’utilisateur sera correctement authentifié sur l’application.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kc-2fa-authn-client-ok.png&quot; alt=&quot;Authn User OK&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Nous avons vu que la configuration et authentification via le standard WebAuthn est relativement simple avec Keycloak. Alors n’hesitez pas à améliorer l’experience de vos utilisateur ainsi que la sécurité de leur compte en activant très simplement cette option dans Keycloak.&lt;/p&gt;
+
+&lt;h3 id=&quot;nb&quot;&gt;NB&lt;/h3&gt;
+
+&lt;p&gt;Les fichiers de configurations seront disponibles bientôt dans un repo github.&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="Keycloak" /><category term="Yubico" /><category term="2fa" /><category term="webauthn" /><summary type="html">Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de SSO c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.</summary></entry><entry><title type="html">Éxecution d’un moteur de KYC en DMN avec Kogito</title><link href="http://localhost:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN.html" rel="alternate" type="text/html" title="Éxecution d'un moteur de KYC en DMN avec Kogito" /><published>2020-06-06T17:00:00+02:00</published><updated>2020-06-06T17:00:00+02:00</updated><id>http://localhost:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN</id><content type="html" xml:base="http://localhost:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN.html">&lt;p&gt;Dans le précedent &lt;a href=&quot;/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&quot;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard &lt;a href=&quot;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&quot;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Éxecution d’un moteur KYC en DMN avec Kogito&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;introdution-kogito&quot;&gt;Introdution Kogito&lt;/h1&gt;
+
+&lt;p&gt;Faisons un focus rapide sur &lt;a href=&quot;https://kogito.kie.org/&quot;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud.
+Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&quot;https://www.drools.org/&quot;&gt;Drools&lt;/a&gt; et &lt;a href=&quot;https://jbpm.org/&quot;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu’il est prévu d’être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.&lt;/p&gt;
+
+&lt;h2 id=&quot;business-domain-first-approach&quot;&gt;Business Domain first approach&lt;/h2&gt;
+
+&lt;p&gt;Un apport de Kogito au moteur Drools, c’est qu’il génére automatiquement l’API REST des règles DMN. Dans notre exemple nous allons copier/coller le fichier DMN KYC du post précédent et le faire tourner tel quel avec Kogito. Kogito va proposer une API &lt;code class=&quot;highlighter-rouge&quot;&gt;KYC&lt;/code&gt; acceptant le model des &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt;. Il sera donc possible de faire un appel REST / HTTP avec des données métiers sans tout le liant technique que nous aurions pu avoir avec l’implémentation purement Drools. Nous allons avoir donc une API orientée métier dépourvue de spécificité technique.&lt;/p&gt;
+
+&lt;h1 id=&quot;execution-du-projet&quot;&gt;Execution du projet&lt;/h1&gt;
+
+&lt;p&gt;Afin de pourvoir éxecuter le modele de règle KYC dans moteur Kogito il va falloir cloner le repository disponible sur Github.&lt;/p&gt;
+
+&lt;h2 id=&quot;compilation&quot;&gt;Compilation&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; git clone   &lt;span class=&quot;nt&quot;&gt;--depth&lt;/span&gt; 1  &lt;span class=&quot;nt&quot;&gt;--branch&lt;/span&gt; blog  https://github.com/gautric/dmn-knative.git
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;dmn-knative&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;execution&quot;&gt;Execution&lt;/h2&gt;
+
+&lt;p&gt;Nous allons copier le fichier KYC.dmn que nous avons fait dans le post précédent.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; https://raw.githubusercontent.com/gautric/dmn-knative/master/src/main/resources/KYC.dmn &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; src/main/resources/KYC.dmn 2&amp;gt; /dev/null 
+
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; mvn clean package quarkus:dev 
+
+... OMIT ...
+
+__  ____  __  _____   ___  __ ____  ______ 
+ &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;/ __ &lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt; / / / _ | / _ &lt;span class=&quot;se&quot;&gt;\/&lt;/span&gt; //_/ / / / __/ 
+ -/ /_/ / /_/ / __ |/ , _/ ,&amp;lt; / /_/ /&lt;span class=&quot;se&quot;&gt;\ \ &lt;/span&gt;  
+&lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;__&lt;span class=&quot;se&quot;&gt;\_\_&lt;/span&gt;___/_/ |_/_/|_/_/|_|&lt;span class=&quot;se&quot;&gt;\_&lt;/span&gt;___/___/   
+2020-06-05 17:22:27,522 INFO  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;io.quarkus] &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;main&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; dmn-knative 1.0-SNAPSHOT &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;powered by Quarkus 1.3.2.Final&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; started &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;3.600s. Listening on: http://0.0.0.0:8080
+2020-06-05 17:22:27,525 INFO  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;io.quarkus] &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;main&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Profile dev activated. Live Coding activated.
+2020-06-05 17:22:27,526 INFO  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;io.quarkus] &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;main&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; Installed features: &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;cdi, kogito, resteasy, resteasy-jackson, smallrye-openapi, swagger-ui]&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;swagger&quot;&gt;Swagger&lt;/h2&gt;
+
+&lt;p&gt;Dès que vous avez correctment la sortie standard précédente, il est possible d’accéder à l’URL suivante : &lt;a href=&quot;http://localhost:8080/&quot;&gt;http://localhost:8080/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous allez atterrir sur la page swagger du moteur Kogito, une API KYC est disponible et peut être utilisée directement via cette page ou bien un appel CURL.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/kogito_dmn.png&quot; alt=&quot;Kogito DMN&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;lappel-curl&quot;&gt;L’appel CURL&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DMN_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://localhost:8080
+
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; curl &lt;span class=&quot;nt&quot;&gt;-X&lt;/span&gt; POST &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Content-Type: application/json&quot;&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;DMN_URL&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/KYC  &lt;span class=&quot;nt&quot;&gt;--data-binary&lt;/span&gt; @- &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;  2&amp;gt; /dev/null | jq
+{
+  &quot;Amount&quot;: 250000,
+  &quot;PEP&quot;: false,
+  &quot;Fiscal Residency&quot;: &quot;JP&quot;
+}
+EOF&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Attention la commande précédente utilise l’outil &lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Vous devriez obtenir le résultat suivant :&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Amount Rule&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;MEDIUM&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;KYC&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Fiscal Residency Rule&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;LOW&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Amount&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;250000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;PEP Rule&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;LOW&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;PEP&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Level&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;function Level( input )&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Fiscal Residency&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;JP&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Nous voyons qu’avec Kogito le détail de tous les calculs intermédiaires des &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; est disponible, jusqu’au calcul final au niveau de la valeur KYC ici dans notre exemple ci-dessus. Cela est intéressant à la fois pour du debugging ou bien pour une problématique d’auditabilité du moteur.&lt;/p&gt;
+
+&lt;h2 id=&quot;exemples&quot;&gt;Exemples&lt;/h2&gt;
+
+&lt;p&gt;Des exemples sont disponibles dans le répertoire &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; du projet que l’on vient de cloner.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Avec cette exemple, nous voyons que la complexité technique d’utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n’y a plus d’excuse pour ne pas utiliser à minima le standard &lt;code class=&quot;highlighter-rouge&quot;&gt;DMN&lt;/code&gt; dans vos applications. Le projet Kogito est encore récent mais rien ne vous empeche de proposer des améliorations et/ou suggestions.&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><category term="Kogito" /><category term="KYC" /><summary type="html">Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.</summary></entry><entry><title type="html">Le standard DMN, un KYC en exemple</title><link href="http://localhost:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html" rel="alternate" type="text/html" title="Le standard DMN, un KYC en exemple" /><published>2020-06-04T17:00:00+02:00</published><updated>2020-06-04T17:00:00+02:00</updated><id>http://localhost:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple</id><content type="html" xml:base="http://localhost:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html">&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -104,15 +274,15 @@ On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt
 
 &lt;p&gt;Comme pour les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; il existe trois types de &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/dmn_bkm.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/dmn_bkm.png&quot; alt=&quot;DMN BKM&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Dans notre cas nous allons utiliser une &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision Table&lt;/code&gt; pour calculer le score pour chaque règle.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/dmn_function.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/dmn_function.png&quot; alt=&quot;DMN Function&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;On relie ensuite le &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; avec la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/dmn_bkm_full.png&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/dmn_bkm_full.png&quot; alt=&quot;Full DMN BKM&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
 
@@ -131,7 +301,7 @@ Par convention on partira du bas pour les &lt;code class=&quot;highlighter-rouge
 
 &lt;p&gt;Nous verrons dans un prochain post comment exécuter le moteur de KYC.&lt;/p&gt;
 
-&lt;p&gt;Vous pouvez voir directement &lt;a href=&quot;https://kiegroup.github.io/kogito-online/?file=https://github.com/gautric/dmn-knative/blob/master/src/main/resources/KYC.dmn#/editor/dmn&quot;&gt;le resultat du DMN avec cet éditeur en ligne&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><summary type="html">Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.</summary></entry><entry><title type="html">MQTTiser l’API Autolib avec Node-Red</title><link href="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html" rel="alternate" type="text/html" title="MQTTiser l'API Autolib avec Node-Red" /><published>2018-04-21T17:00:00+02:00</published><updated>2018-04-21T17:00:00+02:00</updated><id>http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html">&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’&lt;a href=&quot;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&quot;&gt;Autolib&lt;/a&gt; j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution &lt;a href=&quot;https://www.home-assistant.io&quot;&gt;HomeAssistant&lt;/a&gt;, j’utilisais pour cela l’&lt;a href=&quot;https://opendata.paris.fr/page/home/&quot;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&quot;https://fr.wikipedia.org/wiki/REST&quot;&gt;REST&lt;/a&gt;/&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP&quot;&gt;HTTP&lt;/a&gt;.
+&lt;p&gt;Vous pouvez voir directement &lt;a href=&quot;https://kiegroup.github.io/kogito-online/?file=https://github.com/gautric/dmn-knative/blob/master/src/main/resources/KYC.dmn#/editor/dmn&quot;&gt;le resultat du DMN avec cet éditeur en ligne&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><category term="KYC" /><category term="standard" /><summary type="html">Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.</summary></entry><entry><title type="html">MQTTiser l’API Autolib avec Node-Red</title><link href="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html" rel="alternate" type="text/html" title="MQTTiser l'API Autolib avec Node-Red" /><published>2018-04-21T17:00:00+02:00</published><updated>2018-04-21T17:00:00+02:00</updated><id>http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html">&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’&lt;a href=&quot;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&quot;&gt;Autolib&lt;/a&gt; j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution &lt;a href=&quot;https://www.home-assistant.io&quot;&gt;HomeAssistant&lt;/a&gt;, j’utilisais pour cela l’&lt;a href=&quot;https://opendata.paris.fr/page/home/&quot;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&quot;https://fr.wikipedia.org/wiki/REST&quot;&gt;REST&lt;/a&gt;/&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP&quot;&gt;HTTP&lt;/a&gt;.
 Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant &lt;a href=&quot;https://www.home-assistant.io/components/rest_command/&quot;&gt;RESTful&lt;/a&gt;.
 Je me suis dit, pourquoi ne pas :&lt;/p&gt;
 
@@ -1638,110 +1808,4 @@ L’un des étendu sur Malte est le site “Temples mégalithiques de Malte” q
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Temples_m%C3%A9galithiques_de_Malte&quot;&gt;Sur le site Wikipédia (fr)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://whc.unesco.org/fr/list/132bis&quot;&gt;Sur le site de l’UNESCO&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="UNESCO" /><category term="challenge" /><category term="miscellaneous" /><category term="voyage" /><summary type="html">Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel. Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu’à nos jours. Cela m’a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés. L’un des étendu sur Malte est le site “Temples mégalithiques de Malte” qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.</summary></entry><entry><title type="html">Camel is going into Eclipse Kura</title><link href="http://localhost:4000/blog/2016/03/18/apache-camel-eclipse-kura.html" rel="alternate" type="text/html" title="Camel is going into Eclipse Kura" /><published>2016-03-18T15:00:00+01:00</published><updated>2016-03-18T15:00:00+01:00</updated><id>http://localhost:4000/blog/2016/03/18/apache-camel-eclipse-kura</id><content type="html" xml:base="http://localhost:4000/blog/2016/03/18/apache-camel-eclipse-kura.html">&lt;p&gt;Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The &lt;a href=&quot;http://www.eclipse.org/kura/&quot;&gt;Eclipse Kura Project&lt;/a&gt; has accepted &lt;a href=&quot;https://github.com/eclipse/kura/pull/72&quot;&gt;GitHub Pull Request&lt;/a&gt; and now includes a new cool component to &lt;code class=&quot;highlighter-rouge&quot;&gt;develop&lt;/code&gt; branch. This new component is &lt;a href=&quot;http://camel.apache.org&quot;&gt;Camel Framework&lt;/a&gt; from &lt;a href=&quot;http://apache.org/&quot;&gt;Apache Foundation&lt;/a&gt;.
-&lt;a href=&quot;https://about.me/hekonsek&quot;&gt;Henryk Konsek&lt;/a&gt; a colleague of mine is the principal guy behind this new. The Camel and Kura integration starts from the first &lt;a href=&quot;http://camel.apache.org/kura.html&quot;&gt;Camel Kura component&lt;/a&gt; available since Camel version 2.15 still from Henryk.&lt;/p&gt;
-
-&lt;p&gt;I love both Eclipse Kura and Apache Camel. The first one the Platform is OSGi compliant and is very modular. We can deploy it into small computer or device like RaspberryPi. This Platform provides lot of component already integrated like GPIO, Cloud, Data Store etc…. It manages also security (TLS, X509), Configuration and Upgrade management and Web Management too.
-Camel Framework is the Java reference of Open Source &lt;a href=&quot;http://www.enterpriseintegrationpatterns.com/&quot;&gt;EIP&lt;/a&gt; when you start to connect several services together (HTTP/JMS/MQ/File) and you need to transform, compute, re-inject, (re)route those messages too.&lt;/p&gt;
-
-&lt;p&gt;I am convinced this news could provide both for Eclipse Kura and Apache Camel contributors/developers/architects to design, build, deploy new projects/PoC into the IoT field.&lt;/p&gt;
-
-&lt;p&gt;Please feel free to send me your feedback see &lt;a href=&quot;/apropos/&quot;&gt;Apropos&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;useful-links&quot;&gt;Useful links&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.eclipse.org/kura/&quot;&gt;Eclipse Kura Project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://camel.apache.org&quot;&gt;Camel Framework&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="Eclipse" /><category term="Kura" /><category term="Camel" /><summary type="html">Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The Eclipse Kura Project has accepted GitHub Pull Request and now includes a new cool component to develop branch. This new component is Camel Framework from Apache Foundation. Henryk Konsek a colleague of mine is the principal guy behind this new. The Camel and Kura integration starts from the first Camel Kura component available since Camel version 2.15 still from Henryk.</summary></entry><entry><title type="html">Device IO and i2cdetect implementation</title><link href="http://localhost:4000/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html" rel="alternate" type="text/html" title="Device IO and i2cdetect implementation" /><published>2016-03-09T15:00:00+01:00</published><updated>2016-03-09T15:00:00+01:00</updated><id>http://localhost:4000/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl</id><content type="html" xml:base="http://localhost:4000/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html">&lt;p&gt;Today, we gonna implement a quick tool available into RaspberryPi with Java &lt;a href=&quot;https://wiki.openjdk.java.net/display/dio/Main&quot;&gt;Device IO API&lt;/a&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;i2cdetect&lt;/code&gt; is a simple &lt;a href=&quot;https://en.wikipedia.org/wiki/I%C2%B2C&quot;&gt;i2c&lt;/a&gt; device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;i2cdetect with the Java Device I/O API implementation .&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;requisites&quot;&gt;Requisites&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;One &lt;a href=&quot;https://www.raspberrypi.org/products/raspberry-pi-2-model-b/&quot;&gt;RaspberryPi&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;tested w/ RPi B+&lt;/li&gt;
-      &lt;li&gt;should works with all version&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;an I2C Device&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/products/sense-hat/&quot;&gt;Sense Hat&lt;/a&gt; for example&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;compile-device-io&quot;&gt;Compile Device IO&lt;/h3&gt;
-
-&lt;p&gt;Download  Device IO API and compile it.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rbpi&amp;gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;mercurial oracle-java-8
-rbpi&amp;gt; hg clone http://hg.openjdk.java.net/dio/dev jdkdio
-rbpi&amp;gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;jdkdio&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and we need to change line below into the Makefile, to disable some low level log information.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;diff &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; ad12ae44e850 Makefile
-&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt; a/Makefile	Mon Feb 29 19:06:11 2016 +0300
-+++ b/Makefile	Tue Mar 15 16:06:07 2016 +0000
-@@ &lt;span class=&quot;nt&quot;&gt;-172&lt;/span&gt;,7 +172,7 @@
- JAVAC :&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;JAVA_HOME&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/bin/javac
- JAR :&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;JAVA_HOME&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/bin/jar
- MKDIR :&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-TARGET_C_FLAGS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;USER_C_FLAGS&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-fPIC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Wno-psabi&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-DJAVACALL_REPORT_LEVEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0 &lt;span class=&quot;nt&quot;&gt;-DENABLE_DEVICEACCESS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-MMD&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-MF&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;NATIVE_OUT_DIR&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;@&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;.d
-+TARGET_C_FLAGS &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;USER_C_FLAGS&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-fPIC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Wno-psabi&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-DJAVACALL_REPORT_LEVEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 &lt;span class=&quot;nt&quot;&gt;-DENABLE_DEVICEACCESS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-MMD&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-MF&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;NATIVE_OUT_DIR&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;@&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;.d
- TARGET_INCLUDES &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;foreach d,&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;DIO_INCLUDE_DIRS&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;,-I&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;d&lt;span class=&quot;si&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;JAVA_HOME&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/include &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;JAVA_HOME&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/include/linux
- TARGET_CXX_FLAGS &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;USER_CXX_FLAGS&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-fPIC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Wno-psabi&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-DJAVACALL_REPORT_LEVEL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;4 &lt;span class=&quot;nt&quot;&gt;-DENABLE_DEVICEACCESS&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt;
- &lt;span class=&quot;nv&quot;&gt;TARGET_LD_FLAGS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;USER_LD_FLAGS&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Xlinker&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Xlinker&lt;/span&gt; defs &lt;span class=&quot;nt&quot;&gt;-Xlinker&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O1&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;You can now compile DIO Api Library with&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rbpi&amp;gt; &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JAVA_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
-rbpi&amp;gt; &lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PI_TOOLS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/usr
-rbpi&amp;gt; make&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;compile-program&quot;&gt;Compile program&lt;/h3&gt;
-
-&lt;p&gt;Now, we compile &lt;code class=&quot;highlighter-rouge&quot;&gt;i2cdetect&lt;/code&gt; implementation as usual.&lt;/p&gt;
-
-&lt;script src=&quot;https://gist.github.com/gautric/a239adfd06b51099c6a8.js&quot;&gt;&lt;/script&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rbpi&amp;gt; wget https://gist.githubusercontent.com/gautric/a239adfd06b51099c6a8/raw/93abe18ce83b311a97300c718732088bce370ae2/I2CDetect.java
-rbpi&amp;gt; javac &lt;span class=&quot;nt&quot;&gt;-cp&lt;/span&gt; /home/pi/jdkdio/build/jar/dio.jar I2CDetect.java&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;output-result&quot;&gt;Output result&lt;/h3&gt;
-
-&lt;p&gt;If everything looks good you could execute &lt;code class=&quot;highlighter-rouge&quot;&gt;I2CDetect&lt;/code&gt; class with the following command.
-I’ve bought &lt;a href=&quot;https://www.raspberrypi.org/products/sense-hat/&quot;&gt;Sense Hat&lt;/a&gt; to plug it on top of my RaspberryPi.
-You should get this kind of output when running program.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;pi@rbpiv2-1:~ &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;java &lt;span class=&quot;nt&quot;&gt;-Djava&lt;/span&gt;.library.path&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/pi/jdkdio/build/so &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;-Djava&lt;/span&gt;.security.policy&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/opt/eclipse/kura/kura/jdk.dio.policy &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;-cp&lt;/span&gt; .:/home/pi/jdkdio/build/jar/dio.jar &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
- I2CDetect
-
-     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;
-10: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; 1c &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;
-20: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;
-30: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;
-40: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; UU &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;
-50: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; 5c &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; 5f
-60: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; 6a &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;
-70: &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt;     &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-
-&lt;p&gt;This sample is a very quick hack for a Java implementation of &lt;code class=&quot;highlighter-rouge&quot;&gt;i2cdetect&lt;/code&gt;. I have to investigate some stuff about DIO exception management to clarify this code.&lt;/p&gt;
-
-&lt;p&gt;Please feel free to send me your feedback see &lt;a href=&quot;/apropos/&quot;&gt;Apropos&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;useful-links&quot;&gt;Useful links&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://wiki.openjdk.java.net/display/dio/Main&quot;&gt;Device IO API&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/&quot;&gt;RaspberryPi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/I%C2%B2C&quot;&gt;i2c&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/products/sense-hat/&quot;&gt;Sense Hat&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="RaspberryPi" /><category term="DIO" /><category term="DeviceIO" /><category term="I2C" /><category term="API" /><summary type="html">Today, we gonna implement a quick tool available into RaspberryPi with Java Device IO API. i2cdetect is a simple i2c device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="UNESCO" /><category term="challenge" /><category term="miscellaneous" /><category term="voyage" /><summary type="html">Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel. Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu’à nos jours. Cela m’a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés. L’un des étendu sur Malte est le site “Temples mégalithiques de Malte” qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.</summary></entry></feed>
