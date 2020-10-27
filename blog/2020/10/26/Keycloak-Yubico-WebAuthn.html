@@ -89,6 +89,16 @@
   <p>Intégration/Configuration d’une authentification Webauthn avec Keycloak</p>
 </blockquote>
 
+<h2 id="le-standard-webauthn">Le standard WebAuthn</h2>
+
+<p>Le standard WebAuthn est une généralisation d’un autre standard le FIDO. Ces deux standards ont pour but de proposer une authentification forte des utilisateurs lors de leurs connexions en ligne. Il existe déjà des systemes de double authentification via SMS par exemple, mais il est possible, avec un peu de moyen, de hacker/casser soit techniquement soit socialement ce type d’authentification.</p>
+
+<p>Auparavant le standard FIDO était très axé sur des clefs matérielles via USB beaucoup plus difficile à casser (par clonage par ex) et une API dans le browser, WebAuthn supporte quant à lui d’autre type de device comme les montres connectées, les téléphones portables et d’autres types de protocole comme le BLE et/ou le NFC. WebAuthn apporte aussi au browser une API standard en Javascript qui est maintenant supportée dans la plupart des navigateurs (Chrome, Firefox, etc…).</p>
+
+<p>Lorsque d’un utilisateur se connecte à son compte en ligne le service via le browser demande à l’utilisateur d’inserer sa clef (ici : Yubikey) dans son ordinateur (utiliser sa clef NFC si il s’agit d’un telephone ou d’une tablette). Le browser dialogue donc avec le systeme d’authentification afin de verifier un challenge de sécurité, le tout est renvoyé au service pour verification finale avant l’accès au dit service. L’avantage est que l’on peut utiliser la même clef d’un service en ligne à l’autre, car le standard défini que le challenge doit etre fait par nom de domaine.</p>
+
+<p>Un des avantages de ce standard est son faible coût de deploiement à la fois pour l’utilisateur final que pour le service en ligne, grace à la standardisation il existe un certain nombre d’acteurs et de fournisseur de solution WebAuthn compatible. Une clef Yubico est aux alentours d’une cinquantaine d’euros piece, donc pour un Architecte IT comme moi cela est très raisonnable. Le service en ligne peut facilement intégrer cette fonctionnalité dans le processus d’authentification de ses utilisateurs, comme nous allons le voir dans le chapitre suivant.</p>
+
 <h2 id="installation-de-keycloak">Installation de Keycloak</h2>
 
 <p>L’installation de Keycloak est tout aussi simple que l’installation d’un serveur Wildfly/JBoss EAP, il suffit simplement <a href="https://www.keycloak.org/downloads">télécharger le zip serveur</a> puis de le dezipper dans le repertoire de son choix.</p>
@@ -109,7 +119,7 @@
 
 <p><img src="/img/kc-2fa-configure-realm.png" alt="Configuration Realm" /></p>
 
-<p>Pour la demo, nous utilisons une application de type Javascript donc n’oubliez pas de configurer en mode <code class="highlighter-rouge">public</code> l’option <code class="highlighter-rouge">Access Type</code>.</p>
+<p>Pour la demo, nous utilisons une application cliente de type Javascript donc n’oubliez pas de configurer en mode <code class="highlighter-rouge">public</code> l’option <code class="highlighter-rouge">Access Type</code>.</p>
 
 <p><img src="/img/kc-2fa-configure-client.png" alt="Configuration Client" /></p>
 
@@ -159,11 +169,11 @@
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Nous avons vu que la configuration et authentification via le standard WebAuthn est relativement simple avec Keycloak. Alors n’hesitez pas à améliorer l’experience de vos utilisateur ainsi que la sécurité de leur compte en activant très simplement cette option dans Keycloak.</p>
+<p>Nous avons vu que la configuration et authentification via le standard WebAuthn est relativement simple avec Keycloak. Alors n’hesitez pas à améliorer l’experience de vos utilisateurs ainsi que la sécurité de leur compte en activant très simplement cette option dans Keycloak/RHSSO.</p>
 
 <h3 id="nb">NB</h3>
 
-<p>Les fichiers de configurations seront disponibles bientôt dans un repo github.</p>
+<p>Les fichiers de configuration seront disponibles bientôt dans un repo github.</p>
 
   </article>
 
