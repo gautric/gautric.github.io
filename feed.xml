@@ -1,4 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-27T14:17:09+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">Keycloak, les clefs Yubico et le standard Webauthn</title><link href="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html" rel="alternate" type="text/html" title="Keycloak, les clefs Yubico et le standard Webauthn" /><published>2020-10-26T16:00:00+01:00</published><updated>2020-10-26T16:00:00+01:00</updated><id>http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn</id><content type="html" xml:base="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html">&lt;p&gt;Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de &lt;a href=&quot;https://en.wikipedia.org/wiki/Single_sign-on&quot;&gt;SSO&lt;/a&gt; c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-28T17:55:18+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">How to manage Exception inside jBPM WorkItemHandler custom component</title><link href="http://localhost:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html" rel="alternate" type="text/html" title="How to manage Exception inside jBPM WorkItemHandler custom component" /><published>2020-10-28T16:00:00+01:00</published><updated>2020-10-28T16:00:00+01:00</updated><id>http://localhost:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM</id><content type="html" xml:base="http://localhost:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html">&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-quick-sample&quot;&gt;A quick sample&lt;/h2&gt;
+
+&lt;p&gt;Let’s create a very common process with Work Item Handler (WIH).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-error-exception.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This WIH has to implement &lt;code class=&quot;highlighter-rouge&quot;&gt;org.kie.api.runtime.process.WorkItemHandler&lt;/code&gt; jBPM’s interface and its two methods &lt;code class=&quot;highlighter-rouge&quot;&gt;executeWorkItem&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;abortWorkItem&lt;/code&gt;. The first method is the nominal execution. the second one is called by jBPM to reset the workitem handler action.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;executeWorkItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;WorkItem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WorkItemManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Nominal {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WorkItemHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;net&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;jbpm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pattern&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;util&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;abortWorkItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;WorkItem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WorkItemManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Abort {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WorkItemHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As you can see this implementation throws the exception &lt;code class=&quot;highlighter-rouge&quot;&gt;net.a.g.jbpm.pattern.util.Exception&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;java-exception-to-bpmn-error-in-jbpm-engine&quot;&gt;Java Exception to BPMN Error in jBPM engine&lt;/h2&gt;
+
+&lt;p&gt;In BPMN, we just have to use/copy paste the full qualified exception name to be handled. 
+jBPM engine gonna catch this exception an create an internal signal. This signal reroute the process instance to the error branch.
+The signal will look like &lt;code class=&quot;highlighter-rouge&quot;&gt;Error-${internalUniqueId}-${exceptionClassName}&lt;/code&gt;, an in our case &lt;code class=&quot;highlighter-rouge&quot;&gt;Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception&lt;/code&gt; (don’t car about the middle UUID it is automatic).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-error-exception-handling.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can map the error instance to a process variable and reuse it inside the rest next nodes as usual.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-error-exception-mapping.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;info&quot;&gt;
+In most case and in a real life, we should wrap all exceptions into normalized ones.
+&lt;/div&gt;
+
+&lt;h2 id=&quot;unit-test-to-prove-integration&quot;&gt;Unit Test to prove integration&lt;/h2&gt;
+
+&lt;p&gt;As usual, no test no proof.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExceptionToErrorTest&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JbpmJUnitBaseTestCase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LoggerFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ExceptionToErrorTest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Test&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nc&quot;&gt;ExceptionToErrorTest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LOG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;debug&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;jBPM unit test sample&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RuntimeManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;runtimeManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createRuntimeManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;net/a/g/jbpm/pattern/ExceptionToErrorProcess.bpmn&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;RuntimeEngine&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;runtimeEngine&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getRuntimeEngine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;KieSession&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kieSession&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;runtimeEngine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getKieSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;kieSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getWorkItemManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;registerWorkItemHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WorkItemHandler&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WorkItemHandler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;kieSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProcessEventListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+			&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt;  &lt;span class=&quot;nc&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LoggerFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;net.a.g.jbpm.pattern.ProcessEventListener&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+			&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+			&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;beforeProcessStarted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ProcessStartedEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Start Processus : {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getProcessInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getProcessName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+			&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+			&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;beforeNodeTriggered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ProcessNodeTriggeredEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Node Called : {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getNodeInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getNodeName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+
+			&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+			&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;afterProcessStarted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ProcessStartedEvent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+				&lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;End Processus : {}&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getProcessInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getProcessName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+
+			&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OMIT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+
+
+        &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProcessInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;processInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kieSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startProcess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ExceptionToErrorProcess&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;assertProcessInstanceNotActive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;processInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kieSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;assertNodeTriggered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;processInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ScriptTask&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;runtimeManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;disposeRuntimeEngine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;runtimeEngine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;runtimeManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;And here is the result.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-log&quot; data-lang=&quot;log&quot;&gt;[INFO] Running net.a.g.jbpm.pattern.ExceptionToErrorTest
+16:42:26.543 [main] DEBUG org.jbpm.services.task.identity.AbstractUserGroupInfo - Callback properties will be loaded from classpath:/usergroups.properties
+16:42:26.550 [main] DEBUG org.jbpm.services.task.identity.JBossUserGroupCallbackImpl - Loaded properties {doctor=users,PM, Administrator=Administrators, frontDesk=users,PM, manager=managers,HR, mary=admins,managers,users,HR, admin=admins,managers,users,webdesigners,functionalanalysts, sales-rep=admin,managers,users,sales, john=admins,managers,users,PM, salaboy=admins,users, krisv=admins,managers,users}
+16:42:26.551 [main] DEBUG org.jbpm.test.JbpmJUnitBaseTestCase - Configuring entire test case to have data source enabled false and session persistence enabled false with persistence unit name org.jbpm.persistence.jpa
+16:42:26.560 [main] DEBUG net.a.g.jbpm.pattern.ExceptionToErrorTest - jBPM unit test sample
+16:42:26.622 [main] DEBUG org.kie.api.internal.utils.ServiceDiscoveryImpl - Loading kie.conf from  jar:file:/Users/gautric/.m2/repository/org/kie/kie-internal/7.44.0.Final/kie-internal-7.44.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc
+
+... OMIT ...
+
+16:42:28.835 [main] DEBUG org.kie.internal.runtime.manager.deploy.DeploymentDescriptorManager - No descriptor found returning default instance
+16:42:28.874 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Error handling filters [TaskExecutionErrorFilter [accepts=CannotAddTaskException, ignores=PermissionDeniedException], ProcessExecutionErrorFilter [accepts=WorkflowRuntimeException, ignores=], DBExecutionErrorFilter [accepts=SQLException,HibernateException, ignores=]]
+16:42:28.874 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Execution error storage org.jbpm.runtime.manager.impl.error.DefaultExecutionErrorStorage@2cc03cd1
+16:42:28.875 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Error event listeners java.util.ServiceLoader[org.kie.internal.runtime.error.ExecutionErrorListener]
+16:42:28.876 [main] INFO org.jbpm.runtime.manager.impl.AbstractRuntimeManager - SingletonRuntimeManager is created for default-singleton
+16:42:28.970 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Start Processus : ExceptionToErrorProcess
+16:42:28.980 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : Nominal Start
+16:42:28.982 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : WorkItemHandler
+16:42:28.987 [main] INFO net.a.g.jbpm.pattern.wih.WorkItemHandler - Nominal class net.a.g.jbpm.pattern.wih.WorkItemHandler
+16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1
+16:42:28.994 [main] INFO net.a.g.jbpm.pattern.wih.WorkItemHandler - Abort class net.a.g.jbpm.pattern.wih.WorkItemHandler
+16:42:28.995 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : ScriptTask
+16:42:28.995 [main] ERROR net.a.g.jbpm.pattern.ScriptTask - Task Error Branch Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242]
+16:42:28.995 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : Error End
+16:42:28.996 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - End Processus : ExceptionToErrorProcess
+16:42:28.997 [main] DEBUG org.drools.core.common.DefaultAgenda - State was INACTIVE is now DISPOSED
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.821 s - in net.a.g.jbpm.pattern.ExceptionToErrorTest&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;As you can see an internal signal is raised and received by the jBPM engine :&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We passed also through &lt;code class=&quot;highlighter-rouge&quot;&gt;ScriptTask&lt;/code&gt;  Node and finish the process with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Error End&lt;/code&gt; meaning we finish the process with an BPMN Error Termination as expected.&lt;/p&gt;
+
+&lt;p&gt;It means that internally jBPMN engine handle Error as specific signal. The signal starts with &lt;code class=&quot;highlighter-rouge&quot;&gt;Error&lt;/code&gt; code, followed by the UUID’s node and finishes the full qualified name of the exception.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Managing Java Exception with jBPMN is simple and intuitive. Of course, you can deal with the whole Java Exception API to have a very flexible, scalable mecahism. Feel free to test my sample, I let all links below,  feedbacks will be also appreciate.&lt;/p&gt;
+
+&lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/gautric/bpmn-pattern&quot;&gt;The Full project&lt;/a&gt; but you have to do some cleanup.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/gautric/bpmn-pattern/blob/master/src/main/resources/net/a/g/jbpm/pattern/ExceptionToErrorProcess.bpmn&quot;&gt;ExceptionToErrorProcess.bpmn&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/gautric/bpmn-pattern/blob/master/src/main/java/net/a/g/jbpm/pattern/wih/WorkItemHandler.java&quot;&gt;Custom WorkItemHandler.java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/gautric/bpmn-pattern/blob/master/src/main/java/net/a/g/jbpm/pattern/util/Exception.java&quot;&gt;Custom Exception.java&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;hhttps://github.com/gautric/bpmn-pattern/blob/master/src/test/java/net/a/g/jbpm/pattern/ExceptionToErrorTest.java&quot;&gt;The Full Test Case.java&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="jBPM" /><category term="WorkItemHandler" /><category term="Exception" /><summary type="html">When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.</summary></entry><entry><title type="html">Keycloak, les clefs Yubico et le standard Webauthn</title><link href="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html" rel="alternate" type="text/html" title="Keycloak, les clefs Yubico et le standard Webauthn" /><published>2020-10-26T16:00:00+01:00</published><updated>2020-10-26T16:00:00+01:00</updated><id>http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn</id><content type="html" xml:base="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html">&lt;p&gt;Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de &lt;a href=&quot;https://en.wikipedia.org/wiki/Single_sign-on&quot;&gt;SSO&lt;/a&gt; c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
 
 &lt;p&gt;Il y a quelques temps déjà, j’ai acheté et configuré des clefs Yubico afin de faire du &lt;a href=&quot;https://en.wikipedia.org/wiki/Multi-factor_authentication&quot;&gt;2FA&lt;/a&gt; avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc…) proposent ce type d’authentification qui apporte une sécurité supplémentaire des comptes en ligne.&lt;/p&gt;
 
@@ -1754,78 +1900,4 @@ Les &lt;a href=&quot;https://github.com/jboss-developer/jboss-eap-quickstarts&qu
   &lt;li&gt;&lt;a href=&quot;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&quot;&gt;Announcing JBoss EAP 7 (en)&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://access.redhat.com/articles/2026253&quot;&gt;Support configuration&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://access.redhat.com/articles/112673#EAP_7&quot;&gt;Liste des framework&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><summary type="html">Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d’anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d’application phare à savoir JBoss EAP 7. Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l’architecture générale du serveur d’application. Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.</summary></entry><entry><title type="html">UNESCO Challenge, point UNESCO, Malte / Malta</title><link href="http://localhost:4000/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html" rel="alternate" type="text/html" title="UNESCO Challenge, point UNESCO, Malte / Malta" /><published>2016-06-14T15:58:00+02:00</published><updated>2016-06-14T15:58:00+02:00</updated><id>http://localhost:4000/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte</id><content type="html" xml:base="http://localhost:4000/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html">&lt;p&gt;Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel.
-Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu’à nos jours. Cela m’a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.
-L’un des étendu sur Malte est le site “Temples mégalithiques de Malte” qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.&lt;/p&gt;
-
-&lt;p&gt;Voici la liste des lieux inclus dans le site UNESCO :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Les Temples Ġgantija&lt;/li&gt;
-  &lt;li&gt;Le Temple Skorba&lt;/li&gt;
-  &lt;li&gt;Ta’ Ħaġrat&lt;/li&gt;
-  &lt;li&gt;Les Temples Ħaġar Qim&lt;/li&gt;
-  &lt;li&gt;Les Temples Tarxien&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Temples mégalithiques de Malte&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;unesco-résumé&quot;&gt;UNESCO résumé&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Titre (fr)&lt;/td&gt;
-      &lt;td&gt;Temples mégalithiques de Malte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Ancien titre&lt;/td&gt;
-      &lt;td&gt;Temple de Ġgantija&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Id&lt;/td&gt;
-      &lt;td&gt;132bis&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Date d’enregistrement&lt;/td&gt;
-      &lt;td&gt;1980&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Localisation de la stelle&lt;/td&gt;
-      &lt;td&gt;À l’entrée du musée du site de Ġgantija sur l’île de Gozo&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Visité le&lt;/td&gt;
-      &lt;td&gt;2015-06-06&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Interet&lt;/td&gt;
-      &lt;td&gt;Haute&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;la-photo&quot;&gt;La photo&lt;/h2&gt;
-
-&lt;p&gt;La photo finish :&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/MALTE_UNESCO_1.jpg&quot; style=&quot;max-width:75%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/MALTE_UNESCO_2.jpg&quot; style=&quot;max-width:75%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/MALTE_UNESCO_3.jpg&quot; style=&quot;max-width:75%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;liens&quot;&gt;Liens&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Temples_m%C3%A9galithiques_de_Malte&quot;&gt;Sur le site Wikipédia (fr)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://whc.unesco.org/fr/list/132bis&quot;&gt;Sur le site de l’UNESCO&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="UNESCO" /><category term="challenge" /><category term="miscellaneous" /><category term="voyage" /><summary type="html">Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel. Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu’à nos jours. Cela m’a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés. L’un des étendu sur Malte est le site “Temples mégalithiques de Malte” qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><summary type="html">Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d’anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d’application phare à savoir JBoss EAP 7. Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l’architecture générale du serveur d’application. Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.</summary></entry></feed>

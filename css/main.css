@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { mar
 p { line-height: 150%; margin-bottom: 20px; text-align: justify; text-justify: inter-word; }
 
 /** Images */
-img { max-width: 100%; vertical-align: middle; }
+img { vertical-align: middle; max-width: 80%; display: block; margin-left: auto; margin-right: auto; }
 
 /** Figures */
 figure > img { display: block; }
