@@ -22,6 +22,8 @@ p { line-height: 150%; margin-bottom: 20px; text-align: justify; text-justify: i
 /** Images */
 img { vertical-align: middle; max-width: 80%; display: block; margin-left: auto; margin-right: auto; }
 
+.flag { display: inline; }
+
 /** Figures */
 figure > img { display: block; }
 
