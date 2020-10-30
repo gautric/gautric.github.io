@@ -112,7 +112,7 @@ L’utilisateur utilise un token généré par sa clef comme mot de passe. Ce mo
 
 <p>Recupérer le code source yubico-java-client et le compiler :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
 greg@a.net&gt; cd yubico-java-client  
 greg@a.net&gt; mvn clean package  
 
@@ -157,8 +157,8 @@ greg@a.net&gt;
 
 <p>JBoss ne propose pas par defaut de module Yubico, il faut le créer <em>module.xml</em> :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
-<span class="c">&lt;!--  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;!--  
   ~ JBoss, Home of Professional Open Source.  
   ~ Copyright 2014, Red Hat, Inc., and individual contributors  
   ~ as indicated by the @author tags. See the copyright.txt file in the  
@@ -178,34 +178,34 @@ greg@a.net&gt;
   ~ License along with this software; if not, write to the Free  
   ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  
   ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.  
-  --&gt;</span>  
+  --&gt;  
 
-<span class="nt">&lt;module</span> <span class="na">xmlns=</span><span class="s">"urn:jboss:module:1.1"</span> <span class="na">name=</span><span class="s">"com.yubico"</span><span class="nt">&gt;</span>  
-   <span class="nt">&lt;resources&gt;</span>  
-     <span class="nt">&lt;resource-root</span> <span class="na">path=</span><span class="s">"yubico-jaas-module-3.0.0-SNAPSHOT.jar"</span><span class="nt">/&gt;</span>  
-     <span class="nt">&lt;resource-root</span> <span class="na">path=</span><span class="s">"yubico-validation-client2-3.0.0-SNAPSHOT.jar"</span><span class="nt">/&gt;</span>  
-     <span class="nt">&lt;resource-root</span> <span class="na">path=</span><span class="s">"vt-ldap-3.3.3.jar"</span><span class="nt">/&gt;</span>  
-   <span class="nt">&lt;/resources&gt;</span>  
-   <span class="nt">&lt;dependencies&gt;</span>  
-     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.picketbox"</span><span class="nt">/&gt;</span>  
-     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"javax.api"</span><span class="nt">/&gt;</span>  
-     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.slf4j"</span><span class="nt">/&gt;</span>  
-     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.apache.commons.codec"</span> <span class="nt">/&gt;</span>  
-     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"javax.security.jacc.api"</span> <span class="nt">/&gt;</span>   <span class="c">&lt;!-- for a future propose --&gt;</span>  
-     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"javax.servlet.api"</span><span class="nt">/&gt;</span>          <span class="c">&lt;!-- for a future propose --&gt;</span>  
-     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"org.jboss.common-core"</span><span class="nt">/&gt;</span>      <span class="c">&lt;!-- for a future propose --&gt;</span>  
-   <span class="nt">&lt;/dependencies&gt;</span>  
-<span class="nt">&lt;/module&gt;</span>  
+&lt;module xmlns="urn:jboss:module:1.1" name="com.yubico"&gt;  
+   &lt;resources&gt;  
+     &lt;resource-root path="yubico-jaas-module-3.0.0-SNAPSHOT.jar"/&gt;  
+     &lt;resource-root path="yubico-validation-client2-3.0.0-SNAPSHOT.jar"/&gt;  
+     &lt;resource-root path="vt-ldap-3.3.3.jar"/&gt;  
+   &lt;/resources&gt;  
+   &lt;dependencies&gt;  
+     &lt;module name="org.picketbox"/&gt;  
+     &lt;module name="javax.api"/&gt;  
+     &lt;module name="org.slf4j"/&gt;  
+     &lt;module name="org.apache.commons.codec" /&gt;  
+     &lt;module name="javax.security.jacc.api" /&gt;   &lt;!-- for a future propose --&gt;  
+     &lt;module name="javax.servlet.api"/&gt;          &lt;!-- for a future propose --&gt;  
+     &lt;module name="org.jboss.common-core"/&gt;      &lt;!-- for a future propose --&gt;  
+   &lt;/dependencies&gt;  
+&lt;/module&gt;  
 </code></pre></div></div>
 
 <p>Copier le ainsi que les jar dans le répertoire suivant :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$JBOSS_HOME/module/com/yubico/main
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$JBOSS_HOME/module/com/yubico/main
 </code></pre></div></div>
 
 <p>Ne pas oublier le copier le jar suivant, à récupérer de son cache maven après compilation :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>edu.vt.middleware:vt-ldap:3.3.3
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>edu.vt.middleware:vt-ldap:3.3.3
 </code></pre></div></div>
 
 <p>Tips : Pour mode debug rapide, faire un lien symbolique (Unix like seulement)</p>
@@ -242,7 +242,7 @@ greg@a.net&gt;
 
 <p>Créer un fichier de correspondance entre le PublicId de l’utilisateur et son login, comme ceci :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
 yk.&lt;PublicId&gt;.user = &lt;login&gt;  
 </code></pre></div></div>
 
@@ -253,7 +253,7 @@ Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
 
 <p>Création d’un security domaine dans le fichier standalone.xml.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;security-domain name="yubico-auth" cache-type="default"&gt;  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;security-domain name="yubico-auth" cache-type="default"&gt;  
       &lt;authentication&gt;  
           &lt;login-module code="com.yubico.jaas.YubikeyLoginModule" flag="required" module="com.yubico"&gt;  
               &lt;module-option name="clientId" value="12123"/&gt;  
@@ -276,17 +276,17 @@ Il est bien sûr possible de changer via une autre source de données.</p>
 
 <p>Du pur standard JBoss, inclure le nom du security domain dans le fichier jboss-web.xml, comme suit :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>  
-<span class="nt">&lt;jboss-web&gt;</span>  
-   <span class="nt">&lt;security-domain&gt;</span>yubico-auth<span class="nt">&lt;/security-domain&gt;</span>  
-<span class="nt">&lt;/jboss-web&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;  
+&lt;jboss-web&gt;  
+   &lt;security-domain&gt;yubico-auth&lt;/security-domain&gt;  
+&lt;/jboss-web&gt;
 </code></pre></div></div>
 
 <h2 id="9ème-étape--création-du-mécanisme-dauthentification">9ème étape : Création du mécanisme d’authentification</h2>
 
 <p>Dans la page de formulaire de login.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method='post' action='j_security_check'&gt;  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form method='post' action='j_security_check'&gt;  
   &lt;input type='text' name='j_username'&gt;  
   &lt;input type='password' name='j_password'&gt;  
 &lt;/form&gt;  
@@ -294,7 +294,7 @@ Il est bien sûr possible de changer via une autre source de données.</p>
 
 <p>dans le fichier web.xml</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;web-app&gt;  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;web-app&gt;  
 &lt;security-constraint&gt;  
   &lt;web-resource-collection&gt;  
    &lt;web-resource-name&gt;User Auth&lt;/web-resource-name&gt;  
@@ -330,7 +330,7 @@ Il est bien sûr possible de changer via une autre source de données.</p>
 
 <p>Afin de contrôler le bon fonctionnement on passe en mode log verbeu</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
 DEBUG [org.apache.catalina.authenticator]  Security checking request GET /form-auth/  
 DEBUG [org.apache.catalina.authenticator]   Calling hasUserDataPermission()  
 DEBUG [org.apache.catalina.authenticator]   Calling authenticate()  
@@ -371,7 +371,7 @@ TRACE [org.jboss.as.web.security]  End invoke, caller=null
 
 <p>Dans les traces, on retrouve les principales informations de l’utilisateur :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;LOGIN_USER&gt; : the login user
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;LOGIN_USER&gt; : the login user
 XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY : the OTP sent to Yubico Cloud Service
 XXXXXXXXXXXX : the Public Id, the Yubico key user
 </code></pre></div></div>

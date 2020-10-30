@@ -93,7 +93,7 @@
 
 <p><img src="/img/jbpm-error-exception.png" alt="" /></p>
 
-<p>This WIH has to implement <code class="highlighter-rouge">org.kie.api.runtime.process.WorkItemHandler</code> jBPM’s interface and its two methods <code class="highlighter-rouge">executeWorkItem</code> and <code class="highlighter-rouge">abortWorkItem</code>. The first method is the nominal execution. the second one is called by jBPM to reset the workitem handler action.</p>
+<p>This WIH has to implement <code class="language-plaintext highlighter-rouge">org.kie.api.runtime.process.WorkItemHandler</code> jBPM’s interface and its two methods <code class="language-plaintext highlighter-rouge">executeWorkItem</code> and <code class="language-plaintext highlighter-rouge">abortWorkItem</code>. The first method is the nominal execution. the second one is called by jBPM to reset the workitem handler action.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">	<span class="nd">@Override</span>
 	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">executeWorkItem</span><span class="o">(</span><span class="nc">WorkItem</span> <span class="n">workItem</span><span class="o">,</span> <span class="nc">WorkItemManager</span> <span class="n">manager</span><span class="o">)</span> <span class="o">{</span>
@@ -107,13 +107,13 @@
 
 	<span class="o">}</span></code></pre></figure>
 
-<p>As you can see this implementation throws the exception <code class="highlighter-rouge">net.a.g.jbpm.pattern.util.Exception</code>.</p>
+<p>As you can see this implementation throws the exception <code class="language-plaintext highlighter-rouge">net.a.g.jbpm.pattern.util.Exception</code>.</p>
 
 <h2 id="java-exception-to-bpmn-error-in-jbpm-engine">Java Exception to BPMN Error in jBPM engine</h2>
 
 <p>In BPMN, we just have to use/copy paste the full qualified exception name to be handled. 
-jBPM engine gonna catch this exception an create an internal signal. This signal reroute the process instance to the error branch.
-The signal will look like <code class="highlighter-rouge">Error-${internalUniqueId}-${exceptionClassName}</code>, an in our case <code class="highlighter-rouge">Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception</code> (don’t car about the middle UUID it is automatic).</p>
+jBPM engine gonna catch this exception and create an internal signal. This signal reroutes the process instance to the error branch.
+The signal looks like <code class="language-plaintext highlighter-rouge">Error-${internalUniqueId}-${exceptionClassName}</code>, and in our case <code class="language-plaintext highlighter-rouge">Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception</code> (don’t care about the middle UUID it is internal and automatic).</p>
 
 <p><img src="/img/jbpm-error-exception-handling.png" alt="" /></p>
 
@@ -127,7 +127,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
 <h2 id="unit-test-to-prove-integration">Unit Test to prove integration</h2>
 
-<p>As usual, no test no proof.</p>
+<p>As usual, no test no proof. Here is a common sample test. We have to register our WIH into the KieSession. We also created an listerner to illustrate all steps.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExceptionToErrorTest</span> <span class="kd">extends</span> <span class="nc">JbpmJUnitBaseTestCase</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Logger</span> <span class="no">LOG</span> <span class="o">=</span> <span class="nc">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nc">ExceptionToErrorTest</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
@@ -170,6 +170,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
         <span class="n">assertProcessInstanceNotActive</span><span class="o">(</span><span class="n">processInstance</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="n">kieSession</span><span class="o">);</span>
         <span class="n">assertNodeTriggered</span><span class="o">(</span><span class="n">processInstance</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="s">"ScriptTask"</span><span class="o">);</span>
+		<span class="n">assertNodeTriggered</span><span class="o">(</span><span class="n">processInstance</span><span class="o">.</span><span class="na">getId</span><span class="o">(),</span> <span class="s">"Error End"</span><span class="o">);</span>
         
         <span class="n">runtimeManager</span><span class="o">.</span><span class="na">disposeRuntimeEngine</span><span class="o">(</span><span class="n">runtimeEngine</span><span class="o">);</span>
         <span class="n">runtimeManager</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
@@ -207,11 +208,11 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
 <p>As you can see an internal signal is raised and received by the jBPM engine :</p>
 
-<p><code class="highlighter-rouge">16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1</code></p>
+<p><code class="language-plaintext highlighter-rouge">16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1</code></p>
 
-<p>We passed also through <code class="highlighter-rouge">ScriptTask</code>  Node and finish the process with the <code class="highlighter-rouge">Error End</code> meaning we finish the process with an BPMN Error Termination as expected.</p>
+<p>We passed also through <code class="language-plaintext highlighter-rouge">ScriptTask</code>  Node and finish the process with the <code class="language-plaintext highlighter-rouge">Error End</code> meaning we finish the process with an BPMN Error Termination as expected.</p>
 
-<p>It means that internally jBPMN engine handle Error as specific signal. The signal starts with <code class="highlighter-rouge">Error</code> code, followed by the UUID’s node and finishes the full qualified name of the exception.</p>
+<p>It means that internally jBPMN engine handle Error as specific signal. The signal starts with <code class="language-plaintext highlighter-rouge">Error</code> code, followed by the UUID’s node and finishes the full qualified name of the exception.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 

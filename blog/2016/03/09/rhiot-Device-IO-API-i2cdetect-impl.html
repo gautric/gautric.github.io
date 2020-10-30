@@ -79,7 +79,7 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Mar 9, 2016  <a href="#en">en</a>  <a href="#RaspberryPi">RaspberryPi</a>  <a href="#DIO">DIO</a>  <a href="#DeviceIO">DeviceIO</a>  <a href="#I2C">I2C</a>  <a href="#API">API</a> </p>
-    <p>Today, we gonna implement a quick tool available into RaspberryPi with Java <a href="https://wiki.openjdk.java.net/display/dio/Main">Device IO API</a>. <code class="highlighter-rouge">i2cdetect</code> is a simple <a href="https://en.wikipedia.org/wiki/I%C2%B2C">i2c</a> device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.</p>
+    <p>Today, we gonna implement a quick tool available into RaspberryPi with Java <a href="https://wiki.openjdk.java.net/display/dio/Main">Device IO API</a>. <code class="language-plaintext highlighter-rouge">i2cdetect</code> is a simple <a href="https://en.wikipedia.org/wiki/I%C2%B2C">i2c</a> device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.</p>
 
 <blockquote>
   <p>i2cdetect with the Java Device I/O API implementation .</p>
@@ -129,7 +129,7 @@ rbpi&gt; make</code></pre></figure>
 
 <h3 id="compile-program">Compile program</h3>
 
-<p>Now, we compile <code class="highlighter-rouge">i2cdetect</code> implementation as usual.</p>
+<p>Now, we compile <code class="language-plaintext highlighter-rouge">i2cdetect</code> implementation as usual.</p>
 
 <script src="https://gist.github.com/gautric/a239adfd06b51099c6a8.js"></script>
 
@@ -138,7 +138,7 @@ rbpi&gt; javac <span class="nt">-cp</span> /home/pi/jdkdio/build/jar/dio.jar I2C
 
 <h3 id="output-result">Output result</h3>
 
-<p>If everything looks good you could execute <code class="highlighter-rouge">I2CDetect</code> class with the following command.
+<p>If everything looks good you could execute <code class="language-plaintext highlighter-rouge">I2CDetect</code> class with the following command.
 I’ve bought <a href="https://www.raspberrypi.org/products/sense-hat/">Sense Hat</a> to plug it on top of my RaspberryPi.
 You should get this kind of output when running program.</p>
 
@@ -159,7 +159,7 @@ You should get this kind of output when running program.</p>
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>This sample is a very quick hack for a Java implementation of <code class="highlighter-rouge">i2cdetect</code>. I have to investigate some stuff about DIO exception management to clarify this code.</p>
+<p>This sample is a very quick hack for a Java implementation of <code class="language-plaintext highlighter-rouge">i2cdetect</code>. I have to investigate some stuff about DIO exception management to clarify this code.</p>
 
 <p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
 

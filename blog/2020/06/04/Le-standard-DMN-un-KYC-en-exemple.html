@@ -114,19 +114,19 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.</p>
   <li><strong><em>PEP</em></strong>
     <ul>
       <li>Pour Political Exposed People</li>
-      <li>de type <code class="highlighter-rouge">boolean</code></li>
+      <li>de type <code class="language-plaintext highlighter-rouge">boolean</code></li>
     </ul>
   </li>
   <li><strong><em>Amount</em></strong>
     <ul>
       <li>Pour la quantité de son apport</li>
-      <li>de type <code class="highlighter-rouge">number</code></li>
+      <li>de type <code class="language-plaintext highlighter-rouge">number</code></li>
     </ul>
   </li>
   <li><strong><em>Fiscal Residency</em></strong>
     <ul>
       <li>Pour la localisation de sa résidence fiscal</li>
-      <li>de type <code class="highlighter-rouge">string</code></li>
+      <li>de type <code class="language-plaintext highlighter-rouge">string</code></li>
     </ul>
   </li>
 </ol>
@@ -139,20 +139,20 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.</p>
 
 <h2 id="les-decision">Les Decision</h2>
 
-<p>Le principal élément du DMN est le concept de Decision. Cette <code class="highlighter-rouge">Decision</code> va calculer un résultat en fonction d’une ou plusieurs entrée.
+<p>Le principal élément du DMN est le concept de Decision. Cette <code class="language-plaintext highlighter-rouge">Decision</code> va calculer un résultat en fonction d’une ou plusieurs entrée.
 On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
 
 <p><img src="/img/dmn_decision_box.png" /></p>
 
-<p>On lie ensuite les <code class="highlighter-rouge">Input</code> avec les <code class="highlighter-rouge">Decision</code></p>
+<p>On lie ensuite les <code class="language-plaintext highlighter-rouge">Input</code> avec les <code class="language-plaintext highlighter-rouge">Decision</code></p>
 
 <p><img src="/img/dmn_decision.png" /></p>
 
-<p>Ensuite, il est possible de lier les <code class="highlighter-rouge">Decision</code> entre elles, afin de remonter les sorties des premières <code class="highlighter-rouge">Decision</code> dans une autre <code class="highlighter-rouge">Decision</code></p>
+<p>Ensuite, il est possible de lier les <code class="language-plaintext highlighter-rouge">Decision</code> entre elles, afin de remonter les sorties des premières <code class="language-plaintext highlighter-rouge">Decision</code> dans une autre <code class="language-plaintext highlighter-rouge">Decision</code></p>
 
 <p><img src="/img/dmn_decision_link.png" /></p>
 
-<p>Ici <code class="highlighter-rouge">Input</code> <em>PEP</em> est utilisé par la <code class="highlighter-rouge">Decision</code> <em>PEP Rule</em>, qui sera lui utilisé dans la <code class="highlighter-rouge">Decision</code> <em>KYC</em>.</p>
+<p>Ici <code class="language-plaintext highlighter-rouge">Input</code> <em>PEP</em> est utilisé par la <code class="language-plaintext highlighter-rouge">Decision</code> <em>PEP Rule</em>, qui sera lui utilisé dans la <code class="language-plaintext highlighter-rouge">Decision</code> <em>KYC</em>.</p>
 
 <h3 id="type-de-décision">Type de décision</h3>
 
@@ -173,7 +173,7 @@ On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
   <li>Context
     <ul>
       <li>Il s’agit d’une liste de variables associées à des valeurs</li>
-      <li>Chaque valeur de la liste peut etre le resultat d’une  <code class="highlighter-rouge">Literal expression</code>, d’une <code class="highlighter-rouge">Decision Table</code> ou d’une <code class="highlighter-rouge">BKM</code>.</li>
+      <li>Chaque valeur de la liste peut etre le resultat d’une  <code class="language-plaintext highlighter-rouge">Literal expression</code>, d’une <code class="language-plaintext highlighter-rouge">Decision Table</code> ou d’une <code class="language-plaintext highlighter-rouge">BKM</code>.</li>
       <li>ex: <img src="/img/dmn_context.png" /></li>
     </ul>
   </li>
@@ -181,34 +181,34 @@ On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
 
 <h2 id="les-business-knowledge-model">Les Business Knowledge Model</h2>
 
-<p>Les <code class="highlighter-rouge">Business Knowledge Model</code> fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un développeur, les <code class="highlighter-rouge">BKM</code> peuvent être vues comme des fonctions réutilisable dans une ou plusieurs <code class="highlighter-rouge">Decision</code>, notamment car elles s’appellent directement dans les <code class="highlighter-rouge">Decision</code> et qu’elles possèdent des paramètres d’entrées.</p>
+<p>Les <code class="language-plaintext highlighter-rouge">Business Knowledge Model</code> fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un développeur, les <code class="language-plaintext highlighter-rouge">BKM</code> peuvent être vues comme des fonctions réutilisable dans une ou plusieurs <code class="language-plaintext highlighter-rouge">Decision</code>, notamment car elles s’appellent directement dans les <code class="language-plaintext highlighter-rouge">Decision</code> et qu’elles possèdent des paramètres d’entrées.</p>
 
-<p>Comme pour les <code class="highlighter-rouge">Decision</code> il existe trois types de <code class="highlighter-rouge">BKM</code>.</p>
+<p>Comme pour les <code class="language-plaintext highlighter-rouge">Decision</code> il existe trois types de <code class="language-plaintext highlighter-rouge">BKM</code>.</p>
 
 <p><img src="/img/dmn_bkm.png" alt="DMN BKM" /></p>
 
-<p>Dans notre cas nous allons utiliser une <code class="highlighter-rouge">Decision Table</code> pour calculer le score pour chaque règle.</p>
+<p>Dans notre cas nous allons utiliser une <code class="language-plaintext highlighter-rouge">Decision Table</code> pour calculer le score pour chaque règle.</p>
 
 <p><img src="/img/dmn_function.png" alt="DMN Function" /></p>
 
-<p>On relie ensuite le <code class="highlighter-rouge">BKM</code> avec la <code class="highlighter-rouge">Decision</code></p>
+<p>On relie ensuite le <code class="language-plaintext highlighter-rouge">BKM</code> avec la <code class="language-plaintext highlighter-rouge">Decision</code></p>
 
 <p><img src="/img/dmn_bkm_full.png" alt="Full DMN BKM" /></p>
 
 <h2 id="result">Result</h2>
 
-<p>C’est la <code class="highlighter-rouge">Decision</code> KYC qui va contenir le résultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la <code class="highlighter-rouge">BKM</code> Level de chaque retour des <code class="highlighter-rouge">Decision</code> rule. Bien sur, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL <em>(Friendly Enough Expression Language)</em>. Il s’agit d’un langage qui ressemble un peu aux macros Excel.
+<p>C’est la <code class="language-plaintext highlighter-rouge">Decision</code> KYC qui va contenir le résultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la <code class="language-plaintext highlighter-rouge">BKM</code> Level de chaque retour des <code class="language-plaintext highlighter-rouge">Decision</code> rule. Bien sur, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL <em>(Friendly Enough Expression Language)</em>. Il s’agit d’un langage qui ressemble un peu aux macros Excel.
 .</p>
 
 <p><img src="/img/dmn_result.png" /></p>
 
-<p>Pour résumer, les <code class="highlighter-rouge">Input</code> sont donc utilisés dans les <code class="highlighter-rouge">Decision</code>, ces <code class="highlighter-rouge">Decision</code> sont reliées à des <code class="highlighter-rouge">BKM</code> ou bien d’autres <code class="highlighter-rouge">Decision</code> qui au fur et à mesure se termine vers une seule <code class="highlighter-rouge">Decision</code>.
-Comme on l’a vue précédemment, la <code class="highlighter-rouge">Decision</code> finale peut avoir plusieurs type de retour.
-Par convention on partira du bas pour les <code class="highlighter-rouge">Input</code> puis étage par étage on empilera les <code class="highlighter-rouge">Decision</code> jusqu’à les réduire en une seule.</p>
+<p>Pour résumer, les <code class="language-plaintext highlighter-rouge">Input</code> sont donc utilisés dans les <code class="language-plaintext highlighter-rouge">Decision</code>, ces <code class="language-plaintext highlighter-rouge">Decision</code> sont reliées à des <code class="language-plaintext highlighter-rouge">BKM</code> ou bien d’autres <code class="language-plaintext highlighter-rouge">Decision</code> qui au fur et à mesure se termine vers une seule <code class="language-plaintext highlighter-rouge">Decision</code>.
+Comme on l’a vue précédemment, la <code class="language-plaintext highlighter-rouge">Decision</code> finale peut avoir plusieurs type de retour.
+Par convention on partira du bas pour les <code class="language-plaintext highlighter-rouge">Input</code> puis étage par étage on empilera les <code class="language-plaintext highlighter-rouge">Decision</code> jusqu’à les réduire en une seule.</p>
 
 <h1 id="conclusion">Conclusion</h1>
 
-<p>J’espère que cette brève introduction à <code class="highlighter-rouge">DMN</code> vous aura convaincu de l’utiliser dans vos projets de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut être automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.</p>
+<p>J’espère que cette brève introduction à <code class="language-plaintext highlighter-rouge">DMN</code> vous aura convaincu de l’utiliser dans vos projets de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut être automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.</p>
 
 <p>Nous verrons dans un prochain post comment exécuter le moteur de KYC.</p>
 

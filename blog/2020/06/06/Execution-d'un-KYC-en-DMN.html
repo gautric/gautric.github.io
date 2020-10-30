@@ -92,7 +92,7 @@ Ce moteur de règle reprend en grande partie tout le coeur et le developpement d
 
 <h2 id="business-domain-first-approach">Business Domain first approach</h2>
 
-<p>Un apport de Kogito au moteur Drools, c’est qu’il génére automatiquement l’API REST des règles DMN. Dans notre exemple nous allons copier/coller le fichier DMN KYC du post précédent et le faire tourner tel quel avec Kogito. Kogito va proposer une API <code class="highlighter-rouge">KYC</code> acceptant le model des <code class="highlighter-rouge">Input</code>. Il sera donc possible de faire un appel REST / HTTP avec des données métiers sans tout le liant technique que nous aurions pu avoir avec l’implémentation purement Drools. Nous allons avoir donc une API orientée métier dépourvue de spécificité technique.</p>
+<p>Un apport de Kogito au moteur Drools, c’est qu’il génére automatiquement l’API REST des règles DMN. Dans notre exemple nous allons copier/coller le fichier DMN KYC du post précédent et le faire tourner tel quel avec Kogito. Kogito va proposer une API <code class="language-plaintext highlighter-rouge">KYC</code> acceptant le model des <code class="language-plaintext highlighter-rouge">Input</code>. Il sera donc possible de faire un appel REST / HTTP avec des données métiers sans tout le liant technique que nous aurions pu avoir avec l’implémentation purement Drools. Nous allons avoir donc une API orientée métier dépourvue de spécificité technique.</p>
 
 <h1 id="execution-du-projet">Execution du projet</h1>
 
@@ -157,15 +157,15 @@ EOF</span></code></pre></figure>
   </span><span class="nl">"Fiscal Residency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JP"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<p>Nous voyons qu’avec Kogito le détail de tous les calculs intermédiaires des <code class="highlighter-rouge">Decision</code> est disponible, jusqu’au calcul final au niveau de la valeur KYC ici dans notre exemple ci-dessus. Cela est intéressant à la fois pour du debugging ou bien pour une problématique d’auditabilité du moteur.</p>
+<p>Nous voyons qu’avec Kogito le détail de tous les calculs intermédiaires des <code class="language-plaintext highlighter-rouge">Decision</code> est disponible, jusqu’au calcul final au niveau de la valeur KYC ici dans notre exemple ci-dessus. Cela est intéressant à la fois pour du debugging ou bien pour une problématique d’auditabilité du moteur.</p>
 
 <h2 id="exemples">Exemples</h2>
 
-<p>Des exemples sont disponibles dans le répertoire <code class="highlighter-rouge">data</code> du projet que l’on vient de cloner.</p>
+<p>Des exemples sont disponibles dans le répertoire <code class="language-plaintext highlighter-rouge">data</code> du projet que l’on vient de cloner.</p>
 
 <h1 id="conclusion">Conclusion</h1>
 
-<p>Avec cette exemple, nous voyons que la complexité technique d’utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n’y a plus d’excuse pour ne pas utiliser à minima le standard <code class="highlighter-rouge">DMN</code> dans vos applications. Le projet Kogito est encore récent mais rien ne vous empeche de proposer des améliorations et/ou suggestions.</p>
+<p>Avec cette exemple, nous voyons que la complexité technique d’utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n’y a plus d’excuse pour ne pas utiliser à minima le standard <code class="language-plaintext highlighter-rouge">DMN</code> dans vos applications. Le projet Kogito est encore récent mais rien ne vous empeche de proposer des améliorations et/ou suggestions.</p>
 
 
   </article>

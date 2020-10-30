@@ -115,13 +115,13 @@
 <h3 id="startup-activemq">Startup ActiveMQ</h3>
 
 <p>To retrieve and collect data we gonna start an ActiveMQ instance with following command line.
-You can install it everywhere you want, your RaspberryPi must be able to ping and connect to it through <code class="highlighter-rouge">MQTT port = 1883</code>.
+You can install it everywhere you want, your RaspberryPi must be able to ping and connect to it through <code class="language-plaintext highlighter-rouge">MQTT port = 1883</code>.
 <a href="http://activemq.apache.org/download.html">Download</a> and <a href="http://www.apache.org/dyn/closer.cgi?path=/activemq/5.13.2/apache-activemq-5.13.2-bin.tar.gz">install the latest version 5.13.2</a></p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> <span class="k">${</span><span class="nv">ACTIVEMQ_HOME</span><span class="k">}</span>/bin
 ./activemq start</code></pre></figure>
 
-<p>Remember your <code class="highlighter-rouge">ActiveMQ Instance IP</code>.</p>
+<p>Remember your <code class="language-plaintext highlighter-rouge">ActiveMQ Instance IP</code>.</p>
 
 <p><a href="http://activemq.apache.org/getting-started.html#GettingStarted-OnUnix:">More information into ActiveMQ Getting Started</a></p>
 
@@ -129,7 +129,7 @@ You can install it everywhere you want, your RaspberryPi must be able to ping an
 
 <h4 id="install-kura-to-raspberrypi">Install Kura to RaspberryPi</h4>
 
-<p>Download Kura version depending your RaspberryPi version. <code class="highlighter-rouge">RPI_VERSION</code> can be <code class="highlighter-rouge">pi</code>, <code class="highlighter-rouge">pi-2</code>, <code class="highlighter-rouge">pi-bplus</code>.</p>
+<p>Download Kura version depending your RaspberryPi version. <code class="language-plaintext highlighter-rouge">RPI_VERSION</code> can be <code class="language-plaintext highlighter-rouge">pi</code>, <code class="language-plaintext highlighter-rouge">pi-2</code>, <code class="language-plaintext highlighter-rouge">pi-bplus</code>.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">macos&gt; ssh pi@<span class="k">${</span><span class="nv">RASPBERRYPI_IP</span><span class="k">}</span>
 rbpi&gt; <span class="nb">export </span><span class="nv">KURA_VERSION</span><span class="o">=</span>1.4.0
@@ -139,7 +139,7 @@ rbpi&gt; <span class="nb">sudo </span>dpkg <span class="nt">-i</span> kura_<span
 
 <h4 id="configure-it-for-camel-support">Configure it for Camel support</h4>
 
-<p>Just add property below to kura <code class="highlighter-rouge">config.ini</code></p>
+<p>Just add property below to kura <code class="language-plaintext highlighter-rouge">config.ini</code></p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">rbpi&gt; <span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s2">"echo </span><span class="se">\"</span><span class="s2">org.osgi.framework.bootdelegation=sun.*,com.sun.*</span><span class="se">\"</span><span class="s2"> &gt;&gt; /opt/eclipse/kura/kura/config.ini "</span>
 rbpi&gt; <span class="nb">sudo </span>reboot</code></pre></figure>
@@ -152,9 +152,9 @@ rbpi&gt; <span class="nb">sudo </span>reboot</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">rpbi&gt; <span class="nb">sudo </span>service kura start  </code></pre></figure>
 
-<p>Configure the broker address (MQTT server) via the <a href="http://RPI_IP_ADDR/kura">Kura Web UI</a> change ip address with your <code class="highlighter-rouge">RaspberryPi IP</code> into your browser.</p>
+<p>Configure the broker address (MQTT server) via the <a href="http://RPI_IP_ADDR/kura">Kura Web UI</a> change ip address with your <code class="language-plaintext highlighter-rouge">RaspberryPi IP</code> into your browser.</p>
 
-<p>Change the <code class="highlighter-rouge">broker-url</code> parameter  with your<code class="highlighter-rouge">ActiveMQ Instance IP</code></p>
+<p>Change the <code class="language-plaintext highlighter-rouge">broker-url</code> parameter  with your<code class="language-plaintext highlighter-rouge">ActiveMQ Instance IP</code></p>
 
 <p><img src="/img/kura-cloud-config.png" style="max-width:80%;" /></p>
 
@@ -173,7 +173,7 @@ The Hall sensor sends a message when magnetic field is close. Temp and pressure 
 
 <p>Download our <a href="https://github.com/rhiot/quickstarts/tree/kura-camel-dio/kura-camel-dio">Kura Rhiot quickstart directly from github repository</a>.</p>
 
-<p>and compile Kura-Rhiot Sample via common <code class="highlighter-rouge">mvn clean package</code> and copy it to your RaspberryPi</p>
+<p>and compile Kura-Rhiot Sample via common <code class="language-plaintext highlighter-rouge">mvn clean package</code> and copy it to your RaspberryPi</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">git clone <span class="nt">-b</span> kura-camel-dio https://github.com/rhiot/quickstarts.git
 <span class="nb">cd </span>quickstarts/kura-camel-dio
@@ -192,7 +192,7 @@ scp target/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar pi@<span class="k">${</span><
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">rpbi&gt; <span class="nb">sudo </span>service kura start  </code></pre></figure>
 
-<p>you can use <code class="highlighter-rouge">tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
+<p>you can use <code class="language-plaintext highlighter-rouge">tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
 
 <p>Copy to RaspberryPi and Install all bundles and connect to Kura OSGi via telnet protocol:</p>
 
@@ -208,7 +208,7 @@ Escape character is <span class="s1">'^]'</span><span class="nb">.</span>
  <span class="nb">install </span>file:///home/pi/camel-device-io-0.1.5-SNAPSHOT.jar    
  <span class="nb">install </span>file:///home/pi/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar</code></pre></figure>
 
-<p>And start all INSTALLED bundle, use <code class="highlighter-rouge">ss</code> OSGi command to retrieve correct bundle ids.</p>
+<p>And start all INSTALLED bundle, use <code class="language-plaintext highlighter-rouge">ss</code> OSGi command to retrieve correct bundle ids.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">start 68 69 70 71 72 73</code></pre></figure>
 

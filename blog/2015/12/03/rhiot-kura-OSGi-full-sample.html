@@ -150,23 +150,23 @@ You can test and configure your workspace with Heater Demo Project
   </li>
 </ul>
 
-<p>After create a new folder into <code class="highlighter-rouge">target-definition</code> project like <code class="highlighter-rouge">camel/2.16.0</code> and copy all previous downloaded libraries into it.</p>
+<p>After create a new folder into <code class="language-plaintext highlighter-rouge">target-definition</code> project like <code class="language-plaintext highlighter-rouge">camel/2.16.0</code> and copy all previous downloaded libraries into it.</p>
 
 <p><img src="/img/kura-camel-rhiot-1.png" style="max-width:33%;" /></p>
 
-<p>Open Target Definition panel and <code class="highlighter-rouge">Add...</code> a new <code class="highlighter-rouge">Installation</code> mapped to the new <code class="highlighter-rouge">camel/2.16.0</code> folder.</p>
+<p>Open Target Definition panel and <code class="language-plaintext highlighter-rouge">Add...</code> a new <code class="language-plaintext highlighter-rouge">Installation</code> mapped to the new <code class="language-plaintext highlighter-rouge">camel/2.16.0</code> folder.</p>
 
 <p><img src="/img/kura-camel-rhiot-2.png" style="max-width:100%;" /></p>
 
-<p>Verify that <code class="highlighter-rouge">Target Content</code> loads correctly Camel and Rhiot libraries, click into <code class="highlighter-rouge">Content</code> tab to check.</p>
+<p>Verify that <code class="language-plaintext highlighter-rouge">Target Content</code> loads correctly Camel and Rhiot libraries, click into <code class="language-plaintext highlighter-rouge">Content</code> tab to check.</p>
 
 <p><img src="/img/kura-camel-rhiot-3.png" style="max-width:100%;" /></p>
 
-<p>Save configuration and click the <code class="highlighter-rouge">Set as Target Definition</code> action (top right).</p>
+<p>Save configuration and click the <code class="language-plaintext highlighter-rouge">Set as Target Definition</code> action (top right).</p>
 
 <h4 id="launch-configuration">Launch configuration</h4>
 
-<p>We just finish to setup <code class="highlighter-rouge">Target Definition</code> stack, now we will see how to run it with the <code class="highlighter-rouge">Launch</code> command.</p>
+<p>We just finish to setup <code class="language-plaintext highlighter-rouge">Target Definition</code> stack, now we will see how to run it with the <code class="language-plaintext highlighter-rouge">Launch</code> command.</p>
 
 <p><img src="/img/kura-camel-rhiot-4.png" style="max-width:33%;" />
 <img src="/img/kura-camel-rhiot-5.png" style="max-width:33%;" /></p>
@@ -175,7 +175,7 @@ You can test and configure your workspace with Heater Demo Project
 
 <p><img src="/img/kura-camel-rhiot-6.png" style="max-width:100%;" /></p>
 
-<p>In order to check Installation, just run the <code class="highlighter-rouge">Launch</code> command as usual and check bundles loading via OSGi <code class="highlighter-rouge">ss</code> command.</p>
+<p>In order to check Installation, just run the <code class="language-plaintext highlighter-rouge">Launch</code> command as usual and check bundles loading via OSGi <code class="language-plaintext highlighter-rouge">ss</code> command.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">osgi&gt; ss | <span class="nb">grep </span>camel
 39	ACTIVE      org.apache.camel.camel-core_2.16.0
@@ -195,29 +195,29 @@ You can test and configure your workspace with Heater Demo Project
 
 <p>Download our <a href="https://github.com/rhiot/quickstarts/tree/master/kura-camel">Kura Rhiot quickstart directly from github repository</a>.</p>
 
-<p>Change <code class="highlighter-rouge">GatewayRouter</code> class with</p>
+<p>Change <code class="language-plaintext highlighter-rouge">GatewayRouter</code> class with</p>
 
 <script src="https://gist.github.com/gautric/e478b4b28b40c8270257.js"></script>
 
-<p><code class="highlighter-rouge">GatewayRouter</code> contains our Camel route as usual. It is a OSGi Service. Change <code class="highlighter-rouge">GatewayRouter.xml</code> file with</p>
+<p><code class="language-plaintext highlighter-rouge">GatewayRouter</code> contains our Camel route as usual. It is a OSGi Service. Change <code class="language-plaintext highlighter-rouge">GatewayRouter.xml</code> file with</p>
 
 <script src="https://gist.github.com/gautric/2134986bb6114b035cd5.js"></script>
 
 <p>This OSGi file is needed to start GatewayRouter service with <a href="https://osgi.org/xmlns/scr/v1.1.0/scr.xsd">Service Component Runtime</a> mechanism. Because we use SCR an not BundleActivation stuff.</p>
 
-<p>, change <code class="highlighter-rouge">io.rhiot.quickstarts.kura.camel.GatewayRouter.xml</code> file with</p>
+<p>, change <code class="language-plaintext highlighter-rouge">io.rhiot.quickstarts.kura.camel.GatewayRouter.xml</code> file with</p>
 
 <script src="https://gist.github.com/gautric/052adb5b2acf1b96c3cc.js"></script>
 
-<p>This last file provides configuration attributes used by <code class="highlighter-rouge">GatewayRouter</code> route, like <code class="highlighter-rouge">camel.kura.gpio.ouput.id</code>.</p>
+<p>This last file provides configuration attributes used by <code class="language-plaintext highlighter-rouge">GatewayRouter</code> route, like <code class="language-plaintext highlighter-rouge">camel.kura.gpio.ouput.id</code>.</p>
 
-<p>Compile via maven <code class="highlighter-rouge">mvn clean package -Dmaven.test.skip=true</code> to regenerate some MANIFEST and OSGi stuff via Bnd maven plugin.</p>
+<p>Compile via maven <code class="language-plaintext highlighter-rouge">mvn clean package -Dmaven.test.skip=true</code> to regenerate some MANIFEST and OSGi stuff via Bnd maven plugin.</p>
 
-<p>You can also checkout remote branch <code class="highlighter-rouge">https://github.com/rhiot/quickstarts/tree/kura-gpio</code>.</p>
+<p>You can also checkout remote branch <code class="language-plaintext highlighter-rouge">https://github.com/rhiot/quickstarts/tree/kura-gpio</code>.</p>
 
 <h4 id="emulator-run">Emulator run</h4>
 
-<p>Use <code class="highlighter-rouge">Kura_Emulator_OSX</code> Eclipse to run Equinox OSGi.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">Kura_Emulator_OSX</code> Eclipse to run Equinox OSGi.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">a little log4j modification <span class="sb">`</span><span class="k">${</span><span class="nv">loc_workspace</span><span class="k">}</span>/org.eclipse.kura.emulator/src/main/resources/log4j.properties<span class="sb">`</span> file.
 
@@ -325,7 +325,7 @@ osgi&gt; Framework is running <span class="k">in </span>emulation mode
 
 <h3 id="bundles-installation-into-raspberrypi">Bundles installation into RaspberryPi</h3>
 
-<p>Compile Kura-Rhiot Sample via common <code class="highlighter-rouge">mvn clean package</code></p>
+<p>Compile Kura-Rhiot Sample via common <code class="language-plaintext highlighter-rouge">mvn clean package</code></p>
 
 <p>After you have installed <a href="https://s3.amazonaws.com/kura_downloads/raspbian/release/1.3.0/kura_1.3.0_raspberry-pi-bplus-nn_installer.deb">Kura deb</a> into RaspberryPi you can start and install bundles.</p>
 
@@ -333,7 +333,7 @@ osgi&gt; Framework is running <span class="k">in </span>emulation mode
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">rpbi&gt; <span class="nb">sudo </span>service kura start  </code></pre></figure>
 
-<p>you can use <code class="highlighter-rouge">tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
+<p>you can use <code class="language-plaintext highlighter-rouge">tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
 
 <p>Copy to RaspberryPi and Install all bundles via command line. Connect to Kura OSGi via telnet protocol:</p>
 

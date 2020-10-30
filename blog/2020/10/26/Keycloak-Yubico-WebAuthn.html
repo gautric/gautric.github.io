@@ -111,7 +111,7 @@
 <p>En production, on passera par un Realm (Royaume) n’utilisant pas le système de fichier de stockage des utilisateurs/mots de passe mais plutôt un annuaire LDAP disponible dans la plupart des systèmes d’information.</p>
 
 <h3 id="démarrer-keycloakrhsso">Démarrer Keycloak/RHSSO</h3>
-<p>Le démarrage de Keycloak se fait comme un Wildfly/JBoss EAP via la commande <code class="highlighter-rouge">standalone.sh</code>.</p>
+<p>Le démarrage de Keycloak se fait comme un Wildfly/JBoss EAP via la commande <code class="language-plaintext highlighter-rouge">standalone.sh</code>.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$&gt;</span> bin/standalone.sh <span class="nt">-b</span> 0.0.0.0</code></pre></figure>
 
@@ -123,15 +123,15 @@
 
 <p><img src="/img/kc-2fa-configure-realm.png" alt="Configuration Realm" /></p>
 
-<p>Pour la demo, nous utilisons une application cliente de type Javascript donc n’oubliez pas de configurer en mode <code class="highlighter-rouge">public</code> l’option <code class="highlighter-rouge">Access Type</code>.</p>
+<p>Pour la demo, nous utilisons une application cliente de type Javascript donc n’oubliez pas de configurer en mode <code class="language-plaintext highlighter-rouge">public</code> l’option <code class="language-plaintext highlighter-rouge">Access Type</code>.</p>
 
 <p><img src="/img/kc-2fa-configure-client.png" alt="Configuration Client" /></p>
 
-<p>Dans Browser Flow il suffit de rajouter le <code class="highlighter-rouge">WebAuthn Authenticator</code> executor dans le flow normal.</p>
+<p>Dans Browser Flow il suffit de rajouter le <code class="language-plaintext highlighter-rouge">WebAuthn Authenticator</code> executor dans le flow normal.</p>
 
 <p><img src="/img/kc-2fa-configure-flow.png" alt="Configuration Flow" /></p>
 
-<p>Dans la configuration du WebAuthn, n’oubliez pas de configurer le <code class="highlighter-rouge">Relying Party Entity Name</code>.</p>
+<p>Dans la configuration du WebAuthn, n’oubliez pas de configurer le <code class="language-plaintext highlighter-rouge">Relying Party Entity Name</code>.</p>
 
 <p><img src="/img/kc-2fa-configure-2fa.png" alt="Configuration 2fa" /></p>
 
@@ -149,7 +149,7 @@
 
 <p><img src="/img/kc-yubico.jpg" alt="Yubico Key" /></p>
 
-<p>Ensuite il est possible de configurer un label pour ce processus d’authentification <code class="highlighter-rouge">WebAuthn Yubico Blue</code>.</p>
+<p>Ensuite il est possible de configurer un label pour ce processus d’authentification <code class="language-plaintext highlighter-rouge">WebAuthn Yubico Blue</code>.</p>
 
 <p><img src="/img/kc-2fa-register-key-label.png" alt="Register Key Label" /></p>
 
