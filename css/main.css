@@ -47,7 +47,7 @@ a:visited { color: #1756a9; }
 a:hover { color: #111; text-decoration: none; }
 
 /** Blockquotes */
-blockquote { color: #828282; border-left: 4px solid #e8e8e8; padding-left: 10px; font-size: 18px; letter-spacing: 0px; font-style: italic; font-family: "Petit+Formal+Script"; text-shadow: 1px 1px 1px #aaa; }
+blockquote { color: #828282; border-left: 4px solid #e8e8e8; padding-left: 10px; font-size: 22px; letter-spacing: 0px; font-style: italic; font-family: "Petit+Formal+Script"; text-shadow: 1px 1px 1px #aaa; }
 
 blockquote > :last-child { margin-bottom: 0; }
 

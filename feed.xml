@@ -1,4 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-28T21:02:12+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">How to manage Exception inside a jBPM WorkItemHandler custom component</title><link href="http://localhost:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html" rel="alternate" type="text/html" title="How to manage Exception inside a jBPM WorkItemHandler custom component" /><published>2020-10-28T16:00:00+01:00</published><updated>2020-10-28T16:00:00+01:00</updated><id>http://localhost:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM</id><content type="html" xml:base="http://localhost:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html">&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2021-09-27T04:24:07-05:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Architecte Open Source, Blog Pro / Page Perso de Greg Autric, Java, Web, Cloud, JBoss, Red Hat, OpenSource</subtitle><entry><title type="html">Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools</title><link href="http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM.html" rel="alternate" type="text/html" title="Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools" /><published>2021-09-26T10:00:00-05:00</published><updated>2021-09-26T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM.html">&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&quot;fnref:2020&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2020&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d’expertiser les solutions qu’ils mettent en place dans leur système d’information et notamment le produit &lt;a href=&quot;https://developers.redhat.com/products/rhpam/overview&quot;&gt;RHPAM&lt;/a&gt;&lt;sup id=&quot;fnref:jbpm&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:jbpm&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d’un client donc, j’ai travaillé sur les processus metiers qu’il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n’allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j’ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Découplage de la réception du signal de son utilisation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Il est vrai qu’en anglais cela rendrait plutôt “Decoupling Signal Reception”.&lt;/p&gt;
+
+&lt;h2 id=&quot;rappel-des-processus-bpmn&quot;&gt;Rappel des processus BPMN&lt;/h2&gt;
+
+&lt;p&gt;Les Processus BPMN permettent de décrire des processus métier de haut niveau sous la forme de graphique standardisés par Object Management Group (OMG) specification.
+Ces processus métiers facilitent la communication car ils peuvent être écrits par les métiers via des outils de design de type NoCode et deployés sans changement par les intégrateurs sur des moteurs prévus à cet effet. Le standard BPMN normalise les processus métiers avec des concepts largements éprouvés au fil du temps (notion de timer, de signaux, de message, d’appel, etc…).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://access.redhat.com/webassets/avalon/d/Red_Hat_Process_Automation_Manager-7.3-Process_designer_Business_Process_Model_and_Notation_BPMN2_reference_guide-en-US/images/aee1d31b5af75c88df09df6e0f551b2c/subprocess.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;les-signaux-dans-bpmn&quot;&gt;Les signaux dans BPMN&lt;/h3&gt;
+
+&lt;p&gt;Les signaux dans le standard BPMN servent à communiquer des événements métiers aux processus.
+Les processus peuvent être à la fois émetteur ou récepteur des événements de type signal.
+En fonction des besoins, les processus communiquent les uns avec les autres sur la base de signaux.
+Les signaux peuvent être éxogènes au système BPM.&lt;/p&gt;
+
+&lt;h4 id=&quot;nomeclature&quot;&gt;Nomeclature&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Voici le noeud pour démarrer une instance de processus après avoir recu un message.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://access.redhat.com/webassets/avalon/d/Red_Hat_Process_Automation_Manager-7.3-Process_designer_Business_Process_Model_and_Notation_BPMN2_reference_guide-en-US/images/9cc74191cdf22549a73ad8f904f8754d/bpmn-signal-start.png&quot; alt=&quot;Signal Start event&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pour écouter puis continuer l’éxecution d’une instance de processus après avoir recu le bon signal, on utilisera ce noeud.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://access.redhat.com/webassets/avalon/d/Red_Hat_Process_Automation_Manager-7.3-Process_designer_Business_Process_Model_and_Notation_BPMN2_reference_guide-en-US/images/3d9480f8f2c20c306c21f2d16a8c1db8/bpmn-intermediate-signal.png&quot; alt=&quot;Signal Catching Event&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;warn&quot;&gt;
+Ce noeud est bloquant, l'instance de processus est en attente de la réception du signal.
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;L’envoi d’un signal en cours de traitement est possible avec le noeud suivant.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://access.redhat.com/webassets/avalon/d/Red_Hat_Process_Automation_Manager-7.3-Process_designer_Business_Process_Model_and_Notation_BPMN2_reference_guide-en-US/images/90694fc3ec2964e0f43245281ed87df1/bpmn-signal-throwing.png&quot; alt=&quot;Signal Throwing Event&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Et enfin le noeud permettant de finir une instance de processus tout en envoyant un signal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://access.redhat.com/webassets/avalon/d/Red_Hat_Process_Automation_Manager-7.3-Process_designer_Business_Process_Model_and_Notation_BPMN2_reference_guide-en-US/images/f262354a95af508ef2fd529635b79a55/bpmn-end-signal.png&quot; alt=&quot;Signal End Event&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans tous les cas, il est nécessaire de donner un nom de signal. Ce nom doit être le plus parlant possible tout en évitant d’être trop technique.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RELANCE_CLIENT&lt;/li&gt;
+  &lt;li&gt;NOTIFICATION_FOURNISSEUR&lt;/li&gt;
+  &lt;li&gt;ERREUR_PROCEDURE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;info&quot;&gt;
+Avec jBPM/RHPAM, les noms des signaux peuvent être variabilisés comme ceci : ALERTE_#{ID_CLIENT}
+&lt;/div&gt;
+
+&lt;h4 id=&quot;scope-des-signaux&quot;&gt;Scope des Signaux&lt;/h4&gt;
+
+&lt;p&gt;En fonction du fournisseur BPM, le scope d’émission du message peut être modulé. Le scope correspond à la portée du signal qui peut être envoyé &lt;em&gt;plus ou moins loin&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Instance de processus
+    &lt;ul&gt;
+      &lt;li&gt;Le signal est envoyé au niveau d’instance de processus&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Model de processus
+    &lt;ul&gt;
+      &lt;li&gt;Le signal est envoyé au niveau de la définition du model du processus courant&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Project/déploiement
+    &lt;ul&gt;
+      &lt;li&gt;Le signal est envoyé à un ensemble des processus d’un ou plusieurs projets techniques.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Global
+    &lt;ul&gt;
+      &lt;li&gt;Le signal est envoyé à tous les processus du moteur&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Externe
+    &lt;ul&gt;
+      &lt;li&gt;Le signal est diffusé plus largement à l’exterieur de l’instance du moteur de processus.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mal définir le scope peut avoir un impact sur les performances en fonction des moteurs, car plus ou moins d’instances de processus peuvent réceptionner le signal.&lt;/p&gt;
+&lt;div class=&quot;warn&quot;&gt;
+Les scopes ne sont pas forcement tous implémentés dans les solutions.
+&lt;/div&gt;
+
+&lt;h4 id=&quot;interaction&quot;&gt;Interaction&lt;/h4&gt;
+
+&lt;p&gt;Les différentes implémentations des moteurs BPM fournissent des interfaces afin de dialoguer via des signaux aux instances de processus.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;IHM
+    &lt;ul&gt;
+      &lt;li&gt;Le logiciel fourni une interface graphique (web, desktop) afin d’émettre le signal à un ou plusieurs processus.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;API REST
+    &lt;ul&gt;
+      &lt;li&gt;Une API REST (ou SOAP) est proposée et permet d’interagir via un appel REST/HTTP/JMS&lt;sup id=&quot;fnref:api&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:api&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; au moteur de processus.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;API code
+    &lt;ul&gt;
+      &lt;li&gt;Selon le logiciel BPM, celui-ci est muni d’une (ou plusieurs) librairie(s)&lt;sup id=&quot;fnref:lt&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:lt&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; technique.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voici un tutorial (en anglais) d’un de mes collègue &lt;a href=&quot;https://github.com/dmarrazzo&quot;&gt;Donato Marrazzo&lt;/a&gt; présentant l’utilisation des signaux avec jBPM/RHPAM&lt;/p&gt;
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/hAH9kDfMFHQ&quot; frameborder=&quot;1&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;découplage-de-signaux&quot;&gt;Découplage de signaux&lt;/h2&gt;
+
+&lt;p&gt;Lors de l’activation d’un signal “Signal Step”, le processus va se mettre en “écoute” pour réceptionner le signal.
+Il se peut que le signal, pour des besoins métiers, soit lancé (bien) avant l’activation du noeud signal, donc le processus peut manquer la réception du signal, le signal sera donc perdu et le processus restera toujours bloqué. 
+Il est bien sur possible d’avoir une branche incluant un délai afin de créer un branche de sortie et donc débloquer le processus. Mais en toute logique, le branche de délestage ne sera pas la branche nominale.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-signal-processus.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mais quant est-il si l’on souhaite tout de même recevoir le signal à n’importe quel moment&lt;sup id=&quot;fnref:duree&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:duree&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;, notamment si les actions avant la réception du signal sont longues “Long running Sub-Process”, et tout de même réagir à l’événement signal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://access.redhat.com/webassets/avalon/d/Red_Hat_Process_Automation_Manager-7.3-Process_designer_Business_Process_Model_and_Notation_BPMN2_reference_guide-en-US/images/3d9480f8f2c20c306c21f2d16a8c1db8/bpmn-intermediate-signal.png&quot; alt=&quot;Signal Catching Event&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Car comme nous l’avons vu précedement, la réception du signal sera possible dès que le moteur BPM arrivera sur le noeud “Catching Signal”, pas avant. Il nous faut donc essayer de trouver un nouveau pattern afin de découpler la récepetion du signal.&lt;/p&gt;
+
+&lt;h3 id=&quot;sous-processus&quot;&gt;Sous-Processus&lt;/h3&gt;
+
+&lt;p&gt;Pour cela nous allons créer un sous-processus attenant au processus principal. L’idée principale de ce sous-processus se mettre ne écoute de l’évenement signal même si on ne va pas utiliser cette information tout de suite dans le pocessus principal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-signal-subprocess.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Avec ce sous processus nous allons simplement recevoir le signal via le noeud “Signal Start Event”, à n’importe quel moment du cycle de vie du processus.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://access.redhat.com/webassets/avalon/d/Red_Hat_Process_Automation_Manager-7.3-Process_designer_Business_Process_Model_and_Notation_BPMN2_reference_guide-en-US/images/9cc74191cdf22549a73ad8f904f8754d/bpmn-signal-start.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Le deuxième noeud “Script Node” va stocker l’événement signal dans la session Drools.
+et comme la session Drools est difficilement auditable nous copions aussi l’événement dans une variable de processus &lt;sup id=&quot;fnref:var&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:var&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Fact insertion into Drools Session&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;kcontext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getKieRuntime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SUB_PROCESS_SIGNAL&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Coping variable of the signal event into process variables &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;kcontext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setVariable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SubProcessSignalFlag&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Received&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Drools est le moteur de règle intégré à jBPM. Il fourni à la fois un langage de programmation pour concevoir des règles métiers et un moteur inférence qui réagi automatique à chaque changement de contexte. Ici notre contexte sera la session Drools de l’instance de processus dans laquelle on insere une nouvel objet &lt;sup id=&quot;fnref:obj&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:obj&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ensuite, on termine simplement le sous-processus et on rend la main.&lt;/p&gt;
+
+&lt;p&gt;Avec ce sous-processus de réception de signal, nous stocker dans la session (Drools) et/ou une variable de processus. L’évenement signal est bien sauvegrader dans l’instance de processus. Il va falloir maintenant exploiter cet information disponible dans les infos du processus.&lt;/p&gt;
+
+&lt;h3 id=&quot;branche-de-traitement&quot;&gt;Branche de traitement&lt;/h3&gt;
+
+&lt;p&gt;Afin d’exploiter l’événement signal stocké dans les infos de l’instance de processus, nous allons modifier notre processus.
+Voici maintenant le mécanisme d’utilisation de l’événement signal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-signal-drools-flow.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Nous remplacons l’attende du signal par une condition particulière. Cette condition, dans notre cas, est stockée dans la session Drools.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-signal-drools-impl.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Le noeud “Drools Step” configure le “Conditinal Event” sous la forme d’une règle Drools. Ici, ce noeud vérifie la présence de l’objet String dans la session, cette chaîne de caratère devra être égale à “SUB_PROCESS_SIGNAL” pour valider la condition.&lt;/p&gt;
+
+&lt;p&gt;La session Drools, mise à jour via le sous-processus de réception du signal, est utilisée quand il le faut par l’instance de processus.
+L’avantage de l’utilisation du conditionnal event est qu’il peut être rafraichi à tout moment si la session change, donc la session peut être mise à jour avant ou pendant l’activation du noeud et donc faire avancer l’instance de processus comme il se doit.&lt;/p&gt;
+
+&lt;h2 id=&quot;final&quot;&gt;Final&lt;/h2&gt;
+
+&lt;p&gt;Voici donc, le schéma complet du processus implémentant le pattern que nous venont de voir. Ce schéma générique ne gère pour l’instant un signal et un type de condition, mais il est tout à fait possible d’avoir une implémentation plus complexe en fonction du besoin métier (plusieurs signaux, plusieurs variables, plusieurs conditions).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jbpm-signal-full-processus.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;warn&quot;&gt;
+Ce pattern possède néammoins le défaut de perdre la signification, dans la branche de traitement, de la source du &quot;Conditinal Event&quot;. En effet, le signal est réceptionné dans un sous-processus dédié, il est donc important de bien documenter l'élément déclancheur du &quot;Conditinal Event&quot;.
+&lt;/div&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Ce pattern permet de répondre au besoin de découplage de la réception du signal de son utilisation plus tard dans le processus. Il n’y a plus besoin donc de bloquer le processus principal sur le signal et donc il est possible d’effectuer des traitements relativement long tout en continuant à utiliser les signaux.
+Cela apporte plus de flexibilité dans le design de conception des processus sans trop perdre dans lisibilité des modèles.&lt;/p&gt;
+
+&lt;!-- ### Links
+
+* [The Full project](https://github.com/gautric/bpmn-pattern) but you have to do some cleanup. --&gt;
+
+&lt;h4 id=&quot;remerciements&quot;&gt;Remerciements&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Un grand remerciement à T. B., mon contact client qui se reconnaitra.&lt;/li&gt;
+  &lt;li&gt;À &lt;a href=&quot;https://fr.linkedin.com/in/snoussi&quot;&gt;Rachid Snoussi&lt;/a&gt; pour la relecture.&lt;/li&gt;
+  &lt;li&gt;Thx &lt;a href=&quot;http://dmarrazzo.github.io/&quot;&gt;Donato Marrazzo&lt;/a&gt; for your tutorial.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:2020&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Sur site ou bien à distance depuis mars 2020 :-(. &lt;a href=&quot;#fnref:2020&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:jbpm&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;RHPAM est un produit Red Hat, jBPM est le projet communautaire à la base de RHPAM. &lt;a href=&quot;#fnref:jbpm&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:api&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;peut dépendre du fournisseur &lt;a href=&quot;#fnref:api&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:lt&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;pour différents langages de programmation Java, C/C++, Python, JS etc… &lt;a href=&quot;#fnref:lt&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:duree&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;pendant la durée du processus uniquement. &lt;a href=&quot;#fnref:duree&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:var&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;On peut bien entendu utiliser les fonctions de “Data Assignments” pour le stockage de l’événement signal dans la table d’audit (activer le mécanisme d’audit de jBPM) ou bien les listeners afin de tracer le signal via un code spécifique. &lt;a href=&quot;#fnref:var&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:obj&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Objet plus ou moins complexe. &lt;a href=&quot;#fnref:obj&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="fr" /><category term="jBPM" /><category term="Drools" /><category term="Pattern" /><category term="Signal" /><category term="Reception" /><summary type="html">Pour mon activité professionnelle, je me déplace1 chez les clients afin d’expertiser les solutions qu’ils mettent en place dans leur système d’information et notamment le produit RHPAM2. Pour le compte d’un client donc, j’ai travaillé sur les processus metiers qu’il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n’allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j’ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation . Sur site ou bien à distance depuis mars 2020 :-(. &amp;#8617; RHPAM est un produit Red Hat, jBPM est le projet communautaire à la base de RHPAM. &amp;#8617;</summary></entry><entry><title type="html">How to manage Exception inside a jBPM WorkItemHandler custom component</title><link href="http://0.0.0.0:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html" rel="alternate" type="text/html" title="How to manage Exception inside a jBPM WorkItemHandler custom component" /><published>2020-10-28T10:00:00-05:00</published><updated>2020-10-28T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html">&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;
@@ -12,7 +246,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/img/jbpm-error-exception.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;This WIH has to implement &lt;code class=&quot;highlighter-rouge&quot;&gt;org.kie.api.runtime.process.WorkItemHandler&lt;/code&gt; jBPM’s interface and its two methods &lt;code class=&quot;highlighter-rouge&quot;&gt;executeWorkItem&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;abortWorkItem&lt;/code&gt;. The first method is the nominal execution. the second one is called by jBPM to reset the workitem handler action.&lt;/p&gt;
+&lt;p&gt;This WIH has to implement &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;org.kie.api.runtime.process.WorkItemHandler&lt;/code&gt; jBPM’s interface and its two methods &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;executeWorkItem&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;abortWorkItem&lt;/code&gt;. The first method is the nominal execution. the second one is called by jBPM to reset the workitem handler action.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
 	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;executeWorkItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;WorkItem&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;workItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WorkItemManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;manager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -26,13 +260,13 @@
 
 	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;As you can see this implementation throws the exception &lt;code class=&quot;highlighter-rouge&quot;&gt;net.a.g.jbpm.pattern.util.Exception&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;As you can see this implementation throws the exception &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;net.a.g.jbpm.pattern.util.Exception&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;java-exception-to-bpmn-error-in-jbpm-engine&quot;&gt;Java Exception to BPMN Error in jBPM engine&lt;/h2&gt;
 
 &lt;p&gt;In BPMN, we just have to use/copy paste the full qualified exception name to be handled. 
-jBPM engine gonna catch this exception an create an internal signal. This signal reroute the process instance to the error branch.
-The signal will look like &lt;code class=&quot;highlighter-rouge&quot;&gt;Error-${internalUniqueId}-${exceptionClassName}&lt;/code&gt;, an in our case &lt;code class=&quot;highlighter-rouge&quot;&gt;Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception&lt;/code&gt; (don’t car about the middle UUID it is automatic).&lt;/p&gt;
+jBPM engine gonna catch this exception and create an internal signal. This signal reroutes the process instance to the error branch.
+The signal looks like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Error-${internalUniqueId}-${exceptionClassName}&lt;/code&gt;, and in our case &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception&lt;/code&gt; (don’t care about the middle UUID it is internal and automatic).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/jbpm-error-exception-handling.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
@@ -46,7 +280,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
 &lt;h2 id=&quot;unit-test-to-prove-integration&quot;&gt;Unit Test to prove integration&lt;/h2&gt;
 
-&lt;p&gt;As usual, no test no proof.&lt;/p&gt;
+&lt;p&gt;As usual, no test no proof. Here is a common sample test. We have to register our WIH into the KieSession. We also created an listerner to illustrate all steps.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-java&quot; data-lang=&quot;java&quot;&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExceptionToErrorTest&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;JbpmJUnitBaseTestCase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Logger&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;LOG&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LoggerFactory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ExceptionToErrorTest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
@@ -89,6 +323,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
         &lt;span class=&quot;n&quot;&gt;assertProcessInstanceNotActive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;processInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kieSession&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;assertNodeTriggered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;processInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ScriptTask&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;assertNodeTriggered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;processInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Error End&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
         
         &lt;span class=&quot;n&quot;&gt;runtimeManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;disposeRuntimeEngine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;runtimeEngine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;runtimeManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
@@ -126,11 +361,11 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
 &lt;p&gt;As you can see an internal signal is raised and received by the jBPM engine :&lt;/p&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;We passed also through &lt;code class=&quot;highlighter-rouge&quot;&gt;ScriptTask&lt;/code&gt;  Node and finish the process with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Error End&lt;/code&gt; meaning we finish the process with an BPMN Error Termination as expected.&lt;/p&gt;
+&lt;p&gt;We passed also through &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ScriptTask&lt;/code&gt;  Node and finish the process with the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Error End&lt;/code&gt; meaning we finish the process with an BPMN Error Termination as expected.&lt;/p&gt;
 
-&lt;p&gt;It means that internally jBPMN engine handle Error as specific signal. The signal starts with &lt;code class=&quot;highlighter-rouge&quot;&gt;Error&lt;/code&gt; code, followed by the UUID’s node and finishes the full qualified name of the exception.&lt;/p&gt;
+&lt;p&gt;It means that internally jBPMN engine handle Error as specific signal. The signal starts with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Error&lt;/code&gt; code, followed by the UUID’s node and finishes the full qualified name of the exception.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -144,7 +379,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
   &lt;li&gt;&lt;a href=&quot;https://github.com/gautric/bpmn-pattern/blob/master/src/main/java/net/a/g/jbpm/pattern/wih/WorkItemHandler.java&quot;&gt;Custom WorkItemHandler.java&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/gautric/bpmn-pattern/blob/master/src/main/java/net/a/g/jbpm/pattern/util/Exception.java&quot;&gt;Custom Exception.java&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;hhttps://github.com/gautric/bpmn-pattern/blob/master/src/test/java/net/a/g/jbpm/pattern/ExceptionToErrorTest.java&quot;&gt;The Full Test Case.java&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="jBPM" /><category term="WorkItemHandler" /><category term="Exception" /><summary type="html">When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.</summary></entry><entry><title type="html">Keycloak, les clefs Yubico et le standard Webauthn</title><link href="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html" rel="alternate" type="text/html" title="Keycloak, les clefs Yubico et le standard Webauthn" /><published>2020-10-26T16:00:00+01:00</published><updated>2020-10-26T16:00:00+01:00</updated><id>http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn</id><content type="html" xml:base="http://localhost:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html">&lt;p&gt;Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de &lt;a href=&quot;https://en.wikipedia.org/wiki/Single_sign-on&quot;&gt;SSO&lt;/a&gt; c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="jBPM" /><category term="WorkItemHandler" /><category term="Exception" /><summary type="html">When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.</summary></entry><entry><title type="html">Keycloak, les clefs Yubico et le standard Webauthn</title><link href="http://0.0.0.0:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html" rel="alternate" type="text/html" title="Keycloak, les clefs Yubico et le standard Webauthn" /><published>2020-10-26T10:00:00-05:00</published><updated>2020-10-26T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html">&lt;p&gt;Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de &lt;a href=&quot;https://en.wikipedia.org/wiki/Single_sign-on&quot;&gt;SSO&lt;/a&gt; c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
 
 &lt;p&gt;Il y a quelques temps déjà, j’ai acheté et configuré des clefs Yubico afin de faire du &lt;a href=&quot;https://en.wikipedia.org/wiki/Multi-factor_authentication&quot;&gt;2FA&lt;/a&gt; avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc…) proposent ce type d’authentification qui apporte une sécurité supplémentaire des comptes en ligne.&lt;/p&gt;
 
@@ -176,7 +411,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 &lt;p&gt;En production, on passera par un Realm (Royaume) n’utilisant pas le système de fichier de stockage des utilisateurs/mots de passe mais plutôt un annuaire LDAP disponible dans la plupart des systèmes d’information.&lt;/p&gt;
 
 &lt;h3 id=&quot;démarrer-keycloakrhsso&quot;&gt;Démarrer Keycloak/RHSSO&lt;/h3&gt;
-&lt;p&gt;Le démarrage de Keycloak se fait comme un Wildfly/JBoss EAP via la commande &lt;code class=&quot;highlighter-rouge&quot;&gt;standalone.sh&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Le démarrage de Keycloak se fait comme un Wildfly/JBoss EAP via la commande &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;standalone.sh&lt;/code&gt;.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$&amp;gt;&lt;/span&gt; bin/standalone.sh &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; 0.0.0.0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -188,15 +423,15 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
 &lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-realm.png&quot; alt=&quot;Configuration Realm&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Pour la demo, nous utilisons une application cliente de type Javascript donc n’oubliez pas de configurer en mode &lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt; l’option &lt;code class=&quot;highlighter-rouge&quot;&gt;Access Type&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Pour la demo, nous utilisons une application cliente de type Javascript donc n’oubliez pas de configurer en mode &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;public&lt;/code&gt; l’option &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Access Type&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-client.png&quot; alt=&quot;Configuration Client&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Dans Browser Flow il suffit de rajouter le &lt;code class=&quot;highlighter-rouge&quot;&gt;WebAuthn Authenticator&lt;/code&gt; executor dans le flow normal.&lt;/p&gt;
+&lt;p&gt;Dans Browser Flow il suffit de rajouter le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WebAuthn Authenticator&lt;/code&gt; executor dans le flow normal.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-flow.png&quot; alt=&quot;Configuration Flow&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Dans la configuration du WebAuthn, n’oubliez pas de configurer le &lt;code class=&quot;highlighter-rouge&quot;&gt;Relying Party Entity Name&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Dans la configuration du WebAuthn, n’oubliez pas de configurer le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Relying Party Entity Name&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/kc-2fa-configure-2fa.png&quot; alt=&quot;Configuration 2fa&quot; /&gt;&lt;/p&gt;
 
@@ -214,7 +449,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
 &lt;p&gt;&lt;img src=&quot;/img/kc-yubico.jpg&quot; alt=&quot;Yubico Key&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ensuite il est possible de configurer un label pour ce processus d’authentification &lt;code class=&quot;highlighter-rouge&quot;&gt;WebAuthn Yubico Blue&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ensuite il est possible de configurer un label pour ce processus d’authentification &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;WebAuthn Yubico Blue&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/kc-2fa-register-key-label.png&quot; alt=&quot;Register Key Label&quot; /&gt;&lt;/p&gt;
 
@@ -248,7 +483,7 @@ In most case and in a real life, we should wrap all exceptions into normalized o
 
 &lt;h3 id=&quot;nb&quot;&gt;NB&lt;/h3&gt;
 
-&lt;p&gt;Les fichiers de configuration seront disponibles bientôt dans un repo github.&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="Keycloak" /><category term="Yubico" /><category term="2fa" /><category term="webauthn" /><summary type="html">Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de SSO c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.</summary></entry><entry><title type="html">Éxecution d’un moteur de KYC en DMN avec Kogito</title><link href="http://localhost:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN.html" rel="alternate" type="text/html" title="Éxecution d'un moteur de KYC en DMN avec Kogito" /><published>2020-06-06T17:00:00+02:00</published><updated>2020-06-06T17:00:00+02:00</updated><id>http://localhost:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN</id><content type="html" xml:base="http://localhost:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN.html">&lt;p&gt;Dans le précedent &lt;a href=&quot;/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&quot;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard &lt;a href=&quot;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&quot;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.&lt;/p&gt;
+&lt;p&gt;Les fichiers de configuration seront disponibles bientôt dans un repo github.&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="Keycloak" /><category term="Yubico" /><category term="2fa" /><category term="webauthn" /><summary type="html">Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de SSO c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.</summary></entry><entry><title type="html">Éxecution d’un moteur de KYC en DMN avec Kogito</title><link href="http://0.0.0.0:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN.html" rel="alternate" type="text/html" title="Éxecution d'un moteur de KYC en DMN avec Kogito" /><published>2020-06-06T10:00:00-05:00</published><updated>2020-06-06T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2020/06/06/Execution-d'un-KYC-en-DMN.html">&lt;p&gt;Dans le précedent &lt;a href=&quot;/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&quot;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard &lt;a href=&quot;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&quot;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Éxecution d’un moteur KYC en DMN avec Kogito&lt;/p&gt;
@@ -261,7 +496,7 @@ Ce moteur de règle reprend en grande partie tout le coeur et le developpement d
 
 &lt;h2 id=&quot;business-domain-first-approach&quot;&gt;Business Domain first approach&lt;/h2&gt;
 
-&lt;p&gt;Un apport de Kogito au moteur Drools, c’est qu’il génére automatiquement l’API REST des règles DMN. Dans notre exemple nous allons copier/coller le fichier DMN KYC du post précédent et le faire tourner tel quel avec Kogito. Kogito va proposer une API &lt;code class=&quot;highlighter-rouge&quot;&gt;KYC&lt;/code&gt; acceptant le model des &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt;. Il sera donc possible de faire un appel REST / HTTP avec des données métiers sans tout le liant technique que nous aurions pu avoir avec l’implémentation purement Drools. Nous allons avoir donc une API orientée métier dépourvue de spécificité technique.&lt;/p&gt;
+&lt;p&gt;Un apport de Kogito au moteur Drools, c’est qu’il génére automatiquement l’API REST des règles DMN. Dans notre exemple nous allons copier/coller le fichier DMN KYC du post précédent et le faire tourner tel quel avec Kogito. Kogito va proposer une API &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;KYC&lt;/code&gt; acceptant le model des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Input&lt;/code&gt;. Il sera donc possible de faire un appel REST / HTTP avec des données métiers sans tout le liant technique que nous aurions pu avoir avec l’implémentation purement Drools. Nous allons avoir donc une API orientée métier dépourvue de spécificité technique.&lt;/p&gt;
 
 &lt;h1 id=&quot;execution-du-projet&quot;&gt;Execution du projet&lt;/h1&gt;
 
@@ -326,15 +561,15 @@ EOF&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
   &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;Fiscal Residency&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;JP&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Nous voyons qu’avec Kogito le détail de tous les calculs intermédiaires des &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; est disponible, jusqu’au calcul final au niveau de la valeur KYC ici dans notre exemple ci-dessus. Cela est intéressant à la fois pour du debugging ou bien pour une problématique d’auditabilité du moteur.&lt;/p&gt;
+&lt;p&gt;Nous voyons qu’avec Kogito le détail de tous les calculs intermédiaires des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; est disponible, jusqu’au calcul final au niveau de la valeur KYC ici dans notre exemple ci-dessus. Cela est intéressant à la fois pour du debugging ou bien pour une problématique d’auditabilité du moteur.&lt;/p&gt;
 
 &lt;h2 id=&quot;exemples&quot;&gt;Exemples&lt;/h2&gt;
 
-&lt;p&gt;Des exemples sont disponibles dans le répertoire &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt; du projet que l’on vient de cloner.&lt;/p&gt;
+&lt;p&gt;Des exemples sont disponibles dans le répertoire &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;data&lt;/code&gt; du projet que l’on vient de cloner.&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
-&lt;p&gt;Avec cette exemple, nous voyons que la complexité technique d’utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n’y a plus d’excuse pour ne pas utiliser à minima le standard &lt;code class=&quot;highlighter-rouge&quot;&gt;DMN&lt;/code&gt; dans vos applications. Le projet Kogito est encore récent mais rien ne vous empeche de proposer des améliorations et/ou suggestions.&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><category term="Kogito" /><category term="KYC" /><summary type="html">Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.</summary></entry><entry><title type="html">Le standard DMN, un KYC en exemple</title><link href="http://localhost:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html" rel="alternate" type="text/html" title="Le standard DMN, un KYC en exemple" /><published>2020-06-04T17:00:00+02:00</published><updated>2020-06-04T17:00:00+02:00</updated><id>http://localhost:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple</id><content type="html" xml:base="http://localhost:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html">&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
+&lt;p&gt;Avec cette exemple, nous voyons que la complexité technique d’utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n’y a plus d’excuse pour ne pas utiliser à minima le standard &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DMN&lt;/code&gt; dans vos applications. Le projet Kogito est encore récent mais rien ne vous empeche de proposer des améliorations et/ou suggestions.&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><category term="Kogito" /><category term="KYC" /><summary type="html">Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.</summary></entry><entry><title type="html">Le standard DMN, un KYC en exemple</title><link href="http://0.0.0.0:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html" rel="alternate" type="text/html" title="Le standard DMN, un KYC en exemple" /><published>2020-06-04T10:00:00-05:00</published><updated>2020-06-04T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html">&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -369,19 +604,19 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;PEP&lt;/em&gt;&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;Pour Political Exposed People&lt;/li&gt;
-      &lt;li&gt;de type &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;de type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;Amount&lt;/em&gt;&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;Pour la quantité de son apport&lt;/li&gt;
-      &lt;li&gt;de type &lt;code class=&quot;highlighter-rouge&quot;&gt;number&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;de type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;number&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;&lt;em&gt;Fiscal Residency&lt;/em&gt;&lt;/strong&gt;
     &lt;ul&gt;
       &lt;li&gt;Pour la localisation de sa résidence fiscal&lt;/li&gt;
-      &lt;li&gt;de type &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;de type &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;string&lt;/code&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
@@ -394,20 +629,20 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
 
 &lt;h2 id=&quot;les-decision&quot;&gt;Les Decision&lt;/h2&gt;
 
-&lt;p&gt;Le principal élément du DMN est le concept de Decision. Cette &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; va calculer un résultat en fonction d’une ou plusieurs entrée.
+&lt;p&gt;Le principal élément du DMN est le concept de Decision. Cette &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; va calculer un résultat en fonction d’une ou plusieurs entrée.
 On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_decision_box.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;On lie ensuite les &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt; avec les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On lie ensuite les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Input&lt;/code&gt; avec les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_decision.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ensuite, il est possible de lier les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; entre elles, afin de remonter les sorties des premières &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; dans une autre &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ensuite, il est possible de lier les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; entre elles, afin de remonter les sorties des premières &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; dans une autre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_decision_link.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ici &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt; &lt;em&gt;PEP&lt;/em&gt; est utilisé par la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; &lt;em&gt;PEP Rule&lt;/em&gt;, qui sera lui utilisé dans la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; &lt;em&gt;KYC&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Ici &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Input&lt;/code&gt; &lt;em&gt;PEP&lt;/em&gt; est utilisé par la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; &lt;em&gt;PEP Rule&lt;/em&gt;, qui sera lui utilisé dans la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; &lt;em&gt;KYC&lt;/em&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;type-de-décision&quot;&gt;Type de décision&lt;/h3&gt;
 
@@ -428,7 +663,7 @@ On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt
   &lt;li&gt;Context
     &lt;ul&gt;
       &lt;li&gt;Il s’agit d’une liste de variables associées à des valeurs&lt;/li&gt;
-      &lt;li&gt;Chaque valeur de la liste peut etre le resultat d’une  &lt;code class=&quot;highlighter-rouge&quot;&gt;Literal expression&lt;/code&gt;, d’une &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision Table&lt;/code&gt; ou d’une &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt;.&lt;/li&gt;
+      &lt;li&gt;Chaque valeur de la liste peut etre le resultat d’une  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Literal expression&lt;/code&gt;, d’une &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision Table&lt;/code&gt; ou d’une &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BKM&lt;/code&gt;.&lt;/li&gt;
       &lt;li&gt;ex: &lt;img src=&quot;/img/dmn_context.png&quot; /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -436,38 +671,38 @@ On utilise pour cela les &lt;em&gt;box&lt;/em&gt; suivantes dans le modeleur.&lt
 
 &lt;h2 id=&quot;les-business-knowledge-model&quot;&gt;Les Business Knowledge Model&lt;/h2&gt;
 
-&lt;p&gt;Les &lt;code class=&quot;highlighter-rouge&quot;&gt;Business Knowledge Model&lt;/code&gt; fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un développeur, les &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; peuvent être vues comme des fonctions réutilisable dans une ou plusieurs &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;, notamment car elles s’appellent directement dans les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; et qu’elles possèdent des paramètres d’entrées.&lt;/p&gt;
+&lt;p&gt;Les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Business Knowledge Model&lt;/code&gt; fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un développeur, les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BKM&lt;/code&gt; peuvent être vues comme des fonctions réutilisable dans une ou plusieurs &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt;, notamment car elles s’appellent directement dans les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; et qu’elles possèdent des paramètres d’entrées.&lt;/p&gt;
 
-&lt;p&gt;Comme pour les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; il existe trois types de &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Comme pour les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; il existe trois types de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BKM&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_bkm.png&quot; alt=&quot;DMN BKM&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Dans notre cas nous allons utiliser une &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision Table&lt;/code&gt; pour calculer le score pour chaque règle.&lt;/p&gt;
+&lt;p&gt;Dans notre cas nous allons utiliser une &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision Table&lt;/code&gt; pour calculer le score pour chaque règle.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_function.png&quot; alt=&quot;DMN Function&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;On relie ensuite le &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; avec la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;On relie ensuite le &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BKM&lt;/code&gt; avec la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_bkm_full.png&quot; alt=&quot;Full DMN BKM&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;result&quot;&gt;Result&lt;/h2&gt;
 
-&lt;p&gt;C’est la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; KYC qui va contenir le résultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; Level de chaque retour des &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; rule. Bien sur, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL &lt;em&gt;(Friendly Enough Expression Language)&lt;/em&gt;. Il s’agit d’un langage qui ressemble un peu aux macros Excel.
+&lt;p&gt;C’est la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; KYC qui va contenir le résultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BKM&lt;/code&gt; Level de chaque retour des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; rule. Bien sur, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL &lt;em&gt;(Friendly Enough Expression Language)&lt;/em&gt;. Il s’agit d’un langage qui ressemble un peu aux macros Excel.
 .&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/dmn_result.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Pour résumer, les &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt; sont donc utilisés dans les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;, ces &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; sont reliées à des &lt;code class=&quot;highlighter-rouge&quot;&gt;BKM&lt;/code&gt; ou bien d’autres &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; qui au fur et à mesure se termine vers une seule &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt;.
-Comme on l’a vue précédemment, la &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; finale peut avoir plusieurs type de retour.
-Par convention on partira du bas pour les &lt;code class=&quot;highlighter-rouge&quot;&gt;Input&lt;/code&gt; puis étage par étage on empilera les &lt;code class=&quot;highlighter-rouge&quot;&gt;Decision&lt;/code&gt; jusqu’à les réduire en une seule.&lt;/p&gt;
+&lt;p&gt;Pour résumer, les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Input&lt;/code&gt; sont donc utilisés dans les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt;, ces &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; sont reliées à des &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BKM&lt;/code&gt; ou bien d’autres &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; qui au fur et à mesure se termine vers une seule &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt;.
+Comme on l’a vue précédemment, la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; finale peut avoir plusieurs type de retour.
+Par convention on partira du bas pour les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Input&lt;/code&gt; puis étage par étage on empilera les &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Decision&lt;/code&gt; jusqu’à les réduire en une seule.&lt;/p&gt;
 
 &lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
 
-&lt;p&gt;J’espère que cette brève introduction à &lt;code class=&quot;highlighter-rouge&quot;&gt;DMN&lt;/code&gt; vous aura convaincu de l’utiliser dans vos projets de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut être automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.&lt;/p&gt;
+&lt;p&gt;J’espère que cette brève introduction à &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DMN&lt;/code&gt; vous aura convaincu de l’utiliser dans vos projets de moteur de règles. Le fait de standardiser les spécifications du moteur de règles permettra par exemple de pouvoir changer de fournisseur de moteur de règle. En fonction des fournisseur, une documentation peut être automatiquement générée facilitant le fond documentaire des projets et l’interaction avec les analystes business.&lt;/p&gt;
 
 &lt;p&gt;Nous verrons dans un prochain post comment exécuter le moteur de KYC.&lt;/p&gt;
 
-&lt;p&gt;Vous pouvez voir directement &lt;a href=&quot;https://kiegroup.github.io/kogito-online/?file=https://github.com/gautric/dmn-knative/blob/master/src/main/resources/KYC.dmn#/editor/dmn&quot;&gt;le resultat du DMN avec cet éditeur en ligne&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><category term="KYC" /><category term="standard" /><summary type="html">Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.</summary></entry><entry><title type="html">MQTTiser l’API Autolib avec Node-Red</title><link href="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html" rel="alternate" type="text/html" title="MQTTiser l'API Autolib avec Node-Red" /><published>2018-04-21T17:00:00+02:00</published><updated>2018-04-21T17:00:00+02:00</updated><id>http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red</id><content type="html" xml:base="http://localhost:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html">&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’&lt;a href=&quot;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&quot;&gt;Autolib&lt;/a&gt; j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution &lt;a href=&quot;https://www.home-assistant.io&quot;&gt;HomeAssistant&lt;/a&gt;, j’utilisais pour cela l’&lt;a href=&quot;https://opendata.paris.fr/page/home/&quot;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&quot;https://fr.wikipedia.org/wiki/REST&quot;&gt;REST&lt;/a&gt;/&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP&quot;&gt;HTTP&lt;/a&gt;.
+&lt;p&gt;Vous pouvez voir directement &lt;a href=&quot;https://kiegroup.github.io/kogito-online/?file=https://github.com/gautric/dmn-knative/blob/master/src/main/resources/KYC.dmn#/editor/dmn&quot;&gt;le resultat du DMN avec cet éditeur en ligne&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="DMN" /><category term="KYC" /><category term="standard" /><summary type="html">Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.</summary></entry><entry><title type="html">MQTTiser l’API Autolib avec Node-Red</title><link href="http://0.0.0.0:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html" rel="alternate" type="text/html" title="MQTTiser l'API Autolib avec Node-Red" /><published>2018-04-21T10:00:00-05:00</published><updated>2018-04-21T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html">&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’&lt;a href=&quot;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&quot;&gt;Autolib&lt;/a&gt; j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution &lt;a href=&quot;https://www.home-assistant.io&quot;&gt;HomeAssistant&lt;/a&gt;, j’utilisais pour cela l’&lt;a href=&quot;https://opendata.paris.fr/page/home/&quot;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&quot;https://fr.wikipedia.org/wiki/REST&quot;&gt;REST&lt;/a&gt;/&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP&quot;&gt;HTTP&lt;/a&gt;.
 Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant &lt;a href=&quot;https://www.home-assistant.io/components/rest_command/&quot;&gt;RESTful&lt;/a&gt;.
 Je me suis dit, pourquoi ne pas :&lt;/p&gt;
 
@@ -792,7 +1027,7 @@ Donc pour etre large, j'ai pris toutes les 20s.
 
 &lt;p&gt;En conclusion, pourquoi faire simple quand on peut faire compliquer. En fait, j’utilise un broker MQTT pour un autre cas d’usage dans ma domotique, donc je rentabilise bien l’utilisation de mon broker. Pour être totalement transparent, le broker Mosquitto est largement suffisant pour ma domotique, Artemis bien que beaucoup plus complet et un peu overkill pour mon usage. Je voulais simplement remercier la limite de l’API de Paris qui m’a permis de faire un petit projet d’intégration bien sympa je trouve et toujours dans la philosophie standard ouvert, interoperabilité et projets commumnutaires OpenSource.&lt;/p&gt;
 
-&lt;p&gt;En esperant, vous avoir intéressé par ce post, n’hésitez pas à me faire vos retours,&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="MQTT" /><category term="node-red" /><category term="flow" /><category term="api" /><category term="Paris" /><category term="Autolib" /><summary type="html">Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’Autolib j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution HomeAssistant, j’utilisais pour cela l’API de Paris en mode REST/HTTP. Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful. Je me suis dit, pourquoi ne pas :</summary></entry><entry><title type="html">Camel XML XPath XSLT Aggregator</title><link href="http://localhost:4000/blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html" rel="alternate" type="text/html" title="Camel XML XPath XSLT Aggregator" /><published>2016-12-03T16:00:00+01:00</published><updated>2016-12-03T16:00:00+01:00</updated><id>http://localhost:4000/blog/2016/12/03/Camel-XML-XsltAggregationStrategy</id><content type="html" xml:base="http://localhost:4000/blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html">&lt;p&gt;This mouth I went to &lt;a href=&quot;https://en.wikipedia.org/wiki/Greece&quot;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&quot;http://camel.apache.org/&quot;&gt;Camel&lt;/a&gt; integration with Mainframe legacy stuff.
+&lt;p&gt;En esperant, vous avoir intéressé par ce post, n’hésitez pas à me faire vos retours,&lt;/p&gt;</content><author><name></name></author><category term="fr" /><category term="MQTT" /><category term="node-red" /><category term="flow" /><category term="api" /><category term="Paris" /><category term="Autolib" /><summary type="html">Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’Autolib j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution HomeAssistant, j’utilisais pour cela l’API de Paris en mode REST/HTTP. Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful. Je me suis dit, pourquoi ne pas :</summary></entry><entry><title type="html">Camel XML XPath XSLT Aggregator</title><link href="http://0.0.0.0:4000/blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html" rel="alternate" type="text/html" title="Camel XML XPath XSLT Aggregator" /><published>2016-12-03T09:00:00-06:00</published><updated>2016-12-03T09:00:00-06:00</updated><id>http://0.0.0.0:4000/blog/2016/12/03/Camel-XML-XsltAggregationStrategy</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html">&lt;p&gt;This mouth I went to &lt;a href=&quot;https://en.wikipedia.org/wiki/Greece&quot;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&quot;http://camel.apache.org/&quot;&gt;Camel&lt;/a&gt; integration with Mainframe legacy stuff.
 Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components.
 Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.&lt;/p&gt;
 
@@ -928,7 +1163,7 @@ Fortunately, Camel framework meets all of this requirements out of the box. We w
   &lt;li&gt;&lt;a href=&quot;https://www.w3.org/TR/xslt&quot;&gt;XSLT 1.0&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.w3.org/TR/xslt20&quot;&gt;XSLT 2.0&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://camel.apache.org/direct.html&quot;&gt;Direct&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="Camel" /><category term="XML" /><category term="XPath" /><category term="XSLT" /><category term="Aggregator" /><category term="Route" /><summary type="html">This mouth I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.</summary></entry><entry><title type="html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</title><link href="http://localhost:4000/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" rel="alternate" type="text/html" title="Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3" /><published>2016-09-27T17:00:00+02:00</published><updated>2016-09-27T17:00:00+02:00</updated><id>http://localhost:4000/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot</id><content type="html" xml:base="http://localhost:4000/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">&lt;p&gt;This September, RaspberryPi foundation has sold &lt;a href=&quot;https://www.raspberrypi.org/blog/ten-millionth-raspberry-pi-new-kit/&quot;&gt;ten (10) Millions of unit&lt;/a&gt;. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions &lt;a href=&quot;https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications&quot;&gt;(B 256Mo, B 512Mo, B+, 2B, 3B)&lt;/a&gt; of RaspberryPi. I am a big fan of this product and you can find into &lt;a href=&quot;/blog/&quot;&gt;this blog&lt;/a&gt; some projects I’ve made on top of this little computer.
+&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="Camel" /><category term="XML" /><category term="XPath" /><category term="XSLT" /><category term="Aggregator" /><category term="Route" /><summary type="html">This mouth I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.</summary></entry><entry><title type="html">Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</title><link href="http://0.0.0.0:4000/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html" rel="alternate" type="text/html" title="Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3" /><published>2016-09-27T10:00:00-05:00</published><updated>2016-09-27T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html">&lt;p&gt;This September, RaspberryPi foundation has sold &lt;a href=&quot;https://www.raspberrypi.org/blog/ten-millionth-raspberry-pi-new-kit/&quot;&gt;ten (10) Millions of unit&lt;/a&gt;. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions &lt;a href=&quot;https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications&quot;&gt;(B 256Mo, B 512Mo, B+, 2B, 3B)&lt;/a&gt; of RaspberryPi. I am a big fan of this product and you can find into &lt;a href=&quot;/blog/&quot;&gt;this blog&lt;/a&gt; some projects I’ve made on top of this little computer.
 RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a &lt;a href=&quot;https://en.wikipedia.org/wiki/Hotspot_(Wi-Fi)&quot;&gt;Wifi Hotspot&lt;/a&gt;. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with &lt;a href=&quot;https://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt;.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -1182,7 +1417,7 @@ PLAY RECAP &lt;span class=&quot;k&quot;&gt;*************************************
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://galaxy.ansible.com/&quot;&gt;Galaxy Ansible&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="RaspberryPi" /><category term="Ansible" /><category term="Wifi" /><category term="HOWTO" /><category term="Hotspot" /><summary type="html">This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions (B 256Mo, B 512Mo, B+, 2B, 3B) of RaspberryPi. I am a big fan of this product and you can find into this blog some projects I’ve made on top of this little computer. RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible.</summary></entry><entry><title type="html">JBoss EAP 7 connected to WebsphereMQ running on Docker</title><link href="http://localhost:4000/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" rel="alternate" type="text/html" title="JBoss EAP 7 connected to WebsphereMQ running on Docker" /><published>2016-08-03T16:00:00+02:00</published><updated>2016-08-03T16:00:00+02:00</updated><id>http://localhost:4000/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker</id><content type="html" xml:base="http://localhost:4000/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&quot;/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&quot;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="RaspberryPi" /><category term="Ansible" /><category term="Wifi" /><category term="HOWTO" /><category term="Hotspot" /><summary type="html">This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions (B 256Mo, B 512Mo, B+, 2B, 3B) of RaspberryPi. I am a big fan of this product and you can find into this blog some projects I’ve made on top of this little computer. RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible.</summary></entry><entry><title type="html">JBoss EAP 7 connected to WebsphereMQ running on Docker</title><link href="http://0.0.0.0:4000/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html" rel="alternate" type="text/html" title="JBoss EAP 7 connected to WebsphereMQ running on Docker" /><published>2016-08-03T09:00:00-05:00</published><updated>2016-08-03T09:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html">&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&quot;/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&quot;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker&lt;/p&gt;
@@ -1570,7 +1805,7 @@ jboss-ivt_1  | 12:44:52,246 INFO  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
     &lt;p&gt;&lt;a href=&quot;http://www.ibm.com/developerworks/websphere/library/techarticles/1203_green/1203_green.html&quot;&gt;WMQ info&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://localhost:8080/WMQ_IVT&quot;&gt;Demo URL http://localhost:8080/WMQ_IVT/IVT&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><category term="WebsphereMQ" /><category term="Docker" /><summary type="html">Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.</summary></entry><entry><title type="html">JConsole &amp;amp; Java Mission Control with JBoss EAP 7</title><link href="http://localhost:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html" rel="alternate" type="text/html" title="JConsole &amp; Java Mission Control with JBoss EAP 7" /><published>2016-07-19T16:00:00+02:00</published><updated>2016-07-19T16:00:00+02:00</updated><id>http://localhost:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7</id><content type="html" xml:base="http://localhost:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">&lt;p&gt;During Red Hat summit, &lt;a href=&quot;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&quot;&gt;Red Hat releases the new version of its JBoss Application Server&lt;/a&gt;. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is &lt;a href=&quot;http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html&quot;&gt;JConsole&lt;/a&gt; and we will see how to use it with remote mode. We also configure an other tool called &lt;a href=&quot;http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html&quot;&gt;Java Mission Control&lt;/a&gt; for a cooler JMX monitoring stuff.
+&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><category term="WebsphereMQ" /><category term="Docker" /><summary type="html">Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.</summary></entry><entry><title type="html">JConsole &amp;amp; Java Mission Control with JBoss EAP 7</title><link href="http://0.0.0.0:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html" rel="alternate" type="text/html" title="JConsole &amp; Java Mission Control with JBoss EAP 7" /><published>2016-07-19T09:00:00-05:00</published><updated>2016-07-19T09:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">&lt;p&gt;During Red Hat summit, &lt;a href=&quot;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&quot;&gt;Red Hat releases the new version of its JBoss Application Server&lt;/a&gt;. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is &lt;a href=&quot;http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html&quot;&gt;JConsole&lt;/a&gt; and we will see how to use it with remote mode. We also configure an other tool called &lt;a href=&quot;http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html&quot;&gt;Java Mission Control&lt;/a&gt; for a cooler JMX monitoring stuff.
 Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.&lt;/p&gt;
 
 &lt;h2 id=&quot;jconsole&quot;&gt;JConsole&lt;/h2&gt;
@@ -1722,182 +1957,4 @@ cocoa
 
 &lt;h3 id=&quot;useful-link&quot;&gt;Useful link&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://docs.jboss.org/author/display/WFLY10/JMX+subsystem+configuration&quot;&gt;JMX Wildlfy 10&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="en" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><category term="jvm" /><category term="jmc" /><summary type="html">During Red Hat summit, Red Hat releases the new version of its JBoss Application Server. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is JConsole and we will see how to use it with remote mode. We also configure an other tool called Java Mission Control for a cooler JMX monitoring stuff. Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.</summary></entry><entry><title type="html">Lancement de JBoss EAP 7</title><link href="http://localhost:4000/blog/2016/06/27/Lancement-JBoss-EAP-7.html" rel="alternate" type="text/html" title="Lancement de JBoss EAP 7" /><published>2016-06-27T16:00:00+02:00</published><updated>2016-06-27T16:00:00+02:00</updated><id>http://localhost:4000/blog/2016/06/27/Lancement-JBoss-EAP-7</id><content type="html" xml:base="http://localhost:4000/blog/2016/06/27/Lancement-JBoss-EAP-7.html">&lt;p&gt;Cela fait exactement 5 ans que je travaille pour &lt;a href=&quot;www.redhat.com&quot;&gt;Red Hat&lt;/a&gt; et pour mon cadeau d’anniversaire &lt;a href=&quot;www.redhat.com&quot;&gt;Red Hat&lt;/a&gt; vient de sortir sa nouvelle version de son serveur d’application phare à savoir &lt;a href=&quot;https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform&quot;&gt;JBoss EAP 7&lt;/a&gt;.
-Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l’architecture générale du serveur d’application.
-Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.&lt;/p&gt;
-
-&lt;h2 id=&quot;java-ee7&quot;&gt;Java EE7&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JBoss EAP 7 implemente les standards Java EE 7
-    &lt;ul&gt;
-      &lt;li&gt;Batch 1.0
-        &lt;ul&gt;
-          &lt;li&gt;Pour la création et le management des services de batch en Java&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;WebSocket 1.1
-        &lt;ul&gt;
-          &lt;li&gt;Pour la creation d’application en mode push&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;JMS 2.0
-        &lt;ul&gt;
-          &lt;li&gt;Evolution du standard de JMS&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;JAX-WS 2.2
-        &lt;ul&gt;
-          &lt;li&gt;Pour le developpement des Webservices basés sur SOAP&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;JAX-RS 2.0
-        &lt;ul&gt;
-          &lt;li&gt;Pour le developpement des services REST&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;CDI 1.2
-        &lt;ul&gt;
-          &lt;li&gt;Injection de dependance via Weld&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;JSF 2.2
-        &lt;ul&gt;
-          &lt;li&gt;Pour les applications de type IHM / Web&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;compatibilité-et-interoperabilité&quot;&gt;Compatibilité et Interoperabilité&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Les clients EJB, JMS et WS seront compatible entre toutes les versions mineures de JBoss EAP 7.
-    &lt;ul&gt;
-      &lt;li&gt;Cela va facilité les migrations progressives entre les versions mineures de JBoss EAP 7.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;JBoss EAP 7 a la possibilité de manager des instances JBoss EAP 6 et des toutes les versions JBoss EAP 7.
-    &lt;ul&gt;
-      &lt;li&gt;Cela va aussi permettre la montée de version de la 6 vers la 7 pour les clients utilisants le mode domaine.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Outil de migration de la configuration EAP 6 vers EAP 7
-    &lt;ul&gt;
-      &lt;li&gt;Il est possible d’utiliser une configuration EAP 6 pour effectuer la migration de celle-ci vers une version EAP 7&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;management&quot;&gt;Management&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;L’IHM de la console d’administration a été revue, simplifié et unifié.
-    &lt;ul&gt;
-      &lt;li&gt;La web console est plus claire et moins confuse.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Les fichiers de logs sont disponibles sous la forme d’une resource.
-    &lt;ul&gt;
-      &lt;li&gt;Il n’est pas necessaire de se connecter via SSH pour récuperer les fichiers de logs&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Le mode offline autorise la modification du serveur via la CLI sans ouvrir de port TCP
-    &lt;ul&gt;
-      &lt;li&gt;Cette option securise et facilite la configuration interne des instances JBoss.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;moteur-http&quot;&gt;Moteur HTTP&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Remplacement de &lt;a href=&quot;http://jbossweb.jboss.org/&quot;&gt;JBoss Web&lt;/a&gt; (moteur tomcat) par &lt;a href=&quot;http://undertow.io/&quot;&gt;Undertow&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Undertow utilise nativement les lib NIO&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Support des handlers bloquant ou non bloquant, des servlet syncrhone et asynchrone et websocket (&lt;a href=&quot;https://jcp.org/en/jsr/detail?id=356&quot;&gt;JSR 356&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;Configuration d’Undertow comme loadbalancer pour des intances en back office
-    &lt;ul&gt;
-      &lt;li&gt;Undertow permet dans ce cas de supprimer le traditionnel serveur Apache en frontal&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;broker-jms&quot;&gt;Broker JMS&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JBoss EAP 7 integre maintenant &lt;a href=&quot;https://activemq.apache.org/artemis/&quot;&gt;ActiveMQ/Artemis&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Il s’agit d’une donation d’&lt;a href=&quot;http://hornetq.jboss.org/&quot;&gt;HornetQ&lt;/a&gt; à la communauté &lt;a href=&quot;http://hornetq.blogspot.fr/2015/06/hornetq-apache-donation-and-apache.html&quot;&gt;Apache ActiveMQ&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;java-8&quot;&gt;Java 8&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;La version JBoss EAP 7 necessite une machine virtuelle Java 8 à minima
-    &lt;ul&gt;
-      &lt;li&gt;Support de OpenJDK (RHEL / Linux), Oracle JDK (Windows), IBM JDK (AIX) et HP JDK (HP-UX)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;server-suspend-modegraceful-shutdown&quot;&gt;Server Suspend Mode/Graceful Shutdown&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;JBoss EAP 7 permet maintenant de gerer correctement l’arret du serveur.
-    &lt;ul&gt;
-      &lt;li&gt;Le systeme dans ce mode refuse les nouvelles sessions (HTTP) mais laisse les anciennes toujours actives.&lt;/li&gt;
-      &lt;li&gt;Cela va donc facilité la montée de version des applications et/ou du serveur sans arrêt complete des services (rolling upgrade).&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;reduction-des-ports&quot;&gt;Reduction des ports&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Le serveur JBoss EAP 7 expose maintenant que 2 ports seulement
-    &lt;ul&gt;
-      &lt;li&gt;Un port de Management et un port Applicatif&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Il utilise le mécanisme d’&lt;a href=&quot;https://en.wikipedia.org/wiki/HTTP/1.1_Upgrade_header&quot;&gt;upgrade du protocole HTTP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Cela est relativement utile dans un monde conteneurisé (Docker / Openshift)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tech-preview&quot;&gt;Tech preview&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Support du protocole HTTP/2
-    &lt;ul&gt;
-      &lt;li&gt;Evolution du standard HTTP 1.1 vers HTTP 2 (&lt;a href=&quot;/blog/2015/07/03/wildfly-offline-cli-http-2.html&quot;&gt;voir mes posts modulo quelque modifications 1&lt;/a&gt; ou &lt;a href=&quot;/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html&quot;&gt;2&lt;/a&gt;)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Singleton MDB en mode cluster
-    &lt;ul&gt;
-      &lt;li&gt;Possibilité d’avoir un Message Driven Bean unique sur cluster&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;PowerShell Scripts
-    &lt;ul&gt;
-      &lt;li&gt;Possibilité de scripter avec le shell de Windows&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;Cette nouvelle version EAP 7 est c’est vrai plus un grosse evolution du produit qu’une revolution de paradigme. Cela va facilité les différents utilisateurs à migrer plus rapidement leur parc de JBoss EAP 6.
-Les &lt;a href=&quot;https://github.com/jboss-developer/jboss-eap-quickstarts&quot;&gt;nombreux quickstarts&lt;/a&gt; disponibles permettent aux developpeurs la prise en main rapide des différentes fonctionnalités de JBoss EAP 7.&lt;/p&gt;
-
-&lt;h3 id=&quot;lien-utile&quot;&gt;Lien Utile&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&quot;&gt;Announcing JBoss EAP 7 (en)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://access.redhat.com/articles/2026253&quot;&gt;Support configuration&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://access.redhat.com/articles/112673#EAP_7&quot;&gt;Liste des framework&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="fr" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><summary type="html">Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d’anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d’application phare à savoir JBoss EAP 7. Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l’architecture générale du serveur d’application. Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://docs.jboss.org/author/display/WFLY10/JMX+subsystem+configuration&quot;&gt;JMX Wildlfy 10&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="en" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><category term="jvm" /><category term="jmc" /><summary type="html">During Red Hat summit, Red Hat releases the new version of its JBoss Application Server. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is JConsole and we will see how to use it with remote mode. We also configure an other tool called Java Mission Control for a cooler JMX monitoring stuff. Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.</summary></entry></feed>
