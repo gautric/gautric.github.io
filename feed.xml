@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2022-02-16T14:40:34-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Cloud Architecte, Greg Autric, Web, Cloud, IoT, Automation, Red Hat, OpenSource</subtitle><entry><title type="html">Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools</title><link href="http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM.html" rel="alternate" type="text/html" title="Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools" /><published>2021-09-26T10:00:00-05:00</published><updated>2021-09-26T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM.html">&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&quot;fnref:2020&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2020&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d’expertiser les solutions qu’ils mettent en place dans leur système d’information et notamment le produit &lt;a href=&quot;https://developers.redhat.com/products/rhpam/overview&quot;&gt;RHPAM&lt;/a&gt;&lt;sup id=&quot;fnref:jbpm&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:jbpm&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d’un client donc, j’ai travaillé sur les processus metiers qu’il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n’allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j’ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2022-06-09T03:39:37-05:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Greg I/Open</title><subtitle>Cloud Architecte, Greg Autric, Web, Cloud, IoT, Automation, Red Hat, OpenSource</subtitle><entry><title type="html">Quarkus/Java 11-17 et GitHub Action feat. Matrix</title><link href="http://0.0.0.0:4000/blog/2022/06/08/GitHub-Matrix.html" rel="alternate" type="text/html" title="Quarkus/Java 11-17 et GitHub Action feat. Matrix" /><published>2022-06-08T10:00:00-05:00</published><updated>2022-06-08T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2022/06/08/GitHub-Matrix</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2022/06/08/GitHub-Matrix.html">&lt;p&gt;La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de constructions d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de deploiement des applications. L’avantage des pipeline de constructions est le rapide feedback aux developpeurs des erreurs dans la chaine de traitement. Ainsi, il est facile de modifier un element de configuration pour voir le resultat. 
+Les applications modernes necessitent de pouvoir migrer des socles techniques de manière transparente.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Compiler en Quarkus/Java 11 et 17 avec GitHub Action les Matrix&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;L’idée dans ce post est de montrer très simplement un exemple de double compilation Java 11 et Java 17.
+Ces versions de Java sont des versions LTS&lt;sup id=&quot;fnref:lts&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:lts&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; c’est-à-dire quelles disposes d’un support long terme .&lt;/p&gt;
+
+&lt;p&gt;Regardons rapidement le pipeline GitHub Action&lt;sup id=&quot;fnref:gha&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:gha&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; avec la possibilité compiler sur deux versions de Java différentes. Comme toutes les GitHub Action le fichier doit se trouver dans le repertoires &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.github/workflows&lt;/code&gt; de votre projet.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;eaas-ci-matrix&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;strategy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;                        &lt;span class=&quot;s&quot;&gt;(1)&lt;/span&gt;
+      &lt;span class=&quot;s&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;17&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ubuntu-latest&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Checkout source&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/checkout@v3&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Set up JDK ${{ matrix.version }}&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/setup-java@v3&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;java-version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;${{ matrix.version }}&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;distribution&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;adopt'&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Build with Maven ${{ matrix.version }}&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mvn --batch-mode --update-snapshots verify&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Pour cela il faut simplement rajouter la section (1) dans la GitHub Action afin de configurer la matrice des versions de java avec lesquelles on souhaite compiler.&lt;/p&gt;
+
+&lt;p&gt;Suite à une modification (push) dans le repository, la GitHub Action va être déclanchée.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/gha-java-matrix.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHub Action va automatiquement créer autant de sous-pipeline que la matrice va prévoir.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/gha-java-11.png&quot; alt=&quot;Compilation Java 11&quot; /&gt;
+Voici l’exemple d’une compilation en Java 11&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/gha-java-17.png&quot; alt=&quot;Compilation Java 17&quot; /&gt;
+et une compilation en Java 17&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Avec cet exemple très simple, nous voyons qu’il est possible d’ajouter rapidement des matrices de configuration afin de tester plusieurs cas en parallèle via les GitHub Action. 
+Cette feature incluse dans GitHub facilite et permet d’accélérer les monter de version par exemple. 
+On pourra utiliser cette feature pour changer de socle, de brique tech, de librairie, de framework en toute sérénité.&lt;/p&gt;
+
+&lt;h4 id=&quot;footnotes&quot;&gt;Footnotes&lt;/h4&gt;
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:lts&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://fr.wikipedia.org/wiki/Long-term_support &lt;a href=&quot;#fnref:lts&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:gha&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;https://docs.github.com/en/actions &lt;a href=&quot;#fnref:gha&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name></name></author><category term="fr" /><category term="Java" /><category term="CI/CD" /><category term="Quarkus" /><summary type="html">La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de constructions d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de deploiement des applications. L’avantage des pipeline de constructions est le rapide feedback aux developpeurs des erreurs dans la chaine de traitement. Ainsi, il est facile de modifier un element de configuration pour voir le resultat. Les applications modernes necessitent de pouvoir migrer des socles techniques de manière transparente.</summary></entry><entry><title type="html">Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools</title><link href="http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM.html" rel="alternate" type="text/html" title="Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools" /><published>2021-09-26T10:00:00-05:00</published><updated>2021-09-26T10:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2021/09/26/Pattern-Signal-jBPM.html">&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&quot;fnref:2020&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:2020&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d’expertiser les solutions qu’ils mettent en place dans leur système d’information et notamment le produit &lt;a href=&quot;https://developers.redhat.com/products/rhpam/overview&quot;&gt;RHPAM&lt;/a&gt;&lt;sup id=&quot;fnref:jbpm&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:jbpm&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d’un client donc, j’ai travaillé sur les processus metiers qu’il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n’allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j’ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Découplage de la réception du signal de son utilisation.&lt;/p&gt;
@@ -1805,156 +1868,4 @@ jboss-ivt_1  | 12:44:52,246 INFO  &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
     &lt;p&gt;&lt;a href=&quot;http://www.ibm.com/developerworks/websphere/library/techarticles/1203_green/1203_green.html&quot;&gt;WMQ info&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://localhost:8080/WMQ_IVT&quot;&gt;Demo URL http://localhost:8080/WMQ_IVT/IVT&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><category term="WebsphereMQ" /><category term="Docker" /><summary type="html">Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.</summary></entry><entry><title type="html">JConsole &amp;amp; Java Mission Control with JBoss EAP 7</title><link href="http://0.0.0.0:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html" rel="alternate" type="text/html" title="JConsole &amp; Java Mission Control with JBoss EAP 7" /><published>2016-07-19T09:00:00-05:00</published><updated>2016-07-19T09:00:00-05:00</updated><id>http://0.0.0.0:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7</id><content type="html" xml:base="http://0.0.0.0:4000/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html">&lt;p&gt;During Red Hat summit, &lt;a href=&quot;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&quot;&gt;Red Hat releases the new version of its JBoss Application Server&lt;/a&gt;. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is &lt;a href=&quot;http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html&quot;&gt;JConsole&lt;/a&gt; and we will see how to use it with remote mode. We also configure an other tool called &lt;a href=&quot;http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html&quot;&gt;Java Mission Control&lt;/a&gt; for a cooler JMX monitoring stuff.
-Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.&lt;/p&gt;
-
-&lt;h2 id=&quot;jconsole&quot;&gt;JConsole&lt;/h2&gt;
-
-&lt;p&gt;JConsole is a graphical monitoring tool to monitor &lt;a href=&quot;https://en.wikipedia.org/wiki/Java_virtual_machine&quot;&gt;Java Virtual Machine&lt;/a&gt; and Java applications both on a local or remote machine.
-JConsole uses underlying features of Java Virtual Machine to provide information on performance and resource consumption of applications running on the Java platform using &lt;a href=&quot;https://en.wikipedia.org/wiki/Java_Management_Extensions&quot;&gt;Java Management Extensions&lt;/a&gt; technology. JConsole comes as part of &lt;a href=&quot;https://en.wikipedia.org/wiki/Java_Development_Kit&quot;&gt;Java Development Kit&lt;/a&gt; and the graphical console can be started using “jconsole” command. &lt;a href=&quot;https://en.wikipedia.org/wiki/JConsole&quot;&gt;from wikipedia&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;JConsole is provided both with &lt;a href=&quot;http://openjdk.java.net/&quot;&gt;OpenJDK&lt;/a&gt; and &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/overview/index.html&quot;&gt;Oracle JDK&lt;/a&gt; virtual machine.&lt;/p&gt;
-
-&lt;h3 id=&quot;jmx-connection&quot;&gt;JMX connection&lt;/h3&gt;
-
-&lt;p&gt;JConsole can connect directly to local Java process (via PID) or, can also connect to remote application via a standard JMX protocol or a custom JMX protocol. Standard JMX protocol is not very flexible and should be not use directly, this protocol has got limitations about account management. &lt;strong&gt;JBoss EAP 7&lt;/strong&gt; provides more flexible protocol called &lt;strong&gt;remote+http&lt;/strong&gt;. JBoss uses &lt;a href=&quot;https://tools.ietf.org/html/rfc7230#section-6.7&quot;&gt;HTTP Upgrade&lt;/a&gt; to change protocol from &lt;strong&gt;HTTP&lt;/strong&gt; to &lt;strong&gt;jboss-remoting&lt;/strong&gt; without changing TCP port at all.&lt;/p&gt;
-
-&lt;p&gt;Here is a &lt;em&gt;tcpdump&lt;/em&gt; capture&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;GET / HTTP/1.1
-Sec-JbossRemoting-Key: t/V5HWbok5e1KAYs22zDrQ&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;
-Upgrade: jboss-remoting
-Host: localhost:8080
-Connection: upgrade
-
-HTTP/1.1 101 Switching Protocols
-Connection: Upgrade
-Upgrade: jboss-remoting
-Sec-JbossRemoting-Accept: +F31ah8B270e5BrbWr6Ig90t+NM&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-Date: Tue, 19 Jul 2016 16:40:28 GMT
-
-........localhost...3......endpoint....4.0.18.Final-redhat-1....
-.&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;.....&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;...R......localhost..JBOSS-LOCAL-USER...................
-DIGEST-MD5....4.0.18.Final-redhat-1.....&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;.....&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;.................
-DIGEST-MD5...k.realm&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ApplicationRealm&quot;&lt;/span&gt;,nonce&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2LD3fnFJ3Nbsjfj+k
-XXXXXXXXXXXXXXXXXXXXXXX&quot;&lt;/span&gt;,charset&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8,algorithm&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;md5-sess.....ch
-&lt;span class=&quot;nv&quot;&gt;arset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;utf-8,username&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;appli&quot;&lt;/span&gt;,realm&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ApplicationRealm&quot;&lt;/span&gt;,nonce&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;2LD
-3fnFJ3Nbsjfj+XXXXXXXXXXXXXXXXXXXXXXXX&quot;&lt;/span&gt;,nc&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;00000001,cnonce&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;bCz1B
-XXXXXXXXXXXXXXXXX/fnQTL5S279++KbxG2&quot;&lt;/span&gt;,digest-uri&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;remoting/localh
-ost&quot;&lt;/span&gt;,maxbuf&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;65536,response&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;e723bee2cffaddd9c1a3fa8925a106ad,qop&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-....&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;jconsole-from-jboss-eap&quot;&gt;JConsole from JBoss EAP&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;JBoss EAP 7&lt;/strong&gt; is shipped with a &lt;em&gt;JConsole&lt;/em&gt; wrapped script. This script injects into the JConsole classpath CLI lib and &lt;strong&gt;remote+http&lt;/strong&gt; protocol lib.
-It is available into &lt;strong&gt;${JBOSS_HOME}/bin&lt;/strong&gt; directory.&lt;/p&gt;
-
-&lt;h2 id=&quot;jconsole-connection-to-jboss-eap&quot;&gt;JConsole connection to JBoss EAP&lt;/h2&gt;
-
-&lt;h3 id=&quot;with-managementrealm&quot;&gt;with ManagementRealm&lt;/h3&gt;
-
-&lt;p&gt;Out of the box, JConsole could use &lt;strong&gt;remote+http&lt;/strong&gt; protocol for connecting to JBoss Management port &lt;strong&gt;9990&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JBOSS_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/bin/jconsole.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Configure correct JMX url (correct &lt;strong&gt;management&lt;/strong&gt; interface and &lt;strong&gt;management-http&lt;/strong&gt; port)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;service:jmx:remote+http://localhost:9990&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and use &lt;em&gt;ManagementRealm&lt;/em&gt; account to connect with (don’t forget to use &lt;strong&gt;${JBOSS_HOME}/bin/add-user.sh&lt;/strong&gt; to configure account)&lt;/p&gt;
-
-&lt;h3 id=&quot;with-applicationrealm&quot;&gt;with ApplicationRealm&lt;/h3&gt;
-
-&lt;p&gt;You can use an account from &lt;em&gt;ApplicationRealm&lt;/em&gt; for connecting to &lt;strong&gt;JBoss EAP 7&lt;/strong&gt; server but you have to change port connection too.&lt;/p&gt;
-
-&lt;p&gt;Change &lt;em&gt;standalone.xml&lt;/em&gt; with CLI command below&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/subsystem&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;jmx/remoting-connector&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;jmx:write-attribute&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;use-management-endpoint,value&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JBOSS_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/bin/jconsole.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Configure correct JMX url (correct &lt;strong&gt;public&lt;/strong&gt; interface and &lt;strong&gt;http&lt;/strong&gt; port)&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;service:jmx:remote+http://localhost:8080&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and use &lt;em&gt;ApplicationRealm&lt;/em&gt; account to connect with (don’t forget to use &lt;strong&gt;${JBOSS_HOME}/bin/add-user.sh&lt;/strong&gt; to configure account)&lt;/p&gt;
-
-&lt;div class=&quot;warn&quot;&gt;
-Be careful, if you use this configuration you couldn't connect anymore via Management interface/port and ManagementRealm's account.
-&lt;/div&gt;
-
-&lt;h2 id=&quot;java-mission-control&quot;&gt;Java Mission Control&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Java Mission Control&lt;/strong&gt; can collect low level (CPU, I/O, R/W file, etc…) informations about &lt;strong&gt;JVM&lt;/strong&gt; and can record them (for offline diagnostic).
-It can also collect &lt;strong&gt;JMX&lt;/strong&gt; information with JMX system.&lt;/p&gt;
-
-&lt;p&gt;This tool comes with &lt;strong&gt;Oracle JDK&lt;/strong&gt; and is based on &lt;strong&gt;Eclipse&lt;/strong&gt; technology.&lt;/p&gt;
-
-&lt;h3 id=&quot;configuration-jmc&quot;&gt;Configuration JMC&lt;/h3&gt;
-
-&lt;p&gt;In order to use JMC with &lt;strong&gt;JBoss EAP 7&lt;/strong&gt;, we have to configure JMC classpath for providing correct &lt;strong&gt;remote+http&lt;/strong&gt; protocol lib.&lt;/p&gt;
-
-&lt;p&gt;Edit &lt;strong&gt;jmc.ini&lt;/strong&gt; file&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Java&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Mission&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.app/Contents/MacOS/jmc.ini&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;and add line below at this end of file&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nt&quot;&gt;-Xbootclasspath&lt;/span&gt;/a:&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JBOSS_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/bin/client/jboss-client.jar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;File should look like&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;mbp:~]&lt;span class=&quot;nv&quot;&gt;$&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/lib/missioncontrol/Java&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Mission&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Control.app/Contents/MacOS/jmc.ini
-&lt;span class=&quot;nt&quot;&gt;-startup&lt;/span&gt;
-../../../plugins/org.eclipse.equinox.launcher_1.3.0.v20140415-2008.jar
-&lt;span class=&quot;nt&quot;&gt;--launcher&lt;/span&gt;.library
-../../../plugins/org.eclipse.equinox.launcher.cocoa.macosx.x86_64_1.1.200.v20141007-2033
-&lt;span class=&quot;nt&quot;&gt;-ws&lt;/span&gt;
-cocoa
-&lt;span class=&quot;nt&quot;&gt;--launcher&lt;/span&gt;.appendVmargs
-&lt;span class=&quot;nt&quot;&gt;-vm&lt;/span&gt;
-../../../../../jre/bin/
-&lt;span class=&quot;nt&quot;&gt;-vmargs&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-XX&lt;/span&gt;:+UseG1GC
-&lt;span class=&quot;nt&quot;&gt;-XX&lt;/span&gt;:+UnlockCommercialFeatures
-&lt;span class=&quot;nt&quot;&gt;-XX&lt;/span&gt;:+FlightRecorder
-&lt;span class=&quot;nt&quot;&gt;-XX&lt;/span&gt;:FlightRecorderOptions&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;defaultrecording&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-Djava&lt;/span&gt;.net.preferIPv4Stack&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-XstartOnFirstThread&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;-Dorg&lt;/span&gt;.eclipse.swt.internal.carbon.smallFonts
-&lt;span class=&quot;nt&quot;&gt;-Xbootclasspath&lt;/span&gt;/a:/Users/gautric/Application/redhat/eap/jboss-eap-7.0/bin/client/jboss-client.jar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;jmc-connection-to-jboss-eap&quot;&gt;JMC connection to JBoss EAP&lt;/h2&gt;
-
-&lt;p&gt;After that you could start &lt;strong&gt;JMC&lt;/strong&gt; application and add a new connection :
-&lt;img src=&quot;/img/jmc-1.png&quot; style=&quot;max-width:75%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Configure correctly JVM connection parameters&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;to configure custom url&lt;/li&gt;
-  &lt;li&gt;to choice custom protocol &lt;em&gt;(check it first)&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;for account credential&lt;/li&gt;
-  &lt;li&gt;to test connection&lt;/li&gt;
-  &lt;li&gt;to save and connect&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/jmc-2.png&quot; style=&quot;max-width:75%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Now you can now view live all informations about JVM and &lt;strong&gt;JBoss EAP 7&lt;/strong&gt; application&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/jmc-3.png&quot; style=&quot;max-width:75%;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;You can also check all JMX MBean.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/jmc-4.png&quot; style=&quot;max-width:75%;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;JBoss EAP 7&lt;/strong&gt; simplifies remote JMX connection. With &lt;em&gt;port reduction&lt;/em&gt; and &lt;em&gt;HTTP upgrade&lt;/em&gt; features, &lt;strong&gt;JBoss EAP 7&lt;/strong&gt; monitoring fits perfectly containerization (aka Docker) context. Now both developers and admin system guys can monitor JMX or low level with minimal configuration into constraint environment.&lt;/p&gt;
-
-&lt;p&gt;Please feel free to send me your feed back below.&lt;/p&gt;
-
-&lt;h3 id=&quot;useful-link&quot;&gt;Useful link&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.jboss.org/author/display/WFLY10/JMX+subsystem+configuration&quot;&gt;JMX Wildlfy 10&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><category term="en" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><category term="jvm" /><category term="jmc" /><summary type="html">During Red Hat summit, Red Hat releases the new version of its JBoss Application Server. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is JConsole and we will see how to use it with remote mode. We also configure an other tool called Java Mission Control for a cooler JMX monitoring stuff. Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="en" /><category term="JBoss" /><category term="redhat" /><category term="EAP7" /><category term="WebsphereMQ" /><category term="Docker" /><summary type="html">Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.</summary></entry></feed>
