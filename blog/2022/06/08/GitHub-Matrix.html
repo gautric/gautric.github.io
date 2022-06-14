@@ -5,7 +5,7 @@
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de constructions d’applications per..."/>
+  <meta name="description" content="La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’application..."/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <!-- Icon bar -->
   <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
@@ -29,7 +29,7 @@
   <meta name="twitter:site:id" content="@gautric_io" />
   <meta name="twitter:creator" content="@gautric_io" />
   <meta name="twitter:title" content="Quarkus/Java 11-17 et GitHub Action feat. Matrix" />
-  <meta name="twitter:description" content="La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de constructions d’applications per..." />
+  <meta name="twitter:description" content="La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’application..." />
   <meta name="twitter:image" content="/img/apple-icon-152x152.png" />
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -79,17 +79,16 @@
       <div class="wrapper">
           <article class="post-content">
     <p class="post-meta">Jun 8, 2022  <a href="#fr">fr</a>  <a href="#Java">Java</a>  <a href="#CI/CD">CI/CD</a>  <a href="#Quarkus">Quarkus</a> </p>
-    <p>La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de constructions d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de deploiement des applications. L’avantage des pipeline de constructions est le rapide feedback aux developpeurs des erreurs dans la chaine de traitement. Ainsi, il est facile de modifier un element de configuration pour voir le resultat. 
-Les applications modernes necessitent de pouvoir migrer des socles techniques de manière transparente.</p>
+    <p>La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat. 
+Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.</p>
 
 <blockquote>
   <p>Compiler en Quarkus/Java 11 et 17 avec GitHub Action les Matrix</p>
 </blockquote>
 
-<p>L’idée dans ce post est de montrer très simplement un exemple de double compilation Java 11 et Java 17.
-Ces versions de Java sont des versions LTS<sup id="fnref:lts" role="doc-noteref"><a href="#fn:lts" class="footnote">1</a></sup> c’est-à-dire quelles disposes d’un support long terme .</p>
+<p>L’idée dans ce post est de montrer très simplement un exemple de double compilation Java 11 et Java 17. Ces versions de Java sont des versions LTS<sup id="fnref:lts" role="doc-noteref"><a href="#fn:lts" class="footnote">1</a></sup> c’est-à-dire qu’elles disposent d’un support long terme .</p>
 
-<p>Regardons rapidement le pipeline GitHub Action<sup id="fnref:gha" role="doc-noteref"><a href="#fn:gha" class="footnote">2</a></sup> avec la possibilité compiler sur deux versions de Java différentes. Comme toutes les GitHub Action le fichier doit se trouver dans le repertoires <code class="language-plaintext highlighter-rouge">.github/workflows</code> de votre projet.</p>
+<p>Regardons rapidement le pipeline GitHub Action<sup id="fnref:gha" role="doc-noteref"><a href="#fn:gha" class="footnote">2</a></sup> avec la possibilité de compiler sur deux versions de Java différentes. Comme toutes les GitHub Action le fichier doit se trouver dans le répertoires .github/workflows de votre projet.</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">name</span><span class="pi">:</span> <span class="s">eaas-ci-matrix</span>
 
@@ -114,7 +113,7 @@ Ces versions de Java sont des versions LTS<sup id="fnref:lts" role="doc-noteref"
 
 <p>Pour cela il faut simplement rajouter la section (1) dans la GitHub Action afin de configurer la matrice des versions de java avec lesquelles on souhaite compiler.</p>
 
-<p>Suite à une modification (push) dans le repository, la GitHub Action va être déclanchée.</p>
+<p>Suite à une modification (push) dans le repository, la GitHub Action va être déclenchée.</p>
 
 <p><img src="/img/gha-java-matrix.png" alt="" /></p>
 
@@ -128,9 +127,7 @@ et une compilation en Java 17</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Avec cet exemple très simple, nous voyons qu’il est possible d’ajouter rapidement des matrices de configuration afin de tester plusieurs cas en parallèle via les GitHub Action. 
-Cette feature incluse dans GitHub facilite et permet d’accélérer les monter de version par exemple. 
-On pourra utiliser cette feature pour changer de socle, de brique tech, de librairie, de framework en toute sérénité.</p>
+<p>Avec cet exemple très simple, nous voyons qu’il est possible d’ajouter rapidement des matrices de configuration afin de tester plusieurs cas en parallèle via les GitHub Action. Cette feature incluse dans GitHub facilite et permet d’accélérer les montées de version par exemple. On pourra utiliser cette feature pour changer de socle, de brique tech, de librairie, de framework en toute sérénité.</p>
 
 <h4 id="footnotes">Footnotes</h4>
 <div class="footnotes" role="doc-endnotes">
