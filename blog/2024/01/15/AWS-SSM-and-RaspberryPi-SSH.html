@@ -257,7 +257,13 @@ raspberrypi.local          : <span class="nv">ok</span><span class="o">=</span>1
 
 <p>Afin de pouvoir se connecter à votre instance Raspberry Pi, il vous faudra <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">activer le mode Advanced</a> d’AWS SSM <sup id="fnref:pricing:1" role="doc-noteref"><a href="#fn:pricing" class="footnote">1</a></sup>. Ensuite, il sera possible de démarrer une session distante via la commande SSH légèrement configurée en utilisant une directive <strong>ProxyCommand</strong> dans votre fichier <em>.ssh/config</em>.</p>
 
-<p>Le fichier <em>.ssh/config</em></p>
+<p>Voici la commande de la CLI AWS pour activer le mode Advanced de AWS SSM, qui vous permettra d’ouvrir la session à distance vers votre Raspberry Pi.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">aws ssm update-service-setting <span class="se">\</span>
+    <span class="nt">--setting-id</span> arn:aws:ssm:eu-west-1:687441526170:servicesetting/ssm/managed-instance/activation-tier <span class="se">\</span>
+    <span class="nt">--setting-value</span> advanced</code></pre></figure>
+
+<p>Le fichier <em>.ssh/config</em> afin d’utiliser la feature Session Manager dans SSH.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">host i-<span class="k">*</span> mi-<span class="k">*</span>
     ProxyCommand sh <span class="nt">-c</span> <span class="s2">"aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'"</span></code></pre></figure>
