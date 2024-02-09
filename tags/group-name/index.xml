@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>group name on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/group-name/</link>
+    <description>Recent content in group name on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Jun 2015 13:58:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/group-name/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Regex Group Name</title>
+      <link>https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html</link>
+      <pubDate>Thu, 18 Jun 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html</guid>
+      <description>Lors d&amp;rsquo;un développement d&amp;rsquo;un programme informatique, il est parfois nécessaire d&amp;rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&amp;rsquo;utilisation d&amp;rsquo;une expression rationnelle est utile dans le cas où l&amp;rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&amp;rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.
+Dans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard.</description>
+    </item>
+  </channel>
+</rss>

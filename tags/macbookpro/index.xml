@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacbookPro on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/macbookpro/</link>
+    <description>Recent content in MacbookPro on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Oct 2015 13:58:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/macbookpro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RHIoT Webcam and websocket components on MacbookPro in Groovy</title>
+      <link>https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html</link>
+      <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html</guid>
+      <description>Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language &amp;hellip;
+Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro
+Let&amp;rsquo;s start to broadcast yourself.
+Requisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2.</description>
+    </item>
+  </channel>
+</rss>

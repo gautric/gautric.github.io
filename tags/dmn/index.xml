@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DMN on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/dmn/</link>
+    <description>Recent content in DMN on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jun 2020 15:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/dmn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Éxecution d&#39;un moteur de KYC en DMN avec Kogito</title>
+      <link>https://gautric.github.io/blog/2020/06/06/Execution-d&#39;un-KYC-en-DMN.html</link>
+      <pubDate>Sat, 06 Jun 2020 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2020/06/06/Execution-d&#39;un-KYC-en-DMN.html</guid>
+      <description>Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.
+Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito
+Introdution Kogito Faisons un focus rapide sur Kogito. Kogito est un moteur de règle orienté cloud. Ce moteur de règle reprend en grande partie tout le coeur et le developpement de Drools et jBPM mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.</description>
+    </item>
+    <item>
+      <title>Le standard DMN, un KYC en exemple</title>
+      <link>https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html</link>
+      <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html</guid>
+      <description>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.
+Le standard DMN, un KYC en exemple
+Introdution DMN est une norme de l&amp;rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/eclipse/</link>
+    <description>Recent content in Eclipse on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Mar 2016 14:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Camel is going into Eclipse Kura</title>
+      <link>https://gautric.github.io/blog/2016/03/18/apache-camel-eclipse-kura.html</link>
+      <pubDate>Fri, 18 Mar 2016 14:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2016/03/18/apache-camel-eclipse-kura.html</guid>
+      <description>Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The Eclipse Kura Project has accepted GitHub Pull Request and now includes a new cool component to develop branch. This new component is Camel Framework from Apache Foundation. Henryk Konsek a colleague of mine is the principal guy behind this new. The Camel and Kura integration starts from the first Camel Kura component available since Camel version 2.</description>
+    </item>
+  </channel>
+</rss>

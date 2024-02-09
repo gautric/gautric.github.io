@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cisco on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/cisco/</link>
+    <description>Recent content in Cisco on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Jan 2024 09:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activer/Désactiver sa camera PoE via son routeur Cisco</title>
+      <link>https://gautric.github.io/blog/2024/01/28/activer-desactiver-sa-camera-poe-via-son-routeur-cisco/</link>
+      <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2024/01/28/activer-desactiver-sa-camera-poe-via-son-routeur-cisco/</guid>
+      <description>Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du Cisco Commutateur Intelligent SG250-10P, qui offre la fonctionnalité PoE.
+Activer/Désactiver sa camera PoE depuis son routeur Cisco
+Pré-requis Avant de commencer il faut pouvoir se connecter en SSH sur le routeur.</description>
+    </item>
+  </channel>
+</rss>

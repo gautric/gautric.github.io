@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fr on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/fr/</link>
+    <description>Recent content in fr on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Jan 2024 09:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/fr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Activer/Désactiver sa camera PoE via son routeur Cisco</title>
+      <link>https://gautric.github.io/blog/2024/01/28/activer-desactiver-sa-camera-poe-via-son-routeur-cisco/</link>
+      <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2024/01/28/activer-desactiver-sa-camera-poe-via-son-routeur-cisco/</guid>
+      <description>Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du Cisco Commutateur Intelligent SG250-10P, qui offre la fonctionnalité PoE.
+Activer/Désactiver sa camera PoE depuis son routeur Cisco
+Pré-requis Avant de commencer il faut pouvoir se connecter en SSH sur le routeur.</description>
+    </item>
+    <item>
+      <title>AWS SSM, Ansible et Raspberry Pi via SSH</title>
+      <link>https://gautric.github.io/blog/2024/01/15/AWS-SSM-and-RaspberryPi-SSH.html</link>
+      <pubDate>Mon, 15 Jan 2024 09:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2024/01/15/AWS-SSM-and-RaspberryPi-SSH.html</guid>
+      <description>Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing].</description>
+    </item>
+    <item>
+      <title>Quarkus/Java 11-17 et GitHub Action feat. Matrix</title>
+      <link>https://gautric.github.io/blog/2022/06/08/GitHub-Matrix.html</link>
+      <pubDate>Wed, 08 Jun 2022 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2022/06/08/GitHub-Matrix.html</guid>
+      <description>La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.</description>
+    </item>
+    <item>
+      <title>Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools</title>
+      <link>https://gautric.github.io/blog/2021/09/26/Pattern-Signal-jBPM.html</link>
+      <pubDate>Sun, 26 Sep 2021 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2021/09/26/Pattern-Signal-jBPM.html</guid>
+      <description>Pour mon activité professionnelle, je me déplace1 chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit RHPAM2. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus metiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j&amp;rsquo;ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .</description>
+    </item>
+    <item>
+      <title>How to manage Exception inside a jBPM WorkItemHandler custom component</title>
+      <link>https://gautric.github.io/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html</link>
+      <pubDate>Wed, 28 Oct 2020 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html</guid>
+      <description>When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
+How to manage Exception inside jBPM WorkItemHandler custom component.
+To illustrate how to use Exception/Error I propose to create a sample error process.</description>
+    </item>
+    <item>
+      <title>Keycloak, les clefs Yubico et le standard Webauthn</title>
+      <link>https://gautric.github.io/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html</link>
+      <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html</guid>
+      <description>Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de SSO c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
+Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.</description>
+    </item>
+    <item>
+      <title>Éxecution d&#39;un moteur de KYC en DMN avec Kogito</title>
+      <link>https://gautric.github.io/blog/2020/06/06/Execution-d&#39;un-KYC-en-DMN.html</link>
+      <pubDate>Sat, 06 Jun 2020 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2020/06/06/Execution-d&#39;un-KYC-en-DMN.html</guid>
+      <description>Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.
+Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito
+Introdution Kogito Faisons un focus rapide sur Kogito. Kogito est un moteur de règle orienté cloud. Ce moteur de règle reprend en grande partie tout le coeur et le developpement de Drools et jBPM mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.</description>
+    </item>
+    <item>
+      <title>Le standard DMN, un KYC en exemple</title>
+      <link>https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html</link>
+      <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html</guid>
+      <description>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.
+Le standard DMN, un KYC en exemple
+Introdution DMN est une norme de l&amp;rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.</description>
+    </item>
+    <item>
+      <title>MQTTiser l&#39;API Autolib avec Node-Red</title>
+      <link>https://gautric.github.io/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html</link>
+      <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html</guid>
+      <description>Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivé d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&amp;rsquo;Autolib j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&amp;rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&amp;rsquo;ai installé et configuré chez moi la solution HomeAssistant, j&amp;rsquo;utilisais pour cela l&amp;rsquo;API de Paris en mode REST/HTTP.</description>
+    </item>
+    <item>
+      <title>UNESCO Challenge, point UNESCO, Malte / Malta</title>
+      <link>https://gautric.github.io/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html</link>
+      <pubDate>Tue, 14 Jun 2016 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html</guid>
+      <description>Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel. Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rsquo;à nos jours. Cela m&amp;rsquo;a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés. L&amp;rsquo;un des étendu sur Malte est le site &amp;ldquo;Temples mégalithiques de Malte&amp;rdquo; qui est reparti sur les deux grandes îles de Malte (Malte et Gozo).</description>
+    </item>
+    <item>
+      <title>UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</title>
+      <link>https://gautric.github.io/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html</link>
+      <pubDate>Fri, 29 Jan 2016 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html</guid>
+      <description>En ce debut d&amp;rsquo;année 2016, je me suis rendu à Londres afin d&amp;rsquo;aller visiter des amis Londoniens. Nous avons pris le temps d&amp;rsquo;aller voir le Meridien de Greenwich qui est le meridien 0°. Ce Meridien est devenu très important depuis qu&amp;rsquo;il est devenu la référence mondiale topographique à la Conférence internationale de Washington de 1884. Il est utilisé avec l&amp;rsquo;aide d&amp;rsquo;une horloge correctement synchronisée par les navigateurs du monde entier afin de connaitre leur longitude extacte sur le globe terrestre.</description>
+    </item>
+    <item>
+      <title>Leshan et le standard Lightweight M2M à l&#39;EclipseCon</title>
+      <link>https://gautric.github.io/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html</link>
+      <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html</guid>
+      <description>La semaine dernière, j&amp;rsquo;étais à l&amp;rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C&amp;rsquo;est à cette occasion que j&amp;rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.
+Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l&amp;rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.</description>
+    </item>
+    <item>
+      <title>Java Regex Group Name</title>
+      <link>https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html</link>
+      <pubDate>Thu, 18 Jun 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html</guid>
+      <description>Lors d&amp;rsquo;un développement d&amp;rsquo;un programme informatique, il est parfois nécessaire d&amp;rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&amp;rsquo;utilisation d&amp;rsquo;une expression rationnelle est utile dans le cas où l&amp;rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&amp;rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.
+Dans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard.</description>
+    </item>
+    <item>
+      <title>Sortie de wildfly 9.0 CR-01</title>
+      <link>https://gautric.github.io/blog/2015/05/04/wildfly-9-CR01-released-sortie.html</link>
+      <pubDate>Mon, 04 May 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/05/04/wildfly-9-CR01-released-sortie.html</guid>
+      <description>La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en téléchargement ici. Cette version corrige un certain nombre de bug et elle apporte de nouvelles fonctionnalités que nous allons vous rapidement ici. Je posterai plus tard des exemples complets.
+Java EE7 Wildfly 9 intégre les deux profils Web et Full du standard Java EE7.
+Le support de HTTP/2 &amp;amp; SPDY Le standard HTTP/2 est maintenant officiel depuis Fevrier.</description>
+    </item>
+    <item>
+      <title>Les premiers jours du projet Camel IoT Labs</title>
+      <link>https://gautric.github.io/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html</link>
+      <pubDate>Sat, 25 Apr 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html</guid>
+      <description>Aujourd&amp;rsquo;hui, l&amp;rsquo;internet des objets ou aussi appelé IoT prend de plus en plus de place dans l&amp;rsquo;industrie informatique et non informatique. Des montres Withings, aux Raspberry Pi vendus à 5M d&amp;rsquo;unités, en passant par les plaques Arduino low cost et autres modules Tessel, le cout de production des objets électroniques baissant, a permis une large diffusion de ces nouveaux objets.
+En 2012, les premiers RaspberryPi sont lancés sur le marché, j&amp;rsquo;en ai acheté un.</description>
+    </item>
+    <item>
+      <title>Best Practices Websphere MQ/JBoss EAP 6</title>
+      <link>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</link>
+      <pubDate>Wed, 25 Mar 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</guid>
+      <description>Le serveur d&amp;rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)</description>
+    </item>
+    <item>
+      <title>Yubico OTP et JBoss EAP 6 ou Wildfly 8</title>
+      <link>https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html</link>
+      <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html</guid>
+      <description>Yubikey est une clef de crypto qui permet d&amp;rsquo;avoir une authentification forte lors d&amp;rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&amp;hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&amp;rsquo;authentification à leur service. L&amp;rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation.</description>
+    </item>
+    <item>
+      <title>Il y a un siècle aux Dardanelles</title>
+      <link>https://gautric.github.io/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html</link>
+      <pubDate>Wed, 18 Mar 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html</guid>
+      <description>Il y a cent ans, « Le bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l’Amirauté</description>
+    </item>
+    <item>
+      <title>Premier post</title>
+      <link>https://gautric.github.io/blog/2015/03/10/premier-post.html</link>
+      <pubDate>Tue, 10 Mar 2015 18:02:10 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/03/10/premier-post.html</guid>
+      <description>Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.
+I will post here my articles. I look forward to seeing you.
+私は　ここに　私のブログを　書きます。</description>
+    </item>
+  </channel>
+</rss>

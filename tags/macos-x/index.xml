@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacOS X on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/macos-x/</link>
+    <description>Recent content in MacOS X on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Oct 2015 13:58:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/macos-x/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RHIoT 0.1.2 Webcam component on MacOS X in Groovy</title>
+      <link>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html</link>
+      <pubDate>Thu, 22 Oct 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html</guid>
+      <description>My tech leader on RHIoT project (ex-camellabs) Henryk had just release the last version of RHIoT project : 0.1.2. Lot of new stuffs are included in this new release, more details available here. I found in list a cool stuff to test. We gonna check if our new commiter @levackt from ZA worked well ;-)
+Webcam camel component on Mac OSX with Groovy language
+Let&amp;rsquo;s start to broadcast yourself.
+Requisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/ci/cd/</link>
+    <description>Recent content in CI/CD on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://gautric.github.io/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quarkus/Java 11-17 et GitHub Action feat. Matrix</title>
+      <link>https://gautric.github.io/blog/2022/06/08/GitHub-Matrix.html</link>
+      <pubDate>Wed, 08 Jun 2022 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2022/06/08/GitHub-Matrix.html</guid>
+      <description>La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.</description>
+    </item>
+  </channel>
+</rss>

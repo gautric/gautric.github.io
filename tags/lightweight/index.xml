@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lightweight on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/lightweight/</link>
+    <description>Recent content in lightweight on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jul 2015 13:58:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/lightweight/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leshan et le standard Lightweight M2M à l&#39;EclipseCon</title>
+      <link>https://gautric.github.io/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html</link>
+      <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html</guid>
+      <description>La semaine dernière, j&amp;rsquo;étais à l&amp;rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C&amp;rsquo;est à cette occasion que j&amp;rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.
+Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l&amp;rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.</description>
+    </item>
+  </channel>
+</rss>

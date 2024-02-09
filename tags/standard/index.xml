@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>standard on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/standard/</link>
+    <description>Recent content in standard on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Jun 2020 15:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/standard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Le standard DMN, un KYC en exemple</title>
+      <link>https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html</link>
+      <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html</guid>
+      <description>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.
+Le standard DMN, un KYC en exemple
+Introdution DMN est une norme de l&amp;rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.</description>
+    </item>
+  </channel>
+</rss>

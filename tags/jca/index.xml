@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JCA on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/jca/</link>
+    <description>Recent content in JCA on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Mar 2015 13:58:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/jca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Best Practices Websphere MQ/JBoss EAP 6 English Version</title>
+      <link>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</link>
+      <pubDate>Thu, 26 Mar 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</guid>
+      <description>JBoss EAP application server is Java EE 6 certified, it implements via IronJacamar framework, the Java EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).</description>
+    </item>
+    <item>
+      <title>Best Practices Websphere MQ/JBoss EAP 6</title>
+      <link>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</link>
+      <pubDate>Wed, 25 Mar 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</guid>
+      <description>Le serveur d&amp;rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)</description>
+    </item>
+  </channel>
+</rss>

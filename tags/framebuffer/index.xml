@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>framebuffer on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/framebuffer/</link>
+    <description>Recent content in framebuffer on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Nov 2015 13:58:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/framebuffer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RHIoT RaspberryPi Sense-Hat display</title>
+      <link>https://gautric.github.io/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html</link>
+      <pubDate>Tue, 24 Nov 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html</guid>
+      <description>Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing. Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).</description>
+    </item>
+  </channel>
+</rss>

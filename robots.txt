@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://gautric.github.io/sitemap.xml

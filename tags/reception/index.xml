@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reception on Greg. I/O</title>
+    <link>https://gautric.github.io/tags/reception/</link>
+    <description>Recent content in Reception on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Sep 2021 15:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/tags/reception/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools</title>
+      <link>https://gautric.github.io/blog/2021/09/26/Pattern-Signal-jBPM.html</link>
+      <pubDate>Sun, 26 Sep 2021 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/blog/2021/09/26/Pattern-Signal-jBPM.html</guid>
+      <description>Pour mon activité professionnelle, je me déplace1 chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit RHPAM2. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus metiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j&amp;rsquo;ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .</description>
+    </item>
+  </channel>
+</rss>
