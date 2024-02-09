@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SSH to MacOS X (El Capitan) through iCloud tunnel | Greg. I/O</title>
+<meta name="keywords" content="en, MacOS, SSH, tunnel, iCloud, El-Capitan">
+<meta name="description" content="After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff. Yesterday, I update my favorite laptop it&rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="SSH to MacOS X (El Capitan) through iCloud tunnel" />
+<meta property="og:description" content="After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff. Yesterday, I update my favorite laptop it&rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-10-03T13:58:00+00:00" />
+<meta property="article:modified_time" content="2015-10-03T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SSH to MacOS X (El Capitan) through iCloud tunnel"/>
+<meta name="twitter:description" content="After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff. Yesterday, I update my favorite laptop it&rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "SSH to MacOS X (El Capitan) through iCloud tunnel",
+      "item": "https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SSH to MacOS X (El Capitan) through iCloud tunnel",
+  "name": "SSH to MacOS X (El Capitan) through iCloud tunnel",
+  "description": "After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff. Yesterday, I update my favorite laptop it\u0026rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box.",
+  "keywords": [
+    "en", "MacOS", "SSH", "tunnel", "iCloud", "El-Capitan"
+  ],
+  "articleBody": "After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff. Yesterday, I update my favorite laptop it’s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box. For some time, I was looking for some out of the box stuff to connect to my MacMini with SSH via iCloud stack. Finally, I google it and I found some good infos/news about this issue.\nHow to setup a SSH connection via iCloud tunnel with 2 Macs\nLet’s see how to do it.\nRequisites Have two mac laptop one (MacbookPro) directly connected to Internet server one (MacMini) behind an Internet box Have an iCloud account Back to my Mac setup (MacMini) Check the correct option into your iCloud account inside the MacMini server configuration panel.\nYou should show now you MacMini server available into your Finder’s left panel.\nMore information to the official Apple help center\nLocate MacMini server First of all, we need to retrieve connection information to use ssh protocol. We gonna use some commands line to find your MacMini trough the iCloud.\nFirst step we need to find our iCloud account and our iCloud FQN DNS name\n[mbp:~]$\u003e dns-sd -E Looking for recommended registration domains: DATE: ---Fri 02 Oct 2015--- 20:29:07.366 ...STARTING... Timestamp Recommended Registration domain 20:29:07.367 Added (More) local 20:29:07.367 Added icloud.com - \u003e btmm - - \u003e members - - - \u003e 1122334455 My iCloud FQN DNS name is 1122334455.members.btmm.icloud.com\nSecond step After finding our iCloud DNS name, we gonna retrieve our MacMini server with ZeroConf/Boujour Protocol. To find it we will use an other command line. This command collects all machine plugged with your iCloud account and sharing _ssh service.\n[mbp:~]$\u003e dns-sd -B _ssh 1122334455.members.btmm.icloud.com Browsing for _ssh._tcp.1122334455.members.btmm.icloud.com DATE: ---Fri 02 Oct 2015--- 20:34:10.344 ...STARTING... Timestamp A/R Flags if Domain Service Type Instance Name 20:34:10.345 Add 3 0 1122334455.members.btmm.icloud.com. _ssh._tcp. MacMini 20:34:10.345 Add 2 0 1122334455.members.btmm.icloud.com. _ssh._tcp. MacBookPro Last but not least step We find our iCloud FQN DNS and our MacMini name. Now we can connect to it through the iCloud tunnel. If your server name contains some \" “/space character, replace it with “-\"/dash one (sed -e “s/[[:space:]]/-/g”).\n[mbp:~]$\u003e ssh MacMini.1122334455.members.btmm.icloud.com Last login: Fri Oct 2 21:18:27 2015 from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx [mac-mini:~]$\u003e Conclusion Connection through the iCloud service is quite easy. Unfortunately, there are few documentations for geek and tech user but with the Unix/Linux commands you can retrieve lot of familiar stuff you like. Now it is a really new service I’ve built and I don’t have a huge feedback, but let’s use it !!!\nLast tip (c’est cadeau) To facilitate your ssh connection, you can use ssh config file (.ssh/config) to logon to your MacMini server. Just edit it with your personal text editor (atom for example).\nHost MacMini_iCloud HostName MacMini.1122334455.members.btmm.icloud.com User XXXXX ServerAliveInterval 10 ServerAliveCountMax 6 and logon with :\n[mbp:~]$\u003e ssh MacMini_iCloud Last login: Fri Oct 2 21:25:00 2015 from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx [mac-mini:~]$\u003e Useful links Back to my Mac ",
+  "wordCount" : "532",
+  "inLanguage": "en",
+  "datePublished": "2015-10-03T13:58:00Z",
+  "dateModified": "2015-10-03T13:58:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      SSH to MacOS X (El Capitan) through iCloud tunnel
+    </h1>
+    <div class="post-meta"><span title='2015-10-03 13:58:00 +0000 UTC'>October 3, 2015</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.
+Yesterday, I update my favorite laptop it&rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box. For some time, I was looking for some out of the box stuff to connect to my MacMini with SSH via iCloud stack.
+Finally, I google it and I found some good infos/news about this issue.</p>
+<blockquote>
+<p>How to setup a SSH connection via iCloud tunnel with 2 Macs</p>
+</blockquote>
+<p>Let&rsquo;s see how to do it.</p>
+<h2 id="requisites">Requisites<a hidden class="anchor" aria-hidden="true" href="#requisites">#</a></h2>
+<ul>
+<li>Have two mac
+<ul>
+<li>laptop one (MacbookPro) directly connected to Internet</li>
+<li>server one (MacMini) behind an Internet box</li>
+</ul>
+</li>
+<li>Have an iCloud account</li>
+</ul>
+<h2 id="back-to-my-mac-setup-macmini">Back to my Mac setup (MacMini)<a hidden class="anchor" aria-hidden="true" href="#back-to-my-mac-setup-macmini">#</a></h2>
+<p>Check the correct option into your iCloud account inside the MacMini server configuration panel.</p>
+<img src="/img/icloudbacktomymac.png" width="50%" height="50%" />
+<p>You should show now you MacMini server available into your Finder&rsquo;s left panel.</p>
+<img src="/img/icloudselectmacmini.png"  width="25%" height="25%" />
+<p><a href="https://support.apple.com/en-us/HT204618">More information to the official Apple help center</a></p>
+<h2 id="locate-macmini-server">Locate MacMini server<a hidden class="anchor" aria-hidden="true" href="#locate-macmini-server">#</a></h2>
+<p>First of all, we need to retrieve connection information to use ssh protocol.
+We gonna use some commands line to find your MacMini trough the iCloud.</p>
+<h3 id="first-step">First step<a hidden class="anchor" aria-hidden="true" href="#first-step">#</a></h3>
+<p>we need to find our iCloud account and our iCloud FQN DNS name</p>
+<pre tabindex="0"><code>
+[mbp:~]$&gt; dns-sd -E
+
+Looking for recommended registration domains:
+DATE: ---Fri 02 Oct 2015---
+20:29:07.366  ...STARTING...
+Timestamp     Recommended Registration domain
+20:29:07.367  Added     (More)               local
+20:29:07.367  Added                          icloud.com
+                                             - &gt; btmm
+                                             - - &gt; members
+                                             - - - &gt; 1122334455
+</code></pre><p>My iCloud FQN DNS name is <em>1122334455.members.btmm.icloud.com</em></p>
+<h3 id="second-step">Second step<a hidden class="anchor" aria-hidden="true" href="#second-step">#</a></h3>
+<p>After finding our iCloud DNS name, we gonna retrieve our MacMini server with ZeroConf/Boujour Protocol.
+To find it we will use an other command line. This command collects all machine plugged with your iCloud account and sharing <em>_ssh</em> service.</p>
+<pre tabindex="0"><code>
+[mbp:~]$&gt; dns-sd -B _ssh 1122334455.members.btmm.icloud.com
+
+Browsing for _ssh._tcp.1122334455.members.btmm.icloud.com
+DATE: ---Fri 02 Oct 2015---
+20:34:10.344  ...STARTING...
+Timestamp     A/R    Flags  if Domain               Service Type         Instance Name
+20:34:10.345  Add        3   0 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacMini
+20:34:10.345  Add        2   0 1122334455.members.btmm.icloud.com. _ssh._tcp.           MacBookPro
+</code></pre><h3 id="last-but-not-least-step">Last but not least step<a hidden class="anchor" aria-hidden="true" href="#last-but-not-least-step">#</a></h3>
+<p>We find our iCloud FQN DNS and our MacMini name. Now we can connect to it through the iCloud tunnel.
+If your server name contains some &quot; &ldquo;/space character, replace it with &ldquo;-&quot;/dash one (<em>sed -e &ldquo;s/[[:space:]]/-/g&rdquo;</em>).</p>
+<pre tabindex="0"><code>[mbp:~]$&gt; ssh MacMini.1122334455.members.btmm.icloud.com
+Last login: Fri Oct  2 21:18:27 2015 from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+[mac-mini:~]$&gt;
+</code></pre><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Connection through the iCloud service is quite easy. Unfortunately, there are few documentations for geek and tech user but with the Unix/Linux commands you can retrieve lot of familiar stuff you like.
+Now it is a really new service I&rsquo;ve built and I don&rsquo;t have a huge feedback, but let&rsquo;s use it !!!</p>
+<h2 id="last-tip-cest-cadeau">Last tip (c&rsquo;est cadeau)<a hidden class="anchor" aria-hidden="true" href="#last-tip-cest-cadeau">#</a></h2>
+<p>To facilitate your ssh connection, you can use ssh config file (<em>.ssh/config</em>) to logon to your MacMini server.
+Just edit it with your personal text editor (atom for example).</p>
+<pre tabindex="0"><code>Host MacMini_iCloud
+  HostName MacMini.1122334455.members.btmm.icloud.com
+  User XXXXX
+  ServerAliveInterval 10
+  ServerAliveCountMax 6
+</code></pre><p>and logon with :</p>
+<pre tabindex="0"><code>[mbp:~]$&gt; ssh MacMini_iCloud
+Last login: Fri Oct  2 21:25:00 2015 from xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx
+[mac-mini:~]$&gt;
+</code></pre><h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<ul>
+<li><a href="https://support.apple.com/en-us/HT204618">Back to my Mac</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/macos/">MacOS</a></li>
+      <li><a href="https://gautric.github.io/tags/ssh/">SSH</a></li>
+      <li><a href="https://gautric.github.io/tags/tunnel/">tunnel</a></li>
+      <li><a href="https://gautric.github.io/tags/icloud/">iCloud</a></li>
+      <li><a href="https://gautric.github.io/tags/el-capitan/">El-Capitan</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-webcam-component-on-macos-x-in-groovy/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>RHIoT 0.1.2 Webcam component on MacOS X in Groovy</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2015/08/24/unesco-challenge-%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-iwami-ginzan-silver-mine-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1/">
+    <span class="title">Next »</span>
+    <br>
+    <span>UNESCO Challenge, 国際連合教育科学文化機関の認定地, Iwami Ginzan Silver Mine, 石見銀山</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

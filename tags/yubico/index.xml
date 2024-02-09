@@ -10,17 +10,17 @@
     <atom:link href="https://gautric.github.io/tags/yubico/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Keycloak, les clefs Yubico et le standard Webauthn</title>
-      <link>https://gautric.github.io/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html</link>
+      <link>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</link>
       <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html</guid>
+      <guid>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</guid>
       <description>Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de SSO c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
 Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.</description>
     </item>
     <item>
       <title>Yubico OTP et JBoss EAP 6 ou Wildfly 8</title>
-      <link>https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html</link>
+      <link>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</link>
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</guid>
       <description>Yubikey est une clef de crypto qui permet d&amp;rsquo;avoir une authentification forte lors d&amp;rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&amp;hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&amp;rsquo;authentification à leur service. L&amp;rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation.</description>
     </item>
   </channel>

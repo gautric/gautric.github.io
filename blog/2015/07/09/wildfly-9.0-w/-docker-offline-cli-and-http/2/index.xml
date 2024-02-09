@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2 on Greg. I/O</title>
+    <link>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</link>
+    <description>Recent content in Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2 on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jul 2015 13:58:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

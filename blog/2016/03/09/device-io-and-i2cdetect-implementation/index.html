@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Device IO and i2cdetect implementation | Greg. I/O</title>
+<meta name="keywords" content="en, RaspberryPi, DIO, DeviceIO, I2C, API">
+<meta name="description" content="Today, we gonna implement a quick tool available into RaspberryPi with Java Device IO API. i2cdetect is a simple i2c device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.
+i2cdetect with the Java Device I/O API implementation .
+Requisites One RaspberryPi tested w/ RPi B&#43; should works with all version an I2C Device Sense Hat for example Compile Device IO Download Device IO API and compile it.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Device IO and i2cdetect implementation" />
+<meta property="og:description" content="Today, we gonna implement a quick tool available into RaspberryPi with Java Device IO API. i2cdetect is a simple i2c device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.
+i2cdetect with the Java Device I/O API implementation .
+Requisites One RaspberryPi tested w/ RPi B&#43; should works with all version an I2C Device Sense Hat for example Compile Device IO Download Device IO API and compile it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-03-09T14:00:00+00:00" />
+<meta property="article:modified_time" content="2016-03-09T14:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Device IO and i2cdetect implementation"/>
+<meta name="twitter:description" content="Today, we gonna implement a quick tool available into RaspberryPi with Java Device IO API. i2cdetect is a simple i2c device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.
+i2cdetect with the Java Device I/O API implementation .
+Requisites One RaspberryPi tested w/ RPi B&#43; should works with all version an I2C Device Sense Hat for example Compile Device IO Download Device IO API and compile it."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Device IO and i2cdetect implementation",
+      "item": "https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Device IO and i2cdetect implementation",
+  "name": "Device IO and i2cdetect implementation",
+  "description": "Today, we gonna implement a quick tool available into RaspberryPi with Java Device IO API. i2cdetect is a simple i2c device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.\ni2cdetect with the Java Device I/O API implementation .\nRequisites One RaspberryPi tested w/ RPi B+ should works with all version an I2C Device Sense Hat for example Compile Device IO Download Device IO API and compile it.",
+  "keywords": [
+    "en", "RaspberryPi", "DIO", "DeviceIO", "I2C", "API"
+  ],
+  "articleBody": "Today, we gonna implement a quick tool available into RaspberryPi with Java Device IO API. i2cdetect is a simple i2c device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.\ni2cdetect with the Java Device I/O API implementation .\nRequisites One RaspberryPi tested w/ RPi B+ should works with all version an I2C Device Sense Hat for example Compile Device IO Download Device IO API and compile it.\nrbpi\u003e sudo apt-get install mercurial oracle-java-8 rbpi\u003e hg clone http://hg.openjdk.java.net/dio/dev jdkdio rbpi\u003e cd jdkdio and we need to change line below into the Makefile, to disable some low level log information.\ndiff -r ad12ae44e850 Makefile --- a/Makefile\tMon Feb 29 19:06:11 2016 +0300 +++ b/Makefile\tTue Mar 15 16:06:07 2016 +0000 @@ -172,7 +172,7 @@ JAVAC := $(JAVA_HOME)/bin/javac JAR := $(JAVA_HOME)/bin/jar MKDIR := mkdir -p -TARGET_C_FLAGS = $(USER_C_FLAGS) -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL=0 -DENABLE_DEVICEACCESS -c -MMD -MF $(NATIVE_OUT_DIR)/$(@).d +TARGET_C_FLAGS = $(USER_C_FLAGS) -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL=4 -DENABLE_DEVICEACCESS -c -MMD -MF $(NATIVE_OUT_DIR)/$(@).d TARGET_INCLUDES = $(foreach d,$(DIO_INCLUDE_DIRS),-I$(d)) -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux TARGET_CXX_FLAGS = $(USER_CXX_FLAGS) -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL=4 -DENABLE_DEVICEACCESS -c TARGET_LD_FLAGS= $(USER_LD_FLAGS) -Xlinker -z -Xlinker defs -Xlinker -O1 \\ You can now compile DIO Api Library with\nrbpi\u003e export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt rbpi\u003e export PI_TOOLS=/usr rbpi\u003e make Compile program Now, we compile i2cdetect implementation as usual.\nrbpi\u003e wget https://gist.githubusercontent.com/gautric/a239adfd06b51099c6a8/raw/93abe18ce83b311a97300c718732088bce370ae2/I2CDetect.java rbpi\u003e javac -cp /home/pi/jdkdio/build/jar/dio.jar I2CDetect.java Output result If everything looks good you could execute I2CDetect class with the following command. I’ve bought Sense Hat to plug it on top of my RaspberryPi. You should get this kind of output when running program.\npi@rbpiv2-1:~ $ sudo java -Djava.library.path=/home/pi/jdkdio/build/so \\ -Djava.security.policy=/opt/eclipse/kura/kura/jdk.dio.policy \\ -cp .:/home/pi/jdkdio/build/jar/dio.jar \\ I2CDetect 0 1 2 3 4 5 6 7 8 9 a b c d e f 00: -- -- -- -- -- -- -- -- -- -- -- -- -- 10: -- -- -- -- -- -- -- -- -- -- -- -- 1c -- -- -- 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 40: -- -- -- -- -- -- UU -- -- -- -- -- -- -- -- -- 50: -- -- -- -- -- -- -- -- -- -- -- -- 5c -- -- 5f 60: -- -- -- -- -- -- -- -- -- -- 6a -- -- -- -- -- 70: -- -- -- -- -- -- -- -- Conclusion This sample is a very quick hack for a Java implementation of i2cdetect. I have to investigate some stuff about DIO exception management to clarify this code.\nPlease feel free to send me your feedback see Apropos.\nUseful links Device IO API RaspberryPi i2c Sense Hat ",
+  "wordCount" : "466",
+  "inLanguage": "en",
+  "datePublished": "2016-03-09T14:00:00Z",
+  "dateModified": "2016-03-09T14:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Device IO and i2cdetect implementation
+    </h1>
+    <div class="post-meta"><span title='2016-03-09 14:00:00 +0000 UTC'>March 9, 2016</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Today, we gonna implement a quick tool available into RaspberryPi with Java <a href="https://wiki.openjdk.java.net/display/dio/Main">Device IO API</a>. <code>i2cdetect</code> is a simple <a href="https://en.wikipedia.org/wiki/I%C2%B2C">i2c</a> device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.</p>
+<blockquote>
+<p>i2cdetect with the Java Device I/O API implementation .</p>
+</blockquote>
+<h3 id="requisites">Requisites<a hidden class="anchor" aria-hidden="true" href="#requisites">#</a></h3>
+<ul>
+<li>One <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">RaspberryPi</a>
+<ul>
+<li>tested w/ RPi B+</li>
+<li>should works with all version</li>
+</ul>
+</li>
+<li>an I2C Device</li>
+</ul>
+<ul>
+<li><a href="https://www.raspberrypi.org/products/sense-hat/">Sense Hat</a> for example</li>
+</ul>
+<h3 id="compile-device-io">Compile Device IO<a hidden class="anchor" aria-hidden="true" href="#compile-device-io">#</a></h3>
+<p>Download  Device IO API and compile it.</p>
+<pre tabindex="0"><code>rbpi&gt; sudo apt-get install mercurial oracle-java-8
+rbpi&gt; hg clone http://hg.openjdk.java.net/dio/dev jdkdio
+rbpi&gt; cd jdkdio
+</code></pre><p>and we need to change line below into the Makefile, to disable some low level log information.</p>
+<pre tabindex="0"><code>diff -r ad12ae44e850 Makefile
+--- a/Makefile	Mon Feb 29 19:06:11 2016 +0300
++++ b/Makefile	Tue Mar 15 16:06:07 2016 +0000
+@@ -172,7 +172,7 @@
+ JAVAC := $(JAVA_HOME)/bin/javac
+ JAR := $(JAVA_HOME)/bin/jar
+ MKDIR := mkdir -p
+-TARGET_C_FLAGS = $(USER_C_FLAGS) -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL=0 -DENABLE_DEVICEACCESS -c -MMD -MF $(NATIVE_OUT_DIR)/$(@).d
++TARGET_C_FLAGS = $(USER_C_FLAGS) -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL=4 -DENABLE_DEVICEACCESS -c -MMD -MF $(NATIVE_OUT_DIR)/$(@).d
+ TARGET_INCLUDES = $(foreach d,$(DIO_INCLUDE_DIRS),-I$(d)) -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
+ TARGET_CXX_FLAGS = $(USER_CXX_FLAGS) -fPIC -Wno-psabi -DJAVACALL_REPORT_LEVEL=4 -DENABLE_DEVICEACCESS -c
+ TARGET_LD_FLAGS= $(USER_LD_FLAGS) -Xlinker -z -Xlinker defs -Xlinker -O1 \
+</code></pre><p>You can now compile DIO Api Library with</p>
+<pre tabindex="0"><code>rbpi&gt; export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm32-vfp-hflt
+rbpi&gt; export PI_TOOLS=/usr
+rbpi&gt; make
+</code></pre><h3 id="compile-program">Compile program<a hidden class="anchor" aria-hidden="true" href="#compile-program">#</a></h3>
+<p>Now, we compile <code>i2cdetect</code> implementation as usual.</p>
+<script src="https://gist.github.com/gautric/a239adfd06b51099c6a8.js"></script>
+<pre tabindex="0"><code>rbpi&gt; wget https://gist.githubusercontent.com/gautric/a239adfd06b51099c6a8/raw/93abe18ce83b311a97300c718732088bce370ae2/I2CDetect.java
+rbpi&gt; javac -cp /home/pi/jdkdio/build/jar/dio.jar I2CDetect.java
+</code></pre><h3 id="output-result">Output result<a hidden class="anchor" aria-hidden="true" href="#output-result">#</a></h3>
+<p>If everything looks good you could execute <code>I2CDetect</code> class with the following command.
+I&rsquo;ve bought <a href="https://www.raspberrypi.org/products/sense-hat/">Sense Hat</a> to plug it on top of my RaspberryPi.
+You should get this kind of output when running program.</p>
+<pre tabindex="0"><code>pi@rbpiv2-1:~ $ sudo java -Djava.library.path=/home/pi/jdkdio/build/so \
+ -Djava.security.policy=/opt/eclipse/kura/kura/jdk.dio.policy \
+ -cp .:/home/pi/jdkdio/build/jar/dio.jar \
+ I2CDetect
+
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00:          -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- 1c -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- UU -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- 5c -- -- 5f
+60: -- -- -- -- -- -- -- -- -- -- 6a -- -- -- -- --
+70: -- -- -- -- -- -- -- --     
+</code></pre><h3 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h3>
+<p>This sample is a very quick hack for a Java implementation of <code>i2cdetect</code>. I have to investigate some stuff about DIO exception management to clarify this code.</p>
+<p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
+<h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<ul>
+<li><a href="https://wiki.openjdk.java.net/display/dio/Main">Device IO API</a></li>
+<li><a href="https://www.raspberrypi.org/">RaspberryPi</a></li>
+<li><a href="https://en.wikipedia.org/wiki/I%C2%B2C">i2c</a></li>
+<li><a href="https://www.raspberrypi.org/products/sense-hat/">Sense Hat</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/raspberrypi/">RaspberryPi</a></li>
+      <li><a href="https://gautric.github.io/tags/dio/">DIO</a></li>
+      <li><a href="https://gautric.github.io/tags/deviceio/">DeviceIO</a></li>
+      <li><a href="https://gautric.github.io/tags/i2c/">i2c</a></li>
+      <li><a href="https://gautric.github.io/tags/api/">API</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Camel is going into Eclipse Kura</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Rhiot Kura Device IO GPIO and I2C</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

@@ -10,16 +10,16 @@
     <atom:link href="https://gautric.github.io/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</title>
-      <link>https://gautric.github.io/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html</link>
+      <link>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</link>
       <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html</guid>
+      <guid>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</guid>
       <description>Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).</description>
     </item>
     <item>
       <title>Wildfly 9.0 Offline CLI and HTTP/2</title>
-      <link>https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html</link>
+      <link>https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/</link>
       <pubDate>Fri, 03 Jul 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html</guid>
+      <guid>https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/</guid>
       <description>Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.</description>
     </item>
   </channel>

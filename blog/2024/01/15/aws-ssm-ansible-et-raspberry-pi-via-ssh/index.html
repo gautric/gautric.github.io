@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>AWS SSM, Ansible et Raspberry Pi via SSH | Greg. I/O</title>
+<meta name="keywords" content="fr, AWS, RaspberryPi, SSM, Ansible, SSH">
+<meta name="description" content="Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&rsquo;IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing].">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="AWS SSM, Ansible et Raspberry Pi via SSH" />
+<meta property="og:description" content="Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&rsquo;IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-15T09:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-15T09:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AWS SSM, Ansible et Raspberry Pi via SSH"/>
+<meta name="twitter:description" content="Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&rsquo;IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "AWS SSM, Ansible et Raspberry Pi via SSH",
+      "item": "https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AWS SSM, Ansible et Raspberry Pi via SSH",
+  "name": "AWS SSM, Ansible et Raspberry Pi via SSH",
+  "description": "Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s\u0026rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d\u0026rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d\u0026rsquo;IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing].",
+  "keywords": [
+    "fr", "AWS", "RaspberryPi", "SSM", "Ansible", "SSH"
+  ],
+  "articleBody": "Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s’intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d’informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d’IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]. On utilisera la fonctionnalité Session Manager d’AWS SSM. 🍇\nIntégration de SSM dans sa flotte de RaspberryPi avec Ansible\nAWS Systems Manager (SSM) AWS Systems Manager (SSM) se positionne comme un outil centralisé de gestion d’infrastructure, simplifiant la supervision et l’automatisation des opérations pour les ressources AWS, notamment les instances EC2. Ses fonctionnalités avancées, telles que l’automatisation des tâches, la collecte de données opérationnelles en temps réel et la maintenance automatisée des correctifs, renforcent l’efficacité opérationnelle et la sécurité dans le cloud. De manière significative, SSM va au-delà du cloud en permettant également la gestion unifiée des instances on-premises, offrant ainsi une solution intégrée pour la gestion hybride des environnements, consolidant ainsi la surveillance, l’automatisation et la conformité à travers des infrastructures diversifiées.\nRaspberry Pi 5 Le Raspberry Pi 5 vient révolutionner la série emblématique en proposant une puissance de calcul améliorée, une connectivité plus rapide avec le Wi-Fi 6, et une efficacité énergétique optimisée. Doté de ports USB-C et capable de supporter des résolutions d’affichage supérieures, ce dernier modèle promet une expérience informatique encore plus performante pour les amateurs, les développeurs et les passionnés d’IoT. Une solution compacte, mais puissante, prête à ouvrir de nouvelles perspectives créatives.\nAnsible Ansible, un puissant outil open source de gestion de configuration, simplifie l’automatisation des déploiements, des mises à jour et de la gestion des infrastructures informatiques. Basé sur un modèle déclaratif simple et utilisant le langage YAML, Ansible permet aux administrateurs système de définir l’état désiré de leurs systèmes et d’orchestrer des tâches complexes de manière efficace, offrant ainsi une solution flexible et extensible pour la gestion d’infrastructures à grande échelle.\nPrésentation du projet Explorons à présent les différentes tâches Ansible qui permettront de déployer l’agent AWS Systems Manager (SSM) sur l’ensemble de la flotte de Raspberry Pi. Ces tâches seront soigneusement conçues pour assurer un déploiement efficace et uniforme de l’agent SSM, renforçant ainsi la capacité de gestion à distance de ces dispositifs au sein de l’infrastructure.\nPrérequis Avant de procéder à l’exécution du playbook Ansible, assurez-vous de satisfaire les prérequis suivants :\nAWS CLI : Vérifiez que la AWS Command Line Interface (CLI) est installée sur la machine où Ansible sera exécuté. Vous pouvez télécharger la CLI AWS à partir du site officiel d’Amazon AWS et suivre les instructions d’installation.\nAnsible : Assurez-vous qu’Ansible est installé sur votre système. Vous pouvez l’installer via les gestionnaires de paquets de votre système d’exploitation ou en utilisant un gestionnaire de paquets Python comme pip. Consultez la documentation officielle d’Ansible pour obtenir des instructions d’installation détaillées.\nCompte AWS : Vous devez disposer d’un compte AWS valide avec les permissions nécessaires pour créer des activations AWS SSM. Assurez-vous que les informations d’identification AWS (clé d’accès et clé secrète) sont configurées correctement, soit via le fichier de configuration AWS (~/.aws/config et ~/.aws/credentials), soit via des variables d’environnement.\nRôle IAM service-role/AmazonEC2RunCommandRoleForManagedInstances : Assurez-vous qu’un rôle IAM nommé service-role/AmazonEC2RunCommandRoleForManagedInstances existe dans votre compte AWS. Ce rôle est requis pour exécuter des commandes Systems Manager sur des instances EC2. Si le rôle n’existe pas, créez-le en utilisant la console IAM AWS et attribuez les autorisations nécessaires.\nUn ou plusieurs Raspberry Pi : Assurez-vous que les clés publiques SSH que vous utilisez pour vous connecter aux Raspberry Pi sont présentes sur chaque appareil.\nTask de création des codes d’activation SSM - name: \"Create AWS SSM Activation\" ansible.builtin.command: cmd: \"aws ssm create-activation --iam-role {% raw %}{{aws_iam_role}}{% endraw %} --registration-limit {% raw %}{{ ansible_play_hosts | length }}{% endraw %} --region {% raw %}{{aws_region}}{% endraw %} --tags \\\"Key=os,Value=raspbian\\\" \" register: aws_ssm_activation connection: local delegate_to: localhost become: false become_user: \"{% raw %}{{ansible_user_id}}{% endraw %}\" become_method: runas run_once: true Cette task Ansible, intitulée “Create AWS SSM Activation”, se charge de créer une activation AWS Systems Manager (SSM) en utilisant le module ansible.builtin.command. L’activation est réalisée en invoquant la commande AWS CLI aws ssm create-activation avec les paramètres spécifiés, tels que le rôle IAM, la limite d’inscription basée sur le nombre d’hôtes Ansible, la région AWS, et des tags pour identifier l’OS (dans ce cas, “raspbian”).\nLe résultat de cette opération est stocké dans la variable aws_ssm_activation. Ce playbook est conçu pour être exécuté localement (connection: local), en utilisant la commande delegate_to: localhost. Il n’utilise pas l’élévation de privilèges (become) pour exécuter la commande en tant qu’utilisateur spécifié.\nIl est important de noter que l’option run_once: true assure que cette tâche est exécutée une seule fois, indépendamment du nombre d’hôtes Ansible. En résumé, ce playbook automatise la création d’une activation SSM avec des paramètres spécifiques dans un environnement AWS, contribuant ainsi à la gestion centralisée des ressources.\n- name: Convert output to fact set_fact: aws_ssm_activation_var: \"{% raw %}{{ aws_ssm_activation.stdout | from_json }}{% endraw %} \" connection: local delegate_to: localhost become: false become_user: \"{% raw %}{{ansible_user_id}}{% endraw %}\" become_method: runas run_once: true Nous prendrons en charge la conversion de la sortie (output) au format JSON vers un fact Ansible. Cette étape est cruciale pour permettre une manipulation et une analyse ultérieure efficace des données générées par nos tâches Ansible.\nTask de téléchargement et d’installation du binaire SSM Les tâches suivantes dans le playbook ont pour objectif de récupérer le binaire d’installation du site AWS et de procéder à son installation sur le Raspberry Pi. Ce processus est fondamental pour garantir que l’agent AWS Systems Manager (SSM) soit correctement déployé sur chaque dispositif. La récupération du binaire se fait via des commandes Ansible, assurant ainsi un téléchargement sûr et efficace depuis la source officielle AWS. Une fois le binaire obtenu, la tâche suivante s’emploie à exécuter le processus d’installation sur chaque Raspberry Pi de la flotte, permettant ainsi d’établir la connexion entre les dispositifs et AWS Systems Manager pour une gestion centralisée et à distance. Ces étapes sont cruciales pour garantir la cohérence et l’efficacité de l’agent SSM sur l’ensemble de la flotte de Raspberry Pi.\n- name: Download Amazon SSM Agent ansible.builtin.get_url: url: \"{% raw %}{{aws_ssm_deb_url}}{% endraw %}\" dest: \"{% raw %}{{aws_ssm_deb_file}}{% endraw %}\" mode: '0444' - name: Install a Amazon SSM Agent .deb package ansible.builtin.apt: deb: \"{% raw %}{{aws_ssm_deb_file}}{% endraw %}\" Task d’enregistrement du RaspberryPi dans l’inventory AWS SSM - name: \"Register Amazon SSM Agent\" ansible.builtin.shell: \"amazon-ssm-agent -register -y -id {% raw %}{{aws_ssm_activation_var.ActivationId}}{% endraw %} -code {% raw %}{{aws_ssm_activation_var.ActivationCode}}{% endraw %} -region {% raw %}{{aws_region}}{% endraw %}\" register: aws_ssm_registration - name: Retrieve SSM Instance Id from registration output set_fact: aws_ssm_instance_id: \"{% raw %}{{ aws_ssm_registration.stdout | regex_search('(\\\\w+-\\\\w+)$', multiline=True, ignorecase=True) }}{% endraw %}\" Ces deux tâches dans le playbook sont dédiées à l’enregistrement de l’agent Amazon SSM (Systems Manager) sur le Raspberry Pi et à la récupération de l’identifiant d’instance SSM associé.\nTâche d’enregistrement de l’agent Amazon SSM : La première tâche utilise le module ansible.builtin.shell pour exécuter une commande en ligne de commande. Dans ce cas, elle lance la commande “amazon-ssm-agent -register”, suivie de plusieurs options telles que \"-y\" pour confirmer automatiquement l’enregistrement, \"-id\" pour spécifier l’identifiant d’activation obtenu précédemment, \"-code\" pour fournir le code d’activation, et \"-region\" pour préciser la région AWS. Le résultat de cette opération est enregistré dans la variable aws_ssm_registration.\nTâche de récupération de l’identifiant d’instance SSM : La deuxième tâche utilise le module set_fact pour définir une nouvelle variable appelée aws_ssm_instance_id. Elle utilise le filtre regex_search pour extraire l’identifiant d’instance SSM à partir de la sortie de la tâche d’enregistrement. La regex (\\w+-\\w+)$ vise à capturer le motif d’identifiant d’instance SSM dans la sortie, et la variable nouvellement créée aws_ssm_instance_id stocke cette information.\nL’identifiant d’instance SSM obtenu est ensuite utilisé pour identifier de manière unique cet agent dans l’environnement AWS, facilitant ainsi sa gestion et sa surveillance à distance.\nPlaybook Ansible Pour tirer parti de cette intégration, un référentiel GitHub est mis à votre disposition à l’adresse suivante : ansible-raspberrypi. Ce référentiel a été créé dans le but de simplifier le déploiement de l’agent AWS Systems Manager (SSM) au sein de votre flotte de Raspberry Pi.\ngautric@MacBookProM2 ansible-raspberrypi % ansible-playbook -i hosts pi_aws_ssm.yml Si tout ce passe bien, vous devriez avoir le retour suivant dans votre console.\nPLAY [ssm_hosts] **************************************************************** TASK [Gathering Facts] ********************************************************** ok: [raspberrypi.local] TASK [aws_ssm : Create AWS SSM Activation] ************************************** ok: [raspberrypi.local -\u003e localhost] TASK [aws_ssm : Convert output to fact] ***************************************** ok: [raspberrypi.local -\u003e localhost] TASK [aws_ssm : Download Amazon SSM Agent] ************************************** ok: [raspberrypi.local] TASK [aws_ssm : Install a Amazon SSM Agent .deb package] ************************ ok: [raspberrypi.local] TASK [aws_ssm : Stop Amazon SSM Agent] ****************************************** ok: [raspberrypi.local] TASK [aws_ssm : Register Amazon SSM Agent] ************************************** ok: [raspberrypi.local] TASK [aws_ssm : Retrieve SSM Instance Id from registration output] ************** ok: [raspberrypi.local] TASK [aws_ssm : Start Amazon SSM Agent] ***************************************** ok: [raspberrypi.local] TASK [aws_ssm : Enable Amazon SSM Agent] **************************************** ok: [raspberrypi.local] TASK [aws_ssm : Print SSM Instance Id] ****************************************** ok: [raspberrypi.local] =\u003e { \"msg\": \"mi-0123456789abcdef\" } TASK [aws_ssm : Print SSH Instance Id command] ********************************** ok: [raspberrypi.local] =\u003e { \"msg\": \"ssh pi@mi-0123456789abcdef\" } PLAY RECAP ********************************************************************** raspberrypi.local : ok=12 changed=0 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0 Photo finish Une fois l’agent AWS Systems Manager déployé sur votre flotte de Raspberry Pi, vous pouvez retrouver votre instance RaspberryPi directement dans votre console AWS. Cette intégration transparente offre une visibilité centralisée sur l’état opérationnel de chaque dispositif, vous permettant de surveiller, de diagnostiquer et de prendre des mesures à distance.\nConnexion SSH au dessus de AWS SSM Session Manager Afin de pouvoir se connecter à votre instance Raspberry Pi, il vous faudra activer le mode Advanced d’AWS SSM.\nInfo\nAttention avec les coûts de AWS SSM en mode Advanced. N’oubliez pas de revenir au mode Standard et donc free tier. Information sur le pricing du mode Advanced.\nEnsuite, il sera possible de démarrer une session distante via la commande SSH légèrement configurée en utilisant une directive ProxyCommand dans votre fichier .ssh/config.\nVoici la commande de la CLI AWS pour activer le mode Advanced de AWS SSM, qui vous permettra d’ouvrir la session à distance vers votre Raspberry Pi.\naws ssm update-service-setting \\ --setting-id arn:aws:ssm:eu-west-1:687441526170:servicesetting/ssm/managed-instance/activation-tier \\ --setting-value advanced Le fichier .ssh/config afin d’utiliser la feature Session Manager dans SSH.\nhost i-* mi-* ProxyCommand sh -c \"aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters 'portNumber=%p'\" La commande SSH vers votre instance Raspberry Pi.\n$\u003e ssh pi@mi-0123456789abcdef Et voilà …\nURL Repo Github IAM Role pour SSM Allow and controlling permissions for SSH connections through Session Manager Pricing Session Manager Adv ",
+  "wordCount" : "1803",
+  "inLanguage": "en",
+  "datePublished": "2024-01-15T09:00:00Z",
+  "dateModified": "2024-01-15T09:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      AWS SSM, Ansible et Raspberry Pi via SSH
+    </h1>
+    <div class="post-meta"><span title='2024-01-15 09:00:00 +0000 UTC'>January 15, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&rsquo;IoT ou simplement curieux, cet article vous réserve des surprises !
+Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]. On utilisera la fonctionnalité Session Manager d&rsquo;AWS SSM. 🍇</p>
+<blockquote>
+<p>Intégration de SSM dans sa flotte de RaspberryPi avec Ansible</p>
+</blockquote>
+<h2 id="aws-systems-manager-ssm">AWS Systems Manager (SSM)<a hidden class="anchor" aria-hidden="true" href="#aws-systems-manager-ssm">#</a></h2>
+<p><a href="https://aws.amazon.com/fr/systems-manager/">AWS Systems Manager</a> (SSM) se positionne comme un outil centralisé de gestion d&rsquo;infrastructure, simplifiant la supervision et l&rsquo;automatisation des opérations pour les ressources AWS, notamment les instances EC2. Ses fonctionnalités avancées, telles que l&rsquo;automatisation des tâches, la collecte de données opérationnelles en temps réel et la maintenance automatisée des correctifs, renforcent l&rsquo;efficacité opérationnelle et la sécurité dans le cloud. De manière significative, SSM va au-delà du cloud en permettant également la gestion unifiée des instances on-premises, offrant ainsi une solution intégrée pour la gestion hybride des environnements, consolidant ainsi la surveillance, l&rsquo;automatisation et la conformité à travers des infrastructures diversifiées.</p>
+<h2 id="raspberry-pi-5">Raspberry Pi 5<a hidden class="anchor" aria-hidden="true" href="#raspberry-pi-5">#</a></h2>
+<p>Le <a href="https://www.raspberrypi.com/products/raspberry-pi-5/">Raspberry Pi 5</a> vient révolutionner la série emblématique en proposant une puissance de calcul améliorée, une connectivité plus rapide avec le Wi-Fi 6, et une efficacité énergétique optimisée. Doté de ports USB-C et capable de supporter des résolutions d&rsquo;affichage supérieures, ce dernier modèle promet une expérience informatique encore plus performante pour les amateurs, les développeurs et les passionnés d&rsquo;IoT. Une solution compacte, mais puissante, prête à ouvrir de nouvelles perspectives créatives.</p>
+<h2 id="ansible">Ansible<a hidden class="anchor" aria-hidden="true" href="#ansible">#</a></h2>
+<p><a href="https://docs.ansible.com/ansible/latest/network/getting_started/first_playbook.html">Ansible</a>, un puissant outil open source de gestion de configuration, simplifie l&rsquo;automatisation des déploiements, des mises à jour et de la gestion des infrastructures informatiques. Basé sur un modèle déclaratif simple et utilisant le langage YAML, Ansible permet aux administrateurs système de définir l&rsquo;état désiré de leurs systèmes et d&rsquo;orchestrer des tâches complexes de manière efficace, offrant ainsi une solution flexible et extensible pour la gestion d&rsquo;infrastructures à grande échelle.</p>
+<h2 id="présentation-du-projet">Présentation du projet<a hidden class="anchor" aria-hidden="true" href="#présentation-du-projet">#</a></h2>
+<p>Explorons à présent les différentes tâches Ansible qui permettront de déployer l&rsquo;agent AWS Systems Manager (SSM) sur l&rsquo;ensemble de la flotte de Raspberry Pi. Ces tâches seront soigneusement conçues pour assurer un déploiement efficace et uniforme de l&rsquo;agent SSM, renforçant ainsi la capacité de gestion à distance de ces dispositifs au sein de l&rsquo;infrastructure.</p>
+<h3 id="prérequis">Prérequis<a hidden class="anchor" aria-hidden="true" href="#prérequis">#</a></h3>
+<p>Avant de procéder à l&rsquo;exécution du playbook Ansible, assurez-vous de satisfaire les prérequis suivants :</p>
+<ul>
+<li>
+<p><strong>AWS CLI</strong> : Vérifiez que la AWS Command Line Interface (CLI) est installée sur la machine où Ansible sera exécuté. <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">Vous pouvez télécharger la CLI AWS à partir du site officiel d&rsquo;Amazon AWS et suivre les instructions d&rsquo;installation</a>.</p>
+</li>
+<li>
+<p><strong>Ansible</strong> : Assurez-vous qu&rsquo;Ansible est installé sur votre système. Vous pouvez l&rsquo;installer via les gestionnaires de paquets de votre système d&rsquo;exploitation ou en utilisant un gestionnaire de paquets Python comme pip. <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">Consultez la documentation officielle d&rsquo;Ansible pour obtenir des instructions d&rsquo;installation détaillées</a>.</p>
+</li>
+<li>
+<p><strong>Compte AWS</strong> : Vous devez disposer <a href="https://console.aws.amazon.com/">d&rsquo;un compte AWS valide</a> avec les permissions nécessaires pour créer des activations AWS SSM. Assurez-vous que les informations d&rsquo;identification AWS (clé d&rsquo;accès et clé secrète) sont configurées correctement, soit via le fichier de configuration AWS (~/.aws/config et ~/.aws/credentials), soit via des variables d&rsquo;environnement.</p>
+</li>
+<li>
+<p><strong>Rôle IAM service-role/AmazonEC2RunCommandRoleForManagedInstances</strong> : Assurez-vous qu&rsquo;un rôle IAM nommé <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">service-role/AmazonEC2RunCommandRoleForManagedInstances</a> existe dans votre compte AWS. Ce rôle est requis pour exécuter des commandes Systems Manager sur des instances EC2. Si le rôle n&rsquo;existe pas, créez-le en utilisant la console IAM AWS et attribuez les autorisations nécessaires.</p>
+</li>
+<li>
+<p><strong>Un ou plusieurs Raspberry Pi</strong> : Assurez-vous que les clés publiques SSH que vous utilisez pour vous connecter aux Raspberry Pi sont présentes sur chaque appareil.</p>
+</li>
+</ul>
+<h3 id="task-de-création-des-codes-dactivation-ssm">Task de création des codes d&rsquo;activation SSM<a hidden class="anchor" aria-hidden="true" href="#task-de-création-des-codes-dactivation-ssm">#</a></h3>
+<pre tabindex="0"><code>- name: &#34;Create AWS SSM Activation&#34;
+  ansible.builtin.command: 
+    cmd: &#34;aws ssm create-activation --iam-role {% raw %}{{aws_iam_role}}{% endraw %} --registration-limit {% raw %}{{ ansible_play_hosts | length }}{% endraw %}   --region {% raw %}{{aws_region}}{% endraw %}  --tags \&#34;Key=os,Value=raspbian\&#34; &#34;
+  register: aws_ssm_activation
+  connection: local
+  delegate_to: localhost
+  become: false
+  become_user: &#34;{% raw %}{{ansible_user_id}}{% endraw %}&#34;
+  become_method: runas
+  run_once: true
+</code></pre><p>Cette task Ansible, intitulée <strong>&ldquo;Create AWS SSM Activation&rdquo;</strong>, se charge de créer une activation AWS Systems Manager (SSM) en utilisant le module <em>ansible.builtin.command</em>. L&rsquo;activation est réalisée en invoquant la commande AWS CLI <em>aws ssm create-activation</em> avec les paramètres spécifiés, tels que le rôle IAM, la limite d&rsquo;inscription basée sur le nombre d&rsquo;hôtes Ansible, la région AWS, et des tags pour identifier l&rsquo;OS (dans ce cas, &ldquo;raspbian&rdquo;).</p>
+<p>Le résultat de cette opération est stocké dans la variable aws_ssm_activation. Ce playbook est conçu pour être exécuté localement (connection: local), en utilisant la commande delegate_to: localhost. Il n&rsquo;utilise pas l&rsquo;élévation de privilèges (become) pour exécuter la commande en tant qu&rsquo;utilisateur spécifié.</p>
+<p>Il est important de noter que l&rsquo;option run_once: true assure que cette tâche est exécutée une seule fois, indépendamment du nombre d&rsquo;hôtes Ansible. En résumé, ce playbook automatise la création d&rsquo;une activation SSM avec des paramètres spécifiques dans un environnement AWS, contribuant ainsi à la gestion centralisée des ressources.</p>
+<pre tabindex="0"><code>- name: Convert output to fact
+  set_fact:
+    aws_ssm_activation_var: &#34;{% raw %}{{ aws_ssm_activation.stdout | from_json }}{% endraw %} &#34;
+  connection: local
+  delegate_to: localhost
+  become: false
+  become_user: &#34;{% raw %}{{ansible_user_id}}{% endraw %}&#34;
+  become_method: runas
+  run_once: true
+</code></pre><p>Nous prendrons en charge la conversion de la sortie (output) au format JSON vers un fact Ansible. Cette étape est cruciale pour permettre une manipulation et une analyse ultérieure efficace des données générées par nos tâches Ansible.</p>
+<h3 id="task-de-téléchargement-et-dinstallation-du-binaire-ssm">Task de téléchargement et d&rsquo;installation du binaire SSM<a hidden class="anchor" aria-hidden="true" href="#task-de-téléchargement-et-dinstallation-du-binaire-ssm">#</a></h3>
+<p>Les tâches suivantes dans le playbook ont pour objectif de récupérer le binaire d&rsquo;installation du site AWS et de procéder à son installation sur le Raspberry Pi. Ce processus est fondamental pour garantir que l&rsquo;agent AWS Systems Manager (SSM) soit correctement déployé sur chaque dispositif. La récupération du binaire se fait via des commandes Ansible, assurant ainsi un téléchargement sûr et efficace depuis la source officielle AWS. Une fois le binaire obtenu, la tâche suivante s&rsquo;emploie à exécuter le processus d&rsquo;installation sur chaque Raspberry Pi de la flotte, permettant ainsi d&rsquo;établir la connexion entre les dispositifs et AWS Systems Manager pour une gestion centralisée et à distance. Ces étapes sont cruciales pour garantir la cohérence et l&rsquo;efficacité de l&rsquo;agent SSM sur l&rsquo;ensemble de la flotte de Raspberry Pi.</p>
+<pre tabindex="0"><code>
+- name: Download Amazon SSM Agent
+  ansible.builtin.get_url:
+    url: &#34;{% raw %}{{aws_ssm_deb_url}}{% endraw %}&#34;
+    dest: &#34;{% raw %}{{aws_ssm_deb_file}}{% endraw %}&#34;
+    mode: &#39;0444&#39;
+
+- name: Install a Amazon SSM Agent .deb package
+  ansible.builtin.apt:
+    deb: &#34;{% raw %}{{aws_ssm_deb_file}}{% endraw %}&#34;
+</code></pre><h3 id="task-denregistrement-du-raspberrypi-dans-linventory-aws-ssm">Task d&rsquo;enregistrement du RaspberryPi dans l&rsquo;inventory AWS SSM<a hidden class="anchor" aria-hidden="true" href="#task-denregistrement-du-raspberrypi-dans-linventory-aws-ssm">#</a></h3>
+<pre tabindex="0"><code>
+- name: &#34;Register Amazon SSM Agent&#34;
+  ansible.builtin.shell: &#34;amazon-ssm-agent -register -y -id {% raw %}{{aws_ssm_activation_var.ActivationId}}{% endraw %} -code {% raw %}{{aws_ssm_activation_var.ActivationCode}}{% endraw %} -region {% raw %}{{aws_region}}{% endraw %}&#34;
+  register: aws_ssm_registration
+
+- name: Retrieve SSM Instance Id from registration output
+  set_fact:
+    aws_ssm_instance_id: &#34;{% raw %}{{ aws_ssm_registration.stdout | regex_search(&#39;(\\w+-\\w+)$&#39;, multiline=True, ignorecase=True) }}{% endraw %}&#34;
+</code></pre><p>Ces deux tâches dans le playbook sont dédiées à l&rsquo;enregistrement de l&rsquo;agent Amazon SSM (Systems Manager) sur le Raspberry Pi et à la récupération de l&rsquo;identifiant d&rsquo;instance SSM associé.</p>
+<ul>
+<li>
+<p><em>Tâche d&rsquo;enregistrement de l&rsquo;agent Amazon SSM</em> :
+La première tâche utilise le module ansible.builtin.shell pour exécuter une commande en ligne de commande. Dans ce cas, elle lance la commande <em>&ldquo;amazon-ssm-agent -register&rdquo;</em>, suivie de plusieurs options telles que <em>&quot;-y&quot;</em> pour confirmer automatiquement l&rsquo;enregistrement, <em>&quot;-id&quot;</em> pour spécifier l&rsquo;identifiant d&rsquo;activation obtenu précédemment, <em>&quot;-code&quot;</em> pour fournir le code d&rsquo;activation, et <em>&quot;-region&quot;</em> pour préciser la région AWS. Le résultat de cette opération est enregistré dans la variable aws_ssm_registration.</p>
+</li>
+<li>
+<p><em>Tâche de récupération de l&rsquo;identifiant d&rsquo;instance SSM</em> :
+La deuxième tâche utilise le module set_fact pour définir une nouvelle variable appelée <em>aws_ssm_instance_id</em>. Elle utilise le filtre regex_search pour extraire l&rsquo;identifiant d&rsquo;instance SSM à partir de la sortie de la tâche d&rsquo;enregistrement. La regex <em>(\w+-\w+)$</em> vise à capturer le motif d&rsquo;identifiant d&rsquo;instance SSM dans la sortie, et la variable nouvellement créée <em>aws_ssm_instance_id</em> stocke cette information.</p>
+</li>
+</ul>
+<p>L&rsquo;identifiant d&rsquo;instance SSM obtenu est ensuite utilisé pour identifier de manière unique cet agent dans l&rsquo;environnement AWS, facilitant ainsi sa gestion et sa surveillance à distance.</p>
+<h3 id="playbook-ansible">Playbook Ansible<a hidden class="anchor" aria-hidden="true" href="#playbook-ansible">#</a></h3>
+<p>Pour tirer parti de cette intégration, un référentiel GitHub est mis à votre disposition à l&rsquo;adresse suivante : <a href="https://github.com/gautric/ansible-raspberrypi">ansible-raspberrypi</a>. Ce référentiel a été créé dans le but de simplifier le déploiement de l&rsquo;agent AWS Systems Manager (SSM) au sein de votre flotte de Raspberry Pi.</p>
+<pre tabindex="0"><code>
+gautric@MacBookProM2 ansible-raspberrypi % ansible-playbook -i hosts pi_aws_ssm.yml 
+</code></pre><p>Si tout ce passe bien, vous devriez avoir le retour suivant dans votre console.</p>
+<pre tabindex="0"><code>
+PLAY [ssm_hosts] ****************************************************************
+
+TASK [Gathering Facts] **********************************************************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Create AWS SSM Activation] **************************************
+ok: [raspberrypi.local -&gt; localhost]
+
+TASK [aws_ssm : Convert output to fact] *****************************************
+ok: [raspberrypi.local -&gt; localhost]
+
+TASK [aws_ssm : Download Amazon SSM Agent] **************************************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Install a Amazon SSM Agent .deb package] ************************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Stop Amazon SSM Agent] ******************************************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Register Amazon SSM Agent] **************************************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Retrieve SSM Instance Id from registration output] **************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Start Amazon SSM Agent] *****************************************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Enable Amazon SSM Agent] ****************************************
+ok: [raspberrypi.local]
+
+TASK [aws_ssm : Print SSM Instance Id] ******************************************
+ok: [raspberrypi.local] =&gt; {
+    &#34;msg&#34;: &#34;mi-0123456789abcdef&#34;
+}
+
+TASK [aws_ssm : Print SSH Instance Id command] **********************************
+ok: [raspberrypi.local] =&gt; {
+    &#34;msg&#34;: &#34;ssh pi@mi-0123456789abcdef&#34;
+}
+
+PLAY RECAP **********************************************************************
+raspberrypi.local          : ok=12   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+</code></pre><h4 id="photo-finish">Photo finish<a hidden class="anchor" aria-hidden="true" href="#photo-finish">#</a></h4>
+<p>Une fois l&rsquo;agent AWS Systems Manager déployé sur votre flotte de Raspberry Pi, vous pouvez retrouver votre instance RaspberryPi directement dans votre console AWS. Cette intégration transparente offre une visibilité centralisée sur l&rsquo;état opérationnel de chaque dispositif, vous permettant de surveiller, de diagnostiquer et de prendre des mesures à distance.</p>
+<p><img loading="lazy" src="/img/aws-ssm.png" alt="AWS Console"  />
+</p>
+<h3 id="connexion-ssh-au-dessus-de-aws-ssm-session-manager">Connexion SSH au dessus de AWS SSM Session Manager<a hidden class="anchor" aria-hidden="true" href="#connexion-ssh-au-dessus-de-aws-ssm-session-manager">#</a></h3>
+<p>Afin de pouvoir se connecter à votre instance Raspberry Pi, il vous faudra activer le mode Advanced d&rsquo;AWS SSM.</p>
+<div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice info" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Attention avec les coûts de AWS SSM en mode Advanced. N&rsquo;oubliez pas de revenir au mode Standard et donc free tier. <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances-advanced.html">Information sur le pricing du mode Advanced</a>.</p></div>
+
+<p>Ensuite, il sera possible de démarrer une session distante via la commande SSH légèrement configurée en utilisant une directive <strong>ProxyCommand</strong> dans votre fichier <em>.ssh/config</em>.</p>
+<p>Voici la commande de la CLI AWS pour activer le mode Advanced de AWS SSM, qui vous permettra d&rsquo;ouvrir la session à distance vers votre Raspberry Pi.</p>
+<pre tabindex="0"><code>aws ssm update-service-setting \
+    --setting-id arn:aws:ssm:eu-west-1:687441526170:servicesetting/ssm/managed-instance/activation-tier \
+    --setting-value advanced
+</code></pre><p>Le fichier <em>.ssh/config</em> afin d&rsquo;utiliser la feature Session Manager dans SSH.</p>
+<pre tabindex="0"><code>host i-* mi-*
+    ProxyCommand sh -c &#34;aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters &#39;portNumber=%p&#39;&#34;
+</code></pre><p>La commande SSH vers votre instance Raspberry Pi.</p>
+<pre tabindex="0"><code>    $&gt; ssh pi@mi-0123456789abcdef
+</code></pre><p><em>Et voilà &hellip;</em></p>
+<h2 id="url">URL<a hidden class="anchor" aria-hidden="true" href="#url">#</a></h2>
+<ul>
+<li><a href="https://github.com/gautric/ansible-raspberrypi">Repo Github</a></li>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">IAM Role pour SSM</a></li>
+<li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started-enable-ssh-connections.html">Allow and controlling permissions for SSH connections through Session Manager</a></li>
+<li><a href="https://aws.amazon.com/systems-manager/pricing/#Session_Manager">Pricing Session Manager Adv</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/fr/">fr</a></li>
+      <li><a href="https://gautric.github.io/tags/aws/">AWS</a></li>
+      <li><a href="https://gautric.github.io/tags/raspberrypi/">RaspberryPi</a></li>
+      <li><a href="https://gautric.github.io/tags/ssm/">SSM</a></li>
+      <li><a href="https://gautric.github.io/tags/ansible/">Ansible</a></li>
+      <li><a href="https://gautric.github.io/tags/ssh/">SSH</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2024/01/28/activer/d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Activer/Désactiver sa camera PoE via son routeur Cisco</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Quarkus/Java 11-17 et GitHub Action feat. Matrix</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

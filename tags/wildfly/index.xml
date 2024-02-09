@@ -10,46 +10,46 @@
     <atom:link href="https://gautric.github.io/tags/wildfly/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</title>
-      <link>https://gautric.github.io/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html</link>
+      <link>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</link>
       <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html</guid>
+      <guid>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</guid>
       <description>Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).</description>
     </item>
     <item>
       <title>Wildfly 9.0 Offline CLI and HTTP/2</title>
-      <link>https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html</link>
+      <link>https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/</link>
       <pubDate>Fri, 03 Jul 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html</guid>
+      <guid>https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/</guid>
       <description>Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.</description>
     </item>
     <item>
       <title>Sortie de wildfly 9.0 CR-01</title>
-      <link>https://gautric.github.io/blog/2015/05/04/wildfly-9-CR01-released-sortie.html</link>
+      <link>https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/</link>
       <pubDate>Mon, 04 May 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/05/04/wildfly-9-CR01-released-sortie.html</guid>
+      <guid>https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/</guid>
       <description>La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en téléchargement ici. Cette version corrige un certain nombre de bug et elle apporte de nouvelles fonctionnalités que nous allons vous rapidement ici. Je posterai plus tard des exemples complets.
 Java EE7 Wildfly 9 intégre les deux profils Web et Full du standard Java EE7.
 Le support de HTTP/2 &amp;amp; SPDY Le standard HTTP/2 est maintenant officiel depuis Fevrier.</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6 English Version</title>
-      <link>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</link>
+      <link>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</link>
       <pubDate>Thu, 26 Mar 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</guid>
       <description>JBoss EAP application server is Java EE 6 certified, it implements via IronJacamar framework, the Java EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6</title>
-      <link>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</link>
+      <link>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</link>
       <pubDate>Wed, 25 Mar 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</guid>
       <description>Le serveur d&amp;rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)</description>
     </item>
     <item>
       <title>Yubico OTP et JBoss EAP 6 ou Wildfly 8</title>
-      <link>https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html</link>
+      <link>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</link>
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</guid>
       <description>Yubikey est une clef de crypto qui permet d&amp;rsquo;avoir une authentification forte lors d&amp;rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&amp;hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&amp;rsquo;authentification à leur service. L&amp;rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation.</description>
     </item>
   </channel>

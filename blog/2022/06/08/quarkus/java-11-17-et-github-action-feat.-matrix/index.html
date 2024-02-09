@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Quarkus/Java 11-17 et GitHub Action feat. Matrix | Greg. I/O</title>
+<meta name="keywords" content="fr, Java, CI/CD, Quarkus">
+<meta name="description" content="La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Quarkus/Java 11-17 et GitHub Action feat. Matrix" />
+<meta property="og:description" content="La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-08T15:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-08T15:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Quarkus/Java 11-17 et GitHub Action feat. Matrix"/>
+<meta name="twitter:description" content="La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Quarkus/Java 11-17 et GitHub Action feat. Matrix",
+      "item": "https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Quarkus/Java 11-17 et GitHub Action feat. Matrix",
+  "name": "Quarkus\/Java 11-17 et GitHub Action feat. Matrix",
+  "description": "La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.",
+  "keywords": [
+    "fr", "Java", "CI/CD", "Quarkus"
+  ],
+  "articleBody": "La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat. Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.\nCompiler en Quarkus/Java 11 et 17 avec GitHub Action les Matrix\nL’idée dans ce post est de montrer très simplement un exemple de double compilation Java 11 et Java 17. Ces versions de Java sont des versions LTS1 c’est-à-dire qu’elles disposent d’un support long terme .\nRegardons rapidement le pipeline GitHub Action2 avec la possibilité de compiler sur deux versions de Java différentes. Comme toutes les GitHub Action le fichier doit se trouver dans le répertoires .github/workflows de votre projet.\nname: eaas-ci-matrix on: [push] jobs: build: strategy: (1) matrix: version: [11, 17] runs-on: ubuntu-latest steps: - name: Checkout source uses: actions/checkout@v3 - name: Set up JDK {{ \"${{ matrix.version \" }}}} uses: actions/setup-java@v3 with: java-version: {{ \"${{ matrix.version \" }}}} distribution: 'adopt' - name: Build with Maven {{ \"${{ matrix.version \" }}}} run: mvn --batch-mode --update-snapshots verify Pour cela il faut simplement rajouter la section (1) dans la GitHub Action afin de configurer la matrice des versions de java avec lesquelles on souhaite compiler.\nSuite à une modification (push) dans le repository, la GitHub Action va être déclenchée.\nGitHub Action va automatiquement créer autant de sous-pipeline que la matrice va prévoir.\nVoici l’exemple d’une compilation en Java 11\net une compilation en Java 17\nConclusion Avec cet exemple très simple, nous voyons qu’il est possible d’ajouter rapidement des matrices de configuration afin de tester plusieurs cas en parallèle via les GitHub Action. Cette feature incluse dans GitHub facilite et permet d’accélérer les montées de version par exemple. On pourra utiliser cette feature pour changer de socle, de brique tech, de librairie, de framework en toute sérénité.\nFootnotes https://fr.wikipedia.org/wiki/Long-term_support ↩︎\nhttps://docs.github.com/en/actions ↩︎\n",
+  "wordCount" : "353",
+  "inLanguage": "en",
+  "datePublished": "2022-06-08T15:00:00Z",
+  "dateModified": "2022-06-08T15:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Quarkus/Java 11-17 et GitHub Action feat. Matrix
+    </h1>
+    <div class="post-meta"><span title='2022-06-08 15:00:00 +0000 UTC'>June 8, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.
+Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.</p>
+<blockquote>
+<p>Compiler en Quarkus/Java 11 et 17 avec GitHub Action les Matrix</p>
+</blockquote>
+<p>L’idée dans ce post est de montrer très simplement un exemple de double compilation Java 11 et Java 17. Ces versions de Java sont des versions LTS<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> c’est-à-dire qu&rsquo;elles disposent d’un support long terme .</p>
+<p>Regardons rapidement le pipeline GitHub Action<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> avec la possibilité de compiler sur deux versions de Java différentes. Comme toutes les GitHub Action le fichier doit se trouver dans le répertoires .github/workflows de votre projet.</p>
+<pre tabindex="0"><code>
+name: eaas-ci-matrix
+
+on: [push]
+
+jobs:
+  build:
+    strategy:                        (1)
+      matrix:
+        version: [11, 17]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+      - name: Set up JDK {{ &#34;${{ matrix.version &#34; }}}}
+        uses: actions/setup-java@v3
+        with:
+          java-version: {{ &#34;${{ matrix.version &#34; }}}}
+          distribution: &#39;adopt&#39;
+      - name: Build with Maven {{ &#34;${{ matrix.version &#34; }}}}
+        run: mvn --batch-mode --update-snapshots verify
+</code></pre><p>Pour cela il faut simplement rajouter la section (1) dans la GitHub Action afin de configurer la matrice des versions de java avec lesquelles on souhaite compiler.</p>
+<p>Suite à une modification (push) dans le repository, la GitHub Action va être déclenchée.</p>
+<p><img loading="lazy" src="/img/gha-java-matrix.png" alt=""  />
+</p>
+<p>GitHub Action va automatiquement créer autant de sous-pipeline que la matrice va prévoir.</p>
+<p><img loading="lazy" src="/img/gha-java-11.png" alt="Compilation Java 11"  />
+
+Voici l&rsquo;exemple d&rsquo;une compilation en Java 11</p>
+<p><img loading="lazy" src="/img/gha-java-17.png" alt="Compilation Java 17"  />
+
+et une compilation en Java 17</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Avec cet exemple très simple, nous voyons qu’il est possible d’ajouter rapidement des matrices de configuration afin de tester plusieurs cas en parallèle via les GitHub Action. Cette feature incluse dans GitHub facilite et permet d’accélérer les montées de version par exemple. On pourra utiliser cette feature pour changer de socle, de brique tech, de librairie, de framework en toute sérénité.</p>
+<h4 id="footnotes">Footnotes<a hidden class="anchor" aria-hidden="true" href="#footnotes">#</a></h4>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://fr.wikipedia.org/wiki/Long-term_support">https://fr.wikipedia.org/wiki/Long-term_support</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/fr/">fr</a></li>
+      <li><a href="https://gautric.github.io/tags/java/">java</a></li>
+      <li><a href="https://gautric.github.io/tags/ci/cd/">CI/CD</a></li>
+      <li><a href="https://gautric.github.io/tags/quarkus/">Quarkus</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>AWS SSM, Ansible et Raspberry Pi via SSH</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm/drools/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

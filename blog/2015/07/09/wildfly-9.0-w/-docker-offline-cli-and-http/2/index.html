@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2 | Greg. I/O</title>
+<meta name="keywords" content="en, wildfly, Docker, Offline, CLI, HTTP/2, JDK8">
+<meta name="description" content="Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2" />
+<meta property="og:description" content="Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-07-09T13:58:00+00:00" />
+<meta property="article:modified_time" content="2015-07-09T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2"/>
+<meta name="twitter:description" content="Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-)."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2",
+      "item": "https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2",
+  "name": "Wildfly 9.0 w\/ Docker, Offline CLI and HTTP\/2",
+  "description": "Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).",
+  "keywords": [
+    "en", "wildfly", "Docker", "Offline", "CLI", "HTTP/2", "JDK8"
+  ],
+  "articleBody": "Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).\nHow to setup HTTP/2 configuration into Wildfly 9.0.0.Final with offline mode via Docker container.\nLet’s see how to do it.\nRequisites Docker is already installed and running. Please see official documentation\nX509 Certificate HTTP/2 doesn’t need an encryption layer for transport, but we gonna implement it in this example.\nCreate certificates like I wrote my previous blog post\nWarning\nBe Careful, Firefox doesn’t accept anymore selfsigned certificate (to confirm, I switch to Chrome). I will post soon an full shell script PKI generation ;-)\nBuild the Wilfly Docker image In this section, we will build the wildfly-http2 docker image.\nBut before building it we have to create a directory and copy :\nprevious keystore.jks and trustore.jks files\nofflinecli-http2.cli file\ncurl https://gist.githubusercontent.com/gautric/604e885885df0ed042f8/raw/f7d668edd82c35c23215a8a812074a4d47e1688b/offline-http2.cli -o offlinecli-http2.cli Dockerfile file curl https://gist.githubusercontent.com/gautric/c705e9e8572dd84b2bd9/raw/3ebfe805e767343f91104ef87ff3c0793f3efdd3/Dockerfile -o Dockerfile Build your image with the next comand line sample\ndocker build --rm=true --tag=wildfly-http2 . You should retrieve an output like this\n[mbp:~/Source/local/wildfly-docker]$\u003e docker --tlsverify=false build --rm=true --tag=wildfly-http2 . Sending build context to Docker daemon 74.75 kB Sending build context to Docker daemon Step 0 : FROM jboss/wildfly ---\u003e e908c8c95a8b Step 1 : ENV ALPN_VERSION 8.1.3.v20150130 ---\u003e Using cache ---\u003e 87116bbedcb5 Step 2 : ENV ALPN_LIB_DIR /tmp/eclipse/lib ---\u003e Using cache ---\u003e b4672d6008ee Step 3 : ENV HTTP2_ENABLE_CLI offlinecli-http2.cli ---\u003e Using cache ---\u003e 635ac811b927 Step 4 : ADD keystore.jks /opt/jboss/wildfly/standalone/configuration/keystore.jks ---\u003e Using cache ---\u003e d0e62373566c Step 5 : ADD truststore.jks /opt/jboss/wildfly/standalone/configuration/truststore.jks ---\u003e Using cache ---\u003e f3e274485c1c Step 6 : RUN mkdir -p $ALPN_LIB_DIR ---\u003e Using cache ---\u003e fd2da0f5ee22 Step 7 : RUN curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/$ALPN_VERSION/alpn-boot-$ALPN_VERSION.jar \u003e $ALPN_LIB_DIR/alpn-boot-$ALPN_VERSION.jar ---\u003e Using cache ---\u003e f8032e23c9b5 Step 8 : ENV JAVA_OPTS \"$JAVA_OPTS -Xbootclasspath/p:$ALPN_LIB_DIR/alpn-boot-$ALPN_VERSION.jar\" ---\u003e Using cache ---\u003e 3e49cf6ca1c6 Step 9 : ADD $HTTP2_ENABLE_CLI /tmp/ ---\u003e Using cache ---\u003e e309bce6ec5a Step 10 : RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file=/tmp/$HTTP2_ENABLE_CLI ---\u003e Using cache ---\u003e 85fb55ecc742 Step 11 : RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history ---\u003e Using cache ---\u003e 566da0a2cb80 Step 12 : CMD /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0 ---\u003e Using cache ---\u003e 3372a817bfc1 Successfully built 3372a817bfc1 Startup the Wilfly Docker image After a full an a correct configuration, you can startup the JBoss instance as a container via your container provider aka Docker. Startup like this\ndocker run -it -p 9990:9990 -p 8080:8080 -p 8443:8443 wildfly-http2 Check it After a very quick JBoss startup inside Docker container (about 3s), you can check the welcome page (with Linux Docker) or the welcome page (with MAC OSX Docker) with your favorite browser like Chrome. I use to check HTTP/2 protocol, the network panel available inside Chrome.\nConclusion Docker (Today) and HTTP/2 (tomorrow) will be inevitable for their specific reasons. The first one simplifies full stack deployment from the OS to application including middleware. The second one is an huge update of WWW protocol to improve network performance (binary header), latency (multiplexing) and security (TLS recommended).\nUseful links Wildfly Docker image, Offline CLI, HTTP/2, Docker. ",
+  "wordCount" : "544",
+  "inLanguage": "en",
+  "datePublished": "2015-07-09T13:58:00Z",
+  "dateModified": "2015-07-09T13:58:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2
+    </h1>
+    <div class="post-meta"><span title='2015-07-09 13:58:00 +0000 UTC'>July 9, 2015</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Last week, Wildfly community has just released <a href="http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/"><em><strong>Wildfly 9.0.0.Final</strong></em></a> and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).</p>
+<blockquote>
+<p>How to setup HTTP/2 configuration into Wildfly 9.0.0.Final with offline mode via Docker container.</p>
+</blockquote>
+<p>Let&rsquo;s see how to do it.</p>
+<h2 id="requisites">Requisites<a hidden class="anchor" aria-hidden="true" href="#requisites">#</a></h2>
+<p>Docker is already installed and running.
+Please see <a href="http://docs.docker.com/userguide/">official documentation</a></p>
+<h2 id="x509-certificate">X509 Certificate<a hidden class="anchor" aria-hidden="true" href="#x509-certificate">#</a></h2>
+<p>HTTP/2 doesn&rsquo;t need an encryption layer for transport, but we gonna implement it in this example.</p>
+<p>Create certificates like I wrote <a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">my previous blog post</a></p>
+<div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice warning" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Be Careful, Firefox doesn&rsquo;t accept anymore selfsigned certificate (to confirm, I switch to Chrome).
+I will post soon an full shell script PKI generation ;-)</p></div>
+
+<h2 id="build-the-wilfly-docker-image">Build the Wilfly Docker image<a hidden class="anchor" aria-hidden="true" href="#build-the-wilfly-docker-image">#</a></h2>
+<p>In this section, we will build the wildfly-http2 docker image.</p>
+<p>But before building it we have to create a directory and copy :</p>
+<ul>
+<li>
+<p>previous <em><strong>keystore.jks</strong></em> and <em><strong>trustore.jks</strong></em> files</p>
+</li>
+<li>
+<p><em><strong>offlinecli-http2.cli</strong></em> file</p>
+</li>
+</ul>
+ <script src="https://gist.github.com/gautric/604e885885df0ed042f8.js"></script>
+<pre tabindex="0"><code>curl https://gist.githubusercontent.com/gautric/604e885885df0ed042f8/raw/f7d668edd82c35c23215a8a812074a4d47e1688b/offline-http2.cli -o offlinecli-http2.cli
+</code></pre><ul>
+<li><em><strong>Dockerfile</strong></em> file</li>
+</ul>
+ <script src="https://gist.github.com/gautric/c705e9e8572dd84b2bd9.js"></script>
+<pre tabindex="0"><code>curl https://gist.githubusercontent.com/gautric/c705e9e8572dd84b2bd9/raw/3ebfe805e767343f91104ef87ff3c0793f3efdd3/Dockerfile -o Dockerfile
+</code></pre><p>Build your image with the next comand line sample</p>
+<pre tabindex="0"><code>docker  build --rm=true --tag=wildfly-http2   .
+</code></pre><p>You should retrieve an output like this</p>
+<pre tabindex="0"><code>[mbp:~/Source/local/wildfly-docker]$&gt; docker --tlsverify=false  build --rm=true --tag=wildfly-http2   .
+Sending build context to Docker daemon 74.75 kB
+Sending build context to Docker daemon
+Step 0 : FROM jboss/wildfly
+ ---&gt; e908c8c95a8b
+Step 1 : ENV ALPN_VERSION 8.1.3.v20150130
+ ---&gt; Using cache
+ ---&gt; 87116bbedcb5
+Step 2 : ENV ALPN_LIB_DIR /tmp/eclipse/lib
+ ---&gt; Using cache
+ ---&gt; b4672d6008ee
+Step 3 : ENV HTTP2_ENABLE_CLI offlinecli-http2.cli
+ ---&gt; Using cache
+ ---&gt; 635ac811b927
+Step 4 : ADD keystore.jks /opt/jboss/wildfly/standalone/configuration/keystore.jks
+ ---&gt; Using cache
+ ---&gt; d0e62373566c
+Step 5 : ADD truststore.jks /opt/jboss/wildfly/standalone/configuration/truststore.jks
+ ---&gt; Using cache
+ ---&gt; f3e274485c1c
+Step 6 : RUN mkdir -p $ALPN_LIB_DIR
+ ---&gt; Using cache
+ ---&gt; fd2da0f5ee22
+Step 7 : RUN curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/$ALPN_VERSION/alpn-boot-$ALPN_VERSION.jar &gt; $ALPN_LIB_DIR/alpn-boot-$ALPN_VERSION.jar
+ ---&gt; Using cache
+ ---&gt; f8032e23c9b5
+Step 8 : ENV JAVA_OPTS &#34;$JAVA_OPTS -Xbootclasspath/p:$ALPN_LIB_DIR/alpn-boot-$ALPN_VERSION.jar&#34;
+ ---&gt; Using cache
+ ---&gt; 3e49cf6ca1c6
+Step 9 : ADD $HTTP2_ENABLE_CLI /tmp/
+ ---&gt; Using cache
+ ---&gt; e309bce6ec5a
+Step 10 : RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file=/tmp/$HTTP2_ENABLE_CLI
+ ---&gt; Using cache
+ ---&gt; 85fb55ecc742
+Step 11 : RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history
+ ---&gt; Using cache
+ ---&gt; 566da0a2cb80
+Step 12 : CMD /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0
+ ---&gt; Using cache
+ ---&gt; 3372a817bfc1
+Successfully built 3372a817bfc1
+</code></pre><h2 id="startup-the-wilfly-docker-image">Startup the Wilfly Docker image<a hidden class="anchor" aria-hidden="true" href="#startup-the-wilfly-docker-image">#</a></h2>
+<p>After a full an a correct configuration, you can startup the JBoss instance as a container via your container provider aka Docker.
+Startup like this</p>
+<pre tabindex="0"><code> docker run -it -p 9990:9990 -p 8080:8080 -p 8443:8443 wildfly-http2
+</code></pre><h2 id="check-it">Check it<a hidden class="anchor" aria-hidden="true" href="#check-it">#</a></h2>
+<p>After a very quick JBoss startup inside Docker container (about 3s), you can check <a href="https://localhost:8443/"><em><strong>the welcome page (with Linux Docker)</strong></em></a> or  <a href="https://192.168.59.103:8443/"><em><strong>the welcome page (with MAC OSX Docker)</strong></em></a> with your favorite browser like Chrome.
+I use to check HTTP/2 protocol, the network panel available inside Chrome.</p>
+<img src="/img/wildfly9-docker-http2-offline.png" style="max-width:75%;" />
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Docker (Today) and HTTP/2 (tomorrow) will be inevitable for their specific reasons. The first one simplifies full stack deployment from the OS to application including middleware. The second one is an huge update of WWW protocol to improve network performance (binary header), latency (multiplexing) and security (TLS recommended).</p>
+<h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<ul>
+<li><a href="https://registry.hub.docker.com/u/jboss/wildfly/">Wildfly Docker</a> image,</li>
+<li><a href="https://developer.jboss.org/wiki/OfflineCLIWork">Offline CLI</a>,</li>
+<li><a href="http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html">HTTP/2</a>,</li>
+<li><a href="http://docker.io">Docker</a>.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/wildfly/">wildfly</a></li>
+      <li><a href="https://gautric.github.io/tags/docker/">Docker</a></li>
+      <li><a href="https://gautric.github.io/tags/offline/">Offline</a></li>
+      <li><a href="https://gautric.github.io/tags/cli/">CLI</a></li>
+      <li><a href="https://gautric.github.io/tags/http/2/">HTTP/2</a></li>
+      <li><a href="https://gautric.github.io/tags/jdk8/">JDK8</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2015/08/04/unesco-challenge-point-unesco-le-havre/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>UNESCO Challenge, point UNESCO, Le Havre</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Wildfly 9.0 Offline CLI and HTTP/2</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

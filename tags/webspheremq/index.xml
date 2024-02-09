@@ -10,9 +10,9 @@
     <atom:link href="https://gautric.github.io/tags/webspheremq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>JBoss EAP 7 connected to WebsphereMQ running on Docker</title>
-      <link>https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html</link>
+      <link>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html</guid>
+      <guid>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</guid>
       <description>Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.
 Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker
 Prerequisites For this lab, you need the following software :
@@ -20,16 +20,16 @@ package of JBoss EAP 7 http://www.</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6 English Version</title>
-      <link>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</link>
+      <link>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</link>
       <pubDate>Thu, 26 Mar 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</guid>
       <description>JBoss EAP application server is Java EE 6 certified, it implements via IronJacamar framework, the Java EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6</title>
-      <link>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</link>
+      <link>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</link>
       <pubDate>Wed, 25 Mar 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</guid>
       <description>Le serveur d&amp;rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)</description>
     </item>
   </channel>

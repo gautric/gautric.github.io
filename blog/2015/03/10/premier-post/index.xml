@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Premier post on Greg. I/O</title>
+    <link>https://gautric.github.io/blog/2015/03/10/premier-post/</link>
+    <description>Recent content in Premier post on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Mar 2015 18:02:10 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/blog/2015/03/10/premier-post/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

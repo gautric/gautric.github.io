@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JConsole &amp; Java Mission Control with JBoss EAP 7 on Greg. I/O</title>
+    <link>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</link>
+    <description>Recent content in JConsole &amp; Java Mission Control with JBoss EAP 7 on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Jul 2016 14:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

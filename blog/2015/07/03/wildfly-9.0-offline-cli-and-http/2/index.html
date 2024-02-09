@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Wildfly 9.0 Offline CLI and HTTP/2 | Greg. I/O</title>
+<meta name="keywords" content="en, wildfly, Offline, CLI, HTTP/2, JDK8">
+<meta name="description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Wildfly 9.0 Offline CLI and HTTP/2" />
+<meta property="og:description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-07-03T13:58:00+00:00" />
+<meta property="article:modified_time" content="2015-07-03T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wildfly 9.0 Offline CLI and HTTP/2"/>
+<meta name="twitter:description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Wildfly 9.0 Offline CLI and HTTP/2",
+      "item": "https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Wildfly 9.0 Offline CLI and HTTP/2",
+  "name": "Wildfly 9.0 Offline CLI and HTTP\/2",
+  "description": "Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.",
+  "keywords": [
+    "en", "wildfly", "Offline", "CLI", "HTTP/2", "JDK8"
+  ],
+  "articleBody": "Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.\nHow to setup HTTP/2 configuration into Wildfly 9.0.0.Final with offline mode.\nDownload Wildfly Please download it following this link.\nInstallation After downloading it, you just have to unzip it into your folder like this :\ntar -zxvf wildfly-9.0.0.Final.tar.gz X509 Certificate HTTP/2 doesn’t need an encryption layer for transport, but we gonna implement it in this example.\nCreate a self-signed certificate\nExport it for your web browser\nSecure configuration Due of some JDK 8 limitations, ALPN isn’t supported natively by JDK 8. We will download it from the Eclipse Foundation. This feature is mandatory for the HTTP/2 protocol with encryption.\nexport ALPN_VERSION=8.1.3.v20150130 curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/$ALPN_VERSION/alpn-boot-$ALPN_VERSION.jar \u003e `pwd`/alpn-boot-$ALPN_VERSION.jar export JAVA_OPTS=\"$JAVA_OPTS -Xbootclasspath/p:`pwd`/alpn-boot-$ALPN_VERSION.jar\" Configure the HTTP/2 into Undertow Now, the best part, Wildly isn’t running yet and we will execute some Offline CLI commands to configure the standalone instance. To use the offline mode, we just have to use the embed-server command. This command runs an internal Wildly process and will interact directly with it.\nAs you should know Undertow is now the JBoss embedded HTTP Webserver, we gonna configure it to enable http2 after we’ve configured the new security realm. You should get an output result like this\nYou are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands. [disconnected /] embed-server [standalone@embedded /] /core-service=management/security-realm=https:add() {\"outcome\" =\u003e \"success\"} [standalone@embedded /] /core-service=management/security-realm=https/authentication=truststore:add(keystore-path=server.truststore, keystore-password=password, keystore-relative-to=jboss.server.config.dir) { \"outcome\" =\u003e \"success\", \"response-headers\" =\u003e { \"operation-requires-reload\" =\u003e true, \"process-state\" =\u003e \"reload-required\" } } [standalone@embedded /] /core-service=management/security-realm=https/server-identity=ssl:add(keystore-path=server.keystore, keystore-password=password, keystore-relative-to=jboss.server.config.dir) { \"outcome\" =\u003e \"success\", \"response-headers\" =\u003e { \"operation-requires-reload\" =\u003e true, \"process-state\" =\u003e \"reload-required\" } } [standalone@embedded /] /subsystem=undertow/server=default-server/https-listener=https:add(socket-binding=https, security-realm=https, enable-http2=true) { \"outcome\" =\u003e \"success\", \"response-headers\" =\u003e {\"process-state\" =\u003e \"reload-required\"} } [standalone@embedded /] reload --admin-only=false [standalone@embedded /] Startup JBoss After a full correct configuration, you can startup the JBoss instance as usual.\n$JBOSS_HOME/bin/standalone.sh Check it After a very quick JBoss startup (about 3s), you can check the welcome page with your favorite browser like Firefox . I use to check HTTP/2 protocol, the network panel available inside Firefox.\nUseful links Offline CLI HTTP/2 ",
+  "wordCount" : "429",
+  "inLanguage": "en",
+  "datePublished": "2015-07-03T13:58:00Z",
+  "dateModified": "2015-07-03T13:58:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Wildfly 9.0 Offline CLI and HTTP/2
+    </h1>
+    <div class="post-meta"><span title='2015-07-03 13:58:00 +0000 UTC'>July 3, 2015</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Yesterday, Wildfly community has just released <a href="http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/"><em><strong>Wildfly 9.0.0.Final</strong></em></a>, the last Application Server version. As I talked on my previous <a href="/blog/2015/05/04/wildfly-9-CR01-released-sortie.html">French post about Wildfly</a> they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup <a href="https://en.wikipedia.org/wiki/HTTP/2"><em><strong>HTTP/2</strong></em></a> with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.</p>
+<blockquote>
+<p>How to setup HTTP/2 configuration into Wildfly 9.0.0.Final with offline mode.</p>
+</blockquote>
+<h2 id="download-wildfly">Download Wildfly<a hidden class="anchor" aria-hidden="true" href="#download-wildfly">#</a></h2>
+<p>Please download it following <a href="http://wildfly.org/downloads/">this link</a>.</p>
+<h2 id="installation">Installation<a hidden class="anchor" aria-hidden="true" href="#installation">#</a></h2>
+<p>After downloading it, you just have to unzip it into your folder like this :</p>
+<pre tabindex="0"><code>tar -zxvf wildfly-9.0.0.Final.tar.gz
+</code></pre><h2 id="x509-certificate">X509 Certificate<a hidden class="anchor" aria-hidden="true" href="#x509-certificate">#</a></h2>
+<p>HTTP/2 doesn&rsquo;t need an encryption layer for transport, but we gonna implement it in this example.</p>
+<p>Create a self-signed certificate</p>
+<script src="https://gist.github.com/gautric/0a1d6b33fef9778d83b0.js"></script>
+<p>Export it for your web browser</p>
+<script src="https://gist.github.com/gautric/0208abcfdedc78b6471f.js"></script>
+<h2 id="secure-configuration">Secure configuration<a hidden class="anchor" aria-hidden="true" href="#secure-configuration">#</a></h2>
+<p>Due of some JDK 8 limitations, <a href="http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html">ALPN</a> isn&rsquo;t supported natively by JDK 8. We will download it from the <a href="https://eclipse.org/org/"><em>Eclipse Foundation</em></a>. This feature is mandatory for the HTTP/2 protocol with encryption.</p>
+<pre tabindex="0"><code>export ALPN_VERSION=8.1.3.v20150130
+curl http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/$ALPN_VERSION/alpn-boot-$ALPN_VERSION.jar &gt; `pwd`/alpn-boot-$ALPN_VERSION.jar
+export JAVA_OPTS=&#34;$JAVA_OPTS -Xbootclasspath/p:`pwd`/alpn-boot-$ALPN_VERSION.jar&#34;
+</code></pre><h2 id="configure-the-http2-into-undertow">Configure the HTTP/2 into Undertow<a hidden class="anchor" aria-hidden="true" href="#configure-the-http2-into-undertow">#</a></h2>
+<p>Now, the best part, Wildly isn&rsquo;t running yet and we will execute some Offline CLI commands to configure the standalone instance.
+To use the offline mode, we just have to use the <em><strong>embed-server</strong></em> command. This command runs an internal Wildly process and will interact directly with it.</p>
+<script src="https://gist.github.com/gautric/546b92951b9e91195f84.js"></script>
+<p>As you should know <a href="http://undertow.io/"><em><strong>Undertow</strong></em></a> is now the JBoss embedded HTTP Webserver, we gonna configure it to enable http2 after we&rsquo;ve configured the new security realm.
+You should get an output result like this</p>
+<pre tabindex="0"><code>You are disconnected at the moment. Type &#39;connect&#39; to connect to the server or &#39;help&#39; for the list of supported commands.
+[disconnected /] embed-server
+[standalone@embedded /] /core-service=management/security-realm=https:add()
+{&#34;outcome&#34; =&gt; &#34;success&#34;}
+[standalone@embedded /] /core-service=management/security-realm=https/authentication=truststore:add(keystore-path=server.truststore, keystore-password=password, keystore-relative-to=jboss.server.config.dir)
+{
+    &#34;outcome&#34; =&gt; &#34;success&#34;,
+    &#34;response-headers&#34; =&gt; {
+        &#34;operation-requires-reload&#34; =&gt; true,
+        &#34;process-state&#34; =&gt; &#34;reload-required&#34;
+    }
+}
+[standalone@embedded /] /core-service=management/security-realm=https/server-identity=ssl:add(keystore-path=server.keystore, keystore-password=password, keystore-relative-to=jboss.server.config.dir)
+{
+    &#34;outcome&#34; =&gt; &#34;success&#34;,
+    &#34;response-headers&#34; =&gt; {
+        &#34;operation-requires-reload&#34; =&gt; true,
+        &#34;process-state&#34; =&gt; &#34;reload-required&#34;
+    }
+}
+[standalone@embedded /] /subsystem=undertow/server=default-server/https-listener=https:add(socket-binding=https, security-realm=https, enable-http2=true)
+{
+    &#34;outcome&#34; =&gt; &#34;success&#34;,
+    &#34;response-headers&#34; =&gt; {&#34;process-state&#34; =&gt; &#34;reload-required&#34;}
+}
+[standalone@embedded /] reload --admin-only=false
+[standalone@embedded /]
+</code></pre><h2 id="startup-jboss">Startup JBoss<a hidden class="anchor" aria-hidden="true" href="#startup-jboss">#</a></h2>
+<p>After a full correct configuration, you can startup the JBoss instance as usual.</p>
+<pre tabindex="0"><code>$JBOSS_HOME/bin/standalone.sh
+</code></pre><h2 id="check-it">Check it<a hidden class="anchor" aria-hidden="true" href="#check-it">#</a></h2>
+<p>After a very quick JBoss startup (about 3s), you can check <a href="https://localhost:8443/"><em><strong>the welcome page</strong></em></a> with your favorite browser like Firefox .
+I use to check HTTP/2 protocol, the network panel available inside Firefox.</p>
+<img src="/img/wildfly9-http2-offline.png" style="max-width:75%;" />
+<h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<ul>
+<li><a href="https://developer.jboss.org/wiki/OfflineCLIWork">Offline CLI</a></li>
+<li><a href="http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html">HTTP/2</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/wildfly/">wildfly</a></li>
+      <li><a href="https://gautric.github.io/tags/offline/">Offline</a></li>
+      <li><a href="https://gautric.github.io/tags/cli/">CLI</a></li>
+      <li><a href="https://gautric.github.io/tags/http/2/">HTTP/2</a></li>
+      <li><a href="https://gautric.github.io/tags/jdk8/">JDK8</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Leshan et le standard Lightweight M2M à l&#39;EclipseCon</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gautric.github.io/blog/2024/01/28/activer-desactiver-sa-camera-poe-via-son-routeur-cisco/</loc>
+    <loc>https://gautric.github.io/blog/2024/01/28/activer/d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</loc>
     <lastmod>2024-01-28T09:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/cisco/</loc>
@@ -32,7 +32,7 @@
     <loc>https://gautric.github.io/tags/aws/</loc>
     <lastmod>2024-01-15T09:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2024/01/15/AWS-SSM-and-RaspberryPi-SSH.html</loc>
+    <loc>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</loc>
     <lastmod>2024-01-15T09:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/categories/blog/</loc>
@@ -56,7 +56,7 @@
     <loc>https://gautric.github.io/tags/quarkus/</loc>
     <lastmod>2022-06-08T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2022/06/08/GitHub-Matrix.html</loc>
+    <loc>https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/</loc>
     <lastmod>2022-06-08T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/drools/</loc>
@@ -68,7 +68,7 @@
     <loc>https://gautric.github.io/tags/pattern/</loc>
     <lastmod>2021-09-26T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2021/09/26/Pattern-Signal-jBPM.html</loc>
+    <loc>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm/drools/</loc>
     <lastmod>2021-09-26T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/reception/</loc>
@@ -80,7 +80,7 @@
     <loc>https://gautric.github.io/tags/exception/</loc>
     <lastmod>2020-10-28T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html</loc>
+    <loc>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</loc>
     <lastmod>2020-10-28T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/workitemhandler/</loc>
@@ -92,7 +92,7 @@
     <loc>https://gautric.github.io/tags/keycloak/</loc>
     <lastmod>2020-10-26T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2020/10/26/Keycloak-Yubico-WebAuthn.html</loc>
+    <loc>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</loc>
     <lastmod>2020-10-26T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/webauthn/</loc>
@@ -104,7 +104,7 @@
     <loc>https://gautric.github.io/tags/dmn/</loc>
     <lastmod>2020-06-06T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2020/06/06/Execution-d&#39;un-KYC-en-DMN.html</loc>
+    <loc>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</loc>
     <lastmod>2020-06-06T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/kogito/</loc>
@@ -113,7 +113,7 @@
     <loc>https://gautric.github.io/tags/kyc/</loc>
     <lastmod>2020-06-06T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html</loc>
+    <loc>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</loc>
     <lastmod>2020-06-04T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/standard/</loc>
@@ -131,7 +131,7 @@
     <loc>https://gautric.github.io/tags/mqtt/</loc>
     <lastmod>2018-04-21T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html</loc>
+    <loc>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</loc>
     <lastmod>2018-04-21T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/node-red/</loc>
@@ -146,7 +146,7 @@
     <loc>https://gautric.github.io/tags/camel/</loc>
     <lastmod>2016-12-03T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html</loc>
+    <loc>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</loc>
     <lastmod>2016-12-03T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/en/</loc>
@@ -170,7 +170,7 @@
     <loc>https://gautric.github.io/tags/howto/</loc>
     <lastmod>2016-09-27T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html</loc>
+    <loc>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/</loc>
     <lastmod>2016-09-27T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/wifi/</loc>
@@ -185,7 +185,7 @@
     <loc>https://gautric.github.io/tags/jboss/</loc>
     <lastmod>2016-08-03T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html</loc>
+    <loc>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</loc>
     <lastmod>2016-08-03T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/redhat/</loc>
@@ -194,7 +194,7 @@
     <loc>https://gautric.github.io/tags/webspheremq/</loc>
     <lastmod>2016-08-03T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html</loc>
+    <loc>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</loc>
     <lastmod>2016-07-19T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/jmc/</loc>
@@ -203,7 +203,7 @@
     <loc>https://gautric.github.io/tags/jvm/</loc>
     <lastmod>2016-07-19T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/06/27/Lancement-JBoss-EAP-7.html</loc>
+    <loc>https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/</loc>
     <lastmod>2016-06-27T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/challenge/</loc>
@@ -215,13 +215,13 @@
     <loc>https://gautric.github.io/tags/unesco/</loc>
     <lastmod>2016-06-14T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html</loc>
+    <loc>https://gautric.github.io/blog/2016/06/14/unesco-challenge-point-unesco-malte-/-malta/</loc>
     <lastmod>2016-06-14T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/voyage/</loc>
     <lastmod>2016-06-14T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/03/18/apache-camel-eclipse-kura.html</loc>
+    <loc>https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/</loc>
     <lastmod>2016-03-18T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/eclipse/</loc>
@@ -230,7 +230,7 @@
     <loc>https://gautric.github.io/tags/kura/</loc>
     <lastmod>2016-03-18T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html</loc>
+    <loc>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</loc>
     <lastmod>2016-03-09T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/deviceio/</loc>
@@ -248,19 +248,19 @@
     <loc>https://gautric.github.io/tags/rhiot/</loc>
     <lastmod>2016-02-29T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html</loc>
+    <loc>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</loc>
     <lastmod>2016-02-29T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html</loc>
+    <loc>https://gautric.github.io/blog/2016/01/29/unesco-challenge-point-unesco-maritime-greenwich-prime-meridian/</loc>
     <lastmod>2016-01-29T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html</loc>
+    <loc>https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/</loc>
     <lastmod>2015-12-28T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html</loc>
+    <loc>https://gautric.github.io/blog/2015/12/23/kura-over-docker/</loc>
     <lastmod>2015-12-23T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html</loc>
+    <loc>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</loc>
     <lastmod>2015-12-03T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/display/</loc>
@@ -269,7 +269,7 @@
     <loc>https://gautric.github.io/tags/framebuffer/</loc>
     <lastmod>2015-11-24T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html</loc>
+    <loc>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</loc>
     <lastmod>2015-11-24T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/sense-hat/</loc>
@@ -284,7 +284,7 @@
     <loc>https://gautric.github.io/tags/macbookpro/</loc>
     <lastmod>2015-10-23T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html</loc>
+    <loc>https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/</loc>
     <lastmod>2015-10-23T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/websocket/</loc>
@@ -293,7 +293,7 @@
     <loc>https://gautric.github.io/tags/macos-x/</loc>
     <lastmod>2015-10-22T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html</loc>
+    <loc>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-webcam-component-on-macos-x-in-groovy/</loc>
     <lastmod>2015-10-22T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/el-capitan/</loc>
@@ -305,7 +305,7 @@
     <loc>https://gautric.github.io/tags/macos/</loc>
     <lastmod>2015-10-03T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html</loc>
+    <loc>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</loc>
     <lastmod>2015-10-03T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/tunnel/</loc>
@@ -314,10 +314,10 @@
     <loc>https://gautric.github.io/tags/ja/</loc>
     <lastmod>2015-08-24T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/08/24/%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1.html</loc>
+    <loc>https://gautric.github.io/blog/2015/08/24/unesco-challenge-%E5%9B%BD%E9%9A%9B%E9%80%A3%E5%90%88%E6%95%99%E8%82%B2%E7%A7%91%E5%AD%A6%E6%96%87%E5%8C%96%E6%A9%9F%E9%96%A2%E3%81%AE%E8%AA%8D%E5%AE%9A%E5%9C%B0-iwami-ginzan-silver-mine-%E7%9F%B3%E8%A6%8B%E9%8A%80%E5%B1%B1/</loc>
     <lastmod>2015-08-24T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html</loc>
+    <loc>https://gautric.github.io/blog/2015/08/04/unesco-challenge-point-unesco-le-havre/</loc>
     <lastmod>2015-08-04T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/cli/</loc>
@@ -332,10 +332,10 @@
     <loc>https://gautric.github.io/tags/wildfly/</loc>
     <lastmod>2015-07-09T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html</loc>
+    <loc>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</loc>
     <lastmod>2015-07-09T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html</loc>
+    <loc>https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/</loc>
     <lastmod>2015-07-03T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/coap/</loc>
@@ -347,7 +347,7 @@
     <loc>https://gautric.github.io/tags/leshan/</loc>
     <lastmod>2015-07-01T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html</loc>
+    <loc>https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/</loc>
     <lastmod>2015-07-01T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/lightweight/</loc>
@@ -362,7 +362,7 @@
     <loc>https://gautric.github.io/tags/group-name/</loc>
     <lastmod>2015-06-18T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/06/18/java-regex-name-group.html</loc>
+    <loc>https://gautric.github.io/blog/2015/06/18/java-regex-group-name/</loc>
     <lastmod>2015-06-18T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/regex/</loc>
@@ -371,7 +371,7 @@
     <loc>https://gautric.github.io/tags/apache/</loc>
     <lastmod>2015-05-20T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html</loc>
+    <loc>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</loc>
     <lastmod>2015-05-20T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/camellabs/</loc>
@@ -386,10 +386,10 @@
     <loc>https://gautric.github.io/tags/raspberry-pi/</loc>
     <lastmod>2015-05-20T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/05/04/wildfly-9-CR01-released-sortie.html</loc>
+    <loc>https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/</loc>
     <lastmod>2015-05-04T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/04/25/premier-jour-projet-camel-iot-labs.html</loc>
+    <loc>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</loc>
     <lastmod>2015-04-25T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/pi4j/</loc>
@@ -398,13 +398,13 @@
     <loc>https://gautric.github.io/tags/tinkerforge/</loc>
     <lastmod>2015-04-25T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-integration.html</loc>
+    <loc>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</loc>
     <lastmod>2015-04-03T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/proofofconcept/</loc>
     <lastmod>2015-04-03T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</loc>
+    <loc>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</loc>
     <lastmod>2015-03-26T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/eap/</loc>
@@ -413,13 +413,13 @@
     <loc>https://gautric.github.io/tags/jca/</loc>
     <lastmod>2015-03-26T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/03/25/websphere-mq-jboss-eap-integration.html</loc>
+    <loc>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</loc>
     <lastmod>2015-03-25T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/otp/</loc>
     <lastmod>2015-03-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html</loc>
+    <loc>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</loc>
     <lastmod>2015-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/yubikey/</loc>
@@ -431,10 +431,10 @@
     <loc>https://gautric.github.io/tags/histoire/</loc>
     <lastmod>2015-03-18T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html</loc>
+    <loc>https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</loc>
     <lastmod>2015-03-18T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2015/03/10/premier-post.html</loc>
+    <loc>https://gautric.github.io/blog/2015/03/10/premier-post/</loc>
     <lastmod>2015-03-10T18:02:10+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/apropos/</loc>

@@ -10,16 +10,16 @@
     <atom:link href="https://gautric.github.io/tags/gateway/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rhiot Kura Device IO GPIO and I2C</title>
-      <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html</link>
+      <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
       <pubDate>Mon, 29 Feb 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html</guid>
+      <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
       <description>Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C Camel, I reuse a previous work from Camel-pi4j I&amp;rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a RaspberryPi and a ActiveMQ broker too.</description>
     </item>
     <item>
       <title>Rhiot Kura Gateway Sample (Emulator &amp; RaspberryPi) </title>
-      <link>https://gautric.github.io/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html</link>
+      <link>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</link>
       <pubDate>Thu, 03 Dec 2015 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html</guid>
+      <guid>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</guid>
       <description>For a while, I develop during my free time for Rhiot project with my Red Hat colleague Henryk. We started to develop several Camel components like (kura, pi4j, bluetooth) with others volunteers. Now we focus to develop and integrate those components for Kura Platform. Kura is an OSGi Platform designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device. Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc&amp;hellip;) In this post we will see :</description>
     </item>
   </channel>

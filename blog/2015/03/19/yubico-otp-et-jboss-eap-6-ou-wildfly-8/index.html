@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Yubico OTP et JBoss EAP 6 ou Wildfly 8 | Greg. I/O</title>
+<meta name="keywords" content="fr, otp, yubico, yubikey, jboss, eap, wildfly">
+<meta name="description" content="Yubikey est une clef de crypto qui permet d&rsquo;avoir une authentification forte lors d&rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&rsquo;authentification à leur service. L&rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Yubico OTP et JBoss EAP 6 ou Wildfly 8" />
+<meta property="og:description" content="Yubikey est une clef de crypto qui permet d&rsquo;avoir une authentification forte lors d&rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&rsquo;authentification à leur service. L&rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-03-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-03-19T00:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Yubico OTP et JBoss EAP 6 ou Wildfly 8"/>
+<meta name="twitter:description" content="Yubikey est une clef de crypto qui permet d&rsquo;avoir une authentification forte lors d&rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&rsquo;authentification à leur service. L&rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Yubico OTP et JBoss EAP 6 ou Wildfly 8",
+      "item": "https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Yubico OTP et JBoss EAP 6 ou Wildfly 8",
+  "name": "Yubico OTP et JBoss EAP 6 ou Wildfly 8",
+  "description": "Yubikey est une clef de crypto qui permet d\u0026rsquo;avoir une authentification forte lors d\u0026rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc\u0026hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d\u0026rsquo;authentification à leur service. L\u0026rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation.",
+  "keywords": [
+    "fr", "otp", "yubico", "yubikey", "jboss", "eap", "wildfly"
+  ],
+  "articleBody": "Yubikey est une clef de crypto qui permet d’avoir une authentification forte lors d’un processus de connexion à un site web (par ex : banque, web mail, etc….). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d’authentification à leur service. L’utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation. Si le mot de passe est intercepté par un tiers, ce dernier ne peut pas le rejouer pour s’authentifier.\nBut : Integration d’une authentification OTP via Yubico avec un serveur JBoss EAP.\nPremière étape : Le matériel Pour cet exemple, les pré-requis suivants sont nécessaires :\nun clef Yubico (à commander ici) testé avec YubiKey NEO-n, cela doit fonctionner avec une YubiKey Nano ou YubiKey Neo une instance JBoss EAP ou Wildlfy testé avec instance EAP 6.3 cela doit fonctionner avec toutes les versions JBoss EAP 6.X cela doit fonctionner avec les Wildfly 8+ Cet exemple utilise le service Yubico Cloud Service, le serveur doit pouvoir se connecter à Internet afin de valider le token OTP.\nDeuxième étape : Compiler le client Yubico Java Recupérer le code source yubico-java-client et le compiler :\ngreg@a.net\u003e git clone git@github.com:Yubico/yubico-java-client.git greg@a.net\u003e cd yubico-java-client greg@a.net\u003e mvn clean package .... OMIT ..... [INFO] ------------------------------------------------------------------------ [INFO] Reactor Summary: [INFO] [INFO] Yubico OTP validation client ....................... SUCCESS [ 0.003 s] [INFO] Yubico OTP validation client protocol 1 ............ SUCCESS [ 2.254 s] [INFO] Yubico OTP validation client protocol 2 ............ SUCCESS [ 3.798 s] [INFO] Yubico JAAS module ................................. SUCCESS [ 0.710 s] [INFO] yubico-demo-server ................................. SUCCESS [ 2.782 s] [INFO] ------------------------------------------------------------------------ [INFO] BUILD SUCCESS [INFO] ------------------------------------------------------------------------ [INFO] Total time: 9.704 s [INFO] Finished at: 2015-03-01T16:42:11+01:00 [INFO] Final Memory: 39M/228M [INFO] ------------------------------------------------------------------------ greg@a.net\u003e Vous allez recuperer deux JARs\nLe premier JAR est le client au Cloud Yubico, le second est l’implementation du login module JAAS.\nLe client Yubico Cloud controle et verifie l’OTP fourni par la clef Yubico et retourne une validation. Client OTP Yubico OTP (protocole 2) : yubico-validation-client2-{Version}.jar Le login module Yubico fourni l’implementation à plugger dans le serveur JBoss, il va faire appel à l’Yubico Cloud via son client et son API. Module JAAS Yubico : yubico-jaas-module-{Version}.jar Troisième étape: Creation du Module JBoss Yubico JBoss ne propose pas par defaut de module Yubico, il faut le créer module.xml :\n\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e Copier le ainsi que les jar dans le répertoire suivant :\n$JBOSS_HOME/module/com/yubico/main Ne pas oublier le copier le jar suivant, à récupérer de son cache maven après compilation :\nedu.vt.middleware:vt-ldap:3.3.3 Tips : Pour mode debug rapide, faire un lien symbolique (Unix like seulement)\n4ème étape : Get client Id \u0026 Secret Key for your JBoss Instance Pour utiliser le Service Cloud Yubico, il est nécessaire de générer un Client Id et un Secret Key (ou aussi Client Key)\nhttps://upgrade.yubico.com/getapikey/\n–\nInfo utilisées en 7ème étape\n5ème étape : Le PublicId des Yubico Key de vos utilisateurs Chacun de vos utilisateurs doit vous fournir le PublicId de sa clef via la site suivant :\nhttps://demo.yubico.com/start/otp/standard\n–\nUtiliser le champ Identity comme PublicId\n6ème étape : Création de la correspondance entre le PublicId et le Login de l’utilisateur Créer un fichier de correspondance entre le PublicId de l’utilisateur et son login, comme ceci :\ngreg@a.net\u003e cat ${jboss.server.config.dir}/id2name_textfile.conf yk..user = Il s’agit d’une option au module JAAS Yubico pour authentifier l’utilisateur. Un utilisateur ne pourra pas utiliser une clef inconnue au système.\n7ème étape : La configuration de l’instance JBoss Création d’un security domaine dans le fichier standalone.xml.\nOn configure ensuite un module mapping pour récuperer les rôles de l’utilisateur. Il est bien sûr possible de changer via une autre source de données.\n8ème étape : Configuration de l’application JAVA EE Du pur standard JBoss, inclure le nom du security domain dans le fichier jboss-web.xml, comme suit :\n\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e yubico-auth 9ème étape : Création du mécanisme d’authentification Dans la page de formulaire de login.\ndans le fichier web.xml\nUser Auth /auth/* admin manager FORM User Auth login.jsp error.jsp admin manager NB : Il est possible dans notre exemple de configurer le mode BASIC authentication.\n10ème étape : Test et mode debug Afin de contrôler le bon fonctionnement on passe en mode log verbeu\nTRACE [org.jboss.as.web.security] Begin invoke, caller=null DEBUG [org.apache.catalina.authenticator] Security checking request GET /form-auth/ DEBUG [org.apache.catalina.authenticator] Calling hasUserDataPermission() DEBUG [org.apache.catalina.authenticator] Calling authenticate() DEBUG [org.apache.catalina.authenticator] Save request in session 'bIbbT0CwH9ICDj-apERnL29O' DEBUG [org.apache.catalina.authenticator] Failed authenticate() test TRACE [org.jboss.as.web.security] End invoke, caller=null TRACE [org.jboss.as.web.security] Begin invoke, caller=null DEBUG [org.apache.catalina.authenticator] Security checking request POST /form-auth/j_security_check DEBUG [org.apache.catalina.authenticator] Authenticating username '' DEBUG [com.yubico.jaas.YubikeyLoginModule] Initializing YubikeyLoginModule DEBUG [com.yubico.jaas.YubikeyLoginModule] Trying to instantiate com.yubico.jaas.impl.YubikeyToUserMapImpl DEBUG [com.yubico.jaas.YubikeyLoginModule] Begin OTP login TRACE [com.yubico.jaas.YubikeyLoginModule] Checking OTP TRACE [com.yubico.jaas.YubikeyLoginModule] OTP verify result : OK INFO [com.yubico.jaas.YubikeyLoginModule] OTP verified successfully (YubiKey id XXXXXXXXXXXX) DEBUG [com.yubico.jaas.YubikeyLoginModule] Check if YubiKey XXXXXXXXXXXX belongs to user LOGIN_USER TRACE [com.yubico.jaas.YubikeyLoginModule] In commit() DEBUG [com.yubico.jaas.YubikeyLoginModule] Committing principal XXXXXXXXXXXX TRACE [org.jboss.as.web.security] User: is authenticated DEBUG [org.apache.catalina.authenticator] Authentication of '' was successful DEBUG [org.apache.catalina.authenticator] Redirecting to original '/form-auth/' DEBUG [org.apache.catalina.authenticator] Failed authenticate() test ??/form-auth/j_security_check TRACE [org.jboss.as.web.security] End invoke, caller=null TRACE [org.jboss.as.web.security] Begin invoke, caller=null TRACE [org.jboss.as.web.security] Restoring principal info from cache DEBUG [org.apache.catalina.authenticator] Security checking request GET /form-auth/ DEBUG [org.apache.catalina.authenticator] Calling hasUserDataPermission() DEBUG [org.apache.catalina.authenticator] Calling authenticate() DEBUG [org.apache.catalina.authenticator] Restore request from session 'bIbbT0CwH9ICDj-apERnL29O' DEBUG [org.apache.catalina.authenticator] Authenticated '' with type 'FORM' DEBUG [org.apache.catalina.authenticator] Proceed to restored request DEBUG [org.apache.catalina.authenticator] Calling accessControl() TRACE [org.jboss.as.web.security] hasRole:RealmBase says:true::Authz framework says:true:final=true TRACE [org.jboss.as.web.security] hasResourcePermission:RealmBase says:true::Authz framework says:true:final=true DEBUG [org.apache.catalina.authenticator] Successfully passed all security constraints TRACE [org.jboss.as.web.security] End invoke, caller=null Dans les traces, on retrouve les principales informations de l’utilisateur :\n: the login user XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY : the OTP sent to Yubico Cloud Service XXXXXXXXXXXX : the Public Id, the Yubico key user Liens utiles : Yubico OTP and JBoss EAP 6 or Wildfly 8\nhttp://yubico.github.io/yubico-java-client/\nAuthentication Modules - JBoss AS 7.0\nJBoss AS7: Security : Custom Login Modules\nCreating Custom Login Modules In JBoss AS 7 (and Earlier)\nGlossaire : OTP ",
+  "wordCount" : "1292",
+  "inLanguage": "en",
+  "datePublished": "2015-03-19T00:00:00Z",
+  "dateModified": "2015-03-19T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Yubico OTP et JBoss EAP 6 ou Wildfly 8
+    </h1>
+    <div class="post-meta"><span title='2015-03-19 00:00:00 +0000 UTC'>March 19, 2015</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><a href="https://www.yubico.com/">Yubikey</a> est une clef de crypto qui permet d&rsquo;avoir une authentification forte lors d&rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&rsquo;authentification à leur service.
+L&rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation. Si le mot de passe est intercepté par un tiers, ce dernier ne peut pas le rejouer pour s&rsquo;authentifier.</p>
+<blockquote>
+<p>But : Integration d&rsquo;une authentification OTP via Yubico avec un serveur JBoss EAP.</p>
+</blockquote>
+<h2 id="première-étape--le-matériel">Première étape : Le matériel<a hidden class="anchor" aria-hidden="true" href="#première-étape--le-matériel">#</a></h2>
+<p>Pour cet exemple, les pré-requis suivants sont nécessaires :</p>
+<ul>
+<li>un clef Yubico (<a href="https://store.yubico.com/">à commander ici</a>)
+<ul>
+<li>testé avec YubiKey NEO-n,</li>
+<li>cela doit fonctionner avec une YubiKey Nano ou YubiKey Neo</li>
+</ul>
+</li>
+<li>une instance <a href="http://www.redhat.com/en">JBoss EAP</a> ou <a href="http://www.wildfly.org/">Wildlfy</a>
+<ul>
+<li>testé avec instance EAP 6.3</li>
+<li>cela doit fonctionner avec toutes les versions JBoss EAP 6.X</li>
+<li>cela doit fonctionner avec les Wildfly 8+</li>
+</ul>
+</li>
+</ul>
+<p>Cet exemple utilise le service Yubico Cloud Service, le serveur doit pouvoir se connecter à Internet afin de valider le token OTP.</p>
+<h2 id="deuxième-étape--compiler-le-client-yubico-java">Deuxième étape : Compiler le client Yubico Java<a hidden class="anchor" aria-hidden="true" href="#deuxième-étape--compiler-le-client-yubico-java">#</a></h2>
+<p>Recupérer le code source yubico-java-client et le compiler :</p>
+<pre><code>greg@a.net&gt; git clone git@github.com:Yubico/yubico-java-client.git  
+greg@a.net&gt; cd yubico-java-client  
+greg@a.net&gt; mvn clean package  
+
+.... OMIT .....  
+
+[INFO] ------------------------------------------------------------------------  
+[INFO] Reactor Summary:  
+[INFO]  
+[INFO] Yubico OTP validation client ....................... SUCCESS [  0.003 s]  
+[INFO] Yubico OTP validation client protocol 1 ............ SUCCESS [  2.254 s]  
+[INFO] Yubico OTP validation client protocol 2 ............ SUCCESS [  3.798 s]  
+[INFO] Yubico JAAS module ................................. SUCCESS [  0.710 s]  
+[INFO] yubico-demo-server ................................. SUCCESS [  2.782 s]  
+[INFO] ------------------------------------------------------------------------  
+[INFO] BUILD SUCCESS  
+[INFO] ------------------------------------------------------------------------  
+[INFO] Total time: 9.704 s  
+[INFO] Finished at: 2015-03-01T16:42:11+01:00  
+[INFO] Final Memory: 39M/228M  
+[INFO] ------------------------------------------------------------------------  
+greg@a.net&gt;  
+</code></pre>
+<p>Vous allez recuperer deux JARs</p>
+<p>Le premier JAR est le client au Cloud Yubico, le second est l&rsquo;implementation du login module JAAS.</p>
+<ul>
+<li>Le client Yubico Cloud controle et verifie l&rsquo;OTP fourni par la clef Yubico et retourne une validation.
+<ul>
+<li><strong>Client OTP Yubico OTP</strong> (protocole 2) : yubico-validation-client2-{Version}.jar</li>
+</ul>
+</li>
+<li>Le login module Yubico fourni l&rsquo;implementation à plugger dans le serveur JBoss, il va faire appel à l&rsquo;Yubico Cloud via son client et son API.
+<ul>
+<li><strong>Module JAAS Yubico</strong> : yubico-jaas-module-{Version}.jar</li>
+</ul>
+</li>
+</ul>
+<h2 id="troisième-étape-creation-du-module-jboss-yubico">Troisième étape: Creation du Module JBoss Yubico<a hidden class="anchor" aria-hidden="true" href="#troisième-étape-creation-du-module-jboss-yubico">#</a></h2>
+<p>JBoss ne propose pas par defaut de module Yubico, il faut le créer <em>module.xml</em> :</p>
+<pre tabindex="0"><code>    &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;  
+    &lt;!--  
+      ~ JBoss, Home of Professional Open Source.  
+      ~ Copyright 2014, Red Hat, Inc., and individual contributors  
+      ~ as indicated by the @author tags. See the copyright.txt file in the  
+      ~ distribution for a full listing of individual contributors.  
+      ~  
+      ~ This is free software; you can redistribute it and/or modify it  
+      ~ under the terms of the GNU Lesser General Public License as  
+      ~ published by the Free Software Foundation; either version 2.1 of  
+      ~ the License, or (at your option) any later version.  
+      ~  
+      ~ This software is distributed in the hope that it will be useful,  
+      ~ but WITHOUT ANY WARRANTY; without even the implied warranty of  
+      ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU  
+      ~ Lesser General Public License for more details.  
+      ~  
+      ~ You should have received a copy of the GNU Lesser General Public  
+      ~ License along with this software; if not, write to the Free  
+      ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  
+      ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.  
+      --&gt; 
+    &lt;module xmlns=&#34;urn:jboss:module:1.1&#34; name=&#34;com.yubico&#34;&gt;  
+       &lt;resources&gt;  
+         &lt;resource-root path=&#34;yubico-jaas-module-3.0.0-SNAPSHOT.jar&#34;/&gt;  
+         &lt;resource-root path=&#34;yubico-validation-client2-3.0.0-SNAPSHOT.jar&#34;/&gt;  
+         &lt;resource-root path=&#34;vt-ldap-3.3.3.jar&#34;/&gt;  
+       &lt;/resources&gt;  
+       &lt;dependencies&gt;  
+         &lt;module name=&#34;org.picketbox&#34;/&gt;  
+         &lt;module name=&#34;javax.api&#34;/&gt;  
+         &lt;module name=&#34;org.slf4j&#34;/&gt;  
+         &lt;module name=&#34;org.apache.commons.codec&#34; /&gt;  
+         &lt;module name=&#34;javax.security.jacc.api&#34; /&gt;   &lt;!-- for a future propose --&gt;  
+         &lt;module name=&#34;javax.servlet.api&#34;/&gt;          &lt;!-- for a future propose --&gt;  
+         &lt;module name=&#34;org.jboss.common-core&#34;/&gt;      &lt;!-- for a future propose --&gt;  
+       &lt;/dependencies&gt;  
+    &lt;/module&gt;  
+</code></pre><p>Copier le ainsi que les jar dans le répertoire suivant :</p>
+<pre tabindex="0"><code>    $JBOSS_HOME/module/com/yubico/main
+</code></pre><p>Ne pas oublier le copier le jar suivant, à récupérer de son cache maven après compilation :</p>
+<pre tabindex="0"><code>    edu.vt.middleware:vt-ldap:3.3.3
+</code></pre><p>Tips : Pour mode debug rapide, faire un lien symbolique (Unix like seulement)</p>
+<h2 id="4ème-étape--get-client-id--secret-key-for-your-jboss-instance">4ème étape : Get client Id &amp; Secret Key for your JBoss Instance<a hidden class="anchor" aria-hidden="true" href="#4ème-étape--get-client-id--secret-key-for-your-jboss-instance">#</a></h2>
+<p>Pour utiliser le Service Cloud Yubico, il est nécessaire de générer un Client Id et un Secret Key (ou aussi Client Key)</p>
+<p><a href="https://upgrade.yubico.com/getapikey/">https://upgrade.yubico.com/getapikey/</a></p>
+<p><img loading="lazy" src="/img/yubico-api-1.png" alt="Yubico API step 1"  />
+</p>
+<p>&ndash;</p>
+<p><img loading="lazy" src="/img/yubico-api-2.png" alt="Yubico API step 2"  />
+</p>
+<p>Info utilisées en <a href="#me-tape--la-configuration-de-linstance-jboss">7ème étape</a></p>
+<h2 id="5ème-étape--le-publicid-des-yubico-key-de-vos-utilisateurs">5ème étape : Le PublicId des Yubico Key de vos utilisateurs<a hidden class="anchor" aria-hidden="true" href="#5ème-étape--le-publicid-des-yubico-key-de-vos-utilisateurs">#</a></h2>
+<p>Chacun de vos utilisateurs doit vous fournir le PublicId de sa clef via la site suivant :</p>
+<p><a href="https://demo.yubico.com/start/otp/standard">https://demo.yubico.com/start/otp/standard</a></p>
+<p><img loading="lazy" src="/img/yubico-key-1.png" alt="Yubico KEY step 1"  />
+</p>
+<p>&ndash;</p>
+<p><img loading="lazy" src="/img/yubico-key-2.png" alt="Yubico KEY step 2"  />
+</p>
+<p>Utiliser le champ Identity comme <em>PublicId</em></p>
+<h2 id="6ème-étape--création-de-la-correspondance-entre-le-publicid-et-le-login-de-lutilisateur">6ème étape : Création de la correspondance entre le PublicId et le Login de l&rsquo;utilisateur<a hidden class="anchor" aria-hidden="true" href="#6ème-étape--création-de-la-correspondance-entre-le-publicid-et-le-login-de-lutilisateur">#</a></h2>
+<p>Créer un fichier de correspondance entre le PublicId de l&rsquo;utilisateur et son login, comme ceci :</p>
+<pre><code>greg@a.net&gt; cat ${jboss.server.config.dir}/id2name_textfile.conf  
+yk.&lt;PublicId&gt;.user = &lt;login&gt;  
+</code></pre>
+<p>Il s&rsquo;agit d&rsquo;une option au module JAAS Yubico pour authentifier l&rsquo;utilisateur.
+Un utilisateur ne pourra pas utiliser une clef inconnue au système.</p>
+<h2 id="7ème-étape--la-configuration-de-linstance-jboss">7ème étape : La configuration de l&rsquo;instance JBoss<a hidden class="anchor" aria-hidden="true" href="#7ème-étape--la-configuration-de-linstance-jboss">#</a></h2>
+<p>Création d&rsquo;un security domaine dans le fichier standalone.xml.</p>
+<pre><code>&lt;security-domain name=&quot;yubico-auth&quot; cache-type=&quot;default&quot;&gt;  
+      &lt;authentication&gt;  
+          &lt;login-module code=&quot;com.yubico.jaas.YubikeyLoginModule&quot; flag=&quot;required&quot; module=&quot;com.yubico&quot;&gt;  
+              &lt;module-option name=&quot;clientId&quot; value=&quot;12123&quot;/&gt;  
+              &lt;module-option name=&quot;clientKey&quot; value=&quot;U873jhsYT629uuh7gban65+p2Io=&quot;/&gt; &lt;!-- client Key aka secret Key --&gt;  
+              &lt;module-option name=&quot;id2name_textfile&quot; value=&quot;${jboss.server.config.dir}/id2name_textfile.conf&quot;/&gt;  
+          &lt;/login-module&gt;  
+      &lt;/authentication&gt;  
+      &lt;mapping&gt;  
+          &lt;mapping-module code=&quot;SimpleRoles&quot; type=&quot;role&quot;&gt;  &lt;!-- for example only --&gt;  
+              &lt;module-option name=&quot;&lt;PublicId&gt;&quot; value=&quot;manager&quot;/&gt;  
+          &lt;/mapping-module&gt;  
+      &lt;/mapping&gt;  
+&lt;/security-domain&gt;  
+</code></pre>
+<p>On configure ensuite un module mapping pour récuperer les rôles de l&rsquo;utilisateur.
+Il est bien sûr possible de changer via une autre source de données.</p>
+<h2 id="8ème-étape--configuration-de-lapplication-java-ee">8ème étape : Configuration de l&rsquo;application JAVA EE<a hidden class="anchor" aria-hidden="true" href="#8ème-étape--configuration-de-lapplication-java-ee">#</a></h2>
+<p>Du pur standard JBoss, inclure le nom du security domain dans le fichier jboss-web.xml, comme suit :</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;jboss-web&gt;  
+   &lt;security-domain&gt;yubico-auth&lt;/security-domain&gt;  
+&lt;/jboss-web&gt;
+</code></pre>
+<h2 id="9ème-étape--création-du-mécanisme-dauthentification">9ème étape : Création du mécanisme d&rsquo;authentification<a hidden class="anchor" aria-hidden="true" href="#9ème-étape--création-du-mécanisme-dauthentification">#</a></h2>
+<p>Dans la page de formulaire de login.</p>
+<pre><code>&lt;form method='post' action='j_security_check'&gt;  
+  &lt;input type='text' name='j_username'&gt;  
+  &lt;input type='password' name='j_password'&gt;  
+&lt;/form&gt;  
+</code></pre>
+<p>dans le fichier web.xml</p>
+<pre><code>&lt;web-app&gt;  
+&lt;security-constraint&gt;  
+  &lt;web-resource-collection&gt;  
+   &lt;web-resource-name&gt;User Auth&lt;/web-resource-name&gt;  
+   &lt;url-pattern&gt;/auth/*&lt;/url-pattern&gt;  
+  &lt;/web-resource-collection&gt;  
+&lt;auth-constraint&gt;  
+  &lt;role-name&gt;admin&lt;/role-name&gt;  
+  &lt;role-name&gt;manager&lt;/role-name&gt;  
+&lt;/auth-constraint&gt;  
+&lt;/security-constraint&gt;  
+
+&lt;login-config&gt;  
+&lt;auth-method&gt;FORM&lt;/auth-method&gt;  
+  &lt;realm-name&gt;User Auth&lt;/realm-name&gt;  
+  &lt;form-login-config&gt;  
+   &lt;form-login-page&gt;login.jsp&lt;/form-login-page&gt;  
+   &lt;form-error-page&gt;error.jsp&lt;/form-error-page&gt;  
+  &lt;/form-login-config&gt;  
+&lt;/login-config&gt;  
+
+&lt;security-role&gt;  
+  &lt;role-name&gt;admin&lt;/role-name&gt;  
+&lt;/security-role&gt;  
+&lt;security-role&gt;  
+  &lt;role-name&gt;manager&lt;/role-name&gt;  
+&lt;/security-role&gt;  
+&lt;/web-app&gt;  
+</code></pre>
+<p>NB : Il est possible dans notre exemple de configurer le mode BASIC authentication.</p>
+<h2 id="10ème-étape--test-et-mode-debug">10ème étape : Test et mode debug<a hidden class="anchor" aria-hidden="true" href="#10ème-étape--test-et-mode-debug">#</a></h2>
+<p>Afin de contrôler le bon fonctionnement on passe en mode log verbeu</p>
+<pre><code>TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
+DEBUG [org.apache.catalina.authenticator]  Security checking request GET /form-auth/  
+DEBUG [org.apache.catalina.authenticator]   Calling hasUserDataPermission()  
+DEBUG [org.apache.catalina.authenticator]   Calling authenticate()  
+DEBUG [org.apache.catalina.authenticator]  Save request in session 'bIbbT0CwH9ICDj-apERnL29O'  
+DEBUG [org.apache.catalina.authenticator]   Failed authenticate() test  
+TRACE [org.jboss.as.web.security]  End invoke, caller=null  
+TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
+DEBUG [org.apache.catalina.authenticator]  Security checking request POST /form-auth/j_security_check  
+DEBUG [org.apache.catalina.authenticator]  Authenticating username '&lt;LOGIN_USER&gt;'  
+DEBUG [com.yubico.jaas.YubikeyLoginModule]  Initializing YubikeyLoginModule  
+DEBUG [com.yubico.jaas.YubikeyLoginModule]  Trying to instantiate com.yubico.jaas.impl.YubikeyToUserMapImpl  
+DEBUG [com.yubico.jaas.YubikeyLoginModule]  Begin OTP login  
+TRACE [com.yubico.jaas.YubikeyLoginModule]  Checking OTP &lt;XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY&gt;  
+TRACE [com.yubico.jaas.YubikeyLoginModule]  OTP &lt;XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY&gt; verify result : OK  
+INFO  [com.yubico.jaas.YubikeyLoginModule]  OTP verified successfully (YubiKey id XXXXXXXXXXXX)  
+DEBUG [com.yubico.jaas.YubikeyLoginModule]  Check if YubiKey XXXXXXXXXXXX belongs to user LOGIN_USER  
+TRACE [com.yubico.jaas.YubikeyLoginModule]  In commit()  
+DEBUG [com.yubico.jaas.YubikeyLoginModule]  Committing principal &lt;YubikeyPrincipal&gt;XXXXXXXXXXXX  
+TRACE [org.jboss.as.web.security]  User: &lt;LOGIN_USER&gt; is authenticated  
+DEBUG [org.apache.catalina.authenticator]  Authentication of '&lt;LOGIN_USER&gt;' was successful  
+DEBUG [org.apache.catalina.authenticator]  Redirecting to original '/form-auth/'  
+DEBUG [org.apache.catalina.authenticator]   Failed authenticate() test ??/form-auth/j_security_check  
+TRACE [org.jboss.as.web.security]  End invoke, caller=null  
+TRACE [org.jboss.as.web.security]  Begin invoke, caller=null  
+TRACE [org.jboss.as.web.security]  Restoring principal info from cache  
+DEBUG [org.apache.catalina.authenticator]  Security checking request GET /form-auth/  
+DEBUG [org.apache.catalina.authenticator]   Calling hasUserDataPermission()  
+DEBUG [org.apache.catalina.authenticator]   Calling authenticate()  
+DEBUG [org.apache.catalina.authenticator]  Restore request from session 'bIbbT0CwH9ICDj-apERnL29O'  
+DEBUG [org.apache.catalina.authenticator]  Authenticated '&lt;LOGIN_USER&gt;' with type 'FORM'  
+DEBUG [org.apache.catalina.authenticator]  Proceed to restored request  
+DEBUG [org.apache.catalina.authenticator]   Calling accessControl()  
+TRACE [org.jboss.as.web.security]  hasRole:RealmBase says:true::Authz framework says:true:final=true  
+TRACE [org.jboss.as.web.security]  hasResourcePermission:RealmBase says:true::Authz framework says:true:final=true  
+DEBUG [org.apache.catalina.authenticator]   Successfully passed all security constraints  
+TRACE [org.jboss.as.web.security]  End invoke, caller=null  
+</code></pre>
+<p>Dans les traces, on retrouve les principales informations de l&rsquo;utilisateur :</p>
+<pre><code>&lt;LOGIN_USER&gt; : the login user
+XXXXXXXXXXXXYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY : the OTP sent to Yubico Cloud Service
+XXXXXXXXXXXX : the Public Id, the Yubico key user
+</code></pre>
+<h4 id="liens-utiles-">Liens utiles :<a hidden class="anchor" aria-hidden="true" href="#liens-utiles-">#</a></h4>
+<ul>
+<li>
+<p><img id="en" src="/img/flag-uk.png" width="23" height="23" alt="English version"/> <a href="https://developer.jboss.org/wiki/YubicoOTPAndJBossEAP6OrWildfly8">Yubico OTP and JBoss EAP 6 or Wildfly 8</a></p>
+</li>
+<li>
+<p><a href="http://yubico.github.io/yubico-java-client/">http://yubico.github.io/yubico-java-client/</a></p>
+</li>
+<li>
+<p><a href="https://docs.jboss.org/author/display/AS7/Authentication+Modules">Authentication Modules - JBoss AS 7.0</a></p>
+</li>
+<li>
+<p><a href="https://developer.jboss.org/wiki/JBossAS7SecurityCustomLoginModules">JBoss AS7: Security : Custom Login Modules</a></p>
+</li>
+<li>
+<p><a href="http://java.dzone.com/articles/creating-custom-login-modules">Creating Custom Login Modules In JBoss AS 7 (and Earlier)</a></p>
+</li>
+</ul>
+<h4 id="glossaire-">Glossaire :<a hidden class="anchor" aria-hidden="true" href="#glossaire-">#</a></h4>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/One-time_password">OTP</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/fr/">fr</a></li>
+      <li><a href="https://gautric.github.io/tags/otp/">otp</a></li>
+      <li><a href="https://gautric.github.io/tags/yubico/">yubico</a></li>
+      <li><a href="https://gautric.github.io/tags/yubikey/">yubikey</a></li>
+      <li><a href="https://gautric.github.io/tags/jboss/">jboss</a></li>
+      <li><a href="https://gautric.github.io/tags/eap/">eap</a></li>
+      <li><a href="https://gautric.github.io/tags/wildfly/">wildfly</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Best Practices Websphere MQ/JBoss EAP 6</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Il y a un siècle aux Dardanelles</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

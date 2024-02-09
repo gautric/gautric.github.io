@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Rhiot Kura Device IO GPIO and I2C | Greg. I/O</title>
+<meta name="keywords" content="en, rhiot, RaspberryPi, Kura, Gateway, DIO, DeviceIO, I2C, API">
+<meta name="description" content="Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C Camel, I reuse a previous work from Camel-pi4j I&rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a RaspberryPi and a ActiveMQ broker too.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Rhiot Kura Device IO GPIO and I2C" />
+<meta property="og:description" content="Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C Camel, I reuse a previous work from Camel-pi4j I&rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a RaspberryPi and a ActiveMQ broker too." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-02-29T14:00:00+00:00" />
+<meta property="article:modified_time" content="2016-02-29T14:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rhiot Kura Device IO GPIO and I2C"/>
+<meta name="twitter:description" content="Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C Camel, I reuse a previous work from Camel-pi4j I&rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a RaspberryPi and a ActiveMQ broker too."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Rhiot Kura Device IO GPIO and I2C",
+      "item": "https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Rhiot Kura Device IO GPIO and I2C",
+  "name": "Rhiot Kura Device IO GPIO and I2C",
+  "description": "Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C Camel, I reuse a previous work from Camel-pi4j I\u0026rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a RaspberryPi and a ActiveMQ broker too.",
+  "keywords": [
+    "en", "rhiot", "RaspberryPi", "Kura", "Gateway", "DIO", "DeviceIO", "I2C", "API"
+  ],
+  "articleBody": "Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C Camel, I reuse a previous work from Camel-pi4j I’ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a RaspberryPi and a ActiveMQ broker too.\nHow to use Kura Camel DIO from Rhiot Quickstart into RaspberryPi.\nRequisites One RaspberryPi tested w/ RPi B+ should works with all version One LED One Resistor BMP180 from Adafruit or HTS221 Hall/Magnetic Sensor from Itead An ActiveMQ broker and client some wires Wire, LED, RaspberryPi Follow Design below\nand the schematic\nStartup ActiveMQ To retrieve and collect data we gonna start an ActiveMQ instance with following command line. You can install it everywhere you want, your RaspberryPi must be able to ping and connect to it through MQTT port = 1883. Download and install the latest version 5.13.2\ncd ${ACTIVEMQ_HOME}/bin ./activemq start Remember your ActiveMQ Instance IP.\nMore information into ActiveMQ Getting Started\nBundles installation into RaspberryPi Install Kura to RaspberryPi Download Kura version depending your RaspberryPi version. RPI_VERSION can be pi, pi-2, pi-bplus.\nmacos\u003e ssh pi@${RASPBERRYPI_IP} rbpi\u003e export KURA_VERSION=1.4.0 rbpi\u003e export RPI_VERSION=pi rbpi\u003e wget https://s3.amazonaws.com/kura_downloads/raspbian/release/${KURA_VERSION}/kura_${KURA_VERSION}_raspberry-${RPI_VERSION}_installer.deb rbpi\u003e sudo dpkg -i kura_${KURA_VERSION}_raspberry-${RPI_VERSION}_installer.deb Configure it for Camel support Just add property below to kura config.ini\nrbpi\u003e sudo sh -c \"echo \\\"org.osgi.framework.bootdelegation=sun.*,com.sun.*\\\" \u003e\u003e /opt/eclipse/kura/kura/config.ini \" rbpi\u003e sudo reboot Configure Kura Cloud Now we will configure Kura service to connect to ActiveMQ instance.\nTo start kura service:\nrpbi\u003e sudo service kura start Configure the broker address (MQTT server) via the Kura Web UI change ip address with your RaspberryPi IP into your browser.\nChange the broker-url parameter with yourActiveMQ Instance IP\nDon’t forget to connect Kura Gateway to the Broker server\nCamel Route Design Here is the Camel route design, this design is obvious simple, but could be more complex for a real life implementation. The Hall sensor sends a message when magnetic field is close. Temp and pressure sensors retrieve their metrics. Route logs a message and metrics. WireTap component copies message to GPIO provider to blink a LED. Last component will push message to Kura Cloud Service. This service stores message into a Database if network is unavailable and send to the cloud when network is accessible again\nImport Quickstart Sample Download our Kura Rhiot quickstart directly from github repository.\nand compile Kura-Rhiot Sample via common mvn clean package and copy it to your RaspberryPi\ngit clone -b kura-camel-dio https://github.com/rhiot/quickstarts.git cd quickstarts/kura-camel-dio mvn clean package scp target/camel-core-2.16.2.jar pi@${RASPBERRYPI_IP}:/home/pi scp target/camel-core-osgi-2.16.2.jar pi@${RASPBERRYPI_IP}:/home/pi scp target/camel-kura-2.16.2.jar pi@${RASPBERRYPI_IP}:/home/pi scp target/camel-kura-0.1.5-SNAPSHOT.jar pi@${RASPBERRYPI_IP}:/home/pi scp target/camel-device-io-0.1.5-SNAPSHOT.jar pi@${RASPBERRYPI_IP}:/home/pi scp target/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar pi@${RASPBERRYPI_IP}:/home/pi RaspberryPi you can start and install bundles.\nTo start kura service:\nrpbi\u003e sudo service kura start you can use tail -f /var/log/kura.log to check Kura Platform running.\nCopy to RaspberryPi and Install all bundles and connect to Kura OSGi via telnet protocol:\nmacos\u003e telnet ${RASPBERRYPI_IP} 5002 Trying ${RASPBERRYPI_IP}... Connected to ${RASPBERRYPI_IP}. Escape character is '^]'. install file:///home/pi/camel-core-2.16.2.jar install file:///home/pi/camel-core-osgi-2.16.2.jar install file:///home/pi/camel-kura-2.16.2.jar install file:///home/pi/camel-kura-0.1.5-SNAPSHOT.jar install file:///home/pi/camel-device-io-0.1.5-SNAPSHOT.jar install file:///home/pi/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar And start all INSTALLED bundle, use ss OSGi command to retrieve correct bundle ids.\nstart 68 69 70 71 72 73 The Kura output should look like this\n2016-02-28 17:39:18,154 [Component Resolve Thread (Bundle 6)] DEBUG i.r.q.k.c.GatewayRouter - Initializing bundle 74. 2016-02-28 17:39:20,218 [Component Resolve Thread (Bundle 6)] INFO o.a.c.u.CamelContextHelper - No existing PropertiesComponent has been configured, creating a new default PropertiesComponent with name: properties 2016-02-28 17:39:20,475 [Component Resolve Thread (Bundle 6)] INFO o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.2 (CamelContext: camel-1) is starting 2016-02-28 17:39:20,494 [Component Resolve Thread (Bundle 6)] INFO o.a.c.m.ManagedManagementStrategy - JMX is enabled 2016-02-28 17:39:24,921 [Component Resolve Thread (Bundle 6)] INFO o.a.c.i.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000) 2016-02-28 17:39:25,243 [Component Resolve Thread (Bundle 6)] INFO i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance. 2016-02-28 17:39:27,370 [Component Resolve Thread (Bundle 6)] INFO o.a.c.c.o.OsgiDefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance. 2016-02-28 17:39:27,374 [Component Resolve Thread (Bundle 6)] INFO o.a.c.c.o.OsgiDefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html 2016-02-28 17:39:27,756 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.d.i.I2CProducer - Starting producer: Producer[deviceio-i2c://1/0x77?driver=bmp180] 2016-02-28 17:39:27,776 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.d.i.d.BMP180Driver - bytesRead=1 2016-02-28 17:39:27,785 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.d.i.d.BMP180Driver - bytesRead=22 2016-02-28 17:39:27,793 [Component Resolve Thread (Bundle 6)] INFO i.r.c.d.i.d.BMP180Driver - AC1:8126, AC2:-1094, AC3:-14661, AC4:34005, AC5:25140, AC6:17181, B1:6515, B2:40, MB:-32768, MC:-11786, MD:2735 2016-02-28 17:39:27,867 [Component Resolve Thread (Bundle 6)] INFO i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.cloud.CloudService in the registry. Kura component will use that instance. 2016-02-28 17:39:28,072 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.k.c.KuraCloudProducer - Starting producer: Producer[kura-cloud://demoAppId/tempMetric] 2016-02-28 17:39:29,805 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.k.g.KuraGPIOConsumer - Starting consumer: Consumer[kura-gpio://17?direction=INPUT\u0026mode=INPUT_PULL_DOWN\u0026trigger=FALLING_EDGE] 2016-02-28 17:39:29,961 [Component Resolve Thread (Bundle 6)] INFO o.a.c.c.o.OsgiDefaultCamelContext - Route: route1 started and consuming from: Endpoint[kura-gpio://17?direction=INPUT\u0026mode=INPUT_PULL_DOWN\u0026trigger=FALLING_EDGE] 2016-02-28 17:39:29,990 [Component Resolve Thread (Bundle 6)] INFO o.a.c.c.o.OsgiDefaultCamelContext - Total 1 routes, of which 1 is started. 2016-02-28 17:39:30,027 [Component Resolve Thread (Bundle 6)] INFO o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.2 (CamelContext: camel-1) started in 9.526 seconds 2016-02-28 17:39:30,090 [Component Resolve Thread (Bundle 6)] DEBUG i.r.q.k.c.GatewayRouter - Bundle 74 started. 2016-02-28 17:39:30,098 [Component Resolve Thread (Bundle 6)] DEBUG i.r.q.k.c.GatewayRouter - Refreshing SCR properties: org.eclipse.equinox.internal.ds.impl.ReadOnlyDictionary@fa147e 2016-02-28 17:39:30,477 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6185 2016-02-28 17:39:30,501 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - 0x80 BB A7 2016-02-28 17:39:30,504 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5775 2016-02-28 17:39:30,507 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2836 2016-02-28 17:39:30,510 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2939 2016-02-28 17:39:30,512 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B6 = -1061 2016-02-28 17:39:30,515 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5 2016-02-28 17:39:30,518 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 566 2016-02-28 17:39:30,521 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 571 2016-02-28 17:39:30,524 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B3 = 16538 2016-02-28 17:39:30,527 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 1898 2016-02-28 17:39:30,530 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 27 2016-02-28 17:39:30,532 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 481 2016-02-28 17:39:30,535 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B4 = 34504 2016-02-28 17:39:30,538 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B7 = 1733225000 2016-02-28 17:39:30,541 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 7123 2016-02-28 17:39:30,546 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -11278 2016-02-28 17:39:30,549 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - p = 100441 2016-02-28 17:39:30,626 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6181 2016-02-28 17:39:30,629 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - UT = 24705 2016-02-28 17:39:30,632 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5772 2016-02-28 17:39:30,635 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2837 2016-02-28 17:39:30,638 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2935 2016-02-28 17:39:30,716 [Thread-21] INFO i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: [temperature:+18.30 ºC,pressure:1004.41 hPa]] 2016-02-28 17:39:30,776 [Camel (camel-1) thread #0 - WireTap] INFO i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance. 2016-02-28 17:39:30,840 [Camel (camel-1) thread #0 - WireTap] DEBUG i.r.c.k.g.KuraGPIOProducer - Starting producer: Producer[kura-gpio://7?action=BLINK] 2016-02-28 17:40:24,057 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6199 2016-02-28 17:40:24,075 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - 0x80 AB A7 2016-02-28 17:40:24,077 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5790 2016-02-28 17:40:24,081 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2831 2016-02-28 17:40:24,083 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2959 2016-02-28 17:40:24,086 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B6 = -1041 2016-02-28 17:40:24,089 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5 2016-02-28 17:40:24,091 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 556 2016-02-28 17:40:24,094 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 561 2016-02-28 17:40:24,097 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B3 = 16533 2016-02-28 17:40:24,100 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 1863 2016-02-28 17:40:24,102 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 26 2016-02-28 17:40:24,105 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 472 2016-02-28 17:40:24,108 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B4 = 34494 2016-02-28 17:40:24,111 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B7 = 1733350000 2016-02-28 17:40:24,113 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 7123 2016-02-28 17:40:24,116 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -11283 2016-02-28 17:40:24,119 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - p = 100476 2016-02-28 17:40:24,179 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6195 2016-02-28 17:40:24,182 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - UT = 24725 2016-02-28 17:40:24,185 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5787 2016-02-28 17:40:24,188 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2832 2016-02-28 17:40:24,190 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2955 2016-02-28 17:40:24,201 [Thread-23] INFO i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: [temperature:+18.50 ºC,pressure:1004.76 hPa]] 2016-02-28 17:40:26,707 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - 0x619D 2016-02-28 17:40:26,725 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - 0x00 A9 A7 2016-02-28 17:40:26,728 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5793 2016-02-28 17:40:26,731 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2830 2016-02-28 17:40:26,734 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2963 2016-02-28 17:40:26,737 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B6 = -1037 2016-02-28 17:40:26,739 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5 2016-02-28 17:40:26,742 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 553 2016-02-28 17:40:26,745 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 558 2016-02-28 17:40:26,747 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B3 = 16531 2016-02-28 17:40:26,750 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 1855 2016-02-28 17:40:26,753 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 26 2016-02-28 17:40:26,756 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 470 2016-02-28 17:40:26,758 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B4 = 34492 2016-02-28 17:40:26,761 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B7 = 1733400000 2016-02-28 17:40:26,764 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 7123 2016-02-28 17:40:26,766 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -11284 2016-02-28 17:40:26,769 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - p = 100486 2016-02-28 17:40:26,829 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - 0x619E 2016-02-28 17:40:26,832 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - UT = 24734 2016-02-28 17:40:26,835 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5794 2016-02-28 17:40:26,838 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2830 2016-02-28 17:40:26,840 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2964 2016-02-28 17:40:26,863 [Thread-25] INFO i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: [temperature:+18.50 ºC,pressure:1004.86 hPa]] We can receive data from Broker Server via\nbash\u003e bin/rhiot consumer --brokerUrl failover://tcp://${ACTIVEMQ_IP}:61616 \\ --destination topic://account-name.B8:27:EB:E8:4A:AC.rhiotAppId.rhiotTopicId --bytesAsText true INFO | Connecting to #url: failover://tcp://${ACTIVEMQ_IP}:61616 (null:null) INFO | Consuming topic://account-name.B8:27:EB:E8:4A:AC.rhiotAppId.rhiotTopicId INFO | Sleeping between receives 0 ms INFO | Running 1 parallel threads INFO | Successfully connected to tcp://${ACTIVEMQ_IP}:61616 INFO | consumer-1 wait until 1000 messages are consumed INFO | consumer-1 Received ID:mbp.g.a.net-60446-1457358139947-2:15:-1:1:24 INFO | BytesMessage as text string: [temperature:+18.30 ºC,pressure:1004.41 hPa] INFO | consumer-1 Received ID:mbp.g.a.net-60446-1457358139947-2:15:-1:1:25 INFO | BytesMessage as text string: [temperature:+18.50 ºC,pressure:1004.76 hPa] Conclusion Kura Platform as usual can manage lots of stuff. We discover today how Kura Platform cloud manage an i2c components via the Camel Framework, Rhiot and DeviceIO API. Let’s develop and contribute more for Kura , Camel and Rhiot project too.\nStay tuned, for other i2c components ;-)\nPlease feel free to send me your feedback see Apropos.\nUseful links rhiot projet camel-kura component camel-device-io component ",
+  "wordCount" : "1757",
+  "inLanguage": "en",
+  "datePublished": "2016-02-29T14:00:00Z",
+  "dateModified": "2016-02-29T14:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Rhiot Kura Device IO GPIO and I2C
+    </h1>
+    <div class="post-meta"><span title='2016-02-29 14:00:00 +0000 UTC'>February 29, 2016</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the <a href="http://openjdk.java.net/projects/dio/">DeviceIO</a> <a href="https://en.wikipedia.org/wiki/I%C2%B2C">I2C</a> <a href="http://camel.apache.org">Camel</a>, I reuse a previous work from Camel-pi4j I&rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a <a href="https://www.raspberrypi.org/">RaspberryPi</a> and a <a href="http://activemq.apache.org/">ActiveMQ</a> broker too.</p>
+<blockquote>
+<p>How to use Kura Camel DIO from Rhiot Quickstart into RaspberryPi.</p>
+</blockquote>
+<h2 id="requisites">Requisites<a hidden class="anchor" aria-hidden="true" href="#requisites">#</a></h2>
+<ul>
+<li>One <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">RaspberryPi</a>
+<ul>
+<li>tested w/ RPi B+</li>
+<li>should works with all version</li>
+</ul>
+</li>
+<li>One LED</li>
+<li>One Resistor</li>
+<li><a href="https://www.adafruit.com/products/1603">BMP180 from Adafruit</a> or <a href="http://www.st.com/web/en/resource/technical/document/datasheet/DM00116291.pdf">HTS221</a></li>
+<li><a href="https://www.itead.cc/electronic-brick-magnetic-sensor-switch-brick.html">Hall/Magnetic Sensor from Itead</a></li>
+<li>An <a href="http://activemq.apache.org/">ActiveMQ</a> broker and client</li>
+<li>some wires</li>
+</ul>
+<h3 id="wire-led-raspberrypi">Wire, LED, RaspberryPi<a hidden class="anchor" aria-hidden="true" href="#wire-led-raspberrypi">#</a></h3>
+<p>Follow Design below</p>
+<img src="/img/desgin-hall-sensor-bmp180.png" style="max-width:80%;" />
+<p>and the schematic</p>
+<img src="/img/schema-hall-sensor-bmp180.png" style="max-width:80%;" />
+<h3 id="startup-activemq">Startup ActiveMQ<a hidden class="anchor" aria-hidden="true" href="#startup-activemq">#</a></h3>
+<p>To retrieve and collect data we gonna start an ActiveMQ instance with following command line.
+You can install it everywhere you want, your RaspberryPi must be able to ping and connect to it through <code>MQTT port = 1883</code>.
+<a href="http://activemq.apache.org/download.html">Download</a> and <a href="http://www.apache.org/dyn/closer.cgi?path=/activemq/5.13.2/apache-activemq-5.13.2-bin.tar.gz">install the latest version 5.13.2</a></p>
+<pre tabindex="0"><code>cd ${ACTIVEMQ_HOME}/bin
+./activemq start
+</code></pre><p>Remember your <code>ActiveMQ Instance IP</code>.</p>
+<p><a href="http://activemq.apache.org/getting-started.html#GettingStarted-OnUnix:">More information into ActiveMQ Getting Started</a></p>
+<h3 id="bundles-installation-into-raspberrypi">Bundles installation into RaspberryPi<a hidden class="anchor" aria-hidden="true" href="#bundles-installation-into-raspberrypi">#</a></h3>
+<h4 id="install-kura-to-raspberrypi">Install Kura to RaspberryPi<a hidden class="anchor" aria-hidden="true" href="#install-kura-to-raspberrypi">#</a></h4>
+<p>Download Kura version depending your RaspberryPi version. <code>RPI_VERSION</code> can be <code>pi</code>, <code>pi-2</code>, <code>pi-bplus</code>.</p>
+<pre tabindex="0"><code>macos&gt; ssh pi@${RASPBERRYPI_IP}
+rbpi&gt; export KURA_VERSION=1.4.0
+rbpi&gt; export RPI_VERSION=pi
+rbpi&gt; wget https://s3.amazonaws.com/kura_downloads/raspbian/release/${KURA_VERSION}/kura_${KURA_VERSION}_raspberry-${RPI_VERSION}_installer.deb
+rbpi&gt; sudo dpkg -i kura_${KURA_VERSION}_raspberry-${RPI_VERSION}_installer.deb
+</code></pre><h4 id="configure-it-for-camel-support">Configure it for Camel support<a hidden class="anchor" aria-hidden="true" href="#configure-it-for-camel-support">#</a></h4>
+<p>Just add property below to kura <code>config.ini</code></p>
+<pre tabindex="0"><code>rbpi&gt; sudo sh -c &#34;echo \&#34;org.osgi.framework.bootdelegation=sun.*,com.sun.*\&#34; &gt;&gt; /opt/eclipse/kura/kura/config.ini &#34;
+rbpi&gt; sudo reboot
+</code></pre><h4 id="configure-kura-cloud">Configure Kura Cloud<a hidden class="anchor" aria-hidden="true" href="#configure-kura-cloud">#</a></h4>
+<p>Now we will configure Kura service to connect to <em>ActiveMQ</em> instance.</p>
+<p>To start kura service:</p>
+<pre tabindex="0"><code>rpbi&gt; sudo service kura start  
+</code></pre><p>Configure the broker address (MQTT server) via the <a href="http://RPI_IP_ADDR/kura">Kura Web UI</a> change ip address with your <code>RaspberryPi IP</code> into your browser.</p>
+<p>Change the <code>broker-url</code> parameter  with your<code>ActiveMQ Instance IP</code></p>
+<img src="/img/kura-cloud-config.png" style="max-width:80%;" />
+<p>Don&rsquo;t forget to connect Kura Gateway to the Broker server</p>
+<img src="/img/kura-cloud-config-2.png" style="max-width:80%;" />
+<h4 id="camel-route-design">Camel Route Design<a hidden class="anchor" aria-hidden="true" href="#camel-route-design">#</a></h4>
+<p>Here is the Camel route design, this design is obvious simple, but could be more complex for a real life implementation.
+The Hall sensor sends a message when magnetic field is close. Temp and pressure sensors retrieve their metrics. Route logs a message and metrics. WireTap component copies message to GPIO provider to blink a LED. Last component will push message to <a href="http://eclipse.github.io/kura/doc/cloud-configuration.html">Kura Cloud Service</a>. This service stores message into a Database if network is unavailable and send to the cloud when network is accessible again</p>
+<img src="/img/camel-route-hall-sensor-bmp180.png" style="max-width:80%;" />
+<h3 id="import-quickstart-sample">Import Quickstart Sample<a hidden class="anchor" aria-hidden="true" href="#import-quickstart-sample">#</a></h3>
+<p>Download our <a href="https://github.com/rhiot/quickstarts/tree/kura-camel-dio/kura-camel-dio">Kura Rhiot quickstart directly from github repository</a>.</p>
+<p>and compile Kura-Rhiot Sample via common <code>mvn clean package</code> and copy it to your RaspberryPi</p>
+<pre tabindex="0"><code>
+
+git clone -b kura-camel-dio https://github.com/rhiot/quickstarts.git
+cd quickstarts/kura-camel-dio
+mvn clean package
+
+scp target/camel-core-2.16.2.jar                   pi@${RASPBERRYPI_IP}:/home/pi
+scp target/camel-core-osgi-2.16.2.jar              pi@${RASPBERRYPI_IP}:/home/pi
+scp target/camel-kura-2.16.2.jar                   pi@${RASPBERRYPI_IP}:/home/pi
+scp target/camel-kura-0.1.5-SNAPSHOT.jar           pi@${RASPBERRYPI_IP}:/home/pi
+scp target/camel-device-io-0.1.5-SNAPSHOT.jar      pi@${RASPBERRYPI_IP}:/home/pi
+scp target/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar pi@${RASPBERRYPI_IP}:/home/pi
+</code></pre><p>RaspberryPi you can start and install bundles.</p>
+<p>To start kura service:</p>
+<pre tabindex="0"><code>rpbi&gt; sudo service kura start  
+</code></pre><p>you can use <code>tail -f /var/log/kura.log</code> to check Kura Platform running.</p>
+<p>Copy to RaspberryPi and Install all bundles and connect to Kura OSGi via telnet protocol:</p>
+<pre tabindex="0"><code>macos&gt; telnet ${RASPBERRYPI_IP} 5002
+Trying ${RASPBERRYPI_IP}...
+Connected to ${RASPBERRYPI_IP}.
+Escape character is &#39;^]&#39;.
+
+ install file:///home/pi/camel-core-2.16.2.jar
+ install file:///home/pi/camel-core-osgi-2.16.2.jar
+ install file:///home/pi/camel-kura-2.16.2.jar     
+ install file:///home/pi/camel-kura-0.1.5-SNAPSHOT.jar    
+ install file:///home/pi/camel-device-io-0.1.5-SNAPSHOT.jar    
+ install file:///home/pi/rhiot-kura-camel-dio-1.0.0-SNAPSHOT.jar
+</code></pre><p>And start all INSTALLED bundle, use <code>ss</code> OSGi command to retrieve correct bundle ids.</p>
+<pre tabindex="0"><code>start 68 69 70 71 72 73
+</code></pre><p>The Kura output should look like this</p>
+<pre tabindex="0"><code>2016-02-28 17:39:18,154 [Component Resolve Thread (Bundle 6)] DEBUG i.r.q.k.c.GatewayRouter - Initializing bundle 74.
+2016-02-28 17:39:20,218 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.u.CamelContextHelper - No existing PropertiesComponent has been configured, creating a new default PropertiesComponent with name: properties
+2016-02-28 17:39:20,475 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.2 (CamelContext: camel-1) is starting
+2016-02-28 17:39:20,494 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.m.ManagedManagementStrategy - JMX is enabled
+2016-02-28 17:39:24,921 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.i.DefaultRuntimeEndpointRegistry - Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+2016-02-28 17:39:25,243 [Component Resolve Thread (Bundle 6)] INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance.
+2016-02-28 17:39:27,370 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.c.o.OsgiDefaultCamelContext - AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+2016-02-28 17:39:27,374 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.c.o.OsgiDefaultCamelContext - StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2016-02-28 17:39:27,756 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.d.i.I2CProducer - Starting producer: Producer[deviceio-i2c://1/0x77?driver=bmp180]
+2016-02-28 17:39:27,776 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.d.i.d.BMP180Driver - bytesRead=1
+2016-02-28 17:39:27,785 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.d.i.d.BMP180Driver - bytesRead=22
+2016-02-28 17:39:27,793 [Component Resolve Thread (Bundle 6)] INFO  i.r.c.d.i.d.BMP180Driver - AC1:8126, AC2:-1094, AC3:-14661, AC4:34005, AC5:25140, AC6:17181, B1:6515, B2:40,  MB:-32768, MC:-11786, MD:2735
+2016-02-28 17:39:27,867 [Component Resolve Thread (Bundle 6)] INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.cloud.CloudService in the registry. Kura component will use that instance.
+2016-02-28 17:39:28,072 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.k.c.KuraCloudProducer - Starting producer: Producer[kura-cloud://demoAppId/tempMetric]
+2016-02-28 17:39:29,805 [Component Resolve Thread (Bundle 6)] DEBUG i.r.c.k.g.KuraGPIOConsumer - Starting consumer: Consumer[kura-gpio://17?direction=INPUT&amp;mode=INPUT_PULL_DOWN&amp;trigger=FALLING_EDGE]
+2016-02-28 17:39:29,961 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.c.o.OsgiDefaultCamelContext - Route: route1 started and consuming from: Endpoint[kura-gpio://17?direction=INPUT&amp;mode=INPUT_PULL_DOWN&amp;trigger=FALLING_EDGE]
+2016-02-28 17:39:29,990 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.c.o.OsgiDefaultCamelContext - Total 1 routes, of which 1 is started.
+2016-02-28 17:39:30,027 [Component Resolve Thread (Bundle 6)] INFO  o.a.c.c.o.OsgiDefaultCamelContext - Apache Camel 2.16.2 (CamelContext: camel-1) started in 9.526 seconds
+2016-02-28 17:39:30,090 [Component Resolve Thread (Bundle 6)] DEBUG i.r.q.k.c.GatewayRouter - Bundle 74 started.
+2016-02-28 17:39:30,098 [Component Resolve Thread (Bundle 6)] DEBUG i.r.q.k.c.GatewayRouter - Refreshing SCR properties: org.eclipse.equinox.internal.ds.impl.ReadOnlyDictionary@fa147e
+2016-02-28 17:39:30,477 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6185
+2016-02-28 17:39:30,501 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - 0x80 BB A7
+2016-02-28 17:39:30,504 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5775
+2016-02-28 17:39:30,507 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2836
+2016-02-28 17:39:30,510 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2939
+2016-02-28 17:39:30,512 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B6 = -1061
+2016-02-28 17:39:30,515 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5
+2016-02-28 17:39:30,518 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 566
+2016-02-28 17:39:30,521 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 571
+2016-02-28 17:39:30,524 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B3 = 16538
+2016-02-28 17:39:30,527 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 1898
+2016-02-28 17:39:30,530 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 27
+2016-02-28 17:39:30,532 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 481
+2016-02-28 17:39:30,535 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B4 = 34504
+2016-02-28 17:39:30,538 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B7 = 1733225000
+2016-02-28 17:39:30,541 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 7123
+2016-02-28 17:39:30,546 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -11278
+2016-02-28 17:39:30,549 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - p = 100441
+2016-02-28 17:39:30,626 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6181
+2016-02-28 17:39:30,629 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - UT = 24705
+2016-02-28 17:39:30,632 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5772
+2016-02-28 17:39:30,635 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2837
+2016-02-28 17:39:30,638 [Thread-21] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2935
+2016-02-28 17:39:30,716 [Thread-21] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: [temperature:+18.30 ºC,pressure:1004.41 hPa]]
+2016-02-28 17:39:30,776 [Camel (camel-1) thread #0 - WireTap] INFO  i.r.c.k.u.KuraServiceFactory - Found Kura org.eclipse.kura.gpio.GPIOService in the registry. Kura component will use that instance.
+2016-02-28 17:39:30,840 [Camel (camel-1) thread #0 - WireTap] DEBUG i.r.c.k.g.KuraGPIOProducer - Starting producer: Producer[kura-gpio://7?action=BLINK]
+2016-02-28 17:40:24,057 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6199
+2016-02-28 17:40:24,075 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - 0x80 AB A7
+2016-02-28 17:40:24,077 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5790
+2016-02-28 17:40:24,081 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2831
+2016-02-28 17:40:24,083 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2959
+2016-02-28 17:40:24,086 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B6 = -1041
+2016-02-28 17:40:24,089 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5
+2016-02-28 17:40:24,091 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 556
+2016-02-28 17:40:24,094 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 561
+2016-02-28 17:40:24,097 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B3 = 16533
+2016-02-28 17:40:24,100 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 1863
+2016-02-28 17:40:24,102 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 26
+2016-02-28 17:40:24,105 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 472
+2016-02-28 17:40:24,108 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B4 = 34494
+2016-02-28 17:40:24,111 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B7 = 1733350000
+2016-02-28 17:40:24,113 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 7123
+2016-02-28 17:40:24,116 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -11283
+2016-02-28 17:40:24,119 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - p = 100476
+2016-02-28 17:40:24,179 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - 0x6195
+2016-02-28 17:40:24,182 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - UT = 24725
+2016-02-28 17:40:24,185 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5787
+2016-02-28 17:40:24,188 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2832
+2016-02-28 17:40:24,190 [Thread-23] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2955
+2016-02-28 17:40:24,201 [Thread-23] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: [temperature:+18.50 ºC,pressure:1004.76 hPa]]
+2016-02-28 17:40:26,707 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - 0x619D
+2016-02-28 17:40:26,725 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - 0x00 A9 A7
+2016-02-28 17:40:26,728 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5793
+2016-02-28 17:40:26,731 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2830
+2016-02-28 17:40:26,734 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2963
+2016-02-28 17:40:26,737 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B6 = -1037
+2016-02-28 17:40:26,739 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5
+2016-02-28 17:40:26,742 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 553
+2016-02-28 17:40:26,745 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 558
+2016-02-28 17:40:26,747 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B3 = 16531
+2016-02-28 17:40:26,750 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 1855
+2016-02-28 17:40:26,753 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = 26
+2016-02-28 17:40:26,756 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X3 = 470
+2016-02-28 17:40:26,758 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B4 = 34492
+2016-02-28 17:40:26,761 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B7 = 1733400000
+2016-02-28 17:40:26,764 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 7123
+2016-02-28 17:40:26,766 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -11284
+2016-02-28 17:40:26,769 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - p = 100486
+2016-02-28 17:40:26,829 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - 0x619E
+2016-02-28 17:40:26,832 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - UT = 24734
+2016-02-28 17:40:26,835 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X1 = 5794
+2016-02-28 17:40:26,838 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - X2 = -2830
+2016-02-28 17:40:26,840 [Thread-25] DEBUG i.r.c.d.i.d.BMP180Driver - B5 = 2964
+2016-02-28 17:40:26,863 [Thread-25] INFO  i.r.k.heartbeat - Exchange[ExchangePattern: InOnly, BodyType: io.rhiot.component.deviceio.i2c.driver.BMP180Value, Body: [temperature:+18.50 ºC,pressure:1004.86 hPa]]
+</code></pre><br/>
+<p>We can receive data from Broker Server via</p>
+<pre tabindex="0"><code>bash&gt; bin/rhiot consumer  --brokerUrl failover://tcp://${ACTIVEMQ_IP}:61616 \
+ --destination topic://account-name.B8:27:EB:E8:4A:AC.rhiotAppId.rhiotTopicId --bytesAsText  true
+
+INFO | Connecting to #url: failover://tcp://${ACTIVEMQ_IP}:61616 (null:null)
+INFO | Consuming topic://account-name.B8:27:EB:E8:4A:AC.rhiotAppId.rhiotTopicId
+INFO | Sleeping between receives 0 ms
+INFO | Running 1 parallel threads
+INFO | Successfully connected to tcp://${ACTIVEMQ_IP}:61616
+INFO | consumer-1 wait until 1000 messages are consumed
+INFO | consumer-1 Received ID:mbp.g.a.net-60446-1457358139947-2:15:-1:1:24
+INFO | BytesMessage as text string: [temperature:+18.30 ºC,pressure:1004.41 hPa]
+INFO | consumer-1 Received ID:mbp.g.a.net-60446-1457358139947-2:15:-1:1:25
+INFO | BytesMessage as text string: [temperature:+18.50 ºC,pressure:1004.76 hPa]
+</code></pre><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p><a href="http://www.eclipse.org/kura/">Kura Platform</a> as usual can manage lots of stuff. We discover today how <strong>Kura Platform</strong> cloud manage an <strong>i2c components</strong> via the <a href="http://camel.apache.org">Camel Framework</a>, <a href="http://rhiot.io">Rhiot</a> and <a href="http://openjdk.java.net/projects/dio/">DeviceIO</a> API.
+Let&rsquo;s develop and contribute more for <a href="http://www.eclipse.org/kura/">Kura</a> , <a href="http://camel.apache.org">Camel</a> and <a href="http://rhiot.io">Rhiot</a> project too.</p>
+<p>Stay tuned, for other <em>i2c components</em> ;-)</p>
+<p>Please feel free to send me your feedback see <a href="/apropos/">Apropos</a>.</p>
+<h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<ul>
+<li><a href="http://rhiot.io">rhiot projet</a></li>
+<li><a href="https://github.com/rhiot/rhiot/tree/master/gateway/components/camel-kura">camel-kura component</a></li>
+<li><a href="https://github.com/rhiot/rhiot/tree/master/gateway/components/camel-kura">camel-device-io component</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/rhiot/">rhiot</a></li>
+      <li><a href="https://gautric.github.io/tags/raspberrypi/">RaspberryPi</a></li>
+      <li><a href="https://gautric.github.io/tags/kura/">Kura</a></li>
+      <li><a href="https://gautric.github.io/tags/gateway/">Gateway</a></li>
+      <li><a href="https://gautric.github.io/tags/dio/">DIO</a></li>
+      <li><a href="https://gautric.github.io/tags/deviceio/">DeviceIO</a></li>
+      <li><a href="https://gautric.github.io/tags/i2c/">i2c</a></li>
+      <li><a href="https://gautric.github.io/tags/api/">API</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Device IO and i2cdetect implementation</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2016/01/29/unesco-challenge-point-unesco-maritime-greenwich-prime-meridian/">
+    <span class="title">Next »</span>
+    <br>
+    <span>UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

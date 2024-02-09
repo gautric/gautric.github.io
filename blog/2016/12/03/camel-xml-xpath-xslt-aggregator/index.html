@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Camel XML XPath XSLT Aggregator | Greg. I/O</title>
+<meta name="keywords" content="en, Camel, XML, XPath, XSLT, Aggregator, Route">
+<meta name="description" content="This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Camel XML XPath XSLT Aggregator" />
+<meta property="og:description" content="This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-12-03T15:00:00+00:00" />
+<meta property="article:modified_time" content="2016-12-03T15:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Camel XML XPath XSLT Aggregator"/>
+<meta name="twitter:description" content="This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Camel XML XPath XSLT Aggregator",
+      "item": "https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Camel XML XPath XSLT Aggregator",
+  "name": "Camel XML XPath XSLT Aggregator",
+  "description": "This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.",
+  "keywords": [
+    "en", "Camel", "XML", "XPath", "XSLT", "Aggregator", "Route"
+  ],
+  "articleBody": "This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.\na Camel sample with XML messages and XSL transformation\nCamel framework Camel project is managed by the Apache foundation. Camel empowers you to define routing and mediation rules in a variety of domain-specific languages, including a Java-based Fluent API, Spring or Blueprint XML Configuration files, and a Scala DSL. This means you get smart completion of routing rules in your IDE, whether in a Java, Scala or XML editor. (extract of the Camel website)\nApache Camel uses URIs to work directly with any kind of Transport or messaging model such as HTTP, ActiveMQ, JMS, JBI, SCA, MINA or CXF, as well as pluggable Components and Data Format options. Apache Camel is a small library with minimal dependencies for easy embedding in any Java application. Apache Camel lets you work with the same API regardless which kind of Transport is used - so learn the API once and you can interact with all the Components provided out-of-box. (extract of the Camel website)\nMessage A Camel message contains headers and body part. Headers can be use to add some new informations (meta data) for the camel current process or next components. Body is the payload of the Camel message. During Camel process, the payload could change on each step and sometime payload is replace by a new one.\nAggregator Strategy Camel provides enrich pattern with aggregator strategy. With this component both messages (old and new one) can be merge to a new one. Developers can implement his own version of aggregator. In this example, we will see how to use the XSLT Aggregator into a Camel route.\nUse case Customer and product The use case is very simple, we send a message to enrich customer information and product information. The route receives a message via the file system, checks xml validity and calls two services to retrieve more customer and product informations. Because we would like to keep the full payload anytime and avoid any payload backup into header we have to use enrich pattern. Route last step is to write the final result to a new file.\nRoute Here is the main route. You can notice elements for calling service.\ndirect:customerService direct:productService Service Here is the service route to retrieve informations. You can notice elements for extract the only information we need for the service. We just mock the end of service with a constant payload to send back. In real life, you could call a database or a soap/rest service for sure.\n//s:customer \u003c![CDATA[\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e Jean Paul M. ]]\u003e //s:product \u003c![CDATA[\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e 123 122 8495 LOUKOUM ]]\u003e XSLT Here is the XSLT Aggregator for merging the pre-call service message with the new message from the return of the service. By default, Camel passes the old message to XSLT and adds new message as a XSLT parameter new-exchange. The XSL is very simple, we use identity algorithm to copy all previous message (the first xsl:template block) and when we need to inject new data we fork to an other algorithm (the second xsl:template block). The merging stuff is very simple even if it is a demo.\n\u003c?xml version=\"1.0\" encoding=\"UTF-8\"?\u003e Into the main route, you need to add the strategy in element, in this case we just use XsltAggregationStrategy, it comes with camel-core.\nConclusion The camel framework is very useful and pleasant to work with. Its flexibility brings a very cool leverage to implements more complex stuff in the real life. The XsltAggregationStrategy can help you to use XML during the whole camel route. Using camel route as service is very helpful to add more malleable development, you can reuse service anytime. You must keep in mind XML schema (IN/OUT message) validation and the versioning management.\nLinks Camel project Enrich XsltAggregationStrategy XSLT 1.0 XSLT 2.0 Direct ",
+  "wordCount" : "817",
+  "inLanguage": "en",
+  "datePublished": "2016-12-03T15:00:00Z",
+  "dateModified": "2016-12-03T15:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Camel XML XPath XSLT Aggregator
+    </h1>
+    <div class="post-meta"><span title='2016-12-03 15:00:00 +0000 UTC'>December 3, 2016</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>This month I went to <a href="https://en.wikipedia.org/wiki/Greece">Greece</a> for a customer of mine. I worked at Athens on <a href="http://camel.apache.org/">Camel</a> integration with Mainframe legacy stuff.
+Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components.
+Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.</p>
+<blockquote>
+<p>a Camel sample with XML messages and XSL transformation</p>
+</blockquote>
+<h2 id="camel-framework">Camel framework<a hidden class="anchor" aria-hidden="true" href="#camel-framework">#</a></h2>
+<p><a href="http://camel.apache.org/">Camel project</a> is managed by the Apache foundation. Camel empowers you to define routing and mediation rules in a variety of domain-specific languages, including a Java-based Fluent API, Spring or Blueprint XML Configuration files, and a Scala DSL. This means you get smart completion of routing rules in your IDE, whether in a Java, Scala or XML editor. <em>(<a href="http://camel.apache.org/">extract of the Camel website</a>)</em></p>
+<p>Apache Camel uses URIs to work directly with any kind of Transport or messaging model such as HTTP, ActiveMQ, JMS, JBI, SCA, MINA or CXF, as well as pluggable Components and Data Format options. Apache Camel is a small library with minimal dependencies for easy embedding in any Java application. Apache Camel lets you work with the same API regardless which kind of Transport is used - so learn the API once and you can interact with all the Components provided out-of-box. <em>(<a href="http://camel.apache.org/">extract of the Camel website</a>)</em></p>
+<h3 id="message">Message<a hidden class="anchor" aria-hidden="true" href="#message">#</a></h3>
+<p>A Camel message contains headers and body part. <strong>Headers</strong> can be use to add some new informations (meta data) for the camel current process or next components. <strong>Body</strong> is the payload of the Camel message. During Camel process, the payload could change on each step and sometime payload is replace by a new one.</p>
+<h3 id="aggregator-strategy">Aggregator Strategy<a hidden class="anchor" aria-hidden="true" href="#aggregator-strategy">#</a></h3>
+<p>Camel provides enrich pattern with aggregator strategy. With this component both messages (old and new one) can be merge to a new one. Developers can implement his own version of aggregator. In this example, we will see how to use the XSLT Aggregator into a Camel route.</p>
+<h2 id="use-case">Use case<a hidden class="anchor" aria-hidden="true" href="#use-case">#</a></h2>
+<h3 id="customer-and-product">Customer and product<a hidden class="anchor" aria-hidden="true" href="#customer-and-product">#</a></h3>
+<p>The use case is very simple, we send a message to enrich customer information and product information. The route receives a message via the file system, checks xml validity and calls two services to retrieve more customer and product informations. Because we would like to keep the full payload anytime and avoid any payload backup into header we have to use enrich pattern. Route last step is to write the final result to a new file.</p>
+<h3 id="route">Route<a hidden class="anchor" aria-hidden="true" href="#route">#</a></h3>
+<p>Here is the main route. You can notice <em>&lt;enrich&gt;</em> elements for calling service.</p>
+<pre tabindex="0"><code>&lt;route id=&#34;service&#34;&gt;
+    &lt;from uri=&#34;file:target/in?noop=true&#34; /&gt;
+    &lt;to uri=&#34;validator:service.xsd&#34; /&gt;
+    &lt;convertBodyTo type=&#34;String&#34; /&gt;
+    &lt;to uri=&#34;log:net.a.g.camel&#34; /&gt;
+    &lt;enrich strategyRef=&#34;xasCM&#34;&gt;
+        &lt;constant&gt;direct:customerService&lt;/constant&gt;
+    &lt;/enrich&gt;
+    &lt;to uri=&#34;log:net.a.g.camel&#34; /&gt;
+    &lt;enrich strategyRef=&#34;xasPM&#34;&gt;
+        &lt;constant&gt;direct:productService&lt;/constant&gt;
+    &lt;/enrich&gt;
+    &lt;to uri=&#34;log:net.a.g.camel&#34; /&gt;
+    &lt;to uri=&#34;validator:service.xsd&#34; /&gt;
+    &lt;to uri=&#34;file:target/out&#34; /&gt;
+&lt;/route&gt;
+</code></pre><h3 id="service">Service<a hidden class="anchor" aria-hidden="true" href="#service">#</a></h3>
+<p>Here is the service route to retrieve informations. You can notice <em>&lt;xpath&gt;</em> elements for extract the only information we need for the service. We just mock the end of service with a constant payload to send back. In real life, you could call a database or a soap/rest service for sure.</p>
+<pre tabindex="0"><code>&lt;route id=&#34;customer&#34;&gt;
+    &lt;from uri=&#34;direct:customerService&#34; /&gt;
+    &lt;to uri=&#34;log:net.a.g.camel&#34; /&gt;
+    &lt;setBody&gt;
+        &lt;xpath&gt;//s:customer&lt;/xpath&gt;
+    &lt;/setBody&gt;
+    &lt;to uri=&#34;log:net.a.g.camel&#34; /&gt;
+    &lt;transform&gt;
+        &lt;constant&gt;&lt;![CDATA[&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+            &lt;s:customer xmlns:s=&#34;urn://example.org/service/2016/11&#34;&gt;
+                &lt;s:firstName&gt;Jean&lt;/s:firstName&gt;
+                &lt;s:lastName&gt;Paul&lt;/s:lastName&gt;
+                &lt;s:title&gt;M.&lt;/s:title&gt;
+            &lt;/s:customer&gt;]]&gt;&lt;/constant&gt;
+    &lt;/transform&gt;
+&lt;/route&gt;
+
+&lt;route id=&#34;product&#34;&gt;
+    &lt;from uri=&#34;direct:productService&#34; /&gt;
+    &lt;to uri=&#34;log:net.a.g.camel&#34; /&gt;
+    &lt;setBody&gt;
+        &lt;xpath&gt;//s:product&lt;/xpath&gt;
+    &lt;/setBody&gt;
+    &lt;to uri=&#34;log:net.a.g.camel&#34; /&gt;
+    &lt;transform&gt;
+        &lt;constant&gt;&lt;![CDATA[&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+            &lt;s:product xmlns:s=&#34;urn://example.org/service/2016/11&#34;&gt;
+                    &lt;s:id&gt;123&lt;/s:id&gt;
+                    &lt;s:amount&gt;122&lt;/s:amount&gt;
+                    &lt;s:price&gt;8495&lt;/s:price&gt;
+                    &lt;s:name&gt;LOUKOUM&lt;/s:name&gt;
+            &lt;/s:product&gt;]]&gt;&lt;/constant&gt;
+    &lt;/transform&gt;
+&lt;/route&gt;
+</code></pre><h3 id="xslt">XSLT<a hidden class="anchor" aria-hidden="true" href="#xslt">#</a></h3>
+<p>Here is the XSLT Aggregator for merging the pre-call service message with the new message from the return of the service. By default, Camel passes the old message to XSLT and adds new message as a XSLT parameter <em>new-exchange</em>. The XSL is very simple, we use identity algorithm to copy all previous message (the first xsl:template block) and when we need to inject new data we fork to an other algorithm (the second xsl:template block). The merging stuff is very simple even if it is a demo.</p>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&#34;http://www.w3.org/1999/XSL/Transform&#34; version=&#34;2.0&#34; xmlns:s=&#34;urn://example.org/service/2016/11&#34;&gt;
+
+    &lt;xsl:param name=&#34;new-exchange&#34; /&gt;
+
+    &lt;xsl:template match=&#34;@* | node()&#34;&gt;
+        &lt;xsl:copy&gt;
+            &lt;xsl:apply-templates select=&#34;@* | node()&#34; /&gt;
+        &lt;/xsl:copy&gt;
+    &lt;/xsl:template&gt;
+
+    &lt;xsl:template match=&#34;s:customer&#34;&gt;
+        &lt;s:customer&gt;
+            &lt;xsl:copy-of select=&#34;s:id&#34; /&gt;
+            &lt;xsl:copy-of select=&#34;$new-exchange//s:firstName&#34; /&gt;
+            &lt;xsl:copy-of select=&#34;$new-exchange//s:lastName&#34; /&gt;
+            &lt;xsl:copy-of select=&#34;$new-exchange//s:title&#34; /&gt;
+            &lt;xsl:copy-of select=&#34;s:country&#34; /&gt;
+        &lt;/s:customer&gt;
+    &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</code></pre><p>Into the main route, you need to add the strategy in <em>&lt;xpath&gt;</em> element, in this case we just use <em><a href="https://github.com/apache/camel/blob/master/camel-core/src/main/java/org/apache/camel/util/toolbox/XsltAggregationStrategy.java">XsltAggregationStrategy</a></em>, it comes with <em>camel-core</em>.</p>
+<pre tabindex="0"><code>&lt;bean id=&#34;xasCM&#34;
+    class=&#34;org.apache.camel.util.toolbox.XsltAggregationStrategy&#34;&gt;
+    &lt;constructor-arg index=&#34;0&#34; value=&#34;customerMerge.xslt&#34; /&gt;
+&lt;/bean&gt;
+</code></pre><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>The camel framework is very useful and pleasant to work with. Its flexibility brings a very cool leverage to implements more complex stuff in the real life. The <em>XsltAggregationStrategy</em> can help you to use XML during the whole camel route. Using camel route as service is very helpful to add more malleable development, you can reuse service anytime. You must keep in mind XML schema (IN/OUT message) validation and the versioning management.</p>
+<h3 id="links">Links<a hidden class="anchor" aria-hidden="true" href="#links">#</a></h3>
+<ul>
+<li><a href="http://camel.apache.org/">Camel project</a></li>
+<li><a href="http://camel.apache.org/content-enricher.html">Enrich</a></li>
+<li><a href="https://github.com/apache/camel/blob/master/camel-core/src/main/java/org/apache/camel/util/toolbox/XsltAggregationStrategy.java">XsltAggregationStrategy</a></li>
+<li><a href="https://www.w3.org/TR/xslt">XSLT 1.0</a></li>
+<li><a href="https://www.w3.org/TR/xslt20">XSLT 2.0</a></li>
+<li><a href="https://camel.apache.org/direct.html">Direct</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/camel/">camel</a></li>
+      <li><a href="https://gautric.github.io/tags/xml/">XML</a></li>
+      <li><a href="https://gautric.github.io/tags/xpath/">XPath</a></li>
+      <li><a href="https://gautric.github.io/tags/xslt/">XSLT</a></li>
+      <li><a href="https://gautric.github.io/tags/aggregator/">Aggregator</a></li>
+      <li><a href="https://gautric.github.io/tags/route/">Route</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>MQTTiser l&#39;API Autolib avec Node-Red</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

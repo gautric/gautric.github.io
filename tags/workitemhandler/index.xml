@@ -10,9 +10,9 @@
     <atom:link href="https://gautric.github.io/tags/workitemhandler/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to manage Exception inside a jBPM WorkItemHandler custom component</title>
-      <link>https://gautric.github.io/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html</link>
+      <link>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</link>
       <pubDate>Wed, 28 Oct 2020 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html</guid>
+      <guid>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</guid>
       <description>When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
 How to manage Exception inside jBPM WorkItemHandler custom component.
 To illustrate how to use Exception/Error I propose to create a sample error process.</description>

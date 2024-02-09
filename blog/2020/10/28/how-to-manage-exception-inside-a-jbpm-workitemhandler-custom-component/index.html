@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>How to manage Exception inside a jBPM WorkItemHandler custom component | Greg. I/O</title>
+<meta name="keywords" content="fr, jBPM, WorkItemHandler, Exception">
+<meta name="description" content="When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
+How to manage Exception inside jBPM WorkItemHandler custom component.
+To illustrate how to use Exception/Error I propose to create a sample error process.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="How to manage Exception inside a jBPM WorkItemHandler custom component" />
+<meta property="og:description" content="When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
+How to manage Exception inside jBPM WorkItemHandler custom component.
+To illustrate how to use Exception/Error I propose to create a sample error process." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-28T15:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-28T15:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to manage Exception inside a jBPM WorkItemHandler custom component"/>
+<meta name="twitter:description" content="When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
+How to manage Exception inside jBPM WorkItemHandler custom component.
+To illustrate how to use Exception/Error I propose to create a sample error process."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "How to manage Exception inside a jBPM WorkItemHandler custom component",
+      "item": "https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to manage Exception inside a jBPM WorkItemHandler custom component",
+  "name": "How to manage Exception inside a jBPM WorkItemHandler custom component",
+  "description": "When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.\nHow to manage Exception inside jBPM WorkItemHandler custom component.\nTo illustrate how to use Exception/Error I propose to create a sample error process.",
+  "keywords": [
+    "fr", "jBPM", "WorkItemHandler", "Exception"
+  ],
+  "articleBody": "When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.\nHow to manage Exception inside jBPM WorkItemHandler custom component.\nTo illustrate how to use Exception/Error I propose to create a sample error process.\nA quick sample Let’s create a very common process with Work Item Handler (WIH).\nThis WIH has to implement org.kie.api.runtime.process.WorkItemHandler jBPM’s interface and its two methods executeWorkItem and abortWorkItem. The first method is the nominal execution. the second one is called by jBPM to reset the workitem handler action.\n@Override public void executeWorkItem(WorkItem workItem, WorkItemManager manager) { LOG.info(\"Nominal {}\", WorkItemHandler.class); throw new net.a.g.jbpm.pattern.util.Exception(); } @Override public void abortWorkItem(WorkItem workItem, WorkItemManager manager) { LOG.info(\"Abort {}\", WorkItemHandler.class); } As you can see this implementation throws the exception net.a.g.jbpm.pattern.util.Exception.\nJava Exception to BPMN Error in jBPM engine In BPMN, we just have to use/copy paste the full qualified exception name to be handled. jBPM engine gonna catch this exception and create an internal signal. This signal reroutes the process instance to the error branch. The signal looks like Error-${internalUniqueId}-${exceptionClassName}, and in our case Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception (don’t care about the middle UUID it is internal and automatic).\nYou can map the error instance to a process variable and reuse it inside the rest next nodes as usual.\nInfo\nIn most case and in a real life, we should wrap all exceptions into normalized ones.\nUnit Test to prove integration As usual, no test no proof. Here is a common sample test. We have to register our WIH into the KieSession. We also created an listerner to illustrate all steps.\npublic class ExceptionToErrorTest extends JbpmJUnitBaseTestCase { private static final Logger LOG = LoggerFactory.getLogger(ExceptionToErrorTest.class); @Test public void test() { ExceptionToErrorTest.LOG.debug(\"jBPM unit test sample\"); final RuntimeManager runtimeManager = createRuntimeManager(\"net/a/g/jbpm/pattern/ExceptionToErrorProcess.bpmn\"); final RuntimeEngine runtimeEngine = getRuntimeEngine(null); final KieSession kieSession = runtimeEngine.getKieSession(); kieSession.getWorkItemManager().registerWorkItemHandler(\"WorkItemHandler\", new WorkItemHandler()); kieSession.addEventListener(new ProcessEventListener() { private Logger LOG = LoggerFactory.getLogger(\"net.a.g.jbpm.pattern.ProcessEventListener\"); @Override public void beforeProcessStarted(ProcessStartedEvent event) { LOG.info(\"Start Processus : {}\", event.getProcessInstance().getProcessName()); } @Override public void beforeNodeTriggered(ProcessNodeTriggeredEvent event) { LOG.info(\"Node Called : {}\", event.getNodeInstance().getNodeName()); } @Override public void afterProcessStarted(ProcessStartedEvent event) { LOG.info(\"End Processus : {}\", event.getProcessInstance().getProcessName()); } ... OMIT ... }); final ProcessInstance processInstance = kieSession.startProcess(\"ExceptionToErrorProcess\"); assertProcessInstanceNotActive(processInstance.getId(), kieSession); assertNodeTriggered(processInstance.getId(), \"ScriptTask\"); assertNodeTriggered(processInstance.getId(), \"Error End\"); runtimeManager.disposeRuntimeEngine(runtimeEngine); runtimeManager.close(); } } And here is the result.\n[INFO] Running net.a.g.jbpm.pattern.ExceptionToErrorTest 16:42:26.543 [main] DEBUG org.jbpm.services.task.identity.AbstractUserGroupInfo - Callback properties will be loaded from classpath:/usergroups.properties 16:42:26.550 [main] DEBUG org.jbpm.services.task.identity.JBossUserGroupCallbackImpl - Loaded properties {doctor=users,PM, Administrator=Administrators, frontDesk=users,PM, manager=managers,HR, mary=admins,managers,users,HR, admin=admins,managers,users,webdesigners,functionalanalysts, sales-rep=admin,managers,users,sales, john=admins,managers,users,PM, salaboy=admins,users, krisv=admins,managers,users} 16:42:26.551 [main] DEBUG org.jbpm.test.JbpmJUnitBaseTestCase - Configuring entire test case to have data source enabled false and session persistence enabled false with persistence unit name org.jbpm.persistence.jpa 16:42:26.560 [main] DEBUG net.a.g.jbpm.pattern.ExceptionToErrorTest - jBPM unit test sample 16:42:26.622 [main] DEBUG org.kie.api.internal.utils.ServiceDiscoveryImpl - Loading kie.conf from jar:file:/Users/gautric/.m2/repository/org/kie/kie-internal/7.44.0.Final/kie-internal-7.44.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc ... OMIT ... 16:42:28.835 [main] DEBUG org.kie.internal.runtime.manager.deploy.DeploymentDescriptorManager - No descriptor found returning default instance 16:42:28.874 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Error handling filters [TaskExecutionErrorFilter [accepts=CannotAddTaskException, ignores=PermissionDeniedException], ProcessExecutionErrorFilter [accepts=WorkflowRuntimeException, ignores=], DBExecutionErrorFilter [accepts=SQLException,HibernateException, ignores=]] 16:42:28.874 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Execution error storage org.jbpm.runtime.manager.impl.error.DefaultExecutionErrorStorage@2cc03cd1 16:42:28.875 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Error event listeners java.util.ServiceLoader[org.kie.internal.runtime.error.ExecutionErrorListener] 16:42:28.876 [main] INFO org.jbpm.runtime.manager.impl.AbstractRuntimeManager - SingletonRuntimeManager is created for default-singleton 16:42:28.970 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Start Processus : ExceptionToErrorProcess 16:42:28.980 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : Nominal Start 16:42:28.982 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : WorkItemHandler 16:42:28.987 [main] INFO net.a.g.jbpm.pattern.wih.WorkItemHandler - Nominal class net.a.g.jbpm.pattern.wih.WorkItemHandler 16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1 16:42:28.994 [main] INFO net.a.g.jbpm.pattern.wih.WorkItemHandler - Abort class net.a.g.jbpm.pattern.wih.WorkItemHandler 16:42:28.995 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : ScriptTask 16:42:28.995 [main] ERROR net.a.g.jbpm.pattern.ScriptTask - Task Error Branch Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] 16:42:28.995 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : Error End 16:42:28.996 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - End Processus : ExceptionToErrorProcess 16:42:28.997 [main] DEBUG org.drools.core.common.DefaultAgenda - State was INACTIVE is now DISPOSED [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.821 s - in net.a.g.jbpm.pattern.ExceptionToErrorTest As you can see an internal signal is raised and received by the jBPM engine :\n16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1 We passed also through ScriptTask Node and finish the process with the Error End meaning we finish the process with an BPMN Error Termination as expected.\nIt means that internally jBPMN engine handle Error as specific signal. The signal starts with Error code, followed by the UUID’s node and finishes the full qualified name of the exception.\nConclusion Managing Java Exception with jBPMN is simple and intuitive. Of course, you can deal with the whole Java Exception API to have a very flexible, scalable mecahism. Feel free to test my sample, I let all links below, feedbacks will be also appreciate.\nLinks The Full project but you have to do some cleanup. ExceptionToErrorProcess.bpmn Custom WorkItemHandler.java Custom Exception.java The Full Test Case.java ",
+  "wordCount" : "828",
+  "inLanguage": "en",
+  "datePublished": "2020-10-28T15:00:00Z",
+  "dateModified": "2020-10-28T15:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      How to manage Exception inside a jBPM WorkItemHandler custom component
+    </h1>
+    <div class="post-meta"><span title='2020-10-28 15:00:00 +0000 UTC'>October 28, 2020</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.</p>
+<blockquote>
+<p>How to manage Exception inside jBPM WorkItemHandler custom component.</p>
+</blockquote>
+<p>To illustrate how to use Exception/Error I propose to create a sample error process.</p>
+<h2 id="a-quick-sample">A quick sample<a hidden class="anchor" aria-hidden="true" href="#a-quick-sample">#</a></h2>
+<p>Let&rsquo;s create a very common process with Work Item Handler (WIH).</p>
+<p><img loading="lazy" src="/img/jbpm-error-exception.png" alt=""  />
+</p>
+<p>This WIH has to implement <code>org.kie.api.runtime.process.WorkItemHandler</code> jBPM&rsquo;s interface and its two methods <code>executeWorkItem</code> and <code>abortWorkItem</code>. The first method is the nominal execution. the second one is called by jBPM to reset the workitem handler action.</p>
+<pre tabindex="0"><code>	@Override
+	public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
+		LOG.info(&#34;Nominal {}&#34;, WorkItemHandler.class);
+		throw new net.a.g.jbpm.pattern.util.Exception();
+	}
+
+	@Override
+	public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
+		LOG.info(&#34;Abort {}&#34;, WorkItemHandler.class);
+
+	}
+</code></pre><p>As you can see this implementation throws the exception <code>net.a.g.jbpm.pattern.util.Exception</code>.</p>
+<h2 id="java-exception-to-bpmn-error-in-jbpm-engine">Java Exception to BPMN Error in jBPM engine<a hidden class="anchor" aria-hidden="true" href="#java-exception-to-bpmn-error-in-jbpm-engine">#</a></h2>
+<p>In BPMN, we just have to use/copy paste the full qualified exception name to be handled.
+jBPM engine gonna catch this exception and create an internal signal. This signal reroutes the process instance to the error branch.
+The signal looks like <code>Error-${internalUniqueId}-${exceptionClassName}</code>, and in our case <code>Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception</code> (don&rsquo;t care about the middle UUID it is internal and automatic).</p>
+<p><img loading="lazy" src="/img/jbpm-error-exception-handling.png" alt=""  />
+</p>
+<p>You can map the error instance to a process variable and reuse it inside the rest next nodes as usual.</p>
+<p><img loading="lazy" src="/img/jbpm-error-exception-mapping.png" alt=""  />
+</p>
+<div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice info" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>In most case and in a real life, we should wrap all exceptions into normalized ones.</p></div>
+
+<h2 id="unit-test-to-prove-integration">Unit Test to prove integration<a hidden class="anchor" aria-hidden="true" href="#unit-test-to-prove-integration">#</a></h2>
+<p>As usual, no test no proof. Here is a common sample test. We have to register our WIH into the KieSession. We also created an listerner to illustrate all steps.</p>
+<pre tabindex="0"><code>public class ExceptionToErrorTest extends JbpmJUnitBaseTestCase {
+    private static final Logger LOG = LoggerFactory.getLogger(ExceptionToErrorTest.class);
+
+    @Test
+    public void test() {
+        ExceptionToErrorTest.LOG.debug(&#34;jBPM unit test sample&#34;);
+
+        final RuntimeManager runtimeManager = createRuntimeManager(&#34;net/a/g/jbpm/pattern/ExceptionToErrorProcess.bpmn&#34;);
+        final RuntimeEngine runtimeEngine = getRuntimeEngine(null);
+        final KieSession kieSession = runtimeEngine.getKieSession();
+        kieSession.getWorkItemManager().registerWorkItemHandler(&#34;WorkItemHandler&#34;, new WorkItemHandler());
+
+        kieSession.addEventListener(new ProcessEventListener() {
+
+			private  Logger LOG = LoggerFactory.getLogger(&#34;net.a.g.jbpm.pattern.ProcessEventListener&#34;);
+
+			@Override
+			public void beforeProcessStarted(ProcessStartedEvent event) {
+				LOG.info(&#34;Start Processus : {}&#34;, event.getProcessInstance().getProcessName());
+			}
+
+			@Override
+			public void beforeNodeTriggered(ProcessNodeTriggeredEvent event) {
+				LOG.info(&#34;Node Called : {}&#34;, event.getNodeInstance().getNodeName());
+			}
+
+
+			@Override
+			public void afterProcessStarted(ProcessStartedEvent event) {
+				LOG.info(&#34;End Processus : {}&#34;, event.getProcessInstance().getProcessName());
+
+			}
+
+		... OMIT ...
+		});
+
+
+        final ProcessInstance processInstance = kieSession.startProcess(&#34;ExceptionToErrorProcess&#34;);
+
+        assertProcessInstanceNotActive(processInstance.getId(), kieSession);
+        assertNodeTriggered(processInstance.getId(), &#34;ScriptTask&#34;);
+		assertNodeTriggered(processInstance.getId(), &#34;Error End&#34;);
+        
+        runtimeManager.disposeRuntimeEngine(runtimeEngine);
+        runtimeManager.close();
+    }
+}
+</code></pre><p>And here is the result.</p>
+<pre tabindex="0"><code>[INFO] Running net.a.g.jbpm.pattern.ExceptionToErrorTest
+16:42:26.543 [main] DEBUG org.jbpm.services.task.identity.AbstractUserGroupInfo - Callback properties will be loaded from classpath:/usergroups.properties
+16:42:26.550 [main] DEBUG org.jbpm.services.task.identity.JBossUserGroupCallbackImpl - Loaded properties {doctor=users,PM, Administrator=Administrators, frontDesk=users,PM, manager=managers,HR, mary=admins,managers,users,HR, admin=admins,managers,users,webdesigners,functionalanalysts, sales-rep=admin,managers,users,sales, john=admins,managers,users,PM, salaboy=admins,users, krisv=admins,managers,users}
+16:42:26.551 [main] DEBUG org.jbpm.test.JbpmJUnitBaseTestCase - Configuring entire test case to have data source enabled false and session persistence enabled false with persistence unit name org.jbpm.persistence.jpa
+16:42:26.560 [main] DEBUG net.a.g.jbpm.pattern.ExceptionToErrorTest - jBPM unit test sample
+16:42:26.622 [main] DEBUG org.kie.api.internal.utils.ServiceDiscoveryImpl - Loading kie.conf from  jar:file:/Users/gautric/.m2/repository/org/kie/kie-internal/7.44.0.Final/kie-internal-7.44.0.Final.jar!/META-INF/kie.conf in classloader jdk.internal.loader.ClassLoaders$AppClassLoader@277050dc
+
+... OMIT ...
+
+16:42:28.835 [main] DEBUG org.kie.internal.runtime.manager.deploy.DeploymentDescriptorManager - No descriptor found returning default instance
+16:42:28.874 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Error handling filters [TaskExecutionErrorFilter [accepts=CannotAddTaskException, ignores=PermissionDeniedException], ProcessExecutionErrorFilter [accepts=WorkflowRuntimeException, ignores=], DBExecutionErrorFilter [accepts=SQLException,HibernateException, ignores=]]
+16:42:28.874 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Execution error storage org.jbpm.runtime.manager.impl.error.DefaultExecutionErrorStorage@2cc03cd1
+16:42:28.875 [main] DEBUG org.jbpm.runtime.manager.impl.error.ExecutionErrorManagerImpl - Error event listeners java.util.ServiceLoader[org.kie.internal.runtime.error.ExecutionErrorListener]
+16:42:28.876 [main] INFO org.jbpm.runtime.manager.impl.AbstractRuntimeManager - SingletonRuntimeManager is created for default-singleton
+16:42:28.970 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Start Processus : ExceptionToErrorProcess
+16:42:28.980 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : Nominal Start
+16:42:28.982 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : WorkItemHandler
+16:42:28.987 [main] INFO net.a.g.jbpm.pattern.wih.WorkItemHandler - Nominal class net.a.g.jbpm.pattern.wih.WorkItemHandler
+16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1
+16:42:28.994 [main] INFO net.a.g.jbpm.pattern.wih.WorkItemHandler - Abort class net.a.g.jbpm.pattern.wih.WorkItemHandler
+16:42:28.995 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : ScriptTask
+16:42:28.995 [main] ERROR net.a.g.jbpm.pattern.ScriptTask - Task Error Branch Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242]
+16:42:28.995 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - Node Called : Error End
+16:42:28.996 [main] INFO net.a.g.jbpm.pattern.ProcessEventListener - End Processus : ExceptionToErrorProcess
+16:42:28.997 [main] DEBUG org.drools.core.common.DefaultAgenda - State was INACTIVE is now DISPOSED
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.821 s - in net.a.g.jbpm.pattern.ExceptionToErrorTest
+</code></pre><p>As you can see an internal signal is raised and received by the jBPM engine :</p>
+<pre><code>16:42:28.991 [main] DEBUG org.jbpm.workflow.instance.impl.WorkflowProcessInstanceImpl - Signal Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception received with data Exception [uuid=9aecb8c7-99af-4d41-b8fa-df97f3ae1242] in process instance 1
+</code></pre>
+<p>We passed also through <code>ScriptTask</code>  Node and finish the process with the <code>Error End</code> meaning we finish the process with an BPMN Error Termination as expected.</p>
+<p>It means that internally jBPMN engine handle Error as specific signal. The signal starts with <code>Error</code> code, followed by the UUID&rsquo;s node and finishes the full qualified name of the exception.</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Managing Java Exception with jBPMN is simple and intuitive. Of course, you can deal with the whole Java Exception API to have a very flexible, scalable mecahism. Feel free to test my sample, I let all links below,  feedbacks will be also appreciate.</p>
+<h3 id="links">Links<a hidden class="anchor" aria-hidden="true" href="#links">#</a></h3>
+<ul>
+<li><a href="https://github.com/gautric/bpmn-pattern">The Full project</a> but you have to do some cleanup.</li>
+<li><a href="https://github.com/gautric/bpmn-pattern/blob/master/src/main/resources/net/a/g/jbpm/pattern/ExceptionToErrorProcess.bpmn">ExceptionToErrorProcess.bpmn</a></li>
+<li><a href="https://github.com/gautric/bpmn-pattern/blob/master/src/main/java/net/a/g/jbpm/pattern/wih/WorkItemHandler.java">Custom WorkItemHandler.java</a></li>
+<li><a href="https://github.com/gautric/bpmn-pattern/blob/master/src/main/java/net/a/g/jbpm/pattern/util/Exception.java">Custom Exception.java</a></li>
+<li><a href="hhttps://github.com/gautric/bpmn-pattern/blob/master/src/test/java/net/a/g/jbpm/pattern/ExceptionToErrorTest.java">The Full Test Case.java</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/fr/">fr</a></li>
+      <li><a href="https://gautric.github.io/tags/jbpm/">jBPM</a></li>
+      <li><a href="https://gautric.github.io/tags/workitemhandler/">WorkItemHandler</a></li>
+      <li><a href="https://gautric.github.io/tags/exception/">Exception</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm/drools/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Pattern Découpler la Réception et Utilisation des Signaux avec jBPM/Drools</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Keycloak, les clefs Yubico et le standard Webauthn</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

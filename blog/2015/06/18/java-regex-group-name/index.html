@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Java Regex Group Name | Greg. I/O</title>
+<meta name="keywords" content="fr, java, regex, group name">
+<meta name="description" content="Lors d&rsquo;un développement d&rsquo;un programme informatique, il est parfois nécessaire d&rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&rsquo;utilisation d&rsquo;une expression rationnelle est utile dans le cas où l&rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.
+Dans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2015/06/18/java-regex-group-name/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2015/06/18/java-regex-group-name/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Java Regex Group Name" />
+<meta property="og:description" content="Lors d&rsquo;un développement d&rsquo;un programme informatique, il est parfois nécessaire d&rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&rsquo;utilisation d&rsquo;une expression rationnelle est utile dans le cas où l&rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.
+Dans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2015/06/18/java-regex-group-name/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-06-18T13:58:00+00:00" />
+<meta property="article:modified_time" content="2015-06-18T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java Regex Group Name"/>
+<meta name="twitter:description" content="Lors d&rsquo;un développement d&rsquo;un programme informatique, il est parfois nécessaire d&rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&rsquo;utilisation d&rsquo;une expression rationnelle est utile dans le cas où l&rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.
+Dans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Java Regex Group Name",
+      "item": "https://gautric.github.io/blog/2015/06/18/java-regex-group-name/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Java Regex Group Name",
+  "name": "Java Regex Group Name",
+  "description": "Lors d\u0026rsquo;un développement d\u0026rsquo;un programme informatique, il est parfois nécessaire d\u0026rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L\u0026rsquo;utilisation d\u0026rsquo;une expression rationnelle est utile dans le cas où l\u0026rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu\u0026rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.\nDans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard.",
+  "keywords": [
+    "fr", "java", "regex", "group name"
+  ],
+  "articleBody": "Lors d’un développement d’un programme informatique, il est parfois nécessaire d’utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L’utilisation d’une expression rationnelle est utile dans le cas où l’on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu’une chaine de caractères correspond bien à un schéma/motif particulier.\nDans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard. Nous allons voir comment utiliser une fonctionnalité interessante disponible dans la librairie standard de Java.\nUse case : tester les URL Dans notre use case nous voulons vérifier la correspondance d’une chaine de caractères avec une URL. Pour cela nous allons créer une expression rationnel afin de vérifier la bonne correspondance.\n(?http|ftp|ssh|amqp|imap|ws)(?s)?://(?[a-zA-Z.-]+)(:(?[0-9]+))? Avec cette « regex », il est possible de vérifier les chaines suivantes par exemple :\nftp://fileserver.domain:1223 imaps://emailserver.domain:341 Group indexé Dans la plupart des langages, il est possible de récupérer les différentes parties avec la notion de group indexé. Par exemple, le premier group va correspondre au scheme à savoir http, ftp amqp, etc. ainsi de suite group(1).\nGroup nommé Mais dans Java (je n’ai pas vérifié avec les autres langages), il est possible de nommé ces group comme ceci\n\"(?http|ftp|ssh|amqp|imap|ws)(?s)?://(?[a-zA-Z.-]+)(:(?[0-9]+))?\" Ensuite, il est possible de retrouver la valeur récupérée du group capturé par l’expression rationnelle comme ceci group(“scheme”)\nVoici un exemple complet de l’utilisation des group nommés avec Java.\net voici l’output.\nscheme : ftp secure : false host : fileserver.domain port : 1223 scheme : amqp secure : false host : momserver.domain port : 999 scheme : imap secure : true host : emailserver.domain port : 341 scheme : ws secure : true host : pushserver.domain port : 433 Conclusion L’utilisation des regex permet de simplifier certains nombres de problematique de developpement. Malheureusement, elles sont parfois sous-utilisées par les developpeurs car elles sont parfois obscurent. En esperant, que les group nommés puissent les aider plus les utiliser.\n",
+  "wordCount" : "325",
+  "inLanguage": "en",
+  "datePublished": "2015-06-18T13:58:00Z",
+  "dateModified": "2015-06-18T13:58:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2015/06/18/java-regex-group-name/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Java Regex Group Name
+    </h1>
+    <div class="post-meta"><span title='2015-06-18 13:58:00 +0000 UTC'>June 18, 2015</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Lors d&rsquo;un développement d&rsquo;un programme informatique, il est parfois nécessaire d&rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&rsquo;utilisation d&rsquo;une expression rationnelle est utile dans le cas où l&rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.</p>
+<p>Dans tous les langages modernes (java, ruby, python), les librairies <em>regex</em> sont disponibles en standard. Nous allons voir comment utiliser une fonctionnalité interessante disponible dans la librairie standard de Java.</p>
+<h2 id="use-case--tester-les-url">Use case : tester les URL<a hidden class="anchor" aria-hidden="true" href="#use-case--tester-les-url">#</a></h2>
+<p>Dans notre use case nous voulons vérifier la correspondance d&rsquo;une chaine de caractères avec une URL. Pour cela nous allons créer une expression rationnel afin de vérifier la bonne correspondance.</p>
+<pre tabindex="0"><code>(?http|ftp|ssh|amqp|imap|ws)(?s)?://(?[a-zA-Z.-]+)(:(?[0-9]+))?
+</code></pre><p>Avec cette « regex », il est possible de vérifier les chaines suivantes par exemple :</p>
+<pre tabindex="0"><code>ftp://fileserver.domain:1223
+imaps://emailserver.domain:341
+</code></pre><h2 id="group-indexé"><em>Group</em> indexé<a hidden class="anchor" aria-hidden="true" href="#group-indexé">#</a></h2>
+<p>Dans la plupart des langages, il est possible de récupérer les différentes parties avec la notion de <em>group</em> indexé. Par exemple, le premier <em>group</em> va correspondre au scheme à savoir http, ftp amqp, etc. ainsi de suite <em>group(1)</em>.</p>
+<h2 id="group-nommé"><em>Group</em> nommé<a hidden class="anchor" aria-hidden="true" href="#group-nommé">#</a></h2>
+<p>Mais dans Java (je n&rsquo;ai pas vérifié avec les autres langages), il est possible de nommé ces <em>group</em> comme ceci</p>
+<pre tabindex="0"><code>&#34;(?&lt;scheme&gt;http|ftp|ssh|amqp|imap|ws)(?&lt;secure&gt;s)?://(?&lt;host&gt;[a-zA-Z.-]+)(:(?&lt;port&gt;[0-9]+))?&#34;
+</code></pre><p>Ensuite, il est possible de retrouver la valeur récupérée du group capturé par l&rsquo;expression rationnelle comme ceci <em>group(&ldquo;scheme&rdquo;)</em></p>
+<p>Voici un exemple complet de l&rsquo;utilisation des group nommés avec Java.</p>
+<script src="https://gist.github.com/gautric/45c3f5c1a9566f83e50d.js"></script>
+<p>et voici l&rsquo;output.</p>
+<pre tabindex="0"><code>scheme 	: ftp
+secure 	: false
+host 	: fileserver.domain
+port 	: 1223
+scheme 	: amqp
+secure 	: false
+host 	: momserver.domain
+port 	: 999
+scheme 	: imap
+secure 	: true
+host 	: emailserver.domain
+port 	: 341
+scheme 	: ws
+secure 	: true
+host 	: pushserver.domain
+port 	: 433
+</code></pre><br/>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>L&rsquo;utilisation des <em>regex</em> permet de simplifier certains nombres de problematique de developpement. Malheureusement, elles sont parfois sous-utilisées par les developpeurs car elles sont parfois obscurent. En esperant, que les <em>group nommés</em> puissent les aider plus les utiliser.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/fr/">fr</a></li>
+      <li><a href="https://gautric.github.io/tags/java/">java</a></li>
+      <li><a href="https://gautric.github.io/tags/regex/">regex</a></li>
+      <li><a href="https://gautric.github.io/tags/group-name/">group name</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Leshan et le standard Lightweight M2M à l&#39;EclipseCon</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Camel IoT Labs i2c gpio mqtt lcd</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

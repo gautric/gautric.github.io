@@ -10,23 +10,23 @@
     <atom:link href="https://gautric.github.io/tags/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Camel XML XPath XSLT Aggregator</title>
-      <link>https://gautric.github.io/blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html</link>
+      <link>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</link>
       <pubDate>Sat, 03 Dec 2016 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html</guid>
+      <guid>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</guid>
       <description>This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy stuff. Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components. Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.</description>
     </item>
     <item>
       <title>Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</title>
-      <link>https://gautric.github.io/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html</link>
+      <link>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/</link>
       <pubDate>Tue, 27 Sep 2016 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html</guid>
+      <guid>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/</guid>
       <description>This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions (B 256Mo, B 512Mo, B+, 2B, 3B) of RaspberryPi. I am a big fan of this product and you can find into this blog some projects I&amp;rsquo;ve made on top of this little computer. RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot.</description>
     </item>
     <item>
       <title>JBoss EAP 7 connected to WebsphereMQ running on Docker</title>
-      <link>https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html</link>
+      <link>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html</guid>
+      <guid>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</guid>
       <description>Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.
 Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker
 Prerequisites For this lab, you need the following software :
@@ -34,74 +34,74 @@ package of JBoss EAP 7 http://www.</description>
     </item>
     <item>
       <title>JConsole &amp; Java Mission Control with JBoss EAP 7</title>
-      <link>https://gautric.github.io/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html</link>
+      <link>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</link>
       <pubDate>Tue, 19 Jul 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html</guid>
+      <guid>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</guid>
       <description>During Red Hat summit, Red Hat releases the new version of its JBoss Application Server. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is JConsole and we will see how to use it with remote mode. We also configure an other tool called Java Mission Control for a cooler JMX monitoring stuff. Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.</description>
     </item>
     <item>
       <title>Lancement de JBoss EAP 7</title>
-      <link>https://gautric.github.io/blog/2016/06/27/Lancement-JBoss-EAP-7.html</link>
+      <link>https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/</link>
       <pubDate>Mon, 27 Jun 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/06/27/Lancement-JBoss-EAP-7.html</guid>
+      <guid>https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/</guid>
       <description>Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d&amp;rsquo;anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d&amp;rsquo;application phare à savoir JBoss EAP 7. Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l&amp;rsquo;architecture générale du serveur d&amp;rsquo;application. Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.</description>
     </item>
     <item>
       <title>Camel is going into Eclipse Kura</title>
-      <link>https://gautric.github.io/blog/2016/03/18/apache-camel-eclipse-kura.html</link>
+      <link>https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/</link>
       <pubDate>Fri, 18 Mar 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/03/18/apache-camel-eclipse-kura.html</guid>
+      <guid>https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/</guid>
       <description>Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The Eclipse Kura Project has accepted GitHub Pull Request and now includes a new cool component to develop branch. This new component is Camel Framework from Apache Foundation. Henryk Konsek a colleague of mine is the principal guy behind this new. The Camel and Kura integration starts from the first Camel Kura component available since Camel version 2.</description>
     </item>
     <item>
       <title>Device IO and i2cdetect implementation</title>
-      <link>https://gautric.github.io/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html</link>
+      <link>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</link>
       <pubDate>Wed, 09 Mar 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html</guid>
+      <guid>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</guid>
       <description>Today, we gonna implement a quick tool available into RaspberryPi with Java Device IO API. i2cdetect is a simple i2c device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.
 i2cdetect with the Java Device I/O API implementation .
 Requisites One RaspberryPi tested w/ RPi B+ should works with all version an I2C Device Sense Hat for example Compile Device IO Download Device IO API and compile it.</description>
     </item>
     <item>
       <title>Rhiot Kura Device IO GPIO and I2C</title>
-      <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html</link>
+      <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
       <pubDate>Mon, 29 Feb 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html</guid>
+      <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
       <description>Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the DeviceIO I2C Camel, I reuse a previous work from Camel-pi4j I&amp;rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a RaspberryPi and a ActiveMQ broker too.</description>
     </item>
     <item>
       <title>Rhiot over Kura over Docker over RaspberryPi ;-)</title>
-      <link>https://gautric.github.io/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html</link>
+      <link>https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/</link>
       <pubDate>Mon, 28 Dec 2015 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/12/28/rhiot-kura-docker-raspberrypi.html</guid>
+      <guid>https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/</guid>
       <description>During this cool Christmas day, Santa Claus brings us lot of presents (I hope for you), I received 2 RaspberryPi Zero, Thx you brother ;-). I will show you a cool stuff after this special day. We gonna test how to use Rhiot project into Kura Eclipse Platform running inside Docker container deployed into a real RaspberryPi Zero device (in this order). If you don&amp;rsquo;t have yet a RaspberryPi (B+, 2 or zero) device you can use my previous post.</description>
     </item>
     <item>
       <title>Kura over Docker</title>
-      <link>https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html</link>
+      <link>https://gautric.github.io/blog/2015/12/23/kura-over-docker/</link>
       <pubDate>Wed, 23 Dec 2015 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html</guid>
+      <guid>https://gautric.github.io/blog/2015/12/23/kura-over-docker/</guid>
       <description>Rhiot project decides recently to support mainly Kura Eclipse Platform. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by Eclipse Foundation and Eurotech. Kura runs on RaspberryPi, but if you don&amp;rsquo;t have yet a RaspberryPi device we will show how to run Kura into Docker.</description>
     </item>
     <item>
       <title>Rhiot Kura Gateway Sample (Emulator &amp; RaspberryPi) </title>
-      <link>https://gautric.github.io/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html</link>
+      <link>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</link>
       <pubDate>Thu, 03 Dec 2015 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/12/03/rhiot-kura-OSGi-full-sample.html</guid>
+      <guid>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</guid>
       <description>For a while, I develop during my free time for Rhiot project with my Red Hat colleague Henryk. We started to develop several Camel components like (kura, pi4j, bluetooth) with others volunteers. Now we focus to develop and integrate those components for Kura Platform. Kura is an OSGi Platform designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device. Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc&amp;hellip;) In this post we will see :</description>
     </item>
     <item>
       <title>RHIoT RaspberryPi Sense-Hat display</title>
-      <link>https://gautric.github.io/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html</link>
+      <link>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</link>
       <pubDate>Tue, 24 Nov 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html</guid>
+      <guid>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</guid>
       <description>Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing. Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).</description>
     </item>
     <item>
       <title>RHIoT Webcam and websocket components on MacbookPro in Groovy</title>
-      <link>https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html</link>
+      <link>https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/</link>
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html</guid>
+      <guid>https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/</guid>
       <description>Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language &amp;hellip;
 Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro
 Let&amp;rsquo;s start to broadcast yourself.
@@ -109,9 +109,9 @@ Requisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac po
     </item>
     <item>
       <title>RHIoT 0.1.2 Webcam component on MacOS X in Groovy</title>
-      <link>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html</link>
+      <link>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-webcam-component-on-macos-x-in-groovy/</link>
       <pubDate>Thu, 22 Oct 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html</guid>
+      <guid>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-webcam-component-on-macos-x-in-groovy/</guid>
       <description>My tech leader on RHIoT project (ex-camellabs) Henryk had just release the last version of RHIoT project : 0.1.2. Lot of new stuffs are included in this new release, more details available here. I found in list a cool stuff to test. We gonna check if our new commiter @levackt from ZA worked well ;-)
 Webcam camel component on Mac OSX with Groovy language
 Let&amp;rsquo;s start to broadcast yourself.
@@ -119,59 +119,59 @@ Requisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac po
     </item>
     <item>
       <title>SSH to MacOS X (El Capitan) through iCloud tunnel</title>
-      <link>https://gautric.github.io/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html</link>
+      <link>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</link>
       <pubDate>Sat, 03 Oct 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html</guid>
+      <guid>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</guid>
       <description>After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff. Yesterday, I update my favorite laptop it&amp;rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box.</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Le Havre</title>
-      <link>https://gautric.github.io/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html</link>
+      <link>https://gautric.github.io/blog/2015/08/04/unesco-challenge-point-unesco-le-havre/</link>
       <pubDate>Tue, 04 Aug 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html</guid>
+      <guid>https://gautric.github.io/blog/2015/08/04/unesco-challenge-point-unesco-le-havre/</guid>
       <description>Few years ago, my friends and I started a game we called the UNESCO challenge/Point UNESCO (fr). The goal of this game is very simple, we try to visit every World Heritage Site (WHS), one visit == one UNESCO point. Sites could be a building, a city, a complex, a land, a monument, a mountain, etc.. and they are selected by UNESCO as being of special cultural or physical significance. We have to take the picture of signboard by UNESCO as a proof of our visit.</description>
     </item>
     <item>
       <title>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</title>
-      <link>https://gautric.github.io/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html</link>
+      <link>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</link>
       <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html</guid>
+      <guid>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</guid>
       <description>Last week, Wildfly community has just released Wildfly 9.0.0.Final and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).</description>
     </item>
     <item>
       <title>Wildfly 9.0 Offline CLI and HTTP/2</title>
-      <link>https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html</link>
+      <link>https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/</link>
       <pubDate>Fri, 03 Jul 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/07/03/wildfly-offline-cli-http-2.html</guid>
+      <guid>https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/</guid>
       <description>Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.</description>
     </item>
     <item>
       <title>Camel IoT Labs i2c gpio mqtt lcd</title>
-      <link>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html</link>
+      <link>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html</guid>
+      <guid>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</guid>
       <description>One month ago, Henryk, Claus and I&amp;rsquo;ve started Camel Labs project. This project provides some cool new stuff for IoT community based on Camel technology/project. The stuff are new IoT components to connect electronics devices (i2c,SPI,gpio, tinkerforge) and cloud (pubnub, cloudlet, mqtt) together. In this lab, we will show how to build an end to end IoT integration with i2c device, mqtt broker and i2c lcd with few line of code.</description>
     </item>
     <item>
       <title>Apache Camel RaspberryPi PoC</title>
-      <link>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-integration.html</link>
+      <link>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</link>
       <pubDate>Fri, 03 Apr 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-integration.html</guid>
+      <guid>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</guid>
       <description>Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.
 Apache Camel and Raspberry Pi integration (proof of concept)</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6 English Version</title>
-      <link>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</link>
+      <link>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</link>
       <pubDate>Thu, 26 Mar 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</guid>
       <description>JBoss EAP application server is Java EE 6 certified, it implements via IronJacamar framework, the Java EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).</description>
     </item>
     <item>
       <title>Premier post</title>
-      <link>https://gautric.github.io/blog/2015/03/10/premier-post.html</link>
+      <link>https://gautric.github.io/blog/2015/03/10/premier-post/</link>
       <pubDate>Tue, 10 Mar 2015 18:02:10 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/10/premier-post.html</guid>
+      <guid>https://gautric.github.io/blog/2015/03/10/premier-post/</guid>
       <description>Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.
 I will post here my articles. I look forward to seeing you.
 私は　ここに　私のブログを　書きます。</description>

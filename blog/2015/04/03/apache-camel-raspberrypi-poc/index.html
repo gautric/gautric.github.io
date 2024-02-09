@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Apache Camel RaspberryPi PoC | Greg. I/O</title>
+<meta name="keywords" content="en, apache, camel, raspberry pi, ProofOfConcept">
+<meta name="description" content="Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.
+Apache Camel and Raspberry Pi integration (proof of concept)">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Apache Camel RaspberryPi PoC" />
+<meta property="og:description" content="Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.
+Apache Camel and Raspberry Pi integration (proof of concept)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-04-03T13:58:00+00:00" />
+<meta property="article:modified_time" content="2015-04-03T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Apache Camel RaspberryPi PoC"/>
+<meta name="twitter:description" content="Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.
+Apache Camel and Raspberry Pi integration (proof of concept)"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Apache Camel RaspberryPi PoC",
+      "item": "https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Apache Camel RaspberryPi PoC",
+  "name": "Apache Camel RaspberryPi PoC",
+  "description": "Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.\nApache Camel and Raspberry Pi integration (proof of concept)",
+  "keywords": [
+    "en", "apache", "camel", "raspberry pi", "ProofOfConcept"
+  ],
+  "articleBody": "Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.\nApache Camel and Raspberry Pi integration (proof of concept)\nBefore, coding and wiring, just let’s take a look inside both products. Raspberry Pi is a smart computer with lots of features :\nBroadcom BCM2835 - ARM1176JZF-S 700 MHz GPIO pin I2C / SPI protocol USB port HDMI port Audio output Camel is a framework with severals features too :\nJava framework from The Apache Software Foundation lots of Input/Output protocols HTTP, JMS, AMQP, MQTT, FTP, SSH, IMAP/POP, IRC, SMPP lots of languages groovy, xslt, javascript, python, php, xpath etc... EIP implementation message, wiretap, log, dispatch, broadcast, dead letter, splitter etc... In this lab, we will build an simple Camel route to accept a button event from GPIO input pin and transfer it to switch a LED on and off via a GPIO output pin. Let’s start and enjoy it ;-)\nPrerequisites For this lab, you will need the following stuff :\na Raspberry Pi (Buy one) Tested with : B model Should work with : A, A+, B+, 2B Raspbian OS installed (Download) 1 - LED 1 - Button 1 - 220 Ω (ohms) Resistor 4 - Wires 1 - Breadboard Setup your Raspberry Pi Be carefull with your device, please shutdown power before wiring. Check twice before powering on or you could damage your device.\nFollow wiring:\nYou can test your wiring with wiringpi library\nInstall Pi4j library First, let’s install Pi4J library.\nCurrently only 1.0-RC version is available directly for RaspberryPi\n$\u003e ssh ${PI_USER}@${PI_HOST} pi@rbpi\u003e curl -s get.pi4j.com | sudo bash Info\nyou should use a Public/Private key authentication for a faster connection to your RaspberryPi.\nMore information about installation here\nCompile Raspberry Component Component is still under developpement. Please feel free to test and send your feed back. Some stuff could change anytime (URI for example).\nThe better place to build camel-raspberry component is on your personal computer. RaspberryPi is be too slow to compile.\nCheckout code and build it :\n$\u003e git clone https://github.com/camel-labs/camel-labs.git $\u003e cd camel-labs/iot/components/camel-raspberrypi $\u003e mvn package -Praspberry -Dmaven.test.skip=true Info\nCamel-raspberrypi can’t be merged into Camel master branch.\nYou need to compile Main (tester) program\npackage com.github.camellabs.component.pi4j; import org.apache.camel.CamelContext; import org.apache.camel.builder.RouteBuilder; import org.apache.camel.impl.DefaultCamelContext; import org.slf4j.Logger; import org.slf4j.LoggerFactory; /** * A simple application to run RaspberryPi Camel */ public final class CamelMain { private static final Logger LOG = LoggerFactory.getLogger(CamelMain.class); private CamelMain() { } public static class CommandLineRouteBuilder extends RouteBuilder { String[] args; CommandLineRouteBuilder(String[] args) { this.args = args; } @Override public void configure() throws Exception { from(args[0]).id(\"raspberrypi-route\").to(Pi4jConstants.LOG_COMPONENT).to(args[1]); } } public static void main(String[] args) throws Exception { LOG.info(\"main\"); for (int i = 0; i \u003c args.length; i++) { LOG.info(\"args[\" + i + \"] =\" + args[i]); } CamelContext context = new DefaultCamelContext(); context.addRoutes(new CommandLineRouteBuilder(args)); context.start(); Thread.sleep(600000); context.stop(); System.exit(0); } } It needs some Camel dependencies (via Maven) to run. We have to activate raspberry maven profile and copy all dependencies to Raspberry Pi.\nCopy jar and dependencies files to your Raspberry Pi\n$\u003e cd components/camel-raspberrypi $\u003e ssh ${PI_USER}@${PI_HOST} 'mkdir -p /home/pi/camel' $\u003e scp target/*.jar ${PI_USER}@${PI_HOST}:/home/pi/camel Install program Camel Program to your Raspberry Pi Copy log4.properties to ${PI_HOST}:/home/pi/camel directory\n# # The logging properties used # log4j.rootLogger=INFO, out # uncomment the following line to turn on Camel debugging #log4j.logger.org.apache.camel=DEBUG log4j.logger.org.pi4j=ALL log4j.logger.com.github.camellabs.component.raspberrypi=ALL # CONSOLE appender not used by default log4j.appender.out=org.apache.log4j.ConsoleAppender log4j.appender.out.layout=org.apache.log4j.PatternLayout log4j.appender.out.layout.ConversionPattern=%d{ISO8601} [%30.30t] %-30.30c{1} %-5p %m%n #log4j.appender.out.layout.ConversionPattern=%d [%-15.15t] %-5p %-30.30c{1} - %m%n 1st Prototype : timer + LED The first prototype is to setup an Timer component for sending a message every second. When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.\nThe command line $\u003e ssh ${PI_USER}@${PI_HOST} pi@rbpi\u003e pi4j -r com.github.camellabs.component.raspberrypi.CamelMain \\ \"timer://foo?fixedRate=true\u0026repeatCount=60\" \\ \"raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true\" Video Raspberry + LED (\u003e20s) Video command line /dev/out pi@rbpi7 ~/camel $ pi4j -r com.github.camellabs.component.raspberrypi.CamelMain \"timer://foo?fixedRate=true\u0026repeatCount=600\" \"raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true\" + sudo java -classpath '.:classes:*:classes:/opt/pi4j/lib/*' org.apache.camel.component.raspberrypi.CamelMain 'timer://foo?fixedRate=true\u0026repeatCount=600' 'raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true' 2015-03-31 19:53:51,863 [ main] CamelMain INFO main 2015-03-31 19:53:51,881 [ main] CamelMain INFO args[0] =timer://foo?fixedRate=true\u0026repeatCount=600 2015-03-31 19:53:51,882 [ main] CamelMain INFO args[1] =raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true 2015-03-31 19:53:55,306 [ main] DefaultCamelContext INFO Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) is starting 2015-03-31 19:53:55,329 [ main] ManagedManagementStrategy INFO JMX is enabled 2015-03-31 19:54:00,329 [ main] DefaultTypeConverter INFO Loaded 185 type converters 2015-03-31 19:54:04,078 [ main] DefaultCamelContext INFO AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance. 2015-03-31 19:54:04,080 [ main] DefaultCamelContext INFO StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html 2015-03-31 19:54:04,462 [ main] RaspberryPiEndpoint DEBUG Endpoint[raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true] 2015-03-31 19:54:04,472 [ main] RaspberryPiEndpoint DEBUG Pin Id \u003e 2 2015-03-31 19:54:04,818 [ main] RaspberryPiProducer DEBUG Starting producer: Producer[raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true] 2015-03-31 19:54:05,811 [ main] DefaultCamelContext INFO Route: raspberry-pi started and consuming from: Endpoint[timer://foo?fixedRate=true\u0026repeatCount=600] 2015-03-31 19:54:05,872 [ main] DefaultCamelContext INFO Total 1 routes, of which 1 is started. 2015-03-31 19:54:05,936 [ main] DefaultCamelContext INFO Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) started in 10.612 seconds 2015-03-31 19:54:07,212 [mel-1) thread #0 - timer://foo] raspberrypi INFO Exchange[ , Id: ID-rbpi7-45066-1427831633096-0-2 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 19:54:06 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelTimerCounter=1, CamelTimerFiredTime=Tue Mar 31 19:54:06 UTC 2015, CamelTimerName=foo, CamelTimerPeriod=1000, CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-45066-1427831633096-0-1, firedTime=Tue Mar 31 19:54:06 UTC 2015} , BodyType: null , Body: [Body is null] , Out: null: ] 2015-03-31 19:54:07,283 [mel-1) thread #0 - timer://foo] RaspberryPiProducer DEBUG Exchange[Message: [Body is null]] 2015-03-31 19:54:07,285 [mel-1) thread #0 - timer://foo] RaspberryPiProducer TRACE action= TOGGLE 2015-03-31 19:54:07,886 [mel-1) thread #0 - timer://foo] raspberrypi INFO Exchange[ , Id: ID-rbpi7-45066-1427831633096-0-4 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 19:54:07 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelTimerCounter=2, CamelTimerFiredTime=Tue Mar 31 19:54:07 UTC 2015, CamelTimerName=foo, CamelTimerPeriod=1000, CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-45066-1427831633096-0-3, firedTime=Tue Mar 31 19:54:07 UTC 2015} , BodyType: null , Body: [Body is null] , Out: null: ] 2015-03-31 19:54:07,890 [mel-1) thread #0 - timer://foo] RaspberryPiProducer DEBUG Exchange[Message: [Body is null]] 2015-03-31 19:54:07,891 [mel-1) thread #0 - timer://foo] RaspberryPiProducer TRACE action= TOGGLE 2015-03-31 19:54:08,895 [mel-1) thread #0 - timer://foo] raspberrypi INFO Exchange[ , Id: ID-rbpi7-45066-1427831633096-0-6 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 19:54:08 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelTimerCounter=3, CamelTimerFiredTime=Tue Mar 31 19:54:08 UTC 2015, CamelTimerName=foo, CamelTimerPeriod=1000, CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-45066-1427831633096-0-5, firedTime=Tue Mar 31 19:54:08 UTC 2015} , BodyType: null , Body: [Body is null] , Out: null: ] 2015-03-31 19:54:08,899 [mel-1) thread #0 - timer://foo] RaspberryPiProducer DEBUG Exchange[Message: [Body is null]] 2015-03-31 19:54:08,901 [mel-1) thread #0 - timer://foo] RaspberryPiProducer TRACE action= TOGGLE 2nd Prototype : Button + LED The second prototype is like the first one, but we remove timer endpoint to replace it with button for sending a message when pushed (HIGH state event*). When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.\nThe command line $\u003e ssh ${PI_USER}@${PI_HOST} pi@rbpi\u003e pi4j -r com.github.camellabs.component.raspberrypi.CamelMain \\ \"raspberrypi-gpio://1?mode=DIGITAL_INPUT\u0026state=HIGH\" \\ \"raspberrypi-gpio://2?action=TOGGLE\" Video Raspberry + LED Video command line /dev/out pi@rbpi7 ~/camel $ pi4j -r com.github.camellabs.component.raspberrypi.CamelMain \"raspberrypi-gpio://1?mode=DIGITAL_INPUT\u0026state=HIGH\" \"raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true\" + sudo java -classpath '.:classes:*:classes:/opt/pi4j/lib/*' org.apache.camel.component.raspberrypi.CamelMain 'raspberrypi-gpio://1?mode=DIGITAL_INPUT\u0026state=HIGH' 'raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true' 2015-03-31 20:08:58,096 [ main] CamelMain INFO main 2015-03-31 20:08:58,112 [ main] CamelMain INFO args[0] =raspberrypi-gpio://1?mode=DIGITAL_INPUT\u0026state=HIGH 2015-03-31 20:08:58,115 [ main] CamelMain INFO args[1] =raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true 2015-03-31 20:09:01,619 [ main] DefaultCamelContext INFO Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) is starting 2015-03-31 20:09:01,642 [ main] ManagedManagementStrategy INFO JMX is enabled 2015-03-31 20:09:06,678 [ main] DefaultTypeConverter INFO Loaded 185 type converters 2015-03-31 20:09:10,264 [ main] DefaultCamelContext INFO AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance. 2015-03-31 20:09:10,266 [ main] DefaultCamelContext INFO StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html 2015-03-31 20:09:10,416 [ main] RaspberryPiEndpoint DEBUG Endpoint[raspberrypi-gpio://1?mode=DIGITAL_INPUT\u0026state=HIGH] 2015-03-31 20:09:10,426 [ main] RaspberryPiEndpoint DEBUG Pin Id \u003e 1 2015-03-31 20:09:10,922 [ main] RaspberryPiEndpoint DEBUG Endpoint[raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true] 2015-03-31 20:09:10,924 [ main] RaspberryPiEndpoint DEBUG Pin Id \u003e 2 2015-03-31 20:09:10,998 [ main] RaspberryPiProducer DEBUG Starting producer: Producer[raspberrypi-gpio://2?action=TOGGLE\u0026shutdownExport=true] 2015-03-31 20:09:11,990 [ main] RaspberryPiConsumer TRACE Start Listening GPIO 1 2015-03-31 20:09:11,997 [ main] DefaultCamelContext INFO Route: raspberry-pi started and consuming from: Endpoint[raspberrypi-gpio://1?mode=DIGITAL_INPUT\u0026state=HIGH] 2015-03-31 20:09:12,004 [ main] DefaultCamelContext INFO Total 1 routes, of which 1 is started. 2015-03-31 20:09:12,123 [ main] DefaultCamelContext INFO Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) started in 10.430 seconds 2015-03-31 20:09:15,483 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW 2015-03-31 20:09:15,485 [ pool-1-thread-1] RaspberryPiConsumer DEBUG Consumer state HIGH != LOW Event state --\u003e ignore Event 2015-03-31 20:09:15,667 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH 2015-03-31 20:09:16,089 [ pool-1-thread-1] raspberrypi INFO Exchange[ , Id: ID-rbpi7-46433-1427832539336-0-2 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:15 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-1, CamelPi4j.pin=\"GPIO 1\" , CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE} , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent , Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c] , Out: null: ] 2015-03-31 20:09:16,152 [ pool-1-thread-1] RaspberryPiProducer DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]] 2015-03-31 20:09:16,153 [ pool-1-thread-1] RaspberryPiProducer TRACE action= TOGGLE 2015-03-31 20:09:17,916 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW 2015-03-31 20:09:17,918 [ pool-1-thread-1] RaspberryPiConsumer DEBUG Consumer state HIGH != LOW Event state --\u003e ignore Event 2015-03-31 20:09:18,130 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH 2015-03-31 20:09:18,153 [ pool-1-thread-1] raspberrypi INFO Exchange[ , Id: ID-rbpi7-46433-1427832539336-0-4 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:18 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-3, CamelPi4j.pin=\"GPIO 1\" , CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE} , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent , Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c] , Out: null: ] 2015-03-31 20:09:18,164 [ pool-1-thread-1] RaspberryPiProducer DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]] 2015-03-31 20:09:18,179 [ pool-1-thread-1] RaspberryPiProducer TRACE action= TOGGLE 2015-03-31 20:09:20,447 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW 2015-03-31 20:09:20,448 [ pool-1-thread-1] RaspberryPiConsumer DEBUG Consumer state HIGH != LOW Event state --\u003e ignore Event 2015-03-31 20:09:20,672 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH 2015-03-31 20:09:20,694 [ pool-1-thread-1] raspberrypi INFO Exchange[ , Id: ID-rbpi7-46433-1427832539336-0-6 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:20 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-5, CamelPi4j.pin=\"GPIO 1\" , CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE} , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent , Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c] , Out: null: ] 2015-03-31 20:09:20,703 [ pool-1-thread-1] RaspberryPiProducer DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]] 2015-03-31 20:09:20,709 [ pool-1-thread-1] RaspberryPiProducer TRACE action= TOGGLE 2015-03-31 20:09:25,036 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW 2015-03-31 20:09:25,038 [ pool-1-thread-1] RaspberryPiConsumer DEBUG Consumer state HIGH != LOW Event state --\u003e ignore Event 2015-03-31 20:09:25,248 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH 2015-03-31 20:09:25,278 [ pool-1-thread-1] raspberrypi INFO Exchange[ , Id: ID-rbpi7-46433-1427832539336-0-8 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:25 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-7, CamelPi4j.pin=\"GPIO 1\" , CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE} , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent , Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c] , Out: null: ] 2015-03-31 20:09:25,284 [ pool-1-thread-1] RaspberryPiProducer DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]] 2015-03-31 20:09:25,285 [ pool-1-thread-1] RaspberryPiProducer TRACE action= TOGGLE 2015-03-31 20:09:31,155 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW 2015-03-31 20:09:31,157 [ pool-1-thread-1] RaspberryPiConsumer DEBUG Consumer state HIGH != LOW Event state --\u003e ignore Event 2015-03-31 20:09:31,351 [ pool-1-thread-1] RaspberryPiConsumer DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH 2015-03-31 20:09:31,365 [ pool-1-thread-1] raspberrypi INFO Exchange[ , Id: ID-rbpi7-46433-1427832539336-0-10 , ExchangePattern: InOnly , Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:31 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true\u0026showAll=true} , Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-9, CamelPi4j.pin=\"GPIO 1\" , CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE} , BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent , Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c] , Out: null: ] 2015-03-31 20:09:31,370 [ pool-1-thread-1] RaspberryPiProducer DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]] 2015-03-31 20:09:31,371 [ pool-1-thread-1] RaspberryPiProducer TRACE action= TOGGLE Conclusion As you can see, integration Pi4j in Camel technology was really easy. With Camel technology you can communicate with lots of other devices or servers which use HTTP, AMQP, EMAIL, MQTT etc… Raspberry Pi can integrate and assemble severals electronics protocols like i2c or SPI (coming soon into camel-raspberrypi component). RaspberryPi and Apache Camel can really rock !!!\nMore links more info about me a colleague blog Henryk Konsek (IoT, MQTT etc…) CAMEL-8567 Github Pull Request Pi4j library Raspberry Pi Apache-Camel ",
+  "wordCount" : "2014",
+  "inLanguage": "en",
+  "datePublished": "2015-04-03T13:58:00Z",
+  "dateModified": "2015-04-03T13:58:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Apache Camel RaspberryPi PoC
+    </h1>
+    <div class="post-meta"><span title='2015-04-03 13:58:00 +0000 UTC'>April 3, 2015</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.</p>
+<blockquote>
+<p>Apache Camel and Raspberry Pi integration (proof of concept)</p>
+</blockquote>
+<br/>
+<p>Before, coding and wiring, just let&rsquo;s take a look inside both products.
+<a href="http://www.raspberrypi.org/">Raspberry Pi</a> is a smart computer with lots of features :</p>
+<table>
+<tr>
+<td>
+<img src="/img/raspberry_pi_logo.png" height="150" width="150" />
+</td>
+<td>
+<ul>
+<li>Broadcom BCM2835 - ARM1176JZF-S 700 MHz</li>
+<li>GPIO pin</li>
+<li>I2C / SPI protocol</li>
+<li>USB port</li>
+<li>HDMI port</li>
+<li>Audio output</li>
+</ul>
+</td>
+</tr>
+</table>
+<br/>
+<p><a href="http://camel.apache.org/">Camel</a> is a framework with severals features too :</p>
+<table>
+<tr>
+<td>
+<img src="/img/apache-camel-logo.jpg" height="150" width="150"/>
+</td>
+<td>
+<ul>
+<li>Java framework from <a href="http://www.apache.org/">The Apache Software Foundation</a></li>
+<li>lots of Input/Output protocols</li>
+<li>HTTP, JMS, AMQP, MQTT, FTP, SSH, IMAP/POP, IRC, SMPP</li>
+<li>lots of languages</li>
+<li>groovy, xslt, javascript, python, php, xpath etc...</li>
+<li>EIP implementation</li>
+<li>message, wiretap, log, dispatch, broadcast, dead letter, splitter etc...</li>
+</ul>
+</td>
+</tr>
+</table>
+<p>In this lab, we will build an simple Camel route to accept a button event from GPIO input pin and transfer it to switch a LED on and off via a GPIO output pin. Let&rsquo;s start and enjoy it ;-)</p>
+<h2 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h2>
+<p>For this lab, you will need the following stuff :</p>
+<ul>
+<li>a Raspberry Pi (<a href="http://www.raspberrypi.org/products/">Buy one</a>)
+<ul>
+<li>Tested with : B model</li>
+<li>Should work with : A, A+, B+, 2B</li>
+</ul>
+</li>
+<li>Raspbian OS installed (<a href="http://www.raspberrypi.org/downloads/">Download</a>)</li>
+<li>1 - LED</li>
+<li>1 - Button</li>
+<li>1 - 220 Ω (ohms) Resistor</li>
+<li>4 - Wires</li>
+<li>1 - Breadboard</li>
+</ul>
+<h2 id="setup-your-raspberry-pi">Setup your Raspberry Pi<a hidden class="anchor" aria-hidden="true" href="#setup-your-raspberry-pi">#</a></h2>
+<div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice error" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#error-notice"></use></svg></span></p><p>Be carefull with your device, please shutdown power before wiring. Check twice before powering on or you could damage your device.</p></div>
+
+<p>Follow wiring:</p>
+<p><img loading="lazy" src="/img/raspberrypi-camel-2.png" alt="Wire"  />
+</p>
+<p>You can test your wiring with <a href="http://wiringpi.com">wiringpi</a> library</p>
+<h2 id="install-pi4j-library">Install Pi4j library<a hidden class="anchor" aria-hidden="true" href="#install-pi4j-library">#</a></h2>
+<p>First, let&rsquo;s install Pi4J library.</p>
+<p>Currently only 1.0-RC version is available directly for RaspberryPi</p>
+<pre tabindex="0"><code>$&gt; ssh ${PI_USER}@${PI_HOST}
+pi@rbpi&gt; curl -s get.pi4j.com | sudo bash
+</code></pre><div class="notice info" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>you should use a Public/Private key authentication for a faster connection to your RaspberryPi.</p></div>
+
+<p>More information about <a href="http://pi4j.com/install.html#Installation">installation</a> here</p>
+<h2 id="compile-raspberry-component">Compile Raspberry Component<a hidden class="anchor" aria-hidden="true" href="#compile-raspberry-component">#</a></h2>
+<div class="notice error" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#error-notice"></use></svg></span></p><p>Component is still under developpement. Please feel free to test and send your feed back.
+Some stuff could change anytime (URI for example).</p></div>
+
+<p>The better place to build camel-raspberry component is on your personal computer. RaspberryPi is be too slow to compile.</p>
+<p>Checkout code and build it :</p>
+<pre tabindex="0"><code>$&gt; git clone https://github.com/camel-labs/camel-labs.git
+$&gt; cd camel-labs/iot/components/camel-raspberrypi
+$&gt; mvn package -Praspberry -Dmaven.test.skip=true
+</code></pre><div class="notice info" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Camel-raspberrypi can&rsquo;t be merged into Camel master branch.</p></div>
+
+<p>You need to compile  Main (tester) program</p>
+<pre tabindex="0"><code>package com.github.camellabs.component.pi4j;
+
+import org.apache.camel.CamelContext;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * A simple application to run RaspberryPi Camel
+ */
+public final class CamelMain {
+
+    private static final Logger LOG = LoggerFactory.getLogger(CamelMain.class);
+
+    private CamelMain() {
+    }
+
+    public static class CommandLineRouteBuilder extends RouteBuilder {
+
+        String[] args;
+
+        CommandLineRouteBuilder(String[] args) {
+            this.args = args;
+        }
+
+        @Override
+        public void configure() throws Exception {
+            from(args[0]).id(&#34;raspberrypi-route&#34;).to(Pi4jConstants.LOG_COMPONENT).to(args[1]);
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        LOG.info(&#34;main&#34;);
+
+        for (int i = 0; i &lt; args.length; i++) {
+            LOG.info(&#34;args[&#34; + i + &#34;] =&#34; + args[i]);
+        }
+
+        CamelContext context = new DefaultCamelContext();
+
+        context.addRoutes(new CommandLineRouteBuilder(args));
+
+        context.start();
+        Thread.sleep(600000);
+        context.stop();
+        System.exit(0);
+    }
+
+}
+</code></pre><p>It needs some Camel dependencies (via Maven) to run. We have to activate <a href="https://github.com/camel-labs/camel-labs/blob/master/iot/components/camel-raspberrypi/pom.xml#L153"><em><strong>raspberry</strong></em> maven profile</a> and
+copy all dependencies to Raspberry Pi.</p>
+<p>Copy jar and dependencies files to your Raspberry Pi</p>
+<pre tabindex="0"><code>$&gt; cd components/camel-raspberrypi
+$&gt; ssh ${PI_USER}@${PI_HOST} &#39;mkdir -p /home/pi/camel&#39;
+$&gt; scp target/*.jar ${PI_USER}@${PI_HOST}:/home/pi/camel
+</code></pre><h2 id="install-program-camel-program-to-your-raspberry-pi">Install program Camel Program to your Raspberry Pi<a hidden class="anchor" aria-hidden="true" href="#install-program-camel-program-to-your-raspberry-pi">#</a></h2>
+<p>Copy <strong>log4.properties</strong> to <strong>${PI_HOST}:/home/pi/camel</strong> directory</p>
+<pre tabindex="0"><code>#
+# The logging properties used
+#
+log4j.rootLogger=INFO, out
+
+# uncomment the following line to turn on Camel debugging
+#log4j.logger.org.apache.camel=DEBUG
+log4j.logger.org.pi4j=ALL
+log4j.logger.com.github.camellabs.component.raspberrypi=ALL
+
+# CONSOLE appender not used by default
+log4j.appender.out=org.apache.log4j.ConsoleAppender
+log4j.appender.out.layout=org.apache.log4j.PatternLayout
+log4j.appender.out.layout.ConversionPattern=%d{ISO8601} [%30.30t] %-30.30c{1} %-5p %m%n
+#log4j.appender.out.layout.ConversionPattern=%d [%-15.15t] %-5p %-30.30c{1} - %m%n
+</code></pre><br/>
+<h2 id="1st-prototype--timer--led">1st Prototype : timer + LED<a hidden class="anchor" aria-hidden="true" href="#1st-prototype--timer--led">#</a></h2>
+<p>The first prototype is to setup an Timer component for sending a message every second. When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.</p>
+<img src="/img/camel-timer.png" />
+<h3 id="the-command-line">The command line<a hidden class="anchor" aria-hidden="true" href="#the-command-line">#</a></h3>
+<pre tabindex="0"><code>$&gt; ssh ${PI_USER}@${PI_HOST}
+pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  \
+        &#34;timer://foo?fixedRate=true&amp;repeatCount=60&#34;  \
+        &#34;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&#34;
+</code></pre><h3 id="video-raspberry--led-20s">Video Raspberry + LED (&gt;20s)<a hidden class="anchor" aria-hidden="true" href="#video-raspberry--led-20s">#</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wxyPC5cbZrM?t=15s" frameborder="0" ></iframe>
+<h3 id="video-command-line">Video command line<a hidden class="anchor" aria-hidden="true" href="#video-command-line">#</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0BtJDWUMOjc" frameborder="0" ></iframe>
+<h3 id="devout">/dev/out<a hidden class="anchor" aria-hidden="true" href="#devout">#</a></h3>
+<pre tabindex="0"><code>pi@rbpi7 ~/camel $ pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  &#34;timer://foo?fixedRate=true&amp;repeatCount=600&#34; &#34;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&#34;
++ sudo java -classpath &#39;.:classes:*:classes:/opt/pi4j/lib/*&#39; org.apache.camel.component.raspberrypi.CamelMain &#39;timer://foo?fixedRate=true&amp;repeatCount=600&#39; &#39;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&#39;
+2015-03-31 19:53:51,863 [                          main] CamelMain                      INFO  main
+2015-03-31 19:53:51,881 [                          main] CamelMain                      INFO  args[0] =timer://foo?fixedRate=true&amp;repeatCount=600
+2015-03-31 19:53:51,882 [                          main] CamelMain                      INFO  args[1] =raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true
+2015-03-31 19:53:55,306 [                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) is starting
+2015-03-31 19:53:55,329 [                          main] ManagedManagementStrategy      INFO  JMX is enabled
+2015-03-31 19:54:00,329 [                          main] DefaultTypeConverter           INFO  Loaded 185 type converters
+2015-03-31 19:54:04,078 [                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+2015-03-31 19:54:04,080 [                          main] DefaultCamelContext            INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2015-03-31 19:54:04,462 [                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true]
+2015-03-31 19:54:04,472 [                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 19:54:04,818 [                          main] RaspberryPiProducer            DEBUG Starting producer: Producer[raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true]
+2015-03-31 19:54:05,811 [                          main] DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint[timer://foo?fixedRate=true&amp;repeatCount=600]
+2015-03-31 19:54:05,872 [                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
+2015-03-31 19:54:05,936 [                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) started in 10.612 seconds
+2015-03-31 19:54:07,212 [mel-1) thread #0 - timer://foo] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-45066-1427831633096-0-2
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 19:54:06 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelTimerCounter=1, CamelTimerFiredTime=Tue Mar 31 19:54:06 UTC 2015, CamelTimerName=foo, CamelTimerPeriod=1000, CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-45066-1427831633096-0-1, firedTime=Tue Mar 31 19:54:06 UTC 2015}
+, BodyType: null
+, Body: [Body is null]
+, Out: null:
+]
+2015-03-31 19:54:07,283 [mel-1) thread #0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]
+2015-03-31 19:54:07,285 [mel-1) thread #0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE
+2015-03-31 19:54:07,886 [mel-1) thread #0 - timer://foo] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-45066-1427831633096-0-4
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 19:54:07 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelTimerCounter=2, CamelTimerFiredTime=Tue Mar 31 19:54:07 UTC 2015, CamelTimerName=foo, CamelTimerPeriod=1000, CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-45066-1427831633096-0-3, firedTime=Tue Mar 31 19:54:07 UTC 2015}
+, BodyType: null
+, Body: [Body is null]
+, Out: null:
+]
+2015-03-31 19:54:07,890 [mel-1) thread #0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]
+2015-03-31 19:54:07,891 [mel-1) thread #0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE
+2015-03-31 19:54:08,895 [mel-1) thread #0 - timer://foo] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-45066-1427831633096-0-6
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 19:54:08 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelTimerCounter=3, CamelTimerFiredTime=Tue Mar 31 19:54:08 UTC 2015, CamelTimerName=foo, CamelTimerPeriod=1000, CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-45066-1427831633096-0-5, firedTime=Tue Mar 31 19:54:08 UTC 2015}
+, BodyType: null
+, Body: [Body is null]
+, Out: null:
+]
+2015-03-31 19:54:08,899 [mel-1) thread #0 - timer://foo] RaspberryPiProducer            DEBUG Exchange[Message: [Body is null]]
+2015-03-31 19:54:08,901 [mel-1) thread #0 - timer://foo] RaspberryPiProducer            TRACE action= TOGGLE
+</code></pre><br/>
+<h2 id="2nd-prototype--button--led">2nd Prototype : Button + LED<a hidden class="anchor" aria-hidden="true" href="#2nd-prototype--button--led">#</a></h2>
+<p>The second prototype is like the first one, but we remove timer endpoint to replace it with button for sending a message when pushed (HIGH state event*). When message is received, the RaspberryPi endpoint Producer toggles the LED via GPIO output pin.</p>
+<img src="/img/camel-button.png" />
+<h3 id="the-command-line-1">The command line<a hidden class="anchor" aria-hidden="true" href="#the-command-line-1">#</a></h3>
+<pre tabindex="0"><code>$&gt; ssh ${PI_USER}@${PI_HOST}
+pi@rbpi&gt; pi4j -r com.github.camellabs.component.raspberrypi.CamelMain  \
+        &#34;raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH&#34; \
+        &#34;raspberrypi-gpio://2?action=TOGGLE&#34;
+</code></pre><h3 id="video-raspberry--led">Video Raspberry + LED<a hidden class="anchor" aria-hidden="true" href="#video-raspberry--led">#</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q-r8AP9q6tE" frameborder="0" ></iframe>
+<h3 id="video-command-line-1">Video command line<a hidden class="anchor" aria-hidden="true" href="#video-command-line-1">#</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wufbxNkXx7s" frameborder="0" ></iframe>
+<h3 id="devout-1">/dev/out<a hidden class="anchor" aria-hidden="true" href="#devout-1">#</a></h3>
+<pre tabindex="0"><code>pi@rbpi7 ~/camel $ pi4j -r  com.github.camellabs.component.raspberrypi.CamelMain  &#34;raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH&#34; &#34;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&#34;
++ sudo java -classpath &#39;.:classes:*:classes:/opt/pi4j/lib/*&#39; org.apache.camel.component.raspberrypi.CamelMain &#39;raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH&#39; &#39;raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true&#39;
+2015-03-31 20:08:58,096 [                          main] CamelMain                      INFO  main
+2015-03-31 20:08:58,112 [                          main] CamelMain                      INFO  args[0] =raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH
+2015-03-31 20:08:58,115 [                          main] CamelMain                      INFO  args[1] =raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true
+2015-03-31 20:09:01,619 [                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) is starting
+2015-03-31 20:09:01,642 [                          main] ManagedManagementStrategy      INFO  JMX is enabled
+2015-03-31 20:09:06,678 [                          main] DefaultTypeConverter           INFO  Loaded 185 type converters
+2015-03-31 20:09:10,264 [                          main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+2015-03-31 20:09:10,266 [                          main] DefaultCamelContext            INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2015-03-31 20:09:10,416 [                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH]
+2015-03-31 20:09:10,426 [                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 1
+2015-03-31 20:09:10,922 [                          main] RaspberryPiEndpoint            DEBUG Endpoint[raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true]
+2015-03-31 20:09:10,924 [                          main] RaspberryPiEndpoint            DEBUG  Pin Id &gt; 2
+2015-03-31 20:09:10,998 [                          main] RaspberryPiProducer            DEBUG Starting producer: Producer[raspberrypi-gpio://2?action=TOGGLE&amp;shutdownExport=true]
+2015-03-31 20:09:11,990 [                          main] RaspberryPiConsumer            TRACE Start Listening GPIO 1
+2015-03-31 20:09:11,997 [                          main] DefaultCamelContext            INFO  Route: raspberry-pi started and consuming from: Endpoint[raspberrypi-gpio://1?mode=DIGITAL_INPUT&amp;state=HIGH]
+2015-03-31 20:09:12,004 [                          main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
+2015-03-31 20:09:12,123 [                          main] DefaultCamelContext            INFO  Apache Camel 2.16-SNAPSHOT (CamelContext: camel-1) started in 10.430 seconds
+2015-03-31 20:09:15,483 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:15,485 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH != LOW Event state --&gt; ignore Event
+2015-03-31 20:09:15,667 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:16,089 [               pool-1-thread-1] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-46433-1427832539336-0-2
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:15 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-1, CamelPi4j.pin=&#34;GPIO 1&#34; &lt;GPIO 1&gt;, CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE}
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
+, Out: null:
+]
+2015-03-31 20:09:16,152 [               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:16,153 [               pool-1-thread-1] RaspberryPiProducer            TRACE action= TOGGLE
+2015-03-31 20:09:17,916 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:17,918 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH != LOW Event state --&gt; ignore Event
+2015-03-31 20:09:18,130 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:18,153 [               pool-1-thread-1] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-46433-1427832539336-0-4
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:18 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-3, CamelPi4j.pin=&#34;GPIO 1&#34; &lt;GPIO 1&gt;, CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE}
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
+, Out: null:
+]
+2015-03-31 20:09:18,164 [               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:18,179 [               pool-1-thread-1] RaspberryPiProducer            TRACE action= TOGGLE
+2015-03-31 20:09:20,447 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:20,448 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH != LOW Event state --&gt; ignore Event
+2015-03-31 20:09:20,672 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:20,694 [               pool-1-thread-1] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-46433-1427832539336-0-6
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:20 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-5, CamelPi4j.pin=&#34;GPIO 1&#34; &lt;GPIO 1&gt;, CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE}
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
+, Out: null:
+]
+2015-03-31 20:09:20,703 [               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:20,709 [               pool-1-thread-1] RaspberryPiProducer            TRACE action= TOGGLE
+2015-03-31 20:09:25,036 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:25,038 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH != LOW Event state --&gt; ignore Event
+2015-03-31 20:09:25,248 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:25,278 [               pool-1-thread-1] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-46433-1427832539336-0-8
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:25 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-7, CamelPi4j.pin=&#34;GPIO 1&#34; &lt;GPIO 1&gt;, CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE}
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
+, Out: null:
+]
+2015-03-31 20:09:25,284 [               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:25,285 [               pool-1-thread-1] RaspberryPiProducer            TRACE action= TOGGLE
+2015-03-31 20:09:31,155 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state LOW
+2015-03-31 20:09:31,157 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG Consumer state HIGH != LOW Event state --&gt; ignore Event
+2015-03-31 20:09:31,351 [               pool-1-thread-1] RaspberryPiConsumer            DEBUG GpioEvent pin GPIO 1, event DIGITAL_STATE_CHANGE, state HIGH
+2015-03-31 20:09:31,365 [               pool-1-thread-1] raspberrypi                    INFO  Exchange[
+, Id: ID-rbpi7-46433-1427832539336-0-10
+, ExchangePattern: InOnly
+, Properties: {CamelCreatedTimestamp=Tue Mar 31 20:09:31 UTC 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=raspberry-pi, node=to1]], CamelToEndpoint=log://org.apache.camel.component.raspberrypi?multiline=true&amp;showAll=true}
+, Headers: {breadcrumbId=ID-rbpi7-46433-1427832539336-0-9, CamelPi4j.pin=&#34;GPIO 1&#34; &lt;GPIO 1&gt;, CamelPi4j.pinState=HIGH, CamelPi4j.pinType=DIGITAL_STATE_CHANGE}
+, BodyType: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent
+, Body: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]
+, Out: null:
+]
+2015-03-31 20:09:31,370 [               pool-1-thread-1] RaspberryPiProducer            DEBUG Exchange[Message: com.pi4j.io.gpio.event.GpioPinDigitalStateChangeEvent[source=com.pi4j.io.gpio.RaspiGpioProvider@aa952c]]
+2015-03-31 20:09:31,371 [               pool-1-thread-1] RaspberryPiProducer            TRACE action= TOGGLE
+</code></pre><br/>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>As you can see, integration Pi4j in Camel technology was really easy. With Camel technology you can communicate with lots of other devices or servers which use <em>HTTP</em>, <em>AMQP</em>, <em>EMAIL</em>, <em>MQTT</em> etc&hellip;
+Raspberry Pi can integrate and assemble severals electronics protocols like <em>i2c</em> or <em>SPI</em> (coming soon into camel-raspberrypi component).
+<em>RaspberryPi and Apache Camel can really rock !!!</em></p>
+<br/>
+<h2 id="more-links">More links<a hidden class="anchor" aria-hidden="true" href="#more-links">#</a></h2>
+<ul>
+<li>more info <a href="/apropos/">about me</a></li>
+<li>a colleague <a href="http://henryk-konsek.blogspot.fr/">blog Henryk Konsek</a> (IoT, MQTT etc&hellip;)</li>
+<li><a href="https://issues.apache.org/jira/browse/CAMEL-8567">CAMEL-8567</a></li>
+<li><a href="https://github.com/apache/camel/pull/452">Github Pull Request</a></li>
+<li><a href="http://pi4j.com">Pi4j library</a></li>
+<li><a href="http://raspberrypi.org">Raspberry Pi</a></li>
+<li><a href="http://camel.apache.org">Apache-Camel</a></li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/apache/">apache</a></li>
+      <li><a href="https://gautric.github.io/tags/camel/">camel</a></li>
+      <li><a href="https://gautric.github.io/tags/raspberry-pi/">raspberry pi</a></li>
+      <li><a href="https://gautric.github.io/tags/proofofconcept/">ProofOfConcept</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Les premiers jours du projet Camel IoT Labs</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Best Practices Websphere MQ/JBoss EAP 6 English Version</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

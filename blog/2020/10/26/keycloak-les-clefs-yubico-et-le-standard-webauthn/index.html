@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Keycloak, les clefs Yubico et le standard Webauthn | Greg. I/O</title>
+<meta name="keywords" content="fr, Keycloak, Yubico, 2fa, webauthn">
+<meta name="description" content="Depuis quelque temps j&rsquo;interviens chez mes clients afin de mener des études d&rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&rsquo;indique, il s&rsquo;agit d&rsquo;une solution de SSO c&rsquo;est à dire d&rsquo;un système unique d&rsquo;authentification et d&rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
+Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Keycloak, les clefs Yubico et le standard Webauthn" />
+<meta property="og:description" content="Depuis quelque temps j&rsquo;interviens chez mes clients afin de mener des études d&rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&rsquo;indique, il s&rsquo;agit d&rsquo;une solution de SSO c&rsquo;est à dire d&rsquo;un système unique d&rsquo;authentification et d&rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
+Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-26T15:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-26T15:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Keycloak, les clefs Yubico et le standard Webauthn"/>
+<meta name="twitter:description" content="Depuis quelque temps j&rsquo;interviens chez mes clients afin de mener des études d&rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&rsquo;indique, il s&rsquo;agit d&rsquo;une solution de SSO c&rsquo;est à dire d&rsquo;un système unique d&rsquo;authentification et d&rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
+Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Keycloak, les clefs Yubico et le standard Webauthn",
+      "item": "https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Keycloak, les clefs Yubico et le standard Webauthn",
+  "name": "Keycloak, les clefs Yubico et le standard Webauthn",
+  "description": "Depuis quelque temps j\u0026rsquo;interviens chez mes clients afin de mener des études d\u0026rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l\u0026rsquo;indique, il s\u0026rsquo;agit d\u0026rsquo;une solution de SSO c\u0026rsquo;est à dire d\u0026rsquo;un système unique d\u0026rsquo;authentification et d\u0026rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.\nIl y a quelques temps déjà, j\u0026rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.",
+  "keywords": [
+    "fr", "Keycloak", "Yubico", "2fa", "webauthn"
+  ],
+  "articleBody": "Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de SSO c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.\nIl y a quelques temps déjà, j’ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc…) proposent ce type d’authentification qui apporte une sécurité supplémentaire des comptes en ligne.\nKeycloack depuis fin 2019 dispose d’une intégration du standard Webauthn du W3C. Nous allons voir comment faire cette configuration dans le produit.\nIntégration/Configuration d’une authentification Webauthn avec Keycloak\nLe standard WebAuthn Le standard WebAuthn est une généralisation d’un autre standard le FIDO. Ces deux standards ont pour but de proposer une authentification forte des utilisateurs lors de leurs connexions en ligne. Il existe déjà des systemes de double authentification via SMS par exemple, mais il est possible, avec un peu de moyen, de hacker/casser soit techniquement soit socialement ce type d’authentification.\nAuparavant le standard FIDO était très axé sur des clefs matérielles via USB beaucoup plus difficile à casser (par clonage par ex) et une API dans le browser, WebAuthn supporte quant à lui d’autre type de device comme les montres connectées, les téléphones portables et d’autres types de protocole comme le BLE et/ou le NFC. WebAuthn apporte aussi au browser une API standard en Javascript qui est maintenant supportée dans la plupart des navigateurs (Chrome, Firefox, etc…).\nLorsque d’un utilisateur se connecte à son compte en ligne le service via le browser demande à l’utilisateur d’inserer sa clef (ici : Yubikey) dans son ordinateur (utiliser sa clef NFC si il s’agit d’un telephone ou d’une tablette). Le browser dialogue donc avec le systeme d’authentification afin de verifier un challenge de sécurité, le tout est renvoyé au service pour verification finale avant l’accès au dit service. L’avantage est que l’on peut utiliser la même clef d’un service en ligne à l’autre, car le standard défini que le challenge doit etre fait par nom de domaine.\nUn des avantages de ce standard est son faible coût de deploiement à la fois pour l’utilisateur final que pour le service en ligne, grace à la standardisation il existe un certain nombre d’acteurs et de fournisseur de solution WebAuthn compatible. Une clef Yubico est aux alentours d’une cinquantaine d’euros piece, donc pour un Architecte IT comme moi cela est très raisonnable. Le service en ligne peut facilement intégrer cette fonctionnalité dans le processus d’authentification de ses utilisateurs, comme nous allons le voir dans le chapitre suivant.\nInstallation de Keycloak L’installation de Keycloak est tout aussi simple que l’installation d’un serveur Wildfly/JBoss EAP, il suffit simplement télécharger le zip serveur puis de le dezipper dans le repertoire de son choix.\nUtilisateur root Ajouter l’utilisateur root pour la gestion des Realm (Royaume) dans Keycloak via la commande suivante :\n$\u003e bin/add-user-keycloak.sh En production, on passera par un Realm (Royaume) n’utilisant pas le système de fichier de stockage des utilisateurs/mots de passe mais plutôt un annuaire LDAP disponible dans la plupart des systèmes d’information.\nDémarrer Keycloak/RHSSO Le démarrage de Keycloak se fait comme un Wildfly/JBoss EAP via la commande standalone.sh.\n$\u003e bin/standalone.sh -b 0.0.0.0 Il est bien sûr possible d’utiliser toute les fonctionnalités de Wildlfy/JBoss EAP en terme d’administration centralisée avec le mode domain, le clustering des sessions HTTP via la solution Infinispan intégrée ou bien le mod_cluster/Apache qui facilite le cycle de vie et l’administration des clusters Apache/JBoss.\nConfiguration du Realm, Client et Flow Configurer maintenant le Realm qui va contenir l’ensemble des utilisateurs et des clients (applications).\nPour la demo, nous utilisons une application cliente de type Javascript donc n’oubliez pas de configurer en mode public l’option Access Type.\nDans Browser Flow il suffit de rajouter le WebAuthn Authenticator executor dans le flow normal.\nDans la configuration du WebAuthn, n’oubliez pas de configurer le Relying Party Entity Name.\nEnregistrement d’un utilisateur Passons maintenant à l’enregistrement d’un utilisateur.\nLe browser demande ensuite l’enregistrement de la clef pour l’authentification future (cf la dialogue box avec l’empreinte digitale).\nIl suffit d’inserer ca clef Yubico FIDO2 compatible WebAuthn.\nEnsuite il est possible de configurer un label pour ce processus d’authentification WebAuthn Yubico Blue.\nAuthentification de l’utilisateur L’authentification de l’utilisateur est maintenant possible.\nDans ce cas le browser demande cette fois une authentification via la clef Yubico (cf la dialogue box avec l’empreinte digitale).\nDans le cas où l’utilisateur s’est trompé de clef ou bien à oublié ca clef, voici le message d’erreur\nMais dans le cas où tout ce passe bien l’utilisateur sera correctement authentifié et redirigé vers l’application cliente.\nInformation utilisateur Si l’on retourne sur la console d’administration web des utilisateurs dans Keycloak/RHSSO, on peut verifier que l’enregistrement de la clef Yubico a bien était fait. L’enregistrement contient notamment la clef publique de la clef Yubico.\nConclusion Nous avons vu que la configuration et authentification via le standard WebAuthn est relativement simple avec Keycloak. Alors n’hesitez pas à améliorer l’experience de vos utilisateurs ainsi que la sécurité de leur compte en activant très simplement cette option dans Keycloak/RHSSO.\nNB Les fichiers de configuration seront disponibles bientôt dans un repo github.\n",
+  "wordCount" : "884",
+  "inLanguage": "en",
+  "datePublished": "2020-10-26T15:00:00Z",
+  "dateModified": "2020-10-26T15:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Keycloak, les clefs Yubico et le standard Webauthn
+    </h1>
+    <div class="post-meta"><span title='2020-10-26 15:00:00 +0000 UTC'>October 26, 2020</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Depuis quelque temps j&rsquo;interviens chez mes clients afin de mener des études d&rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&rsquo;indique, il s&rsquo;agit d&rsquo;une solution de <a href="https://en.wikipedia.org/wiki/Single_sign-on">SSO</a> c&rsquo;est à dire d&rsquo;un système unique d&rsquo;authentification et d&rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.</p>
+<p>Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du <a href="https://en.wikipedia.org/wiki/Multi-factor_authentication">2FA</a> avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&hellip;) proposent ce type d&rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.</p>
+<p>Keycloack depuis fin 2019 dispose d&rsquo;une intégration du standard Webauthn du W3C. Nous allons voir comment faire cette configuration dans le produit.</p>
+<blockquote>
+<p>Intégration/Configuration d&rsquo;une authentification Webauthn avec Keycloak</p>
+</blockquote>
+<h2 id="le-standard-webauthn">Le standard WebAuthn<a hidden class="anchor" aria-hidden="true" href="#le-standard-webauthn">#</a></h2>
+<p>Le standard WebAuthn est une généralisation d&rsquo;un autre standard le FIDO. Ces deux standards ont pour but de proposer une authentification forte des utilisateurs lors de leurs connexions en ligne. Il existe déjà des systemes de double authentification via SMS par exemple, mais il est possible, avec un peu de moyen, de hacker/casser soit techniquement soit socialement ce type d&rsquo;authentification.</p>
+<p>Auparavant le standard FIDO était très axé sur des clefs matérielles via USB beaucoup plus difficile à casser (par clonage par ex) et une API dans le browser, WebAuthn supporte quant à lui d&rsquo;autre type de device comme les montres connectées, les téléphones portables et d&rsquo;autres types de protocole comme le BLE et/ou le NFC. WebAuthn apporte aussi au browser une API standard en Javascript qui est maintenant supportée dans la plupart des navigateurs (Chrome, Firefox, etc&hellip;).</p>
+<p>Lorsque d&rsquo;un utilisateur se connecte à son compte en ligne le service via le browser demande à l&rsquo;utilisateur d&rsquo;inserer sa clef (ici : Yubikey) dans son ordinateur (utiliser sa clef NFC si il s&rsquo;agit d&rsquo;un telephone ou d&rsquo;une tablette). Le browser dialogue donc avec le systeme d&rsquo;authentification afin de verifier un challenge de sécurité, le tout est renvoyé au service pour verification finale avant l&rsquo;accès au dit service. L&rsquo;avantage est que l&rsquo;on peut utiliser la même clef d&rsquo;un service en ligne à l&rsquo;autre, car le standard défini que le challenge doit etre fait par nom de domaine.</p>
+<p>Un des avantages de ce standard est son faible coût de deploiement à la fois pour l&rsquo;utilisateur final que pour le service en ligne, grace à la standardisation il existe un certain nombre d&rsquo;acteurs et de fournisseur de solution WebAuthn compatible. Une clef Yubico est aux alentours d&rsquo;une cinquantaine d&rsquo;euros piece, donc pour un Architecte IT comme moi cela est très raisonnable. Le service en ligne peut facilement intégrer cette fonctionnalité dans le processus d&rsquo;authentification de ses utilisateurs, comme nous allons le voir dans le chapitre suivant.</p>
+<h2 id="installation-de-keycloak">Installation de Keycloak<a hidden class="anchor" aria-hidden="true" href="#installation-de-keycloak">#</a></h2>
+<p>L&rsquo;installation de Keycloak est tout aussi simple que l&rsquo;installation d&rsquo;un serveur Wildfly/JBoss EAP, il suffit simplement <a href="https://www.keycloak.org/downloads">télécharger le zip serveur</a> puis de le dezipper dans le repertoire de son choix.</p>
+<h3 id="utilisateur-root">Utilisateur root<a hidden class="anchor" aria-hidden="true" href="#utilisateur-root">#</a></h3>
+<p>Ajouter l&rsquo;utilisateur root pour la gestion des Realm (Royaume) dans Keycloak via la commande suivante :</p>
+<pre tabindex="0"><code>$&gt; bin/add-user-keycloak.sh
+</code></pre><p>En production, on passera par un Realm (Royaume) n&rsquo;utilisant pas le système de fichier de stockage des utilisateurs/mots de passe mais plutôt un annuaire LDAP disponible dans la plupart des systèmes d&rsquo;information.</p>
+<h3 id="démarrer-keycloakrhsso">Démarrer Keycloak/RHSSO<a hidden class="anchor" aria-hidden="true" href="#démarrer-keycloakrhsso">#</a></h3>
+<p>Le démarrage de Keycloak se fait comme un Wildfly/JBoss EAP via la commande <code>standalone.sh</code>.</p>
+<pre tabindex="0"><code>$&gt; bin/standalone.sh -b 0.0.0.0
+</code></pre><p>Il est bien sûr possible d&rsquo;utiliser toute les fonctionnalités de Wildlfy/JBoss EAP en terme d&rsquo;administration centralisée avec le mode domain, le clustering des sessions HTTP via la solution Infinispan intégrée ou bien le mod_cluster/Apache qui facilite le cycle de vie et l&rsquo;administration des clusters Apache/JBoss.</p>
+<h2 id="configuration-du-realm-client-et-flow">Configuration du Realm, Client et Flow<a hidden class="anchor" aria-hidden="true" href="#configuration-du-realm-client-et-flow">#</a></h2>
+<p>Configurer maintenant le Realm qui va contenir l&rsquo;ensemble des utilisateurs et des clients (applications).</p>
+<p><img loading="lazy" src="/img/kc-2fa-configure-realm.png" alt="Configuration Realm"  />
+</p>
+<p>Pour la demo, nous utilisons une application cliente de type Javascript donc n&rsquo;oubliez pas de configurer en mode <code>public</code> l&rsquo;option <code>Access Type</code>.</p>
+<p><img loading="lazy" src="/img/kc-2fa-configure-client.png" alt="Configuration Client"  />
+</p>
+<p>Dans Browser Flow il suffit de rajouter le <code>WebAuthn Authenticator</code> executor dans le flow normal.</p>
+<p><img loading="lazy" src="/img/kc-2fa-configure-flow.png" alt="Configuration Flow"  />
+</p>
+<p>Dans la configuration du WebAuthn, n&rsquo;oubliez pas de configurer le <code>Relying Party Entity Name</code>.</p>
+<p><img loading="lazy" src="/img/kc-2fa-configure-2fa.png" alt="Configuration 2fa"  />
+</p>
+<h2 id="enregistrement-dun-utilisateur">Enregistrement d&rsquo;un utilisateur<a hidden class="anchor" aria-hidden="true" href="#enregistrement-dun-utilisateur">#</a></h2>
+<p>Passons maintenant à l&rsquo;enregistrement d&rsquo;un utilisateur.</p>
+<p><img loading="lazy" src="/img/kc-2fa-register-user.png" alt="Register User"  />
+</p>
+<p>Le browser demande ensuite l&rsquo;enregistrement de la clef pour l&rsquo;authentification future (cf la dialogue box avec l&rsquo;empreinte digitale).</p>
+<p><img loading="lazy" src="/img/kc-2fa-register-key.png" alt="Register Key"  />
+</p>
+<p>Il suffit d&rsquo;inserer ca clef Yubico FIDO2 compatible WebAuthn.</p>
+<p><img loading="lazy" src="/img/kc-yubico.jpg" alt="Yubico Key"  />
+</p>
+<p>Ensuite il est possible de configurer un label pour ce processus d&rsquo;authentification <code>WebAuthn Yubico Blue</code>.</p>
+<p><img loading="lazy" src="/img/kc-2fa-register-key-label.png" alt="Register Key Label"  />
+</p>
+<h2 id="authentification-de-lutilisateur">Authentification de l&rsquo;utilisateur<a hidden class="anchor" aria-hidden="true" href="#authentification-de-lutilisateur">#</a></h2>
+<p>L&rsquo;authentification de l&rsquo;utilisateur est maintenant possible.</p>
+<p><img loading="lazy" src="/img/kc-2fa-authn-client.png" alt="Authn User"  />
+</p>
+<p>Dans ce cas le browser demande cette fois une authentification via la clef Yubico (cf la dialogue box avec l&rsquo;empreinte digitale).</p>
+<p><img loading="lazy" src="/img/kc-2fa-authn-client-key.png" alt="Authn User Key"  />
+</p>
+<p>Dans le cas où l&rsquo;utilisateur s&rsquo;est trompé de clef ou bien à oublié ca clef, voici le message d&rsquo;erreur</p>
+<p><img loading="lazy" src="/img/kc-2fa-authn-client-key-failed.png" alt="Authn User Key Failed"  />
+</p>
+<p>Mais dans le cas où tout ce passe bien l&rsquo;utilisateur sera correctement authentifié et redirigé vers l&rsquo;application cliente.</p>
+<p><img loading="lazy" src="/img/kc-2fa-authn-client-ok.png" alt="User Authentification Ok"  />
+</p>
+<h2 id="information-utilisateur">Information utilisateur<a hidden class="anchor" aria-hidden="true" href="#information-utilisateur">#</a></h2>
+<p>Si l&rsquo;on retourne sur la console d&rsquo;administration web des utilisateurs dans Keycloak/RHSSO, on peut verifier que l&rsquo;enregistrement de la clef Yubico a bien était fait. L&rsquo;enregistrement contient notamment la clef publique de la clef Yubico.</p>
+<p><img loading="lazy" src="/img/kc-2fa-user-detail.png" alt="User Detail"  />
+</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>Nous avons vu que la configuration et authentification via le standard WebAuthn est relativement simple avec Keycloak. Alors n&rsquo;hesitez pas à améliorer l&rsquo;experience de vos utilisateurs ainsi que la sécurité de leur compte en activant très simplement cette option dans Keycloak/RHSSO.</p>
+<h3 id="nb">NB<a hidden class="anchor" aria-hidden="true" href="#nb">#</a></h3>
+<p>Les fichiers de configuration seront disponibles bientôt dans un repo github.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/fr/">fr</a></li>
+      <li><a href="https://gautric.github.io/tags/keycloak/">Keycloak</a></li>
+      <li><a href="https://gautric.github.io/tags/yubico/">yubico</a></li>
+      <li><a href="https://gautric.github.io/tags/2fa/">2fa</a></li>
+      <li><a href="https://gautric.github.io/tags/webauthn/">webauthn</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>How to manage Exception inside a jBPM WorkItemHandler custom component</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Éxecution d&#39;un moteur de KYC en DMN avec Kogito</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

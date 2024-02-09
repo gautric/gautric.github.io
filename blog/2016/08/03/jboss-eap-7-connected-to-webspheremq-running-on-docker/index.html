@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>JBoss EAP 7 connected to WebsphereMQ running on Docker | Greg. I/O</title>
+<meta name="keywords" content="en, JBoss, redhat, EAP7, WebsphereMQ, Docker">
+<meta name="description" content="Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.
+Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker
+Prerequisites For this lab, you need the following software :
+package of JBoss EAP 7 http://www.">
+<meta name="author" content="">
+<link rel="canonical" href="https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-60791597-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="JBoss EAP 7 connected to WebsphereMQ running on Docker" />
+<meta property="og:description" content="Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.
+Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker
+Prerequisites For this lab, you need the following software :
+package of JBoss EAP 7 http://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-08-03T14:00:00+00:00" />
+<meta property="article:modified_time" content="2016-08-03T14:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JBoss EAP 7 connected to WebsphereMQ running on Docker"/>
+<meta name="twitter:description" content="Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.
+Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker
+Prerequisites For this lab, you need the following software :
+package of JBoss EAP 7 http://www."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "JBoss EAP 7 connected to WebsphereMQ running on Docker",
+      "item": "https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "JBoss EAP 7 connected to WebsphereMQ running on Docker",
+  "name": "JBoss EAP 7 connected to WebsphereMQ running on Docker",
+  "description": "Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.\nHowto run JBoss EAP 7 connected to WebsphereMQ both running on Docker\nPrerequisites For this lab, you need the following software :\npackage of JBoss EAP 7 http://www.",
+  "keywords": [
+    "en", "JBoss", "redhat", "EAP7", "WebsphereMQ", "Docker"
+  ],
+  "articleBody": "Last year for a previous customer I wrote an article/post about WebsphereMQ Best Practice with JBoss EAP 6. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.\nHowto run JBoss EAP 7 connected to WebsphereMQ both running on Docker\nPrerequisites For this lab, you need the following software :\npackage of JBoss EAP 7 http://www.jboss.org/products/eap/download/ installed Docker for Linux, for Mac or Window \u003e= 1.12 Warning\nWarning, it is trial / demo only, a production deployment requires the purchase of a subscription for JBoss and a license for IBM\nClone git project First of all, clone the git repo project.\ngit clone git@github.com:gautric/JBoss-WMQ.git cd JBoss-WMQ EAP 7 image creation We have to download the JBoss EAP 7 binary and we will create the correct image of EAP 7.\nCopy binary file to JBoss-WMQ/jboss directory and go to this directory to build image.\ncd JBoss-WMQ docker build -t jboss-ivt jboss the Dockerfile\n### Set the base image to Fedora FROM jboss/base-jdk:8 ## docker build -t jboss-ivt jboss ## docker run -p 8080:8080 -p 9990:9990 -t jboss-ivt ### File Author / Maintainer MAINTAINER \"Greg Autric\" \"gautric@redhat.com\" ### Set Environment ENV JBOSS_HOME /opt/jboss/jboss-eap-7.0 ENV MQM_HOME /opt/mqm ENV MQM_URL http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz ### Install EAP 7.0.0 COPY jboss-eap-7.0.0.zip /opt RUN unzip /opt/jboss-eap-7.0.0.zip 1\u003e /dev/null \u0026\u0026 echo \"Install JBoss instance\" ## Change user to install some USER root RUN cd /tmp \u0026\u0026 yum install -y wget \u0026\u0026 wget ${MQM_URL} \u0026\u0026 tar -zxvf ./*.tar.gz 1\u003e /dev/null \u0026\u0026 cd MQServer \u0026\u0026 ./mqlicense.sh -text_only -accept \u0026\u0026 rpm -ivh MQSeriesJava*.rpm MQSeriesRuntime*.rpm RUN rm -rf /tmp/* ### Create Admin EAP user USER jboss RUN $JBOSS_HOME/bin/add-user.sh admin admin123! --silent ## Copy EAR and RAR RUN cp ${MQM_HOME}/java/lib/jca/wmq.jmsra.ivt.ear ${JBOSS_HOME}/standalone/deployments RUN cp ${MQM_HOME}/java/lib/jca/wmq.jmsra.rar ${JBOSS_HOME}/standalone/deployments ### JBoss configuration files COPY jboss-overlay.cli /opt COPY jboss-ejb3.xml /opt COPY jboss-web.xml /opt ### Configure EAP RUN echo \"JAVA_OPTS=\\\"\\$JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0\\\"\" \u003e\u003e $JBOSS_HOME/bin/standalone.conf RUN ${JBOSS_HOME}/bin/jboss-cli.sh --file=/opt/jboss-overlay.cli RUN rm -rf ${JBOSS_HOME}/standalone/configuration/standalone_xml_history/current RUN chown -R jboss:jboss ${JBOSS_HOME} ### Open Ports EXPOSE 8080 9990 ### Start EAP CMD ${JBOSS_HOME}/bin/standalone.sh -c standalone-full.xml Information about this image Admin User admin user is created Application and RAR Demo application and WMQ Ressource Adapter come from official WMQ tgz. We download it and install Java rpm package only and copy rar and ear to correct JBoss deployment directory JBoss CLI The CLI script is composed of two specific part : Resource Adapter configuration some system-property for configure RAR (user/pass/channel/queueManager, etc…) Deployment overlay is used to adapt/provide correct configuration from JBoss to application jboss-web.xml to adapt war configuration jboss-ejb3.xml for providing ejb configuration It is running with embed-server mode (offline) the CLI file\nembed-server --server-config=standalone-full.xml deployment-overlay add --name=jboss-ejb-overlay --content=/WMQ_IVT_MDB.jar/META-INF/jboss-ejb3.xml=/opt/jboss-ejb3.xml --deployments=wmq.jmsra.ivt.ear --redeploy-affected deployment-overlay add --name=jboss-web-overlay --content=/WMQ_IVT.war/WEB-INF/jboss-web.xml=/opt/jboss-web.xml --deployments=wmq.jmsra.ivt.ear --redeploy-affected # Remove unused stuff /subsystem=datasources:remove /subsystem=webservices:remove /subsystem=jpa:remove /subsystem=infinispan:remove /subsystem=ejb3:write-attribute(name=default-resource-adapter-name, value=${ejb.resource-adapter-name:wmq.jmsra.rar}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar:add(archive=wmq.jmsra.rar,transaction-support=LocalTransaction,statistics-enabled=true) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF:add(class-name=com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name=JMS2CF, use-java-context=false) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=hostName:add(value=${websphere.hostName:localhost}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=password:add(value=${websphere.password:mqm}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=queueManager:add(value=${websphere.queueManager:QUEUE.MANAGER}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=port:add(value=${websphere.port:1414}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=channel:add(value=${websphere.channel:SYSTEM.AUTO.SVRCONN}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=transportType:add(value=${websphere.transportType:CLIENT}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=username:add(value=${websphere.username:mqm}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF:add(class-name=com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name=jms/ivt/IVTCF, use-java-context=false) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=hostName:add(value=${websphere.hostName:localhost}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=password:add(value=${websphere.password:mqm}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=queueManager:add(value=${websphere.queueManager:QUEUE.MANAGER}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=port:add(value=${websphere.port:1414}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=channel:add(value=${websphere.channel:SYSTEM.AUTO.SVRCONN}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=transportType:add(value=${websphere.transportType:CLIENT}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=username:add(value=${websphere.username:mqm}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=QueuePool:add(class-name=com.ibm.mq.connector.outbound.MQQueueProxy,jndi-name=jms/ivt/IVTQueue,use-java-context=true,enabled=true) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=QueuePool/config-properties=baseQueueName:add(value=${websphere.queueName:Q_QUEUE}) /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=QueuePool/config-properties=baseQueueManagerName:add(value=${websphere.queueManager:QUEUE.MANAGER}) # Websphere MQ Host and Port #/system-property=websphere.hostName:add(value=wmq-ivt) #/system-property=websphere.port:add(value=1414) # Websphere MQ configuration /system-property=websphere.transportType:add(value=CLIENT) /system-property=websphere.username:add(value=alice) /system-property=websphere.password:add(value=passw0rd) /system-property=websphere.channel:add(value=PASSWORD.SVRCONN) /system-property=websphere.queueManager:add(value=QM1) /system-property=websphere.queueName:add(value=Q_QUEUE) /system-property=websphere.resource.adapter:add(value=wmq.jmsra.rar) /system-property=ejb.resource-adapter-name:add(value=wmq.jmsra.rar) reload --admin-only=false WMQ image creation Now we create the WMQ Docker image, we will re-use a public image to build our own version with custom stuff. Go back to our first git repo to build our own image\ncd JBoss-WMQ docker build -t wmq-ivt wmq the Dockerfile\nFROM ibmcom/mq RUN useradd alice -G mqm \u0026\u0026 \\ echo alice:passw0rd | chpasswd COPY config.mqsc /etc/mqm/ We use a small configuration for WMQ, alice account can connect to wmq and we create a simple WMQ Queue too.\nthe configuration file\nDEFINE CHANNEL(PASSWORD.SVRCONN) CHLTYPE(SVRCONN) SET CHLAUTH(PASSWORD.SVRCONN) TYPE(BLOCKUSER) USERLIST('nobody') DESCR('Allow privileged users on this channel') SET CHLAUTH('*') TYPE(ADDRESSMAP) ADDRESS('*') USERSRC(NOACCESS) DESCR('BackStop rule') SET CHLAUTH(PASSWORD.SVRCONN) TYPE(ADDRESSMAP) ADDRESS('*') USERSRC(CHANNEL) CHCKCLNT(REQUIRED) ALTER AUTHINFO(SYSTEM.DEFAULT.AUTHINFO.IDPWOS) AUTHTYPE(IDPWOS) ADOPTCTX(YES) DEFINE QL(Q_QUEUE) REFRESH SECURITY TYPE(CONNAUTH) Docker compose to run demo At the end, we use docker compose to run both parts (JBoss and WMQ). We setup some environment variable for more flexible configuration (websphere.hostName and websphere.port for exemple).\nversion: '2' services: jboss-ivt: image: jboss-ivt build: jboss ports: - \"8080:8080\" - \"9990:9990\" environment: JAVA_OPTS: \"-Dwebsphere.hostName=wmq-ivt -Dwebsphere.port=1414\" links: - wmq-ivt depends_on: - wmq-ivt wmq-ivt: image: wmq-ivt build: wmq environment: LICENSE: \"accept\" MQ_QMGR_NAME: \"QM1\" ports: - \"1414:1414\" Run it and check it Use docker-compose up to run both WMQ and JBoss\n[mbp:~/Source/git/JBoss-WMQ]$\u003e docker-compose up and go to IVT URL http://localhost:8080/WMQ_IVT/IVT for the web result.\nweb result The Application page The Result page The JMS inspection (View Message Contents) page and output log result You should get an output like this\n[mbp:~/Source/git/JBoss-WMQ]$\u003e docker-compose up Starting jbosswmq_wmq-ivt_1 Starting jbosswmq_jboss-ivt_1 Attaching to jbosswmq_wmq-ivt_1, jbosswmq_jboss-ivt_1 wmq-ivt_1 | ---------------------------------------- wmq-ivt_1 | Name: IBM MQ wmq-ivt_1 | Version: 9.0.0.0 wmq-ivt_1 | Level: p900-L160520.DE wmq-ivt_1 | BuildType: IKAP - (Production) wmq-ivt_1 | Platform: IBM MQ for Linux (x86-64 platform) wmq-ivt_1 | Mode: 64-bit wmq-ivt_1 | O/S: Linux 4.4.15-moby wmq-ivt_1 | InstName: Installation1 wmq-ivt_1 | InstDesc: wmq-ivt_1 | Primary: Yes wmq-ivt_1 | InstPath: /opt/mqm wmq-ivt_1 | DataPath: /var/mqm wmq-ivt_1 | MaxCmdLevel: 900 wmq-ivt_1 | LicenseType: Developer wmq-ivt_1 | ---------------------------------------- wmq-ivt_1 | IBM MQ queue manager 'QM1' starting. wmq-ivt_1 | The queue manager is associated with installation 'Installation1'. wmq-ivt_1 | 5 log records accessed on queue manager 'QM1' during the log replay phase. wmq-ivt_1 | Log replay for queue manager 'QM1' complete. wmq-ivt_1 | Transaction manager state recovered for queue manager 'QM1'. wmq-ivt_1 | IBM MQ queue manager 'QM1' started using V9.0.0.0. wmq-ivt_1 | ---------------------------------------- wmq-ivt_1 | QMNAME(QM1) STATUS(Running) jboss-ivt_1 | JAVA_OPTS already set in environment; overriding default settings with values: -Dwebsphere.hostName=wmq-ivt -Dwebsphere.port=1414 jboss-ivt_1 | ========================================================================= jboss-ivt_1 | jboss-ivt_1 | JBoss Bootstrap Environment jboss-ivt_1 | jboss-ivt_1 | JBOSS_HOME: /opt/jboss/jboss-eap-7.0 jboss-ivt_1 | jboss-ivt_1 | JAVA: /usr/lib/jvm/java/bin/java jboss-ivt_1 | jboss-ivt_1 | JAVA_OPTS: -server -verbose:gc -Xloggc:\"/opt/jboss/jboss-eap-7.0/standalone/log/gc.log\" -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=3M -XX:-TraceClassUnloading -Dwebsphere.hostName=wmq-ivt -Dwebsphere.port=1414 -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0 jboss-ivt_1 | jboss-ivt_1 | ========================================================================= jboss-ivt_1 | jboss-ivt_1 | 12:44:44,163 INFO [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final-redhat-1 jboss-ivt_1 | 12:44:44,405 INFO [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final-redhat-1 jboss-ivt_1 | 12:44:44,494 INFO [org.jboss.as] (MSC service thread 1-4) WFLYSRV0049: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) starting jboss-ivt_1 | 12:44:46,457 INFO [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http) jboss-ivt_1 | 12:44:46,487 INFO [org.xnio] (MSC service thread 1-1) XNIO version 3.3.6.Final-redhat-1 jboss-ivt_1 | 12:44:46,496 INFO [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.6.Final-redhat-1 jboss-ivt_1 | 12:44:46,576 INFO [org.jboss.remoting] (MSC service thread 1-3) JBoss Remoting version 4.0.18.Final-redhat-1 jboss-ivt_1 | 12:44:46,638 INFO [org.wildfly.extension.io] (ServerService Thread Pool -- 35) WFLYIO001: Worker 'default' has auto-configured to 4 core threads with 32 task threads based on your 2 available processors jboss-ivt_1 | 12:44:46,691 INFO [org.jboss.as.jsf] (ServerService Thread Pool -- 41) WFLYJSF0007: Activated the following JSF Implementations: [main] jboss-ivt_1 | 12:44:46,712 WARN [org.jboss.as.txn] (ServerService Thread Pool -- 53) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique. jboss-ivt_1 | 12:44:46,914 INFO [org.wildfly.iiop.openjdk] (ServerService Thread Pool -- 36) WFLYIIOP0001: Activating IIOP Subsystem jboss-ivt_1 | 12:44:46,934 INFO [org.jboss.as.security] (ServerService Thread Pool -- 52) WFLYSEC0002: Activating Security Subsystem jboss-ivt_1 | 12:44:46,980 INFO [org.jboss.as.naming] (ServerService Thread Pool -- 45) WFLYNAM0001: Activating Naming Subsystem jboss-ivt_1 | 12:44:46,989 INFO [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.3.Final-redhat-1) jboss-ivt_1 | 12:44:47,019 INFO [org.wildfly.extension.undertow] (ServerService Thread Pool -- 54) WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting jboss-ivt_1 | 12:44:47,023 INFO [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting jboss-ivt_1 | 12:44:47,088 INFO [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=4.9.6.Final-redhat-1 jboss-ivt_1 | 12:44:47,113 INFO [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service jboss-ivt_1 | 12:44:47,122 INFO [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default] jboss-ivt_1 | 12:44:47,303 INFO [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host. jboss-ivt_1 | 12:44:47,310 INFO [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing. jboss-ivt_1 | 12:44:47,311 INFO [org.wildfly.extension.undertow] (ServerService Thread Pool -- 54) WFLYUT0014: Creating file handler for path '/opt/jboss/jboss-eap-7.0/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]'] jboss-ivt_1 | 12:44:47,311 INFO [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server. jboss-ivt_1 | 12:44:47,316 INFO [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting jboss-ivt_1 | 12:44:47,465 INFO [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on [0:0:0:0:0:0:0:0]:8080 jboss-ivt_1 | 12:44:47,647 INFO [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0075: AIO wasn t located on this platform, it will fall back to using pure Java NIO. Your platform is Linux, install LibAIO to enable the AIO journal and achieve optimal performance. jboss-ivt_1 | 12:44:47,698 INFO [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/jboss-eap-7.0/standalone/deployments jboss-ivt_1 | 12:44:47,724 INFO [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of \"wmq.jmsra.rar\" (runtime-name: \"wmq.jmsra.rar\") jboss-ivt_1 | 12:44:47,725 INFO [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of \"wmq.jmsra.ivt.ear\" (runtime-name: \"wmq.jmsra.ivt.ear\") jboss-ivt_1 | 12:44:47,826 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221000: live Message Broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/journal,bindingsDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/bindings,largeMessagesDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/largemessages,pagingDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/paging) jboss-ivt_1 | 12:44:47,827 INFO [org.wildfly.iiop.openjdk] (MSC service thread 1-3) WFLYIIOP0009: CORBA ORB Service started jboss-ivt_1 | 12:44:47,858 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221013: Using NIO Journal jboss-ivt_1 | 12:44:48,023 INFO [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: \"WMQ_IVT_MDB.jar\") jboss-ivt_1 | 12:44:48,023 INFO [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: \"WMQ_IVT.war\") jboss-ivt_1 | 12:44:48,254 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE jboss-ivt_1 | 12:44:48,263 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221043: Protocol module found: [artemis-hornetq-protocol]. Adding protocol support for: HORNETQ jboss-ivt_1 | 12:44:50,003 INFO [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor jboss-ivt_1 | 12:44:50,020 INFO [org.wildfly.extension.messaging-activemq] (MSC service thread 1-4) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor jboss-ivt_1 | 12:44:50,021 INFO [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor jboss-ivt_1 | 12:44:50,017 INFO [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor jboss-ivt_1 | 12:44:50,243 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221007: Server is now live jboss-ivt_1 | 12:44:50,243 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221001: Apache ActiveMQ Artemis Message Broker version 1.1.0.SP16-redhat-1 [nodeID=f4375749-5972-11e6-a7ea-75a84c3c44bb] jboss-ivt_1 | 12:44:50,278 INFO [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 56) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory jboss-ivt_1 | 12:44:50,296 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 58) AMQ221003: trying to deploy queue jms.queue.ExpiryQueue jboss-ivt_1 | 12:44:50,333 INFO [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 59) AMQ221003: trying to deploy queue jms.queue.DLQ jboss-ivt_1 | 12:44:50,337 INFO [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 57) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory jboss-ivt_1 | 12:44:50,472 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-3) WFLYJCA0007: Registered connection factory java:/JmsXA jboss-ivt_1 | 12:44:50,615 INFO [org.apache.activemq.artemis.ra] (MSC service thread 1-3) Resource adaptor started jboss-ivt_1 | 12:44:50,616 INFO [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-3) IJ020002: Deployed: file://RaActivatoractivemq-ra jboss-ivt_1 | 12:44:50,618 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0002: Bound JCA ConnectionFactory [java:/JmsXA] jboss-ivt_1 | 12:44:50,618 INFO [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory jboss-ivt_1 | 12:44:50,898 INFO [org.jboss.as.connector.deployers.RADeployer] (MSC service thread 1-4) IJ020001: Required license terms for file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/ jboss-ivt_1 | 12:44:51,110 WARN [org.jboss.as.connector.deployers.RADeployer] (MSC service thread 1-4) IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/ jboss-ivt_1 | 12:44:51,116 INFO [org.jboss.as.connector.deployers.RaXmlDeployer] (MSC service thread 1-1) IJ020001: Required license terms for file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/ jboss-ivt_1 | 12:44:51,135 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0007: Registered connection factory java:/JMS2CF jboss-ivt_1 | 12:44:51,136 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0007: Registered connection factory java:/jms/ivt/IVTCF jboss-ivt_1 | 12:44:51,207 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0006: Registered admin object at java:/jms/ivt/IVTQueue jboss-ivt_1 | 12:44:51,213 WARN [org.jboss.as.connector.deployers.RaXmlDeployer] (MSC service thread 1-1) IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/ jboss-ivt_1 | 12:44:51,218 INFO [org.jboss.as.connector.deployers.RaXmlDeployer] (MSC service thread 1-1) IJ020002: Deployed: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/ jboss-ivt_1 | 12:44:51,221 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-3) WFLYJCA0002: Bound JCA ConnectionFactory [java:/JMS2CF] jboss-ivt_1 | 12:44:51,222 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0002: Bound JCA AdminObject [java:/jms/ivt/IVTQueue] jboss-ivt_1 | 12:44:51,222 INFO [org.jboss.as.connector.deployment] (MSC service thread 1-2) WFLYJCA0002: Bound JCA ConnectionFactory [java:/jms/ivt/IVTCF] jboss-ivt_1 | 12:44:51,236 WARN [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0006: ActivationConfigProperty DestinationLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar jboss-ivt_1 | 12:44:51,237 WARN [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0006: ActivationConfigProperty ConnectionFactoryLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar jboss-ivt_1 | 12:44:51,335 INFO [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0042: Started message driven bean 'WMQ_IVT_MDB' with 'wmq.jmsra.rar' resource adapter jboss-ivt_1 | 12:44:51,365 INFO [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 59) HV000001: Hibernate Validator 5.2.4.Final-redhat-1 jboss-ivt_1 | 12:44:51,501 INFO [org.wildfly.extension.undertow] (ServerService Thread Pool -- 58) WFLYUT0021: Registered web context: /WMQ_IVT jboss-ivt_1 | 12:44:52,084 INFO [org.jboss.as.server] (ServerService Thread Pool -- 32) WFLYSRV0010: Deployed \"wmq.jmsra.rar\" (runtime-name : \"wmq.jmsra.rar\") jboss-ivt_1 | 12:44:52,085 INFO [org.jboss.as.server] (ServerService Thread Pool -- 32) WFLYSRV0010: Deployed \"wmq.jmsra.ivt.ear\" (runtime-name : \"wmq.jmsra.ivt.ear\") jboss-ivt_1 | 12:44:52,240 INFO [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://[0:0:0:0:0:0:0:0]:9990/management jboss-ivt_1 | 12:44:52,245 INFO [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://[0:0:0:0:0:0:0:0]:9990 jboss-ivt_1 | 12:44:52,246 INFO [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) started in 8403ms - Started 471 of 536 services (133 services are lazy, passive or on-demand) Conclusion JBoss EAP 7 is very flexible. I used the first time the Deployment Overlay it is a very cool feature if you cannot modify the ear or war package. We also use the embed-server to configure JBoss instance offline and during the docker build. I would like also thx IBM Messaging team for WMQ Docker hub img, because this image was very useful to prove the correct JBoss and WMQ integration for this demo.\nUseful links Download JBoss\nDeployment overlay model reference\nDeployment overlay tip\nDeployment overlay tutorial\nDeployment overlay sample\nWMQ Docker repo\nWMQ tgz\nWMQ configuration\nWMQ info\nDemo URL http://localhost:8080/WMQ_IVT/IVT\n",
+  "wordCount" : "2289",
+  "inLanguage": "en",
+  "datePublished": "2016-08-03T14:00:00Z",
+  "dateModified": "2016-08-03T14:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Greg. I/O",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gautric.github.io/apple-icon-180x180.png"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://gautric.github.io" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+                    height="35">Greg. I/O</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                    <span>À Propos</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/blog/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://gautric.github.io/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://gautric.github.io">Home</a></div>
+    <h1 class="post-title entry-hint-parent">
+      JBoss EAP 7 connected to WebsphereMQ running on Docker
+    </h1>
+    <div class="post-meta"><span title='2016-08-03 14:00:00 +0000 UTC'>August 3, 2016</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Last year for a previous customer I wrote an article/post about <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">WebsphereMQ Best Practice with JBoss EAP 6</a>. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.</p>
+<blockquote>
+<p>Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker</p>
+</blockquote>
+<h2 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h2>
+<p>For this lab, you need the following software :</p>
+<ul>
+<li>package of JBoss EAP 7 <a href="http://www.jboss.org/products/eap/download/">http://www.jboss.org/products/eap/download/</a></li>
+<li>installed Docker for Linux, for Mac or Window <em>&gt;= 1.12</em></li>
+</ul>
+<div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice warning" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Warning, it is trial / demo only, a production deployment requires the purchase of a subscription for JBoss and a license for IBM</p></div>
+
+<h2 id="clone-git-project">Clone git project<a hidden class="anchor" aria-hidden="true" href="#clone-git-project">#</a></h2>
+<p>First of all, clone the git repo project.</p>
+<pre tabindex="0"><code>git clone git@github.com:gautric/JBoss-WMQ.git
+cd JBoss-WMQ
+</code></pre><h2 id="eap-7-image-creation">EAP 7 image creation<a hidden class="anchor" aria-hidden="true" href="#eap-7-image-creation">#</a></h2>
+<p>We have to <a href="https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&amp;downloadType=distributions">download the JBoss EAP 7 binary</a> and we will create the correct image of EAP 7.</p>
+<p>Copy binary file to JBoss-WMQ/jboss directory and go to this directory to build image.</p>
+<pre tabindex="0"><code>cd JBoss-WMQ
+docker build -t jboss-ivt jboss
+</code></pre><p>the Dockerfile</p>
+<pre tabindex="0"><code>### Set the base image to Fedora
+FROM jboss/base-jdk:8
+
+## docker build -t jboss-ivt jboss
+## docker run -p 8080:8080 -p 9990:9990 -t jboss-ivt
+
+### File Author / Maintainer
+MAINTAINER &#34;Greg Autric&#34; &#34;gautric@redhat.com&#34;
+
+### Set Environment
+ENV JBOSS_HOME  /opt/jboss/jboss-eap-7.0
+ENV MQM_HOME    /opt/mqm
+ENV MQM_URL     http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz
+
+### Install EAP 7.0.0
+COPY jboss-eap-7.0.0.zip /opt
+RUN unzip /opt/jboss-eap-7.0.0.zip  1&gt; /dev/null &amp;&amp; echo &#34;Install JBoss instance&#34;
+
+## Change user to install some
+USER root
+RUN cd /tmp &amp;&amp; yum install -y wget &amp;&amp; wget ${MQM_URL} &amp;&amp; tar -zxvf ./*.tar.gz  1&gt; /dev/null &amp;&amp; cd MQServer &amp;&amp; ./mqlicense.sh -text_only -accept  &amp;&amp; rpm -ivh  MQSeriesJava*.rpm MQSeriesRuntime*.rpm
+RUN rm -rf /tmp/*
+
+### Create Admin EAP user
+USER jboss
+RUN $JBOSS_HOME/bin/add-user.sh admin admin123! --silent
+
+## Copy EAR and RAR
+RUN cp ${MQM_HOME}/java/lib/jca/wmq.jmsra.ivt.ear ${JBOSS_HOME}/standalone/deployments
+RUN cp ${MQM_HOME}/java/lib/jca/wmq.jmsra.rar     ${JBOSS_HOME}/standalone/deployments
+
+### JBoss configuration files
+COPY jboss-overlay.cli  /opt
+COPY jboss-ejb3.xml     /opt
+COPY jboss-web.xml      /opt
+
+### Configure EAP
+RUN echo &#34;JAVA_OPTS=\&#34;\$JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0\&#34;&#34; &gt;&gt; $JBOSS_HOME/bin/standalone.conf
+RUN ${JBOSS_HOME}/bin/jboss-cli.sh --file=/opt/jboss-overlay.cli
+RUN rm -rf ${JBOSS_HOME}/standalone/configuration/standalone_xml_history/current
+RUN chown -R jboss:jboss ${JBOSS_HOME}
+
+### Open Ports
+EXPOSE 8080 9990
+
+### Start EAP
+CMD  ${JBOSS_HOME}/bin/standalone.sh -c standalone-full.xml
+</code></pre><h4 id="information-about-this-image">Information about this image<a hidden class="anchor" aria-hidden="true" href="#information-about-this-image">#</a></h4>
+<ul>
+<li>Admin User
+<ul>
+<li><em>admin</em> user is created</li>
+</ul>
+</li>
+<li>Application and RAR
+<ul>
+<li>Demo application and WMQ Ressource Adapter come from <a href="http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz">official WMQ tgz</a>.</li>
+<li>We download it and install Java rpm package only and copy <em>rar</em> and <em>ear</em> to correct JBoss deployment directory</li>
+</ul>
+</li>
+<li>JBoss CLI
+<ul>
+<li>The CLI script is composed of two specific part :
+<ul>
+<li>Resource Adapter configuration
+<ul>
+<li>some system-property for configure RAR (user/pass/channel/queueManager, etc&hellip;)</li>
+</ul>
+</li>
+<li>Deployment overlay is used to adapt/provide correct configuration from JBoss to application
+<ul>
+<li>jboss-web.xml to adapt <strong>war</strong> configuration</li>
+<li>jboss-ejb3.xml for providing <strong>ejb</strong> configuration</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>It is running with embed-server mode (offline)</li>
+</ul>
+</li>
+</ul>
+<p>the CLI file</p>
+<pre tabindex="0"><code>embed-server --server-config=standalone-full.xml
+
+deployment-overlay add --name=jboss-ejb-overlay --content=/WMQ_IVT_MDB.jar/META-INF/jboss-ejb3.xml=/opt/jboss-ejb3.xml --deployments=wmq.jmsra.ivt.ear --redeploy-affected
+deployment-overlay add --name=jboss-web-overlay --content=/WMQ_IVT.war/WEB-INF/jboss-web.xml=/opt/jboss-web.xml --deployments=wmq.jmsra.ivt.ear --redeploy-affected
+
+# Remove unused stuff
+/subsystem=datasources:remove
+/subsystem=webservices:remove
+/subsystem=jpa:remove
+/subsystem=infinispan:remove
+
+/subsystem=ejb3:write-attribute(name=default-resource-adapter-name, value=${ejb.resource-adapter-name:wmq.jmsra.rar})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar:add(archive=wmq.jmsra.rar,transaction-support=LocalTransaction,statistics-enabled=true)
+
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF:add(class-name=com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name=JMS2CF, use-java-context=false)
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=hostName:add(value=${websphere.hostName:localhost})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=password:add(value=${websphere.password:mqm})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=queueManager:add(value=${websphere.queueManager:QUEUE.MANAGER})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=port:add(value=${websphere.port:1414})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=channel:add(value=${websphere.channel:SYSTEM.AUTO.SVRCONN})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=transportType:add(value=${websphere.transportType:CLIENT})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=JMS2CF/config-properties=username:add(value=${websphere.username:mqm})
+
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF:add(class-name=com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl,jndi-name=jms/ivt/IVTCF, use-java-context=false)
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=hostName:add(value=${websphere.hostName:localhost})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=password:add(value=${websphere.password:mqm})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=queueManager:add(value=${websphere.queueManager:QUEUE.MANAGER})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=port:add(value=${websphere.port:1414})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=channel:add(value=${websphere.channel:SYSTEM.AUTO.SVRCONN})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=transportType:add(value=${websphere.transportType:CLIENT})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=IVTCF/config-properties=username:add(value=${websphere.username:mqm})
+
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=QueuePool:add(class-name=com.ibm.mq.connector.outbound.MQQueueProxy,jndi-name=jms/ivt/IVTQueue,use-java-context=true,enabled=true)
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=QueuePool/config-properties=baseQueueName:add(value=${websphere.queueName:Q_QUEUE})
+/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=QueuePool/config-properties=baseQueueManagerName:add(value=${websphere.queueManager:QUEUE.MANAGER})
+
+# Websphere MQ Host and Port
+#/system-property=websphere.hostName:add(value=wmq-ivt)
+#/system-property=websphere.port:add(value=1414)
+
+# Websphere MQ configuration
+/system-property=websphere.transportType:add(value=CLIENT)
+/system-property=websphere.username:add(value=alice)
+/system-property=websphere.password:add(value=passw0rd)
+/system-property=websphere.channel:add(value=PASSWORD.SVRCONN)
+/system-property=websphere.queueManager:add(value=QM1)
+/system-property=websphere.queueName:add(value=Q_QUEUE)
+/system-property=websphere.resource.adapter:add(value=wmq.jmsra.rar)
+/system-property=ejb.resource-adapter-name:add(value=wmq.jmsra.rar)
+
+reload --admin-only=false
+</code></pre><h2 id="wmq-image-creation">WMQ image creation<a hidden class="anchor" aria-hidden="true" href="#wmq-image-creation">#</a></h2>
+<p>Now we create the WMQ Docker image, we will re-use a public image to build our own version with custom stuff.
+Go back to our first git repo to build our own image</p>
+<pre tabindex="0"><code>cd JBoss-WMQ
+docker build -t wmq-ivt wmq
+</code></pre><p>the Dockerfile</p>
+<pre tabindex="0"><code>FROM ibmcom/mq
+RUN useradd alice -G mqm &amp;&amp; \
+    echo alice:passw0rd | chpasswd
+COPY config.mqsc /etc/mqm/
+</code></pre><p>We use a small configuration for WMQ, <strong>alice</strong> account can connect to wmq and we create a simple WMQ Queue too.</p>
+<p>the configuration file</p>
+<pre tabindex="0"><code>DEFINE CHANNEL(PASSWORD.SVRCONN) CHLTYPE(SVRCONN)
+SET CHLAUTH(PASSWORD.SVRCONN) TYPE(BLOCKUSER) USERLIST(&#39;nobody&#39;) DESCR(&#39;Allow privileged users on this channel&#39;)
+SET CHLAUTH(&#39;*&#39;) TYPE(ADDRESSMAP) ADDRESS(&#39;*&#39;) USERSRC(NOACCESS) DESCR(&#39;BackStop rule&#39;)
+SET CHLAUTH(PASSWORD.SVRCONN) TYPE(ADDRESSMAP) ADDRESS(&#39;*&#39;) USERSRC(CHANNEL) CHCKCLNT(REQUIRED)
+ALTER AUTHINFO(SYSTEM.DEFAULT.AUTHINFO.IDPWOS) AUTHTYPE(IDPWOS) ADOPTCTX(YES)
+DEFINE QL(Q_QUEUE)
+REFRESH SECURITY TYPE(CONNAUTH)
+</code></pre><h2 id="docker-compose-to-run-demo">Docker compose to run demo<a hidden class="anchor" aria-hidden="true" href="#docker-compose-to-run-demo">#</a></h2>
+<p>At the end, we use docker compose to run both parts (JBoss and WMQ). We setup some environment variable for more flexible configuration (websphere.hostName and websphere.port for exemple).</p>
+<pre tabindex="0"><code>version: &#39;2&#39;
+services:
+  jboss-ivt:
+    image: jboss-ivt
+    build: jboss
+    ports:
+     - &#34;8080:8080&#34;
+     - &#34;9990:9990&#34;
+    environment:
+      JAVA_OPTS: &#34;-Dwebsphere.hostName=wmq-ivt -Dwebsphere.port=1414&#34;
+    links:
+      - wmq-ivt
+    depends_on:
+      - wmq-ivt
+  wmq-ivt:
+    image: wmq-ivt
+    build: wmq
+    environment:
+      LICENSE: &#34;accept&#34;
+      MQ_QMGR_NAME: &#34;QM1&#34;
+    ports:
+     - &#34;1414:1414&#34;
+</code></pre><h3 id="run-it-and-check-it">Run it and check it<a hidden class="anchor" aria-hidden="true" href="#run-it-and-check-it">#</a></h3>
+<p>Use docker-compose up to run both <strong>WMQ</strong> and <strong>JBoss</strong></p>
+<pre tabindex="0"><code>[mbp:~/Source/git/JBoss-WMQ]$&gt; docker-compose up
+</code></pre><p>and go to <a href="http://localhost:8080/WMQ_IVT">IVT URL http://localhost:8080/WMQ_IVT/IVT</a> for the web result.</p>
+<h3 id="web-result">web result<a hidden class="anchor" aria-hidden="true" href="#web-result">#</a></h3>
+<h4 id="the-application-page">The Application page<a hidden class="anchor" aria-hidden="true" href="#the-application-page">#</a></h4>
+<img src="/img/jboss-wmq-1.png" style="max-width:75%;" />
+<h4 id="the-result-page">The Result page<a hidden class="anchor" aria-hidden="true" href="#the-result-page">#</a></h4>
+<img src="/img/jboss-wmq-2.png" style="max-width:75%;" />
+<h4 id="the-jms-inspection-view-message-contents-page">The JMS inspection (View Message Contents) page<a hidden class="anchor" aria-hidden="true" href="#the-jms-inspection-view-message-contents-page">#</a></h4>
+<img src="/img/jboss-wmq-3.png" style="max-width:75%;" />
+<h3 id="and-output-log-result">and output log result<a hidden class="anchor" aria-hidden="true" href="#and-output-log-result">#</a></h3>
+<p>You should get an output like this</p>
+<pre tabindex="0"><code>[mbp:~/Source/git/JBoss-WMQ]$&gt; docker-compose up
+Starting jbosswmq_wmq-ivt_1
+Starting jbosswmq_jboss-ivt_1
+Attaching to jbosswmq_wmq-ivt_1, jbosswmq_jboss-ivt_1
+wmq-ivt_1    | ----------------------------------------
+wmq-ivt_1    | Name:        IBM MQ
+wmq-ivt_1    | Version:     9.0.0.0
+wmq-ivt_1    | Level:       p900-L160520.DE
+wmq-ivt_1    | BuildType:   IKAP - (Production)
+wmq-ivt_1    | Platform:    IBM MQ for Linux (x86-64 platform)
+wmq-ivt_1    | Mode:        64-bit
+wmq-ivt_1    | O/S:         Linux 4.4.15-moby
+wmq-ivt_1    | InstName:    Installation1
+wmq-ivt_1    | InstDesc:    
+wmq-ivt_1    | Primary:     Yes
+wmq-ivt_1    | InstPath:    /opt/mqm
+wmq-ivt_1    | DataPath:    /var/mqm
+wmq-ivt_1    | MaxCmdLevel: 900
+wmq-ivt_1    | LicenseType: Developer
+wmq-ivt_1    | ----------------------------------------
+wmq-ivt_1    | IBM MQ queue manager &#39;QM1&#39; starting.
+wmq-ivt_1    | The queue manager is associated with installation &#39;Installation1&#39;.
+wmq-ivt_1    | 5 log records accessed on queue manager &#39;QM1&#39; during the log replay phase.
+wmq-ivt_1    | Log replay for queue manager &#39;QM1&#39; complete.
+wmq-ivt_1    | Transaction manager state recovered for queue manager &#39;QM1&#39;.
+wmq-ivt_1    | IBM MQ queue manager &#39;QM1&#39; started using V9.0.0.0.
+wmq-ivt_1    | ----------------------------------------
+wmq-ivt_1    | QMNAME(QM1)                                               STATUS(Running)
+jboss-ivt_1  | JAVA_OPTS already set in environment; overriding default settings with values: -Dwebsphere.hostName=wmq-ivt -Dwebsphere.port=1414
+jboss-ivt_1  | =========================================================================
+jboss-ivt_1  |
+jboss-ivt_1  |   JBoss Bootstrap Environment
+jboss-ivt_1  |
+jboss-ivt_1  |   JBOSS_HOME: /opt/jboss/jboss-eap-7.0
+jboss-ivt_1  |
+jboss-ivt_1  |   JAVA: /usr/lib/jvm/java/bin/java
+jboss-ivt_1  |
+jboss-ivt_1  |   JAVA_OPTS:  -server -verbose:gc -Xloggc:&#34;/opt/jboss/jboss-eap-7.0/standalone/log/gc.log&#34; -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=3M -XX:-TraceClassUnloading -Dwebsphere.hostName=wmq-ivt -Dwebsphere.port=1414 -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0
+jboss-ivt_1  |
+jboss-ivt_1  | =========================================================================
+jboss-ivt_1  |
+jboss-ivt_1  | 12:44:44,163 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final-redhat-1
+jboss-ivt_1  | 12:44:44,405 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final-redhat-1
+jboss-ivt_1  | 12:44:44,494 INFO  [org.jboss.as] (MSC service thread 1-4) WFLYSRV0049: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) starting
+jboss-ivt_1  | 12:44:46,457 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+jboss-ivt_1  | 12:44:46,487 INFO  [org.xnio] (MSC service thread 1-1) XNIO version 3.3.6.Final-redhat-1
+jboss-ivt_1  | 12:44:46,496 INFO  [org.xnio.nio] (MSC service thread 1-1) XNIO NIO Implementation Version 3.3.6.Final-redhat-1
+jboss-ivt_1  | 12:44:46,576 INFO  [org.jboss.remoting] (MSC service thread 1-3) JBoss Remoting version 4.0.18.Final-redhat-1
+jboss-ivt_1  | 12:44:46,638 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 35) WFLYIO001: Worker &#39;default&#39; has auto-configured to 4 core threads with 32 task threads based on your 2 available processors
+jboss-ivt_1  | 12:44:46,691 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 41) WFLYJSF0007: Activated the following JSF Implementations: [main]
+jboss-ivt_1  | 12:44:46,712 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 53) WFLYTX0013: Node identifier property is set to the default value. Please make sure it is unique.
+jboss-ivt_1  | 12:44:46,914 INFO  [org.wildfly.iiop.openjdk] (ServerService Thread Pool -- 36) WFLYIIOP0001: Activating IIOP Subsystem
+jboss-ivt_1  | 12:44:46,934 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 52) WFLYSEC0002: Activating Security Subsystem
+jboss-ivt_1  | 12:44:46,980 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 45) WFLYNAM0001: Activating Naming Subsystem
+jboss-ivt_1  | 12:44:46,989 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.3.3.Final-redhat-1)
+jboss-ivt_1  | 12:44:47,019 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 54) WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting
+jboss-ivt_1  | 12:44:47,023 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 1.3.21.Final-redhat-1 starting
+jboss-ivt_1  | 12:44:47,088 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=4.9.6.Final-redhat-1
+jboss-ivt_1  | 12:44:47,113 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+jboss-ivt_1  | 12:44:47,122 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+jboss-ivt_1  | 12:44:47,303 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host.
+jboss-ivt_1  | 12:44:47,310 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing.
+jboss-ivt_1  | 12:44:47,311 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 54) WFLYUT0014: Creating file handler for path &#39;/opt/jboss/jboss-eap-7.0/welcome-content&#39; with options [directory-listing: &#39;false&#39;, follow-symlink: &#39;false&#39;, case-sensitive: &#39;true&#39;, safe-symlink-paths: &#39;[]&#39;]
+jboss-ivt_1  | 12:44:47,311 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+jboss-ivt_1  | 12:44:47,316 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting
+jboss-ivt_1  | 12:44:47,465 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on [0:0:0:0:0:0:0:0]:8080
+jboss-ivt_1  | 12:44:47,647 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0075: AIO wasn t located on this platform, it will fall back to using pure Java NIO. Your platform is Linux, install LibAIO to enable the AIO journal and achieve optimal performance.
+jboss-ivt_1  | 12:44:47,698 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory /opt/jboss/jboss-eap-7.0/standalone/deployments
+jboss-ivt_1  | 12:44:47,724 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of &#34;wmq.jmsra.rar&#34; (runtime-name: &#34;wmq.jmsra.rar&#34;)
+jboss-ivt_1  | 12:44:47,725 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of &#34;wmq.jmsra.ivt.ear&#34; (runtime-name: &#34;wmq.jmsra.ivt.ear&#34;)
+jboss-ivt_1  | 12:44:47,826 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221000: live Message Broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/journal,bindingsDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/bindings,largeMessagesDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/largemessages,pagingDirectory=/opt/jboss/jboss-eap-7.0/standalone/data/activemq/paging)
+jboss-ivt_1  | 12:44:47,827 INFO  [org.wildfly.iiop.openjdk] (MSC service thread 1-3) WFLYIIOP0009: CORBA ORB Service started
+jboss-ivt_1  | 12:44:47,858 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221013: Using NIO Journal
+jboss-ivt_1  | 12:44:48,023 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: &#34;WMQ_IVT_MDB.jar&#34;)
+jboss-ivt_1  | 12:44:48,023 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: &#34;WMQ_IVT.war&#34;)
+jboss-ivt_1  | 12:44:48,254 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE
+jboss-ivt_1  | 12:44:48,263 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221043: Protocol module found: [artemis-hornetq-protocol]. Adding protocol support for: HORNETQ
+jboss-ivt_1  | 12:44:50,003 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+jboss-ivt_1  | 12:44:50,020 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-4) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+jboss-ivt_1  | 12:44:50,021 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+jboss-ivt_1  | 12:44:50,017 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+jboss-ivt_1  | 12:44:50,243 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221007: Server is now live
+jboss-ivt_1  | 12:44:50,243 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 56) AMQ221001: Apache ActiveMQ Artemis Message Broker version 1.1.0.SP16-redhat-1 [nodeID=f4375749-5972-11e6-a7ea-75a84c3c44bb]
+jboss-ivt_1  | 12:44:50,278 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 56) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
+jboss-ivt_1  | 12:44:50,296 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 58) AMQ221003: trying to deploy queue jms.queue.ExpiryQueue
+jboss-ivt_1  | 12:44:50,333 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 59) AMQ221003: trying to deploy queue jms.queue.DLQ
+jboss-ivt_1  | 12:44:50,337 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 57) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+jboss-ivt_1  | 12:44:50,472 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) WFLYJCA0007: Registered connection factory java:/JmsXA
+jboss-ivt_1  | 12:44:50,615 INFO  [org.apache.activemq.artemis.ra] (MSC service thread 1-3) Resource adaptor started
+jboss-ivt_1  | 12:44:50,616 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-3) IJ020002: Deployed: file://RaActivatoractivemq-ra
+jboss-ivt_1  | 12:44:50,618 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0002: Bound JCA ConnectionFactory [java:/JmsXA]
+jboss-ivt_1  | 12:44:50,618 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+jboss-ivt_1  | 12:44:50,898 INFO  [org.jboss.as.connector.deployers.RADeployer] (MSC service thread 1-4) IJ020001: Required license terms for file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  | 12:44:51,110 WARN  [org.jboss.as.connector.deployers.RADeployer] (MSC service thread 1-4) IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  | 12:44:51,116 INFO  [org.jboss.as.connector.deployers.RaXmlDeployer] (MSC service thread 1-1) IJ020001: Required license terms for file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  | 12:44:51,135 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0007: Registered connection factory java:/JMS2CF
+jboss-ivt_1  | 12:44:51,136 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0007: Registered connection factory java:/jms/ivt/IVTCF
+jboss-ivt_1  | 12:44:51,207 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-1) WFLYJCA0006: Registered admin object at java:/jms/ivt/IVTQueue
+jboss-ivt_1  | 12:44:51,213 WARN  [org.jboss.as.connector.deployers.RaXmlDeployer] (MSC service thread 1-1) IJ020017: Invalid archive: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  | 12:44:51,218 INFO  [org.jboss.as.connector.deployers.RaXmlDeployer] (MSC service thread 1-1) IJ020002: Deployed: file:/opt/jboss/jboss-eap-7.0/standalone/tmp/vfs/temp/tempe03f18a52d83d131/content-572e26c965963bc3/contents/
+jboss-ivt_1  | 12:44:51,221 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) WFLYJCA0002: Bound JCA ConnectionFactory [java:/JMS2CF]
+jboss-ivt_1  | 12:44:51,222 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0002: Bound JCA AdminObject [java:/jms/ivt/IVTQueue]
+jboss-ivt_1  | 12:44:51,222 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) WFLYJCA0002: Bound JCA ConnectionFactory [java:/jms/ivt/IVTCF]
+jboss-ivt_1  | 12:44:51,236 WARN  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0006: ActivationConfigProperty DestinationLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar
+jboss-ivt_1  | 12:44:51,237 WARN  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0006: ActivationConfigProperty ConnectionFactoryLookup will be ignored since it is not allowed by resource adapter: wmq.jmsra.rar
+jboss-ivt_1  | 12:44:51,335 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0042: Started message driven bean &#39;WMQ_IVT_MDB&#39; with &#39;wmq.jmsra.rar&#39; resource adapter
+jboss-ivt_1  | 12:44:51,365 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 59) HV000001: Hibernate Validator 5.2.4.Final-redhat-1
+jboss-ivt_1  | 12:44:51,501 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 58) WFLYUT0021: Registered web context: /WMQ_IVT
+jboss-ivt_1  | 12:44:52,084 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) WFLYSRV0010: Deployed &#34;wmq.jmsra.rar&#34; (runtime-name : &#34;wmq.jmsra.rar&#34;)
+jboss-ivt_1  | 12:44:52,085 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 32) WFLYSRV0010: Deployed &#34;wmq.jmsra.ivt.ear&#34; (runtime-name : &#34;wmq.jmsra.ivt.ear&#34;)
+jboss-ivt_1  | 12:44:52,240 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://[0:0:0:0:0:0:0:0]:9990/management
+jboss-ivt_1  | 12:44:52,245 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://[0:0:0:0:0:0:0:0]:9990
+jboss-ivt_1  | 12:44:52,246 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) started in 8403ms - Started 471 of 536 services (133 services are lazy, passive or on-demand)
+</code></pre><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p><strong>JBoss EAP 7</strong> is very flexible. I used the first time the Deployment Overlay it is a very cool feature if you cannot modify the <strong>ear</strong> or <strong>war</strong> package. We also use the <strong>embed-server</strong> to configure JBoss instance offline and during the docker build. I would like also thx <em>IBM Messaging team</em> for <a href="https://hub.docker.com/r/ibmcom/mq/">WMQ Docker hub img</a>, because this image was very useful to prove the correct JBoss and WMQ integration for this demo.</p>
+<h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<ul>
+<li>
+<p><a href="https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=appplatform&amp;downloadType=distributions">Download JBoss</a></p>
+</li>
+<li>
+<p><a href="https://wildscribe.github.io/Wildfly/10.0.0.Final/deployment-overlay/index.html">Deployment overlay model reference</a></p>
+</li>
+<li>
+<p><a href="https://access.redhat.com/solutions/383393">Deployment overlay tip</a></p>
+</li>
+<li>
+<p><a href="https://docs.jboss.org/author/display/AS72/Deployment+Overlays">Deployment overlay tutorial</a></p>
+</li>
+<li>
+<p><a href="https://blog.akquinet.de/2013/06/08/deployment-overlays-a-new-feature-of-the-jboss-eap-6-1/">Deployment overlay sample</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ibm-messaging/mq-docker">WMQ Docker repo</a></p>
+</li>
+<li>
+<p><a href="http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz">WMQ tgz</a></p>
+</li>
+<li>
+<p><a href="https://www.ibm.com/developerworks/community/blogs/messaging/entry/getting_going_without_turning_off_mq_security?lang=en">WMQ configuration</a></p>
+</li>
+<li>
+<p><a href="http://www.ibm.com/developerworks/websphere/library/techarticles/1203_green/1203_green.html">WMQ info</a></p>
+</li>
+<li>
+<p><a href="http://localhost:8080/WMQ_IVT">Demo URL http://localhost:8080/WMQ_IVT/IVT</a></p>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://gautric.github.io/tags/en/">en</a></li>
+      <li><a href="https://gautric.github.io/tags/jboss/">jboss</a></li>
+      <li><a href="https://gautric.github.io/tags/redhat/">redhat</a></li>
+      <li><a href="https://gautric.github.io/tags/eap7/">EAP7</a></li>
+      <li><a href="https://gautric.github.io/tags/webspheremq/">websphereMQ</a></li>
+      <li><a href="https://gautric.github.io/tags/docker/">Docker</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</span>
+  </a>
+  <a class="next" href="https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/">
+    <span class="title">Next »</span>
+    <br>
+    <span>JConsole &amp; Java Mission Control with JBoss EAP 7</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io">Greg. I/O</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>
