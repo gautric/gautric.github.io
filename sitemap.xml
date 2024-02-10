@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://gautric.github.io/blog/2024/01/28/activer/d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</loc>
+    <loc>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</loc>
     <lastmod>2024-01-28T09:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/cisco/</loc>
@@ -56,7 +56,7 @@
     <loc>https://gautric.github.io/tags/quarkus/</loc>
     <lastmod>2022-06-08T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2022/06/08/quarkus/java-11-17-et-github-action-feat.-matrix/</loc>
+    <loc>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</loc>
     <lastmod>2022-06-08T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/drools/</loc>
@@ -68,7 +68,7 @@
     <loc>https://gautric.github.io/tags/pattern/</loc>
     <lastmod>2021-09-26T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm/drools/</loc>
+    <loc>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</loc>
     <lastmod>2021-09-26T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/reception/</loc>
@@ -170,7 +170,7 @@
     <loc>https://gautric.github.io/tags/howto/</loc>
     <lastmod>2016-09-27T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/</loc>
+    <loc>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/</loc>
     <lastmod>2016-09-27T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/wifi/</loc>
@@ -215,7 +215,7 @@
     <loc>https://gautric.github.io/tags/unesco/</loc>
     <lastmod>2016-06-14T13:58:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/blog/2016/06/14/unesco-challenge-point-unesco-malte-/-malta/</loc>
+    <loc>https://gautric.github.io/blog/2016/06/14/unesco-challenge-point-unesco-malte-malta/</loc>
     <lastmod>2016-06-14T13:58:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/voyage/</loc>

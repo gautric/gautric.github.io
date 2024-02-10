@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quarkus &amp; Java 11-17 et GitHub Action feat. Matrix on Greg. I/O</title>
+    <link>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</link>
+    <description>Recent content in Quarkus &amp; Java 11-17 et GitHub Action feat. Matrix on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Jun 2022 15:00:00 +0000</lastBuildDate>
+    <atom:link href="https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 27 Sep 2016 15:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/howto/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</title>
-      <link>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/</link>
+      <title>Setup a Hotspot Wifi with Ansible into a RaspberryPi 3</title>
+      <link>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/</link>
       <pubDate>Tue, 27 Sep 2016 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-w/-ansible-into-a-raspberrypi-3/</guid>
+      <guid>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/</guid>
       <description>This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions (B 256Mo, B 512Mo, B+, 2B, 3B) of RaspberryPi. I am a big fan of this product and you can find into this blog some projects I&amp;rsquo;ve made on top of this little computer. RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot.</description>
     </item>
   </channel>
