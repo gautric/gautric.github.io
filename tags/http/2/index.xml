@@ -6,6 +6,7 @@
     <description>Recent content in HTTP/2 on Greg. I/O</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jul 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/http/2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</title>

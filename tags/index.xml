@@ -16,7 +16,7 @@
       <description></description>
     </item>
     <item>
-      <title>fr</title>
+      <title>Fr</title>
       <link>https://gautric.github.io/tags/fr/</link>
       <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/fr/</guid>
@@ -30,7 +30,7 @@
       <description></description>
     </item>
     <item>
-      <title>webcam</title>
+      <title>WebCam</title>
       <link>https://gautric.github.io/tags/webcam/</link>
       <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/webcam/</guid>
@@ -72,7 +72,14 @@
       <description></description>
     </item>
     <item>
-      <title>java</title>
+      <title>CI/CD</title>
+      <link>https://gautric.github.io/tags/ci/cd/</link>
+      <pubDate>Wed, 08 Jun 2022 15:00:00 +0000</pubDate>
+      <guid>https://gautric.github.io/tags/ci/cd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
       <link>https://gautric.github.io/tags/java/</link>
       <pubDate>Wed, 08 Jun 2022 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/java/</guid>
@@ -93,7 +100,7 @@
       <description></description>
     </item>
     <item>
-      <title>jBPM</title>
+      <title>JBPM</title>
       <link>https://gautric.github.io/tags/jbpm/</link>
       <pubDate>Sun, 26 Sep 2021 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/jbpm/</guid>
@@ -149,14 +156,14 @@
       <description></description>
     </item>
     <item>
-      <title>webauthn</title>
+      <title>Webauthn</title>
       <link>https://gautric.github.io/tags/webauthn/</link>
       <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/webauthn/</guid>
       <description></description>
     </item>
     <item>
-      <title>yubico</title>
+      <title>Yubico</title>
       <link>https://gautric.github.io/tags/yubico/</link>
       <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/yubico/</guid>
@@ -184,14 +191,14 @@
       <description></description>
     </item>
     <item>
-      <title>standard</title>
+      <title>Standard</title>
       <link>https://gautric.github.io/tags/standard/</link>
       <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/standard/</guid>
       <description></description>
     </item>
     <item>
-      <title>API</title>
+      <title>Api</title>
       <link>https://gautric.github.io/tags/api/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/api/</guid>
@@ -205,21 +212,21 @@
       <description></description>
     </item>
     <item>
-      <title>flow</title>
+      <title>Flow</title>
       <link>https://gautric.github.io/tags/flow/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/flow/</guid>
       <description></description>
     </item>
     <item>
-      <title>mqtt</title>
+      <title>MQTT</title>
       <link>https://gautric.github.io/tags/mqtt/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/mqtt/</guid>
       <description></description>
     </item>
     <item>
-      <title>node-red</title>
+      <title>Node-Red</title>
       <link>https://gautric.github.io/tags/node-red/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/node-red/</guid>
@@ -240,14 +247,14 @@
       <description></description>
     </item>
     <item>
-      <title>camel</title>
+      <title>Camel</title>
       <link>https://gautric.github.io/tags/camel/</link>
       <pubDate>Sat, 03 Dec 2016 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/camel/</guid>
       <description></description>
     </item>
     <item>
-      <title>en</title>
+      <title>En</title>
       <link>https://gautric.github.io/tags/en/</link>
       <pubDate>Sat, 03 Dec 2016 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/en/</guid>
@@ -317,49 +324,49 @@
       <description></description>
     </item>
     <item>
-      <title>jboss</title>
+      <title>JBoss</title>
       <link>https://gautric.github.io/tags/jboss/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/jboss/</guid>
       <description></description>
     </item>
     <item>
-      <title>redhat</title>
+      <title>Redhat</title>
       <link>https://gautric.github.io/tags/redhat/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/redhat/</guid>
       <description></description>
     </item>
     <item>
-      <title>websphereMQ</title>
+      <title>WebsphereMQ</title>
       <link>https://gautric.github.io/tags/webspheremq/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/webspheremq/</guid>
       <description></description>
     </item>
     <item>
-      <title>jmc</title>
+      <title>Jmc</title>
       <link>https://gautric.github.io/tags/jmc/</link>
       <pubDate>Tue, 19 Jul 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/jmc/</guid>
       <description></description>
     </item>
     <item>
-      <title>jvm</title>
+      <title>Jvm</title>
       <link>https://gautric.github.io/tags/jvm/</link>
       <pubDate>Tue, 19 Jul 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/jvm/</guid>
       <description></description>
     </item>
     <item>
-      <title>challenge</title>
+      <title>Challenge</title>
       <link>https://gautric.github.io/tags/challenge/</link>
       <pubDate>Tue, 14 Jun 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/challenge/</guid>
       <description></description>
     </item>
     <item>
-      <title>miscellaneous</title>
+      <title>Miscellaneous</title>
       <link>https://gautric.github.io/tags/miscellaneous/</link>
       <pubDate>Tue, 14 Jun 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/miscellaneous/</guid>
@@ -373,7 +380,7 @@
       <description></description>
     </item>
     <item>
-      <title>voyage</title>
+      <title>Voyage</title>
       <link>https://gautric.github.io/tags/voyage/</link>
       <pubDate>Tue, 14 Jun 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/voyage/</guid>
@@ -408,7 +415,7 @@
       <description></description>
     </item>
     <item>
-      <title>i2c</title>
+      <title>I2C</title>
       <link>https://gautric.github.io/tags/i2c/</link>
       <pubDate>Wed, 09 Mar 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/i2c/</guid>
@@ -422,21 +429,21 @@
       <description></description>
     </item>
     <item>
-      <title>rhiot</title>
+      <title>Rhiot</title>
       <link>https://gautric.github.io/tags/rhiot/</link>
       <pubDate>Mon, 29 Feb 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/rhiot/</guid>
       <description></description>
     </item>
     <item>
-      <title>display</title>
+      <title>Display</title>
       <link>https://gautric.github.io/tags/display/</link>
       <pubDate>Tue, 24 Nov 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/display/</guid>
       <description></description>
     </item>
     <item>
-      <title>framebuffer</title>
+      <title>Framebuffer</title>
       <link>https://gautric.github.io/tags/framebuffer/</link>
       <pubDate>Tue, 24 Nov 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/framebuffer/</guid>
@@ -450,14 +457,14 @@
       <description></description>
     </item>
     <item>
-      <title>groovy</title>
+      <title>Groovy</title>
       <link>https://gautric.github.io/tags/groovy/</link>
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/groovy/</guid>
       <description></description>
     </item>
     <item>
-      <title>javafx</title>
+      <title>Javafx</title>
       <link>https://gautric.github.io/tags/javafx/</link>
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/javafx/</guid>
@@ -471,7 +478,7 @@
       <description></description>
     </item>
     <item>
-      <title>websocket</title>
+      <title>Websocket</title>
       <link>https://gautric.github.io/tags/websocket/</link>
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/websocket/</guid>
@@ -492,7 +499,7 @@
       <description></description>
     </item>
     <item>
-      <title>iCloud</title>
+      <title>ICloud</title>
       <link>https://gautric.github.io/tags/icloud/</link>
       <pubDate>Sat, 03 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/icloud/</guid>
@@ -506,14 +513,14 @@
       <description></description>
     </item>
     <item>
-      <title>tunnel</title>
+      <title>Tunnel</title>
       <link>https://gautric.github.io/tags/tunnel/</link>
       <pubDate>Sat, 03 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/tunnel/</guid>
       <description></description>
     </item>
     <item>
-      <title>ja</title>
+      <title>Ja</title>
       <link>https://gautric.github.io/tags/ja/</link>
       <pubDate>Mon, 24 Aug 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/ja/</guid>
@@ -524,6 +531,13 @@
       <link>https://gautric.github.io/tags/cli/</link>
       <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTP/2</title>
+      <link>https://gautric.github.io/tags/http/2/</link>
+      <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
+      <guid>https://gautric.github.io/tags/http/2/</guid>
       <description></description>
     </item>
     <item>
@@ -541,7 +555,7 @@
       <description></description>
     </item>
     <item>
-      <title>wildfly</title>
+      <title>Wildfly</title>
       <link>https://gautric.github.io/tags/wildfly/</link>
       <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/wildfly/</guid>
@@ -555,21 +569,21 @@
       <description></description>
     </item>
     <item>
-      <title>eclipsecon</title>
+      <title>Eclipsecon</title>
       <link>https://gautric.github.io/tags/eclipsecon/</link>
       <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/eclipsecon/</guid>
       <description></description>
     </item>
     <item>
-      <title>leshan</title>
+      <title>Leshan</title>
       <link>https://gautric.github.io/tags/leshan/</link>
       <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/leshan/</guid>
       <description></description>
     </item>
     <item>
-      <title>lightweight</title>
+      <title>Lightweight</title>
       <link>https://gautric.github.io/tags/lightweight/</link>
       <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/lightweight/</guid>
@@ -590,28 +604,28 @@
       <description></description>
     </item>
     <item>
-      <title>group name</title>
+      <title>Group Name</title>
       <link>https://gautric.github.io/tags/group-name/</link>
       <pubDate>Thu, 18 Jun 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/group-name/</guid>
       <description></description>
     </item>
     <item>
-      <title>regex</title>
+      <title>Regex</title>
       <link>https://gautric.github.io/tags/regex/</link>
       <pubDate>Thu, 18 Jun 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/regex/</guid>
       <description></description>
     </item>
     <item>
-      <title>apache</title>
+      <title>Apache</title>
       <link>https://gautric.github.io/tags/apache/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/apache/</guid>
       <description></description>
     </item>
     <item>
-      <title>camellabs</title>
+      <title>Camellabs</title>
       <link>https://gautric.github.io/tags/camellabs/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/camellabs/</guid>
@@ -625,21 +639,21 @@
       <description></description>
     </item>
     <item>
-      <title>lcd</title>
+      <title>Lcd</title>
       <link>https://gautric.github.io/tags/lcd/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/lcd/</guid>
       <description></description>
     </item>
     <item>
-      <title>raspberry pi</title>
+      <title>Raspberry Pi</title>
       <link>https://gautric.github.io/tags/raspberry-pi/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     <item>
-      <title>pi4j</title>
+      <title>Pi4j</title>
       <link>https://gautric.github.io/tags/pi4j/</link>
       <pubDate>Sat, 25 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/pi4j/</guid>
@@ -660,7 +674,7 @@
       <description></description>
     </item>
     <item>
-      <title>eap</title>
+      <title>Eap</title>
       <link>https://gautric.github.io/tags/eap/</link>
       <pubDate>Thu, 26 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/eap/</guid>
@@ -674,45 +688,31 @@
       <description></description>
     </item>
     <item>
-      <title>otp</title>
+      <title>Otp</title>
       <link>https://gautric.github.io/tags/otp/</link>
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/otp/</guid>
       <description></description>
     </item>
     <item>
-      <title>yubikey</title>
+      <title>Yubikey</title>
       <link>https://gautric.github.io/tags/yubikey/</link>
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/yubikey/</guid>
       <description></description>
     </item>
     <item>
-      <title>divers</title>
+      <title>Divers</title>
       <link>https://gautric.github.io/tags/divers/</link>
       <pubDate>Wed, 18 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/divers/</guid>
       <description></description>
     </item>
     <item>
-      <title>histoire</title>
+      <title>Histoire</title>
       <link>https://gautric.github.io/tags/histoire/</link>
       <pubDate>Wed, 18 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/tags/histoire/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CI/CD</title>
-      <link>https://gautric.github.io/tags/ci/cd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/tags/ci/cd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTTP/2</title>
-      <link>https://gautric.github.io/tags/http/2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/tags/http/2/</guid>
       <description></description>
     </item>
   </channel>

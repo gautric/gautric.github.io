@@ -50,6 +50,9 @@
     <loc>https://gautric.github.io/tags/ssm/</loc>
     <lastmod>2024-01-15T09:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://gautric.github.io/tags/ci/cd/</loc>
+    <lastmod>2022-06-08T15:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gautric.github.io/tags/java/</loc>
     <lastmod>2022-06-08T15:00:00+00:00</lastmod>
   </url><url>
@@ -76,6 +79,9 @@
   </url><url>
     <loc>https://gautric.github.io/tags/signal/</loc>
     <lastmod>2021-09-26T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/blog/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/exception/</loc>
     <lastmod>2020-10-28T15:00:00+00:00</lastmod>
@@ -323,6 +329,9 @@
     <loc>https://gautric.github.io/tags/cli/</loc>
     <lastmod>2015-07-09T13:58:00+00:00</lastmod>
   </url><url>
+    <loc>https://gautric.github.io/tags/http/2/</loc>
+    <lastmod>2015-07-09T13:58:00+00:00</lastmod>
+  </url><url>
     <loc>https://gautric.github.io/tags/jdk8/</loc>
     <lastmod>2015-07-09T13:58:00+00:00</lastmod>
   </url><url>
@@ -441,12 +450,6 @@
   </url><url>
     <loc>https://gautric.github.io/blog/</loc>
   </url><url>
-    <loc>https://gautric.github.io/tags/ci/cd/</loc>
-  </url><url>
     <loc>https://gautric.github.io/contact/</loc>
-  </url><url>
-    <loc>https://gautric.github.io/tags/http/2/</loc>
-  </url><url>
-    <loc>https://gautric.github.io/blog/</loc>
   </url>
 </urlset>
