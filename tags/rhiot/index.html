@@ -60,8 +60,6 @@ if (!doNotTrack) {
                 <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
                     height="35">Greg. I/O</a>
             <div class="logo-switches">
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -109,12 +107,72 @@ if (!doNotTrack) {
   <footer class="entry-footer"><span title='2016-02-29 14:00:00 +0000 UTC'>February 29, 2016</span></footer>
   <a class="entry-link" aria-label="post link to Rhiot Kura Device IO GPIO and I2C" href="https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/"></a>
 </article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="next" href="https://gautric.github.io/tags/rhiot/page/2/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Rhiot over Kura over Docker over RaspberryPi ;-)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>During this cool Christmas day, Santa Claus brings us lot of presents (I hope for you), I received 2 RaspberryPi Zero, Thx you brother ;-). I will show you a cool stuff after this special day. We gonna test how to use Rhiot project into Kura Eclipse Platform running inside Docker container deployed into a real RaspberryPi Zero device (in this order). If you don’t have yet a RaspberryPi (B&#43;, 2 or zero) device you can use my previous post....</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-12-28 14:00:00 +0000 UTC'>December 28, 2015</span></footer>
+  <a class="entry-link" aria-label="post link to Rhiot over Kura over Docker over RaspberryPi ;-)" href="https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Rhiot Kura Gateway Sample (Emulator &amp; RaspberryPi) 
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>For a while, I develop during my free time for Rhiot project with my Red Hat colleague Henryk. We started to develop several Camel components like (kura, pi4j, bluetooth) with others volunteers. Now we focus to develop and integrate those components for Kura Platform. Kura is an OSGi Platform designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device. Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc…) In this post we will see :...</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-12-03 14:00:00 +0000 UTC'>December 3, 2015</span></footer>
+  <a class="entry-link" aria-label="post link to Rhiot Kura Gateway Sample (Emulator &amp; RaspberryPi) " href="https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">RHIoT RaspberryPi Sense-Hat display
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing. Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels)....</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-11-24 13:58:00 +0000 UTC'>November 24, 2015</span></footer>
+  <a class="entry-link" aria-label="post link to RHIoT RaspberryPi Sense-Hat display" href="https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">RHIoT Webcam and websocket components on MacbookPro in Groovy
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Yesterday, we’ve played with our MacBook Pro’s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let’s play with Groovy language …
+Webcam image to Websocket w/ Rhiot &amp; Camel projects on MacbookPro
+Let’s start to broadcast yourself.
+Requisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2....</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-10-23 13:58:00 +0000 UTC'>October 23, 2015</span></footer>
+  <a class="entry-link" aria-label="post link to RHIoT Webcam and websocket components on MacbookPro in Groovy" href="https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">RHIoT 0.1.2 Webcam component on MacOS X in Groovy
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>My tech leader on RHIoT project (ex-camellabs) Henryk had just release the last version of RHIoT project : 0.1.2. Lot of new stuffs are included in this new release, more details available here. I found in list a cool stuff to test. We gonna check if our new commiter @levackt from ZA worked well ;-)
+Webcam camel component on Mac OSX with Groovy language
+Let’s start to broadcast yourself.
+Requisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2....</p>
+  </div>
+  <footer class="entry-footer"><span title='2015-10-22 13:58:00 +0000 UTC'>October 22, 2015</span></footer>
+  <a class="entry-link" aria-label="post link to RHIoT 0.1.2 Webcam component on MacOS X in Groovy" href="https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-webcam-component-on-macos-x-in-groovy/"></a>
+</article>
     </main>
     
 <footer class="footer">
