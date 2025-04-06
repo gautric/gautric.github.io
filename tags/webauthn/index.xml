@@ -13,8 +13,8 @@
       <link>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</link>
       <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</guid>
-      <description>Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de SSO c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
-Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.</description>
+      <description>&lt;p&gt;Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de &lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;SSO&lt;/a&gt; c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
+&lt;p&gt;Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du &lt;a href=&#34;https://en.wikipedia.org/wiki/Multi-factor_authentication&#34;&gt;2FA&lt;/a&gt; avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&amp;hellip;) proposent ce type d&amp;rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

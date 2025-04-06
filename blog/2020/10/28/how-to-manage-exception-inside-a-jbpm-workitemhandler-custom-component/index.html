@@ -8,6 +8,7 @@
 <title>How to manage Exception inside a jBPM WorkItemHandler custom component | Greg. I/O</title>
 <meta name="keywords" content="fr, jBPM, WorkItemHandler, Exception">
 <meta name="description" content="When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
+
 How to manage Exception inside jBPM WorkItemHandler custom component.
 To illustrate how to use Exception/Error I propose to create a sample error process.">
 <meta name="author" content="">
@@ -29,20 +30,9 @@ To illustrate how to use Exception/Error I propose to create a sample error proc
         }
 
     </style>
-</noscript>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-60791597-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script><meta property="og:title" content="How to manage Exception inside a jBPM WorkItemHandler custom component" />
+</noscript><meta property="og:title" content="How to manage Exception inside a jBPM WorkItemHandler custom component" />
 <meta property="og:description" content="When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
+
 How to manage Exception inside jBPM WorkItemHandler custom component.
 To illustrate how to use Exception/Error I propose to create a sample error process." />
 <meta property="og:type" content="article" />
@@ -53,8 +43,10 @@ To illustrate how to use Exception/Error I propose to create a sample error proc
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="How to manage Exception inside a jBPM WorkItemHandler custom component"/>
 <meta name="twitter:description" content="When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
+
 How to manage Exception inside jBPM WorkItemHandler custom component.
 To illustrate how to use Exception/Error I propose to create a sample error process."/>
+<meta name="twitter:site" content="@gautric_io"/>
 
 
 <script type="application/ld+json">
@@ -83,7 +75,7 @@ To illustrate how to use Exception/Error I propose to create a sample error proc
   "@type": "BlogPosting",
   "headline": "How to manage Exception inside a jBPM WorkItemHandler custom component",
   "name": "How to manage Exception inside a jBPM WorkItemHandler custom component",
-  "description": "When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.\nHow to manage Exception inside jBPM WorkItemHandler custom component.\nTo illustrate how to use Exception/Error I propose to create a sample error process.",
+  "description": "When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.\nHow to manage Exception inside jBPM WorkItemHandler custom component.\nTo illustrate how to use Exception/Error I propose to create a sample error process.\n",
   "keywords": [
     "fr", "jBPM", "WorkItemHandler", "Exception"
   ],
@@ -152,8 +144,7 @@ To illustrate how to use Exception/Error I propose to create a sample error proc
   </header> 
   <div class="post-content"><p>When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.</p>
 <blockquote>
-<p>How to manage Exception inside jBPM WorkItemHandler custom component.</p>
-</blockquote>
+<p>How to manage Exception inside jBPM WorkItemHandler custom component.</p></blockquote>
 <p>To illustrate how to use Exception/Error I propose to create a sample error process.</p>
 <h2 id="a-quick-sample">A quick sample<a hidden class="anchor" aria-hidden="true" href="#a-quick-sample">#</a></h2>
 <p>Let&rsquo;s create a very common process with Work Item Handler (WIH).</p>
@@ -304,7 +295,7 @@ The signal looks like <code>Error-${internalUniqueId}-${exceptionClassName}</cod
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

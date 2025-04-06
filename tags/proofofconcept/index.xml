@@ -13,8 +13,9 @@
       <link>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</link>
       <pubDate>Fri, 03 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</guid>
-      <description>Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.
-Apache Camel and Raspberry Pi integration (proof of concept)</description>
+      <description>&lt;p&gt;Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Apache Camel and Raspberry Pi integration (proof of concept)&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

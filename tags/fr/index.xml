@@ -13,133 +13,154 @@
       <link>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</link>
       <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</guid>
-      <description>Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du Cisco Commutateur Intelligent SG250-10P, qui offre la fonctionnalité PoE.
-Activer/Désactiver sa camera PoE depuis son routeur Cisco
-Pré-requis Avant de commencer il faut pouvoir se connecter en SSH sur le routeur.</description>
+      <description>&lt;p&gt;Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Commutateur Intelligent SG250-10P&lt;/a&gt;, qui offre la fonctionnalité PoE.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Activer/Désactiver sa camera PoE depuis son routeur Cisco&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;pré-requis&#34;&gt;Pré-requis&lt;/h3&gt;
+&lt;p&gt;Avant de commencer il faut pouvoir &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/switches/lan/csbms/250_/2_5_7/Admin_guide/tesla-250-ag/cb_250_chapter_15.html#ID-00006535&#34;&gt;se connecter en SSH sur le routeur&lt;/a&gt;.
+Il est possible de créer un compte de service (service account) auquel on configurera une clé SSH pour une connexion à distance.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AWS SSM, Ansible et Raspberry Pi via SSH</title>
       <link>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</link>
       <pubDate>Mon, 15 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</guid>
-      <description>Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing].</description>
+      <description>&lt;p&gt;Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises !
+Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]. On utilisera la fonctionnalité Session Manager d&amp;rsquo;AWS SSM. 🍇&lt;/p&gt;</description>
     </item>
     <item>
       <title>Quarkus &amp; Java 11-17 et GitHub Action feat. Matrix</title>
       <link>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</link>
       <pubDate>Wed, 08 Jun 2022 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</guid>
-      <description>La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.</description>
+      <description>&lt;p&gt;La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.
+Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pattern Découpler la Réception et Utilisation des Signaux avec jBPM &amp; Drools</title>
       <link>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</link>
       <pubDate>Sun, 26 Sep 2021 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</guid>
-      <description>Pour mon activité professionnelle, je me déplace1 chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit RHPAM2. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus metiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j&amp;rsquo;ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .</description>
+      <description>&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit &lt;a href=&#34;https://developers.redhat.com/products/rhpam/overview&#34;&gt;RHPAM&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus metiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j&amp;rsquo;ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to manage Exception inside a jBPM WorkItemHandler custom component</title>
       <link>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</link>
       <pubDate>Wed, 28 Oct 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</guid>
-      <description>When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
-How to manage Exception inside jBPM WorkItemHandler custom component.
-To illustrate how to use Exception/Error I propose to create a sample error process.</description>
+      <description>&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Keycloak, les clefs Yubico et le standard Webauthn</title>
       <link>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</link>
       <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</guid>
-      <description>Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de SSO c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
-Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.</description>
+      <description>&lt;p&gt;Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de &lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;SSO&lt;/a&gt; c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
+&lt;p&gt;Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du &lt;a href=&#34;https://en.wikipedia.org/wiki/Multi-factor_authentication&#34;&gt;2FA&lt;/a&gt; avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&amp;hellip;) proposent ce type d&amp;rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Éxecution d&#39;un moteur de KYC en DMN avec Kogito</title>
       <link>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</link>
       <pubDate>Sat, 06 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</guid>
-      <description>Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.
-Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito
-Introdution Kogito Faisons un focus rapide sur Kogito. Kogito est un moteur de règle orienté cloud. Ce moteur de règle reprend en grande partie tout le coeur et le developpement de Drools et jBPM mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.</description>
+      <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h1 id=&#34;introdution-kogito&#34;&gt;Introdution Kogito&lt;/h1&gt;
+&lt;p&gt;Faisons un focus rapide sur &lt;a href=&#34;https://kogito.kie.org/&#34;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud.
+Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&#34;https://www.drools.org/&#34;&gt;Drools&lt;/a&gt; et &lt;a href=&#34;https://jbpm.org/&#34;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Le standard DMN, un KYC en exemple</title>
       <link>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</link>
       <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</guid>
-      <description>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.
-Le standard DMN, un KYC en exemple
-Introdution DMN est une norme de l&amp;rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.</description>
+      <description>&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
+Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Le standard DMN, un KYC en exemple&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h1 id=&#34;introdution&#34;&gt;Introdution&lt;/h1&gt;
+&lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt;. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MQTTiser l&#39;API Autolib avec Node-Red</title>
       <link>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</guid>
-      <description>Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivé d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&amp;rsquo;Autolib j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&amp;rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&amp;rsquo;ai installé et configuré chez moi la solution HomeAssistant, j&amp;rsquo;utilisais pour cela l&amp;rsquo;API de Paris en mode REST/HTTP.</description>
+      <description>&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivé d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&amp;rsquo;&lt;a href=&#34;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&#34;&gt;Autolib&lt;/a&gt; j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&amp;rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&amp;rsquo;ai installé et configuré chez moi la solution &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;HomeAssistant&lt;/a&gt;, j&amp;rsquo;utilisais pour cela l&amp;rsquo;&lt;a href=&#34;https://opendata.paris.fr/page/home/&#34;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&#34;https://fr.wikipedia.org/wiki/REST&#34;&gt;REST&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP&#34;&gt;HTTP&lt;/a&gt;.
+Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d&amp;rsquo;appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant &lt;a href=&#34;https://www.home-assistant.io/components/rest_command/&#34;&gt;RESTful&lt;/a&gt;.
+Je me suis dit, pourquoi ne pas :&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Malte - Malta</title>
       <link>https://gautric.github.io/blog/2016/06/14/unesco-challenge-point-unesco-malte-malta/</link>
       <pubDate>Tue, 14 Jun 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/06/14/unesco-challenge-point-unesco-malte-malta/</guid>
-      <description>Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel. Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rsquo;à nos jours. Cela m&amp;rsquo;a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés. L&amp;rsquo;un des étendu sur Malte est le site &amp;ldquo;Temples mégalithiques de Malte&amp;rdquo; qui est reparti sur les deux grandes îles de Malte (Malte et Gozo).</description>
+      <description>&lt;p&gt;Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel.
+Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rsquo;à nos jours. Cela m&amp;rsquo;a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.
+L&amp;rsquo;un des étendu sur Malte est le site &amp;ldquo;Temples mégalithiques de Malte&amp;rdquo; qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</title>
       <link>https://gautric.github.io/blog/2016/01/29/unesco-challenge-point-unesco-maritime-greenwich-prime-meridian/</link>
       <pubDate>Fri, 29 Jan 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/01/29/unesco-challenge-point-unesco-maritime-greenwich-prime-meridian/</guid>
-      <description>En ce debut d&amp;rsquo;année 2016, je me suis rendu à Londres afin d&amp;rsquo;aller visiter des amis Londoniens. Nous avons pris le temps d&amp;rsquo;aller voir le Meridien de Greenwich qui est le meridien 0°. Ce Meridien est devenu très important depuis qu&amp;rsquo;il est devenu la référence mondiale topographique à la Conférence internationale de Washington de 1884. Il est utilisé avec l&amp;rsquo;aide d&amp;rsquo;une horloge correctement synchronisée par les navigateurs du monde entier afin de connaitre leur longitude extacte sur le globe terrestre.</description>
+      <description>&lt;p&gt;En ce debut d&amp;rsquo;année 2016, je me suis rendu à Londres afin d&amp;rsquo;aller visiter des amis Londoniens. Nous avons pris le temps d&amp;rsquo;aller voir le Meridien de Greenwich qui est le meridien 0°. Ce Meridien est devenu très important depuis qu&amp;rsquo;il est devenu la référence mondiale topographique à la &lt;a href=&#34;https://fr.wikipedia.org/wiki/Conf%C3%A9rence_internationale_de_Washington_de_1884&#34;&gt;Conférence internationale de Washington de 1884&lt;/a&gt;. Il est utilisé avec l&amp;rsquo;aide d&amp;rsquo;une horloge correctement synchronisée par les navigateurs du monde entier afin de connaitre leur longitude extacte sur le globe terrestre. Attention, le GPS utilise un méridien très très légerement différent de celui-ci, il s&amp;rsquo;agit du &lt;a href=&#34;https://fr.wikipedia.org/wiki/M%C3%A9ridien_de_r%C3%A9f%C3%A9rence_de_l%27IERS&#34;&gt;Meridien IERS&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leshan et le standard Lightweight M2M à l&#39;EclipseCon</title>
       <link>https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/</link>
       <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/</guid>
-      <description>La semaine dernière, j&amp;rsquo;étais à l&amp;rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C&amp;rsquo;est à cette occasion que j&amp;rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.
-Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l&amp;rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.</description>
+      <description>&lt;p&gt;La semaine dernière, j&amp;rsquo;étais à l&amp;rsquo;&lt;a href=&#34;https://www.eclipsecon.org/france2015/&#34;&gt;EclipseCon&lt;/a&gt; qui se déroulait à Toulouse. Sponsor Bronze de cette édition &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; (mon entreprise) avait &lt;a href=&#34;https://www.flickr.com/groups/2812102@N25/pool/&#34;&gt;un stand&lt;/a&gt;. C&amp;rsquo;est à cette occasion que j&amp;rsquo;ai participé à un training concernant le protocole CoAP et notamment &lt;a href=&#34;https://www.eclipsecon.org/france2015/session/hands-lightweight-m2m-run-smartwatch-internet-things&#34;&gt;le standard LWM2M&lt;/a&gt; dispensé par &lt;a href=&#34;http://people.apache.org/~jvermillard/&#34;&gt;Julien Vermillard&lt;/a&gt; de chez &lt;a href=&#34;http://www.sierrawireless.com/&#34;&gt;Sierra Wireless&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;le-protocole-coap&#34;&gt;Le protocole CoAP&lt;/h2&gt;
+&lt;p&gt;Le protocole &lt;a href=&#34;http://coap.technology/&#34;&gt;&lt;strong&gt;CoAP&lt;/strong&gt;&lt;/a&gt; pour Constrained Application Protocol  a été défini afin de répondre aux exigences très contraintes de l&amp;rsquo;internet des objets &lt;em&gt;IoT&lt;/em&gt; et de la communication Machine 2 Machine &lt;em&gt;M2M&lt;/em&gt; à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.
+Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java Regex Group Name</title>
       <link>https://gautric.github.io/blog/2015/06/18/java-regex-group-name/</link>
       <pubDate>Thu, 18 Jun 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/06/18/java-regex-group-name/</guid>
-      <description>Lors d&amp;rsquo;un développement d&amp;rsquo;un programme informatique, il est parfois nécessaire d&amp;rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&amp;rsquo;utilisation d&amp;rsquo;une expression rationnelle est utile dans le cas où l&amp;rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&amp;rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.
-Dans tous les langages modernes (java, ruby, python), les librairies regex sont disponibles en standard.</description>
+      <description>&lt;p&gt;Lors d&amp;rsquo;un développement d&amp;rsquo;un programme informatique, il est parfois nécessaire d&amp;rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&amp;rsquo;utilisation d&amp;rsquo;une expression rationnelle est utile dans le cas où l&amp;rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&amp;rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.&lt;/p&gt;
+&lt;p&gt;Dans tous les langages modernes (java, ruby, python), les librairies &lt;em&gt;regex&lt;/em&gt; sont disponibles en standard. Nous allons voir comment utiliser une fonctionnalité interessante disponible dans la librairie standard de Java.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sortie de wildfly 9.0 CR-01</title>
       <link>https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/</link>
       <pubDate>Mon, 04 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/</guid>
-      <description>La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en téléchargement ici. Cette version corrige un certain nombre de bug et elle apporte de nouvelles fonctionnalités que nous allons vous rapidement ici. Je posterai plus tard des exemples complets.
-Java EE7 Wildfly 9 intégre les deux profils Web et Full du standard Java EE7.
-Le support de HTTP/2 &amp;amp; SPDY Le standard HTTP/2 est maintenant officiel depuis Fevrier.</description>
+      <description>&lt;p&gt;La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en &lt;a href=&#34;http://wildfly.org/downloads/&#34;&gt;téléchargement ici&lt;/a&gt;. Cette version corrige un certain nombre de bug et elle apporte de nouvelles fonctionnalités que nous allons vous rapidement ici. Je posterai plus tard des exemples complets.&lt;/p&gt;
+&lt;h3 id=&#34;java-ee7&#34;&gt;Java EE7&lt;/h3&gt;
+&lt;p&gt;Wildfly 9 intégre les deux profils Web et Full du standard Java EE7.&lt;/p&gt;
+&lt;h3 id=&#34;le-support-de-http2--spdy&#34;&gt;Le support de HTTP/2 &amp;amp; SPDY&lt;/h3&gt;
+&lt;p&gt;Le standard HTTP/2 est maintenant &lt;a href=&#34;https://lists.w3.org/Archives/Public/ietf-http-wg/2015JanMar/0478.html&#34;&gt;officiel depuis Fevrier&lt;/a&gt;. Wildfly 9 inclut le support de ce protocole, mais nécessite une &lt;a href=&#34;http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html&#34;&gt;procédure spéciale&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Les premiers jours du projet Camel IoT Labs</title>
       <link>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</link>
       <pubDate>Sat, 25 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</guid>
-      <description>Aujourd&amp;rsquo;hui, l&amp;rsquo;internet des objets ou aussi appelé IoT prend de plus en plus de place dans l&amp;rsquo;industrie informatique et non informatique. Des montres Withings, aux Raspberry Pi vendus à 5M d&amp;rsquo;unités, en passant par les plaques Arduino low cost et autres modules Tessel, le cout de production des objets électroniques baissant, a permis une large diffusion de ces nouveaux objets.
-En 2012, les premiers RaspberryPi sont lancés sur le marché, j&amp;rsquo;en ai acheté un.</description>
+      <description>&lt;p&gt;Aujourd&amp;rsquo;hui, l&amp;rsquo;internet des objets ou aussi appelé IoT prend de plus en plus de place dans l&amp;rsquo;industrie informatique et non informatique. Des montres &lt;a href=&#34;http://www.withings.com/fr/withings-activite.html&#34;&gt;Withings&lt;/a&gt;, aux &lt;a href=&#34;http://raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt; vendus à 5M d&amp;rsquo;unités, en passant par les plaques &lt;a href=&#34;http://www.arduino.cc/&#34;&gt;Arduino&lt;/a&gt; low cost et autres modules &lt;a href=&#34;https://tessel.io/&#34;&gt;Tessel&lt;/a&gt;, le cout de production des objets électroniques baissant, a permis une large diffusion de ces nouveaux objets.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gautric.github.io/img/camel-labs.png&#34; style=&#34;max-width:120%;&#34; align=&#34;left&#34; height=&#34;110&#34; hspace=&#34;30&#34;/&gt; En 2012, les premiers RaspberryPi sont lancés sur le marché, j&amp;rsquo;en ai acheté un. Depuis j&amp;rsquo;ai presque tout les modèles Brev1, Brev2, B+ et B2 ;-). J&amp;rsquo;ai aussi repris mon fer à souder, comme dans mes années lycée. Mais, à l&amp;rsquo;époque pas beaucoup d&amp;rsquo;internet, pas beaucoup de standard, pas beaucoup de matériel. Aujourd&amp;rsquo;hui il y a presque tout. Il ne reste plus qu&amp;rsquo;a assembler dans des briques physiques des briques logicielles plus ou moins évoluées.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6</title>
       <link>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</link>
       <pubDate>Wed, 25 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</guid>
-      <description>Le serveur d&amp;rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)</description>
+      <description>&lt;p&gt;Le serveur d&amp;rsquo;application &lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; est &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;certifié JAVA EE 6&lt;/a&gt;, il implémente donc via le framework &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt; le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Yubico OTP et JBoss EAP 6 ou Wildfly 8</title>
       <link>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</link>
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</guid>
-      <description>Yubikey est une clef de crypto qui permet d&amp;rsquo;avoir une authentification forte lors d&amp;rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&amp;hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&amp;rsquo;authentification à leur service. L&amp;rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.yubico.com/&#34;&gt;Yubikey&lt;/a&gt; est une clef de crypto qui permet d&amp;rsquo;avoir une authentification forte lors d&amp;rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&amp;hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&amp;rsquo;authentification à leur service.
+L&amp;rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation. Si le mot de passe est intercepté par un tiers, ce dernier ne peut pas le rejouer pour s&amp;rsquo;authentifier.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Il y a un siècle aux Dardanelles</title>
@@ -153,9 +174,9 @@ En 2012, les premiers RaspberryPi sont lancés sur le marché, j&amp;rsquo;en ai
       <link>https://gautric.github.io/blog/2015/03/10/premier-post/</link>
       <pubDate>Tue, 10 Mar 2015 18:02:10 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/10/premier-post/</guid>
-      <description>Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.
-I will post here my articles. I look forward to seeing you.
-私は　ここに　私のブログを　書きます。</description>
+      <description>&lt;p&gt;Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.&lt;/p&gt;
+&lt;p&gt;I will post here my articles. I look forward to seeing you.&lt;/p&gt;
+&lt;p&gt;私は　ここに　私のブログを　書きます。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

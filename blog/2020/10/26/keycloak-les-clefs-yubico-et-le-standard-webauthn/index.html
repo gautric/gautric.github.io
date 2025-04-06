@@ -8,7 +8,7 @@
 <title>Keycloak, les clefs Yubico et le standard Webauthn | Greg. I/O</title>
 <meta name="keywords" content="fr, Keycloak, Yubico, 2fa, webauthn">
 <meta name="description" content="Depuis quelque temps j&rsquo;interviens chez mes clients afin de mener des études d&rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&rsquo;indique, il s&rsquo;agit d&rsquo;une solution de SSO c&rsquo;est à dire d&rsquo;un système unique d&rsquo;authentification et d&rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
-Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.">
+Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&hellip;) proposent ce type d&rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
@@ -28,21 +28,9 @@ Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico 
         }
 
     </style>
-</noscript>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-60791597-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script><meta property="og:title" content="Keycloak, les clefs Yubico et le standard Webauthn" />
+</noscript><meta property="og:title" content="Keycloak, les clefs Yubico et le standard Webauthn" />
 <meta property="og:description" content="Depuis quelque temps j&rsquo;interviens chez mes clients afin de mener des études d&rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&rsquo;indique, il s&rsquo;agit d&rsquo;une solution de SSO c&rsquo;est à dire d&rsquo;un système unique d&rsquo;authentification et d&rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
-Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne." />
+Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&hellip;) proposent ce type d&rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-26T15:00:00+00:00" />
@@ -51,7 +39,8 @@ Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Keycloak, les clefs Yubico et le standard Webauthn"/>
 <meta name="twitter:description" content="Depuis quelque temps j&rsquo;interviens chez mes clients afin de mener des études d&rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&rsquo;indique, il s&rsquo;agit d&rsquo;une solution de SSO c&rsquo;est à dire d&rsquo;un système unique d&rsquo;authentification et d&rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
-Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne."/>
+Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&hellip;) proposent ce type d&rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne."/>
+<meta name="twitter:site" content="@gautric_io"/>
 
 
 <script type="application/ld+json">
@@ -80,7 +69,7 @@ Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico 
   "@type": "BlogPosting",
   "headline": "Keycloak, les clefs Yubico et le standard Webauthn",
   "name": "Keycloak, les clefs Yubico et le standard Webauthn",
-  "description": "Depuis quelque temps j\u0026rsquo;interviens chez mes clients afin de mener des études d\u0026rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l\u0026rsquo;indique, il s\u0026rsquo;agit d\u0026rsquo;une solution de SSO c\u0026rsquo;est à dire d\u0026rsquo;un système unique d\u0026rsquo;authentification et d\u0026rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.\nIl y a quelques temps déjà, j\u0026rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne.",
+  "description": "Depuis quelque temps j\u0026rsquo;interviens chez mes clients afin de mener des études d\u0026rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l\u0026rsquo;indique, il s\u0026rsquo;agit d\u0026rsquo;une solution de SSO c\u0026rsquo;est à dire d\u0026rsquo;un système unique d\u0026rsquo;authentification et d\u0026rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.\nIl y a quelques temps déjà, j\u0026rsquo;ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc\u0026hellip;) proposent ce type d\u0026rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.\n",
   "keywords": [
     "fr", "Keycloak", "Yubico", "2fa", "webauthn"
   ],
@@ -151,8 +140,7 @@ Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico 
 <p>Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico afin de faire du <a href="https://en.wikipedia.org/wiki/Multi-factor_authentication">2FA</a> avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&hellip;) proposent ce type d&rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.</p>
 <p>Keycloack depuis fin 2019 dispose d&rsquo;une intégration du standard Webauthn du W3C. Nous allons voir comment faire cette configuration dans le produit.</p>
 <blockquote>
-<p>Intégration/Configuration d&rsquo;une authentification Webauthn avec Keycloak</p>
-</blockquote>
+<p>Intégration/Configuration d&rsquo;une authentification Webauthn avec Keycloak</p></blockquote>
 <h2 id="le-standard-webauthn">Le standard WebAuthn<a hidden class="anchor" aria-hidden="true" href="#le-standard-webauthn">#</a></h2>
 <p>Le standard WebAuthn est une généralisation d&rsquo;un autre standard le FIDO. Ces deux standards ont pour but de proposer une authentification forte des utilisateurs lors de leurs connexions en ligne. Il existe déjà des systemes de double authentification via SMS par exemple, mais il est possible, avec un peu de moyen, de hacker/casser soit techniquement soit socialement ce type d&rsquo;authentification.</p>
 <p>Auparavant le standard FIDO était très axé sur des clefs matérielles via USB beaucoup plus difficile à casser (par clonage par ex) et une API dans le browser, WebAuthn supporte quant à lui d&rsquo;autre type de device comme les montres connectées, les téléphones portables et d&rsquo;autres types de protocole comme le BLE et/ou le NFC. WebAuthn apporte aussi au browser une API standard en Javascript qui est maintenant supportée dans la plupart des navigateurs (Chrome, Firefox, etc&hellip;).</p>
@@ -245,7 +233,7 @@ Il y a quelques temps déjà, j&rsquo;ai acheté et configuré des clefs Yubico 
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

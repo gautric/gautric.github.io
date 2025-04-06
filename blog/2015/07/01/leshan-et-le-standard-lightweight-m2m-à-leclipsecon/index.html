@@ -8,7 +8,9 @@
 <title>Leshan et le standard Lightweight M2M à l&#39;EclipseCon | Greg. I/O</title>
 <meta name="keywords" content="fr, eclipsecon, CoAP, leshan, M2M, lightweight, Toulouse">
 <meta name="description" content="La semaine dernière, j&rsquo;étais à l&rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C&rsquo;est à cette occasion que j&rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.
-Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l&rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.">
+Le protocole CoAP
+Le protocole CoAP pour Constrained Application Protocol  a été défini afin de répondre aux exigences très contraintes de l&rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.
+Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
@@ -28,21 +30,11 @@ Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a ét�
         }
 
     </style>
-</noscript>
-<script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-60791597-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script><meta property="og:title" content="Leshan et le standard Lightweight M2M à l&#39;EclipseCon" />
+</noscript><meta property="og:title" content="Leshan et le standard Lightweight M2M à l&#39;EclipseCon" />
 <meta property="og:description" content="La semaine dernière, j&rsquo;étais à l&rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C&rsquo;est à cette occasion que j&rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.
-Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l&rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante." />
+Le protocole CoAP
+Le protocole CoAP pour Constrained Application Protocol  a été défini afin de répondre aux exigences très contraintes de l&rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.
+Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-07-01T13:58:00+00:00" />
@@ -51,7 +43,10 @@ Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a ét�
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Leshan et le standard Lightweight M2M à l&#39;EclipseCon"/>
 <meta name="twitter:description" content="La semaine dernière, j&rsquo;étais à l&rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C&rsquo;est à cette occasion que j&rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.
-Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l&rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante."/>
+Le protocole CoAP
+Le protocole CoAP pour Constrained Application Protocol  a été défini afin de répondre aux exigences très contraintes de l&rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.
+Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :"/>
+<meta name="twitter:site" content="@gautric_io"/>
 
 
 <script type="application/ld+json">
@@ -80,7 +75,7 @@ Le protocole CoAP Le protocole CoAP pour Constrained Application Protocol a ét�
   "@type": "BlogPosting",
   "headline": "Leshan et le standard Lightweight M2M à l'EclipseCon",
   "name": "Leshan et le standard Lightweight M2M à l\u0027EclipseCon",
-  "description": "La semaine dernière, j\u0026rsquo;étais à l\u0026rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C\u0026rsquo;est à cette occasion que j\u0026rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.\nLe protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l\u0026rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.",
+  "description": "La semaine dernière, j\u0026rsquo;étais à l\u0026rsquo;EclipseCon qui se déroulait à Toulouse. Sponsor Bronze de cette édition Red Hat (mon entreprise) avait un stand. C\u0026rsquo;est à cette occasion que j\u0026rsquo;ai participé à un training concernant le protocole CoAP et notamment le standard LWM2M dispensé par Julien Vermillard de chez Sierra Wireless.\nLe protocole CoAP Le protocole CoAP pour Constrained Application Protocol a été défini afin de répondre aux exigences très contraintes de l\u0026rsquo;internet des objets IoT et de la communication Machine 2 Machine M2M à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante. Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :\n",
   "keywords": [
     "fr", "eclipsecon", "CoAP", "leshan", "M2M", "lightweight", "Toulouse"
   ],
@@ -185,185 +180,185 @@ Le standard s&rsquo;occupe également de la gestion du parc des objets déployé
 <p><a href="http://technical.openmobilealliance.org/Technical/technical-information/omna/lightweight-m2m-lwm2m-object-registry"><strong>LWM2M</strong></a> défini un certain nombre de concepts permettant de gérer l&rsquo;ensemble de son spectre de compétence. Pour cela il normalise la notion de <em>Client</em>, d&rsquo;<em>Object</em> et de <em>Resources</em>. Un <em>Client</em> peut être vu comme le device déployé et il possède un certain nombre d&rsquo;<em>Object</em>, chacun de ces <em>Object</em> regroupe une collection de <em>Resources</em>. Par exemple, un GPS est un <em>Client</em> qui va posséder plusieurs <em>Objects</em> et donc plusieurs <em>Resources</em>. Un <em>Object</em> va regrouper un concept bien précis i.e : la localisation de l&rsquo;objet (Long, Lat, Alt, Temps, etc) ou bien les informations concernant le device proprement dit (Model number, Serial number, firmware version, battery Level, temps, Memoire etc&hellip;). Le serveur LWM2M peut interroger aussi bien en lecture qu&rsquo;en écriture les <em>Resources</em> de ces <em>Objects</em>, il peut aussi demander l&rsquo;exécution d&rsquo;un traitement (reboot, shutdown, etc&hellip;). Et grâce à l&rsquo;utilisation des <em>URI</em>, le serveur peut récupérer l&rsquo;ensemble des informations de l&rsquo;<em>Object</em> (/3/0 &ndash;&gt; Device) ou bien la valeur d&rsquo;une <em>Resource</em> bien précise (/3/0/2 &ndash;&gt; Serial Number).</p>
 <p>L&rsquo;OMA normalise un certain nombre d&rsquo;<em>Object</em> avec un ensemble de <em>Resources</em> associées.</p>
 <table>
-<thead>
-<tr>
-<th>Object Name</th>
-<th style="text-align:center">id</th>
-<th style="text-align:center">singleton</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Security</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">false</td>
-</tr>
-<tr>
-<td>Server</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">false</td>
-</tr>
-<tr>
-<td>Access Control</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">false</td>
-</tr>
-<tr>
-<td>Device</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td>Connectivity Monitoring</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td>Firmware</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td>Location</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">true</td>
-</tr>
-<tr>
-<td>Connectivity Statistics</td>
-<td style="text-align:center">7</td>
-<td style="text-align:center">true</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Object Name</th>
+          <th style="text-align: center">id</th>
+          <th style="text-align: center">singleton</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Security</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">false</td>
+      </tr>
+      <tr>
+          <td>Server</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">false</td>
+      </tr>
+      <tr>
+          <td>Access Control</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">false</td>
+      </tr>
+      <tr>
+          <td>Device</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">true</td>
+      </tr>
+      <tr>
+          <td>Connectivity Monitoring</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: center">true</td>
+      </tr>
+      <tr>
+          <td>Firmware</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center">true</td>
+      </tr>
+      <tr>
+          <td>Location</td>
+          <td style="text-align: center">6</td>
+          <td style="text-align: center">true</td>
+      </tr>
+      <tr>
+          <td>Connectivity Statistics</td>
+          <td style="text-align: center">7</td>
+          <td style="text-align: center">true</td>
+      </tr>
+  </tbody>
 </table>
 <br/>
 **Connectivity Statistics**
 <table>
-<thead>
-<tr>
-<th>Attribut</th>
-<th style="text-align:center">id</th>
-<th style="text-align:center">type</th>
-<th style="text-align:center">R/W/E</th>
-<th style="text-align:right">units</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SMS Tx Counter</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-<tr>
-<td>SMS Rx Counter</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-<tr>
-<td>Tx Data</td>
-<td style="text-align:center">2</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">R</td>
-<td style="text-align:right">Kilo-Bytes</td>
-</tr>
-<tr>
-<td>Rx Data</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">R</td>
-<td style="text-align:right">Kilo-Bytes</td>
-</tr>
-<tr>
-<td>Max Message Size</td>
-<td style="text-align:center">4</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">R</td>
-<td style="text-align:right">Byte</td>
-</tr>
-<tr>
-<td>Average Message Size</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center">int</td>
-<td style="text-align:center">R</td>
-<td style="text-align:right">Byte</td>
-</tr>
-<tr>
-<td>StartOrReset</td>
-<td style="text-align:center">5</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">E</td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Attribut</th>
+          <th style="text-align: center">id</th>
+          <th style="text-align: center">type</th>
+          <th style="text-align: center">R/W/E</th>
+          <th style="text-align: right">units</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SMS Tx Counter</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">int</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>SMS Rx Counter</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">int</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Tx Data</td>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">int</td>
+          <td style="text-align: center">R</td>
+          <td style="text-align: right">Kilo-Bytes</td>
+      </tr>
+      <tr>
+          <td>Rx Data</td>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">int</td>
+          <td style="text-align: center">R</td>
+          <td style="text-align: right">Kilo-Bytes</td>
+      </tr>
+      <tr>
+          <td>Max Message Size</td>
+          <td style="text-align: center">4</td>
+          <td style="text-align: center">int</td>
+          <td style="text-align: center">R</td>
+          <td style="text-align: right">Byte</td>
+      </tr>
+      <tr>
+          <td>Average Message Size</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center">int</td>
+          <td style="text-align: center">R</td>
+          <td style="text-align: right">Byte</td>
+      </tr>
+      <tr>
+          <td>StartOrReset</td>
+          <td style="text-align: center">5</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">E</td>
+          <td></td>
+      </tr>
+  </tbody>
 </table>
 <br/>
 <p>IPSO Alliance propose quant à lui un certain nombre d&rsquo;<em>Objects</em> de plus haut niveau (GPIO A/N, Illuminance, Temperature, Accelerometre).
 <br/><br/>
 <strong>IPSO Illuminance (3301)</strong></p>
 <table>
-<thead>
-<tr>
-<th>Attribut</th>
-<th style="text-align:center">id</th>
-<th style="text-align:center">type</th>
-<th style="text-align:center">R/W/E</th>
-<th>units</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Min Measured Value</td>
-<td style="text-align:center">5601</td>
-<td style="text-align:center">float</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-<tr>
-<td>Max Measured Value</td>
-<td style="text-align:center">5602</td>
-<td style="text-align:center">float</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-<tr>
-<td>Min Range Value</td>
-<td style="text-align:center">5603</td>
-<td style="text-align:center">float</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-<tr>
-<td>Max Range Value</td>
-<td style="text-align:center">5604</td>
-<td style="text-align:center">float</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-<tr>
-<td>Reset Min and Max Measured Values</td>
-<td style="text-align:center">5605</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">E</td>
-<td></td>
-</tr>
-<tr>
-<td>Sensor Value</td>
-<td style="text-align:center">5606</td>
-<td style="text-align:center">float</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-<tr>
-<td>Sensor Units</td>
-<td style="text-align:center">5607</td>
-<td style="text-align:center">string</td>
-<td style="text-align:center">R</td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Attribut</th>
+          <th style="text-align: center">id</th>
+          <th style="text-align: center">type</th>
+          <th style="text-align: center">R/W/E</th>
+          <th>units</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Min Measured Value</td>
+          <td style="text-align: center">5601</td>
+          <td style="text-align: center">float</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Max Measured Value</td>
+          <td style="text-align: center">5602</td>
+          <td style="text-align: center">float</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Min Range Value</td>
+          <td style="text-align: center">5603</td>
+          <td style="text-align: center">float</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Max Range Value</td>
+          <td style="text-align: center">5604</td>
+          <td style="text-align: center">float</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Reset Min and Max Measured Values</td>
+          <td style="text-align: center">5605</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">E</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Sensor Value</td>
+          <td style="text-align: center">5606</td>
+          <td style="text-align: center">float</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Sensor Units</td>
+          <td style="text-align: center">5607</td>
+          <td style="text-align: center">string</td>
+          <td style="text-align: center">R</td>
+          <td></td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="exemple">Exemple<a hidden class="anchor" aria-hidden="true" href="#exemple">#</a></h2>
 <p>Nous allons voir maintenant comment developper et utiliser notre le framework <a href="https://github.com/eclipse/leshan"><em>Leshan</em></a> qui est l&rsquo;implémentation du standard LWM2M de la <a href="https://eclipse.org/org/"><em>Fondation Eclipse</em></a></p>
@@ -438,7 +433,7 @@ La prochaine étape de mon travail sera d&rsquo;intégrer ce framework dans le p
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2024 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">

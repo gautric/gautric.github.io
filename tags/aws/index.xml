@@ -13,7 +13,8 @@
       <link>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</link>
       <pubDate>Mon, 15 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</guid>
-      <description>Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises ! Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing].</description>
+      <description>&lt;p&gt;Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises !
+Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]. On utilisera la fonctionnalité Session Manager d&amp;rsquo;AWS SSM. 🍇&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

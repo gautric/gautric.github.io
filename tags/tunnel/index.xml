@@ -13,7 +13,9 @@
       <link>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</link>
       <pubDate>Sat, 03 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</guid>
-      <description>After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff. Yesterday, I update my favorite laptop it&amp;rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box.</description>
+      <description>&lt;p&gt;After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.
+Yesterday, I update my favorite laptop it&amp;rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box. For some time, I was looking for some out of the box stuff to connect to my MacMini with SSH via iCloud stack.
+Finally, I google it and I found some good infos/news about this issue.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

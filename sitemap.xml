@@ -2,28 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://gautric.github.io/blog/2025/04/06/activate-deactivate-poe-camera-via-cisco-router/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/tags/cisco/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/tags/en/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/tags/poe/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/blog/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/tags/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://gautric.github.io/tags/webcam/</loc>
+    <lastmod>2025-04-06T09:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</loc>
     <lastmod>2024-01-28T09:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://gautric.github.io/tags/cisco/</loc>
-    <lastmod>2024-01-28T09:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://gautric.github.io/tags/fr/</loc>
-    <lastmod>2024-01-28T09:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gautric.github.io/</loc>
-    <lastmod>2024-01-28T09:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gautric.github.io/tags/poe/</loc>
-    <lastmod>2024-01-28T09:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gautric.github.io/blog/</loc>
-    <lastmod>2024-01-28T09:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gautric.github.io/tags/</loc>
-    <lastmod>2024-01-28T09:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gautric.github.io/tags/webcam/</loc>
     <lastmod>2024-01-28T09:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/ansible/</loc>
@@ -150,9 +156,6 @@
     <lastmod>2016-12-03T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</loc>
-    <lastmod>2016-12-03T15:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://gautric.github.io/tags/en/</loc>
     <lastmod>2016-12-03T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://gautric.github.io/tags/route/</loc>

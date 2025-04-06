@@ -13,10 +13,27 @@
       <link>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-webcam-component-on-macos-x-in-groovy/</link>
       <pubDate>Thu, 22 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/10/22/rhiot-0.1.2-webcam-component-on-macos-x-in-groovy/</guid>
-      <description>My tech leader on RHIoT project (ex-camellabs) Henryk had just release the last version of RHIoT project : 0.1.2. Lot of new stuffs are included in this new release, more details available here. I found in list a cool stuff to test. We gonna check if our new commiter @levackt from ZA worked well ;-)
-Webcam camel component on Mac OSX with Groovy language
-Let&amp;rsquo;s start to broadcast yourself.
-Requisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2.</description>
+      <description>&lt;p&gt;My tech leader on &lt;a href=&#34;http://rhiot.io&#34;&gt;RHIoT project&lt;/a&gt; (ex-camellabs) &lt;a href=&#34;http://henryk-konsek.blogspot.fr/2015/10/rhiot-012-is-out.html&#34;&gt;Henryk&lt;/a&gt; had just release the last version of RHIoT project : 0.1.2.
+Lot of new stuffs are included in this new release, more details available &lt;a href=&#34;https://github.com/rhiot/rhiot/blob/master/docs/release-notes.md#012--2015-10-22&#34;&gt;here&lt;/a&gt;.
+I found in list a cool stuff to test. We gonna check if our new commiter &lt;a href=&#34;https://github.com/levackt&#34;&gt;@levackt&lt;/a&gt; from ZA worked well ;-)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Webcam camel component on Mac OSX with Groovy language&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
+&lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Have a mac&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;tested MacBook Pro Retina, 13-inch, Mid 2014&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Groovy Mac port installed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
+&lt;p&gt;We gonna use Groovy language for this simple example&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
