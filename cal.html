@@ -55,9 +55,12 @@
       font-weight: bold;
       margin-top: 20px;
     }
-    /* button {
-     // background-color: #90ee90;
-    } */
+    #checkAnswer {
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 5px;
+
+    }
   </style>
 </head>
 <body>
@@ -83,8 +86,7 @@
     <button onclick="clearNumber()">C</button>
   </div>
 
-  <button onclick="checkAnswer()">Check Answer</button>
-
+  <button onclick="checkAnswer()" id="checkAnswer">Check Answer</button>
 
   <script>
     let currentNum1 = 0;
