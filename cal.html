@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Fun!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #ff6347;
+    }
+    #numPad {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      grid-gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    #numPad button {
+      font-size: 24px;
+      padding: 20px;
+      border-radius: 5px;
+     /* // border: 2px solid #87ceeb;
+    //  background-color: #add8e6; */
+      cursor: pointer;
+    }
+
+    #operation {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: 2px solid #87ceeb;
+    }
+    #result {
+      font-size: 22px;
+      margin-top: 20px;
+    }
+    .green {
+      color: green;
+    }
+    .red {
+      color: red;
+    }
+    #points {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    /* button {
+     // background-color: #90ee90;
+    } */
+  </style>
+</head>
+<body>
+  <h2> Let's Multiply!</h2>
+  
+  <p id="operation"></p>
+  
+  <div id="numPad">
+    <button onclick="addNumber(1)">1</button>
+    <button onclick="addNumber(2)">2</button>
+    <button onclick="addNumber(3)">3</button>
+    <button onclick="addNumber(4)">4</button>
+    <button onclick="addNumber(5)">5</button>
+    <button onclick="addNumber(6)">6</button>
+    <button onclick="addNumber(7)">7</button>
+    <button onclick="addNumber(8)">8</button>
+    <button onclick="addNumber(9)">9</button>
+    <button onclick="clearNumber()">C</button>
+    <button onclick="addNumber(0)">0</button>
+    <button onclick="clearNumber()">C</button>
+  </div>
+
+  <!-- <input type="text" id="num1" placeholder="First number" readonly>
+  <span>×</span>
+  <input type="text" id="num2" placeholder="Second number" readonly> -->
+
+  <br><br>
+
+  <button onclick="checkAnswer()">Check Answer</button>
+
+  <div id="result"></div>
+  <div id="points">Points: <span id="score">0</span></div>
+
+  <script>
+    let currentNum1 = 0;
+    let currentNum2 = 0;
+    let userAnswer = 0;
+    let score = 0;
+
+    // Function to generate random numbers for multiplication
+    function generateNumbers() {
+      currentNum1 = Math.floor(Math.random() * 1000) + 1;  // Random number between 1 and 1000
+      currentNum2 = Math.floor(Math.random() * 100) + 1;  // Random number between 1 and 1000
+      document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ?`;
+    }
+
+    // Function to add a number to the current answer input
+    function addNumber(num) {
+      userAnswer = userAnswer * 10 + num;  // Add digits to the user answer
+      //document.getElementById('num1').value = userAnswer;
+      document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ${userAnswer}`;
+
+    }
+
+    // Function to clear the current answer input
+    function clearNumber() {
+      userAnswer = 0;
+      document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ?`;
+    }
+
+    // Function to check if the answer is correct
+    function checkAnswer() {
+      const correctAnswer = currentNum1 * currentNum2;
+      if (userAnswer === correctAnswer) {
+        document.getElementById('result').innerText = "🎉 Correct!";
+        document.getElementById('result').classList.remove('red');
+        document.getElementById('result').classList.add('green');
+        score++;
+        setTimeout(generateNumbers, 2000); // Generate new numbers after a short delay
+      } else {
+        document.getElementById('result').innerText = `❌ Wrong!`;
+        document.getElementById('result').classList.remove('green');
+        document.getElementById('result').classList.add('red');
+        score--;
+        clearNumber();
+      }
+
+      document.getElementById('score').innerText = score;
+      userAnswer = 0; // Reset the answer input for the next round
+    }
+
+    // Initialize the game with random numbers
+    window.onload = generateNumbers;
+  </script>
+</body>
+</html>
