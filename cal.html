@@ -5,7 +5,6 @@
   <title>Multiplication Fun!</title>
   <style>
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
       background-color: #f0f8ff;
       text-align: center;
       padding: 50px;
@@ -65,7 +64,10 @@
   <h2> Let's Multiply!</h2>
   
   <p id="operation"></p>
-  
+
+  <div id="result"></div>
+  <div id="points">Points: <span id="score">0</span></div>
+
   <div id="numPad">
     <button onclick="addNumber(1)">1</button>
     <button onclick="addNumber(2)">2</button>
@@ -76,21 +78,13 @@
     <button onclick="addNumber(7)">7</button>
     <button onclick="addNumber(8)">8</button>
     <button onclick="addNumber(9)">9</button>
-    <button onclick="clearNumber()">C</button>
+    <button onclick="clearNumber()">&lt;</button>
     <button onclick="addNumber(0)">0</button>
     <button onclick="clearNumber()">C</button>
   </div>
 
-  <!-- <input type="text" id="num1" placeholder="First number" readonly>
-  <span>×</span>
-  <input type="text" id="num2" placeholder="Second number" readonly> -->
-
-  <br><br>
-
   <button onclick="checkAnswer()">Check Answer</button>
 
-  <div id="result"></div>
-  <div id="points">Points: <span id="score">0</span></div>
 
   <script>
     let currentNum1 = 0;
