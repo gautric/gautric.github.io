@@ -78,7 +78,7 @@
     <button onclick="addNumber(7)">7</button>
     <button onclick="addNumber(8)">8</button>
     <button onclick="addNumber(9)">9</button>
-    <button onclick="clearNumber()">&lt;</button>
+    <button onclick="oneNumber()">&lt;</button>
     <button onclick="addNumber(0)">0</button>
     <button onclick="clearNumber()">C</button>
   </div>
@@ -105,6 +105,17 @@
       //document.getElementById('num1').value = userAnswer;
       document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ${userAnswer}`;
 
+    }
+
+    // Function to clear the current answer input
+    function oneNumber() {
+      userAnswer = Math.floor(userAnswer / 10);  // Add digits to the user answer
+      if(userAnswer === 0) {
+        document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ?`;
+      }else{
+        document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ${userAnswer}`;
+
+      }
     }
 
     // Function to clear the current answer input
