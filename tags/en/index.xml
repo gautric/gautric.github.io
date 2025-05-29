@@ -4,7 +4,7 @@
     <title>En on Greg. I/O</title>
     <link>https://gautric.github.io/tags/en/</link>
     <description>Recent content in En on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Apr 2025 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/en/index.xml" rel="self" type="application/rss+xml" />
@@ -53,7 +53,7 @@ RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interfa
 &lt;li&gt;package of JBoss EAP 7 &lt;a href=&#34;http://www.jboss.org/products/eap/download/&#34;&gt;http://www.jboss.org/products/eap/download/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;installed Docker for Linux, for Mac or Window &lt;em&gt;&amp;gt;= 1.12&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div&gt;&lt;svg width=&#34;0&#34; height=&#34;0&#34; display=&#34;none&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;&lt;symbol id=&#34;tip-notice&#34; viewBox=&#34;0 0 512 512&#34; preserveAspectRatio=&#34;xMidYMid meet&#34;&gt;&lt;path d=&#34;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&#34;/&gt;&lt;/symbol&gt;&lt;symbol id=&#34;note-notice&#34; viewBox=&#34;0 0 512 512&#34; preserveAspectRatio=&#34;xMidYMid meet&#34;&gt;&lt;path d=&#34;M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z&#34;/&gt;&lt;/symbol&gt;&lt;symbol id=&#34;warning-notice&#34; viewBox=&#34;0 0 576 512&#34; preserveAspectRatio=&#34;xMidYMid meet&#34;&gt;&lt;path d=&#34;M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z&#34;/&gt;&lt;/symbol&gt;&lt;symbol id=&#34;info-notice&#34; viewBox=&#34;0 0 512 512&#34; preserveAspectRatio=&#34;xMidYMid meet&#34;&gt;&lt;path d=&#34;M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z&#34;/&gt;&lt;/symbol&gt;&lt;/svg&gt;&lt;/div&gt;&lt;div class=&#34;notice warning&#34; &gt;
+&lt;div class=&#34;notice warning&#34; &gt;
 &lt;p class=&#34;first notice-title&#34;&gt;&lt;span class=&#34;icon-notice baseline&#34;&gt;&lt;svg&gt;&lt;use href=&#34;#warning-notice&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;Warning&lt;/p&gt;</description>
     </item>
     <item>
@@ -119,32 +119,31 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
       <link>https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/</link>
       <pubDate>Mon, 28 Dec 2015 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/</guid>
-      <description>&lt;p&gt;During this cool Christmas day, Santa Claus brings us lot of presents (I hope for you), I received 2 &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt;, Thx you brother ;-). I will show you a cool stuff after this special day. We gonna test how to use &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; into &lt;a href=&#34;https://eclipse.org/kura/&#34;&gt;Kura Eclipse Platform&lt;/a&gt; running inside &lt;a href=&#34;https://docker.com&#34;&gt;Docker&lt;/a&gt; container deployed into a real &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt; device (in this order). If you don&amp;rsquo;t have yet a RaspberryPi (B+, 2 or zero) device you can use &lt;a href=&#34;https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;During this cool Christmas day, Santa Claus brings us lot of presents (I hope for you too), I received 2 &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt;, Thx you brother ;-). I will show you a cool stuff after this special day. We gonna test how to use &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; into &lt;a href=&#34;https://eclipse.org/kura/&#34;&gt;Kura Eclipse Platform&lt;/a&gt; running inside &lt;a href=&#34;https://docker.com&#34;&gt;Docker&lt;/a&gt; container deployed into a real &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt; device (in this order). If you don&amp;rsquo;t have yet a RaspberryPi (B+, 2 or zero) device you can use &lt;a href=&#34;https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Kura over Docker</title>
       <link>https://gautric.github.io/blog/2015/12/23/kura-over-docker/</link>
       <pubDate>Wed, 23 Dec 2015 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/12/23/kura-over-docker/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; decides recently to support mainly &lt;a href=&#34;https://eclipse.org/kura/&#34;&gt;Kura Eclipse Platform&lt;/a&gt;. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by &lt;a href=&#34;http://eclipse.org&#34;&gt;Eclipse Foundation&lt;/a&gt; and &lt;a href=&#34;https://www.eurotech.com&#34;&gt;Eurotech&lt;/a&gt;.
-Kura runs on RaspberryPi, but if you don&amp;rsquo;t have yet a RaspberryPi device  we will show how to run Kura into &lt;a href=&#34;https://docker.com&#34;&gt;Docker&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; has recently decided to primarily support the &lt;a href=&#34;https://eclipse.org/kura/&#34;&gt;Kura Eclipse Platform&lt;/a&gt;. Our project provides code and extensions for Kura, such as Camel integration and many other features. We&amp;rsquo;ve developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it&amp;rsquo;s an OSGi compliant software focused on the IoT universe, supported by the &lt;a href=&#34;http://eclipse.org&#34;&gt;Eclipse Foundation&lt;/a&gt; and &lt;a href=&#34;https://www.eurotech.com&#34;&gt;Eurotech&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;While Kura runs natively on RaspberryPi hardware, if you don&amp;rsquo;t have a RaspberryPi device yet, this tutorial will show you how to run Kura within a &lt;a href=&#34;https://docker.com&#34;&gt;Docker&lt;/a&gt; container.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rhiot Kura Gateway Sample (Emulator &amp; RaspberryPi) </title>
       <link>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</link>
       <pubDate>Thu, 03 Dec 2015 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</guid>
-      <description>&lt;p&gt;For a while, I develop during my free time for &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; with my Red Hat colleague &lt;a href=&#34;http://henryk-konsek.blogspot.fr/&#34;&gt;Henryk&lt;/a&gt;. We started to develop several &lt;a href=&#34;http://camel.apache.org/components.html#Components-ExternalComponents&#34;&gt;Camel components&lt;/a&gt; like (kura, pi4j, bluetooth) with others volunteers.
-Now we focus to develop and integrate those components for &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Kura Platform&lt;/a&gt;. Kura is an &lt;a href=&#34;http://www.osgi.org&#34;&gt;OSGi Platform&lt;/a&gt; designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device.
-Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc&amp;hellip;)
-In this post we will see :&lt;/p&gt;</description>
+      <description>&lt;p&gt;For a while, I have been developing during my free time for the &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; with my Red Hat colleague &lt;a href=&#34;http://henryk-konsek.blogspot.fr/&#34;&gt;Henryk&lt;/a&gt;. We started by developing several &lt;a href=&#34;http://camel.apache.org/components.html#Components-ExternalComponents&#34;&gt;Camel components&lt;/a&gt; such as kura, pi4j, and bluetooth with other volunteers. Now we are focusing on developing and integrating these components for the &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Kura Platform&lt;/a&gt;. Kura is an &lt;a href=&#34;http://www.osgi.org&#34;&gt;OSGi Platform&lt;/a&gt; designed specifically for IoT, capable of running on RaspberryPi, BeagleBone, or Intel Edison devices.&lt;/p&gt;
+&lt;p&gt;The Kura Platform comes with many embedded services tailored for IoT contexts, including GPIO, USB, I2C, Cloud Service, and more. In this post, we will explore:&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT RaspberryPi Sense-Hat display</title>
       <link>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</link>
       <pubDate>Tue, 24 Nov 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</guid>
-      <description>&lt;p&gt;Recently, I bought the new an official &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;Sense-HAT&lt;/a&gt; from &lt;a href=&#34;ttps://www.raspberrypi.org&#34;&gt;RaspberryPi foundation&lt;/a&gt;. This &lt;a href=&#34;https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/&#34;&gt;HAT&lt;/a&gt; add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver&#34;&gt;rhiot camel-pi4j&lt;/a&gt; component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer&#34;&gt;rhiot camel-framebuffer component&lt;/a&gt;, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I bought the new official &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;Sense-HAT&lt;/a&gt; from &lt;a href=&#34;https://www.raspberrypi.org&#34;&gt;RaspberryPi foundation&lt;/a&gt;. This &lt;a href=&#34;https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/&#34;&gt;HAT&lt;/a&gt; (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.&lt;/p&gt;
+&lt;p&gt;All sensors are i2c compliant, making them easily accessible with the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver&#34;&gt;rhiot camel-pi4j&lt;/a&gt; component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer&#34;&gt;rhiot camel-framebuffer component&lt;/a&gt;, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT Webcam and websocket components on MacbookPro in Groovy</title>
@@ -152,25 +151,10 @@ In this post we will see :&lt;/p&gt;</description>
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/</guid>
       <description>&lt;p&gt;Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language &amp;hellip;&lt;/p&gt;
+directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language to create a real-time webcam streaming solution.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
-&lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Have a mac&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;tested MacBook Pro Retina, 13-inch, Mid 2014&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Mac port installed&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna re-use our previous Groovy language program an we will change some stuff&lt;/p&gt;</description>
+&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT 0.1.2 Webcam component on MacOS X in Groovy</title>
@@ -197,30 +181,29 @@ I found in list a cool stuff to test. We gonna check if our new commiter &lt;a h
 &lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna use Groovy language for this simple example&lt;/p&gt;</description>
+&lt;p&gt;We gonna use Groovy language for this simple example. Groovy provides a concise and expressive syntax that makes it perfect for quickly testing new components like this webcam integration.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SSH to MacOS X (El Capitan) through iCloud tunnel</title>
       <link>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</link>
       <pubDate>Sat, 03 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</guid>
-      <description>&lt;p&gt;After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.
-Yesterday, I update my favorite laptop it&amp;rsquo;s a MacbookPro [ja keyboard] (Retina, 13-inch, Mid 2014) with the new MacOS X 10.11 El Capitan version. I also like MacOS software because it includes bash, ssh and lot of cool Linux/Unix commands. I have got also an MacMini at home behind my Internet box. For some time, I was looking for some out of the box stuff to connect to my MacMini with SSH via iCloud stack.
-Finally, I google it and I found some good infos/news about this issue.&lt;/p&gt;</description>
+      <description>&lt;p&gt;After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.&lt;/p&gt;
+&lt;p&gt;Yesterday, I updated my favorite laptop - a MacbookPro with Japanese keyboard (Retina, 13-inch, Mid 2014) - with the new MacOS X 10.11 El Capitan version. One of the reasons I love MacOS is that it includes bash, ssh, and many other powerful Linux/Unix commands right out of the box.&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Le Havre</title>
       <link>https://gautric.github.io/blog/2015/08/04/unesco-challenge-point-unesco-le-havre/</link>
       <pubDate>Tue, 04 Aug 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/08/04/unesco-challenge-point-unesco-le-havre/</guid>
-      <description>&lt;p&gt;Few years ago, my friends and I started a game we called the UNESCO challenge/Point UNESCO (fr). The goal of this game is very simple, we try to visit every World Heritage Site (WHS), one visit == one UNESCO point. Sites could be a building, a city, a complex, a land, a monument, a mountain, etc.. and they are selected by UNESCO as being of special cultural or physical significance. We have to take the picture of signboard by UNESCO as a proof of our visit. We have got one more rule : Every place or site you have already visited which become a WHS, you also earn  a point.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Few years ago, my friends and I started a game we called the UNESCO challenge/Point UNESCO (fr). The goal of this game is very simple, we try to visit every World Heritage Site (WHS), one visit == one UNESCO point. Sites could be a building, a city, a complex, a land, a monument, a mountain, etc., and they are selected by UNESCO as being of special cultural or physical significance. We have to take the picture of signboard by UNESCO as a proof of our visit. We have got one more rule: Every place or site you have already visited which become a WHS, you also earn a point.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</title>
       <link>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</link>
       <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</guid>
-      <description>&lt;p&gt;Last week, Wildfly community has just released &lt;a href=&#34;http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/&#34;&gt;&lt;em&gt;&lt;strong&gt;Wildfly 9.0.0.Final&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).&lt;/p&gt;</description>
+      <description>&lt;p&gt;Last week, Wildfly community has just released &lt;a href=&#34;http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/&#34;&gt;&lt;em&gt;&lt;strong&gt;Wildfly 9.0.0.Final&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line tools, the build process is automated and streamlined, and the run process is very easy to manage.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wildfly 9.0 Offline CLI and HTTP/2</title>
@@ -234,32 +217,37 @@ Finally, I google it and I found some good infos/news about this issue.&lt;/p&gt
       <link>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</guid>
-      <description>&lt;p&gt;One month ago, Henryk, Claus and I&amp;rsquo;ve started Camel Labs project. This project provides some cool new stuff for IoT community based on Camel technology/project. The stuff are new IoT components to connect electronics devices (i2c,SPI,gpio, tinkerforge) and cloud (pubnub, cloudlet, mqtt) together. In this lab, we will show how to build an end to end IoT integration with i2c device, mqtt broker and i2c lcd with few line of code.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One month ago, Henryk, Claus and I started the Camel Labs project. This project provides exciting new components for the IoT community based on Apache Camel technology. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. In this lab, we will demonstrate how to build an end-to-end IoT integration with I2C devices, an MQTT broker, and an I2C LCD display using just a few lines of code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Apache Camel RaspberryPi PoC</title>
       <link>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</link>
       <pubDate>Fri, 03 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</guid>
-      <description>&lt;p&gt;Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Apache Camel and Raspberry Pi integration (proof of concept)&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;integrating-apache-camel-with-raspberry-pi-for-iot-applications&#34;&gt;Integrating Apache Camel with Raspberry Pi for IoT Applications&lt;/h1&gt;
+&lt;p&gt;The Internet of Things (IoT) revolution is transforming how we interact with the physical world through technology. At the heart of many IoT projects are two key components: affordable, capable hardware and flexible integration software. This article explores how to combine the popular Raspberry Pi single-board computer with Apache Camel, a powerful enterprise integration framework, to create IoT solutions that bridge the physical and digital worlds.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6 English Version</title>
       <link>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</link>
       <pubDate>Thu, 26 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; application server is &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;Java EE 6 certified&lt;/a&gt;, it implements via &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt; framework, the Java EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;integrating-websphere-mq-with-jboss-eap-6-best-practices&#34;&gt;Integrating WebSphere MQ with JBoss EAP 6: Best Practices&lt;/h1&gt;
+&lt;p&gt;Enterprise application integration remains one of the most challenging aspects of modern IT architectures. This article explores how to effectively connect JBoss Enterprise Application Platform (EAP) 6 with IBM WebSphere MQ messaging system using Java EE standards and following industry best practices.&lt;/p&gt;
+&lt;h2 id=&#34;introduction-to-jca-and-enterprise-integration&#34;&gt;Introduction to JCA and Enterprise Integration&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; application server is &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;Java EE 6 certified&lt;/a&gt;, which means it implements all specifications of this Java Enterprise Edition platform version. Among these specifications, the Java EE Connector Architecture (JCA) standard is implemented through the &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt; framework.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Premier post</title>
       <link>https://gautric.github.io/blog/2015/03/10/premier-post/</link>
       <pubDate>Tue, 10 Mar 2015 18:02:10 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/10/premier-post/</guid>
-      <description>&lt;p&gt;Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.&lt;/p&gt;
-&lt;p&gt;I will post here my articles. I look forward to seeing you.&lt;/p&gt;
-&lt;p&gt;私は　ここに　私のブログを　書きます。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;français&#34;&gt;Français&lt;/h2&gt;
+&lt;p&gt;Bienvenue sur mon blog ! Je posterai ici mes articles techniques et mes réflexions sur divers sujets informatiques. En espérant que vous y trouverez des informations utiles et intéressantes. Bonne lecture à tous.&lt;/p&gt;
+&lt;h2 id=&#34;english&#34;&gt;English&lt;/h2&gt;
+&lt;p&gt;Welcome to my blog! I will be posting my technical articles and thoughts on various IT topics here. I hope you&amp;rsquo;ll find useful and interesting information. Happy reading!&lt;/p&gt;
+&lt;h2 id=&#34;日本語&#34;&gt;日本語&lt;/h2&gt;
+&lt;p&gt;ようこそ、私のブログへ！ここに技術的な記事やIT関連のさまざまな考えを投稿します。役立つ情報を見つけていただければ幸いです。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Security on Greg. I/O</title>
+    <link>http://localhost:1313/tags/security/</link>
+    <description>Recent content in Security on Greg. I/O</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Apr 2025 09:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filter unsolicited network traffic on your home Raspberry Pi</title>
+      <link>http://localhost:1313/blog/2025/04/01/filter-unsolicited-network-traffic-on-your-home-raspberry-pi/</link>
+      <pubDate>Tue, 01 Apr 2025 09:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/2025/04/01/filter-unsolicited-network-traffic-on-your-home-raspberry-pi/</guid>
+      <description>&lt;p&gt;For a long time now, I setup a Raspberry Pi for my Home Automation solution. Until now my Smart Home Solution was allways available into a private network due to founding a good solution. My requirements is quite simple, I would like to reject all incomming connection unless from my mobile network provided.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Filter unsolicited network traffic on your home Raspberry Pi&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;introduction-asn&#34;&gt;Introduction ASN&lt;/h3&gt;
+&lt;p&gt;An Autonomous System Number (ASN) is a unique identifier assigned to an autonomous system (AS) on the internet. An autonomous system refers to a collection of IP networks and routers under the control of a single organization that presents a common routing policy to the internet. ASNs are used in the Border Gateway Protocol (BGP) to help routers identify and communicate with different networks, ensuring the efficient routing of internet traffic. There are two types of ASNs: public and private. Public ASNs are used to route data between different networks on the internet, while private ASNs are used for internal network management. ASN allocation is managed by the Internet Assigned Numbers Authority (IANA) and regional internet registries (RIRs). In Europe we have got the &lt;a href=&#34;https://www.ripe.net/&#34;&gt;RIPE&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

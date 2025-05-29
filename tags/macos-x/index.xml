@@ -4,7 +4,7 @@
     <title>MacOS X on Greg. I/O</title>
     <link>https://gautric.github.io/tags/macos-x/</link>
     <description>Recent content in MacOS X on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Oct 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/macos-x/index.xml" rel="self" type="application/rss+xml" />
@@ -33,7 +33,7 @@ I found in list a cool stuff to test. We gonna check if our new commiter &lt;a h
 &lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna use Groovy language for this simple example&lt;/p&gt;</description>
+&lt;p&gt;We gonna use Groovy language for this simple example. Groovy provides a concise and expressive syntax that makes it perfect for quickly testing new components like this webcam integration.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

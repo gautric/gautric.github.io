@@ -7,10 +7,13 @@
 <meta name="robots" content="index, follow">
 <title>Best Practices Websphere MQ/JBoss EAP 6 | Greg. I/O</title>
 <meta name="keywords" content="fr, jboss, eap, wildfly, websphereMQ, JCA">
-<meta name="description" content="Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)">
+<meta name="description" content="Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques
+L&rsquo;intégration entre différents systèmes d&rsquo;entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d&rsquo;application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d&rsquo;intégration.
+Introduction au standard JCA et à l&rsquo;intégration JMS
+Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifie qu&rsquo;il implémente l&rsquo;ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework IronJacamar.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -27,17 +30,29 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="Best Practices Websphere MQ/JBoss EAP 6" />
-<meta property="og:description" content="Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2015-03-25T13:58:00+00:00" />
-<meta property="article:modified_time" content="2015-03-25T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Best Practices Websphere MQ/JBoss EAP 6"/>
-<meta name="twitter:description" content="Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)"/>
-<meta name="twitter:site" content="@gautric_io"/>
+</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/">
+  <meta property="og:site_name" content="Greg. I/O">
+  <meta property="og:title" content="Best Practices Websphere MQ/JBoss EAP 6">
+  <meta property="og:description" content="Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques L’intégration entre différents systèmes d’entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d’application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d’intégration.
+Introduction au standard JCA et à l’intégration JMS Le serveur d’application JBoss EAP est certifié JAVA EE 6, ce qui signifie qu’il implémente l’ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework IronJacamar.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-03-25T13:58:00+00:00">
+    <meta property="article:modified_time" content="2015-03-25T13:58:00+00:00">
+    <meta property="article:tag" content="Fr">
+    <meta property="article:tag" content="JBoss">
+    <meta property="article:tag" content="Eap">
+    <meta property="article:tag" content="Wildfly">
+    <meta property="article:tag" content="WebsphereMQ">
+    <meta property="article:tag" content="JCA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Best Practices Websphere MQ/JBoss EAP 6">
+<meta name="twitter:description" content="Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques
+L&rsquo;intégration entre différents systèmes d&rsquo;entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d&rsquo;application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d&rsquo;intégration.
+Introduction au standard JCA et à l&rsquo;intégration JMS
+Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifie qu&rsquo;il implémente l&rsquo;ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework IronJacamar.">
+      <meta name="twitter:site" content="@gautric_io">
 
 
 <script type="application/ld+json">
@@ -66,12 +81,12 @@
   "@type": "BlogPosting",
   "headline": "Best Practices Websphere MQ/JBoss EAP 6",
   "name": "Best Practices Websphere MQ\/JBoss EAP 6",
-  "description": "Le serveur d\u0026rsquo;application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l\u0026rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d\u0026rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)\n",
+  "description": "Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques L\u0026rsquo;intégration entre différents systèmes d\u0026rsquo;entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d\u0026rsquo;application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d\u0026rsquo;intégration.\nIntroduction au standard JCA et à l\u0026rsquo;intégration JMS Le serveur d\u0026rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifie qu\u0026rsquo;il implémente l\u0026rsquo;ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework IronJacamar.\n",
   "keywords": [
     "fr", "jboss", "eap", "wildfly", "websphereMQ", "JCA"
   ],
-  "articleBody": "Le serveur d’application JBoss EAP est certifié JAVA EE 6, il implémente donc via le framework IronJacamar le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l’analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d’intégrer tout type de systèmes d’informations d’entreprise (EIS)\nLe standard JCA va prendre en charge l’ensemble des fonctionnalités suivantes (liste non-exhaustive) :\nConnexion au système (socket, IPC, …) Gestion des transactions (locales, XA) Sécurisation de l’accès à la ressource distante Management du cycle de vie et du threading Le fournisseur de service va fournir aux développeurs et à l’intégrateur un driver appelé dans le contexte JCA : Resource Adapter\nNous allons voir dans notre exemple :\nBest Pratice d’integration JMS entre Websphere MQ (WMQ) et JBoss EAP 6\nMatériels Pour ce lab, nous allons avoir besoin de deux logiciels :\nUn serveur JBoss EAP http://www.jboss.org/products/eap/download/ Un serveur WebSphereMQ http://www.ibm.com/developerworks/downloads/ws/wmq/ Le ressource adapteur disponible dans le répertoire /opt/mqm/java/lib/jca Warning\nAttention, il s’agit de version d’essai ou d’évaluation uniquement, le déploiement en production nécessite l’achat de souscription pour JBoss et de license pour IBM\nDéveloppement Afin de pouvoir tester notre intégration nous allons avoir besoin de développer un client pour l’envoi et un MDB pour la réception d’un message JMS.\nPour l’envoi Dans notre cas nous allons créer un EJB Stateless pour envoyer le message JMS. Mais il est possible d’utiliser un autre mécanisme pour l’envoi, une servlet par exemple.\n// ..OMIT .. // @Stateless public class MoMSenderBean { // ..OMIT .. // @Resource(name = \"jms/connectionFactory\") ConnectionFactory factory; @Resource(name = \"jms/queue/Queue\") Queue queue; public void sendMessage(String message) throws JMSException { Connection connection = factory.createConnection(); LOGGER.trace(\"Recuperation d'une connexion {}\", connection); Session session = connection.createSession(false, AUTO_ACKNOWLEDGE); MessageProducer producer = session.createProducer(queue); LOGGER.trace(\"Creation du sender {} sur la queue {}\", producer, queue); TextMessage textMessage = session.createTextMessage(message); textMessage.setJMSCorrelationID(UUID.randomUUID().toString()); producer.send(textMessage); producer.close(); session.close(); connection.close(); } } Warning\nOn notera dans ce code que les ressources JMS (Factory et Queue) sont récupérées du scope courant du module.\nPlus d’information sur JNDI avec JBoss\nPour la réception Dans le monde Java EE, la réception de message JMS se fait par l’intermediaire d’un bean particulier. Ce bean est un Message Driven Bean (MDB), c’est à dire que l’objet est appelé quand un message est reçu dans la file JMS. La classe doit héritée de l’interface javax.jms.MessageListener\n// ..OMIT .. // public class MoMMDB implements MessageListener { // ..OMIT .. // public void onMessage(Message message) { LOGGER.info(\"Received Message from queue: {}\" + (TextMessage) message); } } Warning\nIl est bien sûr possible décorer le MDB avec les annotations ActivationSpec, mais ces annotations noie dans le code des problematiques contextuelles à l’application (environnement extérieur à l’application). Avec d’autre resource adapter cela peut s’avérer plus simple.\nConfiguration Application Nous allons maintenant configurer l’application afin de nous connecter à la bonne file JMS. Dans un premier temps nous allons utiliser le fichier ejb-jar.xml afin de definir les principaux objets.\nDéfinition Java EE (ejb-jar.xml) MoM Application EJB / MDB MoM Application EJB / MDB MoM MDB MessageDrivenBean net.a.g.jee.mom.mdb.MoMMDB Container javax.jms.Queue MoMSenderBean net.a.g.jee.mom.ejb.MoMSenderBean Configuration des implementations spécifiques (jboss-ejb3.xml) Comme nous souhaitons pouvoir nous connecter à un serveur WebsphereMQ nous allons devoir configurer le MDB afin qu’il réceptionne les messages. On effectura aussi le mapping des ressources d’environnement du serveur d’application avec les resources de l’application.\nMessageDrivenBean net.a.g.jee.mom.mdb.MoMMDB Container javax.jms.Queue channel ${websphere.channel} queueManager ${websphere.queueManager} transportType ${websphere.transportType} hostName ${websphere.hostName} port ${websphere.port} username ${websphere.username} password ${websphere.password} destination java:/jboss/jms/wmq/queue/Queue useJNDI true destinationType javax.jms.Queue MoMSenderBean net.a.g.jee.mom.ejb.MoMSenderBean jms/connectionFactory javax.jms.ConnectionFactory java:/jboss/jms/wmq/connectionFactory jms/queue/Queue java:/jboss/jms/wmq/queue/Queue MessageDrivenBean ${websphere.resource.adapter} Plusieurs points importants dans cette configuration sont à noter :\nL’utilisation de placeholder dans l’ensemble des configurations techniques afin de centraliser l’information dans le standalone.xml hostName -\u003e ${websphere.hostName} port -\u003e ${websphere.port} queueManager -\u003e ${websphere.queueManager} La propriété useJNDI est activée afin de récuperer la queue par son nom JNDI Le mapping des noms JNDI du serveur JBoss avec les noms JNDI du module applicatif Nom de la queue configurée dans le serveur : java:/jboss/jms/wmq/queue/Queue Nom de la queue utilisée par le module applicatif : jms/queue/Queue Le binding du ressource adapteur (driver JCA) de websphere MQ au bean MDB de réception. Balise Warning\nIl est preferable d’utiliser les fichiers XML dans un contexte d’entreprise, en effet le changement d’environement et les fréquentes modifications nécessite souvent des mises à jour d’informations. Le code Java doit dépendre le moins possible de l’environnement et de l’implémentation des systèmes externes.\nInfo\nSi l’application doit se connecter à un autre système JMS, je preconise de recréer un autre fichier jboss-ejb3.xml, le mapping sera de nouveau à effectuer dans ce fichier.\nConfiguration JBoss Dans ce chapitre nous allons voir comment configurer le fichier standalone.xml de l’instance JBoss EAP.\nLes systèmes properties Nous reprennons ici l’ensembles des variables d’environnement de connexion à WebsphereMQ que nous avons vu dans le fichier jboss-ejb3.xml.\nInfo\nLe mode BINDING est le second type de transport possible pour la connexion à WebsphereMQ, mais il nécessite l’installation de composant binaires spécifiques aux systèmes d’exploitation.\nLe mécanisme de remplacement JBoss va utiliser les variables d’environnement et va les remplacer dans certain type objet de l’application.\nIl y a trois types de fichier dans lesquels JBoss peut remplacer les placeholder par les variables d’environnement :\nLes fichiers descripteurs du standard Java EE spec-descriptor-property-replacement web.xml, ejb-jar.xml, etc… Les fichiers descripteurs spécifiques à JBoss jboss-descriptor-property-replacement jboss-web.xml, jboss-ejb3.xml, etc… Les annotations annotation-property-replacement false true false Note\nJe préconise d’effectuer le remplacement uniquement pour les fichiers descripteurs JBoss, car cela est spécifique à JBoss.\nLe ressource adapteur pour la connexion à WMQ Enfin pour terminer, nous allons configurer le ressource adapteur dans l’instance JBoss.\nwmq.jmsra.rar LocalTransaction ${websphere.port:1414} ${websphere.hostName:localhost} ${websphere.username:mqm} ${websphere.password:mqm} ${websphere.channel:SYSTEM.AUTO.SVRCONN} ${websphere.transportType:CLIENT} ${websphere.queueManager:QUEUE.MANAGER} ${websphere.queueManager:QUEUE.MANAGER} ${websphere.queueName:Q_QUEUE} Info\nOn remarquera l’utilisation des placeholders dans cette partie de configuration du fichier standalone.xml\nIl nous reste plus qu’à déposer le resource adapter de Websphere MQ wmq.jmsra.rar et notre application dans le répertoire de déploiement de l’instance de JBoss ${JBOSS_HOME}/standalone/deployments, et le tour est joué.\nConclusion L’intégration du connecteur WebsphereMQ est relativement aisé dans le serveur d’application JBoss. En respectant les principes de ce post, il est possible d’obtenir une application modulaire et facile à maintenir. Le déploiement sur différents environnements (DEV, INT, PROD) en est simplifié, seules les variables d’environnements dans le fichier standalone.xml sont à modifier.\nURL https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html/Administration_and_Configuration_Guide/Deploy_the_WebSphere_MQ_Resource_Adapter.html https://developer.jboss.org/message/738670 https://developer.jboss.org/wiki/WebsphereMQIntegration The installation verification test program for the WebSphere MQ resource adapter {% flag uk %} English version Remerciements Akram B. A. @RedHat pour certaines ressources de ce post Guillaume C. @RedHat pour ces conseils ",
-  "wordCount" : "1244",
+  "articleBody": "Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques L’intégration entre différents systèmes d’entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d’application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d’intégration.\nIntroduction au standard JCA et à l’intégration JMS Le serveur d’application JBoss EAP est certifié JAVA EE 6, ce qui signifie qu’il implémente l’ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework IronJacamar.\nLe standard JCA permet de connecter les applications Java EE à des ressources externes comme :\nDes brokers de messagerie (JMS) Des systèmes de fichiers Des mainframes D’autres systèmes d’information d’entreprise (EIS) On peut faire l’analogie entre JCA et JDBC : alors que JDBC se limite aux bases de données relationnelles, JCA a une portée beaucoup plus large et permet d’intégrer pratiquement n’importe quel système d’information d’entreprise.\nFonctionnalités prises en charge par JCA Le standard JCA prend en charge un ensemble complet de fonctionnalités essentielles pour l’intégration d’applications :\nConnectivité : Établissement et gestion des connexions aux systèmes externes (sockets, IPC, etc.) Transactions : Support des transactions locales et distribuées (XA) Sécurité : Authentification et autorisation pour l’accès aux ressources distantes Gestion des ressources : Management du cycle de vie des connexions et du threading Contrats de service : Interfaces standardisées entre le serveur d’application et les systèmes externes Pour utiliser JCA, le fournisseur du système externe (dans notre cas, IBM pour WebSphere MQ) fournit un composant appelé Resource Adapter (adaptateur de ressources), qui joue le rôle de driver entre le serveur d’application et le système externe.\nObjectif de cet article : Présenter les meilleures pratiques d’intégration JMS entre WebSphere MQ (WMQ) et JBoss EAP 6, en utilisant le standard JCA pour une solution robuste et maintenable.\nPrérequis et environnement technique Pour mettre en place cette intégration, vous aurez besoin des composants suivants :\nUn serveur JBoss EAP : Téléchargeable sur http://www.jboss.org/products/eap/download/ Un serveur WebSphere MQ : Disponible sur http://www.ibm.com/developerworks/downloads/ws/wmq/ Le Resource Adapter WebSphere MQ : Généralement disponible dans le répertoire /opt/mqm/java/lib/jca après l’installation de WebSphere MQ Warning\nAttention, il s’agit de versions d’essai ou d’évaluation uniquement. Le déploiement en production nécessite l’achat d’une souscription pour JBoss EAP et d’une licence pour IBM WebSphere MQ.\nDéveloppement des composants d’intégration Pour tester notre intégration, nous allons développer deux composants essentiels :\nUn client pour l’envoi de messages JMS Un Message-Driven Bean (MDB) pour la réception des messages Composant d’envoi de messages Pour l’envoi de messages, nous allons créer un EJB Stateless. Cette approche est recommandée dans un environnement Java EE, mais d’autres mécanismes comme une servlet pourraient également être utilisés.\n// ..OMIT .. // @Stateless public class MoMSenderBean { // ..OMIT .. // @Resource(name = \"jms/connectionFactory\") ConnectionFactory factory; @Resource(name = \"jms/queue/Queue\") Queue queue; public void sendMessage(String message) throws JMSException { Connection connection = factory.createConnection(); LOGGER.trace(\"Recuperation d'une connexion {}\", connection); Session session = connection.createSession(false, AUTO_ACKNOWLEDGE); MessageProducer producer = session.createProducer(queue); LOGGER.trace(\"Creation du sender {} sur la queue {}\", producer, queue); TextMessage textMessage = session.createTextMessage(message); textMessage.setJMSCorrelationID(UUID.randomUUID().toString()); producer.send(textMessage); producer.close(); session.close(); connection.close(); } } Points importants à noter dans ce code :\nLes ressources JMS (ConnectionFactory et Queue) sont injectées via l’annotation @Resource Ces ressources sont récupérées du scope courant du module Un identifiant de corrélation unique (UUID) est généré pour chaque message Les ressources sont correctement fermées après utilisation Pour plus d’informations sur la configuration JNDI avec JBoss, consultez la documentation officielle.\nComposant de réception de messages Dans l’architecture Java EE, la réception de messages JMS se fait généralement via un Message-Driven Bean (MDB). Ce type de bean est spécifiquement conçu pour être activé par l’arrivée d’un message dans une file d’attente ou un topic.\nPour créer un MDB, la classe doit implémenter l’interface javax.jms.MessageListener :\n// ..OMIT .. // public class MoMMDB implements MessageListener { // ..OMIT .. // public void onMessage(Message message) { LOGGER.info(\"Received Message from queue: {}\" + (TextMessage) message); } } Bien qu’il soit possible de configurer le MDB directement avec des annotations ActivationSpec, cette approche n’est pas recommandée car elle mélange dans le code des préoccupations techniques liées à l’environnement d’exécution. Nous préférons externaliser cette configuration dans les descripteurs de déploiement, comme nous le verrons plus loin.\nConfiguration de l’application Maintenant que nous avons développé les composants de base, nous devons configurer l’application pour qu’elle se connecte correctement à WebSphere MQ. Cette configuration se fait principalement à travers deux fichiers descripteurs :\nejb-jar.xml : Définition standard Java EE des composants jboss-ejb3.xml : Configuration spécifique à JBoss pour l’intégration avec WebSphere MQ Définition Java EE (ejb-jar.xml) Le fichier ejb-jar.xml définit les composants EJB de notre application selon le standard Java EE :\n",
+  "wordCount" : "1962",
   "inLanguage": "en",
   "datePublished": "2015-03-25T13:58:00Z",
   "dateModified": "2015-03-25T13:58:00Z",
@@ -133,310 +148,368 @@
 
 </div>
   </header> 
-  <div class="post-content"><p>Le serveur d&rsquo;application <a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> est <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">certifié JAVA EE 6</a>, il implémente donc via le framework <a href="http://www.ironjacamar.org/">IronJacamar</a> le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)</p>
-<p>Le standard JCA va prendre en charge l&rsquo;ensemble des fonctionnalités suivantes (liste non-exhaustive) :</p>
+  <div class="post-content"><h1 id="intégration-de-websphere-mq-avec-jboss-eap-6--bonnes-pratiques">Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques<a hidden class="anchor" aria-hidden="true" href="#intégration-de-websphere-mq-avec-jboss-eap-6--bonnes-pratiques">#</a></h1>
+<p>L&rsquo;intégration entre différents systèmes d&rsquo;entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d&rsquo;application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d&rsquo;intégration.</p>
+<h2 id="introduction-au-standard-jca-et-à-lintégration-jms">Introduction au standard JCA et à l&rsquo;intégration JMS<a hidden class="anchor" aria-hidden="true" href="#introduction-au-standard-jca-et-à-lintégration-jms">#</a></h2>
+<p>Le serveur d&rsquo;application <a href="http://www.jboss.org/products/eap/overview/">JBoss EAP</a> est <a href="http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html">certifié JAVA EE 6</a>, ce qui signifie qu&rsquo;il implémente l&rsquo;ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework <a href="http://www.ironjacamar.org/">IronJacamar</a>.</p>
+<p>Le standard JCA permet de connecter les applications Java EE à des ressources externes comme :</p>
 <ul>
-<li>Connexion au système (socket, IPC, &hellip;)</li>
-<li>Gestion des transactions (locales, XA)</li>
-<li>Sécurisation de l&rsquo;accès à la ressource distante</li>
-<li>Management du cycle de vie et du threading</li>
+<li>Des brokers de messagerie (JMS)</li>
+<li>Des systèmes de fichiers</li>
+<li>Des mainframes</li>
+<li>D&rsquo;autres systèmes d&rsquo;information d&rsquo;entreprise (EIS)</li>
 </ul>
-<p>Le fournisseur de service va fournir aux développeurs et à l&rsquo;intégrateur un driver appelé dans le contexte JCA : <a href="http://docs.oracle.com/javaee/6/tutorial/doc/gipgl.html">Resource Adapter</a></p>
-<p>Nous allons voir dans notre exemple :</p>
+<p>On peut faire l&rsquo;analogie entre JCA et JDBC : alors que JDBC se limite aux bases de données relationnelles, JCA a une portée beaucoup plus large et permet d&rsquo;intégrer pratiquement n&rsquo;importe quel système d&rsquo;information d&rsquo;entreprise.</p>
+<h3 id="fonctionnalités-prises-en-charge-par-jca">Fonctionnalités prises en charge par JCA<a hidden class="anchor" aria-hidden="true" href="#fonctionnalités-prises-en-charge-par-jca">#</a></h3>
+<p>Le standard JCA prend en charge un ensemble complet de fonctionnalités essentielles pour l&rsquo;intégration d&rsquo;applications :</p>
+<ul>
+<li><strong>Connectivité</strong> : Établissement et gestion des connexions aux systèmes externes (sockets, IPC, etc.)</li>
+<li><strong>Transactions</strong> : Support des transactions locales et distribuées (XA)</li>
+<li><strong>Sécurité</strong> : Authentification et autorisation pour l&rsquo;accès aux ressources distantes</li>
+<li><strong>Gestion des ressources</strong> : Management du cycle de vie des connexions et du threading</li>
+<li><strong>Contrats de service</strong> : Interfaces standardisées entre le serveur d&rsquo;application et les systèmes externes</li>
+</ul>
+<p>Pour utiliser JCA, le fournisseur du système externe (dans notre cas, IBM pour WebSphere MQ) fournit un composant appelé <strong>Resource Adapter</strong> (adaptateur de ressources), qui joue le rôle de driver entre le serveur d&rsquo;application et le système externe.</p>
 <blockquote>
-<p>Best Pratice d&rsquo;integration JMS entre Websphere MQ (WMQ) et JBoss EAP 6</p></blockquote>
-<h2 id="matériels">Matériels<a hidden class="anchor" aria-hidden="true" href="#matériels">#</a></h2>
-<p>Pour ce lab, nous allons avoir besoin de deux logiciels :</p>
+<p><strong>Objectif de cet article</strong> : Présenter les meilleures pratiques d&rsquo;intégration JMS entre WebSphere MQ (WMQ) et JBoss EAP 6, en utilisant le standard JCA pour une solution robuste et maintenable.</p></blockquote>
+<h2 id="prérequis-et-environnement-technique">Prérequis et environnement technique<a hidden class="anchor" aria-hidden="true" href="#prérequis-et-environnement-technique">#</a></h2>
+<p>Pour mettre en place cette intégration, vous aurez besoin des composants suivants :</p>
 <ul>
-<li>Un serveur JBoss EAP <a href="http://www.jboss.org/products/eap/download/">http://www.jboss.org/products/eap/download/</a></li>
-<li>Un serveur WebSphereMQ <a href="http://www.ibm.com/developerworks/downloads/ws/wmq/">http://www.ibm.com/developerworks/downloads/ws/wmq/</a>
-<ul>
-<li>Le ressource adapteur disponible dans le répertoire <strong>/opt/mqm/java/lib/jca</strong></li>
-</ul>
-</li>
+<li><strong>Un serveur JBoss EAP</strong> : Téléchargeable sur <a href="http://www.jboss.org/products/eap/download/">http://www.jboss.org/products/eap/download/</a></li>
+<li><strong>Un serveur WebSphere MQ</strong> : Disponible sur <a href="http://www.ibm.com/developerworks/downloads/ws/wmq/">http://www.ibm.com/developerworks/downloads/ws/wmq/</a></li>
+<li><strong>Le Resource Adapter WebSphere MQ</strong> : Généralement disponible dans le répertoire <strong>/opt/mqm/java/lib/jca</strong> après l&rsquo;installation de WebSphere MQ</li>
 </ul>
 <div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice warning" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Attention, il s&rsquo;agit de version d&rsquo;essai ou d&rsquo;évaluation uniquement, le déploiement en production nécessite l&rsquo;achat de souscription pour JBoss et de license pour IBM</p></div>
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Attention, il s&rsquo;agit de versions d&rsquo;essai ou d&rsquo;évaluation uniquement. Le déploiement en production nécessite l&rsquo;achat d&rsquo;une souscription pour JBoss EAP et d&rsquo;une licence pour IBM WebSphere MQ.</p></div>
 
-<h2 id="développement">Développement<a hidden class="anchor" aria-hidden="true" href="#développement">#</a></h2>
-<p>Afin de pouvoir tester notre intégration nous allons avoir besoin de développer un client pour l&rsquo;envoi et un MDB pour la réception d&rsquo;un message JMS.</p>
-<h3 id="pour-lenvoi">Pour l&rsquo;envoi<a hidden class="anchor" aria-hidden="true" href="#pour-lenvoi">#</a></h3>
-<p>Dans notre cas nous allons créer un EJB Stateless pour envoyer le message JMS. Mais il est possible d&rsquo;utiliser un autre mécanisme pour l&rsquo;envoi, une servlet par exemple.</p>
-<pre tabindex="0"><code>  // ..OMIT .. //
+<h2 id="développement-des-composants-dintégration">Développement des composants d&rsquo;intégration<a hidden class="anchor" aria-hidden="true" href="#développement-des-composants-dintégration">#</a></h2>
+<p>Pour tester notre intégration, nous allons développer deux composants essentiels :</p>
+<ol>
+<li>Un client pour l&rsquo;envoi de messages JMS</li>
+<li>Un Message-Driven Bean (MDB) pour la réception des messages</li>
+</ol>
+<h3 id="composant-denvoi-de-messages">Composant d&rsquo;envoi de messages<a hidden class="anchor" aria-hidden="true" href="#composant-denvoi-de-messages">#</a></h3>
+<p>Pour l&rsquo;envoi de messages, nous allons créer un EJB Stateless. Cette approche est recommandée dans un environnement Java EE, mais d&rsquo;autres mécanismes comme une servlet pourraient également être utilisés.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ..OMIT .. //</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Stateless</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MoMSenderBean</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// ..OMIT .. //</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nd">@Resource</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;jms/connectionFactory&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">ConnectionFactory</span><span class="w"> </span><span class="n">factory</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nd">@Resource</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;jms/queue/Queue&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Queue</span><span class="w"> </span><span class="n">queue</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendMessage</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">JMSException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Connection</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">factory</span><span class="p">.</span><span class="na">createConnection</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">LOGGER</span><span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&#34;Recuperation d&#39;une connexion {}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">connection</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">Session</span><span class="w"> </span><span class="n">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">connection</span><span class="p">.</span><span class="na">createSession</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="n">AUTO_ACKNOWLEDGE</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">MessageProducer</span><span class="w"> </span><span class="n">producer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">session</span><span class="p">.</span><span class="na">createProducer</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">LOGGER</span><span class="p">.</span><span class="na">trace</span><span class="p">(</span><span class="s">&#34;Creation du sender {} sur la queue {}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">producer</span><span class="p">,</span><span class="w"> </span><span class="n">queue</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">TextMessage</span><span class="w"> </span><span class="n">textMessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">session</span><span class="p">.</span><span class="na">createTextMessage</span><span class="p">(</span><span class="n">message</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">textMessage</span><span class="p">.</span><span class="na">setJMSCorrelationID</span><span class="p">(</span><span class="n">UUID</span><span class="p">.</span><span class="na">randomUUID</span><span class="p">().</span><span class="na">toString</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">producer</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">textMessage</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">producer</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">session</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">connection</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="notice notice" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#notice-notice"></use></svg></span></p><p>Points importants à noter dans ce code :</p>
+<ol>
+<li>Les ressources JMS (ConnectionFactory et Queue) sont injectées via l&rsquo;annotation @Resource</li>
+<li>Ces ressources sont récupérées du scope courant du module</li>
+<li>Un identifiant de corrélation unique (UUID) est généré pour chaque message</li>
+<li>Les ressources sont correctement fermées après utilisation</li>
+</ol></div>
 
-  @Stateless
-  public class MoMSenderBean {
+<p>Pour plus d&rsquo;informations sur la configuration JNDI avec JBoss, consultez la <a href="https://docs.jboss.org/author/display/AS72/JNDI+Reference">documentation officielle</a>.</p>
+<h3 id="composant-de-réception-de-messages">Composant de réception de messages<a hidden class="anchor" aria-hidden="true" href="#composant-de-réception-de-messages">#</a></h3>
+<p>Dans l&rsquo;architecture Java EE, la réception de messages JMS se fait généralement via un Message-Driven Bean (MDB). Ce type de bean est spécifiquement conçu pour être activé par l&rsquo;arrivée d&rsquo;un message dans une file d&rsquo;attente ou un topic.</p>
+<p>Pour créer un MDB, la classe doit implémenter l&rsquo;interface <strong>javax.jms.MessageListener</strong> :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ..OMIT .. //</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MoMMDB</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">MessageListener</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// ..OMIT .. //</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onMessage</span><span class="p">(</span><span class="n">Message</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">LOGGER</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Received Message from queue: {}&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">TextMessage</span><span class="p">)</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><div class="notice notice" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#notice-notice"></use></svg></span></p><p>Bien qu&rsquo;il soit possible de configurer le MDB directement avec des annotations ActivationSpec, cette approche n&rsquo;est pas recommandée car elle mélange dans le code des préoccupations techniques liées à l&rsquo;environnement d&rsquo;exécution. Nous préférons externaliser cette configuration dans les descripteurs de déploiement, comme nous le verrons plus loin.</p></div>
 
-    // ..OMIT .. //
-
-    @Resource(name = &#34;jms/connectionFactory&#34;)
-    ConnectionFactory factory;
-
-    @Resource(name = &#34;jms/queue/Queue&#34;)
-    Queue queue;
-
-    public void sendMessage(String message) throws JMSException {
-
-              Connection connection = factory.createConnection();
-              LOGGER.trace(&#34;Recuperation d&#39;une connexion {}&#34;, connection);
-
-              Session session = connection.createSession(false, AUTO_ACKNOWLEDGE);
-              MessageProducer producer = session.createProducer(queue);
-              LOGGER.trace(&#34;Creation du sender {} sur la queue {}&#34;, producer, queue);
-
-              TextMessage textMessage = session.createTextMessage(message);
-              textMessage.setJMSCorrelationID(UUID.randomUUID().toString());
-              producer.send(textMessage);
-              producer.close();
-              session.close();
-              connection.close();
-    }
-  }
-</code></pre><div class="notice warning" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>On notera dans ce code que les ressources JMS (Factory et Queue) sont récupérées du scope courant du module.</p></div>
-
-<p>Plus d&rsquo;information sur <a href="https://docs.jboss.org/author/display/AS72/JNDI+Reference">JNDI avec JBoss</a></p>
-<h3 id="pour-la-réception">Pour la réception<a hidden class="anchor" aria-hidden="true" href="#pour-la-réception">#</a></h3>
-<p>Dans le monde Java EE, la réception de message JMS se fait par l&rsquo;intermediaire d&rsquo;un bean particulier.
-Ce bean est un Message Driven Bean (MDB), c&rsquo;est à dire que l&rsquo;objet est appelé quand un message est reçu dans la file JMS.
-La classe doit héritée de l&rsquo;interface <strong>javax.jms.MessageListener</strong></p>
-<pre tabindex="0"><code>// ..OMIT .. //
-
-public class MoMMDB implements MessageListener {
-
-  // ..OMIT .. //
-
-	public void onMessage(Message message) {
-		LOGGER.info(&#34;Received Message from queue: {}&#34; + (TextMessage) message);
-
-	}
-}
-</code></pre><div class="notice warning" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Il est bien sûr possible décorer le MDB avec les annotations ActivationSpec, mais ces annotations noie dans le code des problematiques contextuelles à l&rsquo;application (environnement extérieur à l&rsquo;application). Avec d&rsquo;autre resource adapter cela peut s&rsquo;avérer plus simple.</p></div>
-
-<h2 id="configuration-application">Configuration Application<a hidden class="anchor" aria-hidden="true" href="#configuration-application">#</a></h2>
-<p>Nous allons maintenant configurer l&rsquo;application afin de nous connecter à la bonne file JMS.
-Dans un premier temps nous allons utiliser le fichier <em>ejb-jar.xml</em> afin de definir les principaux objets.</p>
+<h2 id="configuration-de-lapplication">Configuration de l&rsquo;application<a hidden class="anchor" aria-hidden="true" href="#configuration-de-lapplication">#</a></h2>
+<p>Maintenant que nous avons développé les composants de base, nous devons configurer l&rsquo;application pour qu&rsquo;elle se connecte correctement à WebSphere MQ. Cette configuration se fait principalement à travers deux fichiers descripteurs :</p>
+<ol>
+<li><strong>ejb-jar.xml</strong> : Définition standard Java EE des composants</li>
+<li><strong>jboss-ejb3.xml</strong> : Configuration spécifique à JBoss pour l&rsquo;intégration avec WebSphere MQ</li>
+</ol>
 <h3 id="définition-java-ee-ejb-jarxml">Définition Java EE (ejb-jar.xml)<a hidden class="anchor" aria-hidden="true" href="#définition-java-ee-ejb-jarxml">#</a></h3>
-<pre tabindex="0"><code>&lt;ejb-jar xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns=&#34;http://java.sun.com/xml/ns/javaee&#34; xsi:schemaLocation=&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd&#34; version=&#34;3.0&#34;&gt;
-  &lt;description&gt;MoM Application EJB / MDB &lt;/description&gt;
-  &lt;display-name&gt;MoM Application EJB / MDB&lt;/display-name&gt;
-  &lt;enterprise-beans&gt;
-    &lt;message-driven&gt;
-      &lt;description&gt;MoM MDB&lt;/description&gt;
-      &lt;ejb-name&gt;MessageDrivenBean&lt;/ejb-name&gt;
-      &lt;ejb-class&gt;net.a.g.jee.mom.mdb.MoMMDB&lt;/ejb-class&gt;
-      &lt;transaction-type&gt;Container&lt;/transaction-type&gt;
-      &lt;message-destination-type&gt;javax.jms.Queue&lt;/message-destination-type&gt;
-    &lt;/message-driven&gt;
-    &lt;session&gt;
-      &lt;ejb-name&gt;MoMSenderBean&lt;/ejb-name&gt;
-      &lt;ejb-class&gt;net.a.g.jee.mom.ejb.MoMSenderBean&lt;/ejb-class&gt;
-    &lt;/session&gt;
-  &lt;/enterprise-beans&gt;
-&lt;/ejb-jar&gt;
-</code></pre><h3 id="configuration-des-implementations-spécifiques-jboss-ejb3xml">Configuration des implementations spécifiques (jboss-ejb3.xml)<a hidden class="anchor" aria-hidden="true" href="#configuration-des-implementations-spécifiques-jboss-ejb3xml">#</a></h3>
-<p>Comme nous souhaitons pouvoir nous connecter à un serveur WebsphereMQ nous allons devoir configurer le MDB afin qu&rsquo;il réceptionne les messages. On effectura aussi le mapping des ressources d&rsquo;environnement du serveur d&rsquo;application avec les resources de l&rsquo;application.</p>
-<pre tabindex="0"><code>&lt;jboss:ejb-jar xmlns:jboss=&#34;http://www.jboss.com/xml/ns/javaee&#34;
-  xmlns=&#34;http://java.sun.com/xml/ns/javaee&#34; xmlns:jee=&#34;http://java.sun.com/xml/ns/javaee&#34;
-  xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:mdb=&#34;urn:resource-adapter-binding&#34;
-  xsi:schemaLocation=&#34;http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd&#34;
-  version=&#34;3.1&#34; impl-version=&#34;2.0&#34;&gt;
-  &lt;jee:enterprise-beans&gt;
-    &lt;jee:message-driven&gt;
-      &lt;jee:ejb-name&gt;MessageDrivenBean&lt;/jee:ejb-name&gt;
-      &lt;jee:ejb-class&gt;net.a.g.jee.mom.mdb.MoMMDB&lt;/jee:ejb-class&gt;
-      &lt;jee:transaction-type&gt;Container&lt;/jee:transaction-type&gt;
-      &lt;jee:message-destination-type&gt;javax.jms.Queue&lt;/jee:message-destination-type&gt;
-      &lt;jee:activation-config&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;channel&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;${websphere.channel}&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;queueManager&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;${websphere.queueManager}&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;transportType&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;${websphere.transportType}&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;hostName&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;${websphere.hostName}&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;port&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;${websphere.port}&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;username&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;${websphere.username}&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;password&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;${websphere.password}&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;destination&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;java:/jboss/jms/wmq/queue/Queue&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;useJNDI&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;true&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-        &lt;jee:activation-config-property&gt;
-          &lt;jee:activation-config-property-name&gt;destinationType&lt;/jee:activation-config-property-name&gt;
-          &lt;jee:activation-config-property-value&gt;javax.jms.Queue&lt;/jee:activation-config-property-value&gt;
-        &lt;/jee:activation-config-property&gt;
-      &lt;/jee:activation-config&gt;
-    &lt;/jee:message-driven&gt;
-    &lt;jee:session&gt;
-      &lt;jee:ejb-name&gt;MoMSenderBean&lt;/jee:ejb-name&gt;
-      &lt;jee:ejb-class&gt;net.a.g.jee.mom.ejb.MoMSenderBean&lt;/jee:ejb-class&gt;
-      &lt;jee:resource-ref&gt;
-        &lt;jee:res-ref-name&gt;jms/connectionFactory&lt;/jee:res-ref-name&gt;
-        &lt;jee:res-type&gt;javax.jms.ConnectionFactory&lt;/jee:res-type&gt;
-        &lt;jee:lookup-name&gt;java:/jboss/jms/wmq/connectionFactory&lt;/jee:lookup-name&gt;
-      &lt;/jee:resource-ref&gt;
-      &lt;jee:resource-env-ref&gt;
-        &lt;jee:resource-env-ref-name&gt;jms/queue/Queue&lt;/jee:resource-env-ref-name&gt;
-        &lt;jee:lookup-name&gt;java:/jboss/jms/wmq/queue/Queue&lt;/jee:lookup-name&gt;
-      &lt;/jee:resource-env-ref&gt;
-    &lt;/jee:session&gt;
-  &lt;/jee:enterprise-beans&gt;
-  &lt;jee:assembly-descriptor&gt;
-    &lt;mdb:resource-adapter-binding&gt;
-      &lt;jee:ejb-name&gt;MessageDrivenBean&lt;/jee:ejb-name&gt;
-      &lt;mdb:resource-adapter-name&gt;${websphere.resource.adapter}&lt;/mdb:resource-adapter-name&gt;
-    &lt;/mdb:resource-adapter-binding&gt;
-  &lt;/jee:assembly-descriptor&gt;
-&lt;/jboss:ejb-jar&gt;
-</code></pre><p>Plusieurs points importants dans cette configuration sont à noter :</p>
+<p>Le fichier <strong>ejb-jar.xml</strong> définit les composants EJB de notre application selon le standard Java EE :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;ejb-jar</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span class="na">xmlns=</span><span class="s">&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd&#34;</span> <span class="na">version=</span><span class="s">&#34;3.0&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;description&gt;</span>MoM Application EJB / MDB <span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;display-name&gt;</span>MoM Application EJB / MDB<span class="nt">&lt;/display-name&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;enterprise-beans&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;message-driven&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;description&gt;</span>MoM MDB<span class="nt">&lt;/description&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;ejb-name&gt;</span>MessageDrivenBean<span class="nt">&lt;/ejb-name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;ejb-class&gt;</span>net.a.g.jee.mom.mdb.MoMMDB<span class="nt">&lt;/ejb-class&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;transaction-type&gt;</span>Container<span class="nt">&lt;/transaction-type&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;message-destination-type&gt;</span>javax.jms.Queue<span class="nt">&lt;/message-destination-type&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/message-driven&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;session&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;ejb-name&gt;</span>MoMSenderBean<span class="nt">&lt;/ejb-name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;ejb-class&gt;</span>net.a.g.jee.mom.ejb.MoMSenderBean<span class="nt">&lt;/ejb-class&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/session&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/enterprise-beans&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/ejb-jar&gt;</span>
+</span></span></code></pre></div><p>Ce fichier définit :</p>
 <ul>
-<li>L&rsquo;utilisation de placeholder dans l&rsquo;ensemble des configurations techniques afin de centraliser l&rsquo;information dans le standalone.xml
+<li>Un Message-Driven Bean nommé &ldquo;MessageDrivenBean&rdquo; qui écoute une file d&rsquo;attente JMS</li>
+<li>Un EJB de session nommé &ldquo;MoMSenderBean&rdquo; qui sera utilisé pour envoyer des messages</li>
+</ul>
+<h3 id="configuration-spécifique-à-jboss-jboss-ejb3xml">Configuration spécifique à JBoss (jboss-ejb3.xml)<a hidden class="anchor" aria-hidden="true" href="#configuration-spécifique-à-jboss-jboss-ejb3xml">#</a></h3>
+<p>Le fichier <strong>jboss-ejb3.xml</strong> contient la configuration spécifique à JBoss pour l&rsquo;intégration avec WebSphere MQ :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;jboss:ejb-jar</span> <span class="na">xmlns:jboss=</span><span class="s">&#34;http://www.jboss.com/xml/ns/javaee&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">xmlns=</span><span class="s">&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span class="na">xmlns:jee=</span><span class="s">&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span class="na">xmlns:mdb=</span><span class="s">&#34;urn:resource-adapter-binding&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="na">version=</span><span class="s">&#34;3.1&#34;</span> <span class="na">impl-version=</span><span class="s">&#34;2.0&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;jee:enterprise-beans&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;jee:message-driven&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:ejb-name&gt;</span>MessageDrivenBean<span class="nt">&lt;/jee:ejb-name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:ejb-class&gt;</span>net.a.g.jee.mom.mdb.MoMMDB<span class="nt">&lt;/jee:ejb-class&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:transaction-type&gt;</span>Container<span class="nt">&lt;/jee:transaction-type&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:message-destination-type&gt;</span>javax.jms.Queue<span class="nt">&lt;/jee:message-destination-type&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:activation-config&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>channel<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>${websphere.channel}<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>queueManager<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>${websphere.queueManager}<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>transportType<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>${websphere.transportType}<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>hostName<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>${websphere.hostName}<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>port<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>${websphere.port}<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>username<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>${websphere.username}<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>password<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>${websphere.password}<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>destination<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>java:/jboss/jms/wmq/queue/Queue<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>useJNDI<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>true<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-name&gt;</span>destinationType<span class="nt">&lt;/jee:activation-config-property-name&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;jee:activation-config-property-value&gt;</span>javax.jms.Queue<span class="nt">&lt;/jee:activation-config-property-value&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/jee:activation-config-property&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/jee:activation-config&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/jee:message-driven&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;jee:session&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:ejb-name&gt;</span>MoMSenderBean<span class="nt">&lt;/jee:ejb-name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:ejb-class&gt;</span>net.a.g.jee.mom.ejb.MoMSenderBean<span class="nt">&lt;/jee:ejb-class&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:resource-ref&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:res-ref-name&gt;</span>jms/connectionFactory<span class="nt">&lt;/jee:res-ref-name&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:res-type&gt;</span>javax.jms.ConnectionFactory<span class="nt">&lt;/jee:res-type&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:lookup-name&gt;</span>java:/jboss/jms/wmq/connectionFactory<span class="nt">&lt;/jee:lookup-name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/jee:resource-ref&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:resource-env-ref&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:resource-env-ref-name&gt;</span>jms/queue/Queue<span class="nt">&lt;/jee:resource-env-ref-name&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;jee:lookup-name&gt;</span>java:/jboss/jms/wmq/queue/Queue<span class="nt">&lt;/jee:lookup-name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/jee:resource-env-ref&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/jee:session&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/jee:enterprise-beans&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;jee:assembly-descriptor&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;mdb:resource-adapter-binding&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;jee:ejb-name&gt;</span>MessageDrivenBean<span class="nt">&lt;/jee:ejb-name&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;mdb:resource-adapter-name&gt;</span>${websphere.resource.adapter}<span class="nt">&lt;/mdb:resource-adapter-name&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/mdb:resource-adapter-binding&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/jee:assembly-descriptor&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/jboss:ejb-jar&gt;</span>
+</span></span></code></pre></div><h4 id="points-clés-de-cette-configuration">Points clés de cette configuration<a hidden class="anchor" aria-hidden="true" href="#points-clés-de-cette-configuration">#</a></h4>
+<p>Cette configuration contient plusieurs éléments importants à comprendre :</p>
+<ol>
+<li>
+<p><strong>Utilisation de placeholders</strong> : Toutes les informations techniques sont externalisées via des placeholders (variables) qui seront remplacés par les valeurs définies dans le fichier standalone.xml :</p>
 <ul>
-<li><strong>hostName</strong>     -&gt; <strong>${websphere.hostName}</strong></li>
-<li><strong>port</strong>         -&gt; <strong>${websphere.port}</strong></li>
-<li><strong>queueManager</strong> -&gt; <strong>${websphere.queueManager}</strong></li>
+<li><code>${websphere.hostName}</code> : Nom d&rsquo;hôte du serveur WebSphere MQ</li>
+<li><code>${websphere.port}</code> : Port d&rsquo;écoute</li>
+<li><code>${websphere.queueManager}</code> : Nom du gestionnaire de files d&rsquo;attente</li>
+<li>etc.</li>
 </ul>
 </li>
-<li>La propriété <strong>useJNDI</strong> est activée afin de récuperer la queue par son nom JNDI</li>
-<li>Le mapping des noms JNDI du serveur JBoss avec les noms JNDI du module applicatif
+<li>
+<p><strong>Activation de l&rsquo;utilisation JNDI</strong> : La propriété <code>useJNDI</code> est définie à <code>true</code> pour permettre la récupération de la file d&rsquo;attente par son nom JNDI.</p>
+</li>
+<li>
+<p><strong>Mapping des noms JNDI</strong> : Les noms JNDI utilisés dans l&rsquo;application sont mappés aux noms JNDI configurés dans le serveur JBoss :</p>
 <ul>
-<li>Nom de la queue configurée dans le serveur : <strong>java:/jboss/jms/wmq/queue/Queue</strong></li>
-<li>Nom de la queue utilisée par le module applicatif : <strong>jms/queue/Queue</strong></li>
+<li>Nom JNDI dans le serveur : <code>java:/jboss/jms/wmq/queue/Queue</code></li>
+<li>Nom JNDI utilisé dans l&rsquo;application : <code>jms/queue/Queue</code></li>
 </ul>
 </li>
-<li>Le binding du ressource adapteur (driver JCA) de websphere MQ au bean MDB de réception.
-<ul>
-<li>Balise <strong>&lt;mdb:resource-adapter-binding&gt;</strong></li>
-</ul>
+<li>
+<p><strong>Binding du Resource Adapter</strong> : Le MDB est explicitement lié au Resource Adapter WebSphere MQ via la balise <code>&lt;mdb:resource-adapter-binding&gt;</code>.</p>
 </li>
-</ul>
+</ol>
 <div class="notice warning" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Il est preferable d&rsquo;utiliser les fichiers XML dans un contexte d&rsquo;entreprise, en effet le changement d&rsquo;environement et les fréquentes  modifications nécessite souvent des mises à jour d&rsquo;informations. Le code Java doit dépendre le moins possible de l&rsquo;environnement et de l&rsquo;implémentation des systèmes externes.</p></div>
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Dans un contexte d&rsquo;entreprise, il est fortement recommandé d&rsquo;utiliser des fichiers XML de configuration plutôt que des annotations Java. Cette approche facilite les changements d&rsquo;environnement (développement, test, production) sans nécessiter de recompilation du code. Le code Java doit rester aussi indépendant que possible de l&rsquo;environnement d&rsquo;exécution et des détails d&rsquo;implémentation des systèmes externes.</p></div>
 
 <div class="notice info" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Si l&rsquo;application doit se connecter à un autre système JMS, je preconise de recréer un autre fichier jboss-ejb3.xml, le mapping sera de nouveau à  effectuer dans ce fichier.</p></div>
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Si votre application doit se connecter à plusieurs systèmes JMS différents, il est recommandé de créer un fichier jboss-ejb3.xml distinct pour chaque système. Cela permet de maintenir une séparation claire des configurations et facilite la maintenance.</p></div>
 
-<h2 id="configuration-jboss">Configuration JBoss<a hidden class="anchor" aria-hidden="true" href="#configuration-jboss">#</a></h2>
-<p>Dans ce chapitre nous allons voir comment configurer le fichier <strong>standalone.xml</strong> de l&rsquo;instance JBoss EAP.</p>
-<h3 id="les-systèmes-properties">Les systèmes properties<a hidden class="anchor" aria-hidden="true" href="#les-systèmes-properties">#</a></h3>
-<p>Nous reprennons ici l&rsquo;ensembles des variables d&rsquo;environnement de connexion à WebsphereMQ que nous avons vu dans le fichier <strong>jboss-ejb3.xml</strong>.</p>
-<pre tabindex="0"><code>&lt;system-properties&gt;
-  &lt;property name=&#34;websphere.hostName&#34;         value=&#34;localhost&#34;/&gt;
-  &lt;property name=&#34;websphere.port&#34;             value=&#34;1414&#34;/&gt;
-  &lt;property name=&#34;websphere.username&#34;         value=&#34;mqm&#34;/&gt;
-  &lt;property name=&#34;websphere.password&#34;         value=&#34;mqm&#34;/&gt;
-  &lt;property name=&#34;websphere.channel&#34;          value=&#34;SYSTEM.AUTO.SVRCONN&#34;/&gt;
-  &lt;property name=&#34;websphere.transportType&#34;    value=&#34;CLIENT&#34;/&gt;
-  &lt;property name=&#34;websphere.queueManager&#34;     value=&#34;QUEUE.MANAGER&#34;/&gt;
-  &lt;property name=&#34;websphere.queueName&#34;        value=&#34;Q_QUEUE&#34;/&gt;
-  &lt;property name=&#34;websphere.resource.adapter&#34; value=&#34;wmq.jmsra.rar&#34;/&gt;
-&lt;/system-properties&gt;
-</code></pre><div class="notice info" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Le mode BINDING est le second type de transport possible pour la connexion à WebsphereMQ, mais il nécessite l&rsquo;installation de composant binaires spécifiques aux systèmes d&rsquo;exploitation.</p></div>
-
-<h3 id="le-mécanisme-de-remplacement">Le mécanisme de remplacement<a hidden class="anchor" aria-hidden="true" href="#le-mécanisme-de-remplacement">#</a></h3>
-<p>JBoss va utiliser les variables d&rsquo;environnement et va les remplacer dans certain type objet de l&rsquo;application.</p>
-<p>Il y a trois types de fichier dans lesquels JBoss peut remplacer les placeholder par les variables d&rsquo;environnement :</p>
+<h2 id="configuration-du-serveur-jboss-eap">Configuration du serveur JBoss EAP<a hidden class="anchor" aria-hidden="true" href="#configuration-du-serveur-jboss-eap">#</a></h2>
+<p>Après avoir configuré l&rsquo;application, nous devons maintenant configurer le serveur JBoss EAP pour qu&rsquo;il puisse communiquer avec WebSphere MQ. Cette configuration se fait dans le fichier <strong>standalone.xml</strong> de l&rsquo;instance JBoss.</p>
+<h3 id="définition-des-propriétés-système">Définition des propriétés système<a hidden class="anchor" aria-hidden="true" href="#définition-des-propriétés-système">#</a></h3>
+<p>Commençons par définir les propriétés système qui seront utilisées pour remplacer les placeholders dans notre configuration :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;system-properties&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.hostName&#34;</span>         <span class="na">value=</span><span class="s">&#34;localhost&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.port&#34;</span>             <span class="na">value=</span><span class="s">&#34;1414&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.username&#34;</span>         <span class="na">value=</span><span class="s">&#34;mqm&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.password&#34;</span>         <span class="na">value=</span><span class="s">&#34;mqm&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.channel&#34;</span>          <span class="na">value=</span><span class="s">&#34;SYSTEM.AUTO.SVRCONN&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.transportType&#34;</span>    <span class="na">value=</span><span class="s">&#34;CLIENT&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.queueManager&#34;</span>     <span class="na">value=</span><span class="s">&#34;QUEUE.MANAGER&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.queueName&#34;</span>        <span class="na">value=</span><span class="s">&#34;Q_QUEUE&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;websphere.resource.adapter&#34;</span> <span class="na">value=</span><span class="s">&#34;wmq.jmsra.rar&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/system-properties&gt;</span>
+</span></span></code></pre></div><p>Ces propriétés définissent tous les paramètres nécessaires pour se connecter au serveur WebSphere MQ :</p>
 <ul>
-<li>Les fichiers descripteurs du standard Java EE
-<ul>
-<li><strong>spec-descriptor-property-replacement</strong></li>
-<li>web.xml, ejb-jar.xml, etc&hellip;</li>
+<li>Informations de connexion (hôte, port)</li>
+<li>Identifiants d&rsquo;authentification (nom d&rsquo;utilisateur, mot de passe)</li>
+<li>Configuration du canal et du gestionnaire de files d&rsquo;attente</li>
+<li>Nom du Resource Adapter à utiliser</li>
 </ul>
+<div class="notice info" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>WebSphere MQ propose deux modes de transport principaux :</p>
+<ul>
+<li><strong>CLIENT</strong> : Mode utilisé ici, qui fonctionne via TCP/IP et ne nécessite pas d&rsquo;installation locale de WebSphere MQ</li>
+<li><strong>BINDING</strong> : Mode qui offre de meilleures performances mais nécessite l&rsquo;installation de composants binaires spécifiques au système d&rsquo;exploitation sur la même machine que JBoss</li>
+</ul></div>
+
+<h3 id="configuration-du-mécanisme-de-remplacement-des-propriétés">Configuration du mécanisme de remplacement des propriétés<a hidden class="anchor" aria-hidden="true" href="#configuration-du-mécanisme-de-remplacement-des-propriétés">#</a></h3>
+<p>JBoss EAP offre un mécanisme puissant pour remplacer les placeholders par les valeurs des propriétés système dans différents types de fichiers de configuration. Voici comment l&rsquo;activer :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">&#34;urn:jboss:domain:ee:1.2&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;spec-descriptor-property-replacement&gt;</span>false<span class="nt">&lt;/spec-descriptor-property-replacement&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;jboss-descriptor-property-replacement&gt;</span>true<span class="nt">&lt;/jboss-descriptor-property-replacement&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;annotation-property-replacement&gt;</span>false<span class="nt">&lt;/annotation-property-replacement&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/subsystem&gt;</span>
+</span></span></code></pre></div><p>Cette configuration active le remplacement des propriétés uniquement dans les descripteurs spécifiques à JBoss (comme jboss-ejb3.xml), mais pas dans les descripteurs standard Java EE ni dans les annotations.</p>
+<p>Les trois options disponibles sont :</p>
+<ul>
+<li><strong>spec-descriptor-property-replacement</strong> : Pour les fichiers descripteurs standard Java EE (web.xml, ejb-jar.xml, etc.)</li>
+<li><strong>jboss-descriptor-property-replacement</strong> : Pour les fichiers descripteurs spécifiques à JBoss (jboss-web.xml, jboss-ejb3.xml, etc.)</li>
+<li><strong>annotation-property-replacement</strong> : Pour les annotations Java</li>
+</ul>
+<div class="notice note" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#note-notice"></use></svg></span>Note</p><p>Il est recommandé d&rsquo;activer le remplacement uniquement pour les descripteurs JBoss, car cela maintient une séparation claire entre la configuration standard Java EE et la configuration spécifique à l&rsquo;environnement d&rsquo;exécution.</p></div>
+
+<h3 id="configuration-du-resource-adapter-websphere-mq">Configuration du Resource Adapter WebSphere MQ<a hidden class="anchor" aria-hidden="true" href="#configuration-du-resource-adapter-websphere-mq">#</a></h3>
+<p>Enfin, nous devons configurer le Resource Adapter WebSphere MQ dans le serveur JBoss :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;subsystem</span> <span class="na">xmlns=</span><span class="s">&#34;urn:jboss:domain:resource-adapters:1.1&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;resource-adapters&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;resource-adapter</span> <span class="na">id=</span><span class="s">&#34;wmq.jmsra.rar&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;archive&gt;</span>wmq.jmsra.rar<span class="nt">&lt;/archive&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;transaction-support&gt;</span>LocalTransaction<span class="nt">&lt;/transaction-support&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;connection-definitions&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;connection-definition</span> <span class="na">class-name=</span><span class="s">&#34;com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl&#34;</span> <span class="na">jndi-name=</span><span class="s">&#34;java:/jboss/jms/wmq/connectionFactory&#34;</span> <span class="na">use-java-context=</span><span class="s">&#34;true&#34;</span> <span class="na">pool-name=</span><span class="s">&#34;MQConnectionFactory&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;port&#34;</span><span class="nt">&gt;</span>${websphere.port:1414}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;hostName&#34;</span><span class="nt">&gt;</span>${websphere.hostName:localhost}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;username&#34;</span><span class="nt">&gt;</span>${websphere.username:mqm}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;password&#34;</span><span class="nt">&gt;</span>${websphere.password:mqm}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;channel&#34;</span><span class="nt">&gt;</span>${websphere.channel:SYSTEM.AUTO.SVRCONN}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;transportType&#34;</span><span class="nt">&gt;</span>${websphere.transportType:CLIENT}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;queueManager&#34;</span><span class="nt">&gt;</span>${websphere.queueManager:QUEUE.MANAGER}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;security&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;application/&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;/security&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/connection-definition&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/connection-definitions&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;admin-objects&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;admin-object</span> <span class="na">class-name=</span><span class="s">&#34;com.ibm.mq.connector.outbound.MQQueueProxy&#34;</span> <span class="na">jndi-name=</span><span class="s">&#34;java:/jboss/jms/wmq/queue/Queue&#34;</span> <span class="na">use-java-context=</span><span class="s">&#34;true&#34;</span> <span class="na">pool-name=</span><span class="s">&#34;QueuePool&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;baseQueueManagerName&#34;</span><span class="nt">&gt;</span>${websphere.queueManager:QUEUE.MANAGER}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&lt;config-property</span> <span class="na">name=</span><span class="s">&#34;baseQueueName&#34;</span><span class="nt">&gt;</span>${websphere.queueName:Q_QUEUE}<span class="nt">&lt;/config-property&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/admin-object&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/admin-objects&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/resource-adapter&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/resource-adapters&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/subsystem&gt;</span>
+</span></span></code></pre></div><p>Cette configuration définit :</p>
+<ol>
+<li><strong>Le Resource Adapter</strong> : Identifié par &ldquo;wmq.jmsra.rar&rdquo;, qui est le fichier RAR fourni par IBM</li>
+<li><strong>Le support transactionnel</strong> : Ici configuré pour les transactions locales</li>
+<li><strong>La ConnectionFactory</strong> : Exposée via JNDI sous le nom &ldquo;java:/jboss/jms/wmq/connectionFactory&rdquo;</li>
+<li><strong>La file d&rsquo;attente</strong> : Exposée via JNDI sous le nom &ldquo;java:/jboss/jms/wmq/queue/Queue&rdquo;</li>
+</ol>
+<div class="notice info" >
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Notez l&rsquo;utilisation des placeholders avec des valeurs par défaut (par exemple <code>${websphere.port:1414}</code>). Cette syntaxe permet de spécifier une valeur par défaut qui sera utilisée si la propriété système n&rsquo;est pas définie.</p></div>
+
+<h2 id="déploiement-et-mise-en-œuvre">Déploiement et mise en œuvre<a hidden class="anchor" aria-hidden="true" href="#déploiement-et-mise-en-œuvre">#</a></h2>
+<p>Une fois toutes les configurations effectuées, il ne reste plus qu&rsquo;à déployer les composants nécessaires :</p>
+<ol>
+<li>Copiez le Resource Adapter WebSphere MQ (<strong>wmq.jmsra.rar</strong>) dans le répertoire de déploiement de JBoss : <code>${JBOSS_HOME}/standalone/deployments</code></li>
+<li>Déployez votre application (WAR ou EAR) dans le même répertoire</li>
+</ol>
+<p>JBoss détectera automatiquement ces nouveaux déploiements et les activera. Votre application sera alors capable de communiquer avec WebSphere MQ.</p>
+<h2 id="conclusion--avantages-de-cette-approche-dintégration">Conclusion : Avantages de cette approche d&rsquo;intégration<a hidden class="anchor" aria-hidden="true" href="#conclusion--avantages-de-cette-approche-dintégration">#</a></h2>
+<p>L&rsquo;intégration entre JBoss EAP et WebSphere MQ via le standard JCA présente de nombreux avantages :</p>
+<ol>
+<li>
+<p><strong>Modularité et maintenabilité</strong> : La séparation claire entre le code applicatif et la configuration d&rsquo;intégration facilite la maintenance et l&rsquo;évolution du système.</p>
 </li>
-<li>Les fichiers descripteurs spécifiques à JBoss
-<ul>
-<li><strong>jboss-descriptor-property-replacement</strong></li>
-<li>jboss-web.xml, jboss-ejb3.xml, etc&hellip;</li>
-</ul>
+<li>
+<p><strong>Portabilité entre environnements</strong> : Le déploiement sur différents environnements (développement, test, production) est simplifié, car seules les variables d&rsquo;environnement dans le fichier standalone.xml doivent être modifiées.</p>
 </li>
-<li>Les annotations
-<ul>
-<li><strong>annotation-property-replacement</strong></li>
-</ul>
+<li>
+<p><strong>Utilisation des standards</strong> : L&rsquo;approche basée sur JCA et les standards Java EE garantit une meilleure interopérabilité et pérennité de la solution.</p>
 </li>
-</ul>
-<pre tabindex="0"><code>&lt;subsystem xmlns=&#34;urn:jboss:domain:ee:1.2&#34;&gt;
-  &lt;spec-descriptor-property-replacement&gt;false&lt;/spec-descriptor-property-replacement&gt;
-  &lt;jboss-descriptor-property-replacement&gt;true&lt;/jboss-descriptor-property-replacement&gt;
-  &lt;annotation-property-replacement&gt;false&lt;/annotation-property-replacement&gt;
-&lt;/subsystem&gt;
-</code></pre><div class="notice note" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#note-notice"></use></svg></span>Note</p><p>Je préconise d&rsquo;effectuer le remplacement uniquement pour les fichiers descripteurs JBoss, car cela est spécifique à JBoss.</p></div>
-
-<h3 id="le-ressource-adapteur-pour-la-connexion-à-wmq">Le ressource adapteur pour la connexion à WMQ<a hidden class="anchor" aria-hidden="true" href="#le-ressource-adapteur-pour-la-connexion-à-wmq">#</a></h3>
-<p>Enfin pour terminer, nous allons configurer le ressource adapteur dans l&rsquo;instance JBoss.</p>
-<pre tabindex="0"><code>&lt;subsystem xmlns=&#34;urn:jboss:domain:resource-adapters:1.1&#34;&gt;
-  &lt;resource-adapters&gt;
-    &lt;resource-adapter id=&#34;wmq.jmsra.rar&#34;&gt;
-      &lt;archive&gt;wmq.jmsra.rar&lt;/archive&gt;
-      &lt;transaction-support&gt;LocalTransaction&lt;/transaction-support&gt;
-      &lt;connection-definitions&gt;
-        &lt;connection-definition class-name=&#34;com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl&#34; jndi-name=&#34;java:/jboss/jms/wmq/connectionFactory&#34; use-java-context=&#34;true&#34; pool-name=&#34;MQConnectionFactory&#34;&gt;
-          &lt;config-property name=&#34;port&#34;&gt;${websphere.port:1414}&lt;/config-property&gt;
-          &lt;config-property name=&#34;hostName&#34;&gt;${websphere.hostName:localhost}&lt;/config-property&gt;
-          &lt;config-property name=&#34;username&#34;&gt;${websphere.username:mqm}&lt;/config-property&gt;
-          &lt;config-property name=&#34;password&#34;&gt;${websphere.password:mqm}&lt;/config-property&gt;
-          &lt;config-property name=&#34;channel&#34;&gt;${websphere.channel:SYSTEM.AUTO.SVRCONN}&lt;/config-property&gt;
-          &lt;config-property name=&#34;transportType&#34;&gt;${websphere.transportType:CLIENT}&lt;/config-property&gt;
-          &lt;config-property name=&#34;queueManager&#34;&gt;${websphere.queueManager:QUEUE.MANAGER}&lt;/config-property&gt;
-          &lt;security&gt;
-            &lt;application/&gt;
-          &lt;/security&gt;
-        &lt;/connection-definition&gt;
-      &lt;/connection-definitions&gt;
-      &lt;admin-objects&gt;
-        &lt;admin-object class-name=&#34;com.ibm.mq.connector.outbound.MQQueueProxy&#34; jndi-name=&#34;java:/jboss/jms/wmq/queue/Queue&#34; use-java-context=&#34;true&#34; pool-name=&#34;QueuePool&#34;&gt;
-          &lt;config-property name=&#34;baseQueueManagerName&#34;&gt;${websphere.queueManager:QUEUE.MANAGER}&lt;/config-property&gt;
-          &lt;config-property name=&#34;baseQueueName&#34;&gt;${websphere.queueName:Q_QUEUE}&lt;/config-property&gt;
-        &lt;/admin-object&gt;
-      &lt;/admin-objects&gt;
-    &lt;/resource-adapter&gt;
-  &lt;/resource-adapters&gt;
-&lt;/subsystem&gt;
-</code></pre><div class="notice info" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>On remarquera l&rsquo;utilisation des placeholders dans cette partie de configuration du fichier standalone.xml</p></div>
-
-<p>Il nous reste plus qu&rsquo;à déposer le resource adapter de Websphere MQ <strong>wmq.jmsra.rar</strong> et notre application dans le répertoire de déploiement de l&rsquo;instance de JBoss <strong>${JBOSS_HOME}/standalone/deployments</strong>, et le tour est joué.</p>
-<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>L&rsquo;intégration du connecteur WebsphereMQ est relativement aisé dans le serveur d&rsquo;application JBoss. En respectant les principes de ce post, il est possible d&rsquo;obtenir une application modulaire et facile à maintenir. Le déploiement sur différents environnements (DEV, INT, PROD) en est simplifié, seules les variables d&rsquo;environnements dans le fichier <strong>standalone.xml</strong> sont à modifier.</p>
-<br/>
-<h3 id="url">URL<a hidden class="anchor" aria-hidden="true" href="#url">#</a></h3>
+<li>
+<p><strong>Gestion des ressources optimisée</strong> : JCA fournit des mécanismes avancés pour la gestion des connexions, des transactions et de la sécurité, ce qui améliore les performances et la fiabilité du système.</p>
+</li>
+<li>
+<p><strong>Flexibilité</strong> : Cette architecture permet de changer facilement de fournisseur JMS si nécessaire, en modifiant uniquement la configuration et non le code applicatif.</p>
+</li>
+</ol>
+<p>En suivant les bonnes pratiques présentées dans cet article, vous pouvez mettre en place une intégration robuste et évolutive entre JBoss EAP et WebSphere MQ, qui répondra aux exigences des applications d&rsquo;entreprise modernes.</p>
+<h3 id="ressources-utiles-pour-approfondir">Ressources utiles pour approfondir<a hidden class="anchor" aria-hidden="true" href="#ressources-utiles-pour-approfondir">#</a></h3>
 <ul>
-<li><a href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html/Administration_and_Configuration_Guide/Deploy_the_WebSphere_MQ_Resource_Adapter.html">https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html/Administration_and_Configuration_Guide/Deploy_the_WebSphere_MQ_Resource_Adapter.html</a></li>
-<li><a href="https://developer.jboss.org/message/738670">https://developer.jboss.org/message/738670</a></li>
-<li><a href="https://developer.jboss.org/wiki/WebsphereMQIntegration">https://developer.jboss.org/wiki/WebsphereMQIntegration</a></li>
-<li><a href="http://www-01.ibm.com/support/knowledgecenter/SSFKSJ_7.5.0/com.ibm.mq.dev.doc/q031760_.htm">The installation verification test program for the WebSphere MQ resource adapter</a></li>
-<li>{% flag uk %} <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">English version</a></li>
+<li><a href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html/Administration_and_Configuration_Guide/Deploy_the_WebSphere_MQ_Resource_Adapter.html">Documentation Red Hat sur le déploiement du WebSphere MQ Resource Adapter</a></li>
+<li><a href="https://developer.jboss.org/message/738670">Discussion sur le forum JBoss Developer</a></li>
+<li><a href="https://developer.jboss.org/wiki/WebsphereMQIntegration">Wiki sur l&rsquo;intégration WebSphere MQ</a></li>
+<li><a href="http://www-01.ibm.com/support/knowledgecenter/SSFKSJ_7.5.0/com.ibm.mq.dev.doc/q031760_.htm">Programme de test de vérification d&rsquo;installation pour le WebSphere MQ resource adapter</a></li>
+<li><img id="en" src="/img/flag-uk.png" width="23" height="23" alt="English version"/> <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">Version anglaise</a></li>
 </ul>
 <h3 id="remerciements">Remerciements<a hidden class="anchor" aria-hidden="true" href="#remerciements">#</a></h3>
 <ul>
 <li>Akram B. A. @RedHat pour certaines ressources de ce post</li>
-<li>Guillaume C. @RedHat pour ces conseils</li>
+<li>Guillaume C. @RedHat pour ses conseils</li>
 </ul>
 
 

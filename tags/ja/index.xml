@@ -4,7 +4,7 @@
     <title>Ja on Greg. I/O</title>
     <link>https://gautric.github.io/tags/ja/</link>
     <description>Recent content in Ja on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Aug 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/ja/index.xml" rel="self" type="application/rss+xml" />
@@ -16,10 +16,10 @@
       <description>&lt;p&gt;数年前、私は友人と あるゲームを 始めました。それは、ユネスコチャレンジというゲームです。このゲームは、各々の人生において、いくつの世界遺産を回れるかというものです。
 ゲームのルールは、建物、島、町、山、文化において、ユネスコが認定しているということです。そして訪問の証拠として、その地のユネスコ認定の看板を写真に撮ることです。
 最後に、一度訪れた場所は、再度訪れても、カウントされないことです。　　　&lt;/p&gt;
-&lt;p&gt;私は8月の半ばから日本に来ています。そして、先日、新たに世界遺産を訪れました。それは石見銀山です。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;石見銀山&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;私は8月の半ばから日本に来ています。そして、先日、新たに世界遺産を訪れました。それは石見銀山です。石見銀山は、日本の島根県大田市にある歴史的な銀鉱山で、2007年にユネスコ世界遺産に登録されました。16世紀から20世紀にかけて採掘された銀山とその周辺の文化的景観が評価されています。&lt;/p&gt;
+&lt;h3 id=&#34;石見銀山&#34;&gt;石見銀山&lt;/h3&gt;
 &lt;h2 id=&#34;石見銀山-ユネスコによる要約&#34;&gt;石見銀山 ユネスコによる要約&lt;/h2&gt;
+&lt;p&gt;石見銀山は、16世紀から20世紀にかけて操業された銀鉱山で、当時の日本の銀生産量の約3分の1を占めていました。この地域には、鉱山跡だけでなく、鉱山町、街道、港など、銀の生産と輸送に関わる様々な文化的景観が残されています。&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -55,10 +55,12 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;証&#34;&gt;証&lt;/h2&gt;
+&lt;p&gt;以下は石見銀山を訪れた際に撮影した写真です。ユネスコ世界遺産の証として、公式の看板と共に撮影しました。&lt;/p&gt;
 &lt;img src=&#34;https://gautric.github.io/img/IMG_2231.JPG&#34; style=&#34;max-width:70%;&#34; /&gt;
 &lt;img src=&#34;https://gautric.github.io/img/IMG_2241.JPG&#34; style=&#34;max-width:70%;&#34; /&gt;
 &lt;img src=&#34;https://gautric.github.io/img/IMG_2181.JPG&#34; style=&#34;max-width:70%;&#34; /&gt;
 &lt;h3 id=&#34;サイト&#34;&gt;サイト&lt;/h3&gt;
+&lt;p&gt;石見銀山についてさらに詳しく知りたい方は、以下の公式ユネスコサイトをご覧ください：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://whc.unesco.org/en/list/1246&#34;&gt;石見銀山のユネスコのサイト&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
@@ -68,9 +70,12 @@
       <link>https://gautric.github.io/blog/2015/03/10/premier-post/</link>
       <pubDate>Tue, 10 Mar 2015 18:02:10 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/10/premier-post/</guid>
-      <description>&lt;p&gt;Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.&lt;/p&gt;
-&lt;p&gt;I will post here my articles. I look forward to seeing you.&lt;/p&gt;
-&lt;p&gt;私は　ここに　私のブログを　書きます。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;français&#34;&gt;Français&lt;/h2&gt;
+&lt;p&gt;Bienvenue sur mon blog ! Je posterai ici mes articles techniques et mes réflexions sur divers sujets informatiques. En espérant que vous y trouverez des informations utiles et intéressantes. Bonne lecture à tous.&lt;/p&gt;
+&lt;h2 id=&#34;english&#34;&gt;English&lt;/h2&gt;
+&lt;p&gt;Welcome to my blog! I will be posting my technical articles and thoughts on various IT topics here. I hope you&amp;rsquo;ll find useful and interesting information. Happy reading!&lt;/p&gt;
+&lt;h2 id=&#34;日本語&#34;&gt;日本語&lt;/h2&gt;
+&lt;p&gt;ようこそ、私のブログへ！ここに技術的な記事やIT関連のさまざまな考えを投稿します。役立つ情報を見つけていただければ幸いです。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

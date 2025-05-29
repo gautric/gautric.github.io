@@ -11,7 +11,7 @@
 RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -28,19 +28,26 @@ RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interfa
         }
 
     </style>
-</noscript><meta property="og:title" content="Setup a Hotspot Wifi with Ansible into a RaspberryPi 3" />
-<meta property="og:description" content="This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions (B 256Mo, B 512Mo, B&#43;, 2B, 3B) of RaspberryPi. I am a big fan of this product and you can find into this blog some projects I&rsquo;ve made on top of this little computer.
-RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2016-09-27T15:00:00+00:00" />
-<meta property="article:modified_time" content="2016-09-27T15:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Setup a Hotspot Wifi with Ansible into a RaspberryPi 3"/>
+</noscript><meta property="og:url" content="https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/">
+  <meta property="og:site_name" content="Greg. I/O">
+  <meta property="og:title" content="Setup a Hotspot Wifi with Ansible into a RaspberryPi 3">
+  <meta property="og:description" content="This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions (B 256Mo, B 512Mo, B&#43;, 2B, 3B) of RaspberryPi. I am a big fan of this product and you can find into this blog some projects I’ve made on top of this little computer. RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2016-09-27T15:00:00+00:00">
+    <meta property="article:modified_time" content="2016-09-27T15:00:00+00:00">
+    <meta property="article:tag" content="En">
+    <meta property="article:tag" content="RaspberryPi">
+    <meta property="article:tag" content="Ansible">
+    <meta property="article:tag" content="Wifi">
+    <meta property="article:tag" content="HOWTO">
+    <meta property="article:tag" content="Hotspot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Setup a Hotspot Wifi with Ansible into a RaspberryPi 3">
 <meta name="twitter:description" content="This September, RaspberryPi foundation has sold ten (10) Millions of unit. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions (B 256Mo, B 512Mo, B&#43;, 2B, 3B) of RaspberryPi. I am a big fan of this product and you can find into this blog some projects I&rsquo;ve made on top of this little computer.
-RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible."/>
-<meta name="twitter:site" content="@gautric_io"/>
+RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible.">
+      <meta name="twitter:site" content="@gautric_io">
 
 
 <script type="application/ld+json">

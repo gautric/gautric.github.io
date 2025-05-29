@@ -4,7 +4,7 @@
     <title>HTTP/2 on Greg. I/O</title>
     <link>https://gautric.github.io/tags/http/2/</link>
     <description>Recent content in HTTP/2 on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Jul 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/http/2/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</link>
       <pubDate>Thu, 09 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/</guid>
-      <description>&lt;p&gt;Last week, Wildfly community has just released &lt;a href=&#34;http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/&#34;&gt;&lt;em&gt;&lt;strong&gt;Wildfly 9.0.0.Final&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line stuff, the build process is awesome and run process is very easy ;-).&lt;/p&gt;</description>
+      <description>&lt;p&gt;Last week, Wildfly community has just released &lt;a href=&#34;http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/&#34;&gt;&lt;em&gt;&lt;strong&gt;Wildfly 9.0.0.Final&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt; and I wrote a post about enabling HTTP2 into Wildlfy via the offline command line. Today, we will see how to do it with a Docker container. Docker container simplifies lot of thing when we need to deploy middleware infrastructure. I love this technology, because it is an Open Source project, it provides lot of command line tools, the build process is automated and streamlined, and the run process is very easy to manage.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wildfly 9.0 Offline CLI and HTTP/2</title>

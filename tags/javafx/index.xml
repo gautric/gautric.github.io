@@ -4,7 +4,7 @@
     <title>Javafx on Greg. I/O</title>
     <link>https://gautric.github.io/tags/javafx/</link>
     <description>Recent content in Javafx on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 23 Oct 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/javafx/index.xml" rel="self" type="application/rss+xml" />
@@ -14,25 +14,10 @@
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/</guid>
       <description>&lt;p&gt;Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language &amp;hellip;&lt;/p&gt;
+directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language to create a real-time webcam streaming solution.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
-&lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Have a mac&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;tested MacBook Pro Retina, 13-inch, Mid 2014&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Mac port installed&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna re-use our previous Groovy language program an we will change some stuff&lt;/p&gt;</description>
+&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

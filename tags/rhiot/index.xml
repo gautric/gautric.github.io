@@ -4,7 +4,7 @@
     <title>Rhiot on Greg. I/O</title>
     <link>https://gautric.github.io/tags/rhiot/</link>
     <description>Recent content in Rhiot on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Feb 2016 14:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/rhiot/index.xml" rel="self" type="application/rss+xml" />
@@ -22,24 +22,23 @@
       <link>https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/</link>
       <pubDate>Mon, 28 Dec 2015 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/12/28/rhiot-over-kura-over-docker-over-raspberrypi-/</guid>
-      <description>&lt;p&gt;During this cool Christmas day, Santa Claus brings us lot of presents (I hope for you), I received 2 &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt;, Thx you brother ;-). I will show you a cool stuff after this special day. We gonna test how to use &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; into &lt;a href=&#34;https://eclipse.org/kura/&#34;&gt;Kura Eclipse Platform&lt;/a&gt; running inside &lt;a href=&#34;https://docker.com&#34;&gt;Docker&lt;/a&gt; container deployed into a real &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt; device (in this order). If you don&amp;rsquo;t have yet a RaspberryPi (B+, 2 or zero) device you can use &lt;a href=&#34;https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;During this cool Christmas day, Santa Claus brings us lot of presents (I hope for you too), I received 2 &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt;, Thx you brother ;-). I will show you a cool stuff after this special day. We gonna test how to use &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; into &lt;a href=&#34;https://eclipse.org/kura/&#34;&gt;Kura Eclipse Platform&lt;/a&gt; running inside &lt;a href=&#34;https://docker.com&#34;&gt;Docker&lt;/a&gt; container deployed into a real &lt;a href=&#34;https://www.raspberrypi.org/blog/raspberry-pi-zero/&#34;&gt;RaspberryPi Zero&lt;/a&gt; device (in this order). If you don&amp;rsquo;t have yet a RaspberryPi (B+, 2 or zero) device you can use &lt;a href=&#34;https://gautric.github.io/blog/2015/12/23/kura-OSGi-docker-debian.html&#34;&gt;my previous post&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rhiot Kura Gateway Sample (Emulator &amp; RaspberryPi) </title>
       <link>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</link>
       <pubDate>Thu, 03 Dec 2015 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</guid>
-      <description>&lt;p&gt;For a while, I develop during my free time for &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; with my Red Hat colleague &lt;a href=&#34;http://henryk-konsek.blogspot.fr/&#34;&gt;Henryk&lt;/a&gt;. We started to develop several &lt;a href=&#34;http://camel.apache.org/components.html#Components-ExternalComponents&#34;&gt;Camel components&lt;/a&gt; like (kura, pi4j, bluetooth) with others volunteers.
-Now we focus to develop and integrate those components for &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Kura Platform&lt;/a&gt;. Kura is an &lt;a href=&#34;http://www.osgi.org&#34;&gt;OSGi Platform&lt;/a&gt; designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device.
-Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc&amp;hellip;)
-In this post we will see :&lt;/p&gt;</description>
+      <description>&lt;p&gt;For a while, I have been developing during my free time for the &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; with my Red Hat colleague &lt;a href=&#34;http://henryk-konsek.blogspot.fr/&#34;&gt;Henryk&lt;/a&gt;. We started by developing several &lt;a href=&#34;http://camel.apache.org/components.html#Components-ExternalComponents&#34;&gt;Camel components&lt;/a&gt; such as kura, pi4j, and bluetooth with other volunteers. Now we are focusing on developing and integrating these components for the &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Kura Platform&lt;/a&gt;. Kura is an &lt;a href=&#34;http://www.osgi.org&#34;&gt;OSGi Platform&lt;/a&gt; designed specifically for IoT, capable of running on RaspberryPi, BeagleBone, or Intel Edison devices.&lt;/p&gt;
+&lt;p&gt;The Kura Platform comes with many embedded services tailored for IoT contexts, including GPIO, USB, I2C, Cloud Service, and more. In this post, we will explore:&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT RaspberryPi Sense-Hat display</title>
       <link>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</link>
       <pubDate>Tue, 24 Nov 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</guid>
-      <description>&lt;p&gt;Recently, I bought the new an official &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;Sense-HAT&lt;/a&gt; from &lt;a href=&#34;ttps://www.raspberrypi.org&#34;&gt;RaspberryPi foundation&lt;/a&gt;. This &lt;a href=&#34;https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/&#34;&gt;HAT&lt;/a&gt; add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver&#34;&gt;rhiot camel-pi4j&lt;/a&gt; component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer&#34;&gt;rhiot camel-framebuffer component&lt;/a&gt;, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I bought the new official &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;Sense-HAT&lt;/a&gt; from &lt;a href=&#34;https://www.raspberrypi.org&#34;&gt;RaspberryPi foundation&lt;/a&gt;. This &lt;a href=&#34;https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/&#34;&gt;HAT&lt;/a&gt; (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.&lt;/p&gt;
+&lt;p&gt;All sensors are i2c compliant, making them easily accessible with the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver&#34;&gt;rhiot camel-pi4j&lt;/a&gt; component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer&#34;&gt;rhiot camel-framebuffer component&lt;/a&gt;, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT Webcam and websocket components on MacbookPro in Groovy</title>
@@ -47,25 +46,10 @@ In this post we will see :&lt;/p&gt;</description>
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/</guid>
       <description>&lt;p&gt;Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language &amp;hellip;&lt;/p&gt;
+directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language to create a real-time webcam streaming solution.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
-&lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Have a mac&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;tested MacBook Pro Retina, 13-inch, Mid 2014&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Mac port installed&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna re-use our previous Groovy language program an we will change some stuff&lt;/p&gt;</description>
+&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT 0.1.2 Webcam component on MacOS X in Groovy</title>
@@ -92,7 +76,7 @@ I found in list a cool stuff to test. We gonna check if our new commiter &lt;a h
 &lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna use Groovy language for this simple example&lt;/p&gt;</description>
+&lt;p&gt;We gonna use Groovy language for this simple example. Groovy provides a concise and expressive syntax that makes it perfect for quickly testing new components like this webcam integration.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

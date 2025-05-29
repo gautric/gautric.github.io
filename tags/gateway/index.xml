@@ -4,7 +4,7 @@
     <title>Gateway on Greg. I/O</title>
     <link>https://gautric.github.io/tags/gateway/</link>
     <description>Recent content in Gateway on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 29 Feb 2016 14:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/gateway/index.xml" rel="self" type="application/rss+xml" />
@@ -22,10 +22,8 @@
       <link>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</link>
       <pubDate>Thu, 03 Dec 2015 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/</guid>
-      <description>&lt;p&gt;For a while, I develop during my free time for &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; with my Red Hat colleague &lt;a href=&#34;http://henryk-konsek.blogspot.fr/&#34;&gt;Henryk&lt;/a&gt;. We started to develop several &lt;a href=&#34;http://camel.apache.org/components.html#Components-ExternalComponents&#34;&gt;Camel components&lt;/a&gt; like (kura, pi4j, bluetooth) with others volunteers.
-Now we focus to develop and integrate those components for &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Kura Platform&lt;/a&gt;. Kura is an &lt;a href=&#34;http://www.osgi.org&#34;&gt;OSGi Platform&lt;/a&gt; designed for IoT, it can run on RaspberryPi, BeagleBone or Intel Edison device.
-Kura Platform has got lot of embedded services for IoT context (GPIO, USB, I2C, Cloud Service, etc&amp;hellip;)
-In this post we will see :&lt;/p&gt;</description>
+      <description>&lt;p&gt;For a while, I have been developing during my free time for the &lt;a href=&#34;http://rhiot.io&#34;&gt;Rhiot project&lt;/a&gt; with my Red Hat colleague &lt;a href=&#34;http://henryk-konsek.blogspot.fr/&#34;&gt;Henryk&lt;/a&gt;. We started by developing several &lt;a href=&#34;http://camel.apache.org/components.html#Components-ExternalComponents&#34;&gt;Camel components&lt;/a&gt; such as kura, pi4j, and bluetooth with other volunteers. Now we are focusing on developing and integrating these components for the &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Kura Platform&lt;/a&gt;. Kura is an &lt;a href=&#34;http://www.osgi.org&#34;&gt;OSGi Platform&lt;/a&gt; designed specifically for IoT, capable of running on RaspberryPi, BeagleBone, or Intel Edison devices.&lt;/p&gt;
+&lt;p&gt;The Kura Platform comes with many embedded services tailored for IoT contexts, including GPIO, USB, I2C, Cloud Service, and more. In this post, we will explore:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

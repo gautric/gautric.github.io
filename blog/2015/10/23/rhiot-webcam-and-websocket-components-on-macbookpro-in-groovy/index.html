@@ -8,28 +8,13 @@
 <title>RHIoT Webcam and websocket components on MacbookPro in Groovy | Greg. I/O</title>
 <meta name="keywords" content="en, rhiot, MacbookPro, camel, webcam, websocket, groovy, javafx">
 <meta name="description" content="Yesterday, we&rsquo;ve played with our MacBook Pro&rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&rsquo;s play with Groovy language &hellip;
+directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&rsquo;s play with Groovy language to create a real-time webcam streaming solution.
 
 Webcam image to Websocket w/ Rhiot &amp; Camel projects on MacbookPro
-Let&rsquo;s start to broadcast yourself.
-Requisites
-
-Have a mac
-
-
-tested MacBook Pro Retina, 13-inch, Mid 2014
-
-
-Groovy Mac port installed
-
-
-Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X
-
-Program
-We gonna re-use our previous Groovy language program an we will change some stuff">
+Let&rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -46,55 +31,31 @@ We gonna re-use our previous Groovy language program an we will change some stuf
         }
 
     </style>
-</noscript><meta property="og:title" content="RHIoT Webcam and websocket components on MacbookPro in Groovy" />
-<meta property="og:description" content="Yesterday, we&rsquo;ve played with our MacBook Pro&rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&rsquo;s play with Groovy language &hellip;
-
+</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/">
+  <meta property="og:site_name" content="Greg. I/O">
+  <meta property="og:title" content="RHIoT Webcam and websocket components on MacbookPro in Groovy">
+  <meta property="og:description" content="Yesterday, we’ve played with our MacBook Pro’s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let’s play with Groovy language to create a real-time webcam streaming solution.
 Webcam image to Websocket w/ Rhiot &amp; Camel projects on MacbookPro
-Let&rsquo;s start to broadcast yourself.
-Requisites
-
-Have a mac
-
-
-tested MacBook Pro Retina, 13-inch, Mid 2014
-
-
-Groovy Mac port installed
-
-
-Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X
-
-Program
-We gonna re-use our previous Groovy language program an we will change some stuff" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2015-10-23T13:58:00+00:00" />
-<meta property="article:modified_time" content="2015-10-23T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RHIoT Webcam and websocket components on MacbookPro in Groovy"/>
+Let’s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-10-23T13:58:00+00:00">
+    <meta property="article:modified_time" content="2015-10-23T13:58:00+00:00">
+    <meta property="article:tag" content="En">
+    <meta property="article:tag" content="Rhiot">
+    <meta property="article:tag" content="MacbookPro">
+    <meta property="article:tag" content="Camel">
+    <meta property="article:tag" content="WebCam">
+    <meta property="article:tag" content="Websocket">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RHIoT Webcam and websocket components on MacbookPro in Groovy">
 <meta name="twitter:description" content="Yesterday, we&rsquo;ve played with our MacBook Pro&rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&rsquo;s play with Groovy language &hellip;
+directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&rsquo;s play with Groovy language to create a real-time webcam streaming solution.
 
 Webcam image to Websocket w/ Rhiot &amp; Camel projects on MacbookPro
-Let&rsquo;s start to broadcast yourself.
-Requisites
-
-Have a mac
-
-
-tested MacBook Pro Retina, 13-inch, Mid 2014
-
-
-Groovy Mac port installed
-
-
-Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X
-
-Program
-We gonna re-use our previous Groovy language program an we will change some stuff"/>
-<meta name="twitter:site" content="@gautric_io"/>
+Let&rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.">
+      <meta name="twitter:site" content="@gautric_io">
 
 
 <script type="application/ld+json">
@@ -123,12 +84,12 @@ We gonna re-use our previous Groovy language program an we will change some stuf
   "@type": "BlogPosting",
   "headline": "RHIoT Webcam and websocket components on MacbookPro in Groovy",
   "name": "RHIoT Webcam and websocket components on MacbookPro in Groovy",
-  "description": "Yesterday, we\u0026rsquo;ve played with our MacBook Pro\u0026rsquo;s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let\u0026rsquo;s play with Groovy language \u0026hellip;\nWebcam image to Websocket w/ Rhiot \u0026amp; Camel projects on MacbookPro\nLet\u0026rsquo;s start to broadcast yourself.\nRequisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X Program We gonna re-use our previous Groovy language program an we will change some stuff\n",
+  "description": "Yesterday, we\u0026rsquo;ve played with our MacBook Pro\u0026rsquo;s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let\u0026rsquo;s play with Groovy language to create a real-time webcam streaming solution.\nWebcam image to Websocket w/ Rhiot \u0026amp; Camel projects on MacbookPro\nLet\u0026rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.\n",
   "keywords": [
     "en", "rhiot", "MacbookPro", "camel", "webcam", "websocket", "groovy", "javafx"
   ],
-  "articleBody": "Yesterday, we’ve played with our MacBook Pro’s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let’s play with Groovy language …\nWebcam image to Websocket w/ Rhiot \u0026 Camel projects on MacbookPro\nLet’s start to broadcast yourself.\nRequisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X Program We gonna re-use our previous Groovy language program an we will change some stuff\nThe key point of this program are :\nthe @Grab annotation to download camel-websocket component : @Grab(group=“org.apache.camel”,module=“camel-websocket”,version=“2.16.0”) the to command to capture image every second : “websocket://localhost:8080/camel-webcam?sendToAll=true” Copy log4j.properties into the same directory\nIn our case we need to develop a HTML page to receive broadcasted img.\nyou can also use the next Javafx program to broadcast yourself.\nExecution Let’s run it now\n[mbp:~/Source/tmp/io/rhiot/test]$\u003e groovy WebcamToWebSocket.groovy [ main] MainSupport INFO Apache Camel 2.16.0 starting [ main] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) is starting [ main] ManagedManagementStrategy INFO JMX is enabled [ main] DefaultTypeConverter INFO Loaded 182 type converters [ main] DefaultRuntimeEndpointRegistry INFO Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000) [ main] WebcamEndpoint WARN Driver not supported [ main] Webcam INFO WebcamDefaultDriver capture driver will be used [ atomic-processor-1] WebcamOpenTask INFO Opening webcam FaceTime HD Camera CC242951XGLF6VVD4 [ main] DefaultCamelContext INFO AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance. [ main] DefaultCamelContext INFO StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html [ main] WebsocketComponent INFO Jetty Server starting on host: localhost:8080 [ main] Server INFO jetty-8.1.17.v20150415 [ main] AbstractConnector INFO Started SelectChannelConnector@localhost:8080 [ main] DefaultCamelContext INFO Route: route1 started and consuming from: Endpoint[webcam://cam?consumer.delay=100] [ main] DefaultCamelContext INFO Total 1 routes, of which 1 is started. [ main] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) started in 2.019 seconds [ main] MainSupport INFO Waiting for: 60 SECONDS [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-2, ExchangePattern: OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-4, ExchangePattern: OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-6, ExchangePattern: OutOnly, BodyType: byte[]] ........................... OMIT ........................... OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-44, ExchangePattern: OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-46, ExchangePattern: OutOnly, BodyType: byte[]] ^C[ Thread-1] MainSupport$HangupInterceptor INFO Received hang up - stopping the main instance. [ Thread-1] MainSupport INFO Apache Camel 2.16.0 stopping [ shutdown-hook-1] WebcamShutdownHook INFO Automatic FaceTime HD Camera CC242951XGLF6VVD4 deallocation [ Thread-1] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) is shutting down [ shutdown-hook-1] Webcam INFO Disposing webcam FaceTime HD Camera CC242951XGLF6VVD4 [ Thread-1] DefaultShutdownStrategy INFO Starting to graceful shutdown 1 routes (timeout 300 seconds) [el-1) thread #1 - ShutdownTask] ContextHandler INFO stopped o.e.j.s.ServletContextHandler{/,null} [el-1) thread #1 - ShutdownTask] DefaultShutdownStrategy INFO Route: route1 shutdown complete, was consuming from: Endpoint[webcam://cam?consumer.delay=100] [ Thread-1] DefaultShutdownStrategy INFO Graceful shutdown of 1 routes completed in 0 seconds [ Thread-1] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) uptime 48.953 seconds [ Thread-1] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) is shutdown in 0.101 seconds And the result I propose to you four possibilities for the demo :\n//* start groovy program above on your own laptop and use the live demo just below\nstart groovy program above on your own laptop and download WebcamToWebSocket.html for an offline use start groovy program above on your own laptop and run WebcamToWebSocketJavafx.java program or just play YouTube video(s) below **HTML 5 / YouTube Demo** JavaFx / YouTube Demo\nConclusion As you can see Rhiot project and contributors are awesome, the IoT movement provides lot of interesting ideas we can implement really easily almost out-of-the box. On more time, I would like thanks a lot Taariq Levack for this so cool component ;-). Next step is to implement this demo into a RaspberryPi.\nStay tuned !!!\nUseful links rhiot projet webcam component Taariq Levack’s github account Taariq Levack’s twitter account ",
-  "wordCount" : "713",
+  "articleBody": "Yesterday, we’ve played with our MacBook Pro’s webcam. Today, we gonna see how to send images through a websocket directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let’s play with Groovy language to create a real-time webcam streaming solution.\nWebcam image to Websocket w/ Rhiot \u0026 Camel projects on MacbookPro\nLet’s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.\nRequisites Have a mac tested MacBook Pro Retina, 13-inch, Mid 2014 Groovy Mac port installed Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X Program We gonna re-use our previous Groovy language program and we will change some components to enable websocket streaming. The modified program will capture images from your webcam and broadcast them through a websocket server.\nThe key point of this program are :\nthe @Grab annotation to download camel-websocket component : @Grab(group=\"org.apache.camel\",module=\"camel-websocket\",version=\"2.16.0\") the to command to capture image every second : \"websocket://localhost:8080/camel-webcam?sendToAll=true\" Copy log4j.properties into the same directory to manage logging configuration:\nIn our case we need to develop a HTML page to receive broadcasted img. This HTML page will connect to the websocket server and display the images as they arrive:\nyou can also use the next Javafx program to broadcast yourself. This provides an alternative viewer application built with JavaFX:\nExecution Let’s run it now. When you execute the Groovy script, it will start the Camel context, initialize the webcam, and begin streaming images through the websocket:\n[mbp:~/Source/tmp/io/rhiot/test]$\u003e groovy WebcamToWebSocket.groovy [ main] MainSupport INFO Apache Camel 2.16.0 starting [ main] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) is starting [ main] ManagedManagementStrategy INFO JMX is enabled [ main] DefaultTypeConverter INFO Loaded 182 type converters [ main] DefaultRuntimeEndpointRegistry INFO Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000) [ main] WebcamEndpoint WARN Driver not supported [ main] Webcam INFO WebcamDefaultDriver capture driver will be used [ atomic-processor-1] WebcamOpenTask INFO Opening webcam FaceTime HD Camera CC242951XGLF6VVD4 [ main] DefaultCamelContext INFO AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance. [ main] DefaultCamelContext INFO StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html [ main] WebsocketComponent INFO Jetty Server starting on host: localhost:8080 [ main] Server INFO jetty-8.1.17.v20150415 [ main] AbstractConnector INFO Started SelectChannelConnector@localhost:8080 [ main] DefaultCamelContext INFO Route: route1 started and consuming from: Endpoint[webcam://cam?consumer.delay=100] [ main] DefaultCamelContext INFO Total 1 routes, of which 1 is started. [ main] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) started in 2.019 seconds [ main] MainSupport INFO Waiting for: 60 SECONDS [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-2, ExchangePattern: OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-4, ExchangePattern: OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-6, ExchangePattern: OutOnly, BodyType: byte[]] ........................... OMIT ........................... OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-44, ExchangePattern: OutOnly, BodyType: byte[]] [el-1) thread #0 - webcam://cam] camel INFO Exchange[Id: ID-mbp-g-a-net-57437-1445524143378-0-46, ExchangePattern: OutOnly, BodyType: byte[]] ^C[ Thread-1] MainSupport$HangupInterceptor INFO Received hang up - stopping the main instance. [ Thread-1] MainSupport INFO Apache Camel 2.16.0 stopping [ shutdown-hook-1] WebcamShutdownHook INFO Automatic FaceTime HD Camera CC242951XGLF6VVD4 deallocation [ Thread-1] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) is shutting down [ shutdown-hook-1] Webcam INFO Disposing webcam FaceTime HD Camera CC242951XGLF6VVD4 [ Thread-1] DefaultShutdownStrategy INFO Starting to graceful shutdown 1 routes (timeout 300 seconds) [el-1) thread #1 - ShutdownTask] ContextHandler INFO stopped o.e.j.s.ServletContextHandler{/,null} [el-1) thread #1 - ShutdownTask] DefaultShutdownStrategy INFO Route: route1 shutdown complete, was consuming from: Endpoint[webcam://cam?consumer.delay=100] [ Thread-1] DefaultShutdownStrategy INFO Graceful shutdown of 1 routes completed in 0 seconds [ Thread-1] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) uptime 48.953 seconds [ Thread-1] DefaultCamelContext INFO Apache Camel 2.16.0 (CamelContext: camel-1) is shutdown in 0.101 seconds And the result I propose to you four possibilities for the demo:\nstart groovy program above on your own laptop and download WebcamToWebSocket.html for an offline use start groovy program above on your own laptop and run WebcamToWebSocketJavafx.java program or just play YouTube video(s) below to see the demonstration in action **HTML 5 / YouTube Demo** JavaFx / YouTube Demo\nConclusion As you can see Rhiot project and contributors are awesome, the IoT movement provides lot of interesting ideas we can implement really easily almost out-of-the box. On more time, I would like thanks a lot Taariq Levack for this so cool component ;-). Next step is to implement this demo into a RaspberryPi, which would allow for remote webcam monitoring and streaming from an embedded device.\nStay tuned for more IoT experiments and implementations!!!\nUseful links rhiot projet webcam component Taariq Levack’s github account Taariq Levack’s twitter account ",
+  "wordCount" : "820",
   "inLanguage": "en",
   "datePublished": "2015-10-23T13:58:00Z",
   "dateModified": "2015-10-23T13:58:00Z",
@@ -191,10 +152,10 @@ We gonna re-use our previous Groovy language program an we will change some stuf
 </div>
   </header> 
   <div class="post-content"><p>Yesterday, we&rsquo;ve played with our MacBook Pro&rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&rsquo;s play with Groovy language &hellip;</p>
+directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&rsquo;s play with Groovy language to create a real-time webcam streaming solution.</p>
 <blockquote>
 <p>Webcam image to Websocket w/ Rhiot &amp; Camel projects on MacbookPro</p></blockquote>
-<p>Let&rsquo;s start to broadcast yourself.</p>
+<p>Let&rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.</p>
 <h2 id="requisites">Requisites<a hidden class="anchor" aria-hidden="true" href="#requisites">#</a></h2>
 <ul>
 <li>Have a mac</li>
@@ -209,21 +170,21 @@ directly in this page !!! or via a JavaFx program. We gonna re-use the previous 
 <li>Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X</li>
 </ul>
 <h2 id="program">Program<a hidden class="anchor" aria-hidden="true" href="#program">#</a></h2>
-<p>We gonna re-use our previous Groovy language program an we will change some stuff</p>
+<p>We gonna re-use our previous Groovy language program and we will change some components to enable websocket streaming. The modified program will capture images from your webcam and broadcast them through a websocket server.</p>
 <script src="https://gist.github.com/gautric/98dc4e37d57c9d1f1798.js"></script>
 <p>The key point of this program are :</p>
 <ul>
-<li>the @Grab annotation to download camel-websocket component : @Grab(group=&ldquo;org.apache.camel&rdquo;,module=&ldquo;camel-websocket&rdquo;,version=&ldquo;2.16.0&rdquo;)</li>
-<li>the <em>to</em> command to capture image every second : &ldquo;websocket://localhost:8080/camel-webcam?sendToAll=true&rdquo;</li>
+<li>the @Grab annotation to download camel-websocket component : <code>@Grab(group=&quot;org.apache.camel&quot;,module=&quot;camel-websocket&quot;,version=&quot;2.16.0&quot;)</code></li>
+<li>the <em>to</em> command to capture image every second : <code>&quot;websocket://localhost:8080/camel-webcam?sendToAll=true&quot;</code></li>
 </ul>
-<p>Copy log4j.properties into the same directory</p>
+<p>Copy log4j.properties into the same directory to manage logging configuration:</p>
 <script src="https://gist.github.com/gautric/cca1a01fb55ce5846422.js"></script>
-<p>In our case we need to develop a HTML page to receive broadcasted img.</p>
+<p>In our case we need to develop a HTML page to receive broadcasted img. This HTML page will connect to the websocket server and display the images as they arrive:</p>
 <script src="https://gist.github.com/gautric/6d58693e6cf21a8f4a4e.js"></script>
-<p>you can also use the next Javafx program to broadcast yourself.</p>
+<p>you can also use the next Javafx program to broadcast yourself. This provides an alternative viewer application built with JavaFX:</p>
 <script src="https://gist.github.com/gautric/e6dd82761337136ae855.js"></script>
 <h2 id="execution">Execution<a hidden class="anchor" aria-hidden="true" href="#execution">#</a></h2>
-<p>Let&rsquo;s run it now</p>
+<p>Let&rsquo;s run it now. When you execute the Groovy script, it will start the Camel context, initialize the webcam, and begin streaming images through the websocket:</p>
 <pre tabindex="0"><code>[mbp:~/Source/tmp/io/rhiot/test]$&gt; groovy  WebcamToWebSocket.groovy
 [                          main] MainSupport                    INFO  Apache Camel 2.16.0 starting
 [                          main] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) is starting
@@ -264,12 +225,11 @@ OutOnly, BodyType: byte[]]
 [                      Thread-1] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) uptime 48.953 seconds
 [                      Thread-1] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) is shutdown in 0.101 seconds
 </code></pre><h2 id="and-the-result">And the result<a hidden class="anchor" aria-hidden="true" href="#and-the-result">#</a></h2>
-<p>I propose to you four possibilities for the demo :</p>
-<p>//* start groovy program above on your own laptop and use the live demo just below</p>
+<p>I propose to you four possibilities for the demo:</p>
 <ul>
 <li>start groovy program above on your own laptop and download <em>WebcamToWebSocket.html</em> for an offline use</li>
 <li>start groovy program above on your own laptop and run <em>WebcamToWebSocketJavafx.java</em> program</li>
-<li>or just play YouTube video(s) below</li>
+<li>or just play YouTube video(s) below to see the demonstration in action</li>
 </ul>
 <br/>
 **HTML 5 / YouTube Demo**
@@ -279,8 +239,8 @@ OutOnly, BodyType: byte[]]
 <iframe width="650" height="415" src="https://www.youtube.com/embed/x16IXEW1RAU" frameborder="0" ></iframe>
 <br/>
 <h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>As you can see Rhiot project and contributors are awesome, the IoT movement provides lot of interesting ideas we can implement really easily almost out-of-the box. On more time, I would like thanks a lot <a href="https://twitter.com/levackt">Taariq Levack</a> for this so cool component ;-). Next step is to implement this demo into a RaspberryPi.</p>
-<p>Stay tuned !!!</p>
+<p>As you can see Rhiot project and contributors are awesome, the IoT movement provides lot of interesting ideas we can implement really easily almost out-of-the box. On more time, I would like thanks a lot <a href="https://twitter.com/levackt">Taariq Levack</a> for this so cool component ;-). Next step is to implement this demo into a RaspberryPi, which would allow for remote webcam monitoring and streaming from an embedded device.</p>
+<p>Stay tuned for more IoT experiments and implementations!!!</p>
 <h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
 <ul>
 <li><a href="http://rhiot.io">rhiot projet</a></li>

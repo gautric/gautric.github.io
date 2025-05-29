@@ -4,7 +4,7 @@
     <title>Lightweight on Greg. I/O</title>
     <link>https://gautric.github.io/tags/lightweight/</link>
     <description>Recent content in Lightweight on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Jul 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/lightweight/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,8 @@
       <link>https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/</link>
       <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/</guid>
-      <description>&lt;p&gt;La semaine dernière, j&amp;rsquo;étais à l&amp;rsquo;&lt;a href=&#34;https://www.eclipsecon.org/france2015/&#34;&gt;EclipseCon&lt;/a&gt; qui se déroulait à Toulouse. Sponsor Bronze de cette édition &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; (mon entreprise) avait &lt;a href=&#34;https://www.flickr.com/groups/2812102@N25/pool/&#34;&gt;un stand&lt;/a&gt;. C&amp;rsquo;est à cette occasion que j&amp;rsquo;ai participé à un training concernant le protocole CoAP et notamment &lt;a href=&#34;https://www.eclipsecon.org/france2015/session/hands-lightweight-m2m-run-smartwatch-internet-things&#34;&gt;le standard LWM2M&lt;/a&gt; dispensé par &lt;a href=&#34;http://people.apache.org/~jvermillard/&#34;&gt;Julien Vermillard&lt;/a&gt; de chez &lt;a href=&#34;http://www.sierrawireless.com/&#34;&gt;Sierra Wireless&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;le-protocole-coap&#34;&gt;Le protocole CoAP&lt;/h2&gt;
-&lt;p&gt;Le protocole &lt;a href=&#34;http://coap.technology/&#34;&gt;&lt;strong&gt;CoAP&lt;/strong&gt;&lt;/a&gt; pour Constrained Application Protocol  a été défini afin de répondre aux exigences très contraintes de l&amp;rsquo;internet des objets &lt;em&gt;IoT&lt;/em&gt; et de la communication Machine 2 Machine &lt;em&gt;M2M&lt;/em&gt; à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.
-Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;découverte-du-protocole-lwm2m-pour-linternet-des-objets&#34;&gt;Découverte du protocole LWM2M pour l&amp;rsquo;Internet des Objets&lt;/h1&gt;
+&lt;p&gt;La semaine dernière, j&amp;rsquo;ai eu l&amp;rsquo;opportunité de participer à l&amp;rsquo;&lt;a href=&#34;https://www.eclipsecon.org/france2015/&#34;&gt;EclipseCon&lt;/a&gt; qui se déroulait à Toulouse. En tant que sponsor Bronze de cette édition, &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; (mon entreprise) était présente avec &lt;a href=&#34;https://www.flickr.com/groups/2812102@N25/pool/&#34;&gt;un stand&lt;/a&gt; pour échanger avec la communauté. C&amp;rsquo;est dans ce cadre que j&amp;rsquo;ai suivi une formation particulièrement enrichissante sur le protocole CoAP et &lt;a href=&#34;https://www.eclipsecon.org/france2015/session/hands-lightweight-m2m-run-smartwatch-internet-things&#34;&gt;le standard LWM2M&lt;/a&gt; dispensée par &lt;a href=&#34;http://people.apache.org/~jvermillard/&#34;&gt;Julien Vermillard&lt;/a&gt; de chez &lt;a href=&#34;http://www.sierrawireless.com/&#34;&gt;Sierra Wireless&lt;/a&gt;, expert reconnu dans ce domaine.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

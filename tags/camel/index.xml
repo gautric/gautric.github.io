@@ -4,7 +4,7 @@
     <title>Camel on Greg. I/O</title>
     <link>https://gautric.github.io/tags/camel/</link>
     <description>Recent content in Camel on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 Dec 2016 15:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/camel/index.xml" rel="self" type="application/rss+xml" />
@@ -32,7 +32,8 @@ Fortunately, Camel framework meets all of this requirements out of the box. We w
       <link>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</link>
       <pubDate>Tue, 24 Nov 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/</guid>
-      <description>&lt;p&gt;Recently, I bought the new an official &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;Sense-HAT&lt;/a&gt; from &lt;a href=&#34;ttps://www.raspberrypi.org&#34;&gt;RaspberryPi foundation&lt;/a&gt;. This &lt;a href=&#34;https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/&#34;&gt;HAT&lt;/a&gt; add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver&#34;&gt;rhiot camel-pi4j&lt;/a&gt; component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer&#34;&gt;rhiot camel-framebuffer component&lt;/a&gt;, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, I bought the new official &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;Sense-HAT&lt;/a&gt; from &lt;a href=&#34;https://www.raspberrypi.org&#34;&gt;RaspberryPi foundation&lt;/a&gt;. This &lt;a href=&#34;https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/&#34;&gt;HAT&lt;/a&gt; (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.&lt;/p&gt;
+&lt;p&gt;All sensors are i2c compliant, making them easily accessible with the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver&#34;&gt;rhiot camel-pi4j&lt;/a&gt; component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the &lt;a href=&#34;https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer&#34;&gt;rhiot camel-framebuffer component&lt;/a&gt;, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT Webcam and websocket components on MacbookPro in Groovy</title>
@@ -40,25 +41,10 @@ Fortunately, Camel framework meets all of this requirements out of the box. We w
       <pubDate>Fri, 23 Oct 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/</guid>
       <description>&lt;p&gt;Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket
-directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language &amp;hellip;&lt;/p&gt;
+directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language to create a real-time webcam streaming solution.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
-&lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Have a mac&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;tested MacBook Pro Retina, 13-inch, Mid 2014&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Mac port installed&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna re-use our previous Groovy language program an we will change some stuff&lt;/p&gt;</description>
+&lt;p&gt;Let&amp;rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT 0.1.2 Webcam component on MacOS X in Groovy</title>
@@ -85,31 +71,30 @@ I found in list a cool stuff to test. We gonna check if our new commiter &lt;a h
 &lt;li&gt;Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;program&#34;&gt;Program&lt;/h2&gt;
-&lt;p&gt;We gonna use Groovy language for this simple example&lt;/p&gt;</description>
+&lt;p&gt;We gonna use Groovy language for this simple example. Groovy provides a concise and expressive syntax that makes it perfect for quickly testing new components like this webcam integration.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Camel IoT Labs i2c gpio mqtt lcd</title>
       <link>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</guid>
-      <description>&lt;p&gt;One month ago, Henryk, Claus and I&amp;rsquo;ve started Camel Labs project. This project provides some cool new stuff for IoT community based on Camel technology/project. The stuff are new IoT components to connect electronics devices (i2c,SPI,gpio, tinkerforge) and cloud (pubnub, cloudlet, mqtt) together. In this lab, we will show how to build an end to end IoT integration with i2c device, mqtt broker and i2c lcd with few line of code.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One month ago, Henryk, Claus and I started the Camel Labs project. This project provides exciting new components for the IoT community based on Apache Camel technology. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. In this lab, we will demonstrate how to build an end-to-end IoT integration with I2C devices, an MQTT broker, and an I2C LCD display using just a few lines of code.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Les premiers jours du projet Camel IoT Labs</title>
       <link>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</link>
       <pubDate>Sat, 25 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</guid>
-      <description>&lt;p&gt;Aujourd&amp;rsquo;hui, l&amp;rsquo;internet des objets ou aussi appelé IoT prend de plus en plus de place dans l&amp;rsquo;industrie informatique et non informatique. Des montres &lt;a href=&#34;http://www.withings.com/fr/withings-activite.html&#34;&gt;Withings&lt;/a&gt;, aux &lt;a href=&#34;http://raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt; vendus à 5M d&amp;rsquo;unités, en passant par les plaques &lt;a href=&#34;http://www.arduino.cc/&#34;&gt;Arduino&lt;/a&gt; low cost et autres modules &lt;a href=&#34;https://tessel.io/&#34;&gt;Tessel&lt;/a&gt;, le cout de production des objets électroniques baissant, a permis une large diffusion de ces nouveaux objets.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gautric.github.io/img/camel-labs.png&#34; style=&#34;max-width:120%;&#34; align=&#34;left&#34; height=&#34;110&#34; hspace=&#34;30&#34;/&gt; En 2012, les premiers RaspberryPi sont lancés sur le marché, j&amp;rsquo;en ai acheté un. Depuis j&amp;rsquo;ai presque tout les modèles Brev1, Brev2, B+ et B2 ;-). J&amp;rsquo;ai aussi repris mon fer à souder, comme dans mes années lycée. Mais, à l&amp;rsquo;époque pas beaucoup d&amp;rsquo;internet, pas beaucoup de standard, pas beaucoup de matériel. Aujourd&amp;rsquo;hui il y a presque tout. Il ne reste plus qu&amp;rsquo;a assembler dans des briques physiques des briques logicielles plus ou moins évoluées.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Aujourd&amp;rsquo;hui, l&amp;rsquo;Internet des Objets (IoT) prend une place de plus en plus importante dans l&amp;rsquo;industrie informatique et au-delà. Des montres connectées &lt;a href=&#34;http://www.withings.com/fr/withings-activite.html&#34;&gt;Withings&lt;/a&gt;, aux &lt;a href=&#34;http://raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt; vendus à plus de 5 millions d&amp;rsquo;unités, en passant par les cartes &lt;a href=&#34;http://www.arduino.cc/&#34;&gt;Arduino&lt;/a&gt; à bas coût et autres modules &lt;a href=&#34;https://tessel.io/&#34;&gt;Tessel&lt;/a&gt;, la baisse du coût de production des objets électroniques a permis une large diffusion de ces nouvelles technologies.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gautric.github.io/img/camel-labs.png&#34; style=&#34;max-width:120%;&#34; align=&#34;left&#34; height=&#34;110&#34; hspace=&#34;30&#34;/&gt; En 2012, les premiers Raspberry Pi sont lancés sur le marché, et j&amp;rsquo;en ai immédiatement acquis un. Depuis, j&amp;rsquo;ai collectionné presque tous les modèles : B rev1, B rev2, B+ et B2 ;-). J&amp;rsquo;ai également repris mon fer à souder, comme à l&amp;rsquo;époque du lycée. Mais contrairement à cette époque où l&amp;rsquo;on disposait de peu de ressources internet, peu de standards et peu de matériel, aujourd&amp;rsquo;hui nous avons presque tout à notre disposition. Il ne reste plus qu&amp;rsquo;à assembler des briques physiques avec des briques logicielles plus ou moins évoluées.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Apache Camel RaspberryPi PoC</title>
       <link>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</link>
       <pubDate>Fri, 03 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</guid>
-      <description>&lt;p&gt;Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Apache Camel and Raspberry Pi integration (proof of concept)&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;integrating-apache-camel-with-raspberry-pi-for-iot-applications&#34;&gt;Integrating Apache Camel with Raspberry Pi for IoT Applications&lt;/h1&gt;
+&lt;p&gt;The Internet of Things (IoT) revolution is transforming how we interact with the physical world through technology. At the heart of many IoT projects are two key components: affordable, capable hardware and flexible integration software. This article explores how to combine the popular Raspberry Pi single-board computer with Apache Camel, a powerful enterprise integration framework, to create IoT solutions that bridge the physical and digital worlds.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

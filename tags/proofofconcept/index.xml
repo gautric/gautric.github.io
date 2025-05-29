@@ -4,7 +4,7 @@
     <title>ProofOfConcept on Greg. I/O</title>
     <link>https://gautric.github.io/tags/proofofconcept/</link>
     <description>Recent content in ProofOfConcept on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 03 Apr 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/proofofconcept/index.xml" rel="self" type="application/rss+xml" />
@@ -13,9 +13,8 @@
       <link>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</link>
       <pubDate>Fri, 03 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/04/03/apache-camel-raspberrypi-poc/</guid>
-      <description>&lt;p&gt;Raspberry Pi is a small computer. It costs just 35$. Five million have been already sold worldwide. The first goal of this project was to provide a low-cost computer for electronic and computer science education. But lots of e-hobbists like me use it for personal use (domotic for example). Camel is an Enterprise Integration Patterns (a.k.a EIP) framework to connect, process and dispatch messages from and to severals technologies.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Apache Camel and Raspberry Pi integration (proof of concept)&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;integrating-apache-camel-with-raspberry-pi-for-iot-applications&#34;&gt;Integrating Apache Camel with Raspberry Pi for IoT Applications&lt;/h1&gt;
+&lt;p&gt;The Internet of Things (IoT) revolution is transforming how we interact with the physical world through technology. At the heart of many IoT projects are two key components: affordable, capable hardware and flexible integration software. This article explores how to combine the popular Raspberry Pi single-board computer with Apache Camel, a powerful enterprise integration framework, to create IoT solutions that bridge the physical and digital worlds.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
     <title>MQTT on Greg. I/O</title>
     <link>https://gautric.github.io/tags/mqtt/</link>
     <description>Recent content in MQTT on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Apr 2018 15:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/mqtt/index.xml" rel="self" type="application/rss+xml" />
@@ -22,7 +22,7 @@ Je me suis dit, pourquoi ne pas :&lt;/p&gt;</description>
       <link>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</link>
       <pubDate>Wed, 20 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/</guid>
-      <description>&lt;p&gt;One month ago, Henryk, Claus and I&amp;rsquo;ve started Camel Labs project. This project provides some cool new stuff for IoT community based on Camel technology/project. The stuff are new IoT components to connect electronics devices (i2c,SPI,gpio, tinkerforge) and cloud (pubnub, cloudlet, mqtt) together. In this lab, we will show how to build an end to end IoT integration with i2c device, mqtt broker and i2c lcd with few line of code.&lt;/p&gt;</description>
+      <description>&lt;p&gt;One month ago, Henryk, Claus and I started the Camel Labs project. This project provides exciting new components for the IoT community based on Apache Camel technology. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. In this lab, we will demonstrate how to build an end-to-end IoT integration with I2C devices, an MQTT broker, and an I2C LCD display using just a few lines of code.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -15,7 +15,7 @@ Introdution
 DMN est une norme de l&rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&rsquo;évaluation et/ou d&rsquo;aide à la décision.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -32,27 +32,30 @@ DMN est une norme de l&rsquo;OMG. Cette norme a pour objectif de standardiser la
         }
 
     </style>
-</noscript><meta property="og:title" content="Le standard DMN, un KYC en exemple" />
-<meta property="og:description" content="Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
-Nous allons voir avec un exemple rapide comment utiliser DMN.
-
+</noscript><meta property="og:url" content="https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/">
+  <meta property="og:site_name" content="Greg. I/O">
+  <meta property="og:title" content="Le standard DMN, un KYC en exemple">
+  <meta property="og:description" content="Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.
 Le standard DMN, un KYC en exemple
-Introdution
-DMN est une norme de l&rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&rsquo;évaluation et/ou d&rsquo;aide à la décision." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2020-06-04T15:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-04T15:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Le standard DMN, un KYC en exemple"/>
+Introdution DMN est une norme de l’OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d’évaluation et/ou d’aide à la décision.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-06-04T15:00:00+00:00">
+    <meta property="article:modified_time" content="2020-06-04T15:00:00+00:00">
+    <meta property="article:tag" content="Fr">
+    <meta property="article:tag" content="DMN">
+    <meta property="article:tag" content="Standard">
+    <meta property="article:tag" content="KYC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Le standard DMN, un KYC en exemple">
 <meta name="twitter:description" content="Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN.
 
 Le standard DMN, un KYC en exemple
 Introdution
-DMN est une norme de l&rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&rsquo;évaluation et/ou d&rsquo;aide à la décision."/>
-<meta name="twitter:site" content="@gautric_io"/>
+DMN est une norme de l&rsquo;OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&rsquo;évaluation et/ou d&rsquo;aide à la décision.">
+      <meta name="twitter:site" content="@gautric_io">
 
 
 <script type="application/ld+json">
@@ -185,20 +188,16 @@ Nous allons voir avec un exemple rapide comment utiliser DMN.</p>
 </li>
 </ol>
 <p>Dans le contexte DMN il suffit simplement d&rsquo;utiliser le type de <em>box</em> suivantes :</p>
-<p><img loading="lazy" src="/img/dmn_input.png" alt="DMN Input"  />
-</p>
+<p><img alt="DMN Input" loading="lazy" src="/img/dmn_input.png"></p>
 <p>Il est bien sûr possible de définir des types d&rsquo;entrée plus complexe.</p>
 <h2 id="les-decision">Les Decision<a hidden class="anchor" aria-hidden="true" href="#les-decision">#</a></h2>
 <p>Le principal élément du DMN est le concept de Decision. Cette <code>Decision</code> va calculer un résultat en fonction d&rsquo;une ou plusieurs entrée.
 On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
-<p><img loading="lazy" src="/img/dmn_decision_box.png" alt="DMN Decision Box"  />
-</p>
+<p><img alt="DMN Decision Box" loading="lazy" src="/img/dmn_decision_box.png"></p>
 <p>On lie ensuite les <code>Input</code> avec les <code>Decision</code></p>
-<p><img loading="lazy" src="/img/dmn_decision.png" alt="DMN Decision"  />
-</p>
+<p><img alt="DMN Decision" loading="lazy" src="/img/dmn_decision.png"></p>
 <p>Ensuite, il est possible de lier les <code>Decision</code> entre elles, afin de remonter les sorties des premières <code>Decision</code> dans une autre <code>Decision</code></p>
-<p><img loading="lazy" src="/img/dmn_decision_link.png" alt="DMN Decision Link"  />
-</p>
+<p><img alt="DMN Decision Link" loading="lazy" src="/img/dmn_decision_link.png"></p>
 <p>Ici <code>Input</code> <em>PEP</em> est utilisé par la <code>Decision</code> <em>PEP Rule</em>, qui sera lui utilisé dans la <code>Decision</code> <em>KYC</em>.</p>
 <h3 id="type-de-décision">Type de décision<a hidden class="anchor" aria-hidden="true" href="#type-de-décision">#</a></h3>
 <ol>
@@ -226,18 +225,14 @@ On utilise pour cela les <em>box</em> suivantes dans le modeleur.</p>
 <h2 id="les-business-knowledge-model">Les Business Knowledge Model<a hidden class="anchor" aria-hidden="true" href="#les-business-knowledge-model">#</a></h2>
 <p>Les <code>Business Knowledge Model</code> fournissent au modeleur la possibilité de réutiliser des briques logiques. Pour un développeur, les <code>BKM</code> peuvent être vues comme des fonctions réutilisable dans une ou plusieurs <code>Decision</code>, notamment car elles s’appellent directement dans les <code>Decision</code> et qu’elles possèdent des paramètres d’entrées.</p>
 <p>Comme pour les <code>Decision</code> il existe trois types de <code>BKM</code>.</p>
-<p><img loading="lazy" src="/img/dmn_bkm.png" alt="DMN BKM"  />
-</p>
+<p><img alt="DMN BKM" loading="lazy" src="/img/dmn_bkm.png"></p>
 <p>Dans notre cas nous allons utiliser une <code>Decision Table</code> pour calculer le score pour chaque règle.</p>
-<p><img loading="lazy" src="/img/dmn_function.png" alt="DMN Function"  />
-</p>
+<p><img alt="DMN Function" loading="lazy" src="/img/dmn_function.png"></p>
 <p>On relie ensuite le <code>BKM</code> avec la <code>Decision</code></p>
-<p><img loading="lazy" src="/img/dmn_bkm_full.png" alt="Full DMN BKM"  />
-</p>
+<p><img alt="Full DMN BKM" loading="lazy" src="/img/dmn_bkm_full.png"></p>
 <h2 id="result">Result<a hidden class="anchor" aria-hidden="true" href="#result">#</a></h2>
 <p>C’est la <code>Decision</code> KYC qui va contenir le résultat de ce petit moteur de règle. Dans notre cas, nous faisons la somme des trois appel à la <code>BKM</code> Level de chaque retour des <code>Decision</code> rule. Bien sur, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL <em>(Friendly Enough Expression Language)</em>. Il s’agit d’un langage qui ressemble un peu aux macros Excel.</p>
-<p><img loading="lazy" src="/img/dmn_result.png" alt="DMN Result"  />
-</p>
+<p><img alt="DMN Result" loading="lazy" src="/img/dmn_result.png"></p>
 <p>Pour résumer, les <code>Input</code> sont donc utilisés dans les <code>Decision</code>, ces <code>Decision</code> sont reliées à des <code>BKM</code> ou bien d&rsquo;autres <code>Decision</code> qui au fur et à mesure se termine vers une seule <code>Decision</code>.
 Comme on l&rsquo;a vue précédemment, la <code>Decision</code> finale peut avoir plusieurs type de retour.
 Par convention on partira du bas pour les <code>Input</code> puis étage par étage on empilera les <code>Decision</code> jusqu&rsquo;à les réduire en une seule.</p>

@@ -7,10 +7,11 @@
 <meta name="robots" content="index, follow">
 <title>RHIoT RaspberryPi Sense-Hat display | Greg. I/O</title>
 <meta name="keywords" content="en, rhiot, RaspberryPi, Sense-Hat, camel, display, framebuffer">
-<meta name="description" content="Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).">
+<meta name="description" content="Recently, I bought the new official Sense-HAT from RaspberryPi foundation. This HAT (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.
+All sensors are i2c compliant, making them easily accessible with the rhiot camel-pi4j component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the rhiot camel-framebuffer component, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -27,17 +28,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="RHIoT RaspberryPi Sense-Hat display" />
-<meta property="og:description" content="Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2015-11-24T13:58:00+00:00" />
-<meta property="article:modified_time" content="2015-11-24T13:58:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="RHIoT RaspberryPi Sense-Hat display"/>
-<meta name="twitter:description" content="Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels)."/>
-<meta name="twitter:site" content="@gautric_io"/>
+</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
+  <meta property="og:site_name" content="Greg. I/O">
+  <meta property="og:title" content="RHIoT RaspberryPi Sense-Hat display">
+  <meta property="og:description" content="Recently, I bought the new official Sense-HAT from RaspberryPi foundation. This HAT (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.
+All sensors are i2c compliant, making them easily accessible with the rhiot camel-pi4j component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the rhiot camel-framebuffer component, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-11-24T13:58:00+00:00">
+    <meta property="article:modified_time" content="2015-11-24T13:58:00+00:00">
+    <meta property="article:tag" content="En">
+    <meta property="article:tag" content="Rhiot">
+    <meta property="article:tag" content="RaspberryPi">
+    <meta property="article:tag" content="Sense-Hat">
+    <meta property="article:tag" content="Camel">
+    <meta property="article:tag" content="Display">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RHIoT RaspberryPi Sense-Hat display">
+<meta name="twitter:description" content="Recently, I bought the new official Sense-HAT from RaspberryPi foundation. This HAT (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.
+All sensors are i2c compliant, making them easily accessible with the rhiot camel-pi4j component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the rhiot camel-framebuffer component, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.">
+      <meta name="twitter:site" content="@gautric_io">
 
 
 <script type="application/ld+json">
@@ -66,12 +77,12 @@
   "@type": "BlogPosting",
   "headline": "RHIoT RaspberryPi Sense-Hat display",
   "name": "RHIoT RaspberryPi Sense-Hat display",
-  "description": "Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing. Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).\n",
+  "description": "Recently, I bought the new official Sense-HAT from RaspberryPi foundation. This HAT (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.\nAll sensors are i2c compliant, making them easily accessible with the rhiot camel-pi4j component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the rhiot camel-framebuffer component, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.\n",
   "keywords": [
     "en", "rhiot", "RaspberryPi", "Sense-Hat", "camel", "display", "framebuffer"
   ],
-  "articleBody": "Recently, I bought the new an official Sense-HAT from RaspberryPi foundation. This HAT add-on for the RaspberryPi device includes lots of cool thing. Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the rhiot camel-pi4j component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of rhiot camel-framebuffer component, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).\nHow to use Framebuffer component\nLet’s start to use the SenseHat framebuffer.\nRequisites one RaspberryPi tested w/ RPi 2 one SenseHat an Activemq Broker a Laptop to run the generator program. Conception A little quick conception :\nFirst program generates images and send them through the ActiveMQ broker. The second one receives images from the broker and push them to the Framebuffer. Groovy Program Generator Program Framebuffer Program Execution Let’s run it now\nOn our RaspberryPi 2 w/ SenseHat [rbpi-2:~]$\u003e groovy ImageFramebufferRoute.groovy On our Laptop [mbp:~/Source/tmp/io/rhiot/test]$\u003e groovy GroovyMain.groovy And the result YouTube Demo\nConclusion Framebuffer component is very young but functional, Rhiot.io project will release some new features as soon as possible. Rhiot.io project provides drivers for Temperature, Barometric pressure and Humidity sensors shipped with SenseHat product, the Gyroscope, Accelerometer, Magnetometer driver is still under development.\nStay tuned !!!\nUseful links rhiot projet framebuffer component ",
-  "wordCount" : "248",
+  "articleBody": "Recently, I bought the new official Sense-HAT from RaspberryPi foundation. This HAT (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.\nAll sensors are i2c compliant, making them easily accessible with the rhiot camel-pi4j component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the rhiot camel-framebuffer component, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.\nHow to use Framebuffer component\nLet’s start to use the SenseHat framebuffer with a practical example.\nRequisites One RaspberryPi (tested with RPi 2) One SenseHat An ActiveMQ Broker for message passing A laptop to run the generator program Conception Here’s a quick architectural overview of our demonstration:\nThe first program generates images and sends them through the ActiveMQ broker. The second program receives these images from the broker and pushes them to the Framebuffer on the SenseHat. This approach allows for remote control of the display, with the image generation happening on a separate system from the display itself.\nGroovy Program Generator Program This program runs on your laptop and generates images to send to the SenseHat:\nFramebuffer Program This program runs on the RaspberryPi and displays the received images on the SenseHat:\nExecution Let’s run both programs to see the system in action.\nOn our RaspberryPi 2 with SenseHat [rbpi-2:~]$\u003e groovy ImageFramebufferRoute.groovy On our Laptop [mbp:~/Source/tmp/io/rhiot/test]$\u003e groovy GroovyMain.groovy And the result The result is a dynamic display on the SenseHat’s LED matrix, controlled remotely through ActiveMQ messages.\nYouTube Demo\nConclusion The Framebuffer component is very young but already functional. The Rhiot.io project will release new features as soon as possible to enhance its capabilities.\nRhiot.io project already provides drivers for Temperature, Barometric pressure and Humidity sensors shipped with the SenseHat product. The Gyroscope, Accelerometer, and Magnetometer drivers are still under development at the time of writing, but should be available soon.\nThis example demonstrates how easily IoT devices can be integrated into messaging systems using Apache Camel and Rhiot components, enabling remote control and monitoring of hardware peripherals.\nStay tuned for more updates from the Rhiot project!\nUseful links Rhiot project Framebuffer component documentation SenseHat official documentation Apache Camel ",
+  "wordCount" : "416",
   "inLanguage": "en",
   "datePublished": "2015-11-24T13:58:00Z",
   "dateModified": "2015-11-24T13:58:00Z",
@@ -133,52 +144,53 @@
 
 </div>
   </header> 
-  <div class="post-content"><p>Recently, I bought the new an official <a href="https://www.raspberrypi.org/products/sense-hat/">Sense-HAT</a> from <a href="ttps://www.raspberrypi.org">RaspberryPi foundation</a>. This <a href="https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/">HAT</a> add-on for the RaspberryPi device includes lots of cool thing.  Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. All sensors are i2c compliant, with the <a href="https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver">rhiot camel-pi4j</a> component it is very easy to retrieve all data from sensors and push them outside. Rhiot team had also developed the first implementation of <a href="https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer">rhiot camel-framebuffer component</a>, now it is possible to push image directly to 8x8 pixel screen : NB the matrix is 8x8 RGB565 LED (2 bytes per pixels).</p>
+  <div class="post-content"><p>Recently, I bought the new official <a href="https://www.raspberrypi.org/products/sense-hat/">Sense-HAT</a> from <a href="https://www.raspberrypi.org">RaspberryPi foundation</a>. This <a href="https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/">HAT</a> (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.</p>
+<p>All sensors are i2c compliant, making them easily accessible with the <a href="https://github.com/rhiot/rhiot/tree/master/docs#i2c-driver">rhiot camel-pi4j</a> component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the <a href="https://github.com/rhiot/rhiot/tree/master/components/camel-framebuffer">rhiot camel-framebuffer component</a>, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.</p>
 <blockquote>
 <p>How to use Framebuffer component</p></blockquote>
-<p>Let&rsquo;s start to use the SenseHat framebuffer.</p>
+<p>Let&rsquo;s start to use the SenseHat framebuffer with a practical example.</p>
 <h2 id="requisites">Requisites<a hidden class="anchor" aria-hidden="true" href="#requisites">#</a></h2>
 <ul>
-<li>one <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">RaspberryPi</a>
-<ul>
-<li>tested w/ RPi 2</li>
-</ul>
-</li>
-<li>one <a href="https://www.raspberrypi.org/products/sense-hat/">SenseHat</a></li>
-<li>an Activemq Broker</li>
-<li>a Laptop to run the generator program.</li>
+<li>One <a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">RaspberryPi</a> (tested with RPi 2)</li>
+<li>One <a href="https://www.raspberrypi.org/products/sense-hat/">SenseHat</a></li>
+<li>An ActiveMQ Broker for message passing</li>
+<li>A laptop to run the generator program</li>
 </ul>
 <h2 id="conception">Conception<a hidden class="anchor" aria-hidden="true" href="#conception">#</a></h2>
-<p>A little quick conception :</p>
+<p>Here&rsquo;s a quick architectural overview of our demonstration:</p>
 <ul>
-<li>First program generates images and send them through the ActiveMQ broker.</li>
-<li>The second one receives images from the broker and push them to the Framebuffer.</li>
+<li>The first program generates images and sends them through the ActiveMQ broker.</li>
+<li>The second program receives these images from the broker and pushes them to the Framebuffer on the SenseHat.</li>
 </ul>
+<p>This approach allows for remote control of the display, with the image generation happening on a separate system from the display itself.</p>
 <h2 id="groovy-program">Groovy Program<a hidden class="anchor" aria-hidden="true" href="#groovy-program">#</a></h2>
 <h3 id="generator-program">Generator Program<a hidden class="anchor" aria-hidden="true" href="#generator-program">#</a></h3>
+<p>This program runs on your laptop and generates images to send to the SenseHat:</p>
 <script src="https://gist.github.com/gautric/0cb319481b24f405aa5b.js"></script>
 <h3 id="framebuffer-program">Framebuffer Program<a hidden class="anchor" aria-hidden="true" href="#framebuffer-program">#</a></h3>
+<p>This program runs on the RaspberryPi and displays the received images on the SenseHat:</p>
 <script src="https://gist.github.com/gautric/e413a22b9644de88a15b.js"></script>
 <h2 id="execution">Execution<a hidden class="anchor" aria-hidden="true" href="#execution">#</a></h2>
-<p>Let&rsquo;s run it now</p>
-<h3 id="on-our-raspberrypi-2-w-sensehat">On our RaspberryPi 2 w/ SenseHat<a hidden class="anchor" aria-hidden="true" href="#on-our-raspberrypi-2-w-sensehat">#</a></h3>
-<pre tabindex="0"><code>[rbpi-2:~]$&gt; groovy  ImageFramebufferRoute.groovy
-</code></pre><h3 id="on-our-laptop">On our Laptop<a hidden class="anchor" aria-hidden="true" href="#on-our-laptop">#</a></h3>
-<pre tabindex="0"><code>[mbp:~/Source/tmp/io/rhiot/test]$&gt; groovy GroovyMain.groovy
-</code></pre><h2 id="and-the-result">And the result<a hidden class="anchor" aria-hidden="true" href="#and-the-result">#</a></h2>
-<br/>
+<p>Let&rsquo;s run both programs to see the system in action.</p>
+<h3 id="on-our-raspberrypi-2-with-sensehat">On our RaspberryPi 2 with SenseHat<a hidden class="anchor" aria-hidden="true" href="#on-our-raspberrypi-2-with-sensehat">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>rbpi-2:~<span class="o">]</span>$&gt; groovy ImageFramebufferRoute.groovy
+</span></span></code></pre></div><h3 id="on-our-laptop">On our Laptop<a hidden class="anchor" aria-hidden="true" href="#on-our-laptop">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>mbp:~/Source/tmp/io/rhiot/test<span class="o">]</span>$&gt; groovy GroovyMain.groovy
+</span></span></code></pre></div><h2 id="and-the-result">And the result<a hidden class="anchor" aria-hidden="true" href="#and-the-result">#</a></h2>
+<p>The result is a dynamic display on the SenseHat&rsquo;s LED matrix, controlled remotely through ActiveMQ messages.</p>
 <p><strong>YouTube Demo</strong></p>
 <iframe width="650" height="415" src="https://www.youtube.com/embed/y3yAzqezXE4" frameborder="0" ></iframe>
-<br/>
 <h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p><a href="https://rhiot.gitbooks.io/rhiotdocumentation/content/gateway/camel_components/camel_framebuffer_component.html">Framebuffer component</a> is very young but functional, <a href="http://rhiot.github.io/">Rhiot.io</a> project will release some new features as soon as possible.
-Rhiot.io project provides <a href="https://rhiot.gitbooks.io/rhiotdocumentation/content/gateway/camel_components/camel_pi4j_component.html#i2c-driver">drivers</a> for Temperature, Barometric pressure and Humidity sensors shipped with SenseHat product, the Gyroscope, Accelerometer, Magnetometer driver is still under development.</p>
-<p>Stay tuned !!!</p>
+<p>The <a href="https://rhiot.gitbooks.io/rhiotdocumentation/content/gateway/camel_components/camel_framebuffer_component.html">Framebuffer component</a> is very young but already functional. The <a href="http://rhiot.github.io/">Rhiot.io</a> project will release new features as soon as possible to enhance its capabilities.</p>
+<p>Rhiot.io project already provides <a href="https://rhiot.gitbooks.io/rhiotdocumentation/content/gateway/camel_components/camel_pi4j_component.html#i2c-driver">drivers</a> for Temperature, Barometric pressure and Humidity sensors shipped with the SenseHat product. The Gyroscope, Accelerometer, and Magnetometer drivers are still under development at the time of writing, but should be available soon.</p>
+<p>This example demonstrates how easily IoT devices can be integrated into messaging systems using Apache Camel and Rhiot components, enabling remote control and monitoring of hardware peripherals.</p>
+<p>Stay tuned for more updates from the Rhiot project!</p>
 <h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
 <ul>
-<li><a href="http://rhiot.io">rhiot projet</a></li>
-<li><a href="https://rhiot.gitbooks.io/rhiotdocumentation/content/gateway/camel_components/camel_framebuffer_component.html">framebuffer component</a></li>
-<li></li>
+<li><a href="http://rhiot.io">Rhiot project</a></li>
+<li><a href="https://rhiot.gitbooks.io/rhiotdocumentation/content/gateway/camel_components/camel_framebuffer_component.html">Framebuffer component documentation</a></li>
+<li><a href="https://www.raspberrypi.org/products/sense-hat/">SenseHat official documentation</a></li>
+<li><a href="https://camel.apache.org/">Apache Camel</a></li>
 </ul>
 
 

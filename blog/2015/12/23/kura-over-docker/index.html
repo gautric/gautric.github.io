@@ -7,11 +7,11 @@
 <meta name="robots" content="index, follow">
 <title>Kura over Docker | Greg. I/O</title>
 <meta name="keywords" content="en, Kura, Docker">
-<meta name="description" content="Rhiot project decides recently to support mainly Kura Eclipse Platform. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by Eclipse Foundation and Eurotech.
-Kura runs on RaspberryPi, but if you don&rsquo;t have yet a RaspberryPi device  we will show how to run Kura into Docker.">
+<meta name="description" content="Rhiot project has recently decided to primarily support the Kura Eclipse Platform. Our project provides code and extensions for Kura, such as Camel integration and many other features. We&rsquo;ve developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it&rsquo;s an OSGi compliant software focused on the IoT universe, supported by the Eclipse Foundation and Eurotech.
+While Kura runs natively on RaspberryPi hardware, if you don&rsquo;t have a RaspberryPi device yet, this tutorial will show you how to run Kura within a Docker container.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2015/12/23/kura-over-docker/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.26cca5596cf53898626a540511b92ee26f2bfa182bb8ac88d95536b8581f7899.css" integrity="sha256-JsylWWz1OJhialQFEbku4m8r&#43;hgruKyI2VU2uFgfeJk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -28,19 +28,24 @@ Kura runs on RaspberryPi, but if you don&rsquo;t have yet a RaspberryPi device  
         }
 
     </style>
-</noscript><meta property="og:title" content="Kura over Docker" />
-<meta property="og:description" content="Rhiot project decides recently to support mainly Kura Eclipse Platform. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by Eclipse Foundation and Eurotech.
-Kura runs on RaspberryPi, but if you don&rsquo;t have yet a RaspberryPi device  we will show how to run Kura into Docker." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://gautric.github.io/blog/2015/12/23/kura-over-docker/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2015-12-23T14:00:00+00:00" />
-<meta property="article:modified_time" content="2015-12-23T14:00:00+00:00" /><meta property="og:site_name" content="Greg. I/O" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kura over Docker"/>
-<meta name="twitter:description" content="Rhiot project decides recently to support mainly Kura Eclipse Platform. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by Eclipse Foundation and Eurotech.
-Kura runs on RaspberryPi, but if you don&rsquo;t have yet a RaspberryPi device  we will show how to run Kura into Docker."/>
-<meta name="twitter:site" content="@gautric_io"/>
+</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/12/23/kura-over-docker/">
+  <meta property="og:site_name" content="Greg. I/O">
+  <meta property="og:title" content="Kura over Docker">
+  <meta property="og:description" content="Rhiot project has recently decided to primarily support the Kura Eclipse Platform. Our project provides code and extensions for Kura, such as Camel integration and many other features. We’ve developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it’s an OSGi compliant software focused on the IoT universe, supported by the Eclipse Foundation and Eurotech.
+While Kura runs natively on RaspberryPi hardware, if you don’t have a RaspberryPi device yet, this tutorial will show you how to run Kura within a Docker container.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-12-23T14:00:00+00:00">
+    <meta property="article:modified_time" content="2015-12-23T14:00:00+00:00">
+    <meta property="article:tag" content="En">
+    <meta property="article:tag" content="Kura">
+    <meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kura over Docker">
+<meta name="twitter:description" content="Rhiot project has recently decided to primarily support the Kura Eclipse Platform. Our project provides code and extensions for Kura, such as Camel integration and many other features. We&rsquo;ve developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it&rsquo;s an OSGi compliant software focused on the IoT universe, supported by the Eclipse Foundation and Eurotech.
+While Kura runs natively on RaspberryPi hardware, if you don&rsquo;t have a RaspberryPi device yet, this tutorial will show you how to run Kura within a Docker container.">
+      <meta name="twitter:site" content="@gautric_io">
 
 
 <script type="application/ld+json">
@@ -69,12 +74,12 @@ Kura runs on RaspberryPi, but if you don&rsquo;t have yet a RaspberryPi device  
   "@type": "BlogPosting",
   "headline": "Kura over Docker",
   "name": "Kura over Docker",
-  "description": "Rhiot project decides recently to support mainly Kura Eclipse Platform. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by Eclipse Foundation and Eurotech. Kura runs on RaspberryPi, but if you don\u0026rsquo;t have yet a RaspberryPi device we will show how to run Kura into Docker.\n",
+  "description": "Rhiot project has recently decided to primarily support the Kura Eclipse Platform. Our project provides code and extensions for Kura, such as Camel integration and many other features. We\u0026rsquo;ve developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it\u0026rsquo;s an OSGi compliant software focused on the IoT universe, supported by the Eclipse Foundation and Eurotech.\nWhile Kura runs natively on RaspberryPi hardware, if you don\u0026rsquo;t have a RaspberryPi device yet, this tutorial will show you how to run Kura within a Docker container.\n",
   "keywords": [
     "en", "Kura", "Docker"
   ],
-  "articleBody": "Rhiot project decides recently to support mainly Kura Eclipse Platform. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by Eclipse Foundation and Eurotech. Kura runs on RaspberryPi, but if you don’t have yet a RaspberryPi device we will show how to run Kura into Docker.\nIn this post we will see :\nHow to use Kura with Docker into an almost real environment.\nRequisites Docker installation sorry I will use Mac for this example your best terminal application Docker Docker setup First of all, you have to setup your Docker environment, Docker’s documentation is very easy to understand. Just follow correct documentation depending about your architecture (Linux or MacOs)\ndocker-machine start default eval \"$(docker-machine env default)\" {% endhighlight %} ## Build Kura-Debian Image After starting Docker machine, we will build our debian-kura image. We gonna download docker file, and run correct command to built it. Just build it via command below curl https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile -O docker build -t debian-kura . {% endhighlight %}\nyou should get an output like this\nSuccessfully built aabbccddee0011\nRun Kura-Debian Image Now if everything goes well, we can run it via commands below\ndocker run -i -p 80:80 -t debian-kura {% endhighlight %} or via the Docker Hub image docker run -i -p 80:80 -t gautric/debian-kura {% endhighlight %}\nYou can change -i to -d to run image into daemon mode.\nIf everything is ok, you should get osgi\u003e prompt. Now, you can use and deploy Kura Platform as you want.\nIf you are on MacOs X platform, just use http://192.168.99.100 if you are on Linux platform, just use http://127.0.0.1 should work well.\nNB We are running Kura Platform into Docker env. You cannot access to low level api like GPIO and other stuff like this. But it is enough to start a quick sample project into Kura platform.\nConclusion Even if, we run it into Docker environment, you can use this Kura OSGi Platform as you want. Be careful, some low level api cannot be use directly. But soon I will propose to use this stuff into real RaspberryPi environment.\nStay tuned !!!\nPlease feel free to send me your feedback below or via Apropos or via Contact form.\nUseful links Kura Eclipse Platform documentation Docker documentation Rhiot project ",
-  "wordCount" : "415",
+  "articleBody": "Rhiot project has recently decided to primarily support the Kura Eclipse Platform. Our project provides code and extensions for Kura, such as Camel integration and many other features. We’ve developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it’s an OSGi compliant software focused on the IoT universe, supported by the Eclipse Foundation and Eurotech.\nWhile Kura runs natively on RaspberryPi hardware, if you don’t have a RaspberryPi device yet, this tutorial will show you how to run Kura within a Docker container.\nIn this post we will see:\nHow to use Kura with Docker in an almost real environment, allowing you to explore and develop for the platform without physical IoT hardware.\nRequisites Docker installation This example uses Mac, but similar steps apply to other platforms Your preferred terminal application Docker Docker Setup First of all, you need to set up your Docker environment. Docker’s documentation is very straightforward and easy to follow. Just follow the correct documentation for your architecture (Linux or macOS).\ndocker-machine start default eval \"$(docker-machine env default)\" Build Kura-Debian Image After starting the Docker machine, we will build our debian-kura image. We’ll download the Dockerfile and run the appropriate command to build it.\nJust build it via the command below:\ncurl https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile -O docker build -t debian-kura . You should get an output like this:\nSuccessfully built aabbccddee0011 Run Kura-Debian Image Now if everything went well, we can run it via the commands below:\ndocker run -i -p 80:80 -t debian-kura Or alternatively, you can use the pre-built image from Docker Hub:\ndocker run -i -p 80:80 -t gautric/debian-kura You can change -i to -d to run the image in daemon mode.\nIf everything is working correctly, you should see the osgi\u003e prompt. Now, you can use and deploy the Kura Platform as you wish.\nIf you are on macOS, access the web interface at: http://192.168.99.100 If you are on Linux, http://127.0.0.1 should work well.\nImportant Note We are running the Kura Platform in a Docker environment. This means you cannot access low-level APIs like GPIO and other hardware-specific features. However, this setup is sufficient to start a quick sample project and explore the Kura platform’s capabilities.\nConclusion Even though we’re running Kura in a Docker environment with some limitations, you can still use this OSGi Platform to learn and develop applications. Just be aware that some low-level APIs cannot be used directly. Soon I will demonstrate how to use these features in a real RaspberryPi environment.\nStay tuned for more updates!\nPlease feel free to send me your feedback below, via the Apropos page, or through the Contact form.\nUseful Links Kura Eclipse Platform documentation Docker documentation Rhiot project ",
+  "wordCount" : "454",
   "inLanguage": "en",
   "datePublished": "2015-12-23T14:00:00Z",
   "dateModified": "2015-12-23T14:00:00Z",
@@ -136,65 +141,55 @@ Kura runs on RaspberryPi, but if you don&rsquo;t have yet a RaspberryPi device  
 
 </div>
   </header> 
-  <div class="post-content"><p><a href="http://rhiot.io">Rhiot project</a> decides recently to support mainly <a href="https://eclipse.org/kura/">Kura Eclipse Platform</a>. Our project will provides some code and extension for Kura like Camel integration and lots of other stuff. We have some new Camel component dedicated for Kura Platform (gpio, cloud, wifi). We want use this platform because it is OSGi compliant sotfware, focused to IoT universe, supported by <a href="http://eclipse.org">Eclipse Foundation</a> and <a href="https://www.eurotech.com">Eurotech</a>.
-Kura runs on RaspberryPi, but if you don&rsquo;t have yet a RaspberryPi device  we will show how to run Kura into <a href="https://docker.com">Docker</a>.</p>
-<p>In this post we will see :</p>
+  <div class="post-content"><p><a href="http://rhiot.io">Rhiot project</a> has recently decided to primarily support the <a href="https://eclipse.org/kura/">Kura Eclipse Platform</a>. Our project provides code and extensions for Kura, such as Camel integration and many other features. We&rsquo;ve developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it&rsquo;s an OSGi compliant software focused on the IoT universe, supported by the <a href="http://eclipse.org">Eclipse Foundation</a> and <a href="https://www.eurotech.com">Eurotech</a>.</p>
+<p>While Kura runs natively on RaspberryPi hardware, if you don&rsquo;t have a RaspberryPi device yet, this tutorial will show you how to run Kura within a <a href="https://docker.com">Docker</a> container.</p>
+<p>In this post we will see:</p>
 <blockquote>
-<p>How to use Kura with Docker into an almost real environment.</p></blockquote>
+<p>How to use Kura with Docker in an almost real environment, allowing you to explore and develop for the platform without physical IoT hardware.</p></blockquote>
 <h2 id="requisites">Requisites<a hidden class="anchor" aria-hidden="true" href="#requisites">#</a></h2>
 <ul>
 <li><a href="https://docker.com">Docker</a> installation
 <ul>
-<li>sorry I will use Mac for this example</li>
+<li>This example uses Mac, but similar steps apply to other platforms</li>
 </ul>
 </li>
-<li>your best terminal application</li>
+<li>Your preferred terminal application</li>
 </ul>
 <h2 id="docker">Docker<a hidden class="anchor" aria-hidden="true" href="#docker">#</a></h2>
-<h3 id="docker-setup">Docker setup<a hidden class="anchor" aria-hidden="true" href="#docker-setup">#</a></h3>
-<p>First of all, you have to setup your Docker environment, Docker&rsquo;s documentation is very easy to understand.
-Just follow correct documentation depending about your architecture (Linux or MacOs)</p>
-<pre tabindex="0"><code>docker-machine start default
-eval &#34;$(docker-machine env default)&#34;
-{% endhighlight  %}
-
-
-## Build Kura-Debian Image
-
-After starting Docker machine, we will build our debian-kura image.
-We gonna download docker file, and run correct command to built it.
-
-&lt;script src=&#34;https://gist.github.com/gautric/3eed453c8ae313cb7112.js&#34;&gt;&lt;/script&gt;
-
-Just build it via command below
-</code></pre><p>curl <a href="https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile">https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile</a> -O
-docker build -t debian-kura .
-{% endhighlight  %}</p>
-<p>you should get an output like this</p>
-<p><code>Successfully built aabbccddee0011</code></p>
-<h2 id="run-kura-debian-image">Run Kura-Debian Image<a hidden class="anchor" aria-hidden="true" href="#run-kura-debian-image">#</a></h2>
-<p>Now if everything goes well, we can run it via commands below</p>
-<pre tabindex="0"><code>docker run -i -p 80:80 -t debian-kura
-{% endhighlight  %}
-
-or via the Docker Hub image
-</code></pre><p>docker run -i -p 80:80 -t gautric/debian-kura
-{% endhighlight  %}</p>
-<p>You can change <code>-i</code> to <code>-d</code> to run image into daemon mode.</p>
-<p>If everything is ok, you should get <code>osgi&gt;</code> prompt.
-Now, you can use and deploy Kura Platform as you want.</p>
-<p>If you are on MacOs X platform, just use <a href="http://192.168.99.100">http://192.168.99.100</a>
-if you are on Linux platform, just use <a href="http://127.0.0.1">http://127.0.0.1</a> should work well.</p>
+<h3 id="docker-setup">Docker Setup<a hidden class="anchor" aria-hidden="true" href="#docker-setup">#</a></h3>
+<p>First of all, you need to set up your Docker environment. Docker&rsquo;s documentation is very straightforward and easy to follow.
+Just follow the correct documentation for your architecture (Linux or macOS).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker-machine start default
+</span></span><span class="line"><span class="cl"><span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>docker-machine env default<span class="k">)</span><span class="s2">&#34;</span>
+</span></span></code></pre></div><h2 id="build-kura-debian-image">Build Kura-Debian Image<a hidden class="anchor" aria-hidden="true" href="#build-kura-debian-image">#</a></h2>
+<p>After starting the Docker machine, we will build our debian-kura image.
+We&rsquo;ll download the Dockerfile and run the appropriate command to build it.</p>
+<script src="https://gist.github.com/gautric/3eed453c8ae313cb7112.js"></script>
+<p>Just build it via the command below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://gist.githubusercontent.com/gautric/3eed453c8ae313cb7112/raw/98c9665523a1dca7469c411c08e13ad6da73689b/Dockerfile -O
+</span></span><span class="line"><span class="cl">docker build -t debian-kura .
+</span></span></code></pre></div><p>You should get an output like this:</p>
+<pre tabindex="0"><code>Successfully built aabbccddee0011
+</code></pre><h2 id="run-kura-debian-image">Run Kura-Debian Image<a hidden class="anchor" aria-hidden="true" href="#run-kura-debian-image">#</a></h2>
+<p>Now if everything went well, we can run it via the commands below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -i -p 80:80 -t debian-kura
+</span></span></code></pre></div><p>Or alternatively, you can use the pre-built image from Docker Hub:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -i -p 80:80 -t gautric/debian-kura
+</span></span></code></pre></div><p>You can change <code>-i</code> to <code>-d</code> to run the image in daemon mode.</p>
+<p>If everything is working correctly, you should see the <code>osgi&gt;</code> prompt.
+Now, you can use and deploy the Kura Platform as you wish.</p>
+<p>If you are on macOS, access the web interface at: <a href="http://192.168.99.100">http://192.168.99.100</a>
+If you are on Linux, <a href="http://127.0.0.1">http://127.0.0.1</a> should work well.</p>
 <img src="/img/kura-docker.png" width="66%" height="66%" />
-<h2 id="nb">NB<a hidden class="anchor" aria-hidden="true" href="#nb">#</a></h2>
-<p>We are running Kura Platform into Docker env. You cannot access to low level api like GPIO and other stuff like this.
-But it is enough to start a quick sample project into Kura platform.</p>
+<h2 id="important-note">Important Note<a hidden class="anchor" aria-hidden="true" href="#important-note">#</a></h2>
+<p>We are running the Kura Platform in a Docker environment. This means you cannot access low-level APIs like GPIO and other hardware-specific features.
+However, this setup is sufficient to start a quick sample project and explore the Kura platform&rsquo;s capabilities.</p>
 <h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>Even if, we run it into Docker environment, you can use this Kura OSGi Platform as you want.
-Be careful, some low level api cannot be use directly. <a href="/blog/2015/12/23/kura-OSGi-docker-debian.html">But soon I will propose to use this stuff into real RaspberryPi environment</a>.</p>
-<p>Stay tuned !!!</p>
-<p>Please feel free to send me your feedback below or via <a href="/apropos/">Apropos</a> or via <a href="/contact/">Contact form</a>.</p>
-<h3 id="useful-links">Useful links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
+<p>Even though we&rsquo;re running Kura in a Docker environment with some limitations, you can still use this OSGi Platform to learn and develop applications.
+Just be aware that some low-level APIs cannot be used directly. <a href="/blog/2015/12/23/kura-OSGi-docker-debian.html">Soon I will demonstrate how to use these features in a real RaspberryPi environment</a>.</p>
+<p>Stay tuned for more updates!</p>
+<p>Please feel free to send me your feedback below, via the <a href="/apropos/">Apropos</a> page, or through the <a href="/contact/">Contact form</a>.</p>
+<h3 id="useful-links">Useful Links<a hidden class="anchor" aria-hidden="true" href="#useful-links">#</a></h3>
 <ul>
 <li><a href="http://eclipse.github.io/kura/">Kura Eclipse Platform documentation</a></li>
 <li><a href="https://docs.docker.com/">Docker documentation</a></li>

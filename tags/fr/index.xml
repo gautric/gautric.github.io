@@ -4,7 +4,7 @@
     <title>Fr on Greg. I/O</title>
     <link>https://gautric.github.io/tags/fr/</link>
     <description>Recent content in Fr on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Jan 2024 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/fr/index.xml" rel="self" type="application/rss+xml" />
@@ -108,75 +108,78 @@ L&amp;rsquo;un des étendu sur Malte est le site &amp;ldquo;Temples mégalithiqu
       <link>https://gautric.github.io/blog/2016/01/29/unesco-challenge-point-unesco-maritime-greenwich-prime-meridian/</link>
       <pubDate>Fri, 29 Jan 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/01/29/unesco-challenge-point-unesco-maritime-greenwich-prime-meridian/</guid>
-      <description>&lt;p&gt;En ce debut d&amp;rsquo;année 2016, je me suis rendu à Londres afin d&amp;rsquo;aller visiter des amis Londoniens. Nous avons pris le temps d&amp;rsquo;aller voir le Meridien de Greenwich qui est le meridien 0°. Ce Meridien est devenu très important depuis qu&amp;rsquo;il est devenu la référence mondiale topographique à la &lt;a href=&#34;https://fr.wikipedia.org/wiki/Conf%C3%A9rence_internationale_de_Washington_de_1884&#34;&gt;Conférence internationale de Washington de 1884&lt;/a&gt;. Il est utilisé avec l&amp;rsquo;aide d&amp;rsquo;une horloge correctement synchronisée par les navigateurs du monde entier afin de connaitre leur longitude extacte sur le globe terrestre. Attention, le GPS utilise un méridien très très légerement différent de celui-ci, il s&amp;rsquo;agit du &lt;a href=&#34;https://fr.wikipedia.org/wiki/M%C3%A9ridien_de_r%C3%A9f%C3%A9rence_de_l%27IERS&#34;&gt;Meridien IERS&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;En ce début d&amp;rsquo;année 2016, je me suis rendu à Londres avec Madame. Nous avons pris le temps d&amp;rsquo;aller voir le Méridien de Greenwich qui est le méridien 0°. Ce lieu historique, situé dans le quartier de Greenwich au sud-est de Londres, représente un point de référence fondamental pour la navigation et la cartographie mondiale.&lt;/p&gt;
+&lt;p&gt;Ce Méridien est devenu très important depuis qu&amp;rsquo;il est devenu la référence mondiale topographique à la &lt;a href=&#34;https://fr.wikipedia.org/wiki/Conf%C3%A9rence_internationale_de_Washington_de_1884&#34;&gt;Conférence internationale de Washington de 1884&lt;/a&gt;. Avant cette date, de nombreux pays utilisaient leur propre méridien de référence, ce qui créait une confusion considérable pour la navigation internationale et les échanges commerciaux. L&amp;rsquo;adoption d&amp;rsquo;un méridien unique a permis de standardiser les cartes et les systèmes de navigation à l&amp;rsquo;échelle mondiale.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leshan et le standard Lightweight M2M à l&#39;EclipseCon</title>
       <link>https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/</link>
       <pubDate>Wed, 01 Jul 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/</guid>
-      <description>&lt;p&gt;La semaine dernière, j&amp;rsquo;étais à l&amp;rsquo;&lt;a href=&#34;https://www.eclipsecon.org/france2015/&#34;&gt;EclipseCon&lt;/a&gt; qui se déroulait à Toulouse. Sponsor Bronze de cette édition &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; (mon entreprise) avait &lt;a href=&#34;https://www.flickr.com/groups/2812102@N25/pool/&#34;&gt;un stand&lt;/a&gt;. C&amp;rsquo;est à cette occasion que j&amp;rsquo;ai participé à un training concernant le protocole CoAP et notamment &lt;a href=&#34;https://www.eclipsecon.org/france2015/session/hands-lightweight-m2m-run-smartwatch-internet-things&#34;&gt;le standard LWM2M&lt;/a&gt; dispensé par &lt;a href=&#34;http://people.apache.org/~jvermillard/&#34;&gt;Julien Vermillard&lt;/a&gt; de chez &lt;a href=&#34;http://www.sierrawireless.com/&#34;&gt;Sierra Wireless&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;le-protocole-coap&#34;&gt;Le protocole CoAP&lt;/h2&gt;
-&lt;p&gt;Le protocole &lt;a href=&#34;http://coap.technology/&#34;&gt;&lt;strong&gt;CoAP&lt;/strong&gt;&lt;/a&gt; pour Constrained Application Protocol  a été défini afin de répondre aux exigences très contraintes de l&amp;rsquo;internet des objets &lt;em&gt;IoT&lt;/em&gt; et de la communication Machine 2 Machine &lt;em&gt;M2M&lt;/em&gt; à savoir : faible puissance de calcul, faible consommation en énergie et faible bande passante.
-Le protocole CoAP est le pendant M2M du protocole HTTP pour le web car on retrouve les mêmes concepts et la même terminologie :&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;découverte-du-protocole-lwm2m-pour-linternet-des-objets&#34;&gt;Découverte du protocole LWM2M pour l&amp;rsquo;Internet des Objets&lt;/h1&gt;
+&lt;p&gt;La semaine dernière, j&amp;rsquo;ai eu l&amp;rsquo;opportunité de participer à l&amp;rsquo;&lt;a href=&#34;https://www.eclipsecon.org/france2015/&#34;&gt;EclipseCon&lt;/a&gt; qui se déroulait à Toulouse. En tant que sponsor Bronze de cette édition, &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; (mon entreprise) était présente avec &lt;a href=&#34;https://www.flickr.com/groups/2812102@N25/pool/&#34;&gt;un stand&lt;/a&gt; pour échanger avec la communauté. C&amp;rsquo;est dans ce cadre que j&amp;rsquo;ai suivi une formation particulièrement enrichissante sur le protocole CoAP et &lt;a href=&#34;https://www.eclipsecon.org/france2015/session/hands-lightweight-m2m-run-smartwatch-internet-things&#34;&gt;le standard LWM2M&lt;/a&gt; dispensée par &lt;a href=&#34;http://people.apache.org/~jvermillard/&#34;&gt;Julien Vermillard&lt;/a&gt; de chez &lt;a href=&#34;http://www.sierrawireless.com/&#34;&gt;Sierra Wireless&lt;/a&gt;, expert reconnu dans ce domaine.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Java Regex Group Name</title>
       <link>https://gautric.github.io/blog/2015/06/18/java-regex-group-name/</link>
       <pubDate>Thu, 18 Jun 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/06/18/java-regex-group-name/</guid>
-      <description>&lt;p&gt;Lors d&amp;rsquo;un développement d&amp;rsquo;un programme informatique, il est parfois nécessaire d&amp;rsquo;utiliser les expressions rationnelles. On traduit parfois regular expression par expression régulière. L&amp;rsquo;utilisation d&amp;rsquo;une expression rationnelle est utile dans le cas où l&amp;rsquo;on cherche des bouts de chaines de caractères dans du texte. Il est aussi possible de vérifier qu&amp;rsquo;une chaine de caractères correspond bien à un schéma/motif particulier.&lt;/p&gt;
-&lt;p&gt;Dans tous les langages modernes (java, ruby, python), les librairies &lt;em&gt;regex&lt;/em&gt; sont disponibles en standard. Nous allons voir comment utiliser une fonctionnalité interessante disponible dans la librairie standard de Java.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Lors du développement d&amp;rsquo;un programme informatique, il est souvent nécessaire d&amp;rsquo;utiliser les expressions rationnelles (ou &amp;ldquo;regular expressions&amp;rdquo; en anglais, parfois traduites par &amp;ldquo;expressions régulières&amp;rdquo;). Ces expressions constituent un outil puissant lorsqu&amp;rsquo;il s&amp;rsquo;agit de rechercher des motifs spécifiques dans des chaînes de caractères ou de vérifier qu&amp;rsquo;un texte correspond à un format particulier.&lt;/p&gt;
+&lt;p&gt;Dans tous les langages de programmation modernes comme Java, Ruby ou Python, les bibliothèques d&amp;rsquo;expressions rationnelles (ou &lt;em&gt;regex&lt;/em&gt;) sont disponibles en standard. Dans cet article, nous allons explorer une fonctionnalité particulièrement intéressante disponible dans la bibliothèque standard de Java : les groupes nommés.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sortie de wildfly 9.0 CR-01</title>
       <link>https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/</link>
       <pubDate>Mon, 04 May 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/</guid>
-      <description>&lt;p&gt;La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en &lt;a href=&#34;http://wildfly.org/downloads/&#34;&gt;téléchargement ici&lt;/a&gt;. Cette version corrige un certain nombre de bug et elle apporte de nouvelles fonctionnalités que nous allons vous rapidement ici. Je posterai plus tard des exemples complets.&lt;/p&gt;
-&lt;h3 id=&#34;java-ee7&#34;&gt;Java EE7&lt;/h3&gt;
-&lt;p&gt;Wildfly 9 intégre les deux profils Web et Full du standard Java EE7.&lt;/p&gt;
-&lt;h3 id=&#34;le-support-de-http2--spdy&#34;&gt;Le support de HTTP/2 &amp;amp; SPDY&lt;/h3&gt;
-&lt;p&gt;Le standard HTTP/2 est maintenant &lt;a href=&#34;https://lists.w3.org/Archives/Public/ietf-http-wg/2015JanMar/0478.html&#34;&gt;officiel depuis Fevrier&lt;/a&gt;. Wildfly 9 inclut le support de ce protocole, mais nécessite une &lt;a href=&#34;http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html&#34;&gt;procédure spéciale&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en &lt;a href=&#34;http://wildfly.org/downloads/&#34;&gt;téléchargement ici&lt;/a&gt;. Cette version corrige un certain nombre de bugs et apporte de nouvelles fonctionnalités que nous allons vous présenter rapidement ici. Cette version représente une étape importante avant la sortie finale et intègre des améliorations significatives en termes de performances et de stabilité. Je posterai plus tard des exemples complets pour illustrer ces nouvelles fonctionnalités.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Les premiers jours du projet Camel IoT Labs</title>
       <link>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</link>
       <pubDate>Sat, 25 Apr 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</guid>
-      <description>&lt;p&gt;Aujourd&amp;rsquo;hui, l&amp;rsquo;internet des objets ou aussi appelé IoT prend de plus en plus de place dans l&amp;rsquo;industrie informatique et non informatique. Des montres &lt;a href=&#34;http://www.withings.com/fr/withings-activite.html&#34;&gt;Withings&lt;/a&gt;, aux &lt;a href=&#34;http://raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt; vendus à 5M d&amp;rsquo;unités, en passant par les plaques &lt;a href=&#34;http://www.arduino.cc/&#34;&gt;Arduino&lt;/a&gt; low cost et autres modules &lt;a href=&#34;https://tessel.io/&#34;&gt;Tessel&lt;/a&gt;, le cout de production des objets électroniques baissant, a permis une large diffusion de ces nouveaux objets.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gautric.github.io/img/camel-labs.png&#34; style=&#34;max-width:120%;&#34; align=&#34;left&#34; height=&#34;110&#34; hspace=&#34;30&#34;/&gt; En 2012, les premiers RaspberryPi sont lancés sur le marché, j&amp;rsquo;en ai acheté un. Depuis j&amp;rsquo;ai presque tout les modèles Brev1, Brev2, B+ et B2 ;-). J&amp;rsquo;ai aussi repris mon fer à souder, comme dans mes années lycée. Mais, à l&amp;rsquo;époque pas beaucoup d&amp;rsquo;internet, pas beaucoup de standard, pas beaucoup de matériel. Aujourd&amp;rsquo;hui il y a presque tout. Il ne reste plus qu&amp;rsquo;a assembler dans des briques physiques des briques logicielles plus ou moins évoluées.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Aujourd&amp;rsquo;hui, l&amp;rsquo;Internet des Objets (IoT) prend une place de plus en plus importante dans l&amp;rsquo;industrie informatique et au-delà. Des montres connectées &lt;a href=&#34;http://www.withings.com/fr/withings-activite.html&#34;&gt;Withings&lt;/a&gt;, aux &lt;a href=&#34;http://raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt; vendus à plus de 5 millions d&amp;rsquo;unités, en passant par les cartes &lt;a href=&#34;http://www.arduino.cc/&#34;&gt;Arduino&lt;/a&gt; à bas coût et autres modules &lt;a href=&#34;https://tessel.io/&#34;&gt;Tessel&lt;/a&gt;, la baisse du coût de production des objets électroniques a permis une large diffusion de ces nouvelles technologies.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://gautric.github.io/img/camel-labs.png&#34; style=&#34;max-width:120%;&#34; align=&#34;left&#34; height=&#34;110&#34; hspace=&#34;30&#34;/&gt; En 2012, les premiers Raspberry Pi sont lancés sur le marché, et j&amp;rsquo;en ai immédiatement acquis un. Depuis, j&amp;rsquo;ai collectionné presque tous les modèles : B rev1, B rev2, B+ et B2 ;-). J&amp;rsquo;ai également repris mon fer à souder, comme à l&amp;rsquo;époque du lycée. Mais contrairement à cette époque où l&amp;rsquo;on disposait de peu de ressources internet, peu de standards et peu de matériel, aujourd&amp;rsquo;hui nous avons presque tout à notre disposition. Il ne reste plus qu&amp;rsquo;à assembler des briques physiques avec des briques logicielles plus ou moins évoluées.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6</title>
       <link>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</link>
       <pubDate>Wed, 25 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</guid>
-      <description>&lt;p&gt;Le serveur d&amp;rsquo;application &lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; est &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;certifié JAVA EE 6&lt;/a&gt;, il implémente donc via le framework &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt; le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;intégration-de-websphere-mq-avec-jboss-eap-6--bonnes-pratiques&#34;&gt;Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques&lt;/h1&gt;
+&lt;p&gt;L&amp;rsquo;intégration entre différents systèmes d&amp;rsquo;entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d&amp;rsquo;application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d&amp;rsquo;intégration.&lt;/p&gt;
+&lt;h2 id=&#34;introduction-au-standard-jca-et-à-lintégration-jms&#34;&gt;Introduction au standard JCA et à l&amp;rsquo;intégration JMS&lt;/h2&gt;
+&lt;p&gt;Le serveur d&amp;rsquo;application &lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; est &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;certifié JAVA EE 6&lt;/a&gt;, ce qui signifie qu&amp;rsquo;il implémente l&amp;rsquo;ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Yubico OTP et JBoss EAP 6 ou Wildfly 8</title>
       <link>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</link>
       <pubDate>Thu, 19 Mar 2015 00:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.yubico.com/&#34;&gt;Yubikey&lt;/a&gt; est une clef de crypto qui permet d&amp;rsquo;avoir une authentification forte lors d&amp;rsquo;un processus de connexion à un site web (par ex : banque, web mail, etc&amp;hellip;.). Plusieurs sites web commencent à inclure cette fonctionnalité lors du processus d&amp;rsquo;authentification à leur service.
-L&amp;rsquo;utilisateur utilise un token généré par sa clef comme mot de passe. Ce mot de passe est aléatoire, est vérifié par le système et change à chaque utilisation. Si le mot de passe est intercepté par un tiers, ce dernier ne peut pas le rejouer pour s&amp;rsquo;authentifier.&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;intégration-de-lauthentification-forte-avec-yubikey-dans-jboss&#34;&gt;Intégration de l&amp;rsquo;authentification forte avec Yubikey dans JBoss&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.yubico.com/&#34;&gt;Yubikey&lt;/a&gt; est une clé de sécurité matérielle qui permet d&amp;rsquo;implémenter une authentification forte (2FA - Two-Factor Authentication) lors d&amp;rsquo;un processus de connexion à un site web ou une application (par exemple : services bancaires, webmail, applications d&amp;rsquo;entreprise, etc.). De plus en plus d&amp;rsquo;organisations intègrent cette technologie dans leur processus d&amp;rsquo;authentification pour renforcer significativement leur sécurité informatique.&lt;/p&gt;
+&lt;h2 id=&#34;principe-de-fonctionnement&#34;&gt;Principe de fonctionnement&lt;/h2&gt;
+&lt;p&gt;Le principe est simple mais efficace : l&amp;rsquo;utilisateur utilise un token à usage unique généré par sa clé Yubikey comme second facteur d&amp;rsquo;authentification. Ce token est cryptographiquement sécurisé, vérifié par le système, et change à chaque utilisation. Même si le token est intercepté par un attaquant lors d&amp;rsquo;une tentative de connexion, celui-ci ne pourra pas le réutiliser pour s&amp;rsquo;authentifier ultérieurement, ce qui renforce considérablement la sécurité du système d&amp;rsquo;authentification.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Il y a un siècle aux Dardanelles</title>
       <link>https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</link>
       <pubDate>Wed, 18 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</guid>
-      <description>Il y a cent ans, « Le bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l’Amirauté</description>
+      <description>Il y a cent ans, « Le bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l&amp;#39;Amirauté</description>
     </item>
     <item>
       <title>Premier post</title>
       <link>https://gautric.github.io/blog/2015/03/10/premier-post/</link>
       <pubDate>Tue, 10 Mar 2015 18:02:10 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/10/premier-post/</guid>
-      <description>&lt;p&gt;Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.&lt;/p&gt;
-&lt;p&gt;I will post here my articles. I look forward to seeing you.&lt;/p&gt;
-&lt;p&gt;私は　ここに　私のブログを　書きます。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;français&#34;&gt;Français&lt;/h2&gt;
+&lt;p&gt;Bienvenue sur mon blog ! Je posterai ici mes articles techniques et mes réflexions sur divers sujets informatiques. En espérant que vous y trouverez des informations utiles et intéressantes. Bonne lecture à tous.&lt;/p&gt;
+&lt;h2 id=&#34;english&#34;&gt;English&lt;/h2&gt;
+&lt;p&gt;Welcome to my blog! I will be posting my technical articles and thoughts on various IT topics here. I hope you&amp;rsquo;ll find useful and interesting information. Happy reading!&lt;/p&gt;
+&lt;h2 id=&#34;日本語&#34;&gt;日本語&lt;/h2&gt;
+&lt;p&gt;ようこそ、私のブログへ！ここに技術的な記事やIT関連のさまざまな考えを投稿します。役立つ情報を見つけていただければ幸いです。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

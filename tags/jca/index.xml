@@ -4,7 +4,7 @@
     <title>JCA on Greg. I/O</title>
     <link>https://gautric.github.io/tags/jca/</link>
     <description>Recent content in JCA on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Mar 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/jca/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,20 @@
       <link>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</link>
       <pubDate>Thu, 26 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/26/best-practices-websphere-mq/jboss-eap-6-english-version/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; application server is &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;Java EE 6 certified&lt;/a&gt;, it implements via &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt; framework, the Java EE Connector Architecture (JCA) standard. This standard provides connection ability for Java EE applications to interact with external data system like JMS broker, file system or mainframe. The JCA standard is similar to the JDBC standard. The latter interacts only with relational databases but JCA can interact with more data system providers and it can integrate different kinds of Enterprise Information System (EIS).&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;integrating-websphere-mq-with-jboss-eap-6-best-practices&#34;&gt;Integrating WebSphere MQ with JBoss EAP 6: Best Practices&lt;/h1&gt;
+&lt;p&gt;Enterprise application integration remains one of the most challenging aspects of modern IT architectures. This article explores how to effectively connect JBoss Enterprise Application Platform (EAP) 6 with IBM WebSphere MQ messaging system using Java EE standards and following industry best practices.&lt;/p&gt;
+&lt;h2 id=&#34;introduction-to-jca-and-enterprise-integration&#34;&gt;Introduction to JCA and Enterprise Integration&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; application server is &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;Java EE 6 certified&lt;/a&gt;, which means it implements all specifications of this Java Enterprise Edition platform version. Among these specifications, the Java EE Connector Architecture (JCA) standard is implemented through the &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt; framework.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6</title>
       <link>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</link>
       <pubDate>Wed, 25 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/</guid>
-      <description>&lt;p&gt;Le serveur d&amp;rsquo;application &lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; est &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;certifié JAVA EE 6&lt;/a&gt;, il implémente donc via le framework &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt; le standard JAVA EE Connector Architecture (JCA). Ce standard permet de connecter les applications Java EE à des ressources externes comme par exemple un broker JMS, un système de fichier ou un mainframe. Il est possible de faire l&amp;rsquo;analogie du standard JCA avec le standard JDBC, JDBC se limitant uniquement aux bases de données de type relationnel, JCA se veut beaucoup plus large, il permet d&amp;rsquo;intégrer tout type de systèmes d’informations d’entreprise (EIS)&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;intégration-de-websphere-mq-avec-jboss-eap-6--bonnes-pratiques&#34;&gt;Intégration de WebSphere MQ avec JBoss EAP 6 : Bonnes pratiques&lt;/h1&gt;
+&lt;p&gt;L&amp;rsquo;intégration entre différents systèmes d&amp;rsquo;entreprise est un défi courant dans les architectures informatiques modernes. Dans cet article, nous allons explorer comment connecter efficacement le serveur d&amp;rsquo;application JBoss EAP 6 avec le système de messagerie IBM WebSphere MQ, en utilisant les standards Java EE et en suivant les meilleures pratiques d&amp;rsquo;intégration.&lt;/p&gt;
+&lt;h2 id=&#34;introduction-au-standard-jca-et-à-lintégration-jms&#34;&gt;Introduction au standard JCA et à l&amp;rsquo;intégration JMS&lt;/h2&gt;
+&lt;p&gt;Le serveur d&amp;rsquo;application &lt;a href=&#34;http://www.jboss.org/products/eap/overview/&#34;&gt;JBoss EAP&lt;/a&gt; est &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html&#34;&gt;certifié JAVA EE 6&lt;/a&gt;, ce qui signifie qu&amp;rsquo;il implémente l&amp;rsquo;ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework &lt;a href=&#34;http://www.ironjacamar.org/&#34;&gt;IronJacamar&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

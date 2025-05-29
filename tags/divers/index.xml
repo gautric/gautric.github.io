@@ -4,7 +4,7 @@
     <title>Divers on Greg. I/O</title>
     <link>https://gautric.github.io/tags/divers/</link>
     <description>Recent content in Divers on Greg. I/O</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.6</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Mar 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/divers/index.xml" rel="self" type="application/rss+xml" />
@@ -13,16 +13,19 @@
       <link>https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</link>
       <pubDate>Wed, 18 Mar 2015 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</guid>
-      <description>Il y a cent ans, « Le bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l’Amirauté</description>
+      <description>Il y a cent ans, « Le bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l&amp;#39;Amirauté</description>
     </item>
     <item>
       <title>Premier post</title>
       <link>https://gautric.github.io/blog/2015/03/10/premier-post/</link>
       <pubDate>Tue, 10 Mar 2015 18:02:10 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2015/03/10/premier-post/</guid>
-      <description>&lt;p&gt;Je posterai ici mes articles. En esperant vous y retrouver. Bonne lecture.&lt;/p&gt;
-&lt;p&gt;I will post here my articles. I look forward to seeing you.&lt;/p&gt;
-&lt;p&gt;私は　ここに　私のブログを　書きます。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;français&#34;&gt;Français&lt;/h2&gt;
+&lt;p&gt;Bienvenue sur mon blog ! Je posterai ici mes articles techniques et mes réflexions sur divers sujets informatiques. En espérant que vous y trouverez des informations utiles et intéressantes. Bonne lecture à tous.&lt;/p&gt;
+&lt;h2 id=&#34;english&#34;&gt;English&lt;/h2&gt;
+&lt;p&gt;Welcome to my blog! I will be posting my technical articles and thoughts on various IT topics here. I hope you&amp;rsquo;ll find useful and interesting information. Happy reading!&lt;/p&gt;
+&lt;h2 id=&#34;日本語&#34;&gt;日本語&lt;/h2&gt;
+&lt;p&gt;ようこそ、私のブログへ！ここに技術的な記事やIT関連のさまざまな考えを投稿します。役立つ情報を見つけていただければ幸いです。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
