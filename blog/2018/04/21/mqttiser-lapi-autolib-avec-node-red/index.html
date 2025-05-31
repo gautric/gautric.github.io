@@ -7,9 +7,8 @@
 <meta name="robots" content="index, follow">
 <title>MQTTiser l&#39;API Autolib avec Node-Red | Greg. I/O</title>
 <meta name="keywords" content="fr, MQTT, node-red, flow, api, Paris, Autolib">
-<meta name="description" content="Après un petit temps de silence, pour des raisons personnelles et notamment l&rsquo;arrivé d&rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&rsquo;Autolib j&rsquo;ai besoin d&rsquo;avoir en flux continu l&rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&rsquo;ai installé et configuré chez moi la solution HomeAssistant, j&rsquo;utilisais pour cela l&rsquo;API de Paris en mode REST/HTTP.
-Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d&rsquo;appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful.
-Je me suis dit, pourquoi ne pas :">
+<meta name="description" content="Après un petit temps de silence, pour des raisons personnelles et notamment l&rsquo;arrivée d&rsquo;un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d&rsquo;Autolib, j&rsquo;ai besoin d&rsquo;avoir en flux continu l&rsquo;état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j&rsquo;ai plusieurs stations Autolib et je dois consulter régulièrement l&rsquo;application iPhone en fonction de mes besoins.
+Afin de me simplifier la vie, j&rsquo;ai installé et configuré chez moi la solution HomeAssistant, qui est une plateforme de domotique open source très populaire. J&rsquo;utilisais pour cela l&rsquo;API de Paris en mode REST/HTTP pour récupérer les informations des stations Autolib.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
@@ -32,7 +31,8 @@ Je me suis dit, pourquoi ne pas :">
 </noscript><meta property="og:url" content="https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="MQTTiser l&#39;API Autolib avec Node-Red">
-  <meta property="og:description" content="Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’Autolib j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution HomeAssistant, j’utilisais pour cela l’API de Paris en mode REST/HTTP. Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful. Je me suis dit, pourquoi ne pas :">
+  <meta property="og:description" content="Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivée d’un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d’Autolib, j’ai besoin d’avoir en flux continu l’état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j’ai plusieurs stations Autolib et je dois consulter régulièrement l’application iPhone en fonction de mes besoins.
+Afin de me simplifier la vie, j’ai installé et configuré chez moi la solution HomeAssistant, qui est une plateforme de domotique open source très populaire. J’utilisais pour cela l’API de Paris en mode REST/HTTP pour récupérer les informations des stations Autolib.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -46,9 +46,8 @@ Je me suis dit, pourquoi ne pas :">
     <meta property="article:tag" content="Paris">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MQTTiser l&#39;API Autolib avec Node-Red">
-<meta name="twitter:description" content="Après un petit temps de silence, pour des raisons personnelles et notamment l&rsquo;arrivé d&rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&rsquo;Autolib j&rsquo;ai besoin d&rsquo;avoir en flux continu l&rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&rsquo;ai installé et configuré chez moi la solution HomeAssistant, j&rsquo;utilisais pour cela l&rsquo;API de Paris en mode REST/HTTP.
-Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d&rsquo;appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful.
-Je me suis dit, pourquoi ne pas :">
+<meta name="twitter:description" content="Après un petit temps de silence, pour des raisons personnelles et notamment l&rsquo;arrivée d&rsquo;un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d&rsquo;Autolib, j&rsquo;ai besoin d&rsquo;avoir en flux continu l&rsquo;état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j&rsquo;ai plusieurs stations Autolib et je dois consulter régulièrement l&rsquo;application iPhone en fonction de mes besoins.
+Afin de me simplifier la vie, j&rsquo;ai installé et configuré chez moi la solution HomeAssistant, qui est une plateforme de domotique open source très populaire. J&rsquo;utilisais pour cela l&rsquo;API de Paris en mode REST/HTTP pour récupérer les informations des stations Autolib.">
       <meta name="twitter:site" content="@gautric_io">
 
 
@@ -78,12 +77,12 @@ Je me suis dit, pourquoi ne pas :">
   "@type": "BlogPosting",
   "headline": "MQTTiser l'API Autolib avec Node-Red",
   "name": "MQTTiser l\u0027API Autolib avec Node-Red",
-  "description": "Après un petit temps de silence, pour des raisons personnelles et notamment l\u0026rsquo;arrivé d\u0026rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d\u0026rsquo;Autolib j\u0026rsquo;ai besoin d\u0026rsquo;avoir en flux continu l\u0026rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j\u0026rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l\u0026rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j\u0026rsquo;ai installé et configuré chez moi la solution HomeAssistant, j\u0026rsquo;utilisais pour cela l\u0026rsquo;API de Paris en mode REST/HTTP. Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d\u0026rsquo;appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful. Je me suis dit, pourquoi ne pas :\n",
+  "description": "Après un petit temps de silence, pour des raisons personnelles et notamment l\u0026rsquo;arrivée d\u0026rsquo;un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d\u0026rsquo;Autolib, j\u0026rsquo;ai besoin d\u0026rsquo;avoir en flux continu l\u0026rsquo;état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j\u0026rsquo;ai plusieurs stations Autolib et je dois consulter régulièrement l\u0026rsquo;application iPhone en fonction de mes besoins.\nAfin de me simplifier la vie, j\u0026rsquo;ai installé et configuré chez moi la solution HomeAssistant, qui est une plateforme de domotique open source très populaire. J\u0026rsquo;utilisais pour cela l\u0026rsquo;API de Paris en mode REST/HTTP pour récupérer les informations des stations Autolib.\n",
   "keywords": [
     "fr", "MQTT", "node-red", "flow", "api", "Paris", "Autolib"
   ],
-  "articleBody": "Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’Autolib j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution HomeAssistant, j’utilisais pour cela l’API de Paris en mode REST/HTTP. Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful. Je me suis dit, pourquoi ne pas :\nMQTTiser l’API Autolib avec Node-Red\nArchitecture Voila en résumé l’architecture de la solution que l’on va mettre en place.\nDescription du schéma de principe : Un flux/flow Node-Red va consommer régulierement la DataParis API. Le retour est parsé et découpé pour chacune des stations Autolib. Chaque message est envoyé dans le topic MQTT correspond à sa station. Le client HomeAssistant s’abonne ensuite aux topics des stations souhaitées. API de Paris L’API de Paris propose un grand nombre d’Objets sur lequels il est possible de requeter (PLU, liste des prénoms, Titularisations). La plupart du temps ces données sont des données froides, ceux sont des extracts de base de données interne à la Ville de Paris . Seules deux sources de données sont temps réel c’est à dire qu’elles sont mise à jour lors de chaque appel, il s’agit du status des stations Velib et des stations Autolib. Dans notre cas, nous allons utiliser cette dernière :\nCette API indique en temps réel l’état des 1119 stations avec la requete HTTP suivante (on se limitera ici à 2 stations) :\ncurl https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel\u0026rows=2 { \"nhits\": 1119, \"parameters\": { \"dataset\": [\"autolib-disponibilite-temps-reel\"], \"timezone\": \"UTC\", \"rows\": 2, \"format\": \"json\" }, \"records\": [{ \"datasetid\": \"autolib-disponibilite-temps-reel\", \"recordid\": \"a1c22a2c66ac55e6de9b0badcf5fe4f71c33e652\", \"fields\": { \"status\": \"ok\", \"city\": \"Paris\", \"kind\": \"STATION\", \"station_type\": \"station\", \"charging_status\": \"operational\", \"rental_status\": \"operational\", \"cars_counter_bluecar\": 3, \"cars\": 3, \"public_name\": \"Paris/Ordener/65\", \"geo_point\": [48.8913517, 2.3507171], \"charge_slots\": 0, \"postal_code\": \"75018\", \"cars_counter_utilib_1.4\": 0, \"subscription_status\": \"nonexistent\", \"slots\": 1, \"id\": \"paris-ordener-65\", \"address\": \"65 rue Ordener\", \"cars_counter_utilib\": 0 }, \"geometry\": { \"type\": \"Point\", \"coordinates\": [2.3507171, 48.8913517] } }, { \"datasetid\": \"autolib-disponibilite-temps-reel\", \"recordid\": \"8b1396096c4c2761ec5120ffdd3fd824b18a824d\", \"fields\": { \"status\": \"ok\", \"city\": \"Paris\", \"kind\": \"STATION\", \"station_type\": \"station\", \"charging_status\": \"operational\", \"rental_status\": \"operational\", \"cars_counter_bluecar\": 5, \"cars\": 5, \"public_name\": \"Paris/Raymond Losserand/229\", \"geo_point\": [48.828, 2.306022], \"charge_slots\": 0, \"postal_code\": \"75014\", \"cars_counter_utilib_1.4\": 0, \"subscription_status\": \"nonexistent\", \"slots\": 1, \"id\": \"paris-raymondlosserand-229\", \"address\": \"229 Rue Raymond Losserand\", \"cars_counter_utilib\": 0 }, \"geometry\": { \"type\": \"Point\", \"coordinates\": [2.306022, 48.828] } }] } Il n’est pas difficile de comprendre le schéma et le resultat obtenu, l’ensemble des informations nécessaire à note besoin sont là :\ncars : nombre de voiture dispo sur la station. slots : nombre de place libre sur la station. Nous avons aussi des informations de type descriptifs (nom de la station, coordonnées GPS, etc…). Elles pourront etre utilisés dans d’autres cas d’usage bien sûr, sur une carte par exemple.\nMQTT Le Protocole MQTT est un protocole MoM dans le domaine de l’IoT. Ce protocole est largement utilisé dans le monde de l’Internet des Objets car il est ouvert, leger et consommant peu de ressources reseau. Dans la version 3.x, il n’implemente pas de gestion de Transaction, et se limite au mode Topic ou autrement appelé Publish/Subscribe. Plusieurs niveaux de QoS sont définisable tant sur le message, sur le topic que sur le broker lui-même. Plusieurs features sont intéressantes notamment la notion d’adressage hierarchique des topics, il est possible de s’abonner dans ce cas là à tout un sous-groupe de topic :\n/nasdaq/# Pour tout les indices du nasdaq /meteo/fr/92/# Pour toute les villes du départements du 92. Utilisé au dessus de TCP/IP et bindé sur le port 1883, il est standardisé par l’OASIS, l’ISO et IANA.\nBroker MQTT Plusieurs Broker MQTT existent sur le marché, nous allons en voir deux OpenSource développé sur des langages différents. Nous allons comme cela testé leur interoperabilité.\nMosquitto Développé par la Fondation Eclispe, il est écrit en C. Il possede une bon support de la communauté et est régulièrement mis à jour. Disponible sur l’ensemble des environement Unix like, il est distribué par les systemes de packaging de chaque OS.\nVersion 1.4.15 Date Fev 2018 License EPL/EDL Langage C Warning\nJe n’ai pas encore trouvé de système de supervision un peu serieux, je suis preneur par vos retours.\nDans ce post nous allons simplement utilisé le client mosquitto qui est très facile d’utilisation.\nmosquitto_sub -i -h -t -v mosquitto_sub -i mosquitto_client -h localhost -t \"/autolib/boulognebillancourt/#\" -v Info\nMosquitto est disponible en mode container Docker.\nActiveMQ Artemis La fondation Apache quand à elle propose le project commumautaire Apache ActiveMQ Artemis. Il s’agit du petit frère du projet Apache ActiveMQ. Comme souvent dans les projet de la Fondation, le projet est developpé en Java. Au contraire de Mosquitto qui est mono protocole, Artemis support un grand nombre de protocole ouvert comme : AMQP v1.0, MQTT, STOMP, OpenWire. Il est compatible JMS 1.0 et 2.0 pour les utilisateurs de l’API JMS. Il est aussi facilement clusterisable afin de garantir une haute disponible.\nVersion 2.5.0 Date Mars 2018 License Apache 2.0 Langage Java Info\nActiveMQ Artemis vient en standard avec un outil de monitoring\nNode-red Le project Node-Red est un outil de creation et d’execution EIP dédié à l’IoT et executé sur la plateforme NodeJs. C’est un outil léger tout en disposant d’une IHM complete de création de flow. L’IHM permet de créer des flows de traitement en assemblant et reliant des composants d’entrée et/ou sortie en eux via des liens.\nVoici une liste non exhaustive des composants disponible :\nmqtt in/out. email in/out. file in/out. http/tcp/udp in/out. timer, switch, change, range, join, sort, batch, function, debug, log. csv, html, json, yaml, xml, html. Lorsque le flow est validé, il suffit simplement de le deployer pour l’executer directement.\n| ————: | :————– | | Version | v0.18.4 | | Date | Jan 2018 | | License | Apache 2.0 | | Langage | JavaScript |\nInfo\nNode-Red s’execute très bien sur un RaspberryPi\nFlow Autolib Pour notre use-case, nous allons faire un appel toute les 20s (cf info) sur l’API de Paris, on verifie rapidement que l’on recupere bien un retour HTTP/200. On découpe ensuite la liste des stations message par message. Puis on crée dynamiquement pour chaque message et donc chaque station, le bon adressage de Topic pour l’envoie au broker MQTT. Le composant RBE est simplement là pour faire transiter le message que si il y a effectivement un changement de contenu.\nInfo\nL’API de Paris est limitée 5000 req/j. Cela fait dans une journée, pas plus d’une requete toute les 17s. Donc pour etre large, j’ai pris toutes les 20s.\nLe code du flow est disponible sur le repository suivant :\nhttps://github.com/gautric/mqtt-4-autolib/blob/master/flows_mbp.g.a.net.json\nRésultat Monitoring ActiveMQ Nous voyons bien dans l’outil de monitoring les divers topics qui dependent directement des stations Autolib, nous voyons aussi la connexion de deux clients MQTT, l’un étant le Node-Red, l’autre le client Mosquitto.\nJ’ai configuré les messages MQTT afin d’etre en mode retain à minima, c’est pour cela que l’on retrouve un prefix technique à l’adressage des topics des stations Autolib. Cette fonctionnalité permettra de conserver une dernière valeur si HomeAssistant tombe ou bien le flux Node-Red.\nDashboard HomeAssistant Mon Dashboard HomeAssistant commence à être bien complet avec plusieurs onglets pour chaque cas d’usage. J’ai un onglet en particuler qui affiche l’ensemble des informations de transport dont Autolib, la RATP ainsi que le traffic des voitures en IDF.\nConfiguration Après avoir envoyé les messages dans le broker ActiveMQ Artemis, il faut que le Dashboard HomeAssistant puisse lire correctement les données. Pour cela, il suffira de rajouter dans sa liste dans le fichier sensor.yaml, les sensors de type MQTT. Il suffit de comprendre le schéma du message recu et de récuperer le bon élément du message.\n* platform: mqtt name: \"Autolib Boulogne-Billancourt/Henri Martin/2 Cars\" state_topic: \"/autolib/boulognebillancourt/henrimartin/2\" value_template: '\\{\\{value_json.fields.cars\\}\\}' unit_of_measurement: '' * platform: mqtt name: \"Autolib Boulogne-Billancourt/Henri Martin/2 Slots\" state_topic: \"/autolib/boulognebillancourt/henrimartin/2\" value_template: '\\{\\{value_json.fields.slots\\}\\}' unit_of_measurement: '' ..... * platform: mqtt name: \"Autolib Last Update\" state_topic: \"/autolib/\\_lastCall\" unit_of_measurement: '' ScreenShot Et pour finir, voici le résultant dans le Dashboard HomeAssistant. J’ai rajouté un petit hook dans le flow nominal afin d’avoir l’heure de la dernière mise à jour des données. Il s’agit de verifier si tout ce passe bien.\nMosquitto Client L’utilisation du client mosquitto est interopérable facilement avec le broker ActiveMQ Artemis.\nmosquitto_sub -i mosquitto_client -h localhost -t \"/autolib/boulognebillancourt/#\" -v /autolib/boulognebillancourt/henrimartin/2 {\"datasetid\":\"autolib-disponibilite-temps-reel\",\"recordid\":\"a165c1342525a1c27a24eb1cdf781eddf6aaa149\",\"fields\":{\"status\":\"ok\",\"city\":\"Boulogne-Billancourt\",\"kind\":\"STATION\",\"station_type\":\"station\",\"charging_status\":\"nonexistent\",\"rental_status\":\"operational\",\"cars_counter_bluecar\":1,\"cars\":1,\"public_name\":\"Boulogne-Billancourt/Henri Martin/2\",\"geo_point\":[48.8365078,2.2524132],\"charge_slots\":0,\"postal_code\":\"92100\",\"cars_counter_utilib_1.4\":0,\"subscription_status\":\"nonexistent\",\"slots\":1,\"id\":\"boulognebillancourt-henrimartin-2\",\"address\":\"2 rue Henri Martin\",\"cars_counter_utilib\":0},\"geometry\":{\"type\":\"Point\",\"coordinates\":[2.2524132,48.8365078]}} /autolib/boulognebillancourt/reine/12 {\"datasetid\":\"autolib-disponibilite-temps-reel\",\"recordid\":\"885e5ba23a48e4c519ed9eded9422628dec6ef14\",\"fields\":{\"status\":\"ok\",\"city\":\"Boulogne-Billancourt\",\"kind\":\"STATION\",\"station_type\":\"station\",\"charging_status\":\"nonexistent\",\"rental_status\":\"operational\",\"cars_counter_bluecar\":4,\"cars\":4,\"public_name\":\"Boulogne-Billancourt/Reine/12\",\"geo_point\":[48.8388074,2.2505008],\"charge_slots\":0,\"postal_code\":\"92100\",\"cars_counter_utilib_1.4\":0,\"subscription_status\":\"nonexistent\",\"slots\":1,\"id\":\"boulognebillancourt-reine-12\",\"address\":\"12 bis Route de la Reine\",\"cars_counter_utilib\":0},\"geometry\":{\"type\":\"Point\",\"coordinates\":[2.2505008,48.8388074]}} Conclusion En conclusion, pourquoi faire simple quand on peut faire compliquer. En fait, j’utilise un broker MQTT pour un autre cas d’usage dans ma domotique, donc je rentabilise bien l’utilisation de mon broker. Pour être totalement transparent, le broker Mosquitto est largement suffisant pour ma domotique, Artemis bien que beaucoup plus complet et un peu overkill pour mon usage. Je voulais simplement remercier la limite de l’API de Paris qui m’a permis de faire un petit projet d’intégration bien sympa je trouve et toujours dans la philosophie standard ouvert, interoperabilité et projets commumnutaires OpenSource.\nEn esperant, vous avoir intéressé par ce post, n’hésitez pas à me faire vos retours,\n",
-  "wordCount" : "1561",
+  "articleBody": "Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivée d’un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d’Autolib, j’ai besoin d’avoir en flux continu l’état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j’ai plusieurs stations Autolib et je dois consulter régulièrement l’application iPhone en fonction de mes besoins.\nAfin de me simplifier la vie, j’ai installé et configuré chez moi la solution HomeAssistant, qui est une plateforme de domotique open source très populaire. J’utilisais pour cela l’API de Paris en mode REST/HTTP pour récupérer les informations des stations Autolib.\nMalheureusement, le nombre de requêtes est limité et plus on doit superviser de stations (voitures disponibles, places libres), plus on doit faire d’appels REST. HomeAssistant est un très bon outil mais un peu limité en terme de scripting du composant RESTful.\nJe me suis dit, pourquoi ne pas :\nMQTTiser l’API Autolib avec Node-Red\nArchitecture Voici en résumé l’architecture de la solution que l’on va mettre en place.\nDescription du schéma de principe : Un flux/flow Node-Red va consommer régulièrement la DataParis API. Le retour est parsé et découpé pour chacune des stations Autolib. Chaque message est envoyé dans le topic MQTT correspondant à sa station. Le client HomeAssistant s’abonne ensuite aux topics des stations souhaitées. API de Paris L’API de Paris propose un grand nombre d’Objets sur lesquels il est possible de requêter (PLU, liste des prénoms, titularisations). La plupart du temps ces données sont des données froides, ce sont des extraits de bases de données internes à la Ville de Paris.\nSeules deux sources de données sont en temps réel, c’est-à-dire qu’elles sont mises à jour lors de chaque appel. Il s’agit du statut des stations Velib et des stations Autolib.\nDans notre cas, nous allons utiliser cette dernière :\nCette API indique en temps réel l’état des 1119 stations avec la requête HTTP suivante (on se limitera ici à 2 stations) :\ncurl https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel\u0026rows=2 { \"nhits\": 1119, \"parameters\": { \"dataset\": [\"autolib-disponibilite-temps-reel\"], \"timezone\": \"UTC\", \"rows\": 2, \"format\": \"json\" }, \"records\": [{ \"datasetid\": \"autolib-disponibilite-temps-reel\", \"recordid\": \"a1c22a2c66ac55e6de9b0badcf5fe4f71c33e652\", \"fields\": { \"status\": \"ok\", \"city\": \"Paris\", \"kind\": \"STATION\", \"station_type\": \"station\", \"charging_status\": \"operational\", \"rental_status\": \"operational\", \"cars_counter_bluecar\": 3, \"cars\": 3, \"public_name\": \"Paris/Ordener/65\", \"geo_point\": [48.8913517, 2.3507171], \"charge_slots\": 0, \"postal_code\": \"75018\", \"cars_counter_utilib_1.4\": 0, \"subscription_status\": \"nonexistent\", \"slots\": 1, \"id\": \"paris-ordener-65\", \"address\": \"65 rue Ordener\", \"cars_counter_utilib\": 0 }, \"geometry\": { \"type\": \"Point\", \"coordinates\": [2.3507171, 48.8913517] } }, { \"datasetid\": \"autolib-disponibilite-temps-reel\", \"recordid\": \"8b1396096c4c2761ec5120ffdd3fd824b18a824d\", \"fields\": { \"status\": \"ok\", \"city\": \"Paris\", \"kind\": \"STATION\", \"station_type\": \"station\", \"charging_status\": \"operational\", \"rental_status\": \"operational\", \"cars_counter_bluecar\": 5, \"cars\": 5, \"public_name\": \"Paris/Raymond Losserand/229\", \"geo_point\": [48.828, 2.306022], \"charge_slots\": 0, \"postal_code\": \"75014\", \"cars_counter_utilib_1.4\": 0, \"subscription_status\": \"nonexistent\", \"slots\": 1, \"id\": \"paris-raymondlosserand-229\", \"address\": \"229 Rue Raymond Losserand\", \"cars_counter_utilib\": 0 }, \"geometry\": { \"type\": \"Point\", \"coordinates\": [2.306022, 48.828] } }] } Il n’est pas difficile de comprendre le schéma et le résultat obtenu. L’ensemble des informations nécessaires à notre besoin sont là :\ncars : nombre de voitures disponibles sur la station. slots : nombre de places libres sur la station. Nous avons aussi des informations de type descriptif (nom de la station, coordonnées GPS, etc.). Elles pourront être utilisées dans d’autres cas d’usage bien sûr, comme l’affichage sur une carte par exemple.\nMQTT Le Protocole MQTT est un protocole MoM (Message-oriented Middleware) dans le domaine de l’IoT. Ce protocole est largement utilisé dans le monde de l’Internet des Objets car il est ouvert, léger et consomme peu de ressources réseau.\nDans la version 3.x, il n’implémente pas de gestion de Transaction, et se limite au mode Topic ou autrement appelé Publish/Subscribe. Plusieurs niveaux de QoS (Quality of Service) sont définissables tant sur le message, sur le topic que sur le broker lui-même.\nPlusieurs fonctionnalités sont intéressantes, notamment la notion d’adressage hiérarchique des topics. Il est possible de s’abonner dans ce cas-là à tout un sous-groupe de topics :\n/nasdaq/# Pour tous les indices du nasdaq /meteo/fr/92/# Pour toutes les villes du département du 92. Utilisé au-dessus de TCP/IP et bindé sur le port 1883, il est standardisé par l’OASIS, l’ISO et IANA.\nBroker MQTT Plusieurs Brokers MQTT existent sur le marché. Nous allons en voir deux OpenSource développés sur des langages différents. Nous allons ainsi tester leur interopérabilité.\nMosquitto Développé par la Fondation Eclipse, il est écrit en C. Il possède un bon support de la communauté et est régulièrement mis à jour. Disponible sur l’ensemble des environnements Unix-like, il est distribué par les systèmes de packaging de chaque OS.\nCaractéristique Détail Version 1.4.15 Date Fév 2018 License EPL/EDL Langage C Warning\nJe n’ai pas encore trouvé de système de supervision un peu sérieux, je suis preneur de vos retours.\nDans ce post, nous allons simplement utiliser le client mosquitto qui est très facile d’utilisation.\n$\u003e mosquitto_sub -i -h -t -v $\u003e mosquitto_sub -i mosquitto_client -h localhost -t \"/autolib/boulognebillancourt/#\" -v Info\nMosquitto est disponible en mode container Docker.\nActiveMQ Artemis La fondation Apache quant à elle propose le projet communautaire Apache ActiveMQ Artemis. Il s’agit du petit frère du projet Apache ActiveMQ. Comme souvent dans les projets de la Fondation, le projet est développé en Java.\nAu contraire de Mosquitto qui est mono-protocole, Artemis supporte un grand nombre de protocoles ouverts comme : AMQP v1.0, MQTT, STOMP, OpenWire. Il est compatible JMS 1.0 et 2.0 pour les utilisateurs de l’API JMS. Il est aussi facilement clusterisable afin de garantir une haute disponibilité.\nCaractéristique Détail Version 2.5.0 Date Mars 2018 License Apache 2.0 Langage Java Info\nActiveMQ Artemis vient en standard avec un outil de monitoring.\nNode-red Le projet Node-Red est un outil de création et d’exécution EIP (Enterprise Integration Patterns) dédié à l’IoT et exécuté sur la plateforme NodeJs. C’est un outil léger tout en disposant d’une IHM complète de création de flow. L’IHM permet de créer des flows de traitement en assemblant et reliant des composants d’entrée et/ou sortie entre eux via des liens.\nVoici une liste non exhaustive des composants disponibles :\nmqtt in/out email in/out file in/out http/tcp/udp in/out timer, switch, change, range, join, sort, batch, function, debug, log csv, html, json, yaml, xml, html Lorsque le flow est validé, il suffit simplement de le déployer pour l’exécuter directement.\nCaractéristique Détail Version v0.18.4 Date Jan 2018 License Apache 2.0 Langage JavaScript Info\nNode-Red s’exécute très bien sur un RaspberryPi.\nFlow Autolib Pour notre use-case, nous allons faire un appel toutes les 20s (cf info) sur l’API de Paris. On vérifie rapidement que l’on récupère bien un retour HTTP/200. On découpe ensuite la liste des stations message par message. Puis on crée dynamiquement pour chaque message, et donc chaque station, le bon adressage de Topic pour l’envoi au broker MQTT. Le composant RBE est simplement là pour faire transiter le message uniquement s’il y a effectivement un changement de contenu.\nInfo\nL’API de Paris est limitée à 5000 requêtes par jour. Cela fait dans une journée, pas plus d’une requête toutes les 17s. Donc pour être large, j’ai choisi un intervalle de 20s.\nLe code du flow est disponible sur le repository suivant :\nhttps://github.com/gautric/mqtt-4-autolib/blob/master/flows_mbp.g.a.net.json\nRésultat Monitoring ActiveMQ Nous voyons bien dans l’outil de monitoring les divers topics qui dépendent directement des stations Autolib. Nous voyons aussi la connexion de deux clients MQTT, l’un étant le Node-Red, l’autre le client Mosquitto.\nJ’ai configuré les messages MQTT afin d’être en mode “retain” à minima, c’est pour cela que l’on retrouve un préfixe technique à l’adressage des topics des stations Autolib. Cette fonctionnalité permettra de conserver une dernière valeur si HomeAssistant tombe ou bien si le flux Node-Red s’arrête.\nDashboard HomeAssistant Mon Dashboard HomeAssistant commence à être bien complet avec plusieurs onglets pour chaque cas d’usage. J’ai un onglet en particulier qui affiche l’ensemble des informations de transport dont Autolib, la RATP ainsi que le trafic des voitures en Île-de-France.\nConfiguration Après avoir envoyé les messages dans le broker ActiveMQ Artemis, il faut que le Dashboard HomeAssistant puisse lire correctement les données. Pour cela, il suffira de rajouter dans sa liste dans le fichier sensor.yaml, les sensors de type MQTT. Il suffit de comprendre le schéma du message reçu et de récupérer le bon élément du message.\n- platform: mqtt name: \"Autolib Boulogne-Billancourt/Henri Martin/2 Cars\" state_topic: \"/autolib/boulognebillancourt/henrimartin/2\" value_template: '{{value_json.fields.cars}}' unit_of_measurement: '' - platform: mqtt name: \"Autolib Boulogne-Billancourt/Henri Martin/2 Slots\" state_topic: \"/autolib/boulognebillancourt/henrimartin/2\" value_template: '{{value_json.fields.slots}}' unit_of_measurement: '' ..... - platform: mqtt name: \"Autolib Last Update\" state_topic: \"/autolib/_lastCall\" unit_of_measurement: '' ScreenShot Et pour finir, voici le résultat dans le Dashboard HomeAssistant. J’ai rajouté un petit hook dans le flow nominal afin d’avoir l’heure de la dernière mise à jour des données. Il s’agit de vérifier si tout se passe bien.\nMosquitto Client L’utilisation du client mosquitto est interopérable facilement avec le broker ActiveMQ Artemis.\n$\u003e mosquitto_sub -i mosquitto_client -h localhost -t \"/autolib/boulognebillancourt/#\" -v /autolib/boulognebillancourt/henrimartin/2 {\"datasetid\":\"autolib-disponibilite-temps-reel\",\"recordid\":\"a165c1342525a1c27a24eb1cdf781eddf6aaa149\",\"fields\":{\"status\":\"ok\",\"city\":\"Boulogne-Billancourt\",\"kind\":\"STATION\",\"station_type\":\"station\",\"charging_status\":\"nonexistent\",\"rental_status\":\"operational\",\"cars_counter_bluecar\":1,\"cars\":1,\"public_name\":\"Boulogne-Billancourt/Henri Martin/2\",\"geo_point\":[48.8365078,2.2524132],\"charge_slots\":0,\"postal_code\":\"92100\",\"cars_counter_utilib_1.4\":0,\"subscription_status\":\"nonexistent\",\"slots\":1,\"id\":\"boulognebillancourt-henrimartin-2\",\"address\":\"2 rue Henri Martin\",\"cars_counter_utilib\":0},\"geometry\":{\"type\":\"Point\",\"coordinates\":[2.2524132,48.8365078]}} /autolib/boulognebillancourt/reine/12 {\"datasetid\":\"autolib-disponibilite-temps-reel\",\"recordid\":\"885e5ba23a48e4c519ed9eded9422628dec6ef14\",\"fields\":{\"status\":\"ok\",\"city\":\"Boulogne-Billancourt\",\"kind\":\"STATION\",\"station_type\":\"station\",\"charging_status\":\"nonexistent\",\"rental_status\":\"operational\",\"cars_counter_bluecar\":4,\"cars\":4,\"public_name\":\"Boulogne-Billancourt/Reine/12\",\"geo_point\":[48.8388074,2.2505008],\"charge_slots\":0,\"postal_code\":\"92100\",\"cars_counter_utilib_1.4\":0,\"subscription_status\":\"nonexistent\",\"slots\":1,\"id\":\"boulognebillancourt-reine-12\",\"address\":\"12 bis Route de la Reine\",\"cars_counter_utilib\":0},\"geometry\":{\"type\":\"Point\",\"coordinates\":[2.2505008,48.8388074]}} Conclusion En conclusion, pourquoi faire simple quand on peut faire compliqué ? En fait, j’utilise un broker MQTT pour d’autres cas d’usage dans ma domotique, donc je rentabilise bien l’utilisation de mon broker.\nPour être totalement transparent, le broker Mosquitto est largement suffisant pour ma domotique, Artemis bien que beaucoup plus complet est un peu “overkill” pour mon usage. Je voulais simplement remercier la limite de l’API de Paris qui m’a permis de faire un petit projet d’intégration bien sympa je trouve, et toujours dans la philosophie des standards ouverts, de l’interopérabilité et des projets communautaires OpenSource.\nCette solution me permet désormais de consulter en temps réel l’état des stations Autolib à proximité de chez moi directement depuis mon dashboard HomeAssistant, sans avoir à ouvrir constamment l’application mobile.\nEn espérant vous avoir intéressé par ce post, n’hésitez pas à me faire vos retours.\n",
+  "wordCount" : "1615",
   "inLanguage": "en",
   "datePublished": "2018-04-21T15:00:00Z",
   "dateModified": "2018-04-21T15:00:00Z",
@@ -145,132 +144,136 @@ Je me suis dit, pourquoi ne pas :">
 
 </div>
   </header> 
-  <div class="post-content"><p>Après un petit temps de silence, pour des raisons personnelles et notamment l&rsquo;arrivé d&rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&rsquo;<a href="https://fr.wikipedia.org/wiki/Autolib%27_(Paris)">Autolib</a> j&rsquo;ai besoin d&rsquo;avoir en flux continu l&rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&rsquo;ai installé et configuré chez moi la solution <a href="https://www.home-assistant.io">HomeAssistant</a>, j&rsquo;utilisais pour cela l&rsquo;<a href="https://opendata.paris.fr/page/home/">API de Paris</a> en mode <a href="https://fr.wikipedia.org/wiki/REST">REST</a>/<a href="https://en.wikipedia.org/wiki/HTTP">HTTP</a>.
-Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d&rsquo;appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant <a href="https://www.home-assistant.io/components/rest_command/">RESTful</a>.
-Je me suis dit, pourquoi ne pas :</p>
+  <div class="post-content"><p>Après un petit temps de silence, pour des raisons personnelles et notamment l&rsquo;arrivée d&rsquo;un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d&rsquo;<a href="https://fr.wikipedia.org/wiki/Autolib%27_(Paris)">Autolib</a>, j&rsquo;ai besoin d&rsquo;avoir en flux continu l&rsquo;état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j&rsquo;ai plusieurs stations Autolib et je dois consulter régulièrement l&rsquo;application iPhone en fonction de mes besoins.</p>
+<p>Afin de me simplifier la vie, j&rsquo;ai installé et configuré chez moi la solution <a href="https://www.home-assistant.io">HomeAssistant</a>, qui est une plateforme de domotique open source très populaire. J&rsquo;utilisais pour cela l&rsquo;<a href="https://opendata.paris.fr/page/home/">API de Paris</a> en mode <a href="https://fr.wikipedia.org/wiki/REST">REST</a>/<a href="https://en.wikipedia.org/wiki/HTTP">HTTP</a> pour récupérer les informations des stations Autolib.</p>
+<p>Malheureusement, le nombre de requêtes est limité et plus on doit superviser de stations (voitures disponibles, places libres), plus on doit faire d&rsquo;appels REST. HomeAssistant est un très bon outil mais un peu limité en terme de scripting du composant <a href="https://www.home-assistant.io/components/rest_command/">RESTful</a>.</p>
+<p>Je me suis dit, pourquoi ne pas :</p>
 <blockquote>
 <p>MQTTiser l&rsquo;API Autolib avec Node-Red</p></blockquote>
 <h2 id="architecture">Architecture<a hidden class="anchor" aria-hidden="true" href="#architecture">#</a></h2>
-<p>Voila en résumé l&rsquo;architecture de la solution que l&rsquo;on va mettre en place.</p>
+<p>Voici en résumé l&rsquo;architecture de la solution que l&rsquo;on va mettre en place.</p>
 <p><img alt="MQTT Archi" loading="lazy" src="/img/mqtt-archi.png"></p>
 <ul>
 <li>Description du schéma de principe :
 <ul>
-<li>Un flux/flow Node-Red va consommer régulierement la <em>DataParis API</em>.</li>
+<li>Un flux/flow Node-Red va consommer régulièrement la <em>DataParis API</em>.</li>
 <li>Le retour est parsé et découpé pour chacune des <em>stations Autolib</em>.</li>
-<li>Chaque message est envoyé dans le <em>topic MQTT</em> correspond à sa station.</li>
+<li>Chaque message est envoyé dans le <em>topic MQTT</em> correspondant à sa station.</li>
 <li>Le client <em>HomeAssistant</em> s&rsquo;abonne ensuite aux topics des stations souhaitées.</li>
 </ul>
 </li>
 </ul>
 <h2 id="api-de-paris">API de Paris<a hidden class="anchor" aria-hidden="true" href="#api-de-paris">#</a></h2>
-<p>L&rsquo;API de Paris propose un grand nombre d&rsquo;<a href="https://opendata.paris.fr/explore/">Objets</a> sur lequels il est possible de requeter (PLU, liste des prénoms, Titularisations). La plupart du temps ces données sont des données froides, ceux sont des extracts de base de données interne à la Ville de Paris . Seules deux sources de données sont temps réel c&rsquo;est à dire qu&rsquo;elles sont mise à jour lors de chaque appel, il s&rsquo;agit du status des stations <a href="https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/information/">Velib</a> et des stations <a href="https://opendata.paris.fr/explore/dataset/autolib-disponibilite-temps-reel/information/">Autolib</a>.
-Dans notre cas, nous allons utiliser cette dernière :</p>
-<p>Cette API indique en temps réel l&rsquo;état des 1119 stations avec la requete HTTP suivante (on se limitera ici à 2 stations) :</p>
-<pre tabindex="0"><code>curl https://opendata.paris.fr/api/records/1.0/search/?dataset=autolib-disponibilite-temps-reel&amp;rows=2
-</code></pre><pre tabindex="0"><code>{
-    &#34;nhits&#34;: 1119,
-    &#34;parameters&#34;: {
-        &#34;dataset&#34;: [&#34;autolib-disponibilite-temps-reel&#34;],
-        &#34;timezone&#34;: &#34;UTC&#34;,
-        &#34;rows&#34;: 2,
-        &#34;format&#34;: &#34;json&#34;
-    },
-    &#34;records&#34;: [{
-        &#34;datasetid&#34;: &#34;autolib-disponibilite-temps-reel&#34;,
-        &#34;recordid&#34;: &#34;a1c22a2c66ac55e6de9b0badcf5fe4f71c33e652&#34;,
-        &#34;fields&#34;: {
-            &#34;status&#34;: &#34;ok&#34;,
-            &#34;city&#34;: &#34;Paris&#34;,
-            &#34;kind&#34;: &#34;STATION&#34;,
-            &#34;station_type&#34;: &#34;station&#34;,
-            &#34;charging_status&#34;: &#34;operational&#34;,
-            &#34;rental_status&#34;: &#34;operational&#34;,
-            &#34;cars_counter_bluecar&#34;: 3,
-            &#34;cars&#34;: 3,
-            &#34;public_name&#34;: &#34;Paris/Ordener/65&#34;,
-            &#34;geo_point&#34;: [48.8913517, 2.3507171],
-            &#34;charge_slots&#34;: 0,
-            &#34;postal_code&#34;: &#34;75018&#34;,
-            &#34;cars_counter_utilib_1.4&#34;: 0,
-            &#34;subscription_status&#34;: &#34;nonexistent&#34;,
-            &#34;slots&#34;: 1,
-            &#34;id&#34;: &#34;paris-ordener-65&#34;,
-            &#34;address&#34;: &#34;65 rue Ordener&#34;,
-            &#34;cars_counter_utilib&#34;: 0
-        },
-        &#34;geometry&#34;: {
-            &#34;type&#34;: &#34;Point&#34;,
-            &#34;coordinates&#34;: [2.3507171, 48.8913517]
-        }
-    }, {
-        &#34;datasetid&#34;: &#34;autolib-disponibilite-temps-reel&#34;,
-        &#34;recordid&#34;: &#34;8b1396096c4c2761ec5120ffdd3fd824b18a824d&#34;,
-        &#34;fields&#34;: {
-            &#34;status&#34;: &#34;ok&#34;,
-            &#34;city&#34;: &#34;Paris&#34;,
-            &#34;kind&#34;: &#34;STATION&#34;,
-            &#34;station_type&#34;: &#34;station&#34;,
-            &#34;charging_status&#34;: &#34;operational&#34;,
-            &#34;rental_status&#34;: &#34;operational&#34;,
-            &#34;cars_counter_bluecar&#34;: 5,
-            &#34;cars&#34;: 5,
-            &#34;public_name&#34;: &#34;Paris/Raymond Losserand/229&#34;,
-            &#34;geo_point&#34;: [48.828, 2.306022],
-            &#34;charge_slots&#34;: 0,
-            &#34;postal_code&#34;: &#34;75014&#34;,
-            &#34;cars_counter_utilib_1.4&#34;: 0,
-            &#34;subscription_status&#34;: &#34;nonexistent&#34;,
-            &#34;slots&#34;: 1,
-            &#34;id&#34;: &#34;paris-raymondlosserand-229&#34;,
-            &#34;address&#34;: &#34;229 Rue Raymond Losserand&#34;,
-            &#34;cars_counter_utilib&#34;: 0
-        },
-        &#34;geometry&#34;: {
-            &#34;type&#34;: &#34;Point&#34;,
-            &#34;coordinates&#34;: [2.306022, 48.828]
-        }
-    }]
-}
-</code></pre><p>Il n&rsquo;est pas difficile de comprendre le schéma et le resultat obtenu, l&rsquo;ensemble des informations nécessaire à note besoin sont là :</p>
+<p>L&rsquo;API de Paris propose un grand nombre d&rsquo;<a href="https://opendata.paris.fr/explore/">Objets</a> sur lesquels il est possible de requêter (PLU, liste des prénoms, titularisations). La plupart du temps ces données sont des données froides, ce sont des extraits de bases de données internes à la Ville de Paris.</p>
+<p>Seules deux sources de données sont en temps réel, c&rsquo;est-à-dire qu&rsquo;elles sont mises à jour lors de chaque appel. Il s&rsquo;agit du statut des stations <a href="https://opendata.paris.fr/explore/dataset/velib-disponibilite-en-temps-reel/information/">Velib</a> et des stations <a href="https://opendata.paris.fr/explore/dataset/autolib-disponibilite-temps-reel/information/">Autolib</a>.</p>
+<p>Dans notre cas, nous allons utiliser cette dernière :</p>
+<p>Cette API indique en temps réel l&rsquo;état des 1119 stations avec la requête HTTP suivante (on se limitera ici à 2 stations) :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://opendata.paris.fr/api/records/1.0/search/?dataset<span class="o">=</span>autolib-disponibilite-temps-reel<span class="p">&amp;</span><span class="nv">rows</span><span class="o">=</span><span class="m">2</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;nhits&#34;</span><span class="p">:</span> <span class="mi">1119</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;parameters&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;dataset&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;autolib-disponibilite-temps-reel&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;timezone&#34;</span><span class="p">:</span> <span class="s2">&#34;UTC&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;rows&#34;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;format&#34;</span><span class="p">:</span> <span class="s2">&#34;json&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;records&#34;</span><span class="p">:</span> <span class="p">[{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;datasetid&#34;</span><span class="p">:</span> <span class="s2">&#34;autolib-disponibilite-temps-reel&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;recordid&#34;</span><span class="p">:</span> <span class="s2">&#34;a1c22a2c66ac55e6de9b0badcf5fe4f71c33e652&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fields&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;ok&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;kind&#34;</span><span class="p">:</span> <span class="s2">&#34;STATION&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;station_type&#34;</span><span class="p">:</span> <span class="s2">&#34;station&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;charging_status&#34;</span><span class="p">:</span> <span class="s2">&#34;operational&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;rental_status&#34;</span><span class="p">:</span> <span class="s2">&#34;operational&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars_counter_bluecar&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;public_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris/Ordener/65&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;geo_point&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mf">48.8913517</span><span class="p">,</span> <span class="mf">2.3507171</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;charge_slots&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;postal_code&#34;</span><span class="p">:</span> <span class="s2">&#34;75018&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars_counter_utilib_1.4&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;subscription_status&#34;</span><span class="p">:</span> <span class="s2">&#34;nonexistent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;slots&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;paris-ordener-65&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;65 rue Ordener&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars_counter_utilib&#34;</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;geometry&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Point&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;coordinates&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.3507171</span><span class="p">,</span> <span class="mf">48.8913517</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;datasetid&#34;</span><span class="p">:</span> <span class="s2">&#34;autolib-disponibilite-temps-reel&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;recordid&#34;</span><span class="p">:</span> <span class="s2">&#34;8b1396096c4c2761ec5120ffdd3fd824b18a824d&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fields&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;ok&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;city&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;kind&#34;</span><span class="p">:</span> <span class="s2">&#34;STATION&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;station_type&#34;</span><span class="p">:</span> <span class="s2">&#34;station&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;charging_status&#34;</span><span class="p">:</span> <span class="s2">&#34;operational&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;rental_status&#34;</span><span class="p">:</span> <span class="s2">&#34;operational&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars_counter_bluecar&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;public_name&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris/Raymond Losserand/229&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;geo_point&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mf">48.828</span><span class="p">,</span> <span class="mf">2.306022</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;charge_slots&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;postal_code&#34;</span><span class="p">:</span> <span class="s2">&#34;75014&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars_counter_utilib_1.4&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;subscription_status&#34;</span><span class="p">:</span> <span class="s2">&#34;nonexistent&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;slots&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;paris-raymondlosserand-229&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;address&#34;</span><span class="p">:</span> <span class="s2">&#34;229 Rue Raymond Losserand&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;cars_counter_utilib&#34;</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;geometry&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;Point&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&#34;coordinates&#34;</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.306022</span><span class="p">,</span> <span class="mf">48.828</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Il n&rsquo;est pas difficile de comprendre le schéma et le résultat obtenu. L&rsquo;ensemble des informations nécessaires à notre besoin sont là :</p>
 <ul>
 <li>cars :
 <ul>
-<li>nombre de voiture dispo sur la station.</li>
+<li>nombre de voitures disponibles sur la station.</li>
 </ul>
 </li>
 <li>slots :
 <ul>
-<li>nombre de place libre sur la station.</li>
+<li>nombre de places libres sur la station.</li>
 </ul>
 </li>
 </ul>
-<p>Nous avons aussi des informations de type descriptifs (nom de la station, coordonnées GPS, etc&hellip;). Elles pourront etre utilisés dans d&rsquo;autres cas d&rsquo;usage bien sûr, sur une carte par exemple.</p>
+<p>Nous avons aussi des informations de type descriptif (nom de la station, coordonnées GPS, etc.). Elles pourront être utilisées dans d&rsquo;autres cas d&rsquo;usage bien sûr, comme l&rsquo;affichage sur une carte par exemple.</p>
 <h2 id="mqtt">MQTT<a hidden class="anchor" aria-hidden="true" href="#mqtt">#</a></h2>
-<p>Le Protocole MQTT est un protocole MoM dans le domaine de l&rsquo;IoT. Ce protocole est largement utilisé dans le monde de l&rsquo;Internet des Objets car il est ouvert, leger et consommant peu de ressources reseau. Dans la version 3.x, il n&rsquo;implemente pas de gestion de Transaction, et se limite au mode Topic ou autrement appelé Publish/Subscribe. Plusieurs niveaux de QoS sont définisable tant sur le message, sur le topic que sur le broker lui-même. Plusieurs features sont intéressantes notamment la notion d&rsquo;adressage hierarchique des topics, il est possible de s&rsquo;abonner dans ce cas là à tout un sous-groupe de topic :</p>
+<p>Le Protocole MQTT est un protocole MoM (Message-oriented Middleware) dans le domaine de l&rsquo;IoT. Ce protocole est largement utilisé dans le monde de l&rsquo;Internet des Objets car il est ouvert, léger et consomme peu de ressources réseau.</p>
+<p>Dans la version 3.x, il n&rsquo;implémente pas de gestion de Transaction, et se limite au mode Topic ou autrement appelé Publish/Subscribe. Plusieurs niveaux de QoS (Quality of Service) sont définissables tant sur le message, sur le topic que sur le broker lui-même.</p>
+<p>Plusieurs fonctionnalités sont intéressantes, notamment la notion d&rsquo;adressage hiérarchique des topics. Il est possible de s&rsquo;abonner dans ce cas-là à tout un sous-groupe de topics :</p>
 <ul>
 <li><strong>/nasdaq/#</strong>
 <ul>
-<li>Pour tout les indices du nasdaq</li>
+<li>Pour tous les indices du nasdaq</li>
 </ul>
 </li>
 <li><strong>/meteo/fr/92/#</strong>
 <ul>
-<li>Pour toute les villes du départements du 92.</li>
+<li>Pour toutes les villes du département du 92.</li>
 </ul>
 </li>
 </ul>
-<p>Utilisé au dessus de TCP/IP et bindé sur le port 1883, il est standardisé par l&rsquo;<a href="https://www.oasis-open.org/">OASIS</a>, l&rsquo;<a href="https://www.iso.org">ISO</a> et <a href="http://www.iana.org/">IANA</a>.</p>
+<p>Utilisé au-dessus de TCP/IP et bindé sur le port 1883, il est standardisé par l&rsquo;<a href="https://www.oasis-open.org/">OASIS</a>, l&rsquo;<a href="https://www.iso.org">ISO</a> et <a href="http://www.iana.org/">IANA</a>.</p>
 <h3 id="broker-mqtt">Broker MQTT<a hidden class="anchor" aria-hidden="true" href="#broker-mqtt">#</a></h3>
-<p>Plusieurs Broker MQTT existent sur le marché, nous allons en voir deux OpenSource développé sur des langages différents. Nous allons comme cela testé leur interoperabilité.</p>
+<p>Plusieurs Brokers MQTT existent sur le marché. Nous allons en voir deux OpenSource développés sur des langages différents. Nous allons ainsi tester leur interopérabilité.</p>
 <h4 id="mosquitto"><a href="https://mosquitto.org/">Mosquitto</a><a hidden class="anchor" aria-hidden="true" href="#mosquitto">#</a></h4>
-<p>Développé par la Fondation Eclispe, il est écrit en C. Il possede une bon support de la communauté et est régulièrement mis à jour.
-Disponible sur l&rsquo;ensemble des environement Unix like, il est distribué par les systemes de packaging de chaque OS.</p>
+<p>Développé par la Fondation Eclipse, il est écrit en C. Il possède un bon support de la communauté et est régulièrement mis à jour.
+Disponible sur l&rsquo;ensemble des environnements Unix-like, il est distribué par les systèmes de packaging de chaque OS.</p>
 <table>
   <thead>
       <tr>
-          <th></th>
-          <th></th>
+          <th>Caractéristique</th>
+          <th>Détail</th>
       </tr>
   </thead>
   <tbody>
@@ -280,7 +283,7 @@ Disponible sur l&rsquo;ensemble des environement Unix like, il est distribué pa
       </tr>
       <tr>
           <td><em>Date</em></td>
-          <td>Fev 2018</td>
+          <td>Fév 2018</td>
       </tr>
       <tr>
           <td><em>License</em></td>
@@ -292,24 +295,24 @@ Disponible sur l&rsquo;ensemble des environement Unix like, il est distribué pa
       </tr>
   </tbody>
 </table>
-<br/>
 <div><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg></div><div class="notice warning" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Je n&rsquo;ai pas encore trouvé de système de supervision un peu serieux, je suis preneur par vos retours.</p></div>
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Je n&rsquo;ai pas encore trouvé de système de supervision un peu sérieux, je suis preneur de vos retours.</p></div>
 
-<p>Dans ce post nous allons simplement utilisé le client mosquitto qui est très facile d&rsquo;utilisation.</p>
-<pre tabindex="0"><code>mosquitto_sub -i &lt;id client&gt; -h &lt;host&gt; -t &lt;topic&gt; -v
-
-mosquitto_sub -i mosquitto_client -h localhost -t &#34;/autolib/boulognebillancourt/#&#34; -v
-</code></pre><div class="notice info" >
+<p>Dans ce post, nous allons simplement utiliser le client mosquitto qui est très facile d&rsquo;utilisation.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$&gt; mosquitto_sub -i &lt;id client&gt; -h &lt;host&gt; -t &lt;topic&gt; -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$&gt; mosquitto_sub -i mosquitto_client -h localhost -t <span class="s2">&#34;/autolib/boulognebillancourt/#&#34;</span> -v
+</span></span></code></pre></div><div class="notice info" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Mosquitto est disponible en mode container Docker.</p></div>
 
 <h4 id="activemq-artemis">ActiveMQ Artemis<a hidden class="anchor" aria-hidden="true" href="#activemq-artemis">#</a></h4>
-<p>La fondation Apache quand à elle propose le project commumautaire <a href="https://activemq.apache.org/artemis/">Apache ActiveMQ Artemis</a>. Il s&rsquo;agit du petit frère du projet <a href="https://activemq.apache.org/">Apache ActiveMQ</a>. Comme souvent dans les projet de la Fondation, le projet est developpé en Java. Au contraire de Mosquitto qui est mono protocole, Artemis support un grand nombre de protocole ouvert comme : <a href="http://www.amqp.org/">AMQP v1.0</a>, MQTT, <a href="https://stomp.github.io/">STOMP</a>, <a href="http://activemq.apache.org/openwire.html">OpenWire</a>. Il est compatible <a href="https://jcp.org/en/jsr/detail?id=170">JMS 1.0</a> et <a href="https://jcp.org/en/jsr/detail?id=368">2.0</a> pour les utilisateurs de l&rsquo;API JMS. Il est aussi facilement clusterisable afin de garantir une haute disponible.</p>
+<p>La fondation Apache quant à elle propose le projet communautaire <a href="https://activemq.apache.org/artemis/">Apache ActiveMQ Artemis</a>. Il s&rsquo;agit du petit frère du projet <a href="https://activemq.apache.org/">Apache ActiveMQ</a>. Comme souvent dans les projets de la Fondation, le projet est développé en Java.</p>
+<p>Au contraire de Mosquitto qui est mono-protocole, Artemis supporte un grand nombre de protocoles ouverts comme : <a href="http://www.amqp.org/">AMQP v1.0</a>, MQTT, <a href="https://stomp.github.io/">STOMP</a>, <a href="http://activemq.apache.org/openwire.html">OpenWire</a>. Il est compatible <a href="https://jcp.org/en/jsr/detail?id=170">JMS 1.0</a> et <a href="https://jcp.org/en/jsr/detail?id=368">2.0</a> pour les utilisateurs de l&rsquo;API JMS. Il est aussi facilement clusterisable afin de garantir une haute disponibilité.</p>
 <table>
   <thead>
       <tr>
-          <th></th>
-          <th></th>
+          <th>Caractéristique</th>
+          <th>Détail</th>
       </tr>
   </thead>
   <tbody>
@@ -332,80 +335,102 @@ mosquitto_sub -i mosquitto_client -h localhost -t &#34;/autolib/boulognebillanco
   </tbody>
 </table>
 <div class="notice info" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>ActiveMQ Artemis vient en standard avec un outil de monitoring</p></div>
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>ActiveMQ Artemis vient en standard avec un outil de monitoring.</p></div>
 
 <h2 id="node-red">Node-red<a hidden class="anchor" aria-hidden="true" href="#node-red">#</a></h2>
-<p>Le project Node-Red est un outil de creation et d&rsquo;execution <a href="http://www.enterpriseintegrationpatterns.com/">EIP</a> dédié à l&rsquo;IoT et executé sur la plateforme <a href="https://nodejs.org/en/">NodeJs</a>. C&rsquo;est un outil léger tout en disposant d&rsquo;une IHM complete de création de flow. L&rsquo;IHM permet de créer des flows de traitement en assemblant et reliant des composants d&rsquo;entrée et/ou sortie en eux via des liens.</p>
-<p>Voici une liste non exhaustive des composants disponible :</p>
+<p>Le projet Node-Red est un outil de création et d&rsquo;exécution <a href="http://www.enterpriseintegrationpatterns.com/">EIP</a> (Enterprise Integration Patterns) dédié à l&rsquo;IoT et exécuté sur la plateforme <a href="https://nodejs.org/en/">NodeJs</a>. C&rsquo;est un outil léger tout en disposant d&rsquo;une IHM complète de création de flow. L&rsquo;IHM permet de créer des flows de traitement en assemblant et reliant des composants d&rsquo;entrée et/ou sortie entre eux via des liens.</p>
+<p>Voici une liste non exhaustive des composants disponibles :</p>
 <ul>
-<li>mqtt in/out.</li>
-<li>email in/out.</li>
-<li>file in/out.</li>
-<li>http/tcp/udp in/out.</li>
-<li>timer, switch, change, range, join, sort, batch, function, debug, log.</li>
-<li>csv, html, json, yaml, xml, html.</li>
+<li>mqtt in/out</li>
+<li>email in/out</li>
+<li>file in/out</li>
+<li>http/tcp/udp in/out</li>
+<li>timer, switch, change, range, join, sort, batch, function, debug, log</li>
+<li>csv, html, json, yaml, xml, html</li>
 </ul>
-<p>Lorsque le flow est validé, il suffit simplement de le deployer pour l&rsquo;executer directement.</p>
-<p>| &mdash;&mdash;&mdash;&mdash;: | :&mdash;&mdash;&mdash;&mdash;&ndash; |
-| Version | v0.18.4 |
-| Date | Jan 2018 |
-| License | Apache 2.0 |
-| Langage | JavaScript |</p>
+<p>Lorsque le flow est validé, il suffit simplement de le déployer pour l&rsquo;exécuter directement.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Caractéristique</th>
+          <th>Détail</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Version</td>
+          <td>v0.18.4</td>
+      </tr>
+      <tr>
+          <td>Date</td>
+          <td>Jan 2018</td>
+      </tr>
+      <tr>
+          <td>License</td>
+          <td>Apache 2.0</td>
+      </tr>
+      <tr>
+          <td>Langage</td>
+          <td>JavaScript</td>
+      </tr>
+  </tbody>
+</table>
 <div class="notice info" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Node-Red s&rsquo;execute très bien sur un RaspberryPi</p></div>
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>Node-Red s&rsquo;exécute très bien sur un RaspberryPi.</p></div>
 
 <h2 id="flow-autolib">Flow Autolib<a hidden class="anchor" aria-hidden="true" href="#flow-autolib">#</a></h2>
-<p>Pour notre use-case, nous allons faire un appel toute les 20s (cf info) sur l&rsquo;API de Paris, on verifie rapidement que l&rsquo;on recupere bien un retour HTTP/200.
-On découpe ensuite la liste des stations message par message. Puis on crée dynamiquement pour chaque message et donc chaque station, le bon adressage de Topic pour l&rsquo;envoie au broker MQTT. Le composant RBE est simplement là pour faire transiter le message que si il y a effectivement un changement de contenu.</p>
+<p>Pour notre use-case, nous allons faire un appel toutes les 20s (cf info) sur l&rsquo;API de Paris. On vérifie rapidement que l&rsquo;on récupère bien un retour HTTP/200.
+On découpe ensuite la liste des stations message par message. Puis on crée dynamiquement pour chaque message, et donc chaque station, le bon adressage de Topic pour l&rsquo;envoi au broker MQTT. Le composant RBE est simplement là pour faire transiter le message uniquement s&rsquo;il y a effectivement un changement de contenu.</p>
 <p><img alt="MQTT Autolib flow" loading="lazy" src="/img/mqtt-autolib-flow.png"></p>
 <div class="notice info" >
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>L&rsquo;API de Paris est limitée 5000 req/j.
-Cela fait dans une journée, pas plus d&rsquo;une requete toute les 17s.
-Donc pour etre large, j&rsquo;ai pris toutes les 20s.</p></div>
+<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#info-notice"></use></svg></span>Info</p><p>L&rsquo;API de Paris est limitée à 5000 requêtes par jour.
+Cela fait dans une journée, pas plus d&rsquo;une requête toutes les 17s.
+Donc pour être large, j&rsquo;ai choisi un intervalle de 20s.</p></div>
 
 <p>Le code du flow est disponible sur le repository suivant :</p>
 <p><a href="https://github.com/gautric/mqtt-4-autolib">https://github.com/gautric/mqtt-4-autolib/blob/master/flows_mbp.g.a.net.json</a></p>
 <h2 id="résultat">Résultat<a hidden class="anchor" aria-hidden="true" href="#résultat">#</a></h2>
 <h3 id="monitoring-activemq">Monitoring ActiveMQ<a hidden class="anchor" aria-hidden="true" href="#monitoring-activemq">#</a></h3>
-<p>Nous voyons bien dans l&rsquo;outil de monitoring les divers topics qui dependent directement des stations Autolib, nous voyons aussi la connexion de deux clients MQTT, l&rsquo;un étant le Node-Red, l&rsquo;autre le client Mosquitto.</p>
-<p><img alt="Moniroting" loading="lazy" src="/img/mqtt-artemis-monitoring.png"></p>
-<p>J&rsquo;ai configuré les messages MQTT afin d&rsquo;etre en mode retain à minima, c&rsquo;est pour cela que l&rsquo;on retrouve un prefix technique à l&rsquo;adressage des topics des stations Autolib. Cette fonctionnalité permettra de conserver une dernière valeur si HomeAssistant tombe ou bien le flux Node-Red.</p>
+<p>Nous voyons bien dans l&rsquo;outil de monitoring les divers topics qui dépendent directement des stations Autolib. Nous voyons aussi la connexion de deux clients MQTT, l&rsquo;un étant le Node-Red, l&rsquo;autre le client Mosquitto.</p>
+<p><img alt="Monitoring" loading="lazy" src="/img/mqtt-artemis-monitoring.png"></p>
+<p>J&rsquo;ai configuré les messages MQTT afin d&rsquo;être en mode &ldquo;retain&rdquo; à minima, c&rsquo;est pour cela que l&rsquo;on retrouve un préfixe technique à l&rsquo;adressage des topics des stations Autolib. Cette fonctionnalité permettra de conserver une dernière valeur si HomeAssistant tombe ou bien si le flux Node-Red s&rsquo;arrête.</p>
 <h3 id="dashboard-homeassistant">Dashboard HomeAssistant<a hidden class="anchor" aria-hidden="true" href="#dashboard-homeassistant">#</a></h3>
-<p>Mon Dashboard HomeAssistant commence à être bien complet avec plusieurs onglets pour chaque cas d&rsquo;usage. J&rsquo;ai un onglet en particuler qui affiche l&rsquo;ensemble des informations de transport dont Autolib, la RATP ainsi que le traffic des voitures en IDF.</p>
+<p>Mon Dashboard HomeAssistant commence à être bien complet avec plusieurs onglets pour chaque cas d&rsquo;usage. J&rsquo;ai un onglet en particulier qui affiche l&rsquo;ensemble des informations de transport dont Autolib, la RATP ainsi que le trafic des voitures en Île-de-France.</p>
 <h4 id="configuration">Configuration<a hidden class="anchor" aria-hidden="true" href="#configuration">#</a></h4>
-<p>Après avoir envoyé les messages dans le broker ActiveMQ Artemis, il faut que le Dashboard HomeAssistant puisse lire correctement les données. Pour cela, il suffira de rajouter dans sa liste dans le fichier sensor.yaml, les sensors de type MQTT. Il suffit de comprendre le schéma du message recu et de récuperer le bon élément du message.</p>
-<pre tabindex="0"><code>
-* platform: mqtt
-  name: &#34;Autolib Boulogne-Billancourt/Henri Martin/2 Cars&#34;
-  state_topic: &#34;/autolib/boulognebillancourt/henrimartin/2&#34;
-  value_template: &#39;\{\{value_json.fields.cars\}\}&#39;
-  unit_of_measurement: &#39;&#39;
-
-* platform: mqtt
-  name: &#34;Autolib Boulogne-Billancourt/Henri Martin/2 Slots&#34;
-  state_topic: &#34;/autolib/boulognebillancourt/henrimartin/2&#34;
-  value_template: &#39;\{\{value_json.fields.slots\}\}&#39;
-  unit_of_measurement: &#39;&#39;
-
-.....
-
-* platform: mqtt
-  name: &#34;Autolib Last Update&#34;
-  state_topic: &#34;/autolib/\_lastCall&#34;
-  unit_of_measurement: &#39;&#39;
-</code></pre><h4 id="screenshot">ScreenShot<a hidden class="anchor" aria-hidden="true" href="#screenshot">#</a></h4>
-<p>Et pour finir, voici le résultant dans le Dashboard HomeAssistant. J&rsquo;ai rajouté un petit hook dans le flow nominal afin d&rsquo;avoir l&rsquo;heure de la dernière mise à jour des données. Il s&rsquo;agit de verifier si tout ce passe bien.</p>
+<p>Après avoir envoyé les messages dans le broker ActiveMQ Artemis, il faut que le Dashboard HomeAssistant puisse lire correctement les données. Pour cela, il suffira de rajouter dans sa liste dans le fichier sensor.yaml, les sensors de type MQTT. Il suffit de comprendre le schéma du message reçu et de récupérer le bon élément du message.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l">mqtt</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Autolib Boulogne-Billancourt/Henri Martin/2 Cars&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">state_topic</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/autolib/boulognebillancourt/henrimartin/2&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{value_json.fields.cars}}&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l">mqtt</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Autolib Boulogne-Billancourt/Henri Martin/2 Slots&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">state_topic</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/autolib/boulognebillancourt/henrimartin/2&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;{{value_json.fields.slots}}&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">...</span><span class="l">..</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">platform</span><span class="p">:</span><span class="w"> </span><span class="l">mqtt</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Autolib Last Update&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">state_topic</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/autolib/_lastCall&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">unit_of_measurement</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">
+</span></span></span></code></pre></div><h4 id="screenshot">ScreenShot<a hidden class="anchor" aria-hidden="true" href="#screenshot">#</a></h4>
+<p>Et pour finir, voici le résultat dans le Dashboard HomeAssistant. J&rsquo;ai rajouté un petit hook dans le flow nominal afin d&rsquo;avoir l&rsquo;heure de la dernière mise à jour des données. Il s&rsquo;agit de vérifier si tout se passe bien.</p>
 <p><img alt="HA" loading="lazy" src="/img/mqtt-homeassistant.png"></p>
 <h4 id="mosquitto-client">Mosquitto Client<a hidden class="anchor" aria-hidden="true" href="#mosquitto-client">#</a></h4>
 <p>L&rsquo;utilisation du client mosquitto est interopérable facilement avec le broker ActiveMQ Artemis.</p>
-<pre tabindex="0"><code>mosquitto_sub -i mosquitto_client -h localhost -t &#34;/autolib/boulognebillancourt/#&#34; -v
+<pre tabindex="0"><code>$&gt; mosquitto_sub -i mosquitto_client -h localhost -t &#34;/autolib/boulognebillancourt/#&#34; -v
 
 /autolib/boulognebillancourt/henrimartin/2 {&#34;datasetid&#34;:&#34;autolib-disponibilite-temps-reel&#34;,&#34;recordid&#34;:&#34;a165c1342525a1c27a24eb1cdf781eddf6aaa149&#34;,&#34;fields&#34;:{&#34;status&#34;:&#34;ok&#34;,&#34;city&#34;:&#34;Boulogne-Billancourt&#34;,&#34;kind&#34;:&#34;STATION&#34;,&#34;station_type&#34;:&#34;station&#34;,&#34;charging_status&#34;:&#34;nonexistent&#34;,&#34;rental_status&#34;:&#34;operational&#34;,&#34;cars_counter_bluecar&#34;:1,&#34;cars&#34;:1,&#34;public_name&#34;:&#34;Boulogne-Billancourt/Henri Martin/2&#34;,&#34;geo_point&#34;:[48.8365078,2.2524132],&#34;charge_slots&#34;:0,&#34;postal_code&#34;:&#34;92100&#34;,&#34;cars_counter_utilib_1.4&#34;:0,&#34;subscription_status&#34;:&#34;nonexistent&#34;,&#34;slots&#34;:1,&#34;id&#34;:&#34;boulognebillancourt-henrimartin-2&#34;,&#34;address&#34;:&#34;2 rue Henri Martin&#34;,&#34;cars_counter_utilib&#34;:0},&#34;geometry&#34;:{&#34;type&#34;:&#34;Point&#34;,&#34;coordinates&#34;:[2.2524132,48.8365078]}}
 
 /autolib/boulognebillancourt/reine/12 {&#34;datasetid&#34;:&#34;autolib-disponibilite-temps-reel&#34;,&#34;recordid&#34;:&#34;885e5ba23a48e4c519ed9eded9422628dec6ef14&#34;,&#34;fields&#34;:{&#34;status&#34;:&#34;ok&#34;,&#34;city&#34;:&#34;Boulogne-Billancourt&#34;,&#34;kind&#34;:&#34;STATION&#34;,&#34;station_type&#34;:&#34;station&#34;,&#34;charging_status&#34;:&#34;nonexistent&#34;,&#34;rental_status&#34;:&#34;operational&#34;,&#34;cars_counter_bluecar&#34;:4,&#34;cars&#34;:4,&#34;public_name&#34;:&#34;Boulogne-Billancourt/Reine/12&#34;,&#34;geo_point&#34;:[48.8388074,2.2505008],&#34;charge_slots&#34;:0,&#34;postal_code&#34;:&#34;92100&#34;,&#34;cars_counter_utilib_1.4&#34;:0,&#34;subscription_status&#34;:&#34;nonexistent&#34;,&#34;slots&#34;:1,&#34;id&#34;:&#34;boulognebillancourt-reine-12&#34;,&#34;address&#34;:&#34;12 bis Route de la Reine&#34;,&#34;cars_counter_utilib&#34;:0},&#34;geometry&#34;:{&#34;type&#34;:&#34;Point&#34;,&#34;coordinates&#34;:[2.2505008,48.8388074]}}
 </code></pre><h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>En conclusion, pourquoi faire simple quand on peut faire compliquer. En fait, j&rsquo;utilise un broker MQTT pour un autre cas d&rsquo;usage dans ma domotique, donc je rentabilise bien l&rsquo;utilisation de mon broker. Pour être totalement transparent, le broker Mosquitto est largement suffisant pour ma domotique, Artemis bien que beaucoup plus complet et un peu overkill pour mon usage. Je voulais simplement remercier la limite de l&rsquo;API de Paris qui m&rsquo;a permis de faire un petit projet d&rsquo;intégration bien sympa je trouve et toujours dans la philosophie standard ouvert, interoperabilité et projets commumnutaires OpenSource.</p>
-<p>En esperant, vous avoir intéressé par ce post, n&rsquo;hésitez pas à me faire vos retours,</p>
+<p>En conclusion, pourquoi faire simple quand on peut faire compliqué ? En fait, j&rsquo;utilise un broker MQTT pour d&rsquo;autres cas d&rsquo;usage dans ma domotique, donc je rentabilise bien l&rsquo;utilisation de mon broker.</p>
+<p>Pour être totalement transparent, le broker Mosquitto est largement suffisant pour ma domotique, Artemis bien que beaucoup plus complet est un peu &ldquo;overkill&rdquo; pour mon usage. Je voulais simplement remercier la limite de l&rsquo;API de Paris qui m&rsquo;a permis de faire un petit projet d&rsquo;intégration bien sympa je trouve, et toujours dans la philosophie des standards ouverts, de l&rsquo;interopérabilité et des projets communautaires OpenSource.</p>
+<p>Cette solution me permet désormais de consulter en temps réel l&rsquo;état des stations Autolib à proximité de chez moi directement depuis mon dashboard HomeAssistant, sans avoir à ouvrir constamment l&rsquo;application mobile.</p>
+<p>En espérant vous avoir intéressé par ce post, n&rsquo;hésitez pas à me faire vos retours.</p>
 
 
   </div>

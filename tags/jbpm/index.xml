@@ -13,7 +13,7 @@
       <link>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</link>
       <pubDate>Sun, 26 Sep 2021 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</guid>
-      <description>&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit &lt;a href=&#34;https://developers.redhat.com/products/rhpam/overview&#34;&gt;RHPAM&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus metiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j&amp;rsquo;ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .&lt;/p&gt;</description>
+      <description>&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit &lt;a href=&#34;https://developers.redhat.com/products/rhpam/overview&#34;&gt;RHPAM&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus métiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lesquels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons plutôt nous concentrer sur un patron de conception particulièrement intéressant tant par sa fonctionnalité que par son implémentation technique.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to manage Exception inside a jBPM WorkItemHandler custom component</title>
@@ -23,7 +23,7 @@
       <description>&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process.&lt;/p&gt;</description>
+&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process. This example will demonstrate how jBPM can transform Java exceptions into BPMN errors, allowing for proper error handling within your business processes.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -13,11 +13,8 @@
       <link>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</link>
       <pubDate>Sat, 03 Dec 2016 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</guid>
-      <description>&lt;p&gt;This month I went to &lt;a href=&#34;https://en.wikipedia.org/wiki/Greece&#34;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&#34;http://camel.apache.org/&#34;&gt;Camel&lt;/a&gt; integration with Mainframe legacy stuff.
-Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components.
-Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;a Camel sample with XML messages and XSL transformation&lt;/p&gt;</description>
+      <description>&lt;p&gt;This month I went to &lt;a href=&#34;https://en.wikipedia.org/wiki/Greece&#34;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&#34;http://camel.apache.org/&#34;&gt;Camel&lt;/a&gt; integration with Mainframe legacy systems. The customer wanted to use XML message format throughout the entire Camel route process. Their primary goal was to reuse some Camel routes as new service components, allowing for greater flexibility and modularity in their integration architecture.&lt;/p&gt;
+&lt;p&gt;Fortunately, the Camel framework meets all of these requirements out of the box. In this article, we&amp;rsquo;ll explore a simple example demonstrating how to implement this approach effectively.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

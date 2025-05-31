@@ -13,19 +13,16 @@
       <link>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</link>
       <pubDate>Sat, 03 Dec 2016 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</guid>
-      <description>&lt;p&gt;This month I went to &lt;a href=&#34;https://en.wikipedia.org/wiki/Greece&#34;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&#34;http://camel.apache.org/&#34;&gt;Camel&lt;/a&gt; integration with Mainframe legacy stuff.
-Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components.
-Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;a Camel sample with XML messages and XSL transformation&lt;/p&gt;</description>
+      <description>&lt;p&gt;This month I went to &lt;a href=&#34;https://en.wikipedia.org/wiki/Greece&#34;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&#34;http://camel.apache.org/&#34;&gt;Camel&lt;/a&gt; integration with Mainframe legacy systems. The customer wanted to use XML message format throughout the entire Camel route process. Their primary goal was to reuse some Camel routes as new service components, allowing for greater flexibility and modularity in their integration architecture.&lt;/p&gt;
+&lt;p&gt;Fortunately, the Camel framework meets all of these requirements out of the box. In this article, we&amp;rsquo;ll explore a simple example demonstrating how to implement this approach effectively.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Camel is going into Eclipse Kura</title>
       <link>https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/</link>
       <pubDate>Fri, 18 Mar 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/</guid>
-      <description>&lt;p&gt;Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Eclipse Kura Project&lt;/a&gt; has accepted &lt;a href=&#34;https://github.com/eclipse/kura/pull/72&#34;&gt;GitHub Pull Request&lt;/a&gt; and now includes a new cool component to &lt;code&gt;develop&lt;/code&gt; branch. This new component is &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel Framework&lt;/a&gt; from &lt;a href=&#34;http://apache.org/&#34;&gt;Apache Foundation&lt;/a&gt;.
-&lt;a href=&#34;https://about.me/hekonsek&#34;&gt;Henryk Konsek&lt;/a&gt; a colleague of mine is the principal guy behind this new. The Camel and Kura integration starts from the first &lt;a href=&#34;http://camel.apache.org/kura.html&#34;&gt;Camel Kura component&lt;/a&gt; available since Camel version 2.15 still from Henryk.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Today, I am going to talk about some exciting news in the IoT development world. This is a technical post, but without any code samples or hardware setup instructions (thankfully). The &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Eclipse Kura Project&lt;/a&gt; has accepted a &lt;a href=&#34;https://github.com/eclipse/kura/pull/72&#34;&gt;GitHub Pull Request&lt;/a&gt; that introduces a powerful new component to the &lt;code&gt;develop&lt;/code&gt; branch. This new component is the &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel Framework&lt;/a&gt; from the &lt;a href=&#34;http://apache.org/&#34;&gt;Apache Foundation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://about.me/hekonsek&#34;&gt;Henryk Konsek&lt;/a&gt;, a talented colleague of mine, is the principal developer behind this integration. The relationship between Camel and Kura actually began earlier with the first &lt;a href=&#34;http://camel.apache.org/kura.html&#34;&gt;Camel Kura component&lt;/a&gt;, which has been available since Camel version 2.15, also developed by Henryk.&lt;/p&gt;</description>
     </item>
     <item>
       <title>RHIoT RaspberryPi Sense-Hat display</title>

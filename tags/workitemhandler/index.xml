@@ -16,7 +16,7 @@
       <description>&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process.&lt;/p&gt;</description>
+&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process. This example will demonstrate how jBPM can transform Java exceptions into BPMN errors, allowing for proper error handling within your business processes.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

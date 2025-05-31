@@ -14,11 +14,11 @@
       <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</guid>
       <description>&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
-Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
+Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et exécuter des règles métier.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Le standard DMN, un KYC en exemple&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h1 id=&#34;introdution&#34;&gt;Introdution&lt;/h1&gt;
-&lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt;. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.&lt;/p&gt;</description>
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt; (Object Management Group). Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision. Elle permet de créer un pont entre les équipes métier et techniques en offrant un langage commun.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

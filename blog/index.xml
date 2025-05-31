@@ -13,24 +13,15 @@
       <link>https://gautric.github.io/blog/2025/04/06/activate-deactivate-poe-camera-via-cisco-router/</link>
       <pubDate>Sun, 06 Apr 2025 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2025/04/06/activate-deactivate-poe-camera-via-cisco-router/</guid>
-      <description>&lt;p&gt;In this post, we&amp;rsquo;ll quickly explore how to activate or deactivate a camera via a Cisco router. In my setup, I&amp;rsquo;ve implemented a DIY surveillance installation. I&amp;rsquo;m using a PoE camera with a Cisco Small Business router. Specifically, this is the &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Smart Switch SG250-10P&lt;/a&gt;, which offers PoE functionality.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Activate/Deactivate PoE Camera from Cisco Router&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
-&lt;p&gt;Before starting, you need to be able to &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/switches/lan/csbms/250_/2_5_7/Admin_guide/tesla-250-ag/cb_250_chapter_15.html#ID-00006535&#34;&gt;connect via SSH to the router&lt;/a&gt;.
-It&amp;rsquo;s possible to create a service account with an SSH key for remote connection.&lt;/p&gt;</description>
+      <description>&lt;p&gt;In this post, we&amp;rsquo;ll explore how to activate or deactivate a surveillance camera via a Cisco router using Power over Ethernet (PoE) functionality. I&amp;rsquo;ve implemented a DIY surveillance installation at home using a PoE camera connected to a Cisco Small Business router. Specifically, I&amp;rsquo;m using the &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Smart Switch SG250-10P&lt;/a&gt;, which offers robust PoE capabilities that allow you to control power delivery to connected devices.&lt;/p&gt;
+&lt;p&gt;This approach is particularly useful for security purposes, as it allows you to remotely control when your surveillance camera is active without physically accessing the device.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Activer &amp; Désactiver sa camera PoE via son routeur Cisco</title>
       <link>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</link>
       <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</guid>
-      <description>&lt;p&gt;Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Commutateur Intelligent SG250-10P&lt;/a&gt;, qui offre la fonctionnalité PoE.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Activer/Désactiver sa camera PoE depuis son routeur Cisco&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;pré-requis&#34;&gt;Pré-requis&lt;/h3&gt;
-&lt;p&gt;Avant de commencer il faut pouvoir &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/switches/lan/csbms/250_/2_5_7/Admin_guide/tesla-250-ag/cb_250_chapter_15.html#ID-00006535&#34;&gt;se connecter en SSH sur le routeur&lt;/a&gt;.
-Il est possible de créer un compte de service (service account) auquel on configurera une clé SSH pour une connexion à distance.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Commutateur Intelligent SG250-10P&lt;/a&gt;, qui offre la fonctionnalité PoE (Power over Ethernet) permettant d&amp;rsquo;alimenter des périphériques directement via le câble réseau, éliminant ainsi le besoin d&amp;rsquo;une alimentation séparée.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AWS SSM, Ansible et Raspberry Pi via SSH</title>
@@ -45,7 +36,7 @@ Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilem
       <link>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</link>
       <pubDate>Wed, 08 Jun 2022 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</guid>
-      <description>&lt;p&gt;La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.
+      <description>&lt;p&gt;La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d&amp;rsquo;applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L&amp;rsquo;avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.
 Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.&lt;/p&gt;</description>
     </item>
     <item>
@@ -53,7 +44,7 @@ Les applications modernes nécessitent de pouvoir migrer des socles techniques d
       <link>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</link>
       <pubDate>Sun, 26 Sep 2021 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</guid>
-      <description>&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit &lt;a href=&#34;https://developers.redhat.com/products/rhpam/overview&#34;&gt;RHPAM&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus metiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j&amp;rsquo;ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .&lt;/p&gt;</description>
+      <description>&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit &lt;a href=&#34;https://developers.redhat.com/products/rhpam/overview&#34;&gt;RHPAM&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus métiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lesquels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons plutôt nous concentrer sur un patron de conception particulièrement intéressant tant par sa fonctionnalité que par son implémentation technique.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to manage Exception inside a jBPM WorkItemHandler custom component</title>
@@ -63,27 +54,26 @@ Les applications modernes nécessitent de pouvoir migrer des socles techniques d
       <description>&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process.&lt;/p&gt;</description>
+&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process. This example will demonstrate how jBPM can transform Java exceptions into BPMN errors, allowing for proper error handling within your business processes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Keycloak, les clefs Yubico et le standard Webauthn</title>
       <link>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</link>
       <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</guid>
-      <description>&lt;p&gt;Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de &lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;SSO&lt;/a&gt; c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
-&lt;p&gt;Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du &lt;a href=&#34;https://en.wikipedia.org/wiki/Multi-factor_authentication&#34;&gt;2FA&lt;/a&gt; avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&amp;hellip;) proposent ce type d&amp;rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de &lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;SSO&lt;/a&gt; c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante et continue de croître, ce qui en fait une solution fiable et pérenne pour la gestion des identités.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Éxecution d&#39;un moteur de KYC en DMN avec Kogito</title>
       <link>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</link>
       <pubDate>Sat, 06 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</guid>
-      <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.&lt;/p&gt;
+      <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d&amp;rsquo;une modélisation théorique à une implémentation concrète et fonctionnelle.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h1 id=&#34;introdution-kogito&#34;&gt;Introdution Kogito&lt;/h1&gt;
-&lt;p&gt;Faisons un focus rapide sur &lt;a href=&#34;https://kogito.kie.org/&#34;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud.
-Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&#34;https://www.drools.org/&#34;&gt;Drools&lt;/a&gt; et &lt;a href=&#34;https://jbpm.org/&#34;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.&lt;/p&gt;</description>
+&lt;h1 id=&#34;introduction-kogito&#34;&gt;Introduction Kogito&lt;/h1&gt;
+&lt;p&gt;Faisons un focus rapide sur &lt;a href=&#34;https://kogito.kie.org/&#34;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud, conçu pour s&amp;rsquo;intégrer parfaitement dans les architectures modernes.
+Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&#34;https://www.drools.org/&#34;&gt;Drools&lt;/a&gt; et &lt;a href=&#34;https://jbpm.org/&#34;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple. Cette approche facilite considérablement le déploiement et la scalabilité des règles métier.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Le standard DMN, un KYC en exemple</title>
@@ -91,73 +81,59 @@ Ce moteur de règle reprend en grande partie tout le coeur et le developpement d
       <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</guid>
       <description>&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
-Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
+Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et exécuter des règles métier.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Le standard DMN, un KYC en exemple&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h1 id=&#34;introdution&#34;&gt;Introdution&lt;/h1&gt;
-&lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt;. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.&lt;/p&gt;</description>
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt; (Object Management Group). Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision. Elle permet de créer un pont entre les équipes métier et techniques en offrant un langage commun.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MQTTiser l&#39;API Autolib avec Node-Red</title>
       <link>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</guid>
-      <description>&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivé d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&amp;rsquo;&lt;a href=&#34;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&#34;&gt;Autolib&lt;/a&gt; j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&amp;rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&amp;rsquo;ai installé et configuré chez moi la solution &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;HomeAssistant&lt;/a&gt;, j&amp;rsquo;utilisais pour cela l&amp;rsquo;&lt;a href=&#34;https://opendata.paris.fr/page/home/&#34;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&#34;https://fr.wikipedia.org/wiki/REST&#34;&gt;REST&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP&#34;&gt;HTTP&lt;/a&gt;.
-Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d&amp;rsquo;appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant &lt;a href=&#34;https://www.home-assistant.io/components/rest_command/&#34;&gt;RESTful&lt;/a&gt;.
-Je me suis dit, pourquoi ne pas :&lt;/p&gt;</description>
+      <description>&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivée d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d&amp;rsquo;&lt;a href=&#34;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&#34;&gt;Autolib&lt;/a&gt;, j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulièrement l&amp;rsquo;application iPhone en fonction de mes besoins.&lt;/p&gt;
+&lt;p&gt;Afin de me simplifier la vie, j&amp;rsquo;ai installé et configuré chez moi la solution &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;HomeAssistant&lt;/a&gt;, qui est une plateforme de domotique open source très populaire. J&amp;rsquo;utilisais pour cela l&amp;rsquo;&lt;a href=&#34;https://opendata.paris.fr/page/home/&#34;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&#34;https://fr.wikipedia.org/wiki/REST&#34;&gt;REST&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP&#34;&gt;HTTP&lt;/a&gt; pour récupérer les informations des stations Autolib.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Camel XML XPath XSLT Aggregator</title>
       <link>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</link>
       <pubDate>Sat, 03 Dec 2016 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/</guid>
-      <description>&lt;p&gt;This month I went to &lt;a href=&#34;https://en.wikipedia.org/wiki/Greece&#34;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&#34;http://camel.apache.org/&#34;&gt;Camel&lt;/a&gt; integration with Mainframe legacy stuff.
-Customer would like to use XML message format during the full Camel route process. His wish was to reuse some Camel routes as new service components.
-Fortunately, Camel framework meets all of this requirements out of the box. We will this in this simple sample how to do it.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;a Camel sample with XML messages and XSL transformation&lt;/p&gt;</description>
+      <description>&lt;p&gt;This month I went to &lt;a href=&#34;https://en.wikipedia.org/wiki/Greece&#34;&gt;Greece&lt;/a&gt; for a customer of mine. I worked at Athens on &lt;a href=&#34;http://camel.apache.org/&#34;&gt;Camel&lt;/a&gt; integration with Mainframe legacy systems. The customer wanted to use XML message format throughout the entire Camel route process. Their primary goal was to reuse some Camel routes as new service components, allowing for greater flexibility and modularity in their integration architecture.&lt;/p&gt;
+&lt;p&gt;Fortunately, the Camel framework meets all of these requirements out of the box. In this article, we&amp;rsquo;ll explore a simple example demonstrating how to implement this approach effectively.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Setup a Hotspot Wifi with Ansible into a RaspberryPi 3</title>
       <link>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/</link>
       <pubDate>Tue, 27 Sep 2016 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/</guid>
-      <description>&lt;p&gt;This September, RaspberryPi foundation has sold &lt;a href=&#34;https://www.raspberrypi.org/blog/ten-millionth-raspberry-pi-new-kit/&#34;&gt;ten (10) Millions of unit&lt;/a&gt;. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions &lt;a href=&#34;https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications&#34;&gt;(B 256Mo, B 512Mo, B+, 2B, 3B)&lt;/a&gt; of RaspberryPi. I am a big fan of this product and you can find into &lt;a href=&#34;https://gautric.github.io/blog/&#34;&gt;this blog&lt;/a&gt; some projects I&amp;rsquo;ve made on top of this little computer.
-RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Hotspot_(Wi-Fi)&#34;&gt;Wifi Hotspot&lt;/a&gt;. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with &lt;a href=&#34;https://www.ansible.com/&#34;&gt;Ansible&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This September, RaspberryPi foundation has sold &lt;a href=&#34;https://www.raspberrypi.org/blog/ten-millionth-raspberry-pi-new-kit/&#34;&gt;ten (10) Millions of unit&lt;/a&gt;. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions &lt;a href=&#34;https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications&#34;&gt;(B 256Mo, B 512Mo, B+, 2B, 3B)&lt;/a&gt; of RaspberryPi. I am a big fan of this product and you can find into &lt;a href=&#34;https://gautric.github.io/blog/&#34;&gt;this blog&lt;/a&gt; some projects I&amp;rsquo;ve made on top of this little computer.&lt;/p&gt;
+&lt;p&gt;RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a &lt;a href=&#34;https://en.wikipedia.org/wiki/Hotspot_(Wi-Fi)&#34;&gt;Wifi Hotspot&lt;/a&gt;. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with &lt;a href=&#34;https://www.ansible.com/&#34;&gt;Ansible&lt;/a&gt;, which is a powerful automation tool that simplifies configuration management.&lt;/p&gt;</description>
     </item>
     <item>
       <title>JBoss EAP 7 connected to WebsphereMQ running on Docker</title>
       <link>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</guid>
-      <description>&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&#34;https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&#34;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.&lt;/p&gt;
+      <description>&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&#34;https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&#34;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same setup but with JBoss EAP 7, WebsphereMQ Sample IVT application, and both running on Docker. This tutorial demonstrates how to configure and connect these enterprise technologies in a containerized environment. I assume you have basic knowledge of Docker commands and concepts.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;For this lab, you need the following software :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;package of JBoss EAP 7 &lt;a href=&#34;http://www.jboss.org/products/eap/download/&#34;&gt;http://www.jboss.org/products/eap/download/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;installed Docker for Linux, for Mac or Window &lt;em&gt;&amp;gt;= 1.12&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;notice warning&#34; &gt;
-&lt;p class=&#34;first notice-title&#34;&gt;&lt;span class=&#34;icon-notice baseline&#34;&gt;&lt;svg&gt;&lt;use href=&#34;#warning-notice&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;Warning&lt;/p&gt;</description>
+&lt;p&gt;Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker&lt;/p&gt;</description>
     </item>
     <item>
       <title>JConsole &amp; Java Mission Control with JBoss EAP 7</title>
       <link>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</link>
       <pubDate>Tue, 19 Jul 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</guid>
-      <description>&lt;p&gt;During Red Hat summit, &lt;a href=&#34;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&#34;&gt;Red Hat releases the new version of its JBoss Application Server&lt;/a&gt;. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is &lt;a href=&#34;http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html&#34;&gt;JConsole&lt;/a&gt; and we will see how to use it with remote mode. We also configure an other tool called &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html&#34;&gt;Java Mission Control&lt;/a&gt; for a cooler JMX monitoring stuff.
-Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.&lt;/p&gt;</description>
+      <description>&lt;p&gt;During Red Hat summit, &lt;a href=&#34;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&#34;&gt;Red Hat releases the new version of its JBoss Application Server&lt;/a&gt;. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is &lt;a href=&#34;http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html&#34;&gt;JConsole&lt;/a&gt; and we will see how to use it with remote mode. We also configure an other tool called &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html&#34;&gt;Java Mission Control&lt;/a&gt; for a cooler JMX monitoring solution. These tools provide powerful capabilities for monitoring and troubleshooting Java applications in production environments.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lancement de JBoss EAP 7</title>
       <link>https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/</link>
       <pubDate>Mon, 27 Jun 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/</guid>
-      <description>&lt;p&gt;Cela fait exactement 5 ans que je travaille pour &lt;a href=&#34;www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; et pour mon cadeau d&amp;rsquo;anniversaire &lt;a href=&#34;www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; vient de sortir sa nouvelle version de son serveur d&amp;rsquo;application phare à savoir &lt;a href=&#34;https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform&#34;&gt;JBoss EAP 7&lt;/a&gt;.
-Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l&amp;rsquo;architecture générale du serveur d&amp;rsquo;application.
-Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Cela fait exactement 5 ans que je travaille pour &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; et pour mon cadeau d&amp;rsquo;anniversaire &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; vient de sortir sa nouvelle version de son serveur d&amp;rsquo;application phare à savoir &lt;a href=&#34;https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform&#34;&gt;JBoss EAP 7&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l&amp;rsquo;architecture générale du serveur d&amp;rsquo;application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Malte - Malta</title>
@@ -165,49 +141,32 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
       <pubDate>Tue, 14 Jun 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/06/14/unesco-challenge-point-unesco-malte-malta/</guid>
       <description>&lt;p&gt;Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel.
-Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rsquo;à nos jours. Cela m&amp;rsquo;a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.
-L&amp;rsquo;un des étendu sur Malte est le site &amp;ldquo;Temples mégalithiques de Malte&amp;rdquo; qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.&lt;/p&gt;</description>
+Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rsquo;à nos jours. Cela m&amp;rsquo;a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;un des sites les plus étendus sur Malte est le site &amp;ldquo;Temples mégalithiques de Malte&amp;rdquo; qui est réparti sur les deux grandes îles de l&amp;rsquo;archipel maltais (Malte et Gozo). Ces temples constituent l&amp;rsquo;un des ensembles de monuments préhistoriques les plus anciens au monde. Auparavant, seul le site de Gozo était inscrit au patrimoine mondial de l&amp;rsquo;UNESCO.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Camel is going into Eclipse Kura</title>
       <link>https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/</link>
       <pubDate>Fri, 18 Mar 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/03/18/camel-is-going-into-eclipse-kura/</guid>
-      <description>&lt;p&gt;Today, I am going to talk about a good news, it is a technical post but without any code/material or stuff like that (thx God). The &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Eclipse Kura Project&lt;/a&gt; has accepted &lt;a href=&#34;https://github.com/eclipse/kura/pull/72&#34;&gt;GitHub Pull Request&lt;/a&gt; and now includes a new cool component to &lt;code&gt;develop&lt;/code&gt; branch. This new component is &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel Framework&lt;/a&gt; from &lt;a href=&#34;http://apache.org/&#34;&gt;Apache Foundation&lt;/a&gt;.
-&lt;a href=&#34;https://about.me/hekonsek&#34;&gt;Henryk Konsek&lt;/a&gt; a colleague of mine is the principal guy behind this new. The Camel and Kura integration starts from the first &lt;a href=&#34;http://camel.apache.org/kura.html&#34;&gt;Camel Kura component&lt;/a&gt; available since Camel version 2.15 still from Henryk.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Today, I am going to talk about some exciting news in the IoT development world. This is a technical post, but without any code samples or hardware setup instructions (thankfully). The &lt;a href=&#34;http://www.eclipse.org/kura/&#34;&gt;Eclipse Kura Project&lt;/a&gt; has accepted a &lt;a href=&#34;https://github.com/eclipse/kura/pull/72&#34;&gt;GitHub Pull Request&lt;/a&gt; that introduces a powerful new component to the &lt;code&gt;develop&lt;/code&gt; branch. This new component is the &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel Framework&lt;/a&gt; from the &lt;a href=&#34;http://apache.org/&#34;&gt;Apache Foundation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://about.me/hekonsek&#34;&gt;Henryk Konsek&lt;/a&gt;, a talented colleague of mine, is the principal developer behind this integration. The relationship between Camel and Kura actually began earlier with the first &lt;a href=&#34;http://camel.apache.org/kura.html&#34;&gt;Camel Kura component&lt;/a&gt;, which has been available since Camel version 2.15, also developed by Henryk.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Device IO and i2cdetect implementation</title>
       <link>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</link>
       <pubDate>Wed, 09 Mar 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</guid>
-      <description>&lt;p&gt;Today, we gonna implement a quick tool available into RaspberryPi with Java &lt;a href=&#34;https://wiki.openjdk.java.net/display/dio/Main&#34;&gt;Device IO API&lt;/a&gt;. &lt;code&gt;i2cdetect&lt;/code&gt; is a simple &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;i2c&lt;/a&gt; device scanner for your RaspberryPi, it browse all i2c address to find which i2c device is connected. This tutorial show how to recompile DeviceIO API and program too.&lt;/p&gt;
+      <description>&lt;p&gt;Today, we&amp;rsquo;re going to implement a quick tool available on the RaspberryPi using Java &lt;a href=&#34;https://wiki.openjdk.java.net/display/dio/Main&#34;&gt;Device IO API&lt;/a&gt;. The &lt;code&gt;i2cdetect&lt;/code&gt; utility is a simple &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I²C&lt;/a&gt; device scanner for your RaspberryPi that browses all I²C addresses to find which I²C devices are connected to your board. This tutorial demonstrates how to recompile the Device IO API and implement the &lt;code&gt;i2cdetect&lt;/code&gt; functionality in Java, providing a platform-independent way to interact with I²C devices.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;i2cdetect with the Java Device I/O API implementation .&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;requisites&#34;&gt;Requisites&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;One &lt;a href=&#34;https://www.raspberrypi.org/products/raspberry-pi-2-model-b/&#34;&gt;RaspberryPi&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;tested w/ RPi B+&lt;/li&gt;
-&lt;li&gt;should works with all version&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;an I2C Device&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;Sense Hat&lt;/a&gt; for example&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;compile-device-io&#34;&gt;Compile Device IO&lt;/h3&gt;
-&lt;p&gt;Download  Device IO API and compile it.&lt;/p&gt;</description>
+&lt;p&gt;i2cdetect with the Java Device I/O API implementation - a powerful tool for hardware detection and diagnostics on embedded systems.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rhiot Kura Device IO GPIO and I2C</title>
       <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
       <pubDate>Mon, 29 Feb 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
-      <description>&lt;p&gt;Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the &lt;a href=&#34;http://openjdk.java.net/projects/dio/&#34;&gt;DeviceIO&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel&lt;/a&gt;, I reuse a previous work from Camel-pi4j I&amp;rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;RaspberryPi&lt;/a&gt; and a &lt;a href=&#34;http://activemq.apache.org/&#34;&gt;ActiveMQ&lt;/a&gt; broker too.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;How to use Kura Camel DIO from Rhiot Quickstart into RaspberryPi.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, a colleague of mine asked me to implement a small demonstration project. I decided to develop a new component for the Rhiot project. This component is the &lt;a href=&#34;http://openjdk.java.net/projects/dio/&#34;&gt;DeviceIO&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel&lt;/a&gt; component, which builds upon my previous work on Camel-pi4j that I had already developed for the Rhiot project. In this article, we&amp;rsquo;ll explore how to use this component within the Kura Platform via the Camel Framework. For this demonstration, we&amp;rsquo;ll need some hardware devices, specifically a &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;RaspberryPi&lt;/a&gt; and an &lt;a href=&#34;http://activemq.apache.org/&#34;&gt;ActiveMQ&lt;/a&gt; broker.&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</title>

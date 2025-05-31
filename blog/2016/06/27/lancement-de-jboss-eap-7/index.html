@@ -8,8 +8,7 @@
 <title>Lancement de JBoss EAP 7 | Greg. I/O</title>
 <meta name="keywords" content="en, JBoss, redhat, EAP7">
 <meta name="description" content="Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d&rsquo;anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d&rsquo;application phare à savoir JBoss EAP 7.
-Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l&rsquo;architecture générale du serveur d&rsquo;application.
-Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.">
+Cette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l&rsquo;architecture générale du serveur d&rsquo;application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
@@ -32,7 +31,8 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
 </noscript><meta property="og:url" content="https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="Lancement de JBoss EAP 7">
-  <meta property="og:description" content="Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d’anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d’application phare à savoir JBoss EAP 7. Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l’architecture générale du serveur d’application. Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.">
+  <meta property="og:description" content="Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d’anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d’application phare à savoir JBoss EAP 7.
+Cette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l’architecture générale du serveur d’application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -45,8 +45,7 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lancement de JBoss EAP 7">
 <meta name="twitter:description" content="Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d&rsquo;anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d&rsquo;application phare à savoir JBoss EAP 7.
-Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l&rsquo;architecture générale du serveur d&rsquo;application.
-Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.">
+Cette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l&rsquo;architecture générale du serveur d&rsquo;application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.">
       <meta name="twitter:site" content="@gautric_io">
 
 
@@ -76,12 +75,12 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
   "@type": "BlogPosting",
   "headline": "Lancement de JBoss EAP 7",
   "name": "Lancement de JBoss EAP 7",
-  "description": "Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d\u0026rsquo;anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d\u0026rsquo;application phare à savoir JBoss EAP 7. Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l\u0026rsquo;architecture générale du serveur d\u0026rsquo;application. Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.\n",
+  "description": "Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d\u0026rsquo;anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d\u0026rsquo;application phare à savoir JBoss EAP 7.\nCette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l\u0026rsquo;architecture générale du serveur d\u0026rsquo;application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.\n",
   "keywords": [
     "en", "JBoss", "redhat", "EAP7"
   ],
-  "articleBody": "Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d’anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d’application phare à savoir JBoss EAP 7. Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l’architecture générale du serveur d’application. Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.\nJava EE7 JBoss EAP 7 implemente les standards Java EE 7 Batch 1.0 Pour la création et le management des services de batch en Java WebSocket 1.1 Pour la creation d’application en mode push JMS 2.0 Evolution du standard de JMS JAX-WS 2.2 Pour le developpement des Webservices basés sur SOAP JAX-RS 2.0 Pour le developpement des services REST CDI 1.2 Injection de dependance via Weld JSF 2.2 Pour les applications de type IHM / Web Compatibilité et Interoperabilité Les clients EJB, JMS et WS seront compatible entre toutes les versions mineures de JBoss EAP 7. Cela va facilité les migrations progressives entre les versions mineures de JBoss EAP 7. JBoss EAP 7 a la possibilité de manager des instances JBoss EAP 6 et des toutes les versions JBoss EAP 7. Cela va aussi permettre la montée de version de la 6 vers la 7 pour les clients utilisants le mode domaine. Outil de migration de la configuration EAP 6 vers EAP 7 Il est possible d’utiliser une configuration EAP 6 pour effectuer la migration de celle-ci vers une version EAP 7 Management L’IHM de la console d’administration a été revue, simplifié et unifié. La web console est plus claire et moins confuse. Les fichiers de logs sont disponibles sous la forme d’une resource. Il n’est pas necessaire de se connecter via SSH pour récuperer les fichiers de logs Le mode offline autorise la modification du serveur via la CLI sans ouvrir de port TCP Cette option securise et facilite la configuration interne des instances JBoss. Moteur HTTP Remplacement de JBoss Web (moteur tomcat) par Undertow Undertow utilise nativement les lib NIO Support des handlers bloquant ou non bloquant, des servlet syncrhone et asynchrone et websocket (JSR 356) Configuration d’Undertow comme loadbalancer pour des intances en back office Undertow permet dans ce cas de supprimer le traditionnel serveur Apache en frontal Broker JMS JBoss EAP 7 integre maintenant ActiveMQ/Artemis Il s’agit d’une donation d’HornetQ à la communauté Apache ActiveMQ Java 8 La version JBoss EAP 7 necessite une machine virtuelle Java 8 à minima Support de OpenJDK (RHEL / Linux), Oracle JDK (Windows), IBM JDK (AIX) et HP JDK (HP-UX) Server Suspend Mode/Graceful Shutdown JBoss EAP 7 permet maintenant de gerer correctement l’arret du serveur. Le systeme dans ce mode refuse les nouvelles sessions (HTTP) mais laisse les anciennes toujours actives. Cela va donc facilité la montée de version des applications et/ou du serveur sans arrêt complete des services (rolling upgrade). Reduction des ports Le serveur JBoss EAP 7 expose maintenant que 2 ports seulement Un port de Management et un port Applicatif Il utilise le mécanisme d’upgrade du protocole HTTP Cela est relativement utile dans un monde conteneurisé (Docker / Openshift) Tech preview Support du protocole HTTP/2 Evolution du standard HTTP 1.1 vers HTTP 2 (voir mes posts modulo quelque modifications 1 ou 2) Singleton MDB en mode cluster Possibilité d’avoir un Message Driven Bean unique sur cluster PowerShell Scripts Possibilité de scripter avec le shell de Windows Conclusion Cette nouvelle version EAP 7 est c’est vrai plus un grosse evolution du produit qu’une revolution de paradigme. Cela va facilité les différents utilisateurs à migrer plus rapidement leur parc de JBoss EAP 6. Les nombreux quickstarts disponibles permettent aux developpeurs la prise en main rapide des différentes fonctionnalités de JBoss EAP 7.\nLien Utile Announcing JBoss EAP 7 (en) Support configuration Liste des framework ",
-  "wordCount" : "648",
+  "articleBody": "Cela fait exactement 5 ans que je travaille pour Red Hat et pour mon cadeau d’anniversaire Red Hat vient de sortir sa nouvelle version de son serveur d’application phare à savoir JBoss EAP 7.\nCette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l’architecture générale du serveur d’application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.\nNous allons voir dans ce post les principaux éléments qui me semblent les plus intéressants à retenir de cette nouvelle version.\nJava EE7 JBoss EAP 7 implémente les standards Java EE 7 Batch 1.0 Pour la création et le management des services de batch en Java Permet l’automatisation des traitements par lots avec reprise sur erreur WebSocket 1.1 Pour la création d’applications en mode push Facilite le développement d’applications web temps réel avec communication bidirectionnelle JMS 2.0 Évolution du standard de JMS avec une API simplifiée Réduction significative du code nécessaire pour les opérations courantes JAX-WS 2.2 Pour le développement des Webservices basés sur SOAP Support amélioré des standards WS-* JAX-RS 2.0 Pour le développement des services REST Introduction du client API et des filtres intercepteurs CDI 1.2 Injection de dépendance via Weld Amélioration du support des événements et des conversations JSF 2.2 Pour les applications de type IHM / Web Compatibilité et Interopérabilité Les clients EJB, JMS et WS seront compatibles entre toutes les versions mineures de JBoss EAP 7. Cela va faciliter les migrations progressives entre les versions mineures de JBoss EAP 7. Les applications clientes n’auront pas besoin d’être recompilées lors des mises à jour du serveur. JBoss EAP 7 a la possibilité de manager des instances JBoss EAP 6 et toutes les versions JBoss EAP 7. Cela va aussi permettre la montée de version de la 6 vers la 7 pour les clients utilisant le mode domaine. Cette fonctionnalité est particulièrement utile dans les environnements hétérogènes pendant les phases de migration. Outil de migration de la configuration EAP 6 vers EAP 7 Il est possible d’utiliser une configuration EAP 6 pour effectuer la migration de celle-ci vers une version EAP 7 L’outil analyse et adapte automatiquement les configurations pour assurer la compatibilité Management L’IHM de la console d’administration a été revue, simplifiée et unifiée. La web console est plus claire et moins confuse. L’expérience utilisateur a été améliorée avec une navigation plus intuitive. Les fichiers de logs sont disponibles sous la forme d’une ressource. Il n’est pas nécessaire de se connecter via SSH pour récupérer les fichiers de logs Cette approche facilite la centralisation et l’analyse des logs dans des environnements distribués. Le mode offline autorise la modification du serveur via la CLI sans ouvrir de port TCP Cette option sécurise et facilite la configuration interne des instances JBoss. Particulièrement utile dans les environnements où la sécurité réseau est critique. Moteur HTTP Remplacement de JBoss Web (moteur tomcat) par Undertow Undertow utilise nativement les bibliothèques NIO Les performances sont significativement améliorées, notamment pour les connexions concurrentes Support des handlers bloquants ou non bloquants, des servlets synchrones et asynchrones et websocket (JSR 356) Cette flexibilité permet d’optimiser le traitement selon le type de requête Configuration d’Undertow comme loadbalancer pour des instances en back office Undertow permet dans ce cas de supprimer le traditionnel serveur Apache en frontal Réduction de la complexité de l’architecture et des coûts de maintenance Broker JMS JBoss EAP 7 intègre maintenant ActiveMQ/Artemis Il s’agit d’une donation d’HornetQ à la communauté Apache ActiveMQ Artemis combine les meilleures fonctionnalités d’HornetQ et d’ActiveMQ pour offrir un broker de messages haute performance Java 8 La version JBoss EAP 7 nécessite une machine virtuelle Java 8 à minima Support de OpenJDK (RHEL / Linux), Oracle JDK (Windows), IBM JDK (AIX) et HP JDK (HP-UX) Cette exigence permet d’exploiter les améliorations de performance et les nouvelles fonctionnalités de Java 8 Server Suspend Mode/Graceful Shutdown JBoss EAP 7 permet maintenant de gérer correctement l’arrêt du serveur. Le système dans ce mode refuse les nouvelles sessions (HTTP) mais laisse les anciennes toujours actives. Cela va donc faciliter la montée de version des applications et/ou du serveur sans arrêt complet des services (rolling upgrade). Cette fonctionnalité est essentielle pour garantir la haute disponibilité des applications critiques. Réduction des ports Le serveur JBoss EAP 7 n’expose maintenant que 2 ports seulement Un port de Management et un port Applicatif Cette simplification réduit la surface d’attaque et facilite la configuration des pare-feu Il utilise le mécanisme d’upgrade du protocole HTTP Cette approche permet de multiplexer différents protocoles sur un même port Cela est relativement utile dans un monde conteneurisé (Docker / Openshift) La réduction du nombre de ports simplifie considérablement le déploiement dans des environnements cloud Tech preview Support du protocole HTTP/2 Évolution du standard HTTP 1.1 vers HTTP 2 (voir mes posts modulo quelques modifications 1 ou 2) HTTP/2 offre des améliorations significatives en termes de performance et d’efficacité Singleton MDB en mode cluster Possibilité d’avoir un Message Driven Bean unique sur cluster Cette fonctionnalité est particulièrement utile pour les traitements qui ne doivent être exécutés qu’une seule fois PowerShell Scripts Possibilité de scripter avec le shell de Windows Améliore l’intégration dans les environnements Windows et facilite l’automatisation Conclusion Cette nouvelle version EAP 7 est, c’est vrai, plus une grosse évolution du produit qu’une révolution de paradigme. Cela va faciliter la migration des différents utilisateurs de leur parc de JBoss EAP 6 vers cette nouvelle version. Les améliorations de performance, la réduction de la complexité et la meilleure intégration avec les environnements cloud et conteneurisés font de JBoss EAP 7 une plateforme solide pour les applications d’entreprise modernes.\nLes nombreux quickstarts disponibles permettent aux développeurs la prise en main rapide des différentes fonctionnalités de JBoss EAP 7.\nLiens Utiles Announcing JBoss EAP 7 (en) Support configuration Liste des frameworks ",
+  "wordCount" : "980",
   "inLanguage": "en",
   "datePublished": "2016-06-27T14:00:00Z",
   "dateModified": "2016-06-27T14:00:00Z",
@@ -143,41 +142,47 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
 
 </div>
   </header> 
-  <div class="post-content"><p>Cela fait exactement 5 ans que je travaille pour <a href="www.redhat.com">Red Hat</a> et pour mon cadeau d&rsquo;anniversaire <a href="www.redhat.com">Red Hat</a> vient de sortir sa nouvelle version de son serveur d&rsquo;application phare à savoir <a href="https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform">JBoss EAP 7</a>.
-Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l&rsquo;architecture générale du serveur d&rsquo;application.
-Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.</p>
+  <div class="post-content"><p>Cela fait exactement 5 ans que je travaille pour <a href="https://www.redhat.com">Red Hat</a> et pour mon cadeau d&rsquo;anniversaire <a href="https://www.redhat.com">Red Hat</a> vient de sortir sa nouvelle version de son serveur d&rsquo;application phare à savoir <a href="https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform">JBoss EAP 7</a>.</p>
+<p>Cette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l&rsquo;architecture générale du serveur d&rsquo;application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.</p>
+<p>Nous allons voir dans ce post les principaux éléments qui me semblent les plus intéressants à retenir de cette nouvelle version.</p>
 <h2 id="java-ee7">Java EE7<a hidden class="anchor" aria-hidden="true" href="#java-ee7">#</a></h2>
 <ul>
-<li>JBoss EAP 7 implemente les standards Java EE 7
+<li>JBoss EAP 7 implémente les standards Java EE 7
 <ul>
 <li>Batch 1.0
 <ul>
 <li>Pour la création et le management des services de batch en Java</li>
+<li>Permet l&rsquo;automatisation des traitements par lots avec reprise sur erreur</li>
 </ul>
 </li>
 <li>WebSocket 1.1
 <ul>
-<li>Pour la creation d&rsquo;application en mode push</li>
+<li>Pour la création d&rsquo;applications en mode push</li>
+<li>Facilite le développement d&rsquo;applications web temps réel avec communication bidirectionnelle</li>
 </ul>
 </li>
 <li>JMS 2.0
 <ul>
-<li>Evolution du standard de JMS</li>
+<li>Évolution du standard de JMS avec une API simplifiée</li>
+<li>Réduction significative du code nécessaire pour les opérations courantes</li>
 </ul>
 </li>
 <li>JAX-WS 2.2
 <ul>
-<li>Pour le developpement des Webservices basés sur SOAP</li>
+<li>Pour le développement des Webservices basés sur SOAP</li>
+<li>Support amélioré des standards WS-*</li>
 </ul>
 </li>
 <li>JAX-RS 2.0
 <ul>
-<li>Pour le developpement des services REST</li>
+<li>Pour le développement des services REST</li>
+<li>Introduction du client API et des filtres intercepteurs</li>
 </ul>
 </li>
 <li>CDI 1.2
 <ul>
-<li>Injection de dependance via Weld</li>
+<li>Injection de dépendance via Weld</li>
+<li>Amélioration du support des événements et des conversations</li>
 </ul>
 </li>
 <li>JSF 2.2
@@ -188,39 +193,45 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
 </ul>
 </li>
 </ul>
-<h2 id="compatibilité-et-interoperabilité">Compatibilité et Interoperabilité<a hidden class="anchor" aria-hidden="true" href="#compatibilité-et-interoperabilité">#</a></h2>
+<h2 id="compatibilité-et-interopérabilité">Compatibilité et Interopérabilité<a hidden class="anchor" aria-hidden="true" href="#compatibilité-et-interopérabilité">#</a></h2>
 <ul>
-<li>Les clients EJB, JMS et WS seront compatible entre toutes les versions mineures de JBoss EAP 7.
+<li>Les clients EJB, JMS et WS seront compatibles entre toutes les versions mineures de JBoss EAP 7.
 <ul>
-<li>Cela va facilité les migrations progressives entre les versions mineures de JBoss EAP 7.</li>
+<li>Cela va faciliter les migrations progressives entre les versions mineures de JBoss EAP 7.</li>
+<li>Les applications clientes n&rsquo;auront pas besoin d&rsquo;être recompilées lors des mises à jour du serveur.</li>
 </ul>
 </li>
-<li>JBoss EAP 7 a la possibilité de manager des instances JBoss EAP 6 et des toutes les versions JBoss EAP 7.
+<li>JBoss EAP 7 a la possibilité de manager des instances JBoss EAP 6 et toutes les versions JBoss EAP 7.
 <ul>
-<li>Cela va aussi permettre la montée de version de la 6 vers la 7 pour les clients utilisants le mode domaine.</li>
+<li>Cela va aussi permettre la montée de version de la 6 vers la 7 pour les clients utilisant le mode domaine.</li>
+<li>Cette fonctionnalité est particulièrement utile dans les environnements hétérogènes pendant les phases de migration.</li>
 </ul>
 </li>
 <li>Outil de migration de la configuration EAP 6 vers EAP 7
 <ul>
 <li>Il est possible d&rsquo;utiliser une configuration EAP 6 pour effectuer la migration de celle-ci vers une version EAP 7</li>
+<li>L&rsquo;outil analyse et adapte automatiquement les configurations pour assurer la compatibilité</li>
 </ul>
 </li>
 </ul>
 <h2 id="management">Management<a hidden class="anchor" aria-hidden="true" href="#management">#</a></h2>
 <ul>
-<li>L&rsquo;IHM de la console d&rsquo;administration a été revue, simplifié et unifié.
+<li>L&rsquo;IHM de la console d&rsquo;administration a été revue, simplifiée et unifiée.
 <ul>
 <li>La web console est plus claire et moins confuse.</li>
+<li>L&rsquo;expérience utilisateur a été améliorée avec une navigation plus intuitive.</li>
 </ul>
 </li>
-<li>Les fichiers de logs sont disponibles sous la forme d&rsquo;une resource.
+<li>Les fichiers de logs sont disponibles sous la forme d&rsquo;une ressource.
 <ul>
-<li>Il n&rsquo;est pas necessaire de se connecter via SSH pour récuperer les fichiers de logs</li>
+<li>Il n&rsquo;est pas nécessaire de se connecter via SSH pour récupérer les fichiers de logs</li>
+<li>Cette approche facilite la centralisation et l&rsquo;analyse des logs dans des environnements distribués.</li>
 </ul>
 </li>
 <li>Le mode offline autorise la modification du serveur via la CLI sans ouvrir de port TCP
 <ul>
-<li>Cette option securise et facilite la configuration interne des instances JBoss.</li>
+<li>Cette option sécurise et facilite la configuration interne des instances JBoss.</li>
+<li>Particulièrement utile dans les environnements où la sécurité réseau est critique.</li>
 </ul>
 </li>
 </ul>
@@ -228,77 +239,98 @@ Nous allons voir dans ce post les principaux elements qui me semblent le plus in
 <ul>
 <li>Remplacement de <a href="http://jbossweb.jboss.org/">JBoss Web</a> (moteur tomcat) par <a href="http://undertow.io/">Undertow</a>
 <ul>
-<li>Undertow utilise nativement les lib NIO</li>
+<li>Undertow utilise nativement les bibliothèques NIO</li>
+<li>Les performances sont significativement améliorées, notamment pour les connexions concurrentes</li>
 </ul>
 </li>
-<li>Support des handlers bloquant ou non bloquant, des servlet syncrhone et asynchrone et websocket (<a href="https://jcp.org/en/jsr/detail?id=356">JSR 356</a>)</li>
-<li>Configuration d&rsquo;Undertow comme loadbalancer pour des intances en back office
+<li>Support des handlers bloquants ou non bloquants, des servlets synchrones et asynchrones et websocket (<a href="https://jcp.org/en/jsr/detail?id=356">JSR 356</a>)
+<ul>
+<li>Cette flexibilité permet d&rsquo;optimiser le traitement selon le type de requête</li>
+</ul>
+</li>
+<li>Configuration d&rsquo;Undertow comme loadbalancer pour des instances en back office
 <ul>
 <li>Undertow permet dans ce cas de supprimer le traditionnel serveur Apache en frontal</li>
+<li>Réduction de la complexité de l&rsquo;architecture et des coûts de maintenance</li>
 </ul>
 </li>
 </ul>
 <h2 id="broker-jms">Broker JMS<a hidden class="anchor" aria-hidden="true" href="#broker-jms">#</a></h2>
 <ul>
-<li>JBoss EAP 7 integre maintenant <a href="https://activemq.apache.org/artemis/">ActiveMQ/Artemis</a>
+<li>JBoss EAP 7 intègre maintenant <a href="https://activemq.apache.org/artemis/">ActiveMQ/Artemis</a>
 <ul>
 <li>Il s&rsquo;agit d&rsquo;une donation d&rsquo;<a href="http://hornetq.jboss.org/">HornetQ</a> à la communauté <a href="http://hornetq.blogspot.fr/2015/06/hornetq-apache-donation-and-apache.html">Apache ActiveMQ</a></li>
+<li>Artemis combine les meilleures fonctionnalités d&rsquo;HornetQ et d&rsquo;ActiveMQ pour offrir un broker de messages haute performance</li>
 </ul>
 </li>
 </ul>
 <h2 id="java-8">Java 8<a hidden class="anchor" aria-hidden="true" href="#java-8">#</a></h2>
 <ul>
-<li>La version JBoss EAP 7 necessite une machine virtuelle Java 8 à minima
+<li>La version JBoss EAP 7 nécessite une machine virtuelle Java 8 à minima
 <ul>
 <li>Support de OpenJDK (RHEL / Linux), Oracle JDK (Windows), IBM JDK (AIX) et HP JDK (HP-UX)</li>
+<li>Cette exigence permet d&rsquo;exploiter les améliorations de performance et les nouvelles fonctionnalités de Java 8</li>
 </ul>
 </li>
 </ul>
 <h2 id="server-suspend-modegraceful-shutdown">Server Suspend Mode/Graceful Shutdown<a hidden class="anchor" aria-hidden="true" href="#server-suspend-modegraceful-shutdown">#</a></h2>
 <ul>
-<li>JBoss EAP 7 permet maintenant de gerer correctement l&rsquo;arret du serveur.
+<li>JBoss EAP 7 permet maintenant de gérer correctement l&rsquo;arrêt du serveur.
 <ul>
-<li>Le systeme dans ce mode refuse les nouvelles sessions (HTTP) mais laisse les anciennes toujours actives.</li>
-<li>Cela va donc facilité la montée de version des applications et/ou du serveur sans arrêt complete des services (rolling upgrade).</li>
+<li>Le système dans ce mode refuse les nouvelles sessions (HTTP) mais laisse les anciennes toujours actives.</li>
+<li>Cela va donc faciliter la montée de version des applications et/ou du serveur sans arrêt complet des services (rolling upgrade).</li>
+<li>Cette fonctionnalité est essentielle pour garantir la haute disponibilité des applications critiques.</li>
 </ul>
 </li>
 </ul>
-<h2 id="reduction-des-ports">Reduction des ports<a hidden class="anchor" aria-hidden="true" href="#reduction-des-ports">#</a></h2>
+<h2 id="réduction-des-ports">Réduction des ports<a hidden class="anchor" aria-hidden="true" href="#réduction-des-ports">#</a></h2>
 <ul>
-<li>Le serveur JBoss EAP 7 expose maintenant que 2 ports seulement
+<li>Le serveur JBoss EAP 7 n&rsquo;expose maintenant que 2 ports seulement
 <ul>
 <li>Un port de Management et un port Applicatif</li>
+<li>Cette simplification réduit la surface d&rsquo;attaque et facilite la configuration des pare-feu</li>
 </ul>
 </li>
-<li>Il utilise le mécanisme d&rsquo;<a href="https://en.wikipedia.org/wiki/HTTP/1.1_Upgrade_header">upgrade du protocole HTTP</a></li>
-<li>Cela est relativement utile dans un monde conteneurisé (Docker / Openshift)</li>
+<li>Il utilise le mécanisme d&rsquo;<a href="https://en.wikipedia.org/wiki/HTTP/1.1_Upgrade_header">upgrade du protocole HTTP</a>
+<ul>
+<li>Cette approche permet de multiplexer différents protocoles sur un même port</li>
+</ul>
+</li>
+<li>Cela est relativement utile dans un monde conteneurisé (Docker / Openshift)
+<ul>
+<li>La réduction du nombre de ports simplifie considérablement le déploiement dans des environnements cloud</li>
+</ul>
+</li>
 </ul>
 <h2 id="tech-preview">Tech preview<a hidden class="anchor" aria-hidden="true" href="#tech-preview">#</a></h2>
 <ul>
 <li>Support du protocole HTTP/2
 <ul>
-<li>Evolution du standard HTTP 1.1 vers HTTP 2 (<a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">voir mes posts modulo quelque modifications 1</a> ou <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">2</a>)</li>
+<li>Évolution du standard HTTP 1.1 vers HTTP 2 (<a href="/blog/2015/07/03/wildfly-offline-cli-http-2.html">voir mes posts modulo quelques modifications 1</a> ou <a href="/blog/2015/07/09/wildfly-docker-offline-cli-http-2.html">2</a>)</li>
+<li>HTTP/2 offre des améliorations significatives en termes de performance et d&rsquo;efficacité</li>
 </ul>
 </li>
 <li>Singleton MDB en mode cluster
 <ul>
 <li>Possibilité d&rsquo;avoir un Message Driven Bean unique sur cluster</li>
+<li>Cette fonctionnalité est particulièrement utile pour les traitements qui ne doivent être exécutés qu&rsquo;une seule fois</li>
 </ul>
 </li>
 <li>PowerShell Scripts
 <ul>
 <li>Possibilité de scripter avec le shell de Windows</li>
+<li>Améliore l&rsquo;intégration dans les environnements Windows et facilite l&rsquo;automatisation</li>
 </ul>
 </li>
 </ul>
 <h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
-<p>Cette nouvelle version EAP 7 est c&rsquo;est vrai plus un grosse evolution du produit qu&rsquo;une revolution de paradigme. Cela va facilité les différents utilisateurs à migrer plus rapidement leur parc de JBoss EAP 6.
-Les <a href="https://github.com/jboss-developer/jboss-eap-quickstarts">nombreux quickstarts</a> disponibles permettent aux developpeurs la prise en main rapide des différentes fonctionnalités de JBoss EAP 7.</p>
-<h3 id="lien-utile">Lien Utile<a hidden class="anchor" aria-hidden="true" href="#lien-utile">#</a></h3>
+<p>Cette nouvelle version EAP 7 est, c&rsquo;est vrai, plus une grosse évolution du produit qu&rsquo;une révolution de paradigme. Cela va faciliter la migration des différents utilisateurs de leur parc de JBoss EAP 6 vers cette nouvelle version. Les améliorations de performance, la réduction de la complexité et la meilleure intégration avec les environnements cloud et conteneurisés font de JBoss EAP 7 une plateforme solide pour les applications d&rsquo;entreprise modernes.</p>
+<p>Les <a href="https://github.com/jboss-developer/jboss-eap-quickstarts">nombreux quickstarts</a> disponibles permettent aux développeurs la prise en main rapide des différentes fonctionnalités de JBoss EAP 7.</p>
+<h3 id="liens-utiles">Liens Utiles<a hidden class="anchor" aria-hidden="true" href="#liens-utiles">#</a></h3>
 <ul>
 <li><a href="http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432">Announcing JBoss EAP 7 (en)</a></li>
 <li><a href="https://access.redhat.com/articles/2026253">Support configuration</a></li>
-<li><a href="https://access.redhat.com/articles/112673#EAP_7">Liste des framework</a></li>
+<li><a href="https://access.redhat.com/articles/112673#EAP_7">Liste des frameworks</a></li>
 </ul>
 
 

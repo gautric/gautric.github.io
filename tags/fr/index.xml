@@ -13,12 +13,7 @@
       <link>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</link>
       <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</guid>
-      <description>&lt;p&gt;Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Commutateur Intelligent SG250-10P&lt;/a&gt;, qui offre la fonctionnalité PoE.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Activer/Désactiver sa camera PoE depuis son routeur Cisco&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;pré-requis&#34;&gt;Pré-requis&lt;/h3&gt;
-&lt;p&gt;Avant de commencer il faut pouvoir &lt;a href=&#34;https://www.cisco.com/c/en/us/td/docs/switches/lan/csbms/250_/2_5_7/Admin_guide/tesla-250-ag/cb_250_chapter_15.html#ID-00006535&#34;&gt;se connecter en SSH sur le routeur&lt;/a&gt;.
-Il est possible de créer un compte de service (service account) auquel on configurera une clé SSH pour une connexion à distance.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Commutateur Intelligent SG250-10P&lt;/a&gt;, qui offre la fonctionnalité PoE (Power over Ethernet) permettant d&amp;rsquo;alimenter des périphériques directement via le câble réseau, éliminant ainsi le besoin d&amp;rsquo;une alimentation séparée.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AWS SSM, Ansible et Raspberry Pi via SSH</title>
@@ -33,7 +28,7 @@ Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilem
       <link>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</link>
       <pubDate>Wed, 08 Jun 2022 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/</guid>
-      <description>&lt;p&gt;La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d’applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L’avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.
+      <description>&lt;p&gt;La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d&amp;rsquo;applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L&amp;rsquo;avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.
 Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.&lt;/p&gt;</description>
     </item>
     <item>
@@ -41,7 +36,7 @@ Les applications modernes nécessitent de pouvoir migrer des socles techniques d
       <link>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</link>
       <pubDate>Sun, 26 Sep 2021 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/</guid>
-      <description>&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit &lt;a href=&#34;https://developers.redhat.com/products/rhpam/overview&#34;&gt;RHPAM&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus metiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j&amp;rsquo;ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .&lt;/p&gt;</description>
+      <description>&lt;p&gt;Pour mon activité professionnelle, je me déplace&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; chez les clients afin d&amp;rsquo;expertiser les solutions qu&amp;rsquo;ils mettent en place dans leur système d&amp;rsquo;information et notamment le produit &lt;a href=&#34;https://developers.redhat.com/products/rhpam/overview&#34;&gt;RHPAM&lt;/a&gt;&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;. Pour le compte d&amp;rsquo;un client donc, j&amp;rsquo;ai travaillé sur les processus métiers qu&amp;rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lesquels nous n&amp;rsquo;allons pas nous étendre ici. Nous allons plutôt nous concentrer sur un patron de conception particulièrement intéressant tant par sa fonctionnalité que par son implémentation technique.&lt;/p&gt;</description>
     </item>
     <item>
       <title>How to manage Exception inside a jBPM WorkItemHandler custom component</title>
@@ -51,27 +46,26 @@ Les applications modernes nécessitent de pouvoir migrer des socles techniques d
       <description>&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process.&lt;/p&gt;</description>
+&lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process. This example will demonstrate how jBPM can transform Java exceptions into BPMN errors, allowing for proper error handling within your business processes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Keycloak, les clefs Yubico et le standard Webauthn</title>
       <link>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</link>
       <pubDate>Mon, 26 Oct 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/10/26/keycloak-les-clefs-yubico-et-le-standard-webauthn/</guid>
-      <description>&lt;p&gt;Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de &lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;SSO&lt;/a&gt; c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.&lt;/p&gt;
-&lt;p&gt;Il y a quelques temps déjà, j&amp;rsquo;ai acheté et configuré des clefs Yubico afin de faire du &lt;a href=&#34;https://en.wikipedia.org/wiki/Multi-factor_authentication&#34;&gt;2FA&lt;/a&gt; avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc&amp;hellip;) proposent ce type d&amp;rsquo;authentification qui apporte une sécurité supplémentaire des comptes en ligne.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Depuis quelque temps j&amp;rsquo;interviens chez mes clients afin de mener des études d&amp;rsquo;architecture autour de Keycloak/RHSSO. Comme son nom l&amp;rsquo;indique, il s&amp;rsquo;agit d&amp;rsquo;une solution de &lt;a href=&#34;https://en.wikipedia.org/wiki/Single_sign-on&#34;&gt;SSO&lt;/a&gt; c&amp;rsquo;est à dire d&amp;rsquo;un système unique d&amp;rsquo;authentification et d&amp;rsquo;authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante et continue de croître, ce qui en fait une solution fiable et pérenne pour la gestion des identités.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Éxecution d&#39;un moteur de KYC en DMN avec Kogito</title>
       <link>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</link>
       <pubDate>Sat, 06 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</guid>
-      <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.&lt;/p&gt;
+      <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d&amp;rsquo;une modélisation théorique à une implémentation concrète et fonctionnelle.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h1 id=&#34;introdution-kogito&#34;&gt;Introdution Kogito&lt;/h1&gt;
-&lt;p&gt;Faisons un focus rapide sur &lt;a href=&#34;https://kogito.kie.org/&#34;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud.
-Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&#34;https://www.drools.org/&#34;&gt;Drools&lt;/a&gt; et &lt;a href=&#34;https://jbpm.org/&#34;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.&lt;/p&gt;</description>
+&lt;h1 id=&#34;introduction-kogito&#34;&gt;Introduction Kogito&lt;/h1&gt;
+&lt;p&gt;Faisons un focus rapide sur &lt;a href=&#34;https://kogito.kie.org/&#34;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud, conçu pour s&amp;rsquo;intégrer parfaitement dans les architectures modernes.
+Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&#34;https://www.drools.org/&#34;&gt;Drools&lt;/a&gt; et &lt;a href=&#34;https://jbpm.org/&#34;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple. Cette approche facilite considérablement le déploiement et la scalabilité des règles métier.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Le standard DMN, un KYC en exemple</title>
@@ -79,20 +73,19 @@ Ce moteur de règle reprend en grande partie tout le coeur et le developpement d
       <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</guid>
       <description>&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
-Nous allons voir avec un exemple rapide comment utiliser DMN.&lt;/p&gt;
+Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et exécuter des règles métier.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Le standard DMN, un KYC en exemple&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h1 id=&#34;introdution&#34;&gt;Introdution&lt;/h1&gt;
-&lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt;. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision.&lt;/p&gt;</description>
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt; (Object Management Group). Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision. Elle permet de créer un pont entre les équipes métier et techniques en offrant un langage commun.&lt;/p&gt;</description>
     </item>
     <item>
       <title>MQTTiser l&#39;API Autolib avec Node-Red</title>
       <link>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</guid>
-      <description>&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivé d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d&amp;rsquo;&lt;a href=&#34;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&#34;&gt;Autolib&lt;/a&gt; j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulierement l&amp;rsquo;application iPhone en fonction de mes besoins. Afin de me simplifier la vie j&amp;rsquo;ai installé et configuré chez moi la solution &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;HomeAssistant&lt;/a&gt;, j&amp;rsquo;utilisais pour cela l&amp;rsquo;&lt;a href=&#34;https://opendata.paris.fr/page/home/&#34;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&#34;https://fr.wikipedia.org/wiki/REST&#34;&gt;REST&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP&#34;&gt;HTTP&lt;/a&gt;.
-Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d&amp;rsquo;appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant &lt;a href=&#34;https://www.home-assistant.io/components/rest_command/&#34;&gt;RESTful&lt;/a&gt;.
-Je me suis dit, pourquoi ne pas :&lt;/p&gt;</description>
+      <description>&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivée d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d&amp;rsquo;&lt;a href=&#34;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&#34;&gt;Autolib&lt;/a&gt;, j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulièrement l&amp;rsquo;application iPhone en fonction de mes besoins.&lt;/p&gt;
+&lt;p&gt;Afin de me simplifier la vie, j&amp;rsquo;ai installé et configuré chez moi la solution &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;HomeAssistant&lt;/a&gt;, qui est une plateforme de domotique open source très populaire. J&amp;rsquo;utilisais pour cela l&amp;rsquo;&lt;a href=&#34;https://opendata.paris.fr/page/home/&#34;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&#34;https://fr.wikipedia.org/wiki/REST&#34;&gt;REST&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP&#34;&gt;HTTP&lt;/a&gt; pour récupérer les informations des stations Autolib.&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Malte - Malta</title>
@@ -100,8 +93,8 @@ Je me suis dit, pourquoi ne pas :&lt;/p&gt;</description>
       <pubDate>Tue, 14 Jun 2016 13:58:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/06/14/unesco-challenge-point-unesco-malte-malta/</guid>
       <description>&lt;p&gt;Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel.
-Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rsquo;à nos jours. Cela m&amp;rsquo;a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.
-L&amp;rsquo;un des étendu sur Malte est le site &amp;ldquo;Temples mégalithiques de Malte&amp;rdquo; qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.&lt;/p&gt;</description>
+Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rsquo;à nos jours. Cela m&amp;rsquo;a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.&lt;/p&gt;
+&lt;p&gt;L&amp;rsquo;un des sites les plus étendus sur Malte est le site &amp;ldquo;Temples mégalithiques de Malte&amp;rdquo; qui est réparti sur les deux grandes îles de l&amp;rsquo;archipel maltais (Malte et Gozo). Ces temples constituent l&amp;rsquo;un des ensembles de monuments préhistoriques les plus anciens au monde. Auparavant, seul le site de Gozo était inscrit au patrimoine mondial de l&amp;rsquo;UNESCO.&lt;/p&gt;</description>
     </item>
     <item>
       <title>UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian</title>

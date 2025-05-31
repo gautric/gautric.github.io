@@ -92,9 +92,7 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j’ai mis en place une installation permettant la télésurveillance en mode DIY. J’utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s’agit du Cisco Commutateur Intelligent SG250-10P, qui offre la fonctionnalité PoE.
-Activer/Désactiver sa camera PoE depuis son routeur Cisco
-Pré-requis Avant de commencer il faut pouvoir se connecter en SSH sur le routeur. Il est possible de créer un compte de service (service account) auquel on configurera une clé SSH pour une connexion à distance.
+    <p>Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j’ai mis en place une installation permettant la télésurveillance en mode DIY. J’utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s’agit du Cisco Commutateur Intelligent SG250-10P, qui offre la fonctionnalité PoE (Power over Ethernet) permettant d’alimenter des périphériques directement via le câble réseau, éliminant ainsi le besoin d’une alimentation séparée.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2024-01-28 09:00:00 +0000 UTC'>January 28, 2024</span></footer>
@@ -133,7 +131,7 @@ Pré-requis Avant de commencer il faut pouvoir se connecter en SSH sur le routeu
     </h2>
   </header>
   <div class="entry-content">
-    <p>Pour mon activité professionnelle, je me déplace1 chez les clients afin d’expertiser les solutions qu’ils mettent en place dans leur système d’information et notamment le produit RHPAM2. Pour le compte d’un client donc, j’ai travaillé sur les processus metiers qu’il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lequels nous n’allons pas nous étendre ici. Nous allons juste extraire un patron de conception que j’ai bien aimé de par sa fonctionnalité ainsi que par son interessante implémentation .
+    <p>Pour mon activité professionnelle, je me déplace1 chez les clients afin d’expertiser les solutions qu’ils mettent en place dans leur système d’information et notamment le produit RHPAM2. Pour le compte d’un client donc, j’ai travaillé sur les processus métiers qu’il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lesquels nous n’allons pas nous étendre ici. Nous allons plutôt nous concentrer sur un patron de conception particulièrement intéressant tant par sa fonctionnalité que par son implémentation technique.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2021-09-26 15:00:00 +0000 UTC'>September 26, 2021</span></footer>
@@ -148,7 +146,7 @@ Pré-requis Avant de commencer il faut pouvoir se connecter en SSH sur le routeu
   <div class="entry-content">
     <p>When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.
 How to manage Exception inside jBPM WorkItemHandler custom component.
-To illustrate how to use Exception/Error I propose to create a sample error process.
+To illustrate how to use Exception/Error I propose to create a sample error process. This example will demonstrate how jBPM can transform Java exceptions into BPMN errors, allowing for proper error handling within your business processes.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2020-10-28 15:00:00 +0000 UTC'>October 28, 2020</span></footer>
@@ -161,8 +159,7 @@ To illustrate how to use Exception/Error I propose to create a sample error proc
     </h2>
   </header>
   <div class="entry-content">
-    <p>Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de SSO c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante.
-Il y a quelques temps déjà, j’ai acheté et configuré des clefs Yubico afin de faire du 2FA avec mes principaux comptes en ligne. Les principaux acteurs du web (Google, Facebook, AWS, etc…) proposent ce type d’authentification qui apporte une sécurité supplémentaire des comptes en ligne.
+    <p>Depuis quelque temps j’interviens chez mes clients afin de mener des études d’architecture autour de Keycloak/RHSSO. Comme son nom l’indique, il s’agit d’une solution de SSO c’est à dire d’un système unique d’authentification et d’authorisation. Le projet Keycloak a debuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante et continue de croître, ce qui en fait une solution fiable et pérenne pour la gestion des identités.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2020-10-26 15:00:00 +0000 UTC'>October 26, 2020</span></footer>
@@ -175,9 +172,9 @@ Il y a quelques temps déjà, j’ai acheté et configuré des clefs Yubico afin
     </h2>
   </header>
   <div class="entry-content">
-    <p>Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN.
+    <p>Dans le précedent post sur ce blog nous avons vu rapidement comment créer sa définition et modelisation des règle d’un KYC basé sur le standard DMN. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d’une modélisation théorique à une implémentation concrète et fonctionnelle.
 Éxecution d’un moteur KYC en DMN avec Kogito
-Introdution Kogito Faisons un focus rapide sur Kogito. Kogito est un moteur de règle orienté cloud. Ce moteur de règle reprend en grande partie tout le coeur et le developpement de Drools et jBPM mais propose des fonctionnalités purement Cloud notamment le fait qu’il est prévu d’être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple.
+Introduction Kogito Faisons un focus rapide sur Kogito. Kogito est un moteur de règle orienté cloud, conçu pour s’intégrer parfaitement dans les architectures modernes. Ce moteur de règle reprend en grande partie tout le coeur et le developpement de Drools et jBPM mais propose des fonctionnalités purement Cloud notamment le fait qu’il est prévu d’être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple. Cette approche facilite considérablement le déploiement et la scalabilité des règles métier.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2020-06-06 15:00:00 +0000 UTC'>June 6, 2020</span></footer>
@@ -190,9 +187,9 @@ Introdution Kogito Faisons un focus rapide sur Kogito. Kogito est un moteur de r
     </h2>
   </header>
   <div class="entry-content">
-    <p>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN.
+    <p>Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l’ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard. Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et exécuter des règles métier.
 Le standard DMN, un KYC en exemple
-Introdution DMN est une norme de l’OMG. Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d’évaluation et/ou d’aide à la décision.
+Introduction DMN est une norme de l’OMG (Object Management Group). Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d’évaluation et/ou d’aide à la décision. Elle permet de créer un pont entre les équipes métier et techniques en offrant un langage commun.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2020-06-04 15:00:00 +0000 UTC'>June 4, 2020</span></footer>
@@ -205,7 +202,8 @@ Introdution DMN est une norme de l’OMG. Cette norme a pour objectif de standar
     </h2>
   </header>
   <div class="entry-content">
-    <p>Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivé d’un petit Thomas, voici un nouveau post. Étant un utlisateur occassionnel d’Autolib j’ai besoin d’avoir en flux continu l’état des stations à coté de chez moi (nb de voiture, nb de place). Autour de chez moi, j’ai plusieurs stations Autolib et je dois consulter régulierement l’application iPhone en fonction de mes besoins. Afin de me simplifier la vie j’ai installé et configuré chez moi la solution HomeAssistant, j’utilisais pour cela l’API de Paris en mode REST/HTTP. Malheureusement, le nombre de requetes est limitée et plus on doit superviser de stations (voiture, place libre) plus on doit faire d’appels REST, HomeAssistant est un très bon produit mais un peu limité en terme de scripting du composant RESTful. Je me suis dit, pourquoi ne pas :
+    <p>Après un petit temps de silence, pour des raisons personnelles et notamment l’arrivée d’un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d’Autolib, j’ai besoin d’avoir en flux continu l’état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j’ai plusieurs stations Autolib et je dois consulter régulièrement l’application iPhone en fonction de mes besoins.
+Afin de me simplifier la vie, j’ai installé et configuré chez moi la solution HomeAssistant, qui est une plateforme de domotique open source très populaire. J’utilisais pour cela l’API de Paris en mode REST/HTTP pour récupérer les informations des stations Autolib.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2018-04-21 15:00:00 +0000 UTC'>April 21, 2018</span></footer>
@@ -218,7 +216,8 @@ Introdution DMN est une norme de l’OMG. Cette norme a pour objectif de standar
     </h2>
   </header>
   <div class="entry-content">
-    <p>Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel. Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu’à nos jours. Cela m’a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés. L’un des étendu sur Malte est le site “Temples mégalithiques de Malte” qui est reparti sur les deux grandes îles de Malte (Malte et Gozo). Auparavant seul le site de Gozo était le site inscrit.
+    <p>Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel. Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu’à nos jours. Cela m’a beaucoup impressionné car étonnement il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.
+L’un des sites les plus étendus sur Malte est le site “Temples mégalithiques de Malte” qui est réparti sur les deux grandes îles de l’archipel maltais (Malte et Gozo). Ces temples constituent l’un des ensembles de monuments préhistoriques les plus anciens au monde. Auparavant, seul le site de Gozo était inscrit au patrimoine mondial de l’UNESCO.
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2016-06-14 13:58:00 +0000 UTC'>June 14, 2016</span></footer>

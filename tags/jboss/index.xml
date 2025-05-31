@@ -13,34 +13,24 @@
       <link>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</guid>
-      <description>&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&#34;https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&#34;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.&lt;/p&gt;
+      <description>&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&#34;https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&#34;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same setup but with JBoss EAP 7, WebsphereMQ Sample IVT application, and both running on Docker. This tutorial demonstrates how to configure and connect these enterprise technologies in a containerized environment. I assume you have basic knowledge of Docker commands and concepts.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;For this lab, you need the following software :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;package of JBoss EAP 7 &lt;a href=&#34;http://www.jboss.org/products/eap/download/&#34;&gt;http://www.jboss.org/products/eap/download/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;installed Docker for Linux, for Mac or Window &lt;em&gt;&amp;gt;= 1.12&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;notice warning&#34; &gt;
-&lt;p class=&#34;first notice-title&#34;&gt;&lt;span class=&#34;icon-notice baseline&#34;&gt;&lt;svg&gt;&lt;use href=&#34;#warning-notice&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;Warning&lt;/p&gt;</description>
+&lt;p&gt;Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker&lt;/p&gt;</description>
     </item>
     <item>
       <title>JConsole &amp; Java Mission Control with JBoss EAP 7</title>
       <link>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</link>
       <pubDate>Tue, 19 Jul 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/07/19/jconsole-java-mission-control-with-jboss-eap-7/</guid>
-      <description>&lt;p&gt;During Red Hat summit, &lt;a href=&#34;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&#34;&gt;Red Hat releases the new version of its JBoss Application Server&lt;/a&gt;. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is &lt;a href=&#34;http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html&#34;&gt;JConsole&lt;/a&gt; and we will see how to use it with remote mode. We also configure an other tool called &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html&#34;&gt;Java Mission Control&lt;/a&gt; for a cooler JMX monitoring stuff.
-Sorry my platform is a MacOS X, but I am sure your skill is enough to adapt into your environment.&lt;/p&gt;</description>
+      <description>&lt;p&gt;During Red Hat summit, &lt;a href=&#34;http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432&#34;&gt;Red Hat releases the new version of its JBoss Application Server&lt;/a&gt;. JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is &lt;a href=&#34;http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html&#34;&gt;JConsole&lt;/a&gt; and we will see how to use it with remote mode. We also configure an other tool called &lt;a href=&#34;http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html&#34;&gt;Java Mission Control&lt;/a&gt; for a cooler JMX monitoring solution. These tools provide powerful capabilities for monitoring and troubleshooting Java applications in production environments.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Lancement de JBoss EAP 7</title>
       <link>https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/</link>
       <pubDate>Mon, 27 Jun 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/06/27/lancement-de-jboss-eap-7/</guid>
-      <description>&lt;p&gt;Cela fait exactement 5 ans que je travaille pour &lt;a href=&#34;www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; et pour mon cadeau d&amp;rsquo;anniversaire &lt;a href=&#34;www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; vient de sortir sa nouvelle version de son serveur d&amp;rsquo;application phare à savoir &lt;a href=&#34;https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform&#34;&gt;JBoss EAP 7&lt;/a&gt;.
-Cette nouvelle version de JBoss EAP 7 presente certaine evolutions interessantes par rapport à la version 6, tout en gradant la philosophie et l&amp;rsquo;architecture générale du serveur d&amp;rsquo;application.
-Nous allons voir dans ce post les principaux elements qui me semblent le plus interessant à retenir de cette nouvelle version.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Cela fait exactement 5 ans que je travaille pour &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; et pour mon cadeau d&amp;rsquo;anniversaire &lt;a href=&#34;https://www.redhat.com&#34;&gt;Red Hat&lt;/a&gt; vient de sortir sa nouvelle version de son serveur d&amp;rsquo;application phare à savoir &lt;a href=&#34;https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform&#34;&gt;JBoss EAP 7&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cette nouvelle version de JBoss EAP 7 présente certaines évolutions intéressantes par rapport à la version 6, tout en gardant la philosophie et l&amp;rsquo;architecture générale du serveur d&amp;rsquo;application. Les améliorations apportées visent principalement à moderniser la plateforme, améliorer ses performances et faciliter son utilisation dans des environnements cloud et conteneurisés.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6 English Version</title>

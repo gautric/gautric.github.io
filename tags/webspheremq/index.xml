@@ -13,17 +13,9 @@
       <link>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</link>
       <pubDate>Wed, 03 Aug 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/</guid>
-      <description>&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&#34;https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&#34;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same stuff but with JBoss EAP 7, WebsphereMQ Sample IVT application and running on Docker. I assume you know basic command about Docker.&lt;/p&gt;
+      <description>&lt;p&gt;Last year for a previous customer I wrote an article/post about &lt;a href=&#34;https://gautric.github.io/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html&#34;&gt;WebsphereMQ Best Practice with JBoss EAP 6&lt;/a&gt;. Today we will make almost the same setup but with JBoss EAP 7, WebsphereMQ Sample IVT application, and both running on Docker. This tutorial demonstrates how to configure and connect these enterprise technologies in a containerized environment. I assume you have basic knowledge of Docker commands and concepts.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;For this lab, you need the following software :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;package of JBoss EAP 7 &lt;a href=&#34;http://www.jboss.org/products/eap/download/&#34;&gt;http://www.jboss.org/products/eap/download/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;installed Docker for Linux, for Mac or Window &lt;em&gt;&amp;gt;= 1.12&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;notice warning&#34; &gt;
-&lt;p class=&#34;first notice-title&#34;&gt;&lt;span class=&#34;icon-notice baseline&#34;&gt;&lt;svg&gt;&lt;use href=&#34;#warning-notice&#34;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;Warning&lt;/p&gt;</description>
+&lt;p&gt;Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker&lt;/p&gt;</description>
     </item>
     <item>
       <title>Best Practices Websphere MQ/JBoss EAP 6 English Version</title>

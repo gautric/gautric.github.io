@@ -13,9 +13,7 @@
       <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
       <pubDate>Mon, 29 Feb 2016 14:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
-      <description>&lt;p&gt;Recently, a colleague of mine calls me to implements a small demo. I decide to develop a new component for Rhiot project. This component is the &lt;a href=&#34;http://openjdk.java.net/projects/dio/&#34;&gt;DeviceIO&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel&lt;/a&gt;, I reuse a previous work from Camel-pi4j I&amp;rsquo;ve already develop for Rhiot project too. We gonna see how to use this component into Kura Platform via Camel Framework. For this demo we need some hardware devices, a &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;RaspberryPi&lt;/a&gt; and a &lt;a href=&#34;http://activemq.apache.org/&#34;&gt;ActiveMQ&lt;/a&gt; broker too.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;How to use Kura Camel DIO from Rhiot Quickstart into RaspberryPi.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently, a colleague of mine asked me to implement a small demonstration project. I decided to develop a new component for the Rhiot project. This component is the &lt;a href=&#34;http://openjdk.java.net/projects/dio/&#34;&gt;DeviceIO&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel&lt;/a&gt; component, which builds upon my previous work on Camel-pi4j that I had already developed for the Rhiot project. In this article, we&amp;rsquo;ll explore how to use this component within the Kura Platform via the Camel Framework. For this demonstration, we&amp;rsquo;ll need some hardware devices, specifically a &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;RaspberryPi&lt;/a&gt; and an &lt;a href=&#34;http://activemq.apache.org/&#34;&gt;ActiveMQ&lt;/a&gt; broker.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rhiot over Kura over Docker over RaspberryPi ;-)</title>
