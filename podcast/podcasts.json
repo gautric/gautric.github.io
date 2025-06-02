@@ -1,0 +1,25 @@
+{
+  "podcasts": [
+    {
+      "id": "pluton",
+      "title": "Pluton",
+      "description": "Dans cet épisode, Thomas et Marie explorent Pluton, cette mystérieuse planète naine aux confins de notre système solaire.",
+      "image": "pluton_image.jpg",
+      "jsonFile": "pluton.json"
+    },
+    {
+      "id": "montfuji",
+      "title": "Le Mont Fuji",
+      "description": "Dans cet épisode, Thomas et Marie explorent le Mont Fuji, la montagne la plus célèbre du Japon.",
+      "image": "mont_fuji_image-2.png",
+      "jsonFile": "montfuji.json"
+    },
+    {
+      "id": "histoire_evolutive",
+      "title": "L'Histoire Évolutive du Vivant",
+      "description": "Dans cet épisode, Thomas et Marie explorent l'histoire évolutive du vivant, un voyage fascinant à travers des milliards d'années d'évolution.",
+      "image": "histoire_evolutive_podcast/evolution_timeline.png",
+      "jsonFile": "histoire_evolutive.json"
+    }
+  ]
+}
