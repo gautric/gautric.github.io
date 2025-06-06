@@ -20,6 +20,13 @@
       "description": "Dans cet épisode, Thomas et Marie explorent l'histoire évolutive du vivant, un voyage fascinant à travers des milliards d'années d'évolution.",
       "image": "histoire_evolutive_podcast/evolution_timeline.png",
       "jsonFile": "histoire_evolutive.json"
+    },
+    {
+      "id": "charles_de_gaulle",
+      "title": "Charles de Gaulle : Un Héros Français",
+      "description": "Dans cet épisode, Thomas et Marie découvrent l'histoire de Charles de Gaulle, un personnage important de l'histoire de France.",
+      "image": "charles_de_gaulle_image.jpg",
+      "jsonFile": "charles_de_gaulle.json"
     }
   ]
 }
