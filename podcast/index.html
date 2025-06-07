@@ -85,21 +85,23 @@
             justify-content: center;
             margin: 20px 0;
         }
-        .podcast-selector a {
-            display: inline-block;
+        .podcast-selector select {
             padding: 10px 15px;
-            margin: 0 10px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
+            font-size: 16px;
+            border: 2px solid #3498db;
             border-radius: 5px;
-            font-weight: bold;
+            background-color: white;
+            color: #2c3e50;
+            cursor: pointer;
+            min-width: 200px;
         }
-        .podcast-selector a:hover {
-            background-color: #2980b9;
+        .podcast-selector select:hover {
+            border-color: #2980b9;
         }
-        .podcast-selector a.active {
-            background-color: #27ae60;
+        .podcast-selector select:focus {
+            outline: none;
+            border-color: #27ae60;
+            box-shadow: 0 0 5px rgba(39, 174, 96, 0.3);
         }
         .loading {
             text-align: center;
@@ -155,23 +157,24 @@
                 }
                 const data = await response.json();
                 
-                // Generate podcast selector links
+                // Generate podcast selector dropdown
                 const podcastSelector = document.getElementById('podcast-selector');
                 podcastSelector.innerHTML = '';
                 
+                const select = document.createElement('select');
                 data.podcasts.forEach(podcast => {
-                    const link = document.createElement('a');
-                    link.href = `?podcast=${podcast.id}`;
-                    link.id = `${podcast.id}-link`;
-                    link.textContent = podcast.title;
-                    
-                    // Add active class if this is the current podcast
-                    if (podcast.id === podcastParam) {
-                        link.classList.add('active');
-                    }
-                    
-                    podcastSelector.appendChild(link);
+                    const option = document.createElement('option');
+                    option.value = podcast.id;
+                    option.textContent = podcast.title;
+                    option.selected = podcast.id === podcastParam;
+                    select.appendChild(option);
                 });
+                
+                select.addEventListener('change', (event) => {
+                    window.location.href = `?podcast=${event.target.value}`;
+                });
+                
+                podcastSelector.appendChild(select);
             } catch (error) {
                 console.error('Error loading podcasts list:', error);
             }
