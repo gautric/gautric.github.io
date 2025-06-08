@@ -1,17 +1,66 @@
 {
   "podcasts": [
     {
+      "id": "scribe_accroupi",
+      "title": "Le Scribe Accroupi du musée du Louvre",
+      "description": "Dans cet épisode, Thomas et Marie découvrent le Scribe Accroupi, une statue égyptienne fascinante exposée au musée du Louvre.",
+      "image": "scribe_accroupi_podcast/scribe_accroupi_image.png",
+      "jsonFile": "scribe_accroupi.json"
+    },
+    {
+      "id": "fractales",
+      "title": "Les Fractales",
+      "description": "Dans cet épisode, Thomas et Marie explorent le monde fascinant des fractales, ces formes géométriques qui se répètent à l'infini.",
+      "image": "fractales_podcast/fractales_image.png",
+      "jsonFile": "fractales.json"
+    },
+    {
+      "id": "cinema_muet",
+      "title": "Le Début du Cinéma en Noir et Blanc et Muet",
+      "description": "Dans cet épisode, Thomas et Marie explorent les débuts fascinants du cinéma muet et en noir et blanc, découvrant les inventeurs et les stars qui ont créé la magie du 7e art.",
+      "image": "cinema_muet_podcast/cinema_muet_image.jpg",
+      "jsonFile": "cinema_muet.json"
+    },
+    {
+      "id": "systeme_binaire",
+      "title": "Le Système Binaire Utilisé par les Ordinateurs",
+      "description": "Dans cet épisode, Thomas et Marie découvrent comment les ordinateurs utilisent le système binaire pour fonctionner.",
+      "image": "systeme_binaire_podcast/systeme_binaire_image.jpg",
+      "jsonFile": "systeme_binaire.json"
+    },
+    {
+      "id": "pandas",
+      "title": "Les Pandas",
+      "description": "Dans cet épisode, Thomas et Marie explorent l'univers fascinant des pandas, ces adorables animaux en voie de disparition qui se nourrissent presque exclusivement de bambou.",
+      "image": "pandas_podcast/panda_image.png",
+      "jsonFile": "pandas.json"
+    },
+    {
+      "id": "alesia",
+      "title": "La bataille d'Alesia et les gaulois",
+      "description": "Dans cet épisode, Thomas et Marie explorent la célèbre bataille d'Alesia où les Gaulois menés par Vercingétorix ont affronté les Romains de Jules César, un événement crucial de l'histoire de France.",
+      "image": "alesia_podcast/alesia_image.jpg",
+      "jsonFile": "alesia.json"
+    },
+    {
+      "id": "champollion",
+      "title": "Jean-François Champollion et le déchiffrement des hiéroglyphes",
+      "description": "Dans cet épisode, Thomas et Marie découvrent l'histoire fascinante de Jean-François Champollion, le savant français qui a réussi à percer le mystère des hiéroglyphes égyptiens.",
+      "image": "champollion_podcast/champollion_image.png",
+      "jsonFile": "champollion.json"
+    },
+    {
       "id": "pluton",
       "title": "Pluton",
       "description": "Dans cet épisode, Thomas et Marie explorent Pluton, cette mystérieuse planète naine aux confins de notre système solaire.",
-      "image": "pluton_image.jpg",
+      "image": "pluton/pluton_image.jpg",
       "jsonFile": "pluton.json"
     },
     {
       "id": "montfuji",
       "title": "Le Mont Fuji",
       "description": "Dans cet épisode, Thomas et Marie explorent le Mont Fuji, la montagne la plus célèbre du Japon.",
-      "image": "mont_fuji_image-2.png",
+      "image": "mont_fuji_podcast/mont_fuji_image-2.png",
       "jsonFile": "montfuji.json"
     },
     {
@@ -25,8 +74,15 @@
       "id": "charles_de_gaulle",
       "title": "Charles de Gaulle : Un Héros Français",
       "description": "Dans cet épisode, Thomas et Marie découvrent l'histoire de Charles de Gaulle, un personnage important de l'histoire de France.",
-      "image": "charles_de_gaulle_image.jpg",
+      "image": "charles_de_gaulle_podcast/charles_de_gaulle_image.jpg",
       "jsonFile": "charles_de_gaulle.json"
+    },
+    {
+      "id": "polygone",
+      "title": "Les Polygones",
+      "description": "Dans cet épisode, Thomas et Marie explorent le monde fascinant des polygones et découvrent ces formes géométriques qui nous entourent.",
+      "image": "polygone_podcast/polygones_image.png",
+      "jsonFile": "polygone.json"
     }
   ]
 }

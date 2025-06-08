@@ -1,0 +1,79 @@
+01_thomas_intro: Bienvenue sur le Podcast de Thomas 8 ans et Marie 6 ans, Dans notre podcast, on part à la découverte de tout : on voyage dans le temps avec l'Histoire, on explore la planète avec la Géographie, et on fait des expériences avec les Sciences ! Préparez-vous à devenir des explorateurs du temps, de l'espace et de la science !
+
+02_thomas_salut: Salut Marie ! Aujourd'hui, on va parler de quelque chose de super intéressant : les polygones !
+
+03_marie_question: Les poly-quoi ?
+
+04_thomas_formes: Les polygones ! Ce sont des formes géométriques qu'on voit partout autour de nous. En fait, un polygone, c'est une forme fermée avec des lignes droites.
+
+05_marie_comprends_pas: Je ne comprends pas trop, Thomas. Tu peux me montrer un exemple ?
+
+06_thomas_exemples: Bien sûr ! Par exemple, un triangle est un polygone. Il a trois côtés droits. Un carré aussi est un polygone avec quatre côtés égaux. Ta fenêtre est probablement un rectangle, c'est aussi un polygone !
+
+07_marie_triangle: Ah, je comprends mieux ! J'aime bien les triangles. Ils ressemblent à des montagnes !
+
+08_thomas_definition: Exactement ! En fait, pour qu'une forme soit un polygone, elle doit avoir des côtés qui sont tous des lignes droites, et la forme doit être fermée, comme si tu dessinais sans jamais lever ton crayon et que tu reviens au point de départ.
+
+09_marie_cercle: Alors un cercle, ce n'est pas un polygone ?
+
+10_thomas_pas_polygone: Non, un cercle n'est pas un polygone parce qu'il n'a pas de lignes droites. Il est tout rond ! Les polygones ont toujours des côtés droits.
+
+11_marie_combien: Et il peut y avoir combien de côtés dans un polygone ?
+
+12_thomas_nombre_cotes: Il peut y avoir autant de côtés que tu veux ! Un triangle a 3 côtés, un carré ou un rectangle ont 4 côtés, un pentagone a 5 côtés, un hexagone a 6 côtés, un heptagone a 7 côtés, un octogone a 8 côtés... Et ça continue !
+
+13_marie_difficile: Oh là là, c'est difficile à retenir tous ces noms !
+
+14_thomas_astuce: J'ai une astuce pour t'aider ! Les noms viennent du grec. "Tri" veut dire trois, donc triangle a trois côtés. "Penta" veut dire cinq, donc pentagone a cinq côtés. "Hexa" veut dire six, donc hexagone a six côtés. Et ainsi de suite !
+
+15_marie_octogone: Alors "octo" veut dire huit, c'est pour ça qu'un octogone a huit côtés ?
+
+16_thomas_bravo: Exactement ! Bravo Marie !
+
+17_marie_cotes_angles: Et est-ce que les polygones ont aussi des angles ?
+
+18_thomas_angles: Oui, tout à fait ! Chaque fois que deux côtés se rejoignent, ils forment un angle. Un triangle a 3 angles, un carré a 4 angles, un pentagone a 5 angles, et ainsi de suite. Le nombre d'angles est toujours égal au nombre de côtés.
+
+19_marie_sommets: Et comment on appelle les points où les côtés se rejoignent ?
+
+20_thomas_sommets: Ces points s'appellent les sommets. C'est là où les côtés se rencontrent et forment un angle. Un triangle a 3 sommets, un carré a 4 sommets, etc.
+
+21_marie_maison: Oh, je comprends ! Alors quand je dessine une maison, j'utilise des polygones ! Le toit est un triangle et le reste est un carré ou un rectangle !
+
+22_thomas_vie_quotidienne: Exactement ! Les polygones sont partout dans notre vie quotidienne. Les panneaux de signalisation sont souvent des polygones : le panneau stop est un octogone, le panneau "cédez le passage" est un triangle...
+
+23_marie_nature: Est-ce qu'il y a des polygones dans la nature aussi ?
+
+24_thomas_nature: Oui ! Par exemple, les alvéoles des ruches d'abeilles sont des hexagones. C'est une forme très efficace pour stocker le miel. On trouve aussi des cristaux qui ont des formes de polygones. Et certaines fleurs, quand on les regarde de face, ressemblent à des polygones avec leurs pétales !
+
+25_marie_jeu: On pourrait faire un jeu pour chercher des polygones autour de nous ?
+
+26_thomas_jeu: C'est une super idée ! On peut chercher différents polygones dans la maison, dans le jardin ou même quand on se promène en ville. Tu peux chercher des triangles, des carrés, des rectangles...
+
+27_marie_regulier: Thomas, est-ce que tous les polygones ont des côtés de la même longueur ?
+
+28_thomas_regulier_irregulier: Bonne question ! Non, pas forcément. Quand tous les côtés d'un polygone ont la même longueur, on dit que c'est un polygone régulier. Par exemple, un carré est un polygone régulier parce que tous ses côtés sont égaux. Mais un rectangle est un polygone irrégulier parce que ses côtés n'ont pas tous la même longueur.
+
+29_marie_activite: On pourrait découper des polygones dans du papier pour faire des décorations !
+
+30_thomas_activite: Excellente idée ! On peut découper différents polygones dans du papier coloré et créer des motifs ou des images. On peut aussi essayer de construire des objets en 3D en assemblant différents polygones.
+
+31_marie_puzzle: Comme un puzzle ?
+
+32_thomas_puzzle: Oui, exactement ! D'ailleurs, il existe un jeu qui s'appelle le tangram. C'est un puzzle chinois très ancien composé de 7 pièces qui sont toutes des polygones : 5 triangles, 1 carré et 1 parallélogramme. Avec ces pièces, on peut créer plein de formes différentes !
+
+33_marie_mosaique: Ça me fait penser aux mosaïques qu'on a vues au musée !
+
+34_thomas_mosaique: Tu as raison ! Les mosaïques sont souvent faites avec des petits polygones de différentes couleurs assemblés pour créer des images. C'est un art très ancien qui existe depuis des milliers d'années.
+
+35_marie_resume: Alors, pour résumer, les polygones sont des formes fermées avec des côtés droits, comme les triangles, les carrés, les rectangles, les pentagones...
+
+36_thomas_resume: Parfait ! Et n'oublie pas que le nombre de côtés est égal au nombre d'angles et au nombre de sommets. Les polygones peuvent être réguliers quand tous leurs côtés sont égaux, ou irréguliers quand les côtés ont des longueurs différentes.
+
+37_marie_amusant: C'était vraiment amusant d'apprendre tout ça sur les polygones !
+
+38_thomas_question: Pour finir, j'ai une petite question pour nos auditeurs : combien de polygones différents pouvez-vous trouver dans votre chambre ? Essayez de les compter et de reconnaître leur type !
+
+39_marie_merci: Merci d'avoir écouté notre podcast sur les polygones !
+
+40_thomas_aurevoir: À bientôt pour une nouvelle aventure de découverte avec Thomas et Marie !
