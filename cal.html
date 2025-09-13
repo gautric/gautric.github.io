@@ -119,9 +119,9 @@
         typeOperation = Math.floor(Math.random() * 100) < 70 ? '×' : '-';
 
       }
-
-      document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ?`;
+      
       nbOperations++;
+      document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ?`;
       document.getElementById('nbOperations').innerText = `${nbOperations}`;
 
     }
