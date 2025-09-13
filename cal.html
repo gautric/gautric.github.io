@@ -114,12 +114,12 @@
         currentNum2 = Math.floor(Math.random() * 10) + 1;
         typeOperation = '+';
       } else {
-        currentNum1 = Math.floor(Math.random() * 100) + 1;
-        currentNum2 = Math.floor(Math.random() * 10) + 1;
+        currentNum1 = Math.floor(Math.random() * 1000) + 1;
+        currentNum2 = Math.floor(Math.random() * 100) + 1;
         typeOperation = Math.floor(Math.random() * 100) < 70 ? '×' : '-';
 
       }
-      
+
       nbOperations++;
       document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ?`;
       document.getElementById('nbOperations').innerText = `${nbOperations}`;
