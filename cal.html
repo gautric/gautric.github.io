@@ -64,12 +64,12 @@
   </style>
 </head>
 <body>
-  <h2> Let's Multiply!</h2>
+  <h2> Let's Calcul!</h2>
   
   <p id="operation"></p>
 
   <div id="result"></div>
-  <div id="points">Points: <span id="score">0</span></div>
+  <div id="points">Points: <span id="score">0</span> / <span id="nbOperations">0</span></div>
 
   <div id="numPad">
     <button onclick="addNumber(1)">1</button>
@@ -92,20 +92,28 @@
     let currentNum1 = 0;
     let currentNum2 = 0;
     let userAnswer = 0;
+    let typeOperation = '';
     let score = 0;
+    let nbOperations = 0;
 
     // Function to generate random numbers for multiplication
     function generateNumbers() {
       currentNum1 = Math.floor(Math.random() * 1000) + 1;  // Random number between 1 and 1000
       currentNum2 = Math.floor(Math.random() * 100) + 1;  // Random number between 1 and 1000
-      document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ?`;
+
+      typeOperation = Math.floor(Math.random() * 100) < 70 ? '×' : '-'; // 30% chance of soustraction, 70% multiplication
+
+      document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ?`;
+      nbOperations++;
+      document.getElementById('nbOperations').innerText = `${nbOperations}`;
+
     }
 
     // Function to add a number to the current answer input
     function addNumber(num) {
       userAnswer = userAnswer * 10 + num;  // Add digits to the user answer
       //document.getElementById('num1').value = userAnswer;
-      document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ${userAnswer}`;
+      document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ${userAnswer}`;
 
     }
 
@@ -113,9 +121,9 @@
     function oneNumber() {
       userAnswer = Math.floor(userAnswer / 10);  // Add digits to the user answer
       if(userAnswer === 0) {
-        document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ?`;
+        document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ?`;
       }else{
-        document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ${userAnswer}`;
+        document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ${userAnswer}`;
 
       }
     }
@@ -123,12 +131,21 @@
     // Function to clear the current answer input
     function clearNumber() {
       userAnswer = 0;
-      document.getElementById('operation').innerText = `${currentNum1} × ${currentNum2} = ?`;
+      document.getElementById('operation').innerText = `${currentNum1} ${typeOperation} ${currentNum2} = ?`;
     }
 
     // Function to check if the answer is correct
     function checkAnswer() {
-      const correctAnswer = currentNum1 * currentNum2;
+      let correctAnswer = 0;
+
+      if(typeOperation === '×') {
+        // Multiplication
+        correctAnswer = currentNum1 * currentNum2;
+      } else {
+        // Soustraction
+        correctAnswer = currentNum1 - currentNum2;
+      }
+
       if (userAnswer === correctAnswer) {
         document.getElementById('result').innerText = "🎉 Correct!";
         document.getElementById('result').classList.remove('red');
@@ -139,7 +156,7 @@
         document.getElementById('result').innerText = `❌ Wrong!`;
         document.getElementById('result').classList.remove('green');
         document.getElementById('result').classList.add('red');
-        score--;
+        //score--;
         clearNumber();
       }
 
