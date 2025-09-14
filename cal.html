@@ -109,6 +109,8 @@
 
     // Function to generate random numbers for multiplication
     function generateNumbers() {
+      document.getElementById('result').innerText = '';
+
       if (isMaryMode) {
         currentNum1 = Math.floor(Math.random() * 100) + 1;
         currentNum2 = Math.floor(Math.random() * 10) + 1;
