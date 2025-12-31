@@ -4,7 +4,7 @@
     <title>Kogito on Greg. I/O</title>
     <link>https://gautric.github.io/tags/kogito/</link>
     <description>Recent content in Kogito on Greg. I/O</description>
-    <generator>Hugo -- 0.147.6</generator>
+    <generator>Hugo -- 0.153.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Jun 2020 15:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/kogito/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +15,8 @@
       <guid>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</guid>
       <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d&amp;rsquo;une modélisation théorique à une implémentation concrète et fonctionnelle.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h1 id=&#34;introduction-kogito&#34;&gt;Introduction Kogito&lt;/h1&gt;
 &lt;p&gt;Faisons un focus rapide sur &lt;a href=&#34;https://kogito.kie.org/&#34;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud, conçu pour s&amp;rsquo;intégrer parfaitement dans les architectures modernes.
 Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&#34;https://www.drools.org/&#34;&gt;Drools&lt;/a&gt; et &lt;a href=&#34;https://jbpm.org/&#34;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple. Cette approche facilite considérablement le déploiement et la scalabilité des règles métier.&lt;/p&gt;</description>

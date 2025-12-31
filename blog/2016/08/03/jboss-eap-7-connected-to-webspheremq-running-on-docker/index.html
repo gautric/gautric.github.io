@@ -12,7 +12,7 @@
 Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2016/08/03/jboss-eap-7-connected-to-webspheremq-running-on-docker/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -148,7 +148,8 @@ Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker">
   </header> 
   <div class="post-content"><p>Last year for a previous customer I wrote an article/post about <a href="/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html">WebsphereMQ Best Practice with JBoss EAP 6</a>. Today we will make almost the same setup but with JBoss EAP 7, WebsphereMQ Sample IVT application, and both running on Docker. This tutorial demonstrates how to configure and connect these enterprise technologies in a containerized environment. I assume you have basic knowledge of Docker commands and concepts.</p>
 <blockquote>
-<p>Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker</p></blockquote>
+<p>Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker</p>
+</blockquote>
 <h2 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h2>
 <p>For this lab, you need the following software:</p>
 <ul>
@@ -169,52 +170,52 @@ Howto run JBoss EAP 7 connected to WebsphereMQ both running on Docker">
 </span></span><span class="line"><span class="cl">docker build -t jboss-ivt jboss
 </span></span></code></pre></div><p>Here&rsquo;s the Dockerfile for the JBoss EAP 7 image:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="c">### Set the base image to Fedora</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">FROM</span><span class="s"> jboss/base-jdk:8</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">jboss/base-jdk:8</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">## docker build -t jboss-ivt jboss</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">## docker run -p 8080:8080 -p 9990:9990 -t jboss-ivt</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">## docker build -t jboss-ivt jboss</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">## docker run -p 8080:8080 -p 9990:9990 -t jboss-ivt</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### File Author / Maintainer</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">MAINTAINER</span><span class="s"> &#34;Greg Autric&#34; &#34;gautric@redhat.com&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### File Author / Maintainer</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">MAINTAINER</span><span class="w"> </span><span class="s">&#34;Greg</span> Autric<span class="s2">&#34; &#34;</span>gautric@redhat.com<span class="s2">&#34;</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### Set Environment</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> JBOSS_HOME  /opt/jboss/jboss-eap-7.0<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> MQM_HOME    /opt/mqm<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">ENV</span> MQM_URL     http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### Set Environment</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> JBOSS_HOME  /opt/jboss/jboss-eap-7.0<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> MQM_HOME    /opt/mqm<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">ENV</span> MQM_URL     http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev90_linux_x86-64.tar.gz<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### Install EAP 7.0.0</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> jboss-eap-7.0.0.zip /opt<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> unzip /opt/jboss-eap-7.0.0.zip  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;Install JBoss instance&#34;</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### Install EAP 7.0.0</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> jboss-eap-7.0.0.zip /opt<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> unzip /opt/jboss-eap-7.0.0.zip  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;Install JBoss instance&#34;</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">## Change user to install some</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> root</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">cd</span> /tmp <span class="o">&amp;&amp;</span> yum install -y wget <span class="o">&amp;&amp;</span> wget <span class="si">${</span><span class="nv">MQM_URL</span><span class="si">}</span> <span class="o">&amp;&amp;</span> tar -zxvf ./*.tar.gz  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">cd</span> MQServer <span class="o">&amp;&amp;</span> ./mqlicense.sh -text_only -accept  <span class="o">&amp;&amp;</span> rpm -ivh  MQSeriesJava*.rpm MQSeriesRuntime*.rpm<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> rm -rf /tmp/*<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">## Change user to install some</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">root</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">cd</span> /tmp <span class="o">&amp;&amp;</span> yum install -y wget <span class="o">&amp;&amp;</span> wget <span class="si">${</span><span class="nv">MQM_URL</span><span class="si">}</span> <span class="o">&amp;&amp;</span> tar -zxvf ./*.tar.gz  1&gt; /dev/null <span class="o">&amp;&amp;</span> <span class="nb">cd</span> MQServer <span class="o">&amp;&amp;</span> ./mqlicense.sh -text_only -accept  <span class="o">&amp;&amp;</span> rpm -ivh  MQSeriesJava*.rpm MQSeriesRuntime*.rpm<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> rm -rf /tmp/*<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### Create Admin EAP user</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">USER</span><span class="s"> jboss</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nv">$JBOSS_HOME</span>/bin/add-user.sh admin admin123! --silent<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### Create Admin EAP user</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">USER</span><span class="w"> </span><span class="s">jboss</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nv">$JBOSS_HOME</span>/bin/add-user.sh admin admin123! --silent<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">## Copy EAR and RAR</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> cp <span class="si">${</span><span class="nv">MQM_HOME</span><span class="si">}</span>/java/lib/jca/wmq.jmsra.ivt.ear <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/standalone/deployments<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> cp <span class="si">${</span><span class="nv">MQM_HOME</span><span class="si">}</span>/java/lib/jca/wmq.jmsra.rar     <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/standalone/deployments<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">## Copy EAR and RAR</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> cp <span class="si">${</span><span class="nv">MQM_HOME</span><span class="si">}</span>/java/lib/jca/wmq.jmsra.ivt.ear <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/standalone/deployments<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> cp <span class="si">${</span><span class="nv">MQM_HOME</span><span class="si">}</span>/java/lib/jca/wmq.jmsra.rar     <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/standalone/deployments<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### JBoss configuration files</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> jboss-overlay.cli  /opt<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> jboss-ejb3.xml     /opt<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> jboss-web.xml      /opt<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### JBoss configuration files</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> jboss-overlay.cli  /opt<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> jboss-ejb3.xml     /opt<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> jboss-web.xml      /opt<span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### Configure EAP</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;JAVA_OPTS=\&#34;\$JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0\&#34;&#34;</span> &gt;&gt; <span class="nv">$JBOSS_HOME</span>/bin/standalone.conf<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/bin/jboss-cli.sh --file<span class="o">=</span>/opt/jboss-overlay.cli<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> rm -rf <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/standalone/configuration/standalone_xml_history/current<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> chown -R jboss:jboss <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### Configure EAP</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="nb">echo</span> <span class="s2">&#34;JAVA_OPTS=\&#34;\$JAVA_OPTS -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0\&#34;&#34;</span> &gt;&gt; <span class="nv">$JBOSS_HOME</span>/bin/standalone.conf<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/bin/jboss-cli.sh --file<span class="o">=</span>/opt/jboss-overlay.cli<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> rm -rf <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/standalone/configuration/standalone_xml_history/current<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> chown -R jboss:jboss <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### Open Ports</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">EXPOSE</span><span class="s"> 8080 9990</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### Open Ports</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8080</span> <span class="m">9990</span><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c">### Start EAP</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">CMD</span>  <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/bin/standalone.sh -c standalone-full.xml<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="c">### Start EAP</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">CMD</span>  <span class="si">${</span><span class="nv">JBOSS_HOME</span><span class="si">}</span>/bin/standalone.sh -c standalone-full.xml<span class="err">
 </span></span></span></code></pre></div><h3 id="information-about-this-image">Information about this image<a hidden class="anchor" aria-hidden="true" href="#information-about-this-image">#</a></h3>
 <ul>
 <li>Admin User:
@@ -303,10 +304,10 @@ Navigate back to our git repository root to build our custom image:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> JBoss-WMQ
 </span></span><span class="line"><span class="cl">docker build -t wmq-ivt wmq
 </span></span></code></pre></div><p>Here&rsquo;s the Dockerfile for the WebsphereMQ image:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="s"> ibmcom/mq</span><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">RUN</span> useradd alice -G mqm <span class="o">&amp;&amp;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nb">echo</span> alice:passw0rd <span class="p">|</span> chpasswd<span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="k">COPY</span> config.mqsc /etc/mqm/<span class="err">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="line"><span class="cl"><span class="k">FROM</span><span class="w"> </span><span class="s">ibmcom/mq</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">RUN</span> useradd alice -G mqm <span class="o">&amp;&amp;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    <span class="nb">echo</span> alice:passw0rd <span class="p">|</span> chpasswd<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="k">COPY</span> config.mqsc /etc/mqm/<span class="err">
 </span></span></span></code></pre></div><p>We use a minimal configuration for WebsphereMQ. The <strong>alice</strong> account is created with permissions to connect to WebsphereMQ, and we also create a simple queue for our application.</p>
 <p>Here&rsquo;s the WebsphereMQ configuration file:</p>
 <pre tabindex="0"><code>DEFINE CHANNEL(PASSWORD.SVRCONN) CHLTYPE(SVRCONN)
@@ -319,7 +320,7 @@ REFRESH SECURITY TYPE(CONNAUTH)
 </code></pre><h2 id="docker-compose-to-run-demo">Docker compose to run demo<a hidden class="anchor" aria-hidden="true" href="#docker-compose-to-run-demo">#</a></h2>
 <p>Finally, we use Docker Compose to run both containers (JBoss and WebsphereMQ) together. We set up environment variables for flexible configuration, such as the WebsphereMQ hostname and port.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">jboss-ivt</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">jboss-ivt</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l">jboss</span><span class="w">

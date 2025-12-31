@@ -11,3 +11,5 @@ index2.html
 2022-09-25-Dapr.io-Kubernetes.html
 2022-12-18-DMN-Kogito-sur-Lambda-AWS-Serverless-Impl.html
 categories/*
+**/.DS_Store
+.gitignore

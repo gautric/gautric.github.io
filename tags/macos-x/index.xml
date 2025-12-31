@@ -4,7 +4,7 @@
     <title>MacOS X on Greg. I/O</title>
     <link>https://gautric.github.io/tags/macos-x/</link>
     <description>Recent content in MacOS X on Greg. I/O</description>
-    <generator>Hugo -- 0.147.6</generator>
+    <generator>Hugo -- 0.153.2</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Oct 2015 13:58:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/macos-x/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,8 @@
 Lot of new stuffs are included in this new release, more details available &lt;a href=&#34;https://github.com/rhiot/rhiot/blob/master/docs/release-notes.md#012--2015-10-22&#34;&gt;here&lt;/a&gt;.
 I found in list a cool stuff to test. We gonna check if our new commiter &lt;a href=&#34;https://github.com/levackt&#34;&gt;@levackt&lt;/a&gt; from ZA worked well ;-)&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Webcam camel component on Mac OSX with Groovy language&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Webcam camel component on Mac OSX with Groovy language&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
 &lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
 &lt;ul&gt;

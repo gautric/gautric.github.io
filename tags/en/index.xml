@@ -4,7 +4,7 @@
     <title>En on Greg. I/O</title>
     <link>https://gautric.github.io/tags/en/</link>
     <description>Recent content in En on Greg. I/O</description>
-    <generator>Hugo -- 0.147.6</generator>
+    <generator>Hugo -- 0.153.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Apr 2025 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/tags/en/index.xml" rel="self" type="application/rss+xml" />
@@ -119,7 +119,8 @@
       <description>&lt;p&gt;Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket
 directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language to create a real-time webcam streaming solution.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.&lt;/p&gt;</description>
     </item>
     <item>
@@ -131,7 +132,8 @@ directly in this page !!! or via a JavaFx program. We gonna re-use the previous 
 Lot of new stuffs are included in this new release, more details available &lt;a href=&#34;https://github.com/rhiot/rhiot/blob/master/docs/release-notes.md#012--2015-10-22&#34;&gt;here&lt;/a&gt;.
 I found in list a cool stuff to test. We gonna check if our new commiter &lt;a href=&#34;https://github.com/levackt&#34;&gt;@levackt&lt;/a&gt; from ZA worked well ;-)&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Webcam camel component on Mac OSX with Groovy language&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Webcam camel component on Mac OSX with Groovy language&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
 &lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
 &lt;ul&gt;

@@ -4,7 +4,7 @@
     <title>Posts on Greg. I/O</title>
     <link>https://gautric.github.io/blog/</link>
     <description>Recent content in Posts on Greg. I/O</description>
-    <generator>Hugo -- 0.147.6</generator>
+    <generator>Hugo -- 0.153.2</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Apr 2025 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -53,7 +53,8 @@ Les applications modernes nécessitent de pouvoir migrer des socles techniques d
       <guid>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</guid>
       <description>&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;To illustrate how to use Exception/Error I propose to create a sample error process. This example will demonstrate how jBPM can transform Java exceptions into BPMN errors, allowing for proper error handling within your business processes.&lt;/p&gt;</description>
     </item>
     <item>
@@ -70,7 +71,8 @@ Les applications modernes nécessitent de pouvoir migrer des socles techniques d
       <guid>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</guid>
       <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d&amp;rsquo;une modélisation théorique à une implémentation concrète et fonctionnelle.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h1 id=&#34;introduction-kogito&#34;&gt;Introduction Kogito&lt;/h1&gt;
 &lt;p&gt;Faisons un focus rapide sur &lt;a href=&#34;https://kogito.kie.org/&#34;&gt;Kogito&lt;/a&gt;. Kogito est un moteur de règle orienté cloud, conçu pour s&amp;rsquo;intégrer parfaitement dans les architectures modernes.
 Ce moteur de règle reprend en grande partie tout le coeur et le developpement de &lt;a href=&#34;https://www.drools.org/&#34;&gt;Drools&lt;/a&gt; et &lt;a href=&#34;https://jbpm.org/&#34;&gt;jBPM&lt;/a&gt; mais propose des fonctionnalités purement Cloud notamment le fait qu&amp;rsquo;il est prévu d&amp;rsquo;être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple. Cette approche facilite considérablement le déploiement et la scalabilité des règles métier.&lt;/p&gt;</description>
@@ -83,7 +85,8 @@ Ce moteur de règle reprend en grande partie tout le coeur et le developpement d
       <description>&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et exécuter des règles métier.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Le standard DMN, un KYC en exemple&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Le standard DMN, un KYC en exemple&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;DMN est une norme de l&amp;rsquo;&lt;a href=&#34;https://www.omg.org/&#34;&gt;OMG&lt;/a&gt; (Object Management Group). Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d&amp;rsquo;évaluation et/ou d&amp;rsquo;aide à la décision. Elle permet de créer un pont entre les équipes métier et techniques en offrant un langage commun.&lt;/p&gt;</description>
     </item>
@@ -215,7 +218,8 @@ Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu&amp;rs
       <description>&lt;p&gt;Yesterday, we&amp;rsquo;ve played with our MacBook Pro&amp;rsquo;s webcam. Today, we gonna see how to send images through a websocket
 directly in this page !!! or via a JavaFx program. We gonna re-use the previous post and integrate camel Websocket component. Let&amp;rsquo;s play with Groovy language to create a real-time webcam streaming solution.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Webcam image to Websocket w/ Rhiot &amp;amp; Camel projects on MacbookPro&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s start to broadcast yourself. This tutorial will guide you through setting up a webcam stream that can be viewed through a web browser or a JavaFX application.&lt;/p&gt;</description>
     </item>
     <item>
@@ -227,7 +231,8 @@ directly in this page !!! or via a JavaFx program. We gonna re-use the previous 
 Lot of new stuffs are included in this new release, more details available &lt;a href=&#34;https://github.com/rhiot/rhiot/blob/master/docs/release-notes.md#012--2015-10-22&#34;&gt;here&lt;/a&gt;.
 I found in list a cool stuff to test. We gonna check if our new commiter &lt;a href=&#34;https://github.com/levackt&#34;&gt;@levackt&lt;/a&gt; from ZA worked well ;-)&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Webcam camel component on Mac OSX with Groovy language&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Webcam camel component on Mac OSX with Groovy language&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Let&amp;rsquo;s start to broadcast yourself.&lt;/p&gt;
 &lt;h2 id=&#34;requisites&#34;&gt;Requisites&lt;/h2&gt;
 &lt;ul&gt;

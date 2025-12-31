@@ -11,7 +11,7 @@
 Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -144,14 +144,15 @@ Les applications modernes nécessitent de pouvoir migrer des socles techniques d
   <div class="post-content"><p>La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d&rsquo;applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L&rsquo;avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat.
 Les applications modernes nécessitent de pouvoir migrer des socles techniques de manière transparente.</p>
 <blockquote>
-<p>Compiler en Quarkus/Java 11 et 17 avec GitHub Action les Matrix</p></blockquote>
+<p>Compiler en Quarkus/Java 11 et 17 avec GitHub Action les Matrix</p>
+</blockquote>
 <p>L&rsquo;idée dans ce post est de montrer très simplement un exemple de double compilation Java 11 et Java 17. Ces versions de Java sont des versions LTS<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> c&rsquo;est-à-dire qu&rsquo;elles disposent d&rsquo;un support long terme. Cette approche est particulièrement utile pour assurer la compatibilité de votre application avec différentes versions de l&rsquo;environnement d&rsquo;exécution Java, facilitant ainsi la transition vers des versions plus récentes.</p>
 <p>Regardons rapidement le pipeline GitHub Action<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> avec la possibilité de compiler sur deux versions de Java différentes. Comme toutes les GitHub Action le fichier doit se trouver dans le répertoires .github/workflows de votre projet. Cette configuration permet d&rsquo;exécuter automatiquement les tests sur chaque version spécifiée, garantissant ainsi que votre code fonctionne correctement dans tous les environnements cibles.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">eaas-ci-matrix</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">push]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">on</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="l">push]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">strategy</span><span class="p">:</span><span class="w">                        </span><span class="l">(1)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">matrix</span><span class="p">:</span><span class="w">

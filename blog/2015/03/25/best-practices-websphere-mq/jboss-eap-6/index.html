@@ -13,7 +13,7 @@ Introduction au standard JCA et à l&rsquo;intégration JMS
 Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifie qu&rsquo;il implémente l&rsquo;ensemble des spécifications de cette version de la plateforme Java Enterprise Edition. Parmi ces spécifications, le standard Java EE Connector Architecture (JCA) est implémenté via le framework IronJacamar.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -171,7 +171,8 @@ Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifi
 </ul>
 <p>Pour utiliser JCA, le fournisseur du système externe (dans notre cas, IBM pour WebSphere MQ) fournit un composant appelé <strong>Resource Adapter</strong> (adaptateur de ressources), qui joue le rôle de driver entre le serveur d&rsquo;application et le système externe.</p>
 <blockquote>
-<p><strong>Objectif de cet article</strong> : Présenter les meilleures pratiques d&rsquo;intégration JMS entre WebSphere MQ (WMQ) et JBoss EAP 6, en utilisant le standard JCA pour une solution robuste et maintenable.</p></blockquote>
+<p><strong>Objectif de cet article</strong> : Présenter les meilleures pratiques d&rsquo;intégration JMS entre WebSphere MQ (WMQ) et JBoss EAP 6, en utilisant le standard JCA pour une solution robuste et maintenable.</p>
+</blockquote>
 <h2 id="prérequis-et-environnement-technique">Prérequis et environnement technique<a hidden class="anchor" aria-hidden="true" href="#prérequis-et-environnement-technique">#</a></h2>
 <p>Pour mettre en place cette intégration, vous aurez besoin des composants suivants :</p>
 <ul>
@@ -192,8 +193,8 @@ Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifi
 <p>Pour l&rsquo;envoi de messages, nous allons créer un EJB Stateless. Cette approche est recommandée dans un environnement Java EE, mais d&rsquo;autres mécanismes comme une servlet pourraient également être utilisés.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ..OMIT .. //</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Stateless</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MoMSenderBean</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nd">@Stateless</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MoMSenderBean</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// ..OMIT .. //</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -219,7 +220,7 @@ Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifi
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">session</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">connection</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><div class="notice notice" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#notice-notice"></use></svg></span></p><p>Points importants à noter dans ce code :</p>
 <ol>
@@ -235,14 +236,14 @@ Le serveur d&rsquo;application JBoss EAP est certifié JAVA EE 6, ce qui signifi
 <p>Pour créer un MDB, la classe doit implémenter l&rsquo;interface <strong>javax.jms.MessageListener</strong> :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// ..OMIT .. //</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MoMMDB</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">MessageListener</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MoMMDB</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">MessageListener</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// ..OMIT .. //</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onMessage</span><span class="p">(</span><span class="n">Message</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">LOGGER</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&#34;Received Message from queue: {}&#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">TextMessage</span><span class="p">)</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></div><div class="notice notice" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#notice-notice"></use></svg></span></p><p>Bien qu&rsquo;il soit possible de configurer le MDB directement avec des annotations ActivationSpec, cette approche n&rsquo;est pas recommandée car elle mélange dans le code des préoccupations techniques liées à l&rsquo;environnement d&rsquo;exécution. Nous préférons externaliser cette configuration dans les descripteurs de déploiement, comme nous le verrons plus loin.</p></div>
 

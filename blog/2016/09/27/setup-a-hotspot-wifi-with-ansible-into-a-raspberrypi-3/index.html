@@ -11,7 +11,7 @@
 RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a Wifi Hotspot. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with Ansible, which is a powerful automation tool that simplifies configuration management.">
 <meta name="author" content="">
 <link rel="canonical" href="https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.8f91d8a03d2d03df35a93d161da5378cfcf6b504ad2ef312c29e142e3806a327.css" integrity="sha256-j5HYoD0tA981qT0WHaU3jPz2tQStLvMSwp4ULjgGoyc=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
@@ -147,7 +147,8 @@ RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interfa
   <div class="post-content"><p>This September, RaspberryPi foundation has sold <a href="https://www.raspberrypi.org/blog/ten-millionth-raspberry-pi-new-kit/">ten (10) Millions of unit</a>. This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions <a href="https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications">(B 256Mo, B 512Mo, B+, 2B, 3B)</a> of RaspberryPi. I am a big fan of this product and you can find into <a href="/blog/">this blog</a> some projects I&rsquo;ve made on top of this little computer.</p>
 <p>RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interface can be configured as a <a href="https://en.wikipedia.org/wiki/Hotspot_(Wi-Fi)">Wifi Hotspot</a>. I use it every day at home or at office. Today, I will show you how to configure a Wifi Hotspot with <a href="https://www.ansible.com/">Ansible</a>, which is a powerful automation tool that simplifies configuration management.</p>
 <blockquote>
-<p>Howto setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</p></blockquote>
+<p>Howto setup a Hotspot Wifi w/ Ansible into a RaspberryPi 3</p>
+</blockquote>
 <h2 id="prerequisites">Prerequisites<a hidden class="anchor" aria-hidden="true" href="#prerequisites">#</a></h2>
 <p>For this lab, you need the following software and hardware:</p>
 <ul>
@@ -181,7 +182,7 @@ RaspberryPi version 3 comes with a wifi builtin interface, and this wifi interfa
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>As you can see wpa_passphrase and ssid must be defined. You will see how to do it with command line directly.</p></div>
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure WIFI Hotspot for RaspberryPi 3</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure WIFI Hotspot for RaspberryPi 3</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l">raspberrypi</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">remote_user</span><span class="p">:</span><span class="w"> </span><span class="l">pi</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w">
@@ -262,8 +263,8 @@ ssid={{ ssid }}
 <h3 id="ansible-command-line">Ansible command line<a hidden class="anchor" aria-hidden="true" href="#ansible-command-line">#</a></h3>
 <p>Execute the following command to deploy the configuration to your RaspberryPi:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ansible-playbook pi_wifi.yml --inventory-file<span class="o">=</span>./hosts <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -u pi  -v <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -e <span class="s2">&#34;ssid=RASPBERRY wpa_passphrase=1234567891011&#34;</span>
+</span></span></span><span class="line"><span class="cl">    -u pi  -v <span class="se">\
+</span></span></span><span class="line"><span class="cl">    -e <span class="s2">&#34;ssid=RASPBERRY wpa_passphrase=1234567891011&#34;</span>
 </span></span></code></pre></div><p>The <code>-e</code> parameter allows you to pass variables directly from the command line, which is useful for sensitive information like passwords.</p>
 <div class="notice warning" >
 <p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#warning-notice"></use></svg></span>Warning</p><p>Please change wpa_passphrase and ssid correctly. The wpa_passphrase should be at least 8 characters long for security reasons.</p></div>
