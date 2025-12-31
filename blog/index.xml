@@ -4,7 +4,7 @@
     <title>Posts on Greg. I/O</title>
     <link>https://gautric.github.io/blog/</link>
     <description>Recent content in Posts on Greg. I/O</description>
-    <generator>Hugo -- 0.153.2</generator>
+    <generator>Hugo -- 0.154.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Apr 2025 09:00:00 +0000</lastBuildDate>
     <atom:link href="https://gautric.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -21,15 +21,15 @@
       <link>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</link>
       <pubDate>Sun, 28 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2024/01/28/activer-d%C3%A9sactiver-sa-camera-poe-via-son-routeur-cisco/</guid>
-      <description>&lt;p&gt;Dans ce post, nous allons rapidement voir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Commutateur Intelligent SG250-10P&lt;/a&gt;, qui offre la fonctionnalité PoE (Power over Ethernet) permettant d&amp;rsquo;alimenter des périphériques directement via le câble réseau, éliminant ainsi le besoin d&amp;rsquo;une alimentation séparée.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans cet article, nous allons découvrir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&amp;rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&amp;rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&amp;rsquo;agit du &lt;a href=&#34;https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO&#34;&gt;Cisco Commutateur Intelligent SG250-10P&lt;/a&gt;, qui offre la fonctionnalité PoE (Power over Ethernet) permettant d&amp;rsquo;alimenter des périphériques directement via le câble réseau, éliminant ainsi le besoin d&amp;rsquo;une alimentation séparée.&lt;/p&gt;</description>
     </item>
     <item>
       <title>AWS SSM, Ansible et Raspberry Pi via SSH</title>
       <link>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</link>
       <pubDate>Mon, 15 Jan 2024 09:00:00 +0000</pubDate>
       <guid>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</guid>
-      <description>&lt;p&gt;Dans ce nouveau et premier post de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec 3, zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises !
-Ce post sera particulièrement utile pour ceux qui cherchent à accéder facilement à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]. On utilisera la fonctionnalité Session Manager d&amp;rsquo;AWS SSM. 🍇&lt;/p&gt;</description>
+      <description>&lt;p&gt;Dans ce nouvel article de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec les modèles 3, Zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises !
+Cet article sera particulièrement utile pour ceux qui cherchent à accéder facilement et de manière sécurisée à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]. Nous utiliserons la fonctionnalité Session Manager d&amp;rsquo;AWS SSM. 🍇&lt;/p&gt;</description>
     </item>
     <item>
       <title>Quarkus &amp; Java 11-17 et GitHub Action feat. Matrix</title>
