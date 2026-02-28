@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +10,16 @@
 <meta name="description" content="This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy systems. The customer wanted to use XML message format throughout the entire Camel route process. Their primary goal was to reuse some Camel routes as new service components, allowing for greater flexibility and modularity in their integration architecture.
 Fortunately, the Camel framework meets all of these requirements out of the box. In this article, we&rsquo;ll explore a simple example demonstrating how to implement this approach effectively.">
 <meta name="author" content="">
-<link rel="canonical" href="https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="canonical" href="https://g.autric.net/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04eb028e61251ee4f33f32bc6234ac3f1fec0f9715bc95d6a3275bfe9a4c6f4f.css" integrity="sha256-BOsCjmElHuTzPzK8YjSsPx/sD5cVvJXWoydb/ppMb08=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://g.autric.net/apple-icon-180x180.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/">
+<link rel="alternate" hreflang="en" href="https://g.autric.net/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/">
 <noscript>
     <style>
         #theme-toggle,
@@ -28,7 +28,7 @@ Fortunately, the Camel framework meets all of these requirements out of the box.
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/">
+</noscript><meta property="og:url" content="https://g.autric.net/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="Camel XML XPath XSLT Aggregator">
   <meta property="og:description" content="This month I went to Greece for a customer of mine. I worked at Athens on Camel integration with Mainframe legacy systems. The customer wanted to use XML message format throughout the entire Camel route process. Their primary goal was to reuse some Camel routes as new service components, allowing for greater flexibility and modularity in their integration architecture.
@@ -60,13 +60,13 @@ Fortunately, the Camel framework meets all of these requirements out of the box.
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blog",
-      "item": "https://gautric.github.io/blog/"
+      "item": "https://g.autric.net/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Camel XML XPath XSLT Aggregator",
-      "item": "https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/"
+      "item": "https://g.autric.net/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/"
     }
   ]
 }
@@ -88,44 +88,42 @@ Fortunately, the Camel framework meets all of these requirements out of the box.
   "dateModified": "2016-12-03T15:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gautric.github.io/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/"
+    "@id": "https://g.autric.net/blog/2016/12/03/camel-xml-xpath-xslt-aggregator/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Greg. I/O",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://gautric.github.io/apple-icon-180x180.png"
+      "url": "https://g.autric.net/apple-icon-180x180.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-
-<header class="header">
+<body id="top">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gautric.github.io/" accesskey="h" title="Greg. I/O (Alt + H)">
-                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+            <a href="https://g.autric.net/" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://g.autric.net/apple-icon-180x180.png" alt="" aria-label="logo"
                     height="35">Greg. I/O</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                <a href="https://g.autric.net/apropos/" title="À Propos">
                     <span>À Propos</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/blog/" title="Blog">
+                <a href="https://g.autric.net/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/contact/" title="Contact">
+                <a href="https://g.autric.net/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -136,7 +134,7 @@ Fortunately, the Camel framework meets all of these requirements out of the box.
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gautric.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gautric.github.io/blog/">Blog</a></div>
+    <div class="breadcrumbs"><a href="https://g.autric.net/">Home</a>&nbsp;»&nbsp;<a href="https://g.autric.net/blog/">Blog</a></div>
     <h1 class="post-title entry-hint-parent">
       Camel XML XPath XSLT Aggregator
     </h1>
@@ -261,21 +259,21 @@ Fortunately, the Camel framework meets all of these requirements out of the box.
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gautric.github.io/tags/en/">En</a></li>
-      <li><a href="https://gautric.github.io/tags/camel/">Camel</a></li>
-      <li><a href="https://gautric.github.io/tags/xml/">XML</a></li>
-      <li><a href="https://gautric.github.io/tags/xpath/">XPath</a></li>
-      <li><a href="https://gautric.github.io/tags/xslt/">XSLT</a></li>
-      <li><a href="https://gautric.github.io/tags/aggregator/">Aggregator</a></li>
-      <li><a href="https://gautric.github.io/tags/route/">Route</a></li>
+      <li><a href="https://g.autric.net/tags/en/">En</a></li>
+      <li><a href="https://g.autric.net/tags/camel/">Camel</a></li>
+      <li><a href="https://g.autric.net/tags/xml/">XML</a></li>
+      <li><a href="https://g.autric.net/tags/xpath/">XPath</a></li>
+      <li><a href="https://g.autric.net/tags/xslt/">XSLT</a></li>
+      <li><a href="https://g.autric.net/tags/aggregator/">Aggregator</a></li>
+      <li><a href="https://g.autric.net/tags/route/">Route</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/">
+  <a class="prev" href="https://g.autric.net/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/">
     <span class="title">« Prev</span>
     <br>
     <span>MQTTiser l&#39;API Autolib avec Node-Red</span>
   </a>
-  <a class="next" href="https://gautric.github.io/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/">
+  <a class="next" href="https://g.autric.net/blog/2016/09/27/setup-a-hotspot-wifi-with-ansible-into-a-raspberrypi-3/">
     <span class="title">Next »</span>
     <br>
     <span>Setup a Hotspot Wifi with Ansible into a RaspberryPi 3</span>
@@ -287,7 +285,7 @@ Fortunately, the Camel framework meets all of these requirements out of the box.
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2026 <a href="https://g.autric.net/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
@@ -337,6 +335,53 @@ Fortunately, the Camel framework meets all of these requirements out of the box.
         }
     };
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

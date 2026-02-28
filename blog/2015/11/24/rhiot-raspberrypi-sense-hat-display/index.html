@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +10,16 @@
 <meta name="description" content="Recently, I bought the new official Sense-HAT from RaspberryPi foundation. This HAT (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.
 All sensors are i2c compliant, making them easily accessible with the rhiot camel-pi4j component. This makes it very straightforward to retrieve data from all sensors and transmit them to external systems. The Rhiot team has also developed the first implementation of the rhiot camel-framebuffer component, which now enables pushing images directly to the 8x8 pixel screen. Note that the matrix consists of 8x8 RGB565 LEDs (2 bytes per pixel), providing a colorful display despite its small size.">
 <meta name="author" content="">
-<link rel="canonical" href="https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="canonical" href="https://g.autric.net/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04eb028e61251ee4f33f32bc6234ac3f1fec0f9715bc95d6a3275bfe9a4c6f4f.css" integrity="sha256-BOsCjmElHuTzPzK8YjSsPx/sD5cVvJXWoydb/ppMb08=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://g.autric.net/apple-icon-180x180.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
+<link rel="alternate" hreflang="en" href="https://g.autric.net/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
 <noscript>
     <style>
         #theme-toggle,
@@ -28,7 +28,7 @@ All sensors are i2c compliant, making them easily accessible with the rhiot came
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
+</noscript><meta property="og:url" content="https://g.autric.net/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="RHIoT RaspberryPi Sense-Hat display">
   <meta property="og:description" content="Recently, I bought the new official Sense-HAT from RaspberryPi foundation. This HAT (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors.
@@ -60,13 +60,13 @@ All sensors are i2c compliant, making them easily accessible with the rhiot came
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blog",
-      "item": "https://gautric.github.io/blog/"
+      "item": "https://g.autric.net/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "RHIoT RaspberryPi Sense-Hat display",
-      "item": "https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/"
+      "item": "https://g.autric.net/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/"
     }
   ]
 }
@@ -88,44 +88,42 @@ All sensors are i2c compliant, making them easily accessible with the rhiot came
   "dateModified": "2015-11-24T13:58:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gautric.github.io/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/"
+    "@id": "https://g.autric.net/blog/2015/11/24/rhiot-raspberrypi-sense-hat-display/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Greg. I/O",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://gautric.github.io/apple-icon-180x180.png"
+      "url": "https://g.autric.net/apple-icon-180x180.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-
-<header class="header">
+<body id="top">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gautric.github.io/" accesskey="h" title="Greg. I/O (Alt + H)">
-                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+            <a href="https://g.autric.net/" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://g.autric.net/apple-icon-180x180.png" alt="" aria-label="logo"
                     height="35">Greg. I/O</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                <a href="https://g.autric.net/apropos/" title="À Propos">
                     <span>À Propos</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/blog/" title="Blog">
+                <a href="https://g.autric.net/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/contact/" title="Contact">
+                <a href="https://g.autric.net/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -136,7 +134,7 @@ All sensors are i2c compliant, making them easily accessible with the rhiot came
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gautric.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gautric.github.io/blog/">Blog</a></div>
+    <div class="breadcrumbs"><a href="https://g.autric.net/">Home</a>&nbsp;»&nbsp;<a href="https://g.autric.net/blog/">Blog</a></div>
     <h1 class="post-title entry-hint-parent">
       RHIoT RaspberryPi Sense-Hat display
     </h1>
@@ -199,21 +197,21 @@ All sensors are i2c compliant, making them easily accessible with the rhiot came
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gautric.github.io/tags/en/">En</a></li>
-      <li><a href="https://gautric.github.io/tags/rhiot/">Rhiot</a></li>
-      <li><a href="https://gautric.github.io/tags/raspberrypi/">RaspberryPi</a></li>
-      <li><a href="https://gautric.github.io/tags/sense-hat/">Sense-Hat</a></li>
-      <li><a href="https://gautric.github.io/tags/camel/">Camel</a></li>
-      <li><a href="https://gautric.github.io/tags/display/">Display</a></li>
-      <li><a href="https://gautric.github.io/tags/framebuffer/">Framebuffer</a></li>
+      <li><a href="https://g.autric.net/tags/en/">En</a></li>
+      <li><a href="https://g.autric.net/tags/rhiot/">Rhiot</a></li>
+      <li><a href="https://g.autric.net/tags/raspberrypi/">RaspberryPi</a></li>
+      <li><a href="https://g.autric.net/tags/sense-hat/">Sense-Hat</a></li>
+      <li><a href="https://g.autric.net/tags/camel/">Camel</a></li>
+      <li><a href="https://g.autric.net/tags/display/">Display</a></li>
+      <li><a href="https://g.autric.net/tags/framebuffer/">Framebuffer</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://gautric.github.io/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/">
+  <a class="prev" href="https://g.autric.net/blog/2015/12/03/rhiot-kura-gateway-sample-emulator-raspberrypi/">
     <span class="title">« Prev</span>
     <br>
     <span>Rhiot Kura Gateway Sample (Emulator &amp; RaspberryPi) </span>
   </a>
-  <a class="next" href="https://gautric.github.io/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/">
+  <a class="next" href="https://g.autric.net/blog/2015/10/23/rhiot-webcam-and-websocket-components-on-macbookpro-in-groovy/">
     <span class="title">Next »</span>
     <br>
     <span>RHIoT Webcam and websocket components on MacbookPro in Groovy</span>
@@ -225,7 +223,7 @@ All sensors are i2c compliant, making them easily accessible with the rhiot came
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2026 <a href="https://g.autric.net/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
@@ -275,6 +273,53 @@ All sensors are i2c compliant, making them easily accessible with the rhiot came
         }
     };
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

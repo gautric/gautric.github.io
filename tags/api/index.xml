@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Api on Greg. I/O</title>
-    <link>https://gautric.github.io/tags/api/</link>
+    <link>https://g.autric.net/tags/api/</link>
     <description>Recent content in Api on Greg. I/O</description>
-    <generator>Hugo -- 0.154.0</generator>
+    <generator>Hugo -- 0.157.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Apr 2018 15:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gautric.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://g.autric.net/tags/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MQTTiser l&#39;API Autolib avec Node-Red</title>
-      <link>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</link>
+      <link>https://g.autric.net/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</link>
       <pubDate>Sat, 21 Apr 2018 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</guid>
+      <guid>https://g.autric.net/blog/2018/04/21/mqttiser-lapi-autolib-avec-node-red/</guid>
       <description>&lt;p&gt;Après un petit temps de silence, pour des raisons personnelles et notamment l&amp;rsquo;arrivée d&amp;rsquo;un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d&amp;rsquo;&lt;a href=&#34;https://fr.wikipedia.org/wiki/Autolib%27_(Paris)&#34;&gt;Autolib&lt;/a&gt;, j&amp;rsquo;ai besoin d&amp;rsquo;avoir en flux continu l&amp;rsquo;état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j&amp;rsquo;ai plusieurs stations Autolib et je dois consulter régulièrement l&amp;rsquo;application iPhone en fonction de mes besoins.&lt;/p&gt;
 &lt;p&gt;Afin de me simplifier la vie, j&amp;rsquo;ai installé et configuré chez moi la solution &lt;a href=&#34;https://www.home-assistant.io&#34;&gt;HomeAssistant&lt;/a&gt;, qui est une plateforme de domotique open source très populaire. J&amp;rsquo;utilisais pour cela l&amp;rsquo;&lt;a href=&#34;https://opendata.paris.fr/page/home/&#34;&gt;API de Paris&lt;/a&gt; en mode &lt;a href=&#34;https://fr.wikipedia.org/wiki/REST&#34;&gt;REST&lt;/a&gt;/&lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP&#34;&gt;HTTP&lt;/a&gt; pour récupérer les informations des stations Autolib.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Device IO and i2cdetect implementation</title>
-      <link>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</link>
+      <link>https://g.autric.net/blog/2016/03/09/device-io-and-i2cdetect-implementation/</link>
       <pubDate>Wed, 09 Mar 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</guid>
+      <guid>https://g.autric.net/blog/2016/03/09/device-io-and-i2cdetect-implementation/</guid>
       <description>&lt;p&gt;Today, we&amp;rsquo;re going to implement a quick tool available on the RaspberryPi using Java &lt;a href=&#34;https://wiki.openjdk.java.net/display/dio/Main&#34;&gt;Device IO API&lt;/a&gt;. The &lt;code&gt;i2cdetect&lt;/code&gt; utility is a simple &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I²C&lt;/a&gt; device scanner for your RaspberryPi that browses all I²C addresses to find which I²C devices are connected to your board. This tutorial demonstrates how to recompile the Device IO API and implement the &lt;code&gt;i2cdetect&lt;/code&gt; functionality in Java, providing a platform-independent way to interact with I²C devices.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;i2cdetect with the Java Device I/O API implementation - a powerful tool for hardware detection and diagnostics on embedded systems.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rhiot Kura Device IO GPIO and I2C</title>
-      <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
+      <link>https://g.autric.net/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
       <pubDate>Mon, 29 Feb 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
+      <guid>https://g.autric.net/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
       <description>&lt;p&gt;Recently, a colleague of mine asked me to implement a small demonstration project. I decided to develop a new component for the Rhiot project. This component is the &lt;a href=&#34;http://openjdk.java.net/projects/dio/&#34;&gt;DeviceIO&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel&lt;/a&gt; component, which builds upon my previous work on Camel-pi4j that I had already developed for the Rhiot project. In this article, we&amp;rsquo;ll explore how to use this component within the Kura Platform via the Camel Framework. For this demonstration, we&amp;rsquo;ll need some hardware devices, specifically a &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;RaspberryPi&lt;/a&gt; and an &lt;a href=&#34;http://activemq.apache.org/&#34;&gt;ActiveMQ&lt;/a&gt; broker.&lt;/p&gt;</description>
     </item>
   </channel>

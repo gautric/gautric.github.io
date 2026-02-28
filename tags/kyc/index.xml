@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>KYC on Greg. I/O</title>
-    <link>https://gautric.github.io/tags/kyc/</link>
+    <link>https://g.autric.net/tags/kyc/</link>
     <description>Recent content in KYC on Greg. I/O</description>
-    <generator>Hugo -- 0.154.0</generator>
+    <generator>Hugo -- 0.157.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 06 Jun 2020 15:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gautric.github.io/tags/kyc/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://g.autric.net/tags/kyc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Éxecution d&#39;un moteur de KYC en DMN avec Kogito</title>
-      <link>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</link>
+      <link>https://g.autric.net/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</link>
       <pubDate>Sat, 06 Jun 2020 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</guid>
-      <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://gautric.github.io/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d&amp;rsquo;une modélisation théorique à une implémentation concrète et fonctionnelle.&lt;/p&gt;
+      <guid>https://g.autric.net/blog/2020/06/06/%C3%A9xecution-dun-moteur-de-kyc-en-dmn-avec-kogito/</guid>
+      <description>&lt;p&gt;Dans le précedent &lt;a href=&#34;https://g.autric.net/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html&#34;&gt;post sur ce blog&lt;/a&gt; nous avons vu rapidement comment créer sa définition et modelisation des règle d&amp;rsquo;un KYC basé sur le standard &lt;a href=&#34;https://fr.wikipedia.org/wiki/Decision_Model_and_Notation&#34;&gt;DMN&lt;/a&gt;. Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d&amp;rsquo;une modélisation théorique à une implémentation concrète et fonctionnelle.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Éxecution d&amp;rsquo;un moteur KYC en DMN avec Kogito&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -23,9 +23,9 @@ Ce moteur de règle reprend en grande partie tout le coeur et le developpement d
     </item>
     <item>
       <title>Le standard DMN, un KYC en exemple</title>
-      <link>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</link>
+      <link>https://g.autric.net/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</link>
       <pubDate>Thu, 04 Jun 2020 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</guid>
+      <guid>https://g.autric.net/blog/2020/06/04/le-standard-dmn-un-kyc-en-exemple/</guid>
       <description>&lt;p&gt;Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l&amp;rsquo;ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et exécuter des règles métier.&lt;/p&gt;
 &lt;blockquote&gt;

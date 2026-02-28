@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>WorkItemHandler on Greg. I/O</title>
-    <link>https://gautric.github.io/tags/workitemhandler/</link>
+    <link>https://g.autric.net/tags/workitemhandler/</link>
     <description>Recent content in WorkItemHandler on Greg. I/O</description>
-    <generator>Hugo -- 0.154.0</generator>
+    <generator>Hugo -- 0.157.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Oct 2020 15:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gautric.github.io/tags/workitemhandler/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://g.autric.net/tags/workitemhandler/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to manage Exception inside a jBPM WorkItemHandler custom component</title>
-      <link>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</link>
+      <link>https://g.autric.net/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</link>
       <pubDate>Wed, 28 Oct 2020 15:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</guid>
+      <guid>https://g.autric.net/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/</guid>
       <description>&lt;p&gt;When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;How to manage Exception inside jBPM WorkItemHandler custom component.&lt;/p&gt;

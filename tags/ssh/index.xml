@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>SSH on Greg. I/O</title>
-    <link>https://gautric.github.io/tags/ssh/</link>
+    <link>https://g.autric.net/tags/ssh/</link>
     <description>Recent content in SSH on Greg. I/O</description>
-    <generator>Hugo -- 0.154.0</generator>
+    <generator>Hugo -- 0.157.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jan 2024 09:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gautric.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://g.autric.net/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS SSM, Ansible et Raspberry Pi via SSH</title>
-      <link>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</link>
+      <link>https://g.autric.net/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</link>
       <pubDate>Mon, 15 Jan 2024 09:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</guid>
+      <guid>https://g.autric.net/blog/2024/01/15/aws-ssm-ansible-et-raspberry-pi-via-ssh/</guid>
       <description>&lt;p&gt;Dans ce nouvel article de 2024, découvrez comment AWS Systems Manager (SSM) s&amp;rsquo;intègre de manière utile avec le Raspberry Pi (testé avec les modèles 3, Zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d&amp;rsquo;informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d&amp;rsquo;IoT ou simplement curieux, cet article vous réserve des surprises !
 Cet article sera particulièrement utile pour ceux qui cherchent à accéder facilement et de manière sécurisée à leur Raspberry Pi sans avoir à configurer le port forwarding sur leur box Internet, et ce, pour un coût minime [^pricing]. Nous utiliserons la fonctionnalité Session Manager d&amp;rsquo;AWS SSM. 🍇&lt;/p&gt;</description>
     </item>
     <item>
       <title>SSH to MacOS X (El Capitan) through iCloud tunnel</title>
-      <link>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</link>
+      <link>https://g.autric.net/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</link>
       <pubDate>Sat, 03 Oct 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</guid>
+      <guid>https://g.autric.net/blog/2015/10/03/ssh-to-macos-x-el-capitan-through-icloud-tunnel/</guid>
       <description>&lt;p&gt;After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.&lt;/p&gt;
 &lt;p&gt;Yesterday, I updated my favorite laptop - a MacbookPro with Japanese keyboard (Retina, 13-inch, Mid 2014) - with the new MacOS X 10.11 El Capitan version. One of the reasons I love MacOS is that it includes bash, ssh, and many other powerful Linux/Unix commands right out of the box.&lt;/p&gt;</description>
     </item>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +9,16 @@
 <meta name="keywords" content="en, apache, camel, camellabs, raspberry pi, i2c, lcd, mqtt, IoT">
 <meta name="description" content="One month ago, Henryk, Claus and I started the Camel Labs project. This project provides exciting new components for the IoT community based on Apache Camel technology. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. In this lab, we will demonstrate how to build an end-to-end IoT integration with I2C devices, an MQTT broker, and an I2C LCD display using just a few lines of code.">
 <meta name="author" content="">
-<link rel="canonical" href="https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="canonical" href="https://g.autric.net/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04eb028e61251ee4f33f32bc6234ac3f1fec0f9715bc95d6a3275bfe9a4c6f4f.css" integrity="sha256-BOsCjmElHuTzPzK8YjSsPx/sD5cVvJXWoydb/ppMb08=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://g.autric.net/apple-icon-180x180.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/">
+<link rel="alternate" hreflang="en" href="https://g.autric.net/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/">
 <noscript>
     <style>
         #theme-toggle,
@@ -27,7 +27,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/">
+</noscript><meta property="og:url" content="https://g.autric.net/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="Camel IoT Labs i2c gpio mqtt lcd">
   <meta property="og:description" content="One month ago, Henryk, Claus and I started the Camel Labs project. This project provides exciting new components for the IoT community based on Apache Camel technology. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. In this lab, we will demonstrate how to build an end-to-end IoT integration with I2C devices, an MQTT broker, and an I2C LCD display using just a few lines of code.">
@@ -57,13 +57,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blog",
-      "item": "https://gautric.github.io/blog/"
+      "item": "https://g.autric.net/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Camel IoT Labs i2c gpio mqtt lcd",
-      "item": "https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/"
+      "item": "https://g.autric.net/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/"
     }
   ]
 }
@@ -85,44 +85,42 @@
   "dateModified": "2015-05-20T13:58:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gautric.github.io/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/"
+    "@id": "https://g.autric.net/blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Greg. I/O",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://gautric.github.io/apple-icon-180x180.png"
+      "url": "https://g.autric.net/apple-icon-180x180.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-
-<header class="header">
+<body id="top">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gautric.github.io/" accesskey="h" title="Greg. I/O (Alt + H)">
-                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+            <a href="https://g.autric.net/" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://g.autric.net/apple-icon-180x180.png" alt="" aria-label="logo"
                     height="35">Greg. I/O</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                <a href="https://g.autric.net/apropos/" title="À Propos">
                     <span>À Propos</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/blog/" title="Blog">
+                <a href="https://g.autric.net/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/contact/" title="Contact">
+                <a href="https://g.autric.net/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -133,7 +131,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gautric.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gautric.github.io/blog/">Blog</a></div>
+    <div class="breadcrumbs"><a href="https://g.autric.net/">Home</a>&nbsp;»&nbsp;<a href="https://g.autric.net/blog/">Blog</a></div>
     <h1 class="post-title entry-hint-parent">
       Camel IoT Labs i2c gpio mqtt lcd
     </h1>
@@ -393,23 +391,23 @@ Some aspects may change at any time (such as the URI format).</p></div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gautric.github.io/tags/en/">En</a></li>
-      <li><a href="https://gautric.github.io/tags/apache/">Apache</a></li>
-      <li><a href="https://gautric.github.io/tags/camel/">Camel</a></li>
-      <li><a href="https://gautric.github.io/tags/camellabs/">Camellabs</a></li>
-      <li><a href="https://gautric.github.io/tags/raspberry-pi/">Raspberry Pi</a></li>
-      <li><a href="https://gautric.github.io/tags/i2c/">I2c</a></li>
-      <li><a href="https://gautric.github.io/tags/lcd/">Lcd</a></li>
-      <li><a href="https://gautric.github.io/tags/mqtt/">Mqtt</a></li>
-      <li><a href="https://gautric.github.io/tags/iot/">IoT</a></li>
+      <li><a href="https://g.autric.net/tags/en/">En</a></li>
+      <li><a href="https://g.autric.net/tags/apache/">Apache</a></li>
+      <li><a href="https://g.autric.net/tags/camel/">Camel</a></li>
+      <li><a href="https://g.autric.net/tags/camellabs/">Camellabs</a></li>
+      <li><a href="https://g.autric.net/tags/raspberry-pi/">Raspberry Pi</a></li>
+      <li><a href="https://g.autric.net/tags/i2c/">I2c</a></li>
+      <li><a href="https://g.autric.net/tags/lcd/">Lcd</a></li>
+      <li><a href="https://g.autric.net/tags/mqtt/">Mqtt</a></li>
+      <li><a href="https://g.autric.net/tags/iot/">IoT</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://gautric.github.io/blog/2015/06/18/java-regex-group-name/">
+  <a class="prev" href="https://g.autric.net/blog/2015/06/18/java-regex-group-name/">
     <span class="title">« Prev</span>
     <br>
     <span>Java Regex Group Name</span>
   </a>
-  <a class="next" href="https://gautric.github.io/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/">
+  <a class="next" href="https://g.autric.net/blog/2015/05/04/sortie-de-wildfly-9.0-cr-01/">
     <span class="title">Next »</span>
     <br>
     <span>Sortie de wildfly 9.0 CR-01</span>
@@ -421,7 +419,7 @@ Some aspects may change at any time (such as the URI format).</p></div>
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2026 <a href="https://g.autric.net/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
@@ -471,6 +469,53 @@ Some aspects may change at any time (such as the URI format).</p></div>
         }
     };
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DeviceIO on Greg. I/O</title>
-    <link>https://gautric.github.io/tags/deviceio/</link>
+    <link>https://g.autric.net/tags/deviceio/</link>
     <description>Recent content in DeviceIO on Greg. I/O</description>
-    <generator>Hugo -- 0.154.0</generator>
+    <generator>Hugo -- 0.157.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Mar 2016 14:00:00 +0000</lastBuildDate>
-    <atom:link href="https://gautric.github.io/tags/deviceio/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://g.autric.net/tags/deviceio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Device IO and i2cdetect implementation</title>
-      <link>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</link>
+      <link>https://g.autric.net/blog/2016/03/09/device-io-and-i2cdetect-implementation/</link>
       <pubDate>Wed, 09 Mar 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/03/09/device-io-and-i2cdetect-implementation/</guid>
+      <guid>https://g.autric.net/blog/2016/03/09/device-io-and-i2cdetect-implementation/</guid>
       <description>&lt;p&gt;Today, we&amp;rsquo;re going to implement a quick tool available on the RaspberryPi using Java &lt;a href=&#34;https://wiki.openjdk.java.net/display/dio/Main&#34;&gt;Device IO API&lt;/a&gt;. The &lt;code&gt;i2cdetect&lt;/code&gt; utility is a simple &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I²C&lt;/a&gt; device scanner for your RaspberryPi that browses all I²C addresses to find which I²C devices are connected to your board. This tutorial demonstrates how to recompile the Device IO API and implement the &lt;code&gt;i2cdetect&lt;/code&gt; functionality in Java, providing a platform-independent way to interact with I²C devices.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;i2cdetect with the Java Device I/O API implementation - a powerful tool for hardware detection and diagnostics on embedded systems.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rhiot Kura Device IO GPIO and I2C</title>
-      <link>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
+      <link>https://g.autric.net/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</link>
       <pubDate>Mon, 29 Feb 2016 14:00:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
+      <guid>https://g.autric.net/blog/2016/02/29/rhiot-kura-device-io-gpio-and-i2c/</guid>
       <description>&lt;p&gt;Recently, a colleague of mine asked me to implement a small demonstration project. I decided to develop a new component for the Rhiot project. This component is the &lt;a href=&#34;http://openjdk.java.net/projects/dio/&#34;&gt;DeviceIO&lt;/a&gt; &lt;a href=&#34;https://en.wikipedia.org/wiki/I%C2%B2C&#34;&gt;I2C&lt;/a&gt; &lt;a href=&#34;http://camel.apache.org&#34;&gt;Camel&lt;/a&gt; component, which builds upon my previous work on Camel-pi4j that I had already developed for the Rhiot project. In this article, we&amp;rsquo;ll explore how to use this component within the Kura Platform via the Camel Framework. For this demonstration, we&amp;rsquo;ll need some hardware devices, specifically a &lt;a href=&#34;https://www.raspberrypi.org/&#34;&gt;RaspberryPi&lt;/a&gt; and an &lt;a href=&#34;http://activemq.apache.org/&#34;&gt;ActiveMQ&lt;/a&gt; broker.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Les premiers jours du projet Camel IoT Labs</title>
-      <link>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</link>
+      <link>https://g.autric.net/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</link>
       <pubDate>Sat, 25 Apr 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</guid>
+      <guid>https://g.autric.net/blog/2015/04/25/les-premiers-jours-du-projet-camel-iot-labs/</guid>
       <description>&lt;p&gt;Aujourd&amp;rsquo;hui, l&amp;rsquo;Internet des Objets (IoT) prend une place de plus en plus importante dans l&amp;rsquo;industrie informatique et au-delà. Des montres connectées &lt;a href=&#34;http://www.withings.com/fr/withings-activite.html&#34;&gt;Withings&lt;/a&gt;, aux &lt;a href=&#34;http://raspberrypi.org&#34;&gt;Raspberry Pi&lt;/a&gt; vendus à plus de 5 millions d&amp;rsquo;unités, en passant par les cartes &lt;a href=&#34;http://www.arduino.cc/&#34;&gt;Arduino&lt;/a&gt; à bas coût et autres modules &lt;a href=&#34;https://tessel.io/&#34;&gt;Tessel&lt;/a&gt;, la baisse du coût de production des objets électroniques a permis une large diffusion de ces nouvelles technologies.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://gautric.github.io/img/camel-labs.png&#34; style=&#34;max-width:120%;&#34; align=&#34;left&#34; height=&#34;110&#34; hspace=&#34;30&#34;/&gt; En 2012, les premiers Raspberry Pi sont lancés sur le marché, et j&amp;rsquo;en ai immédiatement acquis un. Depuis, j&amp;rsquo;ai collectionné presque tous les modèles : B rev1, B rev2, B+ et B2 ;-). J&amp;rsquo;ai également repris mon fer à souder, comme à l&amp;rsquo;époque du lycée. Mais contrairement à cette époque où l&amp;rsquo;on disposait de peu de ressources internet, peu de standards et peu de matériel, aujourd&amp;rsquo;hui nous avons presque tout à notre disposition. Il ne reste plus qu&amp;rsquo;à assembler des briques physiques avec des briques logicielles plus ou moins évoluées.&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://g.autric.net/img/camel-labs.png&#34; style=&#34;max-width:120%;&#34; align=&#34;left&#34; height=&#34;110&#34; hspace=&#34;30&#34;/&gt; En 2012, les premiers Raspberry Pi sont lancés sur le marché, et j&amp;rsquo;en ai immédiatement acquis un. Depuis, j&amp;rsquo;ai collectionné presque tous les modèles : B rev1, B rev2, B+ et B2 ;-). J&amp;rsquo;ai également repris mon fer à souder, comme à l&amp;rsquo;époque du lycée. Mais contrairement à cette époque où l&amp;rsquo;on disposait de peu de ressources internet, peu de standards et peu de matériel, aujourd&amp;rsquo;hui nous avons presque tout à notre disposition. Il ne reste plus qu&amp;rsquo;à assembler des briques physiques avec des briques logicielles plus ou moins évoluées.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

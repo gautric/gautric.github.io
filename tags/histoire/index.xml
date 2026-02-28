@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Histoire on Greg. I/O</title>
-    <link>https://gautric.github.io/tags/histoire/</link>
+    <link>https://g.autric.net/tags/histoire/</link>
     <description>Recent content in Histoire on Greg. I/O</description>
-    <generator>Hugo -- 0.154.0</generator>
+    <generator>Hugo -- 0.157.0</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Mar 2015 13:58:00 +0000</lastBuildDate>
-    <atom:link href="https://gautric.github.io/tags/histoire/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://g.autric.net/tags/histoire/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Il y a un siècle aux Dardanelles</title>
-      <link>https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</link>
+      <link>https://g.autric.net/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</link>
       <pubDate>Wed, 18 Mar 2015 13:58:00 +0000</pubDate>
-      <guid>https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</guid>
+      <guid>https://g.autric.net/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/</guid>
       <description>Il y a cent ans, « Le bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l&amp;#39;Amirauté</description>
     </item>
   </channel>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +9,16 @@
 <meta name="keywords" content="en, wildfly, Offline, CLI, HTTP/2, JDK8">
 <meta name="description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.">
 <meta name="author" content="">
-<link rel="canonical" href="https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="canonical" href="https://g.autric.net/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04eb028e61251ee4f33f32bc6234ac3f1fec0f9715bc95d6a3275bfe9a4c6f4f.css" integrity="sha256-BOsCjmElHuTzPzK8YjSsPx/sD5cVvJXWoydb/ppMb08=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://g.autric.net/apple-icon-180x180.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
+<link rel="alternate" hreflang="en" href="https://g.autric.net/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -27,7 +27,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
+</noscript><meta property="og:url" content="https://g.autric.net/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="Wildfly 9.0 Offline CLI and HTTP/2">
   <meta property="og:description" content="Yesterday, Wildfly community has just released Wildfly 9.0.0.Final, the last Application Server version. As I talked on my previous French post about Wildfly they are a lot of new cool stuffs. I noticed two of them we could use both together quickly. Into a datacenter, we want setup the first configuration without startup full process and open unnecessary port. I propose in this post to setup HTTP/2 with offline mode, it is quite useful because we could want to start a JBoss instance directly with HTTP/2 protocol enabled.">
@@ -57,13 +57,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blog",
-      "item": "https://gautric.github.io/blog/"
+      "item": "https://g.autric.net/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Wildfly 9.0 Offline CLI and HTTP/2",
-      "item": "https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/"
+      "item": "https://g.autric.net/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/"
     }
   ]
 }
@@ -85,44 +85,42 @@
   "dateModified": "2015-07-03T13:58:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gautric.github.io/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/"
+    "@id": "https://g.autric.net/blog/2015/07/03/wildfly-9.0-offline-cli-and-http/2/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Greg. I/O",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://gautric.github.io/apple-icon-180x180.png"
+      "url": "https://g.autric.net/apple-icon-180x180.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-
-<header class="header">
+<body id="top">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gautric.github.io/" accesskey="h" title="Greg. I/O (Alt + H)">
-                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+            <a href="https://g.autric.net/" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://g.autric.net/apple-icon-180x180.png" alt="" aria-label="logo"
                     height="35">Greg. I/O</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                <a href="https://g.autric.net/apropos/" title="À Propos">
                     <span>À Propos</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/blog/" title="Blog">
+                <a href="https://g.autric.net/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/contact/" title="Contact">
+                <a href="https://g.autric.net/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -133,7 +131,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gautric.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gautric.github.io/blog/">Blog</a></div>
+    <div class="breadcrumbs"><a href="https://g.autric.net/">Home</a>&nbsp;»&nbsp;<a href="https://g.autric.net/blog/">Blog</a></div>
     <h1 class="post-title entry-hint-parent">
       Wildfly 9.0 Offline CLI and HTTP/2
     </h1>
@@ -228,20 +226,20 @@ I use to check HTTP/2 protocol, the network panel available inside Firefox. This
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gautric.github.io/tags/en/">En</a></li>
-      <li><a href="https://gautric.github.io/tags/wildfly/">Wildfly</a></li>
-      <li><a href="https://gautric.github.io/tags/offline/">Offline</a></li>
-      <li><a href="https://gautric.github.io/tags/cli/">CLI</a></li>
-      <li><a href="https://gautric.github.io/tags/http/2/">HTTP/2</a></li>
-      <li><a href="https://gautric.github.io/tags/jdk8/">JDK8</a></li>
+      <li><a href="https://g.autric.net/tags/en/">En</a></li>
+      <li><a href="https://g.autric.net/tags/wildfly/">Wildfly</a></li>
+      <li><a href="https://g.autric.net/tags/offline/">Offline</a></li>
+      <li><a href="https://g.autric.net/tags/cli/">CLI</a></li>
+      <li><a href="https://g.autric.net/tags/http/2/">HTTP/2</a></li>
+      <li><a href="https://g.autric.net/tags/jdk8/">JDK8</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://gautric.github.io/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/">
+  <a class="prev" href="https://g.autric.net/blog/2015/07/09/wildfly-9.0-w/-docker-offline-cli-and-http/2/">
     <span class="title">« Prev</span>
     <br>
     <span>Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2</span>
   </a>
-  <a class="next" href="https://gautric.github.io/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/">
+  <a class="next" href="https://g.autric.net/blog/2015/07/01/leshan-et-le-standard-lightweight-m2m-%C3%A0-leclipsecon/">
     <span class="title">Next »</span>
     <br>
     <span>Leshan et le standard Lightweight M2M à l&#39;EclipseCon</span>
@@ -253,7 +251,7 @@ I use to check HTTP/2 protocol, the network panel available inside Firefox. This
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2026 <a href="https://g.autric.net/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
@@ -303,6 +301,53 @@ I use to check HTTP/2 protocol, the network panel available inside Firefox. This
         }
     };
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

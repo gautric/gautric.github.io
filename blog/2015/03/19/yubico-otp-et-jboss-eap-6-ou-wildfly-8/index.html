@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,16 +12,16 @@ Yubikey est une clé de sécurité matérielle qui permet d&rsquo;implémenter u
 Principe de fonctionnement
 Le principe est simple mais efficace : l&rsquo;utilisateur utilise un token à usage unique généré par sa clé Yubikey comme second facteur d&rsquo;authentification. Ce token est cryptographiquement sécurisé, vérifié par le système, et change à chaque utilisation. Même si le token est intercepté par un attaquant lors d&rsquo;une tentative de connexion, celui-ci ne pourra pas le réutiliser pour s&rsquo;authentifier ultérieurement, ce qui renforce considérablement la sécurité du système d&rsquo;authentification.">
 <meta name="author" content="">
-<link rel="canonical" href="https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="canonical" href="https://g.autric.net/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04eb028e61251ee4f33f32bc6234ac3f1fec0f9715bc95d6a3275bfe9a4c6f4f.css" integrity="sha256-BOsCjmElHuTzPzK8YjSsPx/sD5cVvJXWoydb/ppMb08=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://g.autric.net/apple-icon-180x180.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/">
+<link rel="alternate" hreflang="en" href="https://g.autric.net/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/">
 <noscript>
     <style>
         #theme-toggle,
@@ -30,7 +30,7 @@ Le principe est simple mais efficace : l&rsquo;utilisateur utilise un token à u
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/">
+</noscript><meta property="og:url" content="https://g.autric.net/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="Yubico OTP et JBoss EAP 6 ou Wildfly 8">
   <meta property="og:description" content="Intégration de l’authentification forte avec Yubikey dans JBoss Yubikey est une clé de sécurité matérielle qui permet d’implémenter une authentification forte (2FA - Two-Factor Authentication) lors d’un processus de connexion à un site web ou une application (par exemple : services bancaires, webmail, applications d’entreprise, etc.). De plus en plus d’organisations intègrent cette technologie dans leur processus d’authentification pour renforcer significativement leur sécurité informatique.
@@ -44,7 +44,7 @@ Principe de fonctionnement Le principe est simple mais efficace : l’utilisateu
     <meta property="article:tag" content="Otp">
     <meta property="article:tag" content="Yubico">
     <meta property="article:tag" content="Yubikey">
-    <meta property="article:tag" content="Jboss">
+    <meta property="article:tag" content="JBoss">
     <meta property="article:tag" content="Eap">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yubico OTP et JBoss EAP 6 ou Wildfly 8">
@@ -64,13 +64,13 @@ Le principe est simple mais efficace : l&rsquo;utilisateur utilise un token à u
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blog",
-      "item": "https://gautric.github.io/blog/"
+      "item": "https://g.autric.net/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Yubico OTP et JBoss EAP 6 ou Wildfly 8",
-      "item": "https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/"
+      "item": "https://g.autric.net/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/"
     }
   ]
 }
@@ -92,44 +92,42 @@ Le principe est simple mais efficace : l&rsquo;utilisateur utilise un token à u
   "dateModified": "2015-03-19T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gautric.github.io/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/"
+    "@id": "https://g.autric.net/blog/2015/03/19/yubico-otp-et-jboss-eap-6-ou-wildfly-8/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Greg. I/O",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://gautric.github.io/apple-icon-180x180.png"
+      "url": "https://g.autric.net/apple-icon-180x180.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-
-<header class="header">
+<body id="top">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gautric.github.io/" accesskey="h" title="Greg. I/O (Alt + H)">
-                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+            <a href="https://g.autric.net/" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://g.autric.net/apple-icon-180x180.png" alt="" aria-label="logo"
                     height="35">Greg. I/O</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                <a href="https://g.autric.net/apropos/" title="À Propos">
                     <span>À Propos</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/blog/" title="Blog">
+                <a href="https://g.autric.net/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/contact/" title="Contact">
+                <a href="https://g.autric.net/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -140,7 +138,7 @@ Le principe est simple mais efficace : l&rsquo;utilisateur utilise un token à u
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gautric.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gautric.github.io/blog/">Blog</a></div>
+    <div class="breadcrumbs"><a href="https://g.autric.net/">Home</a>&nbsp;»&nbsp;<a href="https://g.autric.net/blog/">Blog</a></div>
     <h1 class="post-title entry-hint-parent">
       Yubico OTP et JBoss EAP 6 ou Wildfly 8
     </h1>
@@ -558,21 +556,21 @@ TRACE [org.jboss.as.web.security]  End invoke, caller=null
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gautric.github.io/tags/fr/">Fr</a></li>
-      <li><a href="https://gautric.github.io/tags/otp/">Otp</a></li>
-      <li><a href="https://gautric.github.io/tags/yubico/">Yubico</a></li>
-      <li><a href="https://gautric.github.io/tags/yubikey/">Yubikey</a></li>
-      <li><a href="https://gautric.github.io/tags/jboss/">Jboss</a></li>
-      <li><a href="https://gautric.github.io/tags/eap/">Eap</a></li>
-      <li><a href="https://gautric.github.io/tags/wildfly/">Wildfly</a></li>
+      <li><a href="https://g.autric.net/tags/fr/">Fr</a></li>
+      <li><a href="https://g.autric.net/tags/otp/">Otp</a></li>
+      <li><a href="https://g.autric.net/tags/yubico/">Yubico</a></li>
+      <li><a href="https://g.autric.net/tags/yubikey/">Yubikey</a></li>
+      <li><a href="https://g.autric.net/tags/jboss/">JBoss</a></li>
+      <li><a href="https://g.autric.net/tags/eap/">Eap</a></li>
+      <li><a href="https://g.autric.net/tags/wildfly/">Wildfly</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://gautric.github.io/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/">
+  <a class="prev" href="https://g.autric.net/blog/2015/03/25/best-practices-websphere-mq/jboss-eap-6/">
     <span class="title">« Prev</span>
     <br>
     <span>Best Practices Websphere MQ/JBoss EAP 6</span>
   </a>
-  <a class="next" href="https://gautric.github.io/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/">
+  <a class="next" href="https://g.autric.net/blog/2015/03/18/il-y-a-un-si%C3%A8cle-aux-dardanelles/">
     <span class="title">Next »</span>
     <br>
     <span>Il y a un siècle aux Dardanelles</span>
@@ -584,7 +582,7 @@ TRACE [org.jboss.as.web.security]  End invoke, caller=null
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2026 <a href="https://g.autric.net/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
@@ -634,6 +632,53 @@ TRACE [org.jboss.as.web.security]  End invoke, caller=null
         }
     };
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

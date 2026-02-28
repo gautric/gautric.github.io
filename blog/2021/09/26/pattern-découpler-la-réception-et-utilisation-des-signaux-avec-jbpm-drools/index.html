@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="light">
 
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +9,16 @@
 <meta name="keywords" content="fr, jBPM, Drools, Pattern, Signal, Reception">
 <meta name="description" content="Pour mon activité professionnelle, je me déplace1 chez les clients afin d&rsquo;expertiser les solutions qu&rsquo;ils mettent en place dans leur système d&rsquo;information et notamment le produit RHPAM2. Pour le compte d&rsquo;un client donc, j&rsquo;ai travaillé sur les processus métiers qu&rsquo;il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lesquels nous n&rsquo;allons pas nous étendre ici. Nous allons plutôt nous concentrer sur un patron de conception particulièrement intéressant tant par sa fonctionnalité que par son implémentation technique.">
 <meta name="author" content="">
-<link rel="canonical" href="https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f247c1259a5749d481b4294f298a6c5d2074697de581723890ba552c718649ff.css" integrity="sha256-8kfBJZpXSdSBtClPKYpsXSB0aX3lgXI4kLpVLHGGSf8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://gautric.github.io/android-icon-36x36.png">
-<link rel="apple-touch-icon" href="https://gautric.github.io/apple-icon-180x180.png">
-<link rel="mask-icon" href="https://gautric.github.io/apple-icon-180x180.png">
+<link rel="canonical" href="https://g.autric.net/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.04eb028e61251ee4f33f32bc6234ac3f1fec0f9715bc95d6a3275bfe9a4c6f4f.css" integrity="sha256-BOsCjmElHuTzPzK8YjSsPx/sD5cVvJXWoydb/ppMb08=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://g.autric.net/android-icon-36x36.png">
+<link rel="apple-touch-icon" href="https://g.autric.net/apple-icon-180x180.png">
+<link rel="mask-icon" href="https://g.autric.net/apple-icon-180x180.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/">
+<link rel="alternate" hreflang="en" href="https://g.autric.net/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/">
 <noscript>
     <style>
         #theme-toggle,
@@ -27,7 +27,7 @@
         }
 
     </style>
-</noscript><meta property="og:url" content="https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/">
+</noscript><meta property="og:url" content="https://g.autric.net/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/">
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="Pattern Découpler la Réception et Utilisation des Signaux avec jBPM & Drools">
   <meta property="og:description" content="Pour mon activité professionnelle, je me déplace1 chez les clients afin d’expertiser les solutions qu’ils mettent en place dans leur système d’information et notamment le produit RHPAM2. Pour le compte d’un client donc, j’ai travaillé sur les processus métiers qu’il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lesquels nous n’allons pas nous étendre ici. Nous allons plutôt nous concentrer sur un patron de conception particulièrement intéressant tant par sa fonctionnalité que par son implémentation technique.">
@@ -57,13 +57,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Blog",
-      "item": "https://gautric.github.io/blog/"
+      "item": "https://g.autric.net/blog/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Pattern Découpler la Réception et Utilisation des Signaux avec jBPM \u0026 Drools",
-      "item": "https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/"
+      "item": "https://g.autric.net/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/"
     }
   ]
 }
@@ -85,44 +85,42 @@
   "dateModified": "2021-09-26T15:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://gautric.github.io/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/"
+    "@id": "https://g.autric.net/blog/2021/09/26/pattern-d%C3%A9coupler-la-r%C3%A9ception-et-utilisation-des-signaux-avec-jbpm-drools/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Greg. I/O",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://gautric.github.io/apple-icon-180x180.png"
+      "url": "https://g.autric.net/apple-icon-180x180.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-
-<header class="header">
+<body id="top">
+    <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://gautric.github.io/" accesskey="h" title="Greg. I/O (Alt + H)">
-                <img src="https://gautric.github.io/apple-icon-180x180.png" alt="" aria-label="logo"
+            <a href="https://g.autric.net/" accesskey="h" title="Greg. I/O (Alt + H)">
+                <img src="https://g.autric.net/apple-icon-180x180.png" alt="" aria-label="logo"
                     height="35">Greg. I/O</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://gautric.github.io/apropos/" title="À Propos">
+                <a href="https://g.autric.net/apropos/" title="À Propos">
                     <span>À Propos</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/blog/" title="Blog">
+                <a href="https://g.autric.net/blog/" title="Blog">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://gautric.github.io/contact/" title="Contact">
+                <a href="https://g.autric.net/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -133,7 +131,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://gautric.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://gautric.github.io/blog/">Blog</a></div>
+    <div class="breadcrumbs"><a href="https://g.autric.net/">Home</a>&nbsp;»&nbsp;<a href="https://g.autric.net/blog/">Blog</a></div>
     <h1 class="post-title entry-hint-parent">
       Pattern Découpler la Réception et Utilisation des Signaux avec jBPM &amp; Drools
     </h1>
@@ -320,20 +318,20 @@ Cela apporte plus de flexibilité dans le design de conception des processus san
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://gautric.github.io/tags/fr/">Fr</a></li>
-      <li><a href="https://gautric.github.io/tags/jbpm/">JBPM</a></li>
-      <li><a href="https://gautric.github.io/tags/drools/">Drools</a></li>
-      <li><a href="https://gautric.github.io/tags/pattern/">Pattern</a></li>
-      <li><a href="https://gautric.github.io/tags/signal/">Signal</a></li>
-      <li><a href="https://gautric.github.io/tags/reception/">Reception</a></li>
+      <li><a href="https://g.autric.net/tags/fr/">Fr</a></li>
+      <li><a href="https://g.autric.net/tags/jbpm/">JBPM</a></li>
+      <li><a href="https://g.autric.net/tags/drools/">Drools</a></li>
+      <li><a href="https://g.autric.net/tags/pattern/">Pattern</a></li>
+      <li><a href="https://g.autric.net/tags/signal/">Signal</a></li>
+      <li><a href="https://g.autric.net/tags/reception/">Reception</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://gautric.github.io/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/">
+  <a class="prev" href="https://g.autric.net/blog/2022/06/08/quarkus-java-11-17-et-github-action-feat.-matrix/">
     <span class="title">« Prev</span>
     <br>
     <span>Quarkus &amp; Java 11-17 et GitHub Action feat. Matrix</span>
   </a>
-  <a class="next" href="https://gautric.github.io/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/">
+  <a class="next" href="https://g.autric.net/blog/2020/10/28/how-to-manage-exception-inside-a-jbpm-workitemhandler-custom-component/">
     <span class="title">Next »</span>
     <br>
     <span>How to manage Exception inside a jBPM WorkItemHandler custom component</span>
@@ -345,7 +343,7 @@ Cela apporte plus de flexibilité dans le design de conception des processus san
     </main>
     
 <footer class="footer">
-    <span>&copy; 2016 - 2025 <a href="https://gautric.github.io/">Greg. I/O</a></span>
+    <span>&copy; 2016 - 2026 <a href="https://g.autric.net/">Greg. I/O</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
@@ -395,6 +393,53 @@ Cela apporte plus de flexibilité dans le design de conception des processus san
         }
     };
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
