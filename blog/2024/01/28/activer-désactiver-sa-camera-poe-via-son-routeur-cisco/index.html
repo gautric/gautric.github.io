@@ -39,7 +39,7 @@
     <meta property="article:tag" content="Fr">
     <meta property="article:tag" content="Cisco">
     <meta property="article:tag" content="PoE">
-    <meta property="article:tag" content="Webcam">
+    <meta property="article:tag" content="WebCam">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Activer &amp; Désactiver sa camera PoE via son routeur Cisco">
 <meta name="twitter:description" content="Dans cet article, nous allons découvrir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j&rsquo;ai mis en place une installation permettant la télésurveillance en mode DIY. J&rsquo;utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s&rsquo;agit du Cisco Commutateur Intelligent SG250-10P, qui offre la fonctionnalité PoE (Power over Ethernet) permettant d&rsquo;alimenter des périphériques directement via le câble réseau, éliminant ainsi le besoin d&rsquo;une alimentation séparée.">
@@ -200,7 +200,7 @@ cisco-sg250-10p# exit
       <li><a href="https://g.autric.net/tags/fr/">Fr</a></li>
       <li><a href="https://g.autric.net/tags/cisco/">Cisco</a></li>
       <li><a href="https://g.autric.net/tags/poe/">PoE</a></li>
-      <li><a href="https://g.autric.net/tags/webcam/">Webcam</a></li>
+      <li><a href="https://g.autric.net/tags/webcam/">WebCam</a></li>
     </ul>
 <nav class="paginav">
   <a class="prev" href="https://g.autric.net/blog/2025/04/06/activate-deactivate-poe-camera-via-cisco-router/">
@@ -270,53 +270,6 @@ cisco-sg250-10p# exit
         }
     };
 
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
 </script>
 </body>
 

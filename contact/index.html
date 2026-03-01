@@ -9,33 +9,6 @@
 <meta name="keywords" content="">
 <meta name="description" content="To reach me directly, you can send me an email using my personal address composed like this:
 &lt;firstname&gt; followed by &ldquo;commercial at/@&rdquo; and &lt;lastname&gt; dot net.
-Alternatively, you can use the form below. I do my best to respond to you as soon as possible.
-
-  
-    First Name*:
-    
-  
-  
-    Last Name*:
-    
-  
-  
-    Email*:
-    
-  
-  
-  
-    Message*:
-    
-  
-  
-  
-    
-    Send
-    
-  
-  
-
 ">
 <meta name="author" content="">
 <link rel="canonical" href="https://g.autric.net/contact/">
@@ -60,42 +33,13 @@ Alternatively, you can use the form below. I do my best to respond to you as soo
   <meta property="og:site_name" content="Greg. I/O">
   <meta property="og:title" content="Contact">
   <meta property="og:description" content="To reach me directly, you can send me an email using my personal address composed like this:
-&lt;firstname&gt; followed by “commercial at/@” and &lt;lastname&gt; dot net.
-Alternatively, you can use the form below. I do my best to respond to you as soon as possible.
-First Name*: Last Name*: Email*: Message*: Send ">
+&lt;firstname&gt; followed by “commercial at/@” and &lt;lastname&gt; dot net.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Contact">
 <meta name="twitter:description" content="To reach me directly, you can send me an email using my personal address composed like this:
 &lt;firstname&gt; followed by &ldquo;commercial at/@&rdquo; and &lt;lastname&gt; dot net.
-Alternatively, you can use the form below. I do my best to respond to you as soon as possible.
-
-  
-    First Name*:
-    
-  
-  
-    Last Name*:
-    
-  
-  
-    Email*:
-    
-  
-  
-  
-    Message*:
-    
-  
-  
-  
-    
-    Send
-    
-  
-  
-
 ">
       <meta name="twitter:site" content="@gautric_io">
 
@@ -120,12 +64,12 @@ Alternatively, you can use the form below. I do my best to respond to you as soo
   "@type": "BlogPosting",
   "headline": "Contact",
   "name": "Contact",
-  "description": "To reach me directly, you can send me an email using my personal address composed like this:\n\u0026lt;firstname\u0026gt; followed by \u0026ldquo;commercial at/@\u0026rdquo; and \u0026lt;lastname\u0026gt; dot net.\nAlternatively, you can use the form below. I do my best to respond to you as soon as possible.\nFirst Name*: Last Name*: Email*: Message*: Send ",
+  "description": "To reach me directly, you can send me an email using my personal address composed like this:\n\u0026lt;firstname\u0026gt; followed by \u0026ldquo;commercial at/@\u0026rdquo; and \u0026lt;lastname\u0026gt; dot net.\n",
   "keywords": [
     
   ],
-  "articleBody": "To reach me directly, you can send me an email using my personal address composed like this:\nfollowed by “commercial at/@” and dot net.\nAlternatively, you can use the form below. I do my best to respond to you as soon as possible.\nFirst Name*: Last Name*: Email*: Message*: Send ",
-  "wordCount" : "52",
+  "articleBody": "To reach me directly, you can send me an email using my personal address composed like this:\nfollowed by “commercial at/@” and dot net.\n",
+  "wordCount" : "26",
   "inLanguage": "en",
   "datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
@@ -187,110 +131,69 @@ Alternatively, you can use the form below. I do my best to respond to you as soo
   </header> 
   <div class="post-content"><p>To reach me directly, you can send me an email using my personal address composed like this:</p>
 <p><strong><em>&lt;firstname&gt;</em></strong> followed by <em>&ldquo;commercial at/@&rdquo;</em> and <strong><em>&lt;lastname&gt;</em></strong> dot <strong><em>net</em></strong>.</p>
-<p>Alternatively, you can use the form below. I do my best to respond to you as soon as possible.</p>
+<!-- 
+Alternatively, you can use the form below. I do my best to respond to you as soon as possible.
+
 <div>
   <fieldset class="pure-group">
-    <label for="firstname">First Name<span class="required">*</span>:</label>
-    <input id="firstname" name="firstname" size="49" placeholder="Your First Name" />
-  </fieldset>
-  <fieldset class="pure-group">
-    <label for="lastname">Last Name<span class="required">*</span>:</label>
-    <input id="lastname" name="lastname" size="49" placeholder="Your Last Name" />
+    <label for="name">Name<span class="required">*</span>:</label>
+    <input id="name" name="name" size="49" placeholder="Your Name" required />
   </fieldset>
   <fieldset class="pure-group">
     <label for="email">Email<span class="required">*</span>:</label>
-    <input id="email" name="email" type="email" required size="49" placeholder="Your Email"  />
+    <input id="email" name="email" type="email" required size="49" placeholder="Your Email" />
   </fieldset>
-  <!--text-area-->
   <fieldset class="pure-group">
     <label for="message">Message<span class="required">*</span>:</label>
-    <textarea id="message" name="message" cols="40" rows="5"></textarea>
+    <textarea id="message" name="message" cols="40" rows="5" placeholder="Your message" required></textarea>
   </fieldset>
-  <!--email-->
   <fieldset class="pure-group">
     <div id="log"></div>
-    <button id="send-button"  class="button" onclick="submitForm()">Send</button>
-    <!-- <button id="send-button"  class="button"  type="submit" >Send</button> -->
+    <button id="send-button" class="button" onclick="submitForm()">Send</button>
   </fieldset>
   <script>
     function submitForm() {
-        // Get form data
-        // More info here https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server
-        // Make a POST request using fetch
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            document.getElementById("log").innerHTML = '<i style="color: red;">Please fill in all fields</i>';
+            return;
+        }
+
         document.getElementById("log").innerHTML = '<i>Sending message ...</i>';
-        fetch("https://script.google.com/macros/s/"+"AKfycbxVkveuXIjg5pe8n4DINiThv6yuCDG7QfQgz-"+"bdl2UbGFxfjdI8arA4moXWC4o-NMM5/exec", {
+        document.getElementById("send-button").disabled = true;
+
+        // API endpoint is configured in hugo.yml params.contactApiEndpoint
+        const API_ENDPOINT = '{{ .Site.Params.contactApiEndpoint }}';
+
+        fetch(API_ENDPOINT, {
             method: "POST",
-            body: "firstname="+document.getElementById("firstname").value+"&lastname="+document.getElementById("lastname").value+"&email="+document.getElementById("email").value+"&text="+document.getElementById("message").value+"",
             headers: {
-                "Content-Type" :　"application/x-www-form-urlencoded",
-                "Accept": "application/json",
-            }
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, email, message })
         })
         .then(response => response.json())
-        .then(data => {  
-            document.getElementById("log").innerHTML = '<i>Message sent. Thank you!</i>';
-            document.getElementById("firstname").value = '';
-            document.getElementById("lastname").value = '';
+        .then(data => {
+            document.getElementById("log").innerHTML = '<i style="color: green;">Message sent. Thank you!</i>';
+            document.getElementById("name").value = '';
             document.getElementById("email").value = '';
             document.getElementById("message").value = '';
             setTimeout(() => {
                 document.getElementById("log").innerHTML = '';
-              }, "1500");
-            console.log(data);
+            }, 3000);
         })
         .catch(error => {
-            // Handle errors
             console.error('Error:', error);
+            document.getElementById("log").innerHTML = '<i style="color: red;">Failed to send message. Please try again.</i>';
+        })
+        .finally(() => {
+            document.getElementById("send-button").disabled = false;
         });
     }
   </script>
-</div>
-<!-- <div>
-
-  <div>
-    <div class="form-field  vertical">
-      <div class="form-label">
-        <label class="inline">Name<span class="required">*</span></label>
-      </div>
-      <div class="form-data" data-grav-field="text" data-grav-disabled="true" data-grav-default="null">
-        <div class="form-input-wrapper ">
-          <input name="name" value="" type="text" placeholder="Enter your name" autocomplete="on" required="required" size="40">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="form-field  vertical">
-      <div class="form-label">
-          <label class="inline">Email<span class="required">*</span>
-        </label>
-      </div>
-      <div class="form-data" data-grav-field="text" data-grav-disabled="true" data-grav-default="null">
-        <div class="form-input-wrapper ">
-          <input name="email" value="" type="text" placeholder="Enter your email address" required="required" size="40">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <div class="form-field  vertical">
-      <div class="form-label">
-        <label class="inline">Message<span class="required">*</span></label>
-      </div>
-      <div class="form-data" data-grav-field="textarea" data-grav-disabled="true" data-grav-default="null">
-        <div class="form-textarea-wrapper long">
-          <textarea class="input" name="message" placeholder="Enter your message" cols="40" rows="4" required="required"></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <button id="send-button"  class="button" onclick="submitForm()">Send</button>
-  </div>
-
 </div> -->
 
 
@@ -355,53 +258,6 @@ Alternatively, you can use the form below. I do my best to respond to you as soo
         }
     };
 
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
 </script>
 </body>
 
