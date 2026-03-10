@@ -7,7 +7,7 @@ title: 'Greg. I/O'
 pagination:
   pagerSize: 100
 
-theme:  ["custom", "hugo-notice", "papermod"]
+theme:  ["custom", "hugo-notice", "PaperMod"]
 
 enableRobotsTXT: true
 buildDrafts: false
