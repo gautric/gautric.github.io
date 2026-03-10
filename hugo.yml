@@ -14,8 +14,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-# publishDir: ../gautric.github.io
-# #googleAnalytics: UA-60791597-1
+# # #googleAnalytics: UA-60791597-1
 
 minify:
   disableXML: true
