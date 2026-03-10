@@ -1,0 +1,118 @@
+---
+layout: post
+css: blog
+title:  "RHIoT 0.1.2 Webcam component on MacOS X in Groovy"
+date:   2015-10-22 13:58:00
+categories: ["blog"]
+tags: ["en", "rhiot", "MacOS X", "camel", "webcam", "groovy"]
+#url: /blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html
+---
+
+My tech leader on [RHIoT project](http://rhiot.io) (ex-camellabs) [Henryk](http://henryk-konsek.blogspot.fr/2015/10/rhiot-012-is-out.html) had just release the last version of RHIoT project : 0.1.2.
+Lot of new stuffs are included in this new release, more details available [here](https://github.com/rhiot/rhiot/blob/master/docs/release-notes.md#012--2015-10-22).
+I found in list a cool stuff to test. We gonna check if our new commiter [@levackt](https://github.com/levackt) from ZA worked well ;-)
+
+> Webcam camel component on Mac OSX with Groovy language
+
+Let's start to broadcast yourself.
+
+## Requisites
+
+* Have a mac
+ - tested MacBook Pro Retina, 13-inch, Mid 2014
+* Groovy Mac port installed
+ - Groovy Version: 2.4.4 JVM: 1.8.0_45 Vendor: Oracle Corporation OS: Mac OS X
+
+
+## Program
+
+We gonna use Groovy language for this simple example. Groovy provides a concise and expressive syntax that makes it perfect for quickly testing new components like this webcam integration.
+
+<script src="https://gist.github.com/gautric/7bb0d9583742837c5538.js"></script>
+
+The key point of this program are :
+
+* the @Grab annotation to download camel-webcam component : `@Grab(group="io.rhiot",module="camel-webcam",version="0.1.2")`
+* the *from* command to capture image every second : `from("webcam:cam?consumer.delay=1000")`
+
+Copy log4j.properties into the same directory to properly configure logging:
+
+<script src="https://gist.github.com/gautric/cca1a01fb55ce5846422.js"></script>
+
+## Execution
+
+Let's run it now. The following output shows the Camel context starting up, initializing the webcam component, and capturing images at regular intervals:
+
+```
+[mbp:~/Source/tmp/io/rhiot/test]$> groovy MyRouteBuilder.groovy
+[         main] MainSupport                    INFO  Apache Camel 2.16.0 starting
+[         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) is starting
+[         main] ManagedManagementStrategy      INFO  JMX is enabled
+[         main] DefaultTypeConverter           INFO  Loaded 182 type converters
+[         main] DefaultRuntimeEndpointRegistry INFO  Runtime endpoint registry is in extended mode gathering usage statistics of all incoming and outgoing endpoints (cache limit: 1000)
+[         main] WebcamEndpoint                 WARN  Driver not supported
+[         main] Webcam                         INFO  WebcamDefaultDriver capture driver will be used
+[            atomic-processor-1] WebcamOpenTask                 INFO  Opening webcam FaceTime HD Camera CC242951XGLF6VVD4
+[         main] DefaultCamelContext            INFO  AllowUseOriginalMessage is enabled. If access to the original message is not needed, then its recommended to turn this option off as it may improve performance.
+[         main] DefaultCamelContext            INFO  StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+[         main] DefaultCamelContext            INFO  Route: route1 started and consuming from: Endpoint[webcam://cam?consumer.delay=1000]
+[         main] DefaultCamelContext            INFO  Total 1 routes, of which 1 is started.
+[         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) started in 1.754 seconds
+[         main] MainSupport                    INFO  Waiting for: 5 SECONDS
+[el-1) thread #0 - webcam://cam] rhiot         INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-2, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:43 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-1, CamelFileName=ID-mbp-g-a-net-50581-1445506480782-IHDR@�O*<�IDATx�ܽg�m�Y�~� DKj��[j����0��X6�c3�60�=06�A ux�^媛sNus�9V�W/����
+   ....................  OMIT ....................
+       �����o�ů~�O~
+       ���...]
+^[[?1;2c[el-1) thread #0 - webcam://cam] rhiot INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-4, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:45 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-3, CamelFileName=ID-mbp-g-a-net-50581-144550�mcL;J�n��ܜ�'�|�=7�J*UI��$����<�}����=kf��t#����{n�����~�k��]+�
+  ....................  OMIT ....................
+                    w�������7صv�HK��z�Y��F¤1�a�i�6͑̀��s�����Z1&���#*�L�%�1s,4
+[el-1) thread #0 - webcam://cam] rhiot         INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-6, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:46 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-5, CamelFileName=ID-mbp-g-a-net-50581-1445506480782-IHDR@�O*<�IDATx�ܽw���yߋ�l�$�$�"�
+
+....................  OMIT ....................
+
+
+[��W�jCe����+��m����n�?�_���<�ƺ���ftXZ�3������{]�l���Z�c�ZG...]
+
+[el-1) thread #0 - webcam://cam] rhiot         INFO  Exchange[Id: ID-mbp-g-a-net-50581-1445506480782-0-8, ExchangePattern: OutOnly, Properties: {CamelCreatedTimestamp=Thu Oct 22 11:34:47 CEST 2015, CamelMessageHistory=[DefaultMessageHistory[routeId=route1, node=to1]], CamelToEndpoint=log://io.rhiot?showAll=true}, Headers: {breadcrumbId=ID-mbp-g-a-net-50581-1445506480782-0-7,
+
+  ....................  OMIT ....................
+
+  CamelFileName=ID-mbp-g-a-net-50581-1445506480782-IHDR@�O*<�IDATx�ܽy��gy%��2], Body�
+[         main] MainSupport                    INFO  Apache Camel 2.16.0 stopping
+[         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) is shutting down
+[         main] DefaultShutdownStrategy        INFO  Starting to graceful shutdown 1 routes (timeout 300 seconds)
+[el-1) thread #1 - ShutdownTask] DefaultShutdownStrategy        INFO  Route: route1 shutdown complete, was consuming from: Endpoint[webcam://cam?consumer.delay=1000]
+[         main] DefaultShutdownStrategy        INFO  Graceful shutdown of 1 routes completed in 0 seconds
+[            atomic-processor-1] WebcamCloseTask                INFO  Closing FaceTime HD Camera CC242951XGLF6VVD4
+[         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) uptime 6.833 seconds
+[         main] DefaultCamelContext            INFO  Apache Camel 2.16.0 (CamelContext: camel-1) is shutdown in 0.070 seconds
+[     Thread-1] MainSupport$HangupInterceptor  INFO  Received hang up - stopping the main instance.
+[mbp:~/Source/tmp/io/rhiot/test]$>
+```
+
+## And the result
+
+After 5s of running, you can find all images into webcam directory. The component automatically creates this directory and saves each captured frame as a separate image file. Here are some examples of the captured images:
+
+<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-1.PNG" width="66%" height="66%" />
+
+<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-3.PNG" width="66%" height="66%" />
+
+<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-5.PNG" width="66%" height="66%" />
+
+<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-7.PNG" width="66%" height="66%" />
+
+## Conclusion
+
+With this small example, we can see the power of camel and the integration with hardware component managed via Rhiot project. Just imagine a camel including both webcam and websocket components. This would allow you to create a real-time video streaming application with just a few lines of code. 
+
+I would like thanks a lot [Taariq Levack](https://twitter.com/levackt) for this so cool component ;-). I'm sure he will provide some new cool stuff like this one soon.
+
+The RHIoT project continues to expand the Apache Camel ecosystem with IoT-focused components, making it easier than ever to integrate hardware devices into your integration flows. This webcam component is a perfect example of how the project is bridging the gap between traditional integration patterns and IoT applications.
+
+### Useful links
+
+ * [RHIoT projet](http://rhiot.io)
+ * [webcam component](https://github.com/rhiot/rhiot/issues/239)
+ * [Taariq Levack's github account](https://github.com/levackt)
+ * [Taariq Levack's twitter account](https://twitter.com/levackt)

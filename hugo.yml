@@ -1,0 +1,189 @@
+baseURL: 'https://g.autric.net'
+languageCode: 'en-us'
+title: 'Greg. I/O'
+
+# author: Greg. AUTRIC
+
+pagination:
+  pagerSize: 100
+
+theme:  ["custom", "hugo-notice", "papermod"]
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# publishDir: ../gautric.github.io
+# #googleAnalytics: UA-60791597-1
+
+minify:
+  disableXML: true
+  minifyOutput: false
+
+params:  
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Greg. I/O
+  description: "Greg. I/O"
+  keywords: [Blog, AWS, GenAI, Cloud, Architecture]
+  # author: Me
+  # author: ["Me", "You"] # multiple authors
+  #images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: light #auto # dark, light
+  disableThemeToggle: true
+
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+# https://adityatelange.github.io/hugo-PaperMod/
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "apple-icon-180x180.png"
+    favicon16x16: "android-icon-36x36.png"
+    favicon32x32: "android-icon-36x36.png"
+    apple_touch_icon: "apple-icon-180x180.png"
+    safari_pinned_tab: "apple-icon-180x180.png"
+
+  label:
+    text: "Greg. I/O"
+    icon: /apple-icon-180x180.png
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: Greg. I/Open
+    subtitle: "AWS Solution Architect"
+    imageUrl: "pleiades_website2.svg"
+   # imageSVGDark: "<svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>"
+   # imageSVGLight: "<svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>"
+    imageWidth: 450
+    imageHeight: 450
+    imageTitle: Les Pleïades
+    buttons:
+      - name: À Propos
+        url: apropos
+      - name: Blog
+        url: blog
+      - name: Others
+        url: other
+      - name: Contact
+        url: contact
+
+# https://demo.getgrav.org/ceevee-skeleton/#
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
+
+  Social:
+    twitter: "gautric_io"
+    github: "gautric"
+    linkedin: "gautric"
+    socialIcons:
+      - name: twitter
+        url: "https://twitter.com/gautric_io"
+      - name: github
+        url: "https://github.com/gautric"
+      - name: linkedin
+        url: "https://www.linkedin.com/in/gautric"
+
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: "XYZabc"
+  #   bing:
+  #     SiteVerificationTag: "XYZabc"
+  #   yandex:
+  #     SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  # editPost:
+  #   URL: "https://github.com/<path_to_repo>/content"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: apropos
+      name: À Propos
+      url: /apropos/
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 20
+    - identifier: other
+      name: Other
+      url: /other/
+      weight: 30
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 40
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
+    #unsafe = true  
+  goldmark:
+    renderer:
+      unsafe: true 
+  
+permalinks:
+  page:
+    posts: /blog/:year/:month/:day/:slug
+    # tutorials: /training/:slug/
+  section:
+    posts: /blog/
+    # tutorials: /training/
+
+outputs:
+  home:
+  - html
+  page:
+  - html
+  #- rss
+  # apropos:
+  # - html
+  #categories:
+  #- html

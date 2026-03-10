@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg version="1.2" baseProfile="tiny" width="105.33mm" height="108.68mm" viewBox="0 0 10533 10868" preserveAspectRatio="xMidYMid" fill-rule="evenodd" clip-path="url(#presentation_clip_path)" stroke-width="28.222" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" xmlns:ooo="http://xml.openoffice.org/svg/export" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+ <defs class="ClipPathGroup">
+  <clipPath id="presentation_clip_path" clipPathUnits="userSpaceOnUse">
+   <rect x="0" y="0" width="10533" height="10868"/>
+  </clipPath>
+ </defs>
+ <defs class="TextShapeIndex">
+  <g ooo:slide="id1" ooo:id-list="id3 id4 id5 id6 id7 id8 id9 id10 id11 id12 id13 id14 id15 id16 id17 id18 id19 id20 id21 id22 id23 id24 id25 id26 id27 id28"/>
+ </defs>
+ <defs class="EmbeddedBulletChars">
+  <g id="bullet-char-template(57356)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 580,1141 L 1163,571 580,0 -4,571 580,1141 Z"/>
+  </g>
+  <g id="bullet-char-template(57354)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 8,1128 L 1137,1128 1137,0 8,0 8,1128 Z"/>
+  </g>
+  <g id="bullet-char-template(10146)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 174,0 L 602,739 174,1481 1456,739 174,0 Z M 1358,739 L 309,1346 659,739 1358,739 Z"/>
+  </g>
+  <g id="bullet-char-template(10132)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 2015,739 L 1276,0 717,0 1260,543 174,543 174,936 1260,936 717,1481 1274,1481 2015,739 Z"/>
+  </g>
+  <g id="bullet-char-template(10007)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 0,-2 C -7,14 -16,27 -25,37 L 356,567 C 262,823 215,952 215,954 215,979 228,992 255,992 264,992 276,990 289,987 310,991 331,999 354,1012 L 381,999 492,748 772,1049 836,1024 860,1049 C 881,1039 901,1025 922,1006 886,937 835,863 770,784 769,783 710,716 594,584 L 774,223 C 774,196 753,168 711,139 L 727,119 C 717,90 699,76 672,76 641,76 570,178 457,381 L 164,-76 C 142,-110 111,-127 72,-127 30,-127 9,-110 8,-76 1,-67 -2,-52 -2,-32 -2,-23 -1,-13 0,-2 Z"/>
+  </g>
+  <g id="bullet-char-template(10004)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 285,-33 C 182,-33 111,30 74,156 52,228 41,333 41,471 41,549 55,616 82,672 116,743 169,778 240,778 293,778 328,747 346,684 L 369,508 C 377,444 397,411 428,410 L 1163,1116 C 1174,1127 1196,1133 1229,1133 1271,1133 1292,1118 1292,1087 L 1292,965 C 1292,929 1282,901 1262,881 L 442,47 C 390,-6 338,-33 285,-33 Z"/>
+  </g>
+  <g id="bullet-char-template(9679)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 813,0 C 632,0 489,54 383,161 276,268 223,411 223,592 223,773 276,916 383,1023 489,1130 632,1184 813,1184 992,1184 1136,1130 1245,1023 1353,916 1407,772 1407,592 1407,412 1353,268 1245,161 1136,54 992,0 813,0 Z"/>
+  </g>
+  <g id="bullet-char-template(8226)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M 346,457 C 273,457 209,483 155,535 101,586 74,649 74,723 74,796 101,859 155,911 209,963 273,989 346,989 419,989 480,963 531,910 582,859 608,796 608,723 608,648 583,586 532,535 482,483 420,457 346,457 Z"/>
+  </g>
+  <g id="bullet-char-template(8211)" transform="scale(0.00048828125,-0.00048828125)">
+   <path d="M -4,459 L 1135,459 1135,606 -4,606 -4,459 Z"/>
+  </g>
+ </defs>
+ <defs class="TextEmbeddedBitmaps"/>
+ <g>
+  <g id="id2" class="Master_Slide">
+   <g id="bg-id2" class="Background"/>
+   <g id="bo-id2" class="BackgroundObjects"/>
+  </g>
+ </g>
+ <g class="SlideGroup">
+  <g>
+   <g id="id1" class="Slide" clip-path="url(#presentation_clip_path)">
+    <g class="Page">
+     <g class="Group">
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id3">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 1627,3076 L 1372,2554 790,2512 1215,2064 1117,1479 1635,1724 2156,1404 2051,2004 2471,2391 1888,2517 1627,3076 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id4">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 2942,1918 L 2651,1698 2302,1838 2426,1468 2208,1169 2576,1160 2790,835 2894,1200 3244,1298 2940,1532 2942,1918 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id5">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 4020,6001 L 3630,5373 2883,5395 3369,4773 3171,4046 3861,4289 4485,3818 4426,4590 5010,5026 4283,5260 4020,6001 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id6">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 3758,8494 L 3610,7971 3088,7836 3547,7493 3552,6938 3983,7249 4509,7041 4316,7575 4636,8002 4086,8022 3758,8494 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id7">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 6796,10292 L 6546,9781 5976,9740 6393,9300 6297,8727 6804,8967 7315,8654 7211,9241 7624,9621 7052,9744 6796,10292 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id8">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 8867,8490 L 8524,8690 8499,9085 8202,8823 7817,8922 7975,8559 7762,8225 8158,8263 8411,7958 8497,8344 8867,8490 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id9">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 8128,6975 L 7706,6702 7238,6928 7373,6408 7045,6019 7551,5971 7815,5505 7993,5995 8485,6096 8089,6446 8128,6975 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id10">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 8568,7302 L 8851,6921 8690,6488 9143,6623 9521,6330 9519,6794 9913,7047 9458,7199 9324,7648 9045,7277 8568,7302 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id11">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 8656,5577 L 8575,5335 8327,5284 8536,5113 8526,4853 8736,4989 8978,4880 8899,5135 9058,5328 8800,5349 8656,5577 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id12">
+        <path fill="rgb(204,204,204)" stroke="none" d="M 9097,5665 L 9161,5350 8932,5138 9255,5082 9404,4791 9540,5071 9861,5104 9622,5333 9671,5644 9387,5505 9097,5665 Z"/>
+       </g>
+      </g>
+     </g>
+     <g class="com.sun.star.drawing.ClosedBezierShape">
+      <g id="id13"/>
+     </g>
+     <g class="com.sun.star.drawing.ClosedBezierShape">
+      <g id="id14">
+       <path fill="rgb(0,0,0)" stroke="none" d="M 28065,39383 C 28816,39740 29136,40638 28780,41389 28423,42140 27525,42460 26774,42104 26023,41747 25703,40849 26059,40098 26416,39347 27314,39027 28065,39383 Z"/>
+      </g>
+     </g>
+     <g class="com.sun.star.drawing.ClosedBezierShape">
+      <g id="id15">
+       <path fill="rgb(0,0,0)" stroke="none" d="M 28065,39383 C 28816,39740 29136,40638 28780,41389 28423,42140 27525,42460 26774,42104 26023,41747 25703,40849 26059,40098 26416,39347 27314,39027 28065,39383 Z"/>
+      </g>
+     </g>
+     <g class="com.sun.star.drawing.OpenBezierShape">
+      <g id="id16"/>
+     </g>
+     <g class="com.sun.star.drawing.OpenBezierShape">
+      <g id="id17"/>
+     </g>
+     <g class="com.sun.star.drawing.ClosedBezierShape">
+      <g id="id18"/>
+     </g>
+     <g class="Group">
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id19">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 1543,2947 L 1288,2425 706,2383 1131,1935 1033,1350 1551,1595 2072,1275 1967,1875 2387,2262 1804,2388 1543,2947 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id20">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 2858,1789 L 2567,1569 2218,1709 2342,1339 2124,1040 2492,1031 2706,706 2810,1071 3160,1169 2856,1403 2858,1789 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id21">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 3936,5872 L 3546,5244 2799,5266 3285,4644 3087,3917 3777,4160 4401,3689 4342,4461 4926,4897 4199,5131 3936,5872 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id22">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 3674,8365 L 3526,7842 3004,7707 3463,7364 3468,6809 3899,7120 4425,6912 4232,7446 4552,7873 4002,7893 3674,8365 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id23">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 6712,10163 L 6462,9652 5892,9611 6309,9171 6213,8598 6720,8838 7231,8525 7127,9112 7540,9492 6968,9615 6712,10163 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id24">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 8783,8361 L 8440,8561 8415,8956 8118,8694 7733,8793 7891,8430 7678,8096 8074,8134 8327,7829 8413,8215 8783,8361 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id25">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 8044,6846 L 7622,6573 7154,6799 7289,6279 6961,5890 7467,5842 7731,5376 7909,5866 8401,5967 8005,6317 8044,6846 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id26">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 8484,7173 L 8767,6792 8606,6359 9059,6494 9437,6201 9435,6665 9829,6918 9374,7070 9240,7519 8961,7148 8484,7173 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id27">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 8572,5448 L 8491,5206 8243,5155 8452,4984 8442,4724 8652,4860 8894,4751 8815,5006 8974,5199 8716,5220 8572,5448 Z"/>
+       </g>
+      </g>
+      <g class="com.sun.star.drawing.PolyPolygonShape">
+       <g id="id28">
+        <path fill="rgb(0,0,0)" stroke="none" d="M 9013,5536 L 9077,5221 8848,5009 9171,4953 9320,4662 9456,4942 9777,4975 9538,5204 9587,5515 9303,5376 9013,5536 Z"/>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
