@@ -54,6 +54,8 @@ preprod.sarfrance.org/
 
 La structure est intentionnellement lisible par n'importe quel contributeur, même sans compétences techniques avancées.
 
+Un avantage notable de cette approche : Hugo repose sur des formats ouverts (Markdown, JSON, HTML, TOML). Le contenu n'est enfermé dans aucun format propriétaire. Si un jour l'association souhaite changer de générateur de sites ou de plateforme, la migration sera simple — les fichiers restent exploitables en l'état. Ce choix s'inscrit dans une logique open source, où la portabilité des données et la transparence du code sont des priorités.
+
 ---
 
 ## Avant / Après
