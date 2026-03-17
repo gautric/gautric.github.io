@@ -140,7 +140,7 @@ Ce choix ouvre des possibilités concrètes :
 
 ### Contribution simplifiée
 
-Un membre du bureau qui souhaite corriger une date ou mettre à jour un texte peut le faire directement depuis l'interface web de GitHub, sans installer quoi que ce soit. Le `README.md` du projet détaille pas à pas cette procédure, accessible à des non-développeurs.
+Un membre du bureau qui souhaite corriger une date ou mettre à jour un texte peut le faire directement depuis l'interface web de GitHub, sans installer quoi que ce soit. Le [CONTRIBUTING.md](https://github.com/gautric/preprod.sarfrance.org/blob/main/CONTRIBUTING.md) du projet détaille pas à pas cette procédure, accessible à des non-développeurs.
 
 ### Historique complet
 
@@ -238,7 +238,7 @@ Mais voici ce que Claude (via Kiro) a concrètement accéléré :
 - **Conversion du contenu WordPress → Markdown** : analyse des exports XML, reformatage propre, correction des caractères spéciaux, normalisation des titres
 - **Génération de l'architecture et des templates Hugo** : à partir d'une description du rendu souhaité, Claude a proposé des layouts fonctionnels que j'ai ensuite affinés
 - **Génération des shortcodes Hugo** : les templates pour la chronologie et l'agenda ont été générés selon mes instructions afin d'obtenir la structure et le rendu souhaités
-- **Rédaction de la documentation contributeur** : le guide de contribution que l'on trouve dans le CONTRIBUTION.md a été co-rédigé avec Claude, en ciblant un public non-technique
+- **Rédaction de la documentation contributeur** : le guide de contribution que l'on trouve dans le [CONTRIBUTING.md](https://github.com/gautric/preprod.sarfrance.org/blob/main/CONTRIBUTING.md) a été co-rédigé avec Claude, en ciblant un public non-technique
 - **Développement des pipelines GitHub Actions** : création des workflows pour build Hugo, création de helpers pour les issues via les templates 
 
 C'est cette combinaison — vision humaine + exécution assistée par IA — qui a rendu le projet viable dans un délai raisonnable.
