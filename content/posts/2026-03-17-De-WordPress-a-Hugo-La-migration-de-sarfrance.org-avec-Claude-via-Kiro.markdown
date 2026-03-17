@@ -54,7 +54,7 @@ preprod.sarfrance.org/
 
 La structure est intentionnellement lisible par n'importe quel contributeur, même sans compétences techniques avancées.
 
-Un avantage notable de cette approche : Hugo repose sur des formats ouverts (Markdown, JSON, HTML, TOML). Le contenu n'est enfermé dans aucun format propriétaire. Si un jour l'association souhaite changer de générateur de sites ou de plateforme, la migration sera simple — les fichiers restent exploitables en l'état. Ce choix s'inscrit dans une logique open source, où la portabilité des données et la transparence du code sont des priorités.
+Un avantage notable de cette approche : Hugo repose sur des formats ouverts (Markdown, YAML, HTML, TOML). Le contenu n'est enfermé dans aucun format propriétaire. Si un jour l'association souhaite changer de générateur de sites ou de plateforme, la migration sera simple — les fichiers restent exploitables en l'état. Ce choix s'inscrit dans une logique open source, où la portabilité des données et la transparence du code sont des priorités.
 
 ---
 
@@ -108,7 +108,7 @@ Le site est compilé en HTML/CSS/JS statique à chaque modification. Il n'y a pl
 ```
 GitHub Repository (source de vérité)
     └─ content/ (Markdown)
-    └─ data/ (JSON structuré)
+    └─ data/ (YAML structuré)
     └─ themes/ (HTML/CSS/JS custom)
     └─ GitHub Actions (CI/CD automatique)
          └─ hugo build
@@ -179,26 +179,19 @@ Hugo répond à ce besoin via ses **shortcodes** et ses **fichiers de données**
 
 ### Exemple : la chronologie historique
 
-SAR France a une vocation historique forte. La [page de chronologie](https://preprod.sarfrance.org/histoire/chronologie/) affiche des événements de la Guerre d'Indépendance américaine sur une frise temporelle. Avec Hugo, les données sont stockées dans un simple fichier JSON :
+SAR France a une vocation historique forte. La [page de chronologie](https://preprod.sarfrance.org/histoire/chronologie/) affiche des événements de la Guerre d'Indépendance américaine sur une frise temporelle. Avec Hugo, les données sont stockées dans un fichier YAML :
 
-```json
-{
-  "periodes": [
-    {
-      "nom": "Les Colonies (1607-1763)",
-      "events": [
-        {
-          "date": "1757-09-06",
-          "annee": 1757,
-          "titre": "Naissance de La Fayette",
-          "description": "Naissance de Marie-Joseph Paul Yves Roch Gilbert du Motier, marquis de La Fayette.",
-          "tags": ["france", "personnalité"],
-          "wikipedia": "https://fr.wikipedia.org/wiki/Gilbert_du_Motier_de_La_Fayette"
-        }
-      ]
-    }
-  ]
-}
+```yaml
+periodes:
+  - nom: "Les Colonies (1607-1763)"
+    events:
+      - date: "1757-09-06"
+        titre: "Naissance de La Fayette"
+        description: "Naissance de Marie-Joseph Paul Yves Roch Gilbert du Motier, marquis de La Fayette."
+        tags:
+          - france
+          - personnalité
+        wikipedia: "https://fr.wikipedia.org/wiki/Gilbert_du_Motier_de_La_Fayette"
 ```
 
 Un template Hugo parcourt ces données et génère automatiquement la frise. Aucune ligne de JavaScript complexe, aucun plugin à maintenir.
@@ -207,24 +200,26 @@ Un template Hugo parcourt ces données et génère automatiquement la frise. Auc
 
 De même, les événements de l'année sont gérés via un fichier `data/` structuré, rendu par un shortcode dédié. Ajouter un événement = ajouter trois lignes dans un fichier texte. La mise en page reste cohérente sans effort.
 
-### L'agenda des événements
+L'[agenda](https://preprod.sarfrance.org/activites/agenda/) couvre les activités de l'association depuis 2018 jusqu'en 2026. Les événements sont typés (conférence, assemblée, commémoration, visite, exposition…) et chaque type dispose de son icône et de sa couleur dans `data/agenda.yaml` :
+```yaml
+types:
+  commémoration:
+    label: "Commémoration"
+    icon: "🎖️"
+    color: "#6b2737"
+  conférence:
+    label: "Conférence"
+    icon: "🎤"
+    color: "#5a6a3a"
+  assemblée:
+    label: "Assemblée"
+    icon: "🏛️"
+    color: "#2c5282"
 
-L'[agenda](https://preprod.sarfrance.org/activites/agenda/) couvre les activités de l'association depuis 2018 jusqu'en 2026. Les événements sont typés (conférence, assemblée, commémoration, visite, exposition…) et chaque type dispose de son icône et de sa couleur dans `data/agenda.json` :
-```json
-{
-  "types": {
-    "commémoration": { "label": "Commémoration", "icon": "🎖️", "color": "#6b2737" },
-    "conférence":    { "label": "Conférence",    "icon": "🎤", "color": "#5a6a3a" },
-    "assemblée":     { "label": "Assemblée",     "icon": "🏛️", "color": "#2c5282" }
-  },
-  "events": [
-    {
-      "date": "2026-05-27",
-      "titre": "Cérémonies du Memorial Day",
-      "type": "commémoration"
-    }
-  ]
-}
+events:
+  - date: "2026-05-27"
+    titre: "Cérémonies du Memorial Day"
+    type: commémoration
 ```
 Et grâce au rebuild quotidien automatique à 6h UTC via GitHub Actions, les événements passés disparaissent automatiquement de l'affichage sans aucune intervention humaine.
 
