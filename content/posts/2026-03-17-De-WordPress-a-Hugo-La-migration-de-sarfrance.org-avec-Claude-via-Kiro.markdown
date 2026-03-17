@@ -244,6 +244,88 @@ Un autre bénéfice concret : les administrateurs de l'association peuvent formu
 
 ---
 
+## Traduction du site : le multilingue par la GenAI
+
+SAR France est par nature une association franco-américaine. Un site uniquement en français ne suffit pas — les membres américains, les correspondants outre-Atlantique et les visiteurs anglophones doivent pouvoir naviguer dans leur langue.
+
+### Restructuration du site pour le multilingue
+
+Hugo gère nativement le multilingue via une organisation par répertoires de langue. Chaque langue dispose de sa propre arborescence sous `content/` :
+
+```
+content/
+├── fr/
+│   ├── histoire/
+│   │   └── _index.md
+│   ├── activites/
+│   │   └── _index.md
+│   └── ...
+├── en/
+│   ├── histoire/
+│   │   └── _index.md
+│   ├── activites/
+│   │   └── _index.md
+│   └── ...
+```
+
+La configuration Hugo a été adaptée pour déclarer les deux langues avec leurs répertoires respectifs, le français comme langue par défaut :
+
+```toml
+defaultContentLanguage = "fr"
+
+[languages]
+  [languages.fr]
+    languageName = "Français"
+    contentDir = "content/fr"
+    weight = 1
+  [languages.en]
+    languageName = "English"
+    contentDir = "content/en"
+    weight = 2
+```
+
+Le thème a été enrichi d'un sélecteur de langue dans la navigation, et les chaînes de caractères de l'interface (menus, boutons, libellés) sont externalisées dans les fichiers `i18n/fr.yaml` et `i18n/en.yaml`. Cette restructuration — renommage de dizaines de fichiers, adaptation des templates, création des fichiers i18n — a été réalisée avec Claude via Kiro en quelques heures.
+
+### Traduction du contenu par Claude
+
+La traduction de l'ensemble des pages du site a été effectuée par Claude. Pas une traduction mot-à-mot, mais une traduction contextualisée : le ton institutionnel est préservé, les noms propres et les références historiques sont adaptés aux conventions anglophones (dates, titres, appellations), et les formulations sont naturelles.
+
+Par exemple, la page sur la chronologie de la Guerre d'Indépendance a été traduite en tenant compte du fait que les lecteurs anglophones connaissent ces événements sous des noms différents (*Battle of Yorktown* plutôt qu'une traduction littérale de "Bataille de Yorktown").
+
+### Un hook Kiro pour la traduction semi-automatique
+
+Pour maintenir la parité linguistique dans le temps, un mécanisme semi-automatique a été mis en place via les **hooks Kiro**. Le principe est simple : lorsqu'un fichier Markdown est créé sous `content/fr/`, un hook déclenche automatiquement une demande de traduction vers l'anglais dans le répertoire `content/en/` correspondant.
+
+```json
+{
+  "enabled": true,
+  "name": "Create English page from new French page",
+  "description": "When a new French content page (content/fr/**/*.md) is created, automatically creates the corresponding English translation under content/en/.",
+  "version": "1",
+  "when": {
+    "type": "fileCreated",
+    "patterns": [
+      "content/fr/**/*.md"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new French content page was just created. Create its English counterpart:\n\n1. Identify the new file path under `content/fr/` and derive the matching English path under `content/en/` (same relative path, just replace `fr` with `en`).\n2. Read the new French file.\n3. Translate the content into English, preserving:\n   - The exact same YAML front matter structure (translate field values like `title`, `description`, `subtitle`, etc.)\n   - The same Markdown structure, shortcodes, and links\n   - Any Hugo-specific syntax (params, shortcodes, front matter keys) must remain unchanged\n   - Only translate the human-readable text, not the keys or technical markup\n4. Create the English file at the derived path.\n5. Do NOT modify the French file.\n6. Do NOT commit — just write the English file."
+  }
+}
+```
+
+Concrètement, le workflow est le suivant :
+
+1. Un contributeur crée ou modifie une page en français sous `content/fr/` dans Kiro
+2. Le hook détecte la modification et demande à Claude de produire la version anglaise
+3. Claude génère la traduction dans le fichier correspondant sous `content/en/`
+4. Le contributeur relit et valide (ou ajuste) la traduction
+
+Ce système est *semi-automatique* par choix : la traduction est générée instantanément, mais un humain garde la main sur la validation finale. C'est un équilibre entre productivité et qualité — l'IA fait le gros du travail, le contributeur s'assure que le résultat est fidèle.
+
+---
+
 ## Et la suite ?
 
 Le dépôt est en pré-production ([preprod.sarfrance.org](https://preprod.sarfrance.org)). Plusieurs chantiers sont encore ouverts :
