@@ -237,6 +237,7 @@ Mais voici ce que Claude (via Kiro) a concrètement accéléré :
 
 - **Conversion du contenu WordPress → Markdown** : analyse des exports XML, reformatage propre, correction des caractères spéciaux, normalisation des titres
 - **Génération de l'architecture et des templates Hugo** : à partir d'une description du rendu souhaité, Claude a proposé des layouts fonctionnels que j'ai ensuite affinés
+- **Génération des shortcodes Hugo** : les templates pour la chronologie et l'agenda ont été générés selon mes instructions afin d'obtenir la structure et le rendu souhaités
 - **Rédaction de la documentation contributeur** : le guide de contribution que l'on trouve dans le CONTRIBUTION.md a été co-rédigé avec Claude, en ciblant un public non-technique
 - **Développement des pipelines GitHub Actions** : création des workflows pour build Hugo, création de helpers pour les issues via les templates 
 
