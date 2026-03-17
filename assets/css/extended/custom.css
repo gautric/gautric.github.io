@@ -221,3 +221,46 @@ fieldset {
 input, textarea { 
     width: 90%;
 }
+
+/* Language filter */
+.lang-filter {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0 24px;
+    flex-wrap: wrap;
+}
+
+.lang-btn {
+    padding: 6px 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background .2s, color .2s;
+}
+
+.lang-btn:hover {
+    background: #eee;
+}
+
+.lang-btn.active {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+body.dark .lang-btn {
+    border-color: #555;
+    color: #ddd;
+}
+
+body.dark .lang-btn:hover {
+    background: #444;
+}
+
+body.dark .lang-btn.active {
+    background: #ddd;
+    color: #222;
+    border-color: #ddd;
+}

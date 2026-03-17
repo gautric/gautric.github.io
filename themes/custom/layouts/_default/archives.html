@@ -28,6 +28,14 @@
   {{- end }}
 </header>
 
+<!-- Language filter -->
+<div class="lang-filter" role="group" aria-label="Filter posts by language">
+  <button class="lang-btn active" data-lang="all">All</button>
+  <button class="lang-btn" data-lang="fr">🇫🇷 FR</button>
+  <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+  <button class="lang-btn" data-lang="ja">🇯🇵 JA</button>
+</div>
+
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 
 {{- if site.Params.ShowAllPagesInArchive }}
@@ -46,7 +54,7 @@
     <div class="archive-posts">
       {{- range .Pages }}
       {{- if eq .Kind "page" }}
-      <div class="archive-entry">
+      <div class="archive-entry" data-tags="{{ delimit .Params.tags "," }}">
         <h3 class="archive-entry-title entry-hint-parent">
           {{- .Title | markdownify }}
           
@@ -72,5 +80,39 @@
 </div>
 {{- end }}
 {{- end }}
+
+<script>
+(function() {
+  var buttons = document.querySelectorAll('.lang-btn');
+  var entries = document.querySelectorAll('.archive-entry');
+
+  buttons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      buttons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var lang = btn.getAttribute('data-lang');
+
+      entries.forEach(function(entry) {
+        var tags = (entry.getAttribute('data-tags') || '').toLowerCase().split(',');
+        if (lang === 'all' || tags.indexOf(lang) !== -1) {
+          entry.style.display = '';
+        } else {
+          entry.style.display = 'none';
+        }
+      });
+
+      // Hide empty year/month sections
+      document.querySelectorAll('.archive-month').forEach(function(month) {
+        var visible = month.querySelectorAll('.archive-entry:not([style*="display: none"])');
+        month.style.display = visible.length ? '' : 'none';
+      });
+      document.querySelectorAll('.archive-year').forEach(function(year) {
+        var visible = year.querySelectorAll('.archive-month:not([style*="display: none"])');
+        year.style.display = visible.length ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 
 {{- end }}{{/* end main */}}
