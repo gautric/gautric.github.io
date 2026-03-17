@@ -1,5 +1,5 @@
 ---
-title: "De WordPress à Hugo — La migration de sarfrance.org avec Kiro & Claude"
+title: "De WordPress à Hugo — La migration de sarfrance.org avec Claude via Kiro"
 date: 2026-03-17
 draft: false
 tags: ["hugo", "aws", "github", "wordpress", "migration", "genAI", "kiro", "claude", "anthropic"]
@@ -19,7 +19,7 @@ C'est ce que permet [Hugo](https://gohugo.io), le générateur de sites statique
 
 La migration d'un site existant vers une nouvelle architecture implique un travail conséquent : extraction du contenu, reformatage des pages, reconstruction de la navigation, recréation du thème, et validation de l'intégrité des données.
 
-Pour ce projet, j'ai utilisé **[Kiro](https://kiro.dev)**, un environnement de développement assisté par IA qui s'appuie sur **Claude d'Anthropic** comme moteur de raisonnement. Cette combinaison s'est avérée efficace :
+Pour ce projet, j'ai utilisé **[Kiro](https://kiro.dev)**, un environnement de développement assisté par IA qui s'appuie sur **[Claude d'Anthropic](https://www.anthropic.com/claude)** comme moteur de raisonnement. Cette combinaison s'est avérée efficace :
 
 - Kiro m'a permis de piloter la migration de façon structurée, en gardant un suivi des tâches directement dans le dépôt (le fichier `TASKS.md` en témoigne)
 - Claude a analysé les pages WordPress existantes, reformaté le contenu en Markdown propre, suggéré l'architecture des dossiers et généré les templates Hugo adaptés au style institutionnel de SAR France
@@ -177,7 +177,7 @@ Hugo répond à ce besoin via ses **shortcodes** et ses **fichiers de données**
 
 ### Exemple : la chronologie historique
 
-SAR France a une vocation historique forte. La page de chronologie affiche des événements de la Guerre d'Indépendance américaine sur une frise temporelle. Avec Hugo, les données sont stockées dans un simple fichier JSON :
+SAR France a une vocation historique forte. La [page de chronologie](https://preprod.sarfrance.org/histoire/chronologie/) affiche des événements de la Guerre d'Indépendance américaine sur une frise temporelle. Avec Hugo, les données sont stockées dans un simple fichier JSON :
 
 ```json
 {
@@ -207,7 +207,7 @@ De même, les événements de l'année sont gérés via un fichier `data/` struc
 
 ### L'agenda des événements
 
-L'agenda couvre les activités de l'association depuis 2018 jusqu'en 2026. Les événements sont typés (conférence, assemblée, commémoration, visite, exposition…) et chaque type dispose de son icône et de sa couleur dans `data/agenda.json` :
+L'[agenda](https://preprod.sarfrance.org/activites/agenda/) couvre les activités de l'association depuis 2018 jusqu'en 2026. Les événements sont typés (conférence, assemblée, commémoration, visite, exposition…) et chaque type dispose de son icône et de sa couleur dans `data/agenda.json` :
 ```json
 {
   "types": {
@@ -246,7 +246,7 @@ C'est cette combinaison — vision humaine + exécution assistée par IA — qui
 
 ## Et la suite ?
 
-Le dépôt est en pré-production (`preprod.sarfrance.org`). Plusieurs chantiers sont encore ouverts :
+Le dépôt est en pré-production ([preprod.sarfrance.org](https://preprod.sarfrance.org)). Plusieurs chantiers sont encore ouverts :
 
 
 - **Formulaire de contact et paiement de cotisation** : intégration d'un endpoint Amazon API Gateway pour les formulaires, sans introduire de serveur applicatif permanent
