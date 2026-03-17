@@ -240,6 +240,8 @@ Mais voici ce que Claude (via Kiro) a concrètement accéléré :
 
 C'est cette combinaison — vision humaine + exécution assistée par IA — qui a rendu le projet viable dans un délai raisonnable.
 
+Un autre bénéfice concret : les administrateurs de l'association peuvent formuler leurs demandes de modification en langage naturel. Il n'est plus nécessaire de convertir manuellement ces retours en code ou de passer par un traitement technique intermédiaire. Claude, via Kiro, interprète directement les remarques et applique les modifications sur le code du site. Cela réduit la friction entre les décideurs et le code, et rend le cycle de mise à jour accessible à des profils non-techniques.
+
 ---
 
 ## Et la suite ?
