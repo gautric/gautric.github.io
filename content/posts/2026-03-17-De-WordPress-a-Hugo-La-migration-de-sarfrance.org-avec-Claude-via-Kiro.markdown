@@ -236,15 +236,43 @@ Mais voici ce que Claude (via Kiro) a concrètement accéléré :
 - **Génération de l'architecture et des templates Hugo** : à partir d'une description du rendu souhaité, Claude a proposé des layouts fonctionnels que j'ai ensuite affinés
 - **Génération des shortcodes Hugo** : les templates pour la chronologie et l'agenda ont été générés selon mes instructions afin d'obtenir la structure et le rendu souhaités
 - **Rédaction de la documentation contributeur** : le guide de contribution que l'on trouve dans le [CONTRIBUTING.md](https://github.com/gautric/preprod.sarfrance.org/blob/main/CONTRIBUTING.md) a été co-rédigé avec Claude, en ciblant un public non-technique
-- **Développement des pipelines GitHub Actions** : création des workflows pour build Hugo, création de helpers pour les issues via les templates 
+- **Développement des pipelines GitHub Actions** : création des workflows pour build Hugo, création de helpers pour les issues via les templates
+- **[Traduction et mise en place du multilingue](#annexe--traduction-du-site--le-multilingue-par-la-genai)** : restructuration du site pour le support fr/en natif de Hugo, traduction contextualisée de l'ensemble des pages par Claude, et mise en place d'un hook Kiro pour la traduction semi-automatique des nouveaux contenus
 
 C'est cette combinaison — vision humaine + exécution assistée par IA — qui a rendu le projet viable dans un délai raisonnable.
 
 Un autre bénéfice concret : les administrateurs de l'association peuvent formuler leurs demandes de modification en langage naturel. Il n'est plus nécessaire de convertir manuellement ces retours en code ou de passer par un traitement technique intermédiaire. Claude, via Kiro, interprète directement les remarques et applique les modifications sur le code du site. Cela réduit la friction entre les décideurs et le code, et rend le cycle de mise à jour accessible à des profils non-techniques.
 
+
 ---
 
-## Traduction du site : le multilingue par la GenAI
+## Et la suite ?
+
+Le dépôt est en pré-production ([preprod.sarfrance.org](https://preprod.sarfrance.org)). Plusieurs chantiers sont encore ouverts :
+
+
+- **Formulaire de contact et paiement de cotisation** : intégration d'un endpoint Amazon API Gateway pour les formulaires, sans introduire de serveur applicatif permanent
+- **Magic link** : partage sécurisé de fichiers via Amazon API Gateway, AWS Lambda, Amazon DynamoDB, Amazon SES et Amazon S3 presigned URLs — sans compte à créer
+- **Enrichissement éditorial** : dictionnaire biographique des patriotes français, galerie photographique des cérémonies
+- **GitHub Pages → Amazon S3** : le site est actuellement en pré-production sur GitHub Pages. La mise en production prévoit une migration vers Amazon S3 et Amazon CloudFront.
+
+Le modèle est en place. L'infrastructure est opérationnelle. La contribution est ouverte.
+
+---
+
+## Conclusion
+
+Cette migration illustre un principe : **la technologie doit servir l'organisation, pas l'inverse**. SAR France n'a pas besoin d'une équipe de développeurs pour maintenir son site — elle a besoin d'un outil simple, fiable et économique, que ses membres peuvent alimenter sans friction.
+
+Hugo sur AWS, avec GitHub comme colonne vertébrale et Claude via Kiro comme accélérateur de migration, répond à ce besoin.
+
+Le code source est ouvert. Les contributions sont bienvenues.
+
+👉 [github.com/gautric/preprod.sarfrance.org](https://github.com/gautric/preprod.sarfrance.org)
+
+---
+
+## Annexe — Traduction du site : le multilingue par la GenAI {#annexe--traduction-du-site--le-multilingue-par-la-genai}
 
 SAR France est par nature une association franco-américaine. Un site uniquement en français ne suffit pas — les membres américains, les correspondants outre-Atlantique et les visiteurs anglophones doivent pouvoir naviguer dans leur langue.
 
@@ -323,29 +351,3 @@ Concrètement, le workflow est le suivant :
 4. Le contributeur relit et valide (ou ajuste) la traduction
 
 Ce système est *semi-automatique* par choix : la traduction est générée instantanément, mais un humain garde la main sur la validation finale. C'est un équilibre entre productivité et qualité — l'IA fait le gros du travail, le contributeur s'assure que le résultat est fidèle.
-
----
-
-## Et la suite ?
-
-Le dépôt est en pré-production ([preprod.sarfrance.org](https://preprod.sarfrance.org)). Plusieurs chantiers sont encore ouverts :
-
-
-- **Formulaire de contact et paiement de cotisation** : intégration d'un endpoint Amazon API Gateway pour les formulaires, sans introduire de serveur applicatif permanent
-- **Magic link** : partage sécurisé de fichiers via Amazon API Gateway, AWS Lambda, Amazon DynamoDB, Amazon SES et Amazon S3 presigned URLs — sans compte à créer
-- **Enrichissement éditorial** : dictionnaire biographique des patriotes français, galerie photographique des cérémonies
-- **GitHub Pages → Amazon S3** : le site est actuellement en pré-production sur GitHub Pages. La mise en production prévoit une migration vers Amazon S3 et Amazon CloudFront.
-
-Le modèle est en place. L'infrastructure est opérationnelle. La contribution est ouverte.
-
----
-
-## Conclusion
-
-Cette migration illustre un principe : **la technologie doit servir l'organisation, pas l'inverse**. SAR France n'a pas besoin d'une équipe de développeurs pour maintenir son site — elle a besoin d'un outil simple, fiable et économique, que ses membres peuvent alimenter sans friction.
-
-Hugo sur AWS, avec GitHub comme colonne vertébrale et Claude via Kiro comme accélérateur de migration, répond à ce besoin.
-
-Le code source est ouvert. Les contributions sont bienvenues.
-
-👉 [github.com/gautric/preprod.sarfrance.org](https://github.com/gautric/preprod.sarfrance.org)
