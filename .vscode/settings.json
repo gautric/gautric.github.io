@@ -1,0 +1,6 @@
+{
+    "kiroAgent.trustedCommands": [
+        "pgrep *",
+        "open -a Firefox *"
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Hugo Dev Preview",
+  "description": "When a content or layout file is modified, starts Hugo server locally if not already running, then opens Firefox on the corresponding page. Detects the page URL from the file path using Hugo permalink conventions.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "content/**/*.md",
+      "content/**/*.markdown",
+      "layouts/**/*.html",
+      "assets/**/*.css"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A content or layout file was just modified. Do the following:\n\n1. Check if Hugo dev server is already running by executing: pgrep -f \"hugo server\" \n2. If Hugo is NOT running, start it as a background process with: hugo server -D --buildFuture --baseURL http://localhost:1313\n3. Wait a couple seconds for the server to be ready if you just started it.\n4. Determine the browser URL with correct accented characters for the modified file:\n   - For content/posts/*.markdown files: extract the slug from the filename (remove date prefix and extension), and build the URL as http://localhost:1313/blog/YYYY/MM/DD/slug/ using the date from the filename\n   - For content/*.md files (like apropos.md, contact.md): URL is http://localhost:1313/filename-without-extension/\n   - For layout or asset files: just open http://localhost:1313/\n5. Open Firefox on that URL with: open -a Firefox URL"
+  }
+}
