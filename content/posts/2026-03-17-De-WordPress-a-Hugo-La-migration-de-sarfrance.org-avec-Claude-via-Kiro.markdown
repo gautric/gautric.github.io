@@ -237,6 +237,7 @@ Mais voici ce que Claude (via Kiro) a concrètement accéléré :
 - **Génération des shortcodes Hugo** : les templates pour la chronologie et l'agenda ont été générés selon mes instructions afin d'obtenir la structure et le rendu souhaités
 - **Rédaction de la documentation contributeur** : le guide de contribution que l'on trouve dans le [CONTRIBUTING.md](https://github.com/gautric/preprod.sarfrance.org/blob/main/CONTRIBUTING.md) a été co-rédigé avec Claude, en ciblant un public non-technique
 - **Développement des pipelines GitHub Actions** : création des workflows pour build Hugo, création de helpers pour les issues via les templates
+- **Création du dictionnaire de notices biographiques** : génération des données structurées et du layout Hugo pour un dictionnaire de 150 patriotes de la Guerre d'Indépendance, avec filtrage par catégories
 - **[Traduction et mise en place du multilingue](#annexe--traduction-du-site--le-multilingue-par-la-genai)** : restructuration du site pour le support fr/en natif de Hugo, traduction contextualisée de l'ensemble des pages par Claude, et mise en place d'un hook Kiro pour la traduction semi-automatique des nouveaux contenus
 
 C'est cette combinaison — vision humaine + exécution assistée par IA — qui a rendu le projet viable dans un délai raisonnable.
