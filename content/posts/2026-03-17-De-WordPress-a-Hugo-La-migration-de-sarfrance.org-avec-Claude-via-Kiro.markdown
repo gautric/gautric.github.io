@@ -223,6 +223,33 @@ events:
 ```
 Et grâce au rebuild quotidien automatique à 6h UTC via GitHub Actions, les événements passés disparaissent automatiquement de l'affichage sans aucune intervention humaine.
 
+### Exemple : les Hauts Lieux de la mémoire franco-américaine
+
+SAR France recense les lieux emblématiques liés à l'histoire franco-américaine — monuments, champs de bataille, plaques commémoratives, demeures historiques. La [page des Hauts Lieux](https://preprod.sarfrance.org/histoire/hauts-lieux/) présente ces sites avec leur localisation, leur description et leur contexte historique.
+
+Le contenu de cette section a été **généré par IA** : Claude a produit les fiches descriptives de chaque lieu à partir de sources historiques, en respectant le ton institutionnel du site et les conventions de nommage franco-américaines. Cela a permis de constituer rapidement un corpus riche et cohérent, qui aurait demandé un travail de recherche et de rédaction considérable en mode manuel.
+
+Comme pour la chronologie et l'agenda, cette page s'appuie sur la **fonctionnalité `data/` de Hugo** pour séparer clairement les données de la présentation. Les informations sur chaque lieu sont stockées dans un fichier YAML structuré (`data/hauts_lieux.yaml`), tandis que le rendu visuel est géré par un template Hugo dédié :
+
+```yaml
+# data/hauts_lieux.yaml
+lieux:
+  - nom: "Château de Versailles"
+    ville: "Versailles"
+    departement: "Yvelines"
+    description: "Lieu de signature du traité de 1783 reconnaissant l'indépendance des États-Unis."
+    periode: "Guerre d'Indépendance"
+    tags:
+      - diplomatie
+      - traité
+    coordonnees:
+      lat: 48.8049
+      lon: 2.1204
+```
+
+Le template Hugo parcourt `site.Data.hauts_lieux.lieux` et génère les cartes de chaque lieu avec un rendu homogène. Cette séparation vue/données est un pattern central du site : les contributeurs modifient uniquement le YAML, sans toucher au HTML ni au CSS. L'ajout d'un nouveau lieu se résume à quelques lignes dans le fichier de données.
+
+Ce découplage illustre bien la philosophie retenue : **les données structurées dans `data/`, la logique d'affichage dans les templates, et la GenAI comme accélérateur de production de contenu**.
 
 ---
 
@@ -238,6 +265,7 @@ Mais voici ce que Claude (via Kiro) a concrètement accéléré :
 - **Rédaction de la documentation contributeur** : le guide de contribution que l'on trouve dans le [CONTRIBUTING.md](https://github.com/gautric/preprod.sarfrance.org/blob/main/CONTRIBUTING.md) a été co-rédigé avec Claude, en ciblant un public non-technique
 - **Développement des pipelines GitHub Actions** : création des workflows pour build Hugo, création de helpers pour les issues via les templates
 - **Création du dictionnaire de notices biographiques** : génération des données structurées et du layout Hugo pour un dictionnaire de 150 patriotes de la Guerre d'Indépendance, avec filtrage par catégories
+- **Génération des Hauts Lieux de la mémoire franco-américaine** : production par GenAI des fiches descriptives des lieux emblématiques, stockées dans `data/hauts_lieux.yaml` et rendues via un template Hugo dédié — séparation vue/données native
 - **[Traduction et mise en place du multilingue](#annexe--traduction-du-site--le-multilingue-par-la-genai)** : restructuration du site pour le support fr/en natif de Hugo, traduction contextualisée de l'ensemble des pages par Claude, et mise en place d'un hook Kiro pour la traduction semi-automatique des nouveaux contenus
 
 C'est cette combinaison — vision humaine + exécution assistée par IA — qui a rendu le projet viable dans un délai raisonnable.
