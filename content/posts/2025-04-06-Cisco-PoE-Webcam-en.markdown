@@ -1,7 +1,7 @@
 ---
 title:  "Activate & Deactivate PoE Camera via Cisco Router"
 date:   2025-04-06 09:00:00
-#categories: ["blog"]
+categories: ["blog"]
 tags: ["en","Cisco","PoE","WebCam"]
 ---
 

@@ -1,10 +1,10 @@
 ---
-title: Thank You!
+title: Merci !
 layout: single
 ---
 
-Thank you for reaching out! Your message has been received.
+Merci pour votre message ! Il a bien été reçu.
 
-I will get back to you as soon as possible.
+Je vous répondrai dans les meilleurs délais.
 
-[← Back to Home](/)
+[← Retour à l'accueil](/)

@@ -1,20 +1,4 @@
-/* Custom styles added to demo */
-
-/* .twitter-tweet {
-    margin: auto;
-}
-
-iframe {
-    border-radius: var(--radius) !important;
-}
-
-.home-info ul {
-    padding-inline-start: 20px;
-}
-
-.entry-cover img {
-    border: 1px solid var(--border);
-} */
+/* Custom styles for Greg. I/O */
 
 .profile img {
     border-radius: 0%;
@@ -53,28 +37,27 @@ h1 {
     line-height: 1.33;
 }
 
-path {
+.profile-mode svg path {
     fill: black;
 }
 
-/* @media (prefers-color-scheme: dark) {
-    
-} 
-
-
-*/
-
 .button {
-    background: 0;
-    border-radius: 0px ;
-    margin: 0px;
-    padding: 0px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 4px;
+    padding: 8px 16px;
     text-shadow: 2px 2px 2px #aaa;
-    transition: transform .1s;
+    transition: transform .1s, background .2s;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--code-bg);
 }
 
 @media (prefers-color-scheme: dark) {
-    path { fill: white; }    
+    .profile-mode svg path { fill: white; }
 }
 
 
@@ -202,10 +185,6 @@ textarea {
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px #999;
-}
-
-label {
-
 }
 
 fieldset {

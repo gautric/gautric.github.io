@@ -1,5 +1,5 @@
 ---
-title: Others
+title: Other Activities
 layout: single
 ShowToc: false
 ---

@@ -1,5 +1,5 @@
 baseURL: 'https://g.autric.net'
-languageCode: 'en-us'
+languageCode: 'fr'
 title: 'Greg. I/O'
 
 # author: Greg. AUTRIC
@@ -83,7 +83,7 @@ params:
         url: apropos
       - name: Blog
         url: blog
-      - name: Others
+      - name: Other Activities
         url: other
       - name: Contact
         url: contact
@@ -147,7 +147,7 @@ menu:
       url: /blog/
       weight: 20
     - identifier: other
-      name: Other
+      name: Other Activities
       url: /other/
       weight: 30
     - identifier: contact

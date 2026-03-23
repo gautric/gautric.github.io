@@ -4,6 +4,7 @@ css: blog
 title:  "Keycloak, les clefs Yubico et le standard Webauthn"
 date:   2020-10-26 15:00:00
 tags: ["fr" ,"Keycloak", "Yubico" ,"2fa", "webauthn"]
+categories: ["blog"]
 ##url: /blog/2020/10/26/Keycloak-Yubico-WebAuthn.html
 ---
 
