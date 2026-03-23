@@ -9,9 +9,9 @@ tags: ["fr", "UNESCO", "challenge", "miscellaneous","voyage"]
 ---
 
 Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel.
-Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu'à nos jours. Cela m'a beaucoup impressionné car étonnamment il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés.
+Celui-ci démarre du Néolithique (-5000 -4000 avant JC) pour aller jusqu'à nos jours. Cela m'a beaucoup impressionné car étonnamment il y a beaucoup de sites Néolithique relativement bien conservés et surtout bien valorisés. Malte est un véritable musée à ciel ouvert, où chaque pierre semble raconter une histoire millénaire.
 
-L'un des sites les plus étendus sur Malte est le site "Temples mégalithiques de Malte" qui est réparti sur les deux grandes îles de l'archipel maltais (Malte et Gozo). Ces temples constituent l'un des ensembles de monuments préhistoriques les plus anciens au monde. Auparavant, seul le site de Gozo était inscrit au patrimoine mondial de l'UNESCO.
+L'un des sites les plus étendus sur Malte est le site "Temples mégalithiques de Malte" qui est réparti sur les deux grandes îles de l'archipel maltais (Malte et Gozo). Ces temples constituent l'un des ensembles de monuments préhistoriques les plus anciens au monde, antérieurs même aux pyramides d'Égypte et à Stonehenge. Auparavant, seul le site de Gozo était inscrit au patrimoine mondial de l'UNESCO.
 
 Ces temples mégalithiques sont remarquables par leur architecture sophistiquée et leur importance historique, témoignant d'une civilisation avancée qui a prospéré sur ces îles il y a plus de 5000 ans.
 

@@ -8,6 +8,10 @@ tags: ["en","MacOS", "SSH", "tunnel", "iCloud", "El-Capitan"]
 #url: /blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html
 ---
 
+{{< notice warning >}}
+**Note (2024)** : Le service "Back to My Mac" d'Apple a été supprimé à partir de macOS Mojave (2018). Cette méthode de tunnel SSH via iCloud n'est plus disponible sur les versions récentes de macOS.
+{{< /notice >}}
+
 After my wedding and a honeymoon in Sicily, I am back home to blog about some tech topics.
 
 Yesterday, I updated my favorite laptop - a MacbookPro with Japanese keyboard (Retina, 13-inch, Mid 2014) - with the new MacOS X 10.11 El Capitan version. One of the reasons I love MacOS is that it includes bash, ssh, and many other powerful Linux/Unix commands right out of the box. 

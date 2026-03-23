@@ -7,6 +7,10 @@ tags: ["fr","MQTT", "node-red", "flow", "api", "Paris", "Autolib"]
 ##url: /blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html
 ---
 
+{{< notice warning >}}
+**Note (2024)** : Le service Autolib a été arrêté en juillet 2018. Cet article reste pertinent pour l'approche technique (Node-Red, MQTT, HomeAssistant) mais l'API de Paris utilisée ici n'est plus disponible.
+{{< /notice >}}
+
 Après un petit temps de silence, pour des raisons personnelles et notamment l'arrivée d'un petit Thomas, voici un nouveau post. Étant un utilisateur occasionnel d'[Autolib](<https://fr.wikipedia.org/wiki/Autolib%27_(Paris)>), j'ai besoin d'avoir en flux continu l'état des stations à côté de chez moi (nombre de voitures disponibles, nombre de places libres). Autour de mon domicile, j'ai plusieurs stations Autolib et je dois consulter régulièrement l'application iPhone en fonction de mes besoins. 
 
 Afin de me simplifier la vie, j'ai installé et configuré chez moi la solution [HomeAssistant](https://www.home-assistant.io), qui est une plateforme de domotique open source très populaire. J'utilisais pour cela l'[API de Paris](https://opendata.paris.fr/page/home/) en mode [REST](https://fr.wikipedia.org/wiki/REST)/[HTTP](https://en.wikipedia.org/wiki/HTTP) pour récupérer les informations des stations Autolib.

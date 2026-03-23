@@ -19,7 +19,7 @@ Ensuite, il est nécessaire de connaître sur quel port physique la caméra est 
 
 ## Activation
 
-Après avoir établi la connexion SSH avec le périphérique, vous allez pouvoir utiliser les commandes suivantes pour effectuer différentes opérations :
+Après avoir établi la connexion SSH avec le périphérique, vous allez pouvoir utiliser les commandes suivantes pour activer l'alimentation PoE de la caméra :
 
 ```cisco
 cisco-sg250-10p# config
@@ -31,18 +31,22 @@ cisco-sg250-10p(config)# exit
 cisco-sg250-10p# exit
 ```
 
-1.  Accéder au mode configuration.
-1.  Désactiver l'écho de logging.
-1.  Sélectionner l'interface appropriée.
-1.  Activer le mode Power over Ethernet (PoE).
-1.  Quitter le mode interface.
-1.  Quitter le mode configuration.
-1.  Terminer la session SSH (Secure Shell).
+Voici le détail de chaque commande :
+
+1.  `config` — Accéder au mode configuration pour modifier les paramètres du routeur.
+1.  `no logging console` — Désactiver l'écho de logging pour garder la sortie lisible.
+1.  `int gi 2` — Sélectionner l'interface appropriée (interface gigabit 2 dans notre cas).
+1.  `power inline auto` — Activer le mode Power over Ethernet (PoE), qui détecte et alimente automatiquement le périphérique connecté.
+1.  `exit` — Quitter le mode interface.
+1.  `exit` — Quitter le mode configuration.
+1.  `exit` — Terminer la session SSH.
+
+Après exécution de ces commandes, le routeur commence à alimenter la caméra, qui devrait démarrer en moins d'une minute.
 
 
 ## Désactivation
 
-Dans le cas d'une désactivation, on utilisera simplement les commandes suivantes :
+Dans le cas d'une désactivation, le processus est similaire mais avec un paramètre d'alimentation différent :
 
 ```cisco
 cisco-sg250-10p# config
@@ -54,23 +58,21 @@ cisco-sg250-10p(config)# exit
 cisco-sg250-10p# exit
 ```
 
-1.  Accéder au mode configuration.
-1.  Désactiver l'écho de logging.
-1.  Sélectionner l'interface appropriée.
-1.  Désactiver le mode Power over Ethernet (PoE).
-1.  Quitter le mode interface.
-1.  Quitter le mode configuration.
-1.  Terminer la session SSH (Secure Shell).
+La différence clé se situe à l'étape 4, où l'on utilise `power inline never` pour couper complètement l'alimentation du périphérique connecté. Cela éteint effectivement la caméra sans avoir à la débrancher physiquement.
 
 {{< notice note >}}
 Dans le cas d'une caméra sur PoE et active par intermittence, il peut être utile de fixer l'adresse IP afin d'éviter qu'elle ne soit utilisée par un autre matériel. Vous pouvez configurer une réservation DHCP dans votre routeur en associant l'adresse MAC de la caméra à une adresse IP spécifique.
 {{< /notice >}}
 
+### Possibilités d'automatisation
+
+Vous pouvez aller plus loin en créant des scripts shell qui exécutent ces commandes SSH automatiquement. Cela permet de planifier l'activation/désactivation de la caméra en fonction de l'heure de la journée ou de la déclencher en fonction d'autres événements. Par exemple, vous pourriez activer la caméra uniquement pendant la nuit ou lorsque vous êtes absent de votre domicile.
+
 ## Conclusion
 
 J'espère que cet article vous a permis de comprendre comment gérer tout équipement PoE déployé sur votre routeur Cisco. Cela peut être utile si l'équipement n'a pas besoin d'être activé en permanence, comme c'est le cas pour une caméra de vidéosurveillance. Cette méthode vous permet non seulement d'économiser de l'énergie, mais aussi d'améliorer la sécurité en désactivant les périphériques lorsqu'ils ne sont pas nécessaires.
 
-### URL
+### Liens
 
 * [Cisco sg250 PoE](https://www.cisco.com/c/dam/en/us/products/collateral/switches/250-series-smart-switches/datasheet-c78-737061-french.pdf)
 * [Documentation Cisco sur la configuration PoE](https://www.cisco.com/c/en/us/td/docs/switches/lan/csbms/350x/admin_guide/b_350x_admin_guide/b_350x_admin_guide_chapter_01101.html)

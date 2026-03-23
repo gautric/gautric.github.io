@@ -30,7 +30,7 @@ Le site "Maritime Greenwich" a été inscrit au patrimoine mondial de l'UNESCO e
 
 ## Les photos
 
-Voici les photos prises lors de ma visite à ce site emblématique :
+Se tenir à cheval sur la ligne du Méridien, un pied dans chaque hémisphère, est un moment simple mais marquant. Voici quelques photos prises lors de cette visite :
 
 ### Le sceau officiel du Méridien de Greenwich
 La plaque commémorative indiquant le passage du Méridien Prime (0° de longitude).
