@@ -99,7 +99,7 @@ This sample demonstrates a Java implementation of the `i2cdetect` utility using 
 
 There are still some aspects of the Device IO exception management that could be improved to make the code more robust. In a production environment, you would want to add more error handling and possibly a more user-friendly interface.
 
-Please feel free to send me your feedback - see [Apropos](/apropos/).
+Please feel free to send me your feedback — see [Apropos](/apropos/).
 
 ### Useful links
 

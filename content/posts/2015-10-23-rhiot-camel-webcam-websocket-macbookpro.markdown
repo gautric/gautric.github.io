@@ -115,7 +115,7 @@ I propose to you four possibilities for the demo:
 
 ## Conclusion
 
-As you can see Rhiot project and contributors are awesome, the IoT movement provides lot of interesting ideas we can implement really easily almost out-of-the box. On more time, I would like thanks a lot [Taariq Levack](https://twitter.com/levackt) for this so cool component ;-). Next step is to implement this demo into a RaspberryPi, which would allow for remote webcam monitoring and streaming from an embedded device.
+As you can see Rhiot project and contributors are doing great work, the IoT movement provides lot of interesting ideas we can implement really easily almost out-of-the box. Once more, I would like to thank [Taariq Levack](https://twitter.com/levackt) for this great component. Next step is to implement this demo into a RaspberryPi, which would allow for remote webcam monitoring and streaming from an embedded device.
 
 Stay tuned for more IoT experiments and implementations!!!
 

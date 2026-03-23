@@ -277,7 +277,7 @@ Let's continue to develop and contribute to [Kura](http://www.eclipse.org/kura/)
 
 Stay tuned for more articles about *I2C components* and their integration with these frameworks!
 
-Please feel free to send me your feedback - see [Apropos](/apropos/).
+Please feel free to send me your feedback — see [Apropos](/apropos/).
 
 ### Useful links
 

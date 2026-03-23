@@ -8,7 +8,7 @@ tags: ["en","MacOS", "SSH", "tunnel", "iCloud", "El-Capitan"]
 #url: /blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html
 ---
 
-After my wedding and a honey moon in Sicilia, I am back home to blog about some cool tech stuff.
+After my wedding and a honeymoon in Sicily, I am back home to blog about some tech topics.
 
 Yesterday, I updated my favorite laptop - a MacbookPro with Japanese keyboard (Retina, 13-inch, Mid 2014) - with the new MacOS X 10.11 El Capitan version. One of the reasons I love MacOS is that it includes bash, ssh, and many other powerful Linux/Unix commands right out of the box. 
 
@@ -100,7 +100,7 @@ Connecting through the iCloud service is quite straightforward once you know the
 
 This is a relatively new service I've set up, so I don't have extensive feedback yet, but it's been working reliably for my needs. The connection is encrypted and secure, making it a convenient way to access your home Mac from anywhere with an internet connection.
 
-## Last tip (c'est cadeau)
+## Bonus tip
 
 To simplify your SSH connections, you can use the SSH config file (*.ssh/config*) to log on to your MacMini server.
 Just edit it with your preferred text editor (atom, vim, nano, etc.):

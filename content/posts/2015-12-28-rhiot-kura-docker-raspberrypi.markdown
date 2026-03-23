@@ -8,7 +8,7 @@ tags: ["en", "Rhiot", "Kura", "Docker", "RaspberryPi"]
 #url: /blog/2015/12/28/rhiot-kura-docker-raspberrypi.html
 ---
 
-During this cool Christmas day, Santa Claus brings us lot of presents (I hope for you too), I received 2 [RaspberryPi Zero](https://www.raspberrypi.org/blog/raspberry-pi-zero/), Thx you brother ;-). I will show you a cool stuff after this special day. We gonna test how to use [Rhiot project](http://rhiot.io) into [Kura Eclipse Platform](https://eclipse.org/kura/) running inside [Docker](https://docker.com) container deployed into a real [RaspberryPi Zero](https://www.raspberrypi.org/blog/raspberry-pi-zero/) device (in this order). If you don't have yet a RaspberryPi (B+, 2 or zero) device you can use [my previous post](/blog/2015/12/23/kura-OSGi-docker-debian.html).
+During this Christmas day, Santa Claus brings us lot of presents (I hope for you too), I received 2 [RaspberryPi Zero](https://www.raspberrypi.org/blog/raspberry-pi-zero/) — thanks brother! I will show you something interesting after this special day. We gonna test how to use [Rhiot project](http://rhiot.io) into [Kura Eclipse Platform](https://eclipse.org/kura/) running inside [Docker](https://docker.com) container deployed into a real [RaspberryPi Zero](https://www.raspberrypi.org/blog/raspberry-pi-zero/) device (in this order). If you don't have yet a RaspberryPi (B+, 2 or zero) device you can use [my previous post](/blog/2015/12/23/kura-OSGi-docker-debian.html).
 
 In this post we will see how to integrate multiple IoT technologies in a layered approach, combining the power of Rhiot's IoT capabilities with Kura's OSGi-based platform, all containerized with Docker and running on the compact RaspberryPi hardware.
 
@@ -204,7 +204,7 @@ Even if we are running Kura Platform into Docker env, we use extra Docker parame
 Now, you can use **Rhiot Project** over **Kura OSGi Platform** into **Docker** environment as you want, you can call low level api directly. Both development and deployment will be accelerated by using this kind of tech/idea.
 [Docker](https://docker.com/) project proves one more time its flexibility and robustness applied into IoT universe. I think [Kura platform](http://eclipse.github.io/kura/) could use it for its own development and strategy. [Rhiot project](http://rhiot.io)'s team is already convinced about it ;-)
 
-Please feel free to send me your feedback below or via [Apropos](/apropos/) or via [Contact form](/contact/).
+Please feel free to send me your feedback below, via the [Apropos](/apropos/) page, or through the [Contact form](/contact/).
 
 ### Useful links
 

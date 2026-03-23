@@ -94,7 +94,7 @@ osgi>
 
 <img src="/img/kura-camel-rhiot-7.png" style="max-width:100%;" />
 
-*Cool everything looks good to run our example!*
+*Great, everything looks good to run our example!*
 
 ## Test and run Kura Rhiot quickstart in emulator
 
@@ -313,7 +313,7 @@ I encourage you to develop and contribute more to the [Kura](http://www.eclipse.
 
 Stay tuned for more updates and tutorials!
 
-Please feel free to send me your feedback - see [Apropos](/apropos/).
+Please feel free to send me your feedback — see [Apropos](/apropos/).
 
 
 ### Useful links

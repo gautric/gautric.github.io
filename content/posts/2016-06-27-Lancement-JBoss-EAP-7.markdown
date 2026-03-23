@@ -4,7 +4,7 @@ css: blog
 title:  "Lancement de JBoss EAP 7"
 date:   2016-06-27 14:00:00
 categories: ["blog"]
-tags: ["en", "JBoss", "redhat", "EAP7"]
+tags: ["fr", "JBoss", "redhat", "EAP7"]
 #url: /blog/2016/06/27/Lancement-JBoss-EAP-7.html
 ---
 

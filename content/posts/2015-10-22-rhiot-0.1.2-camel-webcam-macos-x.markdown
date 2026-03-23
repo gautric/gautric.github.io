@@ -10,7 +10,7 @@ tags: ["en", "rhiot", "MacOS X", "camel", "webcam", "groovy"]
 
 My tech leader on [RHIoT project](http://rhiot.io) (ex-camellabs) [Henryk](http://henryk-konsek.blogspot.fr/2015/10/rhiot-012-is-out.html) had just release the last version of RHIoT project : 0.1.2.
 Lot of new stuffs are included in this new release, more details available [here](https://github.com/rhiot/rhiot/blob/master/docs/release-notes.md#012--2015-10-22).
-I found in list a cool stuff to test. We gonna check if our new commiter [@levackt](https://github.com/levackt) from ZA worked well ;-)
+I found in list a cool stuff to test. We gonna check if our new committer [@levackt](https://github.com/levackt) from ZA worked well.
 
 > Webcam camel component on Mac OSX with Groovy language
 
@@ -106,7 +106,7 @@ After 5s of running, you can find all images into webcam directory. The componen
 
 With this small example, we can see the power of camel and the integration with hardware component managed via Rhiot project. Just imagine a camel including both webcam and websocket components. This would allow you to create a real-time video streaming application with just a few lines of code. 
 
-I would like thanks a lot [Taariq Levack](https://twitter.com/levackt) for this so cool component ;-). I'm sure he will provide some new cool stuff like this one soon.
+I would like to thank [Taariq Levack](https://twitter.com/levackt) for this great component. I'm sure he will provide some new interesting features like this one soon.
 
 The RHIoT project continues to expand the Apache Camel ecosystem with IoT-focused components, making it easier than ever to integrate hardware devices into your integration flows. This webcam component is a perfect example of how the project is bridging the gap between traditional integration patterns and IoT applications.
 
