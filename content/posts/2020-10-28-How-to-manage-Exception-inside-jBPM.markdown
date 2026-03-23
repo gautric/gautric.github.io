@@ -4,7 +4,7 @@ css: blog
 title:  "How to manage Exception inside a jBPM WorkItemHandler custom component"
 date:   2020-10-28 15:00:00
 categories: ["blog"]
-tags: ["fr" ,"jBPM", "WorkItemHandler", "Exception"]
+tags: ["en" ,"jBPM", "WorkItemHandler", "Exception"]
 ##url: /blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html
 ---
 
@@ -149,7 +149,7 @@ It means that internally jBPM engine handles Error as specific signal. The signa
 
 Managing Java Exception with jBPM is simple and intuitive. Of course, you can deal with the whole Java Exception API to have a very flexible, scalable mechanism. This approach allows you to create robust error handling strategies in your business processes, ensuring that exceptions are properly caught and managed within the BPMN workflow.
 
-Feel free to test my sample, I let all links below, feedbacks will be also appreciate.
+Feel free to test my sample, I let all links below, feedback will also be appreciated.
 
 ### Links
 

@@ -8,7 +8,7 @@ tags: ["fr","DMN","standard", "KYC"]
 ##url: /blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html
 ---
 
-Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l'ensemble des éditeurs Opensource ou Closesource fournisse une implémentation de ce standard.
+Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l'ensemble des éditeurs Opensource ou Closed Source fournissent une implémentation de ce standard.
 Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et exécuter des règles métier.
 
 > Le standard DMN, un KYC en exemple
@@ -17,7 +17,7 @@ Nous allons voir avec un exemple rapide comment utiliser DMN pour modéliser et 
 
 DMN est une norme de l'[OMG](https://www.omg.org/) (Object Management Group). Cette norme a pour objectif de standardiser la modélisation et le référentiel des règles de décision dans les applications ayant des besoins de scoring, d'évaluation et/ou d'aide à la décision. Elle permet de créer un pont entre les équipes métier et techniques en offrant un langage commun.
 
-La norme se propose de faciliter le développement des règles avec des patterns de règles bien connues, comme par exemple les tables de décision. Elle propose un langage de programmation standardisé appelé FEEL *Friendly Enough Expression Language*. Ce langage se veut très proche des macros Excel, facilitant l'appropriation du DMN par des équipes métiers qui sont déjà familières avec les formules de tableur.
+La norme se propose de faciliter le développement des règles avec des patterns de règles bien connus, comme par exemple les tables de décision. Elle propose un langage de programmation standardisé appelé FEEL *Friendly Enough Expression Language*. Ce langage se veut très proche des macros Excel, facilitant l'appropriation du DMN par des équipes métiers qui sont déjà familières avec les formules de tableur.
 
 DMN est aussi une norme d'éléments graphiques. Chaque élément graphique correspond à un pattern qui possède des entrées, un traitement et une sortie. Les éléments graphiques sont reliés entre eux dans un *arbre* de dépendance d'exécution des règles. Au fur et à mesure de l'exécution des règles on opère une réduction du nombre d'éléments pour arriver au dernier élément qui contiendra la décision finale.
 

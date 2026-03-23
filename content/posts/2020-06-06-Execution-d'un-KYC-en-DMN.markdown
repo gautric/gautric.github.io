@@ -1,21 +1,21 @@
 ---
 layout: post
 css: blog
-title:  "Éxecution d'un moteur de KYC en DMN avec Kogito"
+title:  "Exécution d'un moteur de KYC en DMN avec Kogito"
 date:   2020-06-06 15:00:00
 categories: ["blog"]
 tags: ["fr","DMN","Kogito", "KYC"]
 ##url: /blog/2020/06/06/Execution-d'un-KYC-en-DMN.html
 ---
 
-Dans le précedent [post sur ce blog](/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html) nous avons vu rapidement comment créer sa définition et modelisation des règle d'un KYC basé sur le standard [DMN](https://fr.wikipedia.org/wiki/Decision_Model_and_Notation). Nous allons voir comment faire tourner cet exemple et éxecuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d'une modélisation théorique à une implémentation concrète et fonctionnelle.
+Dans le précédent [post sur ce blog](/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html) nous avons vu rapidement comment créer sa définition et modélisation des règles d'un KYC basé sur le standard [DMN](https://fr.wikipedia.org/wiki/Decision_Model_and_Notation). Nous allons voir comment faire tourner cet exemple et exécuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d'une modélisation théorique à une implémentation concrète et fonctionnelle.
 
-> Éxecution d'un moteur KYC en DMN avec Kogito
+> Exécution d'un moteur KYC en DMN avec Kogito
 
 # Introduction Kogito
 
 Faisons un focus rapide sur [Kogito](https://kogito.kie.org/). Kogito est un moteur de règle orienté cloud, conçu pour s'intégrer parfaitement dans les architectures modernes.
-Ce moteur de règle reprend en grande partie tout le coeur et le developpement de [Drools](https://www.drools.org/) et [jBPM](https://jbpm.org/) mais propose des fonctionnalités purement Cloud notamment le fait qu'il est prévu d'être éxecuter dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple. Cette approche facilite considérablement le déploiement et la scalabilité des règles métier.
+Ce moteur de règle reprend en grande partie tout le coeur et le développement de [Drools](https://www.drools.org/) et [jBPM](https://jbpm.org/) mais propose des fonctionnalités purement Cloud notamment le fait qu'il est prévu d'être exécuté dans un container de type OCI / Docker et deployé sur un cluster Cloud K8S / Openshift par exemple. Cette approche facilite considérablement le déploiement et la scalabilité des règles métier.
 
 ## Business Domain first approach
 
@@ -23,7 +23,7 @@ Un apport de Kogito au moteur Drools, c'est qu'il génére automatiquement l'API
 
 # Execution du projet 
 
-Afin de pourvoir éxecuter le modele de règle KYC dans moteur Kogito il va falloir cloner le repository disponible sur Github. Ce repository contient la configuration nécessaire pour exécuter notre modèle DMN avec Kogito.
+Afin de pouvoir exécuter le modèle de règle KYC dans moteur Kogito il va falloir cloner le repository disponible sur Github. Ce repository contient la configuration nécessaire pour exécuter notre modèle DMN avec Kogito.
 
 ## Compilation
 
@@ -104,4 +104,4 @@ Des exemples sont disponibles dans le répertoire `data` du projet que l'on vien
 
 # Conclusion
 
-Avec cette exemple, nous voyons que la complexité technique d'utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n'y a plus d'excuse pour ne pas utiliser à minima le standard `DMN` dans vos applications. Le projet Kogito est encore récent mais rien ne vous empeche de proposer des améliorations et/ou suggestions. L'utilisation de standards comme DMN combinée à des outils comme Kogito permet de réduire considérablement le temps de développement tout en améliorant la maintenabilité et la lisibilité des règles métier.
+Avec cette exemple, nous voyons que la complexité technique d'utiliser un moteur DMN est très faible via Kogito qui propose directement une API métier. Il n'y a plus d'excuse pour ne pas utiliser à minima le standard `DMN` dans vos applications. Le projet Kogito est encore récent mais rien ne vous empêche de proposer des améliorations et/ou suggestions. L'utilisation de standards comme DMN combinée à des outils comme Kogito permet de réduire considérablement le temps de développement tout en améliorant la maintenabilité et la lisibilité des règles métier.

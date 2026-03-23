@@ -109,7 +109,7 @@ As you can see wpa_passphrase and ssid must be defined. You will see how to do i
       become: true
 
     - name: restart machine
-      shell: sleep 2 && shutdown -r noww
+      shell: sleep 2 && shutdown -r now
       async: 1
       poll: 0
       become: true

@@ -177,7 +177,7 @@ Une fois l'agent AWS Systems Manager déployé sur votre flotte de Raspberry Pi,
 
 ![AWS Console](/img/aws-ssm.png)
 
-### Connexion SSH au dessus de AWS SSM Session Manager
+### Connexion SSH au-dessus de AWS SSM Session Manager
 
 Afin de pouvoir se connecter à votre instance Raspberry Pi, il vous faudra activer le mode Advanced d'AWS SSM. 
 
