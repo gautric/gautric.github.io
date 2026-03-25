@@ -71,6 +71,11 @@ I have worked across the UK, Germany, Greece, Cyprus, Switzerland, the Netherlan
   * Led an IoT project with a Single Page Application (SPA) for a connected car platform
   * End-to-end architecture ownership
 
+* **Agentic / GenAI Developer Tooling — Aeronautics Industry**
+  * Won a deal to provide an Agentic and GenAI-powered code development tooling solution for a team (100 pax), with an architecture addressable up to **2,000 users**, operating under highly regulated constraints
+  * Solution built around tools such as [Kiro](https://kiro.dev) from AWS, enabling AI-assisted and agentic software development workflows
+  * Delivered first-step engagement: kickoff meetings, initial bootstrap, Q&A sessions, issue tracking setup, and SSO integration
+
 * **French Ministries**
   * Amazon Bedrock integration advisory
   * HR project management
