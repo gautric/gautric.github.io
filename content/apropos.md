@@ -4,100 +4,102 @@ layout: apropos
 ShowToc: false
 ---
 
-## Presentation
+## Profile
 
-**Greg.** (alias Grégoire) - I am a **Solution Architect** at [AWS WWPS](https://aws.amazon.com/government-education/worldwide/). My role involves helping customers understand technologies, adopt AWS services, integrate new processes, and transform their organizations. I specialize in crafting solutions based on Cloud, Modern Applications, AI/LLM integration, and Automation technologies, leveraging both the Cloud stack and the spirit of Open Source.
+I am **Greg.** (alias Grégoire), a **Solution Architect** at [AWS WWPS](https://aws.amazon.com/government-education/worldwide/), focused on helping organizations understand, adopt, and extract business value from Cloud, AI, and Automation technologies.
 
-I thrive on building relationships with decision-makers and serving as the customer's technical point of contact. Educating prospects on product implementation and usage is among my responsibilities. Fueled by the Open Source mindset, I have actively participated in various projects involving Cloud Solutions, GenAI/LLM, RAG/MCP solutions, Kubernetes tech, Java/NodeJS/Python, Business Automation, and Rule Engine technologies. Prior to my current role, I served as a **Senior Cloud Architect** at [Red Hat](https://www.redhat.com) for more than a decade and held the position of **Tech Leader** at [Capgemini](https://www.capgemini.com) for several years.
+With over 20 years of experience spanning public sector, financial services, healthcare, manufacturing, and telecom, I bridge the gap between business strategy and technical execution. My approach is grounded in a simple principle: technology should serve business outcomes, not the other way around.
 
-Types of business engagements I have successfully delivered:
+I specialize in:
 
-* Customer meeting for business, sales, projects and deliveries topics.
-* Transformation Project, Integration Project, Dev Project.
-* GenAI/LLM Integration into IT, Spec Dev Project. Chat bot 
-* Cloud Architecture, Application Design, Integration Topic, ADR, Cloud patterns.
-* Gather feedback on customer product adoption, success metrics, and pain points
-* Team planning, Tech leader,
-* Coding, Continuous integration,
-* Knowledge transfer, user support, customer training or evangelist.
+* **Cloud Architecture** — designing scalable, secure, and cost-efficient solutions on AWS
+* **AI/LLM & GenAI Integration** — embedding generative AI into real-world business processes (RAG, MCP, Bedrock Agents)
+* **Agentic Workflows** — designing and implementing autonomous agent pipelines (GitHub Agentic Workflows, AWS Bedrock Agents) to automate complex, previously manual back-office and operational processes
+* **Business Automation** — modeling and automating complex business rules and processes at scale (BPM, DMN, Rule Engines)
+* **Modern Application Design** — microservices, event-driven architectures, API-first design, Kubernetes
+
+Having delivered projects for organizations ranging from small nonprofits to institutions managing processes for 70 million people, I am equally comfortable advising a CTO on transformation strategy and rolling up my sleeves to architect and implement the solution.
+
+Prior to AWS, I served as a **Senior Cloud Architect** at [Red Hat](https://www.redhat.com) for over a decade, and as a **Tech Leader** at [Capgemini](https://www.capgemini.com) for several years.
+
+## What I Can Do For Your Organization
+
+Whether you are a startup, a mid-size company, or a large enterprise, the challenges are often the same: too many manual processes, siloed systems, slow delivery cycles, and difficulty extracting value from data and AI.
+
+I can help you:
+
+* Define and execute a **Cloud or AI adoption strategy** aligned with your business goals
+* Identify and automate **high-value, time-consuming workflows** using agentic and AI-driven approaches
+* Design **scalable architectures** that grow with your organization
+* Integrate **GenAI and LLM capabilities** into your existing products and processes
+* Modernize legacy systems with pragmatic, low-risk migration paths
+* Build and mentor **engineering teams** on Cloud-native and AI-first practices
+
+Engagements I have successfully delivered include:
+
+* Executive and stakeholder meetings — business, sales, project, and delivery topics
+* Transformation, integration, and development projects
+* GenAI/LLM integration into IT systems, chatbot and agentic workflow design
+* Cloud architecture, application design, ADR, and Cloud patterns
+* Customer feedback loops on product adoption, success metrics, and pain points
+* Team planning and technical leadership
+* Hands-on coding and continuous integration
+* Knowledge transfer, training, and technical evangelism
 
 ## Major Achievements
 
-During those periods I traveled to UK, Germany, Greece, Cyprus, Switzerland, Netherlands and Morocco for my professional engagements. Here is some of my references about architecture, audit and benchmark projects for my customers :
+I have worked across the UK, Germany, Greece, Cyprus, Switzerland, the Netherlands, and Morocco. Selected references:
 
 * **French Medical Research Project**
-  * Managed the technical aspects of an HPC and Open Data project
-    * Tech meetings with customer (researcher, PhD, assistant engineer) and HPC Solution Architects across multiple time zones.
-    * Raised a ticket to unlock the multi-million vCPU quota.
-    * Planning for scaling from 0 to millions of vCPUs.
-    * Storage and security optimisation
-    * Monitoring and scaling advises
-  * Successfully ran more than **2 millions vCPU** operation in **less than 30 hours**.
-  * Read **46 petabytes** from S3, Wrote **2 petabytes** to S3.
+  * Managed the technical aspects of a large-scale HPC and Open Data initiative
+  * Coordinated across researchers, PhDs, and HPC Solution Architects in multiple time zones
+  * Unlocked multi-million vCPU quota and planned scaling from 0 to millions of vCPUs
+  * Successfully executed more than **2 million vCPU** operations in **under 30 hours**
+  * Processed **46 petabytes** read from S3, **2 petabytes** written to S3
+
 * **French Health Public Sector**
-  * Business Automation within a Large-Scale Architecture
-    * Partition solution per business line
-    * Scale partition monitoring
-    * Manage the architecture policy
-  * Overseeing processes for **70 million people** involving **1 billion transactions**.
+  * Designed a Business Automation architecture at national scale
+  * Overseeing processes for **70 million people** involving **1 billion transactions**
+
 * **French Bank**
-  * Providing Cloud Expertise and serving as a Kubernetes (K8S) consultant.
-  * Managing Anti-Money Laundering (AML) operations for clearing SWIFT transactions.
-    * Push-Button Infrastructure & CI/CD pipeline
-  * Implementing Message-oriented Middleware (MoM) and Cache solutions, along with integration tasks.
-  * Developing Business Rules for Know Your Customer (KYC) solutions.
-* **Automobile manufacturer and mobile phone provider**
-  * Leading an IoT project, developing a Single Page Application (SPA) for a smart/connected car project.
-  * Overseeing the entire architecture.
+  * Cloud and Kubernetes (K8S) consulting
+  * Anti-Money Laundering (AML) operations for SWIFT transaction clearing
+  * Push-button infrastructure and CI/CD pipeline delivery
+  * Message-oriented Middleware (MoM), cache solutions, and KYC business rules
+
+* **Automobile Manufacturer & Mobile Provider**
+  * Led an IoT project with a Single Page Application (SPA) for a connected car platform
+  * End-to-end architecture ownership
+
 * **French Ministries**
-  * Help IT service about Amazon Bedrock integration.
-  * Managing an HR project within the ministries.
-  * Implementing business rules for the Automotive Tax system.
-  * Contributing to FranceConnect, the precursor to a comprehensive solution for the entire French citizen audience.
-* **Car Insurance association (UK) [JBoss Monitoring audit/expertise].**
-* **Financial exchange operator (DE)**
-  * Proof of Concept,
-* **Reserve/central bank**
-  * Application Migration,
-  * HA Architecture,
-* **Postal provider [Agile PHP project],**
-* **Netherlands ministry (NL) [MiddleWare integration project],**
-* **BtoB & E-Commerce corporate (UK) [Application audit/expertise],**
-* **Mobile Provider (DE) [audit/expertise/training],**
-* **Greek Bank [Integration, EIP, Mainframe],**
-* **Laboratory [MOM, Messaging]**.
+  * Amazon Bedrock integration advisory
+  * HR project management
+  * Automotive Tax business rules implementation
+  * Contribution to FranceConnect — the national digital identity platform
 
-For more details about [my résumé you can follow my LinkedIn page](https://www.linkedin.com/in/gautric).
+* **International references**
+  * Car Insurance association (UK) — JBoss Monitoring audit
+  * Financial exchange operator (DE) — Proof of Concept
+  * Reserve/central bank — Application migration and HA architecture
+  * Postal provider — Agile PHP project
+  * Netherlands Ministry (NL) — Middleware integration
+  * BtoB & E-Commerce corporate (UK) — Application audit
+  * Mobile Provider (DE) — Audit, expertise, and training
+  * Greek Bank — Integration, EIP, Mainframe
+  * Laboratory — MOM and Messaging
 
-## Olympic Games & Major Sporting Events
+For more details, [visit my LinkedIn profile](https://www.linkedin.com/in/gautric).
 
-* **[Milano Cortina 2026](https://www.milanocortina2026.olympics.com/)** — EVS Volunteer
-  * Managing international crowds, providing information to spectators, assisting people with disabilities, and checking tickets.
-* **[Paris 2024](https://www.paris2024.org/en/)** — Volunteer Driver
-  * Driving VIPs, Sponsors, NOC and IOC delegates during the Olympic and Paralympic Games.
-* **[Challenge International de Paris (CIP)](https://www.ffescrime.fr/)** — Volunteer (January)
-  * Event support for the international fencing competition at the Stade Pierre de Coubertin.
-
-## Volunteering & Community Engagement
-
-* **SAR France** — Webmaster (Bénévole)
-  * Managing the web presence for Search and Rescue France.
-* **[Kinotayo — Festival du cinéma japonais contemporain](https://www.kinotayo.fr/)** — Volunteer
-  * Managing attendees and spectators during the festival.
 
 ## Education / Certifications
 
-I am graduated with a **[Master of Science in Engineering](https://www.cti-commission.fr/wp-content/uploads/2014/03/mou_aacrao-cti.pdf)** from **[ISIMA](http://www.isima.fr)** at Clermont-Ferrand (FRANCE).
+Graduated with a **[Master of Science in Engineering](https://www.cti-commission.fr/wp-content/uploads/2014/03/mou_aacrao-cti.pdf)** from **[ISIMA](http://www.isima.fr)** — Clermont-Ferrand, France.
 
 |[![CPC](/img/aws-cpc.png)](https://www.credly.com/badges/63d9fdd3-2787-47bc-9441-6a091894c438)|[![AIC](/img/aws-aic.png)](https://www.credly.com/badges/9b67c014-e586-4b12-89c6-69968d936746)|[![AWS SA](/img/aws-sa.png)](https://www.credly.com/badges/0139caab-582f-4fa1-bbde-d5a588dde163)|[![AWS Dev](/img/aws-dev.png)](https://www.credly.com/badges/dcdf876e-87e0-4bf9-b1e7-5180c67534ba)|
 |-|-|-|-|
 
-
 |[![AWS Dev](/img/aws-sapro.png)](https://www.credly.com/badges/182e28a7-df49-4416-8044-493e92e07b2d)|[![AWS](/img/aws-cea.png)](https://www.credly.com/badges/f690a293-2998-4b0c-bb04-0dc0772c917b)|[![EKS](https://images.credly.com/images/f5efafe6-ebdc-485c-9ffa-3a05533e634b/blob)](https://www.credly.com/badges/cad1b6e1-1534-4a07-96bb-2573a4eef396)|[![GenAI](https://images.credly.com/images/4b547104-5ce9-43d5-8708-a7abb4b0c7ec/blob)](https://www.credly.com/badges/86ff65ee-a512-46a6-8bd0-0d173313f0a1)|
 |-|-|-|-|
-
-
-
 
 <!-- ## Contribution / OpenSource
 
