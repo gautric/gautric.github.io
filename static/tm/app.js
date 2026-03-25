@@ -50,8 +50,8 @@ async function loadPhrases() {
       console.warn('Phrase ignorée (invalide) :', data[i]);
     }
   }
-  if (valid.length < 20) {
-    throw new Error('Pas assez de phrases valides (' + valid.length + '/20 minimum)');
+  if (valid.length < SESSION_SIZE) {
+    throw new Error('Pas assez de phrases valides (' + valid.length + '/SESSION_SIZE minimum)');
   }
   return valid;
 }
@@ -122,9 +122,28 @@ function splitSentence(sentence) {
 // ---------------------------------------------------------------------------
 
 /**
- * Affiche l'écran d'accueil avec titre, description et bouton "Commencer".
+ * Extrait les catégories uniques depuis les phrases chargées.
+ * @returns {Array<string>}
+ */
+function getCategories() {
+  var phrases = window._allPhrases || [];
+  var seen = {};
+  var cats = [];
+  for (var i = 0; i < phrases.length; i++) {
+    if (!seen[phrases[i].category]) {
+      seen[phrases[i].category] = true;
+      cats.push(phrases[i].category);
+    }
+  }
+  cats.sort();
+  return cats;
+}
+
+/**
+ * Affiche l'écran d'accueil avec titre, sélecteur de catégories (max 3) et bouton "Commencer".
  */
 function showWelcomeScreen() {
+  var MAX_SELECTION = 3;
   var accueil = document.getElementById('ecran-accueil');
   accueil.innerHTML = '';
   accueil.removeAttribute('hidden');
@@ -139,16 +158,115 @@ function showWelcomeScreen() {
   accueil.appendChild(titre);
 
   var desc = document.createElement('p');
-  desc.textContent = 'Trouve le mot qui contient une erreur dans chaque phrase. 20 questions par partie !';
+  desc.textContent = 'Trouve le mot qui contient une erreur dans chaque phrase. ' + SESSION_SIZE + ' questions par partie !';
   accueil.appendChild(desc);
+
+  // --- Category selector ---
+  var selectorLabel = document.createElement('p');
+  selectorLabel.className = 'selector-label';
+  selectorLabel.textContent = 'Choisis jusqu\'à ' + MAX_SELECTION + ' types de règles, ou joue avec toutes :';
+  accueil.appendChild(selectorLabel);
+
+  var categories = getCategories();
+
+  // "Toutes" toggle
+  var allLabel = document.createElement('label');
+  allLabel.className = 'cat-option cat-option-all';
+  var allCb = document.createElement('input');
+  allCb.type = 'checkbox';
+  allCb.checked = true;
+  allCb.className = 'cat-checkbox';
+  allLabel.appendChild(allCb);
+  allLabel.appendChild(document.createTextNode(' Toutes les questions'));
+  accueil.appendChild(allLabel);
+
+  var catContainer = document.createElement('div');
+  catContainer.className = 'cat-container';
+  var checkboxes = [];
+
+  for (var i = 0; i < categories.length; i++) {
+    (function (cat) {
+      var label = document.createElement('label');
+      label.className = 'cat-option';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.value = cat;
+      cb.disabled = true; // disabled when "Toutes" is checked
+      cb.className = 'cat-checkbox';
+      label.appendChild(cb);
+      label.appendChild(document.createTextNode(' ' + cat));
+      catContainer.appendChild(label);
+      checkboxes.push(cb);
+    })(categories[i]);
+  }
+  accueil.appendChild(catContainer);
+
+  function updateState() {
+    var isAll = allCb.checked;
+    var checkedCount = 0;
+    for (var j = 0; j < checkboxes.length; j++) {
+      if (isAll) {
+        checkboxes[j].checked = false;
+        checkboxes[j].disabled = true;
+        checkboxes[j].parentElement.classList.remove('selected');
+      } else {
+        if (checkboxes[j].checked) checkedCount++;
+      }
+    }
+    // Enforce max selection
+    if (!isAll) {
+      for (var j = 0; j < checkboxes.length; j++) {
+        if (!checkboxes[j].checked) {
+          checkboxes[j].disabled = checkedCount >= MAX_SELECTION;
+        } else {
+          checkboxes[j].disabled = false;
+          checkboxes[j].parentElement.classList.add('selected');
+        }
+        if (!checkboxes[j].checked) {
+          checkboxes[j].parentElement.classList.remove('selected');
+        }
+      }
+    }
+    allLabel.classList.toggle('selected', isAll);
+    // Enable start button if "all" or at least 1 category selected
+    btn.disabled = !isAll && checkedCount === 0;
+  }
+
+  allCb.addEventListener('change', function () {
+    if (!allCb.checked) {
+      // Uncheck "all" → enable individual checkboxes
+      for (var j = 0; j < checkboxes.length; j++) {
+        checkboxes[j].disabled = false;
+      }
+    }
+    updateState();
+  });
+
+  for (var k = 0; k < checkboxes.length; k++) {
+    checkboxes[k].addEventListener('change', function () {
+      // If a category is checked, uncheck "all"
+      allCb.checked = false;
+      updateState();
+    });
+  }
 
   var btn = document.createElement('button');
   btn.textContent = 'Commencer';
   btn.className = 'btn-commencer';
   btn.addEventListener('click', function () {
-    startSession();
+    var selectedCats = [];
+    if (!allCb.checked) {
+      for (var j = 0; j < checkboxes.length; j++) {
+        if (checkboxes[j].checked) {
+          selectedCats.push(checkboxes[j].value);
+        }
+      }
+    }
+    startSession(selectedCats);
   });
   accueil.appendChild(btn);
+
+  updateState();
 }
 
 /**
@@ -403,7 +521,7 @@ function showResultScreen(results, score, total) {
   btn.className = 'btn-recommencer';
   btn.style.marginTop = '1.5rem';
   btn.addEventListener('click', function () {
-    startSession();
+    showWelcomeScreen();
   });
   resultat.appendChild(btn);
 }
@@ -413,10 +531,17 @@ function showResultScreen(results, score, total) {
 // ---------------------------------------------------------------------------
 
 /**
- * Démarre une nouvelle session : sélectionne 20 phrases, réinitialise l'état, affiche la première question.
+ * Démarre une nouvelle session : filtre par catégories si sélectionnées, sélectionne les phrases, réinitialise l'état.
+ * @param {Array<string>} selectedCategories - Catégories choisies (vide = toutes)
  */
-function startSession() {
-  sessionState.phrases = selectSessionPhrases(window._allPhrases || []);
+function startSession(selectedCategories) {
+  var pool = window._allPhrases || [];
+  if (selectedCategories && selectedCategories.length > 0) {
+    pool = pool.filter(function (p) {
+      return selectedCategories.indexOf(p.category) !== -1;
+    });
+  }
+  sessionState.phrases = selectSessionPhrases(pool);
   sessionState.currentIndex = 0;
   sessionState.score = 0;
   sessionState.results = [];

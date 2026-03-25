@@ -212,6 +212,94 @@ button:active {
   border-left: 4px solid #ef5350;
 }
 
+/* === Category Selector === */
+.selector-label {
+  font-weight: 600;
+  color: #6a1b9a;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.cat-option-all {
+  display: block;
+  margin: 0.5rem auto 0.8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: background 0.15s;
+  text-align: left;
+  max-width: 400px;
+}
+
+.cat-option-all.selected {
+  background: #e1bee7;
+}
+
+.cat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.2rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0.3rem;
+}
+
+.cat-option {
+  display: flex;
+  align-items: center;
+  padding: 0.35rem 0.8rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background: #f3e5f5;
+  border: 2px solid transparent;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  user-select: none;
+}
+
+.cat-option:hover {
+  background: #e1bee7;
+}
+
+.cat-option.selected {
+  background: #ce93d8;
+  border-color: #6a1b9a;
+  color: #4a148c;
+  font-weight: 600;
+}
+
+.cat-option input[type="checkbox"] {
+  margin-right: 0.3rem;
+  accent-color: #6a1b9a;
+}
+
+.cat-option input:disabled {
+  opacity: 0.4;
+}
+
+.cat-option:has(input:disabled) {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.cat-option:has(input:disabled):hover {
+  background: #f3e5f5;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+button:disabled:hover {
+  transform: none;
+  box-shadow: 0 3px 8px rgba(106, 27, 154, 0.3);
+}
+
 /* === Error Message === */
 .error-message {
   background: #fff3e0;
@@ -259,5 +347,18 @@ button:active {
 
   .score {
     font-size: 2rem;
+  }
+
+  .cat-container {
+    max-height: 200px;
+  }
+
+  .cat-option {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .selector-label {
+    font-size: 0.95rem;
   }
 }
