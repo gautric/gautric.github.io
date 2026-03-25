@@ -23598,5 +23598,2805 @@
     "correctedWord": "Leurs",
     "explanation": "Le nom « maison » doit être au pluriel (« maisons ») avec « leurs » : « Leurs maisons sont très grandes ».",
     "category": "déterminants"
+  },
+  {
+    "id": 2951,
+    "sentence": "Mon frère a mangé toute la tarte que maman avait préparée pour le goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « mangé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2952,
+    "sentence": "Les enfants veulent mangé des crêpes au chocolat pour le goûter de cet après-midi.",
+    "errorIndex": 3,
+    "correctedWord": "manger",
+    "explanation": "Après le verbe « veulent », on utilise l'infinitif : « manger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2953,
+    "sentence": "Papa a oublier ses clés sur la table de la cuisine avant de partir au travail.",
+    "errorIndex": 2,
+    "correctedWord": "oublié",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « oublié » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2954,
+    "sentence": "Ma sœur veut regarder un film avec ses amies dans le salon ce soir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « regarder » est l'infinitif après le verbe « veut ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2955,
+    "sentence": "Le chat a attraper une souris dans le jardin et il l'a ramenée à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "attrapé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « attrapé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2956,
+    "sentence": "Nous allons joué au ballon dans la cour après avoir fini nos devoirs.",
+    "errorIndex": 2,
+    "correctedWord": "jouer",
+    "explanation": "Après le verbe « allons », on utilise l'infinitif : « jouer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2957,
+    "sentence": "La maîtresse a corrigé tous les cahiers des élèves pendant la récréation.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « corrigé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2958,
+    "sentence": "Il faut arrosé les plantes du jardin tous les soirs quand il fait chaud.",
+    "errorIndex": 2,
+    "correctedWord": "arroser",
+    "explanation": "Après « il faut », on utilise l'infinitif : « arroser » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2959,
+    "sentence": "Mon ami a dessiné un beau château fort avec des tours et un pont-levis.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dessiné » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2960,
+    "sentence": "Les élèves doivent écouté la maîtresse quand elle explique la leçon en classe.",
+    "errorIndex": 3,
+    "correctedWord": "écouter",
+    "explanation": "Après le verbe « doivent », on utilise l'infinitif : « écouter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2961,
+    "sentence": "Maman a préparé un bon repas pour toute la famille avec des légumes du jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « préparé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2962,
+    "sentence": "Tu peux aller cherché du pain à la boulangerie pour le dîner de ce soir.",
+    "errorIndex": 3,
+    "correctedWord": "chercher",
+    "explanation": "Après le verbe « aller », on utilise l'infinitif : « chercher » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2963,
+    "sentence": "Le jardinier a planter des roses rouges le long du mur du jardin.",
+    "errorIndex": 2,
+    "correctedWord": "planté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « planté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2964,
+    "sentence": "Ma sœur adore chanter sous la douche et elle peut chanter pendant des heures.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « chanter » est l'infinitif après « adore » et après « peut ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2965,
+    "sentence": "Le boulanger a oublier de mettre du sel dans la pâte à pain ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "oublié",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « oublié » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2966,
+    "sentence": "Les enfants ont commencé à rangé leurs jouets dans le coffre du salon.",
+    "errorIndex": 4,
+    "correctedWord": "ranger",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « ranger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2967,
+    "sentence": "Mon père a réparé le vélo de ma sœur dans le garage samedi dernier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « réparé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2968,
+    "sentence": "Il ne faut pas oublié de fermer la porte à clé quand on sort de la maison.",
+    "errorIndex": 4,
+    "correctedWord": "oublier",
+    "explanation": "Après « il ne faut pas », on utilise l'infinitif : « oublier » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2969,
+    "sentence": "La voisine a inviter tous les enfants du quartier pour la fête de samedi.",
+    "errorIndex": 2,
+    "correctedWord": "invité",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « invité » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2970,
+    "sentence": "Nous devons terminé nos devoirs avant de pouvoir sortir jouer dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "terminer",
+    "explanation": "Après le verbe « devons », on utilise l'infinitif : « terminer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2971,
+    "sentence": "Le professeur a demander aux élèves de sortir leurs cahiers pour la dictée.",
+    "errorIndex": 2,
+    "correctedWord": "demandé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « demandé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2972,
+    "sentence": "Ma cousine aime dessiner des animaux et elle veut devenir artiste plus tard.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dessiner » et « devenir » sont des infinitifs après « aime » et « veut ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2973,
+    "sentence": "Les oiseaux ont commencé à chanté dès que le soleil s'est levé ce matin.",
+    "errorIndex": 4,
+    "correctedWord": "chanter",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « chanter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2974,
+    "sentence": "Mon grand-père a raconter une histoire drôle et tout le monde a beaucoup ri.",
+    "errorIndex": 2,
+    "correctedWord": "raconté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « raconté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2975,
+    "sentence": "Tu dois rangé ta chambre avant de pouvoir aller jouer dehors avec tes amis.",
+    "errorIndex": 2,
+    "correctedWord": "ranger",
+    "explanation": "Après le verbe « dois », on utilise l'infinitif : « ranger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2976,
+    "sentence": "Le chien a cassé le vase du salon en courant partout dans la maison.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « cassé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2977,
+    "sentence": "Ma mère va acheté des fruits au marché pour faire une salade de fruits.",
+    "errorIndex": 2,
+    "correctedWord": "acheter",
+    "explanation": "Après le verbe « va », on utilise l'infinitif : « acheter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2978,
+    "sentence": "Le facteur a apporter un gros colis pour notre voisine ce matin très tôt.",
+    "errorIndex": 2,
+    "correctedWord": "apporté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « apporté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2979,
+    "sentence": "Les enfants adorent nagé dans la piscine quand il fait très chaud en été.",
+    "errorIndex": 3,
+    "correctedWord": "nager",
+    "explanation": "Après le verbe « adorent », on utilise l'infinitif : « nager » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2980,
+    "sentence": "La maîtresse a félicité les élèves pour leur bon travail cette semaine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « félicité » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2981,
+    "sentence": "Mon frère a essayer de grimper dans le grand arbre mais il n'a pas réussi.",
+    "errorIndex": 2,
+    "correctedWord": "essayé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « essayé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2982,
+    "sentence": "Il est interdit de touchée les animaux du zoo même s'ils ont l'air gentils.",
+    "errorIndex": 4,
+    "correctedWord": "toucher",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « toucher » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2983,
+    "sentence": "Papa a gagner le match de tennis contre son ami et il était très content.",
+    "errorIndex": 2,
+    "correctedWord": "gagné",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « gagné » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2984,
+    "sentence": "Les élèves vont présenté leur exposé devant toute la classe demain matin.",
+    "errorIndex": 2,
+    "correctedWord": "présenter",
+    "explanation": "Après le verbe « vont », on utilise l'infinitif : « présenter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2985,
+    "sentence": "Ma tante a trouvé un petit chaton abandonné dans la rue près de chez elle.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « trouvé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2986,
+    "sentence": "Le médecin a demandé à mon frère de respiré profondément pendant l'examen.",
+    "errorIndex": 8,
+    "correctedWord": "respirer",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « respirer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2987,
+    "sentence": "Maman a laisser le gâteau refroidir sur la table avant de le couper en parts.",
+    "errorIndex": 2,
+    "correctedWord": "laissé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « laissé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2988,
+    "sentence": "Tu peux commencer à découpé les images pour le collage de la classe.",
+    "errorIndex": 4,
+    "correctedWord": "découper",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « découper » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2989,
+    "sentence": "Le pompier a sauvé le chat qui était coincé dans le grand arbre du parc.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sauvé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2990,
+    "sentence": "Les enfants ont appris à nager cet été et ils savent maintenant plongé sous l'eau.",
+    "errorIndex": 11,
+    "correctedWord": "plonger",
+    "explanation": "Après le verbe « savent », on utilise l'infinitif : « plonger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2991,
+    "sentence": "Ses livres sur l'étagère sont très intéressants et je veux tous les lire.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif (= les livres de quelqu'un).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2992,
+    "sentence": "Ces mon ami qui a gagné la course et il est très fier de sa victoire.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On présente quelqu'un : « c'est mon ami » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2993,
+    "sentence": "Mon frère c'est lavé les mains avant de passer à table pour le dîner.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se laver » au passé composé : « il s'est lavé » et non « c'est lavé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2994,
+    "sentence": "Ces fleurs dans le jardin sont magnifiques et maman veut les cueillir pour le salon.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces fleurs-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2995,
+    "sentence": "Ma sœur a perdu ces crayons de couleur et elle les cherche partout dans la maison.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les crayons de ma sœur (possessif) : « ses crayons » et non « ces crayons ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2996,
+    "sentence": "S'est très joli ce dessin que tu as fait en classe pour la fête des mères.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est très joli » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2997,
+    "sentence": "Le chat s'est caché sous le lit parce qu'il a entendu un bruit très fort.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est caché » est le verbe pronominal « se cacher » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2998,
+    "sentence": "Mon ami a oublié ces affaires à l'école et il doit y retourner les chercher.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les affaires de mon ami (possessif) : « ses affaires » et non « ces affaires ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2999,
+    "sentence": "Ces beau de voir les enfants jouer ensemble dans le parc sans se disputer.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est beau » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3000,
+    "sentence": "La petite fille c'est endormie sur le canapé en regardant un dessin animé.",
+    "errorIndex": 3,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'endormir » au passé composé : « s'est endormie ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3001,
+    "sentence": "Ces gâteaux dans la vitrine de la boulangerie ont l'air vraiment délicieux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces gâteaux-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3002,
+    "sentence": "Mon frère a rangé ces jouets dans le coffre avant de partir à l'école.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les jouets de mon frère (possessif) : « ses jouets » et non « ces jouets ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3003,
+    "sentence": "S'est l'heure de partir à l'école et il ne faut pas arriver en retard.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On constate quelque chose : « c'est l'heure » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3004,
+    "sentence": "Le chien c'est blessé la patte en courant dans le jardin sur les cailloux.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se blesser » au passé composé : « s'est blessé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3005,
+    "sentence": "Ma cousine a mis ces chaussures neuves pour aller à la fête de samedi.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les chaussures de ma cousine (possessif) : « ses chaussures » et non « ces chaussures ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3006,
+    "sentence": "C'est la plus belle journée de l'été et nous voulons en profiter au maximum.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « c'est » (= cela est) introduit un jugement.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3007,
+    "sentence": "Le bébé c'est réveillé en pleurant au milieu de la nuit à cause du bruit.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se réveiller » au passé composé : « s'est réveillé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3008,
+    "sentence": "Ces normal d'avoir peur du noir quand on est petit et qu'on dort tout seul.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est normal » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3009,
+    "sentence": "Mon père a pris ses clés et son portefeuille avant de sortir de la maison.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif (= les clés de mon père).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3010,
+    "sentence": "La maîtresse c'est trompée de page et elle a dû recommencer l'exercice.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se tromper » au passé composé : « s'est trompée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3011,
+    "sentence": "Mon ami a perdu ces lunettes à la piscine et il ne peut plus rien voir.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les lunettes de mon ami (possessif) : « ses lunettes » et non « ces lunettes ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3012,
+    "sentence": "Ces arbres dans le parc sont très vieux et ils ont plus de cent ans.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces arbres-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3013,
+    "sentence": "S'est dommage que tu ne puisses pas venir à la fête de mon anniversaire.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est dommage » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3014,
+    "sentence": "Le garçon c'est assis sur le banc du parc pour lire son livre tranquillement.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'asseoir » au passé composé : « s'est assis ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3015,
+    "sentence": "Ma sœur a rangé ces vêtements dans l'armoire après les avoir lavés et pliés.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les vêtements de ma sœur (possessif) : « ses vêtements » et non « ces vêtements ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3016,
+    "sentence": "Ces difficile de courir quand il fait très chaud dehors en plein été.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est difficile » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3017,
+    "sentence": "Le petit garçon s'est perdu dans le supermarché et il a pleuré très fort.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est perdu » est le verbe pronominal « se perdre » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3018,
+    "sentence": "Mon cousin a oublié ces cahiers à la maison et il ne peut pas faire ses devoirs.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les cahiers de mon cousin (possessif) : « ses cahiers » et non « ces cahiers ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3019,
+    "sentence": "S'est bientôt les vacances et tous les enfants sont très contents de partir.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On constate quelque chose : « c'est bientôt » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3020,
+    "sentence": "La chatte c'est installée sur le coussin et elle ronronne doucement au soleil.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'installer » au passé composé : « s'est installée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3021,
+    "sentence": "Maman est la dans la cuisine et elle prépare le repas pour toute la famille.",
+    "errorIndex": 2,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « maman est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3022,
+    "sentence": "La maîtresse là félicité pour son bon travail en classe cette semaine.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la maîtresse l'a félicité » (= avait félicité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3023,
+    "sentence": "La petite fille joue dans le jardin avec son chien et elle est très contente.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article défini féminin devant « petite fille ».",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3024,
+    "sentence": "Mon frère est la depuis ce matin et il attend ses amis pour jouer au ballon.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « il est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3025,
+    "sentence": "Papa là vu au supermarché et il lui a dit bonjour en passant dans le rayon.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « papa l'a vu » (= avait vu).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3026,
+    "sentence": "La robe de ma sœur est très jolie et elle la porte souvent le dimanche.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : le premier « la » est l'article, le second est le pronom COD.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3027,
+    "sentence": "Le chat est la sur le canapé et il dort depuis ce matin sans bouger.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « le chat est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3028,
+    "sentence": "Ma cousine là appelé au téléphone pour lui souhaiter un joyeux anniversaire.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « ma cousine l'a appelé » (= avait appelé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3029,
+    "sentence": "Pose ton cartable la sur la table et viens manger ton goûter dans la cuisine.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « pose-le là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3030,
+    "sentence": "Le docteur là examiné et il lui a dit qu'il allait beaucoup mieux maintenant.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le docteur l'a examiné » (= avait examiné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3031,
+    "sentence": "La maison de mes grands-parents est là-bas au bout de la route près de la rivière.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là-bas » indique un lieu éloigné.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3032,
+    "sentence": "Ma sœur est la dans sa chambre et elle fait ses devoirs avant le dîner.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « elle est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3033,
+    "sentence": "Le professeur là puni parce qu'il avait fait une bêtise pendant la récréation.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le professeur l'a puni » (= avait puni).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3034,
+    "sentence": "Regarde la étoile qui brille tout en haut dans le ciel ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "l'",
+    "explanation": "Devant un nom féminin commençant par une voyelle, « la » s'élide en « l' » : « l'étoile ».",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3035,
+    "sentence": "C'est la que j'ai trouvé la balle que tu avais perdue dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « c'est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3036,
+    "sentence": "Maman là grondé parce qu'il n'avait pas rangé sa chambre avant de sortir.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « maman l'a grondé » (= avait grondé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3037,
+    "sentence": "La voiture de papa est garée là devant la maison depuis hier soir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là » indique un lieu.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3038,
+    "sentence": "Le chien est la devant la porte et il attend qu'on lui ouvre pour entrer.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « le chien est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3039,
+    "sentence": "La voisine là invité à jouer chez elle et ils ont passé un bon après-midi.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la voisine l'a invité » (= avait invité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3040,
+    "sentence": "Ne reste pas la sous la pluie, viens vite te mettre à l'abri dans la maison.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « ne reste pas là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3041,
+    "sentence": "Mon oncle là accompagné à l'école ce matin parce que maman était malade.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « mon oncle l'a accompagné » (= avait accompagné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3042,
+    "sentence": "La tarte aux pommes de maman est la meilleure et tout le monde en veut.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article défini dans les deux cas.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3043,
+    "sentence": "Qui est la derrière la porte ? C'est peut-être le facteur avec un colis.",
+    "errorIndex": 2,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « qui est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3044,
+    "sentence": "Le dentiste là soigné et maintenant il n'a plus mal aux dents du tout.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le dentiste l'a soigné » (= avait soigné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3045,
+    "sentence": "Viens la tout de suite, maman veut te parler avant que tu sortes jouer.",
+    "errorIndex": 1,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « viens là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3046,
+    "sentence": "Les enfants sont toujour contents quand ils peuvent aller jouer dans le parc.",
+    "errorIndex": 3,
+    "correctedWord": "toujours",
+    "explanation": "« Toujours » est un mot invariable qui s'écrit toujours avec un « s » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3047,
+    "sentence": "Ma sœur court trés vite et elle peut gagner toutes les courses à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "très",
+    "explanation": "« Très » est un mot invariable qui s'écrit avec un accent grave : « très » et non « trés ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3048,
+    "sentence": "Mon frère mange baucoup de chocolat et maman lui dit d'arrêter chaque fois.",
+    "errorIndex": 3,
+    "correctedWord": "beaucoup",
+    "explanation": "« Beaucoup » est un mot invariable : « beaucoup » et non « baucoup ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3049,
+    "sentence": "Les élèves travaillent bien et la maîtresse est aussi très contente d'eux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « aussi » et « très » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3050,
+    "sentence": "Papa rentre souvant tard du travail et nous mangeons sans lui le soir.",
+    "errorIndex": 2,
+    "correctedWord": "souvent",
+    "explanation": "« Souvent » est un mot invariable : « souvent » et non « souvant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3051,
+    "sentence": "Les enfants jouent dehors et ensuit ils rentrent pour prendre leur goûter.",
+    "errorIndex": 4,
+    "correctedWord": "ensuite",
+    "explanation": "« Ensuite » est un mot invariable qui s'écrit avec un « e » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3052,
+    "sentence": "Ma mère est maintenant dans le jardin et elle arrose les fleurs tranquillement.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « maintenant » et « tranquillement » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3053,
+    "sentence": "Mon ami habite asez loin de l'école et il prend le bus chaque matin.",
+    "errorIndex": 3,
+    "correctedWord": "assez",
+    "explanation": "« Assez » est un mot invariable avec deux « s » : « assez » et non « asez ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3054,
+    "sentence": "Les oiseaux chantent dehord et on peut les entendre depuis la fenêtre du salon.",
+    "errorIndex": 3,
+    "correctedWord": "dehors",
+    "explanation": "« Dehors » est un mot invariable qui s'écrit avec un « s » : « dehors » et non « dehord ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3055,
+    "sentence": "Ma sœur veut aller chez sa copine parceque elle s'ennuie toute seule à la maison.",
+    "errorIndex": 6,
+    "correctedWord": "parce",
+    "explanation": "« Parce que » s'écrit en deux mots : « parce que » et non « parceque ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3056,
+    "sentence": "Les enfants sont allors sortis dans la cour pour jouer pendant la récréation.",
+    "errorIndex": 3,
+    "correctedWord": "alors",
+    "explanation": "« Alors » est un mot invariable : « alors » et non « allors ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3057,
+    "sentence": "Mon père travaille beaucoups et il rentre fatigué chaque soir à la maison.",
+    "errorIndex": 3,
+    "correctedWord": "beaucoup",
+    "explanation": "« Beaucoup » est un mot invariable qui ne prend jamais de « s » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3058,
+    "sentence": "Nous allons dabord faire nos devoirs et après nous pourrons jouer dehors.",
+    "errorIndex": 2,
+    "correctedWord": "d'abord",
+    "explanation": "« D'abord » s'écrit en deux mots avec une apostrophe : « d'abord » et non « dabord ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3059,
+    "sentence": "Les chats dorment pendant longtemps et ils se réveillent seulement pour manger.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « longtemps » et « seulement » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3060,
+    "sentence": "Ma cousine vient quelquefoi nous voir le dimanche et nous jouons ensemble.",
+    "errorIndex": 3,
+    "correctedWord": "quelquefois",
+    "explanation": "« Quelquefois » est un mot invariable qui s'écrit avec un « s » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3061,
+    "sentence": "Le chien court vraiement vite et personne ne peut l'attraper dans le jardin.",
+    "errorIndex": 3,
+    "correctedWord": "vraiment",
+    "explanation": "« Vraiment » est un mot invariable : « vraiment » et non « vraiement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3062,
+    "sentence": "Les enfants sont partis et finallement la maison est calme et silencieuse.",
+    "errorIndex": 4,
+    "correctedWord": "finalement",
+    "explanation": "« Finalement » est un mot invariable avec un seul « l » : « finalement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3063,
+    "sentence": "Mon frère veut jouer aussie et il demande à ses amis de l'attendre.",
+    "errorIndex": 4,
+    "correctedWord": "aussi",
+    "explanation": "« Aussi » est un mot invariable qui s'écrit sans « e » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3064,
+    "sentence": "Les élèves doivent écrire propremant sur leur cahier pour avoir une bonne note.",
+    "errorIndex": 4,
+    "correctedWord": "proprement",
+    "explanation": "« Proprement » est un mot invariable : « proprement » et non « propremant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3065,
+    "sentence": "Ma mère dit que nous devons manger lentement et ne pas avaler trop vite.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « lentement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3066,
+    "sentence": "Le chat se cache derière le canapé quand il entend un bruit bizarre.",
+    "errorIndex": 4,
+    "correctedWord": "derrière",
+    "explanation": "« Derrière » est un mot invariable avec deux « r » : « derrière » et non « derière ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3067,
+    "sentence": "Les enfants jouent enssemble dans la cour et ils s'amusent beaucoup.",
+    "errorIndex": 3,
+    "correctedWord": "ensemble",
+    "explanation": "« Ensemble » est un mot invariable : « ensemble » et non « enssemble ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3068,
+    "sentence": "Mon ami arrive tojours en avance à l'école et il attend les autres devant la porte.",
+    "errorIndex": 3,
+    "correctedWord": "toujours",
+    "explanation": "« Toujours » est un mot invariable : « toujours » et non « tojours ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3069,
+    "sentence": "Papa conduit doucement sur la route parce qu'il pleut et la chaussée est glissante.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « doucement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3070,
+    "sentence": "Les enfants sont surment fatigués après cette longue journée de promenade en forêt.",
+    "errorIndex": 3,
+    "correctedWord": "sûrement",
+    "explanation": "« Sûrement » est un mot invariable : « sûrement » et non « surment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3071,
+    "sentence": "Ma sœur chante mieu que moi et elle veut devenir chanteuse quand elle sera grande.",
+    "errorIndex": 3,
+    "correctedWord": "mieux",
+    "explanation": "« Mieux » est un mot invariable qui s'écrit avec un « x » : « mieux » et non « mieu ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3072,
+    "sentence": "Le professeur parle dousement pour ne pas réveiller les enfants qui dorment.",
+    "errorIndex": 3,
+    "correctedWord": "doucement",
+    "explanation": "« Doucement » est un mot invariable : « doucement » et non « dousement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3073,
+    "sentence": "Les oiseaux volent au dessu des arbres et ils cherchent de la nourriture.",
+    "errorIndex": 4,
+    "correctedWord": "dessus",
+    "explanation": "« Dessus » est un mot invariable avec deux « s » : « dessus » et non « dessu ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3074,
+    "sentence": "Mon frère court rapiddement et il peut gagner la course facilement.",
+    "errorIndex": 3,
+    "correctedWord": "rapidement",
+    "explanation": "« Rapidement » est un mot invariable : « rapidement » et non « rapiddement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3075,
+    "sentence": "Les enfants jouent calmement dans le salon pendant que maman se repose un peu.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « calmement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3076,
+    "sentence": "Je suis content parce que maman a préparé mon gâteau préféré pour le goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » est le verbe « être » avec « je » et « a » est le verbe « avoir » avec « maman ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3077,
+    "sentence": "Tu es malade et tu as de la fièvre depuis hier soir après la promenade.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « es » (être) et « as » (avoir) sont bien conjugués avec « tu ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3078,
+    "sentence": "Mon frère est fatigué et il à mal à la tête après avoir joué au soleil.",
+    "errorIndex": 5,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » : « il a mal » (on peut dire « avait mal »), pas la préposition « à ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3079,
+    "sentence": "Nous somme très contents de partir en vacances à la mer avec toute la famille.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3080,
+    "sentence": "Vous avez un beau jardin et vous êtes très gentils de nous inviter chez vous.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « avez » (avoir) et « êtes » (être) sont bien conjugués avec « vous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3081,
+    "sentence": "Les enfants son fatigués et ils ont sommeil après cette longue journée d'école.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les enfants » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3082,
+    "sentence": "Je ai un nouveau cartable rouge et je suis très fier de le montrer à mes amis.",
+    "errorIndex": 1,
+    "correctedWord": "J'ai",
+    "explanation": "Devant une voyelle, « je » s'élide : « j'ai » et non « je ai ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3083,
+    "sentence": "Tu a un beau dessin et tu es très doué pour les arts plastiques en classe.",
+    "errorIndex": 1,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3084,
+    "sentence": "Ma sœur a huit ans et elle est en CE2 dans la même école que moi.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « a » (avoir) et « est » (être) sont bien conjugués avec « elle ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3085,
+    "sentence": "Nous avon trois chats à la maison et ils sont tous très mignons et câlins.",
+    "errorIndex": 1,
+    "correctedWord": "avons",
+    "explanation": "Le verbe « avoir » avec « nous » s'écrit « avons » et non « avon ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3086,
+    "sentence": "Vous ête en retard ce matin et le professeur n'est pas content du tout.",
+    "errorIndex": 1,
+    "correctedWord": "êtes",
+    "explanation": "Le verbe « être » avec « vous » s'écrit « êtes » et non « ête ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3087,
+    "sentence": "Les chats on faim et ils sont devant leur gamelle en attendant leur repas.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le verbe « avoir » avec « les chats » (ils) s'écrit « ont » et non « on ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3088,
+    "sentence": "Je suis en CE2 et j'ai une maîtresse très gentille qui nous apprend beaucoup.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3089,
+    "sentence": "Tu est le plus grand de la classe et tu as aussi les plus longs bras.",
+    "errorIndex": 1,
+    "correctedWord": "es",
+    "explanation": "Le verbe « être » avec « tu » s'écrit « es » et non « est » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3090,
+    "sentence": "Mon ami es très drôle et il a toujours des histoires amusantes à raconter.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Le verbe « être » avec « mon ami » (il) s'écrit « est » et non « es » (2e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3091,
+    "sentence": "Nous sommes dans le jardin et nous avons très chaud parce que le soleil brille.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sommes » (être) et « avons » (avoir) sont bien conjugués avec « nous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3092,
+    "sentence": "Vous avait raison et le film est vraiment très bien comme vous l'aviez dit.",
+    "errorIndex": 1,
+    "correctedWord": "avez",
+    "explanation": "Le verbe « avoir » au présent avec « vous » s'écrit « avez » et non « avait » (imparfait).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3093,
+    "sentence": "Les élèves sont sages aujourd'hui et ils on bien écouté la leçon de grammaire.",
+    "errorIndex": 7,
+    "correctedWord": "ont",
+    "explanation": "Le verbe « avoir » avec « ils » s'écrit « ont » et non « on » (pronom).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3094,
+    "sentence": "Je es content de te voir et j'ai un cadeau pour toi dans mon sac.",
+    "errorIndex": 1,
+    "correctedWord": "suis",
+    "explanation": "Le verbe « être » avec « je » s'écrit « suis » et non « es » (2e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3095,
+    "sentence": "Tu es très gentil et tu a un grand cœur pour aider les autres enfants.",
+    "errorIndex": 6,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3096,
+    "sentence": "Ma mère est infirmière et elle à beaucoup de travail à l'hôpital chaque jour.",
+    "errorIndex": 5,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » : « elle a » (on peut dire « avait »), pas la préposition « à ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3097,
+    "sentence": "Nous somme les meilleurs amis du monde et nous avons plein de souvenirs ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3098,
+    "sentence": "Vous êtes invités à la fête et vous avez le droit d'amener un ami avec vous.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « êtes » (être) et « avez » (avoir) sont bien conjugués avec « vous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3099,
+    "sentence": "Les voisins son très bruyants le soir et ils on un chien qui aboie sans arrêt.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les voisins » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3100,
+    "sentence": "Je suis fatigué mais j'ai encore envie de jouer un peu avant d'aller dormir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3101,
+    "sentence": "Je vas à l'école tous les matins à pied avec ma sœur et mon voisin.",
+    "errorIndex": 1,
+    "correctedWord": "vais",
+    "explanation": "Le verbe « aller » avec « je » s'écrit « vais » et non « vas » (2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3102,
+    "sentence": "Tu vas chez le dentiste cet après-midi et maman t'accompagne en voiture.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vas » est bien la conjugaison de « aller » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3103,
+    "sentence": "Mon frère va au cinéma avec ses amis et il vont voir le nouveau film.",
+    "errorIndex": 9,
+    "correctedWord": "ils",
+    "explanation": "La phrase est correcte pour « va » mais « il vont » devrait être « ils vont » (pluriel).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3104,
+    "sentence": "Nous allont à la piscine chaque mercredi et nous nageons pendant une heure.",
+    "errorIndex": 1,
+    "correctedWord": "allons",
+    "explanation": "Le verbe « aller » avec « nous » s'écrit « allons » et non « allont ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3105,
+    "sentence": "Vous allez au parc cet après-midi et vous pourrez jouer sur les balançoires.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allez » est bien la conjugaison de « aller » avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3106,
+    "sentence": "Les enfants va à la cantine tous les jours et ils mangent avec leurs amis.",
+    "errorIndex": 2,
+    "correctedWord": "vont",
+    "explanation": "Le verbe « aller » avec « les enfants » (ils) s'écrit « vont » et non « va ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3107,
+    "sentence": "Je fais mes devoirs dans ma chambre et ensuite je vais jouer dans le jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « fais » (faire) et « vais » (aller) sont bien conjugués avec « je ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3108,
+    "sentence": "Tu fait un beau dessin pour la fête des mères et ta maman sera très contente.",
+    "errorIndex": 1,
+    "correctedWord": "fais",
+    "explanation": "Le verbe « faire » avec « tu » s'écrit « fais » et non « fait » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3109,
+    "sentence": "Ma sœur fait un gâteau au chocolat et elle le décore avec des bonbons colorés.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « fait » est bien la conjugaison de « faire » avec « elle ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3110,
+    "sentence": "Nous faison du sport tous les mardis et nous jouons au basket dans le gymnase.",
+    "errorIndex": 1,
+    "correctedWord": "faisons",
+    "explanation": "Le verbe « faire » avec « nous » s'écrit « faisons » et non « faison ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3111,
+    "sentence": "Vous faisez du bruit et le professeur vous demande de vous calmer tout de suite.",
+    "errorIndex": 1,
+    "correctedWord": "faites",
+    "explanation": "Le verbe « faire » avec « vous » s'écrit « faites » et non « faisez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3112,
+    "sentence": "Les élèves fait un exposé sur les animaux de la forêt devant toute la classe.",
+    "errorIndex": 2,
+    "correctedWord": "font",
+    "explanation": "Le verbe « faire » avec « les élèves » (ils) s'écrit « font » et non « fait ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3113,
+    "sentence": "Je dit bonjour à la maîtresse chaque matin quand j'arrive dans la classe.",
+    "errorIndex": 1,
+    "correctedWord": "dis",
+    "explanation": "Le verbe « dire » avec « je » s'écrit « dis » et non « dit » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3114,
+    "sentence": "Tu dis toujours la vérité et tes parents sont très fiers de toi pour cela.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dis » est bien la conjugaison de « dire » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3115,
+    "sentence": "Mon père dis qu'il faut se coucher tôt pour être en forme le lendemain.",
+    "errorIndex": 2,
+    "correctedWord": "dit",
+    "explanation": "Le verbe « dire » avec « mon père » (il) s'écrit « dit » et non « dis » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3116,
+    "sentence": "Nous disons merci à la dame qui nous a aidés à traverser la grande rue.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « disons » est bien la conjugaison de « dire » avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3117,
+    "sentence": "Vous disez des bêtises et la maîtresse n'est pas contente de votre comportement.",
+    "errorIndex": 1,
+    "correctedWord": "dites",
+    "explanation": "Le verbe « dire » avec « vous » s'écrit « dites » et non « disez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3118,
+    "sentence": "Les enfants dit qu'ils veulent aller au parc mais il pleut trop fort dehors.",
+    "errorIndex": 2,
+    "correctedWord": "disent",
+    "explanation": "Le verbe « dire » avec « les enfants » (ils) s'écrit « disent » et non « dit ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3119,
+    "sentence": "Je vien chez toi après l'école et nous pourrons jouer ensemble dans ta chambre.",
+    "errorIndex": 1,
+    "correctedWord": "viens",
+    "explanation": "Le verbe « venir » avec « je » s'écrit « viens » et non « vien ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3120,
+    "sentence": "Tu viens à la fête de samedi et tu pourras rencontrer tous mes amis.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viens » est bien la conjugaison de « venir » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3121,
+    "sentence": "Ma cousine viens nous voir ce week-end et elle reste dormir à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "vient",
+    "explanation": "Le verbe « venir » avec « ma cousine » (elle) s'écrit « vient » et non « viens » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3122,
+    "sentence": "Nous venon de finir nos devoirs et nous pouvons maintenant aller jouer dehors.",
+    "errorIndex": 1,
+    "correctedWord": "venons",
+    "explanation": "Le verbe « venir » avec « nous » s'écrit « venons » et non « venon ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3123,
+    "sentence": "Vous venez souvent nous rendre visite et nous sommes toujours contents de vous voir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « venez » est bien la conjugaison de « venir » avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3124,
+    "sentence": "Les amis de mon frère vient à la maison tous les samedis pour jouer ensemble.",
+    "errorIndex": 5,
+    "correctedWord": "viennent",
+    "explanation": "Le verbe « venir » avec « les amis » (ils) s'écrit « viennent » et non « vient ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3125,
+    "sentence": "Je fais un puzzle avec ma sœur et nous allons le finir avant le dîner.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « fais » (faire) et « allons » (aller) sont bien conjugués.",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3126,
+    "sentence": "Les enfants ont oublié de fermé la porte du jardin et le chien s'est échappé.",
+    "errorIndex": 5,
+    "correctedWord": "fermer",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « fermer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3127,
+    "sentence": "Le professeur a demandé aux élèves de se levé pour chanter la chanson.",
+    "errorIndex": 8,
+    "correctedWord": "lever",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « lever » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3128,
+    "sentence": "Maman a commencer à préparer le repas et papa va l'aider dans la cuisine.",
+    "errorIndex": 2,
+    "correctedWord": "commencé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « commencé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3129,
+    "sentence": "Mon frère veut essayé le nouveau vélo que papa lui a offert pour Noël.",
+    "errorIndex": 3,
+    "correctedWord": "essayer",
+    "explanation": "Après le verbe « veut », on utilise l'infinitif : « essayer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3130,
+    "sentence": "La maîtresse a distribué les cahiers et elle a demandé de bien travailler.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « distribué » et « demandé » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3131,
+    "sentence": "Les enfants adorent sauté dans les flaques d'eau quand il pleut très fort.",
+    "errorIndex": 3,
+    "correctedWord": "sauter",
+    "explanation": "Après le verbe « adorent », on utilise l'infinitif : « sauter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3132,
+    "sentence": "Papa a oublier d'acheter du lait au supermarché et maman n'est pas contente.",
+    "errorIndex": 2,
+    "correctedWord": "oublié",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « oublié » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3133,
+    "sentence": "Tu peux aller jouer dehors après avoir terminé tes devoirs de mathématiques.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « aller », « jouer » sont des infinitifs et « terminé » est un participe passé.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3134,
+    "sentence": "Le chat a renversé le vase en essayant de grimpé sur la table du salon.",
+    "errorIndex": 8,
+    "correctedWord": "grimper",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « grimper » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3135,
+    "sentence": "Ma sœur a réussi à terminé son puzzle de mille pièces en une seule journée.",
+    "errorIndex": 5,
+    "correctedWord": "terminer",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « terminer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3136,
+    "sentence": "Ces mon tour de jouer et je vais lancer les dés pour avancer mon pion.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On présente une situation : « c'est mon tour » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3137,
+    "sentence": "Le garçon c'est dépêché pour ne pas arriver en retard à l'école ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se dépêcher » au passé composé : « s'est dépêché ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3138,
+    "sentence": "Ma sœur a perdu ces gants dans la cour de récréation et elle a froid aux mains.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les gants de ma sœur (possessif) : « ses gants » et non « ces gants ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3139,
+    "sentence": "S'est super de pouvoir jouer dehors quand il fait beau et chaud en été.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est super » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3140,
+    "sentence": "Le bébé c'est endormi dans les bras de maman après avoir bu son biberon.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'endormir » au passé composé : « s'est endormi ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3141,
+    "sentence": "Mon ami a oublié ces baskets au gymnase et il ne peut pas faire de sport.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les baskets de mon ami (possessif) : « ses baskets » et non « ces baskets ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3142,
+    "sentence": "Ces enfants dans la cour jouent très bien ensemble et ils partagent leurs jouets.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces enfants-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3143,
+    "sentence": "La fille c'est retournée en entendant son nom et elle a vu sa maman.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se retourner » au passé composé : « s'est retournée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3144,
+    "sentence": "Ces pas grave si tu as fait une erreur, tu pourras recommencer demain.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est pas grave » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3145,
+    "sentence": "Mon cousin a rangé ces affaires dans son sac avant de partir en vacances.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les affaires de mon cousin (possessif) : « ses affaires » et non « ces affaires ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3146,
+    "sentence": "Ta clé est la sur la commode, je l'ai vue en passant dans le couloir.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3147,
+    "sentence": "La maîtresse là encouragé à continuer ses efforts et il est très motivé.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « l'a encouragé » (= avait encouragé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3148,
+    "sentence": "La balle est la derrière le buisson et personne ne peut la voir d'ici.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3149,
+    "sentence": "Mon père là réparé en une heure et maintenant le vélo roule comme neuf.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « l'a réparé » (= avait réparé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3150,
+    "sentence": "La bibliothèque est là au coin de la rue et on peut y aller à pied.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là » indique un lieu.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3151,
+    "sentence": "Maman là aidé à faire ses devoirs et maintenant il a tout compris.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « maman l'a aidé » (= avait aidé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3152,
+    "sentence": "Ton manteau est la sur le porte-manteau, prends-le avant de sortir dehors.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3153,
+    "sentence": "Le chat là griffé quand il a voulu le caresser et il a eu très mal.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le chat l'a griffé » (= avait griffé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3154,
+    "sentence": "La trousse de ma sœur est la dans son cartable et elle ne la trouve pas.",
+    "errorIndex": 6,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3155,
+    "sentence": "La directrice là félicité devant toute la classe pour son excellent travail.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la directrice l'a félicité » (= avait félicité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3156,
+    "sentence": "Mon ami habite pres de l'école et il vient à pied tous les matins.",
+    "errorIndex": 3,
+    "correctedWord": "près",
+    "explanation": "« Près » est un mot invariable qui s'écrit avec un accent grave : « près » et non « pres ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3157,
+    "sentence": "Les enfants jouent dehors malgrés la pluie et ils s'amusent quand même.",
+    "errorIndex": 4,
+    "correctedWord": "malgré",
+    "explanation": "« Malgré » est un mot invariable qui ne prend pas de « s » : « malgré » et non « malgrés ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3158,
+    "sentence": "Ma sœur est partie ailleur jouer et elle reviendra pour le dîner ce soir.",
+    "errorIndex": 4,
+    "correctedWord": "ailleurs",
+    "explanation": "« Ailleurs » est un mot invariable qui s'écrit avec un « s » : « ailleurs ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3159,
+    "sentence": "Le chat dort paisiblement sur le canapé et il ne bouge jamais de la journée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « paisiblement » et « jamais » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3160,
+    "sentence": "Mon frère mange trop de bonbons et il a souvant mal au ventre après.",
+    "errorIndex": 9,
+    "correctedWord": "souvent",
+    "explanation": "« Souvent » est un mot invariable : « souvent » et non « souvant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3161,
+    "sentence": "Les oiseaux chantent depui ce matin et ils ne s'arrêtent pas du tout.",
+    "errorIndex": 3,
+    "correctedWord": "depuis",
+    "explanation": "« Depuis » est un mot invariable qui s'écrit avec un « s » : « depuis » et non « depui ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3162,
+    "sentence": "Papa conduit prudemant sur la route mouillée pour ne pas avoir d'accident.",
+    "errorIndex": 2,
+    "correctedWord": "prudemment",
+    "explanation": "« Prudemment » est un mot invariable avec deux « m » : « prudemment » et non « prudemant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3163,
+    "sentence": "Les enfants sont partis et la maison est enfain calme et silencieuse ce soir.",
+    "errorIndex": 7,
+    "correctedWord": "enfin",
+    "explanation": "« Enfin » est un mot invariable : « enfin » et non « enfain ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3164,
+    "sentence": "Ma mère dit que nous devons parler polimment aux adultes et dire bonjour.",
+    "errorIndex": 7,
+    "correctedWord": "poliment",
+    "explanation": "« Poliment » est un mot invariable avec un seul « m » : « poliment » et non « polimment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3165,
+    "sentence": "Le professeur explique clairement la leçon et tous les élèves comprennent bien.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « clairement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3166,
+    "sentence": "Tu est très gentil avec ta petite sœur et elle t'adore pour cela.",
+    "errorIndex": 1,
+    "correctedWord": "es",
+    "explanation": "Le verbe « être » avec « tu » s'écrit « es » et non « est » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3167,
+    "sentence": "Nous avons un grand jardin et nous sommes très contents d'y jouer chaque jour.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « avons » (avoir) et « sommes » (être) sont bien conjugués avec « nous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3168,
+    "sentence": "Les enfants son en retard et ils on oublié de mettre leur réveil ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les enfants » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3169,
+    "sentence": "Je suis le plus petit de la classe mais j'ai les meilleures notes en lecture.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3170,
+    "sentence": "Vous avait un beau chien et vous ête très gentils de le promener chaque jour.",
+    "errorIndex": 1,
+    "correctedWord": "avez",
+    "explanation": "Le verbe « avoir » au présent avec « vous » s'écrit « avez » et non « avait ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3171,
+    "sentence": "Tu a beaucoup de jouets dans ta chambre et tu es très chanceux d'en avoir autant.",
+    "errorIndex": 1,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3172,
+    "sentence": "Ma tante es très drôle et elle a toujours des histoires amusantes à raconter.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Le verbe « être » avec « ma tante » (elle) s'écrit « est » et non « es » (2e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3173,
+    "sentence": "Nous somme fatigués après la promenade et nous avons envie de nous reposer.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3174,
+    "sentence": "Les chats son dehors et ils on trouvé un oiseau blessé dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les chats » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3175,
+    "sentence": "Vous ête les bienvenus chez nous et vous avez le droit de rester pour le dîner.",
+    "errorIndex": 1,
+    "correctedWord": "êtes",
+    "explanation": "Le verbe « être » avec « vous » s'écrit « êtes » et non « ête ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3176,
+    "sentence": "Je va au parc avec mon chien et nous allons nous promener le long de la rivière.",
+    "errorIndex": 1,
+    "correctedWord": "vais",
+    "explanation": "Le verbe « aller » avec « je » s'écrit « vais » et non « va » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3177,
+    "sentence": "Les filles va à la danse tous les mercredis et elles adorent leur professeur.",
+    "errorIndex": 2,
+    "correctedWord": "vont",
+    "explanation": "Le verbe « aller » avec « les filles » (elles) s'écrit « vont » et non « va ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3178,
+    "sentence": "Tu fait toujours tes devoirs en premier et ensuite tu vas jouer dehors.",
+    "errorIndex": 1,
+    "correctedWord": "fais",
+    "explanation": "Le verbe « faire » avec « tu » s'écrit « fais » et non « fait » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3179,
+    "sentence": "Les élèves fait du bruit dans le couloir et le directeur n'est pas content.",
+    "errorIndex": 2,
+    "correctedWord": "font",
+    "explanation": "Le verbe « faire » avec « les élèves » (ils) s'écrit « font » et non « fait ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3180,
+    "sentence": "Nous faisons un gâteau pour l'anniversaire de papa et il sera très content.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « faisons » est bien la conjugaison de « faire » avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3181,
+    "sentence": "Vous faisez trop de bruit et les voisins se plaignent chaque soir.",
+    "errorIndex": 1,
+    "correctedWord": "faites",
+    "explanation": "Le verbe « faire » avec « vous » s'écrit « faites » et non « faisez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3182,
+    "sentence": "Je dit toujours merci quand quelqu'un me donne quelque chose de gentil.",
+    "errorIndex": 1,
+    "correctedWord": "dis",
+    "explanation": "Le verbe « dire » avec « je » s'écrit « dis » et non « dit » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3183,
+    "sentence": "Les enfants dit qu'ils veulent manger des frites et pas de la soupe.",
+    "errorIndex": 2,
+    "correctedWord": "disent",
+    "explanation": "Le verbe « dire » avec « les enfants » (ils) s'écrit « disent » et non « dit ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3184,
+    "sentence": "Vous disez toujours la même chose et personne ne vous écoute plus maintenant.",
+    "errorIndex": 1,
+    "correctedWord": "dites",
+    "explanation": "Le verbe « dire » avec « vous » s'écrit « dites » et non « disez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3185,
+    "sentence": "Ma mère dis qu'il faut manger des légumes pour être en bonne santé.",
+    "errorIndex": 2,
+    "correctedWord": "dit",
+    "explanation": "Le verbe « dire » avec « ma mère » (elle) s'écrit « dit » et non « dis » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3186,
+    "sentence": "Je vien de finir mon dessin et je vais le montrer à la maîtresse.",
+    "errorIndex": 1,
+    "correctedWord": "viens",
+    "explanation": "Le verbe « venir » avec « je » s'écrit « viens » et non « vien ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3187,
+    "sentence": "Les grands-parents vient nous voir chaque dimanche et ils apportent des gâteaux.",
+    "errorIndex": 2,
+    "correctedWord": "viennent",
+    "explanation": "Le verbe « venir » avec « les grands-parents » (ils) s'écrit « viennent » et non « vient ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3188,
+    "sentence": "Mon cousin viens à la maison ce week-end et nous allons jouer ensemble.",
+    "errorIndex": 2,
+    "correctedWord": "vient",
+    "explanation": "Le verbe « venir » avec « mon cousin » (il) s'écrit « vient » et non « viens » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3189,
+    "sentence": "Nous venon juste d'arriver et nous sommes déjà fatigués par le long voyage.",
+    "errorIndex": 1,
+    "correctedWord": "venons",
+    "explanation": "Le verbe « venir » avec « nous » s'écrit « venons » et non « venon ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3190,
+    "sentence": "Tu vas à la boulangerie acheter du pain et tu fais aussi les courses.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vas » (aller) et « fais » (faire) sont bien conjugués avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3191,
+    "sentence": "Le chien a mordre le facteur ce matin et papa a dû s'excuser auprès de lui.",
+    "errorIndex": 2,
+    "correctedWord": "mordu",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « mordu » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3192,
+    "sentence": "Ma sœur veut apprendre à cuisiner et elle demande à maman de lui montré.",
+    "errorIndex": 12,
+    "correctedWord": "montrer",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « montrer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3193,
+    "sentence": "Le professeur a corrigé les copies et il a rendu les résultats aux élèves.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « corrigé » et « rendu » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3194,
+    "sentence": "Les enfants veulent découpé des étoiles en papier pour décorer le sapin de Noël.",
+    "errorIndex": 3,
+    "correctedWord": "découper",
+    "explanation": "Après le verbe « veulent », on utilise l'infinitif : « découper » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3195,
+    "sentence": "Papa a repeindre la chambre de mon frère en bleu pendant les vacances.",
+    "errorIndex": 2,
+    "correctedWord": "repeint",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « repeint » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3196,
+    "sentence": "Ces mon anniversaire aujourd'hui et maman a préparé un gâteau au chocolat.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On présente une situation : « c'est mon anniversaire » (= cela est), pas « ces ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3197,
+    "sentence": "Le garçon c'est fait mal en tombant de vélo et il pleure dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se faire mal » au passé composé : « s'est fait mal ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3198,
+    "sentence": "Ma copine a perdu ces boucles d'oreilles à la piscine et elle est triste.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les boucles de ma copine (possessif) : « ses boucles » et non « ces boucles ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3199,
+    "sentence": "S'est vrai que les vacances commencent bientôt et tout le monde est content.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On constate quelque chose : « c'est vrai » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3200,
+    "sentence": "La petite fille c'est brûlée en touchant la casserole chaude sur la cuisinière.",
+    "errorIndex": 3,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se brûler » au passé composé : « s'est brûlée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3201,
+    "sentence": "Reste la et ne bouge pas, je reviens dans cinq minutes avec ton goûter.",
+    "errorIndex": 1,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « reste là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3202,
+    "sentence": "Le médecin là ausculté et il a dit que tout allait bien pour sa santé.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le médecin l'a ausculté » (= avait ausculté).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3203,
+    "sentence": "La clé est la dans le tiroir de la commode, tu peux aller la chercher.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3204,
+    "sentence": "Sa maman là consolé quand il est tombé et elle lui a mis un pansement.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « sa maman l'a consolé » (= avait consolé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3205,
+    "sentence": "La maison de ma grand-mère est là-bas derrière les grands arbres du chemin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là-bas » indique un lieu éloigné.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3206,
+    "sentence": "Les enfants jouent silencieusement dans le salon pendant que bébé dort en haut.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « silencieusement » et « pendant » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3207,
+    "sentence": "Mon frère court extremement vite et personne ne peut le rattraper à la course.",
+    "errorIndex": 3,
+    "correctedWord": "extrêmement",
+    "explanation": "« Extrêmement » est un mot invariable avec un accent circonflexe : « extrêmement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3208,
+    "sentence": "Les oiseaux chantent jolimment et on les entend depuis la fenêtre de la cuisine.",
+    "errorIndex": 3,
+    "correctedWord": "joliment",
+    "explanation": "« Joliment » est un mot invariable avec un seul « m » : « joliment » et non « jolimment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3209,
+    "sentence": "Papa travaille enormément et il rentre très tard à la maison chaque soir.",
+    "errorIndex": 2,
+    "correctedWord": "énormément",
+    "explanation": "« Énormément » est un mot invariable avec un accent : « énormément » et non « enormément ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3210,
+    "sentence": "Ma sœur parle courament anglais et elle peut aussi parler un peu d'espagnol.",
+    "errorIndex": 3,
+    "correctedWord": "couramment",
+    "explanation": "« Couramment » est un mot invariable avec deux « m » : « couramment » et non « courament ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3211,
+    "sentence": "Tu es très gentil et tu a toujours un sourire pour les gens autour de toi.",
+    "errorIndex": 6,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3212,
+    "sentence": "Nous sommes en vacances et nous avon hâte d'aller à la plage demain matin.",
+    "errorIndex": 5,
+    "correctedWord": "avons",
+    "explanation": "Le verbe « avoir » avec « nous » s'écrit « avons » et non « avon ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3213,
+    "sentence": "Les animaux du zoo son bien soignés et ils on de grands enclos pour vivre.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les animaux » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3214,
+    "sentence": "Vous ête très courageux d'avoir couru le marathon et vous avez bien mérité un repos.",
+    "errorIndex": 1,
+    "correctedWord": "êtes",
+    "explanation": "Le verbe « être » avec « vous » s'écrit « êtes » et non « ête ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3215,
+    "sentence": "Je suis prêt pour l'école et j'ai mis mon cartable sur mon dos.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3216,
+    "sentence": "Les enfants va au cinéma avec leur père et ils vont voir un film d'aventure.",
+    "errorIndex": 2,
+    "correctedWord": "vont",
+    "explanation": "Le verbe « aller » avec « les enfants » (ils) s'écrit « vont » et non « va ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3217,
+    "sentence": "Je fais la vaisselle pendant que tu fait le ménage dans le salon.",
+    "errorIndex": 7,
+    "correctedWord": "fais",
+    "explanation": "Le verbe « faire » avec « tu » s'écrit « fais » et non « fait » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3218,
+    "sentence": "Les parents dit aux enfants de se coucher tôt pour être en forme demain.",
+    "errorIndex": 2,
+    "correctedWord": "disent",
+    "explanation": "Le verbe « dire » avec « les parents » (ils) s'écrit « disent » et non « dit ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3219,
+    "sentence": "Ma tante viens de Lyon pour nous rendre visite et elle reste trois jours.",
+    "errorIndex": 2,
+    "correctedWord": "vient",
+    "explanation": "Le verbe « venir » avec « ma tante » (elle) s'écrit « vient » et non « viens ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3220,
+    "sentence": "Nous allons au marché et nous faisons les courses pour toute la semaine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allons » (aller) et « faisons » (faire) sont bien conjugués avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3221,
+    "sentence": "Mon père a acheter un nouveau téléphone et il est très content de son achat.",
+    "errorIndex": 3,
+    "correctedWord": "acheté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « acheté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3222,
+    "sentence": "Les élèves doivent copié la leçon dans leur cahier avant la fin du cours.",
+    "errorIndex": 3,
+    "correctedWord": "copier",
+    "explanation": "Après le verbe « doivent », on utilise l'infinitif : « copier » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3223,
+    "sentence": "Maman a préparé le repas et papa a lavé la vaisselle après le dîner.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « préparé » et « lavé » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3224,
+    "sentence": "Il faut pensé à prendre un parapluie parce qu'il va pleuvoir cet après-midi.",
+    "errorIndex": 2,
+    "correctedWord": "penser",
+    "explanation": "Après « il faut », on utilise l'infinitif : « penser » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3225,
+    "sentence": "Le jardinier a tailler les rosiers et maintenant le jardin est très propre.",
+    "errorIndex": 2,
+    "correctedWord": "taillé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « taillé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3226,
+    "sentence": "Ces la meilleure tarte que j'ai jamais mangée et je veux la recette.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est la meilleure » (= cela est), pas « ces ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3227,
+    "sentence": "Le chien c'est échappé du jardin et les voisins l'ont retrouvé dans la rue.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'échapper » au passé composé : « s'est échappé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3228,
+    "sentence": "Mon frère a oublié ces clés dans la voiture et il ne peut pas ouvrir la porte.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les clés de mon frère (possessif) : « ses clés » et non « ces clés ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3229,
+    "sentence": "S'est gentil de ta part de m'aider à porter mes sacs de courses.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est gentil » (= cela est), pas « s'est ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3230,
+    "sentence": "La fille c'est coupée avec les ciseaux en découpant du papier pour le bricolage.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se couper » au passé composé : « s'est coupée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3231,
+    "sentence": "Assieds-toi la et attends que je revienne avec ton verre de jus d'orange.",
+    "errorIndex": 1,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « assieds-toi là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3232,
+    "sentence": "La directrice là récompensé pour ses bons résultats et il est très fier.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la directrice l'a récompensé » (= avait récompensé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3233,
+    "sentence": "Mon cartable est la par terre et je dois le ranger avant que maman le voie.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3234,
+    "sentence": "Papa là porté sur ses épaules parce qu'il était trop fatigué pour marcher.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « papa l'a porté » (= avait porté).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3235,
+    "sentence": "La balle est la sous le banc et personne ne veut aller la chercher.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3236,
+    "sentence": "Les enfants marchent gentimment en rang dans le couloir pour aller à la cantine.",
+    "errorIndex": 3,
+    "correctedWord": "gentiment",
+    "explanation": "« Gentiment » est un mot invariable avec un seul « m » : « gentiment » et non « gentimment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3237,
+    "sentence": "Mon ami parle sufisamment fort pour que tout le monde l'entende en classe.",
+    "errorIndex": 3,
+    "correctedWord": "suffisamment",
+    "explanation": "« Suffisamment » est un mot invariable avec deux « f » : « suffisamment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3238,
+    "sentence": "Les élèves écrivent soigneusement dans leur cahier et la maîtresse est contente.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « soigneusement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3239,
+    "sentence": "Papa dit que nous devons manger correctemant à table et ne pas faire de bruit.",
+    "errorIndex": 7,
+    "correctedWord": "correctement",
+    "explanation": "« Correctement » est un mot invariable : « correctement » et non « correctemant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3240,
+    "sentence": "Le chien aboie méchemment quand un inconnu s'approche de la maison le soir.",
+    "errorIndex": 3,
+    "correctedWord": "méchamment",
+    "explanation": "« Méchamment » est un mot invariable : « méchamment » et non « méchemment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3241,
+    "sentence": "Tu est le premier arrivé ce matin et tu as bien fait de te lever tôt.",
+    "errorIndex": 1,
+    "correctedWord": "es",
+    "explanation": "Le verbe « être » avec « tu » s'écrit « es » et non « est » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3242,
+    "sentence": "Nous somme les champions de la course et nous avons gagné la médaille d'or.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3243,
+    "sentence": "Les poissons on besoin d'eau propre et ils sont très sensibles à la pollution.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le verbe « avoir » avec « les poissons » (ils) s'écrit « ont » et non « on ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3244,
+    "sentence": "Je va chez le docteur cet après-midi parce que j'ai mal à la gorge.",
+    "errorIndex": 1,
+    "correctedWord": "vais",
+    "explanation": "Le verbe « aller » avec « je » s'écrit « vais » et non « va » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3245,
+    "sentence": "Les voisins fait du bruit tous les soirs et nous ne pouvons pas dormir.",
+    "errorIndex": 2,
+    "correctedWord": "font",
+    "explanation": "Le verbe « faire » avec « les voisins » (ils) s'écrit « font » et non « fait ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3246,
+    "sentence": "Mon professeur dis que je suis un bon élève et que je travaille très bien.",
+    "errorIndex": 2,
+    "correctedWord": "dit",
+    "explanation": "Le verbe « dire » avec « mon professeur » (il) s'écrit « dit » et non « dis ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3247,
+    "sentence": "Les cousins vient de Paris pour les vacances et ils restent une semaine.",
+    "errorIndex": 2,
+    "correctedWord": "viennent",
+    "explanation": "Le verbe « venir » avec « les cousins » (ils) s'écrit « viennent » et non « vient ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3248,
+    "sentence": "Nous allont au zoo demain et nous verrons les lions et les éléphants.",
+    "errorIndex": 1,
+    "correctedWord": "allons",
+    "explanation": "Le verbe « aller » avec « nous » s'écrit « allons » et non « allont ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3249,
+    "sentence": "Vous faisez la cuisine ce soir et nous faisons la vaisselle après le repas.",
+    "errorIndex": 1,
+    "correctedWord": "faites",
+    "explanation": "Le verbe « faire » avec « vous » s'écrit « faites » et non « faisez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3250,
+    "sentence": "Tu dis toujours des choses gentilles et tout le monde t'aime beaucoup pour cela.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dis » est bien la conjugaison de « dire » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3251,
+    "sentence": "Papa a terminé de réparer le vélo et il l'a rangé dans le garage ce soir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « terminé » et « rangé » sont des participes passés après « a », et « réparer » est un infinitif après « de ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3252,
+    "sentence": "Les enfants adorent dessiner et ils veulent apprendre à peindre aussi cette année.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dessiner », « apprendre » et « peindre » sont des infinitifs.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3253,
+    "sentence": "Maman a préparé le repas et elle a demandé à mon frère de mettre la table.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « préparé » et « demandé » sont des participes passés, « mettre » est un infinitif après « de ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3254,
+    "sentence": "Le professeur a expliqué la leçon et il a donné des exercices à faire pour demain.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « expliqué » et « donné » sont des participes passés, « faire » est un infinitif après « à ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3255,
+    "sentence": "Mon frère a essayé de grimper dans l'arbre mais il n'a pas réussi à monter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « essayé » et « réussi » sont des participes passés, « grimper » et « monter » sont des infinitifs.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3256,
+    "sentence": "Tu peux aller jouer dehors après avoir rangé ta chambre et terminé tes devoirs.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « aller » et « jouer » sont des infinitifs, « rangé » et « terminé » sont des participes passés.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3257,
+    "sentence": "La voisine a invité tous les enfants et elle a organisé des jeux dans le jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « invité » et « organisé » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3258,
+    "sentence": "Il faut penser à fermer la porte à clé avant de partir pour ne pas oublier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « penser », « fermer », « partir » et « oublier » sont des infinitifs.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3259,
+    "sentence": "C'est mon meilleur ami et il vient souvent jouer à la maison le mercredi.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « c'est » (= cela est) présente quelqu'un.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3260,
+    "sentence": "Ma sœur a pris ses affaires et elle s'est dépêchée pour ne pas rater le bus.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif et « s'est dépêchée » est le verbe pronominal au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3261,
+    "sentence": "Ces arbres sont magnifiques en automne quand leurs feuilles deviennent rouges et dorées.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces arbres-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3262,
+    "sentence": "Le chat s'est endormi sur le coussin et il ronronne doucement près de la cheminée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est endormi » est le verbe pronominal « s'endormir » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3263,
+    "sentence": "Mon cousin a rangé ses cahiers dans son cartable et il est prêt pour l'école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif (= les cahiers de mon cousin).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3264,
+    "sentence": "C'est bientôt les vacances et tous les enfants sont impatients de partir en voyage.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « c'est » (= cela est) constate une situation.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3265,
+    "sentence": "La petite fille s'est assise sur le banc et elle attend sa maman devant l'école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est assise » est le verbe pronominal « s'asseoir » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3266,
+    "sentence": "Ces gâteaux sont délicieux et ses amis en veulent tous une deuxième part.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif (ces gâteaux-là) et « ses » est le possessif (les amis de quelqu'un).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3267,
+    "sentence": "Maman est là dans la cuisine et elle prépare la tarte aux pommes pour le dessert.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « là » indique un lieu et « la » est l'article défini.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3268,
+    "sentence": "Le docteur l'a examiné et il lui a dit qu'il allait beaucoup mieux maintenant.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « l'a » est le pronom « l' » + verbe « a » (= l'avait examiné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3269,
+    "sentence": "La voiture est garée là devant la maison et papa l'a lavée ce matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article, « là » indique un lieu, « l'a » est pronom + verbe avoir.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3270,
+    "sentence": "C'est là que j'ai trouvé la balle et je l'ai ramenée à la maison.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « là » indique un lieu et « la » est l'article ou le pronom.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3271,
+    "sentence": "La maîtresse l'a félicité devant toute la classe et il était très content.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « l'a » est le pronom « l' » + verbe « a » (= l'avait félicité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3272,
+    "sentence": "Pose ton sac là sur la chaise et viens manger, la soupe est prête.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « là » indique un lieu et « la » est l'article défini.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3273,
+    "sentence": "Sa maman l'a accompagné à l'école et elle l'a embrassé devant la porte.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « l'a » est le pronom « l' » + verbe « a » dans les deux cas.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3274,
+    "sentence": "Les enfants jouent toujours ensemble dans la cour et ils s'amusent beaucoup.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « toujours » et « ensemble » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3275,
+    "sentence": "Ma sœur court très vite et elle arrive souvent en première à la course.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « très », « vite » et « souvent » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3276,
+    "sentence": "Papa conduit prudemment sur la route et il fait toujours attention aux piétons.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « prudemment » et « toujours » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3277,
+    "sentence": "Les élèves travaillent sérieusement et la maîtresse est vraiment contente d'eux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sérieusement » et « vraiment » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3278,
+    "sentence": "Mon ami habite assez loin de l'école mais il arrive toujours à l'heure.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « assez », « loin » et « toujours » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3279,
+    "sentence": "Nous mangeons d'abord la soupe et ensuite nous prenons le dessert tranquillement.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « d'abord », « ensuite » et « tranquillement » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3280,
+    "sentence": "Le chat dort paisiblement derrière le canapé et il ne bouge jamais de là.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « paisiblement », « derrière » et « jamais » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3281,
+    "sentence": "Ma cousine parle couramment anglais et elle voyage beaucoup à l'étranger.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « couramment » et « beaucoup » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3282,
+    "sentence": "Je suis en CE2 et j'ai une maîtresse très gentille qui explique bien les leçons.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3283,
+    "sentence": "Tu es mon meilleur ami et tu as toujours de bonnes idées pour jouer.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « es » (être) et « as » (avoir) sont bien conjugués avec « tu ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3284,
+    "sentence": "Mon père est boulanger et il a une boutique au centre du village depuis dix ans.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « est » (être) et « a » (avoir) sont bien conjugués avec « il ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3285,
+    "sentence": "Nous sommes en vacances et nous avons hâte d'aller à la plage demain matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sommes » (être) et « avons » (avoir) sont bien conjugués avec « nous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3286,
+    "sentence": "Vous êtes très gentils et vous avez préparé une belle surprise pour notre anniversaire.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « êtes » (être) et « avez » (avoir) sont bien conjugués avec « vous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3287,
+    "sentence": "Les enfants sont contents et ils ont envie de jouer dehors toute la journée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sont » (être) et « ont » (avoir) sont bien conjugués avec « ils ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3288,
+    "sentence": "Je vais à l'école à pied et je fais le chemin avec mon voisin chaque matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vais » (aller) et « fais » (faire) sont bien conjugués avec « je ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3289,
+    "sentence": "Tu vas chez le dentiste et tu dis à maman que tu n'as pas peur du tout.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vas » (aller) et « dis » (dire) sont bien conjugués avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3290,
+    "sentence": "Ma sœur va à la danse et elle fait de grands progrès depuis le début de l'année.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « va » (aller) et « fait » (faire) sont bien conjugués avec « elle ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3291,
+    "sentence": "Nous allons au parc et nous disons bonjour à tous les gens que nous croisons.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allons » (aller) et « disons » (dire) sont bien conjugués avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3292,
+    "sentence": "Vous allez au cinéma et vous faites bien de choisir le film d'animation.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allez » (aller) et « faites » (faire) sont bien conjugués avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3293,
+    "sentence": "Les enfants vont à la cantine et ils disent merci à la dame qui les sert.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vont » (aller) et « disent » (dire) sont bien conjugués avec « ils ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3294,
+    "sentence": "Je viens de finir mes devoirs et je dis à maman que je vais jouer dehors.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viens » (venir), « dis » (dire) et « vais » (aller) sont bien conjugués avec « je ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3295,
+    "sentence": "Tu viens à la maison et tu fais un gâteau avec moi pour le goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viens » (venir) et « fais » (faire) sont bien conjugués avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3296,
+    "sentence": "Mon oncle vient de Lyon et il dit qu'il fait très chaud là-bas en été.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vient » (venir), « dit » (dire) et « fait » (faire) sont bien conjugués avec « il ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3297,
+    "sentence": "Nous venons de rentrer et nous faisons nos devoirs avant d'aller jouer dehors.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « venons » (venir) et « faisons » (faire) sont bien conjugués avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3298,
+    "sentence": "Vous venez souvent nous voir et vous dites toujours des choses gentilles.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « venez » (venir) et « dites » (dire) sont bien conjugués avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3299,
+    "sentence": "Les grands-parents viennent dimanche et ils font toujours de bons gâteaux pour nous.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viennent » (venir) et « font » (faire) sont bien conjugués avec « ils ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3300,
+    "sentence": "Les enfants disent qu'ils veulent aller au parc et ils y vont en courant.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « disent » (dire) et « vont » (aller) sont bien conjugués avec « ils ».",
+    "category": "conjugaison aller/faire/dire/venir"
   }
 ]
