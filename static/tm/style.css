@@ -1,0 +1,263 @@
+/* === Reset & Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #fce4ec 0%, #e3f2fd 50%, #fff9c4 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+/* === Screens === */
+.screen {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.screen[hidden] {
+  display: none;
+}
+
+/* === Typography === */
+h1 {
+  font-size: 2.2rem;
+  color: #6a1b9a;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #1565c0;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* === Buttons === */
+button {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  color: #fff;
+  background: #6a1b9a;
+  box-shadow: 0 3px 8px rgba(106, 27, 154, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(106, 27, 154, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* === Clickable Words === */
+.words-container {
+  margin-bottom: 1rem;
+}
+
+.word {
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  margin: 0.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background 0.15s, transform 0.1s;
+  background: #e8eaf6;
+  user-select: none;
+}
+
+.word:hover {
+  background: #c5cae9;
+  transform: scale(1.05);
+}
+
+/* === Feedback States === */
+.word.correct {
+  background: #a5d6a7;
+  color: #1b5e20;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.word.incorrect {
+  background: #ef9a9a;
+  color: #b71c1c;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.word.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  cursor: default;
+}
+
+.word.disabled:hover {
+  transform: none;
+}
+
+/* === Bouton OK (phrase correcte) === */
+.btn-ok {
+  display: block;
+  margin: 1rem auto 0;
+  background: #00897b;
+  box-shadow: 0 3px 8px rgba(0, 137, 123, 0.3);
+  font-size: 1.1rem;
+  padding: 0.7rem 2rem;
+}
+
+.btn-ok:hover {
+  box-shadow: 0 5px 14px rgba(0, 137, 123, 0.4);
+}
+
+.btn-ok.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn-ok-correct {
+  background: #2e7d32;
+}
+
+.btn-ok-incorrect {
+  background: #c62828;
+}
+
+/* === Feedback / Explanation === */
+.feedback {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.feedback.correct {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 2px solid #a5d6a7;
+}
+
+.feedback.incorrect {
+  background: #ffebee;
+  color: #c62828;
+  border: 2px solid #ef9a9a;
+}
+
+/* === Progress Indicator === */
+.progress {
+  font-size: 1rem;
+  color: #7e57c2;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* === Score === */
+.score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #6a1b9a;
+  margin: 1rem 0;
+}
+
+/* === Results Recap === */
+.recap {
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.recap-item {
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+
+.recap-item.correct {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+}
+
+.recap-item.incorrect {
+  background: #ffebee;
+  border-left: 4px solid #ef5350;
+}
+
+/* === Error Message === */
+.error-message {
+  background: #fff3e0;
+  color: #e65100;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid #ffcc80;
+  font-size: 1.1rem;
+}
+
+/* === Responsive Mobile === */
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  main {
+    margin: 0.5rem auto;
+  }
+
+  .screen {
+    padding: 1.2rem;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .word {
+    font-size: 1.2rem;
+    padding: 0.25rem 0.4rem;
+    margin: 0.2rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .score {
+    font-size: 2rem;
+  }
+}
