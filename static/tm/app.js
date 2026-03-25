@@ -170,7 +170,7 @@ function showQuestionScreen(phrase, questionNumber, totalQuestions) {
 
   var progress = document.createElement('p');
   progress.className = 'progress';
-  progress.textContent = 'Question ' + questionNumber + '/' + totalQuestions;
+  progress.textContent = 'Question ' + questionNumber + '/' + totalQuestions + ' (n°' + phrase.id + ')';
   question.appendChild(progress);
 
   var consigne = document.createElement('h2');
