@@ -16,6 +16,6 @@ ShowToc: false
 ## Volunteering & Community Engagement
 
 * **[SAR France](https://www.sarfrance.org/)** — Webmaster
-  * Managing the web presence for SAR France, including the [migration from WordPress to Hugo]({{< ref "/posts/2026-03-17-De-WordPress-a-Hugo-La-migration-de-sarfrance.org-avec-Claude-via-Kiro" >}}).
+  * Managing the full website via GitHub, leveraging Claude Code within GitHub's agentic workflows to handle back-office tasks. This includes the [migration from WordPress to Hugo]({{< ref "/posts/2026-03-17-De-WordPress-a-Hugo-La-migration-de-sarfrance.org-avec-Claude-via-Kiro" >}}).
 * **[Kinotayo — Festival du cinéma japonais contemporain](https://kinotayo.fr/)** — Volunteer
   * Supporting attendee management during the festival. Assisting the social media team with indexing video rushes, summarizing interventions (directors, actors), and preparing content assisted by generative AI.
