@@ -1,4 +1,7 @@
 // Quiz de Grammaire Française — CE2
+
+var SESSION_SIZE = 30;
+
 // Application state
 
 /**
@@ -92,7 +95,7 @@ function selectSessionPhrases(allPhrases) {
     copy[i] = copy[j];
     copy[j] = tmp;
   }
-  return copy.slice(0, 20);
+  return copy.slice(0, SESSION_SIZE);
 }
 
 /**
