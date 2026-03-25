@@ -21198,5 +21198,2405 @@
     "correctedWord": "",
     "explanation": "« Notre » est un déterminant possessif correct devant « école ».",
     "category": "déterminants"
+  },
+  {
+    "id": 2651,
+    "sentence": "Marie aime les animaux et elle les nourrit chaque matin avant de partir à son école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « elle » reprend « Marie » et « les » reprend « les animaux ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2652,
+    "sentence": "Mon frère adore le football et il y joue tous les mercredis avec ses copains du quartier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « il » reprend « mon frère » et « y » reprend « au football ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2653,
+    "sentence": "Les filles de ma classe sont gentilles et il les aide toujours quand elles ont un problème.",
+    "errorIndex": 7,
+    "correctedWord": "il",
+    "explanation": "La phrase est correcte grammaticalement : « il » peut désigner une autre personne qui aide les filles.",
+    "category": "pronoms"
+  },
+  {
+    "id": 2654,
+    "sentence": "Papa a préparé un bon repas et nous lui avons dit merci parce que il cuisine très bien.",
+    "errorIndex": 11,
+    "correctedWord": "qu'il",
+    "explanation": "Devant « il », on fait l'élision : « parce qu'il » et non « parce que il ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2655,
+    "sentence": "Ma petite sœur a peur du noir et elle pleure souvent quand il fait sombre dans sa chambre.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « elle » reprend « ma petite sœur » et « il » est impersonnel dans « il fait sombre ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2656,
+    "sentence": "Les garçons du village jouent au ballon et elle courent très vite sur le grand terrain.",
+    "errorIndex": 7,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les garçons » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2657,
+    "sentence": "Le chat de la voisine dort sur le mur et elle ronronne doucement au soleil chaque après-midi.",
+    "errorIndex": 9,
+    "correctedWord": "il",
+    "explanation": "Le pronom reprend « le chat » (masculin singulier), donc on utilise « il » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2658,
+    "sentence": "Maman a acheté des fraises au marché et nous en avons mangé beaucoup au goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « en » reprend « des fraises » (quantité partitive).",
+    "category": "pronoms"
+  },
+  {
+    "id": 2659,
+    "sentence": "La maîtresse explique la leçon et elle les demande de bien écouter en classe.",
+    "errorIndex": 6,
+    "correctedWord": "leur",
+    "explanation": "Le verbe « demander à quelqu'un » utilise un COI : « elle leur demande » et non « elle les demande ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2660,
+    "sentence": "Mon grand-père raconte des histoires et nous lui écoutons avec attention chaque soir au salon.",
+    "errorIndex": 6,
+    "correctedWord": "l'",
+    "explanation": "Le verbe « écouter » est transitif direct : « nous l'écoutons » (COD) et non « nous lui écoutons ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2661,
+    "sentence": "Les enfants joue dans le grand jardin derrière la maison pendant que leurs parents les surveillent.",
+    "errorIndex": 2,
+    "correctedWord": "jouent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être « jouent » et non « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2662,
+    "sentence": "Mon petit frère dessinent un beau paysage avec ses crayons de couleur sur la grande table.",
+    "errorIndex": 3,
+    "correctedWord": "dessine",
+    "explanation": "Le sujet « mon petit frère » est au singulier, donc le verbe doit être « dessine » et non « dessinent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2663,
+    "sentence": "Les oiseaux du parc chante très fort le matin quand le soleil se lève dans le ciel.",
+    "errorIndex": 4,
+    "correctedWord": "chantent",
+    "explanation": "Le sujet « les oiseaux du parc » est au pluriel, donc le verbe doit être « chantent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2664,
+    "sentence": "Ma grande sœur mangent une pomme rouge chaque matin avant de partir à son collège.",
+    "errorIndex": 3,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « ma grande sœur » est au singulier, donc le verbe doit être « mange » et non « mangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2665,
+    "sentence": "Nous mange à la cantine de notre école tous les jours avec nos amis de la classe.",
+    "errorIndex": 1,
+    "correctedWord": "mangeons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « mangeons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2666,
+    "sentence": "Les chats de la ferme dort sur le vieux coussin dans la grange toute la journée.",
+    "errorIndex": 5,
+    "correctedWord": "dorment",
+    "explanation": "Le sujet « les chats de la ferme » est au pluriel, donc le verbe doit être « dorment ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2667,
+    "sentence": "Vous chante très bien cette jolie chanson que la maîtresse vous a apprise la semaine dernière.",
+    "errorIndex": 1,
+    "correctedWord": "chantez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « chantez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2668,
+    "sentence": "Les poules du poulailler picore les grains de blé que le fermier leur donne chaque matin.",
+    "errorIndex": 4,
+    "correctedWord": "picorent",
+    "explanation": "Le sujet « les poules du poulailler » est au pluriel, donc le verbe doit être « picorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2669,
+    "sentence": "Tu regardent la télévision dans le salon pendant que maman prépare le dîner dans la cuisine.",
+    "errorIndex": 1,
+    "correctedWord": "regardes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « regardes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2670,
+    "sentence": "Le petit bébé pleurent dans son lit parce que il a faim et il veut son biberon.",
+    "errorIndex": 3,
+    "correctedWord": "pleure",
+    "explanation": "Le sujet « le petit bébé » est au singulier, donc le verbe doit être « pleure ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2671,
+    "sentence": "Les grands garçons de la cour grimpe dans les arbres du parc pendant la récréation.",
+    "errorIndex": 6,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les grands garçons de la cour » est au pluriel, donc le verbe doit être « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2672,
+    "sentence": "Je mangeons du chocolat avec ma sœur après le repas quand maman nous le permet.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2673,
+    "sentence": "Les petits lapins du jardin saute dans le pré vert derrière la maison de mes grands-parents.",
+    "errorIndex": 5,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les petits lapins du jardin » est au pluriel, donc le verbe doit être « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2674,
+    "sentence": "Maman cuisinent un bon gâteau au chocolat pour notre anniversaire avec beaucoup de crème.",
+    "errorIndex": 1,
+    "correctedWord": "cuisine",
+    "explanation": "Le sujet « maman » est au singulier, donc le verbe doit être « cuisine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2675,
+    "sentence": "Les canards du lac nage dans la mare avec leurs petits canetons chaque matin au printemps.",
+    "errorIndex": 4,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les canards du lac » est au pluriel, donc le verbe doit être « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2676,
+    "sentence": "Il jouent avec ses amis dans le parc tous les samedis après-midi quand il fait beau.",
+    "errorIndex": 1,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2677,
+    "sentence": "Les vaches de la ferme broute dans le grand pré vert pendant que le fermier les surveille.",
+    "errorIndex": 5,
+    "correctedWord": "broutent",
+    "explanation": "Le sujet « les vaches de la ferme » est au pluriel, donc le verbe doit être « broutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2678,
+    "sentence": "Elle marchent vers la grande maison blanche au bout de la rue avec son panier de courses.",
+    "errorIndex": 1,
+    "correctedWord": "marche",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être « marche ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2679,
+    "sentence": "Les jolis poissons rouges nage dans le grand bocal posé sur la table du salon.",
+    "errorIndex": 4,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les jolis poissons rouges » est au pluriel, donc le verbe doit être « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2680,
+    "sentence": "Mon meilleur ami jouent au ballon avec moi dans la cour de récréation chaque jour.",
+    "errorIndex": 3,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « mon meilleur ami » est au singulier, donc le verbe doit être « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2681,
+    "sentence": "La petit fille de notre voisine joue dehors avec son chien dans le jardin tous les jours.",
+    "errorIndex": 1,
+    "correctedWord": "petite",
+    "explanation": "Le nom « fille » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2682,
+    "sentence": "Une joli fleur rouge pousse dans le jardin de ma grand-mère près de la grande fontaine.",
+    "errorIndex": 1,
+    "correctedWord": "jolie",
+    "explanation": "Le nom « fleur » est féminin, donc l'adjectif doit être au féminin : « jolie ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2683,
+    "sentence": "Ma grande sœur est très gentil avec moi quand elle m'aide à faire mes devoirs le soir.",
+    "errorIndex": 5,
+    "correctedWord": "gentille",
+    "explanation": "Le sujet « ma grande sœur » est féminin, donc l'adjectif doit être « gentille ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2684,
+    "sentence": "La vieille maison au bout de la rue est très grand et elle a un beau jardin derrière.",
+    "errorIndex": 11,
+    "correctedWord": "grande",
+    "explanation": "Le nom « maison » est féminin, donc l'adjectif doit être au féminin : « grande ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2685,
+    "sentence": "Une blanc colombe vole dans le ciel bleu au-dessus de notre maison chaque matin au printemps.",
+    "errorIndex": 1,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « colombe » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2686,
+    "sentence": "La belle robe de maman est bleu et elle la porte souvent quand elle sort le dimanche.",
+    "errorIndex": 6,
+    "correctedWord": "bleue",
+    "explanation": "Le nom « robe » est féminin, donc l'adjectif doit être au féminin : « bleue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2687,
+    "sentence": "Ma chienne est très gros et elle court partout dans le jardin quand on la laisse sortir.",
+    "errorIndex": 4,
+    "correctedWord": "grosse",
+    "explanation": "Le nom « chienne » est féminin, donc l'adjectif doit être au féminin : « grosse ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2688,
+    "sentence": "La lune est rond et brillante ce soir et elle éclaire tout le jardin de sa lumière.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "Le nom « lune » est féminin, donc l'adjectif doit être au féminin : « ronde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2689,
+    "sentence": "La pomme que maman a achetée au marché est vert et elle est aussi très juteuse.",
+    "errorIndex": 8,
+    "correctedWord": "verte",
+    "explanation": "Le nom « pomme » est féminin, donc l'adjectif doit être au féminin : « verte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2690,
+    "sentence": "La souris est tout petit et elle se cache sous le meuble du salon pour manger son fromage.",
+    "errorIndex": 4,
+    "correctedWord": "petite",
+    "explanation": "Le nom « souris » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2691,
+    "sentence": "Ma nouvelle voisine est très sportif et elle court dans le parc chaque matin avant le travail.",
+    "errorIndex": 5,
+    "correctedWord": "sportive",
+    "explanation": "Le sujet « ma nouvelle voisine » est féminin, donc l'adjectif doit être « sportive ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2692,
+    "sentence": "La rivière est profond et dangereuse à cet endroit et il ne faut pas y nager seul.",
+    "errorIndex": 3,
+    "correctedWord": "profonde",
+    "explanation": "Le nom « rivière » est féminin, donc l'adjectif doit être au féminin : « profonde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2693,
+    "sentence": "Cette chanson est très beau et ma sœur la chante souvent quand elle est dans sa chambre.",
+    "errorIndex": 4,
+    "correctedWord": "belle",
+    "explanation": "Le nom « chanson » est féminin, donc l'adjectif doit être au féminin : « belle ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2694,
+    "sentence": "La tortue de mon frère est très lent mais elle arrive toujours à manger sa salade.",
+    "errorIndex": 7,
+    "correctedWord": "lente",
+    "explanation": "Le nom « tortue » est féminin, donc l'adjectif doit être au féminin : « lente ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2695,
+    "sentence": "La montagne est très haut et on peut la voir depuis notre maison quand le ciel est clair.",
+    "errorIndex": 4,
+    "correctedWord": "haute",
+    "explanation": "Le nom « montagne » est féminin, donc l'adjectif doit être au féminin : « haute ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2696,
+    "sentence": "Les petit chats de la voisine jouent dans le jardin et ils grimpent partout sur les arbres.",
+    "errorIndex": 1,
+    "correctedWord": "petits",
+    "explanation": "Le nom « chats » est au pluriel, donc l'adjectif doit être au pluriel : « petits ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2697,
+    "sentence": "Mes deux grande sœurs vont à la piscine et elles nagent très bien toutes les deux.",
+    "errorIndex": 2,
+    "correctedWord": "grandes",
+    "explanation": "Le nom « sœurs » est au pluriel, donc l'adjectif doit être au pluriel : « grandes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2698,
+    "sentence": "Les beau papillons volent dans le jardin et ils se posent sur les fleurs rouges.",
+    "errorIndex": 1,
+    "correctedWord": "beaux",
+    "explanation": "Le nom « papillons » est au pluriel, donc l'adjectif doit être au pluriel : « beaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2699,
+    "sentence": "Les gros chien du voisin aboient très fort la nuit et ils réveillent tout le quartier.",
+    "errorIndex": 2,
+    "correctedWord": "chiens",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « chiens ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2700,
+    "sentence": "Mes nouveau cahiers sont très jolis et je les range dans mon cartable chaque soir.",
+    "errorIndex": 1,
+    "correctedWord": "nouveaux",
+    "explanation": "Le nom « cahiers » est au pluriel, donc l'adjectif doit être au pluriel : « nouveaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2701,
+    "sentence": "Les joli maisons du village ont des jardins fleuris et elles sont toutes bien entretenues.",
+    "errorIndex": 1,
+    "correctedWord": "jolies",
+    "explanation": "Le nom « maisons » est au féminin pluriel, donc l'adjectif doit être « jolies ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2702,
+    "sentence": "Les long chemins de la campagne traversent les champs et ils mènent jusqu'à la rivière.",
+    "errorIndex": 1,
+    "correctedWord": "longs",
+    "explanation": "Le nom « chemins » est au pluriel, donc l'adjectif doit être au pluriel : « longs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2703,
+    "sentence": "Ses vieux jouet sont dans le grenier et il ne joue plus avec depuis très longtemps.",
+    "errorIndex": 2,
+    "correctedWord": "jouets",
+    "explanation": "Le déterminant « ses » et l'adjectif « vieux » indiquent le pluriel : « jouets ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2704,
+    "sentence": "Les blanc nuages flottent dans le ciel bleu et ils annoncent une belle journée de printemps.",
+    "errorIndex": 1,
+    "correctedWord": "blancs",
+    "explanation": "Le nom « nuages » est au masculin pluriel, donc l'adjectif doit être « blancs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2705,
+    "sentence": "Les grande fenêtres de la classe laissent entrer la lumière et elles donnent sur la cour.",
+    "errorIndex": 1,
+    "correctedWord": "grandes",
+    "explanation": "Le nom « fenêtres » est au féminin pluriel, donc l'adjectif doit être « grandes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2706,
+    "sentence": "Les gentil garçons de ma classe aident toujours les autres et ils partagent leurs affaires.",
+    "errorIndex": 1,
+    "correctedWord": "gentils",
+    "explanation": "Le nom « garçons » est au pluriel, donc l'adjectif doit être au pluriel : « gentils ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2707,
+    "sentence": "Les gros éléphant du zoo mangent beaucoup de foin et ils boivent des litres d'eau.",
+    "errorIndex": 2,
+    "correctedWord": "éléphants",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « éléphants ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2708,
+    "sentence": "Les rond ballons de toutes les couleurs décorent la salle pour la fête de notre école.",
+    "errorIndex": 1,
+    "correctedWord": "ronds",
+    "explanation": "Le nom « ballons » est au pluriel, donc l'adjectif doit être au pluriel : « ronds ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2709,
+    "sentence": "Les vieille chaussures de papa sont dans le placard et il ne les met plus jamais.",
+    "errorIndex": 1,
+    "correctedWord": "vieilles",
+    "explanation": "Le nom « chaussures » est au féminin pluriel, donc l'adjectif doit être « vieilles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2710,
+    "sentence": "Les noir corbeaux se posent sur les fils électriques et ils croassent très fort le matin.",
+    "errorIndex": 1,
+    "correctedWord": "noirs",
+    "explanation": "Le nom « corbeaux » est au masculin pluriel, donc l'adjectif doit être « noirs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2711,
+    "sentence": "Mon frère va a la piscine avec ses amis et il nage pendant deux heures chaque samedi.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la piscine » (lieu), on utilise la préposition « à » avec accent et non le verbe « a ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2712,
+    "sentence": "Ma sœur à un beau cartable rouge et elle le porte fièrement sur son dos chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici c'est le verbe « avoir » conjugué : « ma sœur a » (on peut dire « avait »), pas la préposition « à ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2713,
+    "sentence": "Papa a donné un cadeau a maman pour son anniversaire et elle était très contente.",
+    "errorIndex": 5,
+    "correctedWord": "à",
+    "explanation": "Devant « maman » (destinataire), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2714,
+    "sentence": "Le chien à mangé toute sa gamelle et il dort maintenant sur le tapis du salon.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « le chien a mangé » (on peut dire « avait mangé »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2715,
+    "sentence": "Ma cousine habite a Paris et elle prend le métro tous les jours pour aller à son travail.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « Paris » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2716,
+    "sentence": "Le boulanger à préparé des croissants chauds et il les vend dès six heures du matin.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a préparé » (on peut dire « avait préparé »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2717,
+    "sentence": "Mon ami va a l'école en vélo et il arrive toujours en avance avant la sonnerie.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « l'école » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2718,
+    "sentence": "La maîtresse à expliqué la leçon et elle nous a demandé de faire les exercices.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a expliqué » (on peut dire « avait expliqué »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2719,
+    "sentence": "Mon père travaille a la boulangerie du village et il se lève très tôt chaque matin.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la boulangerie » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2720,
+    "sentence": "Le chat à attrapé une souris dans le jardin et il l'a ramenée à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a attrapé » (on peut dire « avait attrapé »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2721,
+    "sentence": "Ma sœur joue a la corde à sauter dans la cour et elle saute très haut.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la corde à sauter » (complément), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2722,
+    "sentence": "Le docteur à soigné mon petit frère et il lui a donné un médicament pour la toux.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a soigné » (on peut dire « avait soigné »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2723,
+    "sentence": "Maman pense a acheter du pain en rentrant du travail et elle ira à la boulangerie.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Après « penser » (penser à faire quelque chose), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2724,
+    "sentence": "Mon oncle à une grande voiture bleue et il emmène toute la famille en vacances avec.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » : « mon oncle a » (on peut dire « avait »), pas la préposition « à ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2725,
+    "sentence": "Le facteur va a la poste chercher les lettres et il les distribue dans tout le quartier.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la poste » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2726,
+    "sentence": "Mon frère est grand est il joue au basket avec ses amis du collège chaque mercredi.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "Ici on relie deux informations, on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2727,
+    "sentence": "La maison et grande et belle et elle se trouve au bout de la rue près du parc.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici c'est le verbe « être » : « la maison est grande » (on peut dire « était grande »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2728,
+    "sentence": "Papa est maman préparent le repas ensemble dans la cuisine et ils nous appellent pour manger.",
+    "errorIndex": 1,
+    "correctedWord": "et",
+    "explanation": "On relie « papa » et « maman » (deux sujets), donc on utilise « et » et non « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2729,
+    "sentence": "Le ciel et bleu et le soleil brille fort et il fait très chaud dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le ciel est bleu » (on peut dire « était bleu »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2730,
+    "sentence": "Ma sœur est contente est elle saute de joie parce qu'elle a eu une bonne note.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2731,
+    "sentence": "Le chat et noir et blanc et il dort sur le canapé du salon toute la journée.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le chat est noir » (on peut dire « était noir »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2732,
+    "sentence": "Mon ami est moi jouons ensemble dans la cour et nous nous amusons beaucoup chaque jour.",
+    "errorIndex": 2,
+    "correctedWord": "et",
+    "explanation": "On relie « mon ami » et « moi » (deux personnes), donc on utilise « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2733,
+    "sentence": "La fleur et rouge et elle sent très bon quand on la met dans un vase.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « la fleur est rouge » (on peut dire « était rouge »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2734,
+    "sentence": "Le livre est intéressant est je le lis chaque soir avant de dormir dans mon lit.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2735,
+    "sentence": "Mon chien et très gentil avec les enfants et il adore jouer avec eux dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « mon chien est très gentil » (on peut dire « était très gentil »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2736,
+    "sentence": "Les fraises est les framboises sont dans le panier et maman va faire une tarte avec.",
+    "errorIndex": 2,
+    "correctedWord": "et",
+    "explanation": "On relie « les fraises » et « les framboises » (deux noms), donc on utilise « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2737,
+    "sentence": "Le temps et beau aujourd'hui et nous allons jouer dehors dans le parc avec nos amis.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le temps est beau » (on peut dire « était beau »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2738,
+    "sentence": "Ma mère est fatiguée est elle va se reposer un peu sur le canapé du salon.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2739,
+    "sentence": "Le gâteau et délicieux et tout le monde en veut une part pour le dessert ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le gâteau est délicieux » (on peut dire « était délicieux »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2740,
+    "sentence": "Mon frère est ma sœur vont à l'école ensemble et ils prennent le même chemin chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "et",
+    "explanation": "On relie « mon frère » et « ma sœur » (deux personnes), donc on utilise « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2741,
+    "sentence": "Les enfants on faim après la récréation et ils mangent leur goûter dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » au pluriel : « les enfants ont faim » (on peut dire « avaient faim »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2742,
+    "sentence": "Ont joue au ballon dans la cour de récréation et on s'amuse beaucoup avec nos amis.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous), pas le verbe « avoir » : « On joue ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2743,
+    "sentence": "Mes parents on décidé de partir en vacances à la mer et ils préparent les valises.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « mes parents ont décidé » (on peut dire « avaient décidé »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2744,
+    "sentence": "Ont dit que le temps sera beau demain et on pourra aller jouer dehors toute la journée.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= quelqu'un / nous), pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2745,
+    "sentence": "Les élèves on bien travaillé aujourd'hui et la maîtresse leur a donné une image.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les élèves ont bien travaillé » (on peut dire « avaient »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2746,
+    "sentence": "Ont mange à la cantine tous les jours et on aime bien les frites du mercredi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous), pas le verbe « avoir » : « On mange ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2747,
+    "sentence": "Les chats on attrapé une souris dans le jardin et ils l'ont ramenée à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les chats ont attrapé » (on peut dire « avaient attrapé »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2748,
+    "sentence": "Ont va au parc cet après-midi et on emmène le chien pour qu'il puisse courir librement.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous), pas le verbe « avoir » : « On va ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2749,
+    "sentence": "Les voisins on organisé une fête dans leur jardin et ils ont invité tout le quartier.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les voisins ont organisé » (on peut dire « avaient organisé »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2750,
+    "sentence": "Ont a trouvé un petit chaton dans la rue et on l'a ramené à la maison pour le soigner.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On a trouvé », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2751,
+    "sentence": "Les oiseaux on construit un nid dans le grand arbre et ils y élèvent leurs petits.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les oiseaux ont construit » (on peut dire « avaient construit »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2752,
+    "sentence": "Ont adore les glaces en été et on en mange souvent quand il fait très chaud dehors.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On adore », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2753,
+    "sentence": "Mes amis on apporté des gâteaux pour la fête et ils les ont partagés avec tout le monde.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « mes amis ont apporté » (on peut dire « avaient apporté »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2754,
+    "sentence": "Ont peut voir les étoiles ce soir parce que le ciel est très clair et sans nuages.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous / quelqu'un) : « On peut voir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2755,
+    "sentence": "Les pompiers on éteint le feu rapidement et ils ont sauvé toutes les personnes de l'immeuble.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les pompiers ont éteint » (on peut dire « avaient éteint »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2756,
+    "sentence": "Mon frère veut aller au parc et sont chien veut aussi courir sur la grande pelouse.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le chien de mon frère), pas le verbe « être » « sont ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2757,
+    "sentence": "Les enfants son contents parce qu'ils peuvent aller jouer dehors après avoir fini leurs devoirs.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les enfants sont contents » (on peut dire « étaient contents »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2758,
+    "sentence": "Ma sœur veut prendre sont vélo pour aller chez sa copine qui habite au bout de la rue.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le vélo de ma sœur), pas le verbe « être » « sont ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2759,
+    "sentence": "Les gâteaux de maman son délicieux et tout le monde peut en manger autant qu'il veut.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les gâteaux sont délicieux » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2760,
+    "sentence": "Papa ne peut pas trouver sont téléphone et il le cherche partout dans toute la maison.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le téléphone de papa), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2761,
+    "sentence": "Les fleurs du jardin son très belles et maman veut les cueillir pour décorer le salon.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les fleurs sont très belles » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2762,
+    "sentence": "Le petit garçon veut montrer sont dessin à la maîtresse parce qu'il est très fier de lui.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le dessin du garçon), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2763,
+    "sentence": "Les jouets de ma sœur son rangés dans le coffre et elle ne veut pas les prêter.",
+    "errorIndex": 5,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les jouets sont rangés » (on peut dire « étaient rangés »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2764,
+    "sentence": "Mon ami peut venir avec sont frère à la fête et ils pourront jouer avec nous.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le frère de mon ami), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2765,
+    "sentence": "Les chats de la voisine son noirs et blancs et ils peuvent grimper très haut dans les arbres.",
+    "errorIndex": 5,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les chats sont noirs » (on peut dire « étaient noirs »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2766,
+    "sentence": "Ma cousine veut ranger sont cartable avant de sortir jouer avec ses amies dans la cour.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le cartable de ma cousine), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2767,
+    "sentence": "Les résultats du contrôle son bons et les élèves peuvent être fiers de leur travail.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les résultats sont bons » (on peut dire « étaient bons »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2768,
+    "sentence": "Le bébé ne veut pas lâcher sont doudou et il pleure très fort quand on le lui prend.",
+    "errorIndex": 6,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le doudou du bébé), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2769,
+    "sentence": "Les routes du village son étroites et les voitures ne peuvent pas rouler très vite dessus.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les routes sont étroites » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2770,
+    "sentence": "Mon père veut réparer sont vélo ce week-end parce que la roue avant est crevée.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le vélo de mon père), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2771,
+    "sentence": "Je ne sais pas ou ma sœur a rangé mes crayons et je veux les retrouver pour dessiner.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (endroit), donc on utilise « où » avec accent et non « ou » (choix).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2772,
+    "sentence": "Tu veux une pomme où une banane pour le goûter après l'école cet après-midi ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux fruits, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2773,
+    "sentence": "Le parc ou nous pouvons jouer au ballon est très grand et il y a beaucoup d'arbres.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (le parc dans lequel), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2774,
+    "sentence": "Mon frère veut du chocolat où de la confiture sur sa tartine pour le petit déjeuner.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux choses, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2775,
+    "sentence": "La maison ou habite ma grand-mère est très vieille et elle veut la faire réparer bientôt.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (la maison dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2776,
+    "sentence": "Tu peux prendre le bus où le tramway pour aller à l'école, les deux passent devant.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux transports, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2777,
+    "sentence": "Le jour ou nous pourrons aller à la mer, je veux construire un grand château de sable.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un moment dans le temps, donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2778,
+    "sentence": "Papa veut acheter un chat où un chien pour la famille mais maman hésite encore beaucoup.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux animaux, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2779,
+    "sentence": "L'école ou je vais tous les jours est près de la boulangerie et je peux y aller à pied.",
+    "errorIndex": 1,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (l'école dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2780,
+    "sentence": "Ma sœur peut choisir la robe rouge où la robe bleue pour la fête de samedi prochain.",
+    "errorIndex": 6,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux robes, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2781,
+    "sentence": "Le village ou mes grands-parents habitent est très joli et on peut y voir des montagnes.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (le village dans lequel), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2782,
+    "sentence": "Tu veux jouer dehors où rester à la maison pour lire un livre cet après-midi ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux activités, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2783,
+    "sentence": "Le moment ou papa rentre du travail est toujours joyeux et nous voulons lui raconter notre journée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un moment dans le temps, donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2784,
+    "sentence": "Mon ami peut venir lundi où mardi pour jouer à la maison avec moi et mon frère.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux jours, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2785,
+    "sentence": "La forêt ou nous pouvons nous promener est pleine de champignons en automne et c'est magnifique.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (la forêt dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2786,
+    "sentence": "Le matin, il ce lève très tôt parce qu'il veut arriver à l'école avant tous ses amis.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se lever) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2787,
+    "sentence": "Se gâteau au chocolat est délicieux et ma sœur veut en reprendre une deuxième part.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « gâteau », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2788,
+    "sentence": "Ma petite sœur ce brosse les dents toute seule et elle peut aussi se coiffer maintenant.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se brosser les dents) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2789,
+    "sentence": "Se livre est très intéressant et mon frère veut le lire après moi quand j'aurai fini.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « livre », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2790,
+    "sentence": "Les enfants ce lavent les mains avant de manger parce qu'ils ne veulent pas être malades.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se laver les mains) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2791,
+    "sentence": "Se matin, il fait très beau et nous pouvons aller jouer dans le parc avec nos amis.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « matin », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2792,
+    "sentence": "Mon chat ce cache sous le lit quand il entend du bruit et il ne veut pas sortir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se cacher) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2793,
+    "sentence": "Se film est très drôle et toute la famille veut le regarder ensemble ce soir au salon.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « film », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2794,
+    "sentence": "Les oiseaux ce posent sur les branches et ils peuvent chanter pendant des heures sans s'arrêter.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se poser) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2795,
+    "sentence": "Se jardin est magnifique au printemps et ma mère veut y planter de nouvelles fleurs cette année.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « jardin », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2796,
+    "sentence": "Papa ce dépêche le matin parce qu'il ne veut pas arriver en retard à son travail.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se dépêcher) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2797,
+    "sentence": "Se chien est très gentil et il veut toujours jouer avec les enfants du quartier.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « chien », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2798,
+    "sentence": "Ma sœur ce prépare pour la fête et elle veut mettre sa plus belle robe rouge.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se préparer) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2799,
+    "sentence": "Se soir, nous pouvons regarder un film en famille et maman veut préparer du popcorn.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « soir », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2800,
+    "sentence": "Les chats ce battent souvent dans le jardin et ils ne veulent pas partager leur territoire.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se battre) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2801,
+    "sentence": "Demain, les enfants joueront dans le parc et ils pourra faire du toboggan toute la journée.",
+    "errorIndex": 10,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » demande le pluriel au futur : « pourront » et non « pourra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2802,
+    "sentence": "Ma sœur mangera une glace au chocolat et elle voudras aussi goûter celle à la fraise.",
+    "errorIndex": 8,
+    "correctedWord": "voudra",
+    "explanation": "Le sujet « elle » demande la 3e personne du singulier au futur : « voudra » et non « voudras ».",
+    "category": "futur"
+  },
+  {
+    "id": 2803,
+    "sentence": "Nous irons à la plage cet été et nous pourrons construire des châteaux de sable ensemble.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « irons » et « pourrons » sont bien conjugués au futur avec « nous ».",
+    "category": "futur"
+  },
+  {
+    "id": 2804,
+    "sentence": "Mon frère joueras au football avec ses amis et il pourra marquer beaucoup de buts.",
+    "errorIndex": 2,
+    "correctedWord": "jouera",
+    "explanation": "Le sujet « mon frère » est à la 3e personne du singulier au futur : « jouera » et non « joueras ».",
+    "category": "futur"
+  },
+  {
+    "id": 2805,
+    "sentence": "Les oiseaux chanteront très fort demain matin et ils voudront réveiller tout le quartier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « chanteront » et « voudront » sont bien conjugués au futur avec « ils ».",
+    "category": "futur"
+  },
+  {
+    "id": 2806,
+    "sentence": "Tu finiras tes devoirs avant le dîner et tu pourra regarder la télévision après.",
+    "errorIndex": 9,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier au futur : « pourras » et non « pourra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2807,
+    "sentence": "Papa préparera un bon repas ce soir et il voudront nous faire une surprise avec le dessert.",
+    "errorIndex": 9,
+    "correctedWord": "voudra",
+    "explanation": "Le sujet « il » demande la 3e personne du singulier au futur : « voudra » et non « voudront ».",
+    "category": "futur"
+  },
+  {
+    "id": 2808,
+    "sentence": "Je mangerai une pomme au goûter et je voudrai aussi boire un grand verre de jus d'orange.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « mangerai » et « voudrai » sont bien conjugués au futur avec « je ».",
+    "category": "futur"
+  },
+  {
+    "id": 2809,
+    "sentence": "Les élèves travailleront bien cette semaine et ils pourrons avoir une bonne note au contrôle.",
+    "errorIndex": 8,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » demande la 3e personne du pluriel au futur : « pourront » et non « pourrons ».",
+    "category": "futur"
+  },
+  {
+    "id": 2810,
+    "sentence": "Vous partirez en vacances la semaine prochaine et vous voudrez visiter beaucoup de monuments.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « partirez » et « voudrez » sont bien conjugués au futur avec « vous ».",
+    "category": "futur"
+  },
+  {
+    "id": 2811,
+    "sentence": "Ma mère achètera des fleurs au marché et elle voudras les mettre dans un joli vase.",
+    "errorIndex": 8,
+    "correctedWord": "voudra",
+    "explanation": "Le sujet « elle » demande la 3e personne du singulier au futur : « voudra » et non « voudras ».",
+    "category": "futur"
+  },
+  {
+    "id": 2812,
+    "sentence": "Nous chanterons une chanson pour la fête et nous pourront aussi danser sur la musique.",
+    "errorIndex": 9,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la 1re personne du pluriel au futur : « pourrons » et non « pourront ».",
+    "category": "futur"
+  },
+  {
+    "id": 2813,
+    "sentence": "Le chien courra dans le jardin demain et il voudra attraper les papillons comme toujours.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « courra » et « voudra » sont bien conjugués au futur avec « il ».",
+    "category": "futur"
+  },
+  {
+    "id": 2814,
+    "sentence": "Tu dessineras un beau paysage en classe et tu voudra le montrer à tes parents ce soir.",
+    "errorIndex": 10,
+    "correctedWord": "voudras",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier au futur : « voudras » et non « voudra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2815,
+    "sentence": "Les filles danseront à la fête de l'école et elles pourra chanter aussi si elles veulent.",
+    "errorIndex": 9,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » demande la 3e personne du pluriel au futur : « pourront » et non « pourra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2816,
+    "sentence": "Les enfants veulent aller au parc et ils peut courir sur la grande pelouse verte.",
+    "errorIndex": 8,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » demande le pluriel au présent : « peuvent » et non « peut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2817,
+    "sentence": "Ma sœur veut un nouveau livre et elle peux le lire dans sa chambre avant de dormir.",
+    "errorIndex": 7,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » demande la 3e personne du singulier : « peut » et non « peux ».",
+    "category": "présent"
+  },
+  {
+    "id": 2818,
+    "sentence": "Nous voulons jouer dehors mais nous ne pouvez pas parce qu'il pleut très fort aujourd'hui.",
+    "errorIndex": 7,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la 1re personne du pluriel : « pouvons » et non « pouvez ».",
+    "category": "présent"
+  },
+  {
+    "id": 2819,
+    "sentence": "Mon frère veulent un chien mais papa dit qu'il ne peut pas en avoir pour le moment.",
+    "errorIndex": 2,
+    "correctedWord": "veut",
+    "explanation": "Le sujet « mon frère » est au singulier : « veut » et non « veulent ».",
+    "category": "présent"
+  },
+  {
+    "id": 2820,
+    "sentence": "Tu veux venir avec nous au cinéma et tu peux demander la permission à tes parents.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « veux » et « peux » sont bien conjugués au présent avec « tu ».",
+    "category": "présent"
+  },
+  {
+    "id": 2821,
+    "sentence": "Les filles de ma classe veut jouer à la corde à sauter pendant la récréation.",
+    "errorIndex": 5,
+    "correctedWord": "veulent",
+    "explanation": "Le sujet « les filles de ma classe » est au pluriel : « veulent » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2822,
+    "sentence": "Vous voulez regarder un film et vous pouvons choisir celui que vous préférez ce soir.",
+    "errorIndex": 7,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la 2e personne du pluriel : « pouvez » et non « pouvons ».",
+    "category": "présent"
+  },
+  {
+    "id": 2823,
+    "sentence": "Je veut manger une glace au chocolat parce qu'il fait très chaud dehors aujourd'hui.",
+    "errorIndex": 1,
+    "correctedWord": "veux",
+    "explanation": "Le sujet « je » demande la 1re personne du singulier : « veux » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2824,
+    "sentence": "Le chat veut sortir dans le jardin mais il ne peuvent pas parce que la porte est fermée.",
+    "errorIndex": 10,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier : « peut » et non « peuvent ».",
+    "category": "présent"
+  },
+  {
+    "id": 2825,
+    "sentence": "Nous voulons aider maman à préparer le repas et nous pouvons mettre la table ensemble.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « voulons » et « pouvons » sont bien conjugués au présent avec « nous ».",
+    "category": "présent"
+  },
+  {
+    "id": 2826,
+    "sentence": "Les garçons peut jouer au ballon dans la cour mais ils ne veulent pas rester trop longtemps.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les garçons » est au pluriel : « peuvent » et non « peut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2827,
+    "sentence": "Ma mère veux nous emmener au zoo et elle peut y aller samedi prochain avec nous.",
+    "errorIndex": 2,
+    "correctedWord": "veut",
+    "explanation": "Le sujet « ma mère » est à la 3e personne du singulier : « veut » et non « veux ».",
+    "category": "présent"
+  },
+  {
+    "id": 2828,
+    "sentence": "Tu veut un morceau de gâteau au chocolat que maman a préparé pour le goûter ?",
+    "errorIndex": 1,
+    "correctedWord": "veux",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier : « veux » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2829,
+    "sentence": "Les élèves peuvent sortir en récréation quand ils veut et la maîtresse les surveille dehors.",
+    "errorIndex": 8,
+    "correctedWord": "veulent",
+    "explanation": "Le sujet « ils » demande le pluriel : « veulent » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2830,
+    "sentence": "Vous pouvez venir à la maison demain et vous voulez apporter un jeu de société pour jouer.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « pouvez » et « voulez » sont bien conjugués au présent avec « vous ».",
+    "category": "présent"
+  },
+  {
+    "id": 2831,
+    "sentence": "Les enfant du quartier veulent jouer au ballon dans le parc après l'école chaque jour.",
+    "errorIndex": 1,
+    "correctedWord": "enfants",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « enfants » avec un « s ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2832,
+    "sentence": "Mes deux sœur peuvent nager très bien et elles vont à la piscine tous les samedis.",
+    "errorIndex": 2,
+    "correctedWord": "sœurs",
+    "explanation": "« Deux » indique le pluriel, donc le nom doit être « sœurs » avec un « s ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2833,
+    "sentence": "Les cheval du manège galopent dans le pré et ils veulent courir encore plus vite.",
+    "errorIndex": 1,
+    "correctedWord": "chevaux",
+    "explanation": "Le pluriel de « cheval » est « chevaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2834,
+    "sentence": "Tous les animal du zoo mangent bien et les soigneurs peuvent s'occuper d'eux chaque jour.",
+    "errorIndex": 2,
+    "correctedWord": "animaux",
+    "explanation": "Le pluriel de « animal » est « animaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2835,
+    "sentence": "Les gâteau de maman sont délicieux et nous voulons toujours en manger plusieurs au goûter.",
+    "errorIndex": 1,
+    "correctedWord": "gâteaux",
+    "explanation": "Le pluriel de « gâteau » est « gâteaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2836,
+    "sentence": "Les oiseau chantent dans les arbres et ils peuvent voler très haut dans le ciel bleu.",
+    "errorIndex": 1,
+    "correctedWord": "oiseaux",
+    "explanation": "Le pluriel de « oiseau » est « oiseaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2837,
+    "sentence": "Mes ami veulent venir à la maison samedi et ils pourront jouer dans le jardin avec moi.",
+    "errorIndex": 1,
+    "correctedWord": "amis",
+    "explanation": "Le déterminant « mes » indique le pluriel, donc le nom doit être « amis » avec un « s ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2838,
+    "sentence": "Les journal sont sur la table du salon et papa veut les lire tranquillement ce dimanche.",
+    "errorIndex": 1,
+    "correctedWord": "journaux",
+    "explanation": "Le pluriel de « journal » est « journaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2839,
+    "sentence": "Les bateau naviguent sur la mer et ils peuvent aller très loin jusqu'aux autres pays.",
+    "errorIndex": 1,
+    "correctedWord": "bateaux",
+    "explanation": "Le pluriel de « bateau » est « bateaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2840,
+    "sentence": "Les caillou du chemin sont très gros et on ne peut pas marcher dessus sans chaussures.",
+    "errorIndex": 1,
+    "correctedWord": "cailloux",
+    "explanation": "Le pluriel de « caillou » est « cailloux » (pluriel irrégulier en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2841,
+    "sentence": "Les chapeau des clowns sont très colorés et ils veulent les lancer en l'air pour amuser les enfants.",
+    "errorIndex": 1,
+    "correctedWord": "chapeaux",
+    "explanation": "Le pluriel de « chapeau » est « chapeaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2842,
+    "sentence": "Les genou de mon frère sont sales parce qu'il a voulu jouer dans la boue du jardin.",
+    "errorIndex": 1,
+    "correctedWord": "genoux",
+    "explanation": "Le pluriel de « genou » est « genoux » (pluriel irrégulier en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2843,
+    "sentence": "Les travail de la classe sont affichés au mur et la maîtresse veut les montrer aux parents.",
+    "errorIndex": 1,
+    "correctedWord": "travaux",
+    "explanation": "Le pluriel de « travail » est « travaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2844,
+    "sentence": "Les jeu de société sont dans le placard et nous pouvons en choisir un pour ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "jeux",
+    "explanation": "Le pluriel de « jeu » est « jeux » (les noms en -eu prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2845,
+    "sentence": "Les hibou dorment le jour et ils peuvent voir très bien la nuit pour chasser les souris.",
+    "errorIndex": 1,
+    "correctedWord": "hiboux",
+    "explanation": "Le pluriel de « hibou » est « hiboux » (pluriel irrégulier en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2846,
+    "sentence": "Ma voisine est très sportif et elle peut courir pendant une heure sans s'arrêter.",
+    "errorIndex": 4,
+    "correctedWord": "sportive",
+    "explanation": "Le sujet « ma voisine » est féminin, donc l'adjectif doit être « sportive ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2847,
+    "sentence": "La chatte de mon ami est très doux et elle veut toujours se faire caresser le soir.",
+    "errorIndex": 7,
+    "correctedWord": "douce",
+    "explanation": "Le sujet « la chatte » est féminin, donc l'adjectif doit être « douce ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2848,
+    "sentence": "Ma tante est très heureux parce qu'elle peut partir en vacances à la mer cet été.",
+    "errorIndex": 4,
+    "correctedWord": "heureuse",
+    "explanation": "Le sujet « ma tante » est féminin, donc l'adjectif doit être « heureuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2849,
+    "sentence": "La rivière est très long et elle traverse plusieurs villages avant d'arriver à la mer.",
+    "errorIndex": 4,
+    "correctedWord": "longue",
+    "explanation": "Le sujet « la rivière » est féminin, donc l'adjectif doit être « longue ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2850,
+    "sentence": "Cette histoire est très amusant et ma sœur veut que je la lui raconte encore une fois.",
+    "errorIndex": 4,
+    "correctedWord": "amusante",
+    "explanation": "Le sujet « cette histoire » est féminin, donc l'adjectif doit être « amusante ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2851,
+    "sentence": "La jument du fermier est très fort et elle peut tirer la charrette toute seule facilement.",
+    "errorIndex": 6,
+    "correctedWord": "forte",
+    "explanation": "Le sujet « la jument » est féminin, donc l'adjectif doit être « forte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2852,
+    "sentence": "Ma copine est très créatif et elle veut dessiner un grand tableau pour la fête de l'école.",
+    "errorIndex": 4,
+    "correctedWord": "créative",
+    "explanation": "Le sujet « ma copine » est féminin, donc l'adjectif doit être « créative ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2853,
+    "sentence": "La nuit est très noir et on ne peut rien voir dehors sans une lampe de poche.",
+    "errorIndex": 4,
+    "correctedWord": "noire",
+    "explanation": "Le sujet « la nuit » est féminin, donc l'adjectif doit être « noire ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2854,
+    "sentence": "Ma grand-mère est très courageux et elle veut encore faire de longues promenades chaque jour.",
+    "errorIndex": 4,
+    "correctedWord": "courageuse",
+    "explanation": "Le sujet « ma grand-mère » est féminin, donc l'adjectif doit être « courageuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2855,
+    "sentence": "La mer est très bleu aujourd'hui et nous pouvons voir les poissons nager depuis le bateau.",
+    "errorIndex": 4,
+    "correctedWord": "bleue",
+    "explanation": "Le sujet « la mer » est féminin, donc l'adjectif doit être « bleue ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2856,
+    "sentence": "Cette tarte est vraiment délicieux et maman veut en refaire une la semaine prochaine.",
+    "errorIndex": 4,
+    "correctedWord": "délicieuse",
+    "explanation": "Le sujet « cette tarte » est féminin, donc l'adjectif doit être « délicieuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2857,
+    "sentence": "La forêt est très épais et on ne peut pas voir le ciel à travers les grands arbres.",
+    "errorIndex": 4,
+    "correctedWord": "épaisse",
+    "explanation": "Le sujet « la forêt » est féminin, donc l'adjectif doit être « épaisse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2858,
+    "sentence": "Ma petite sœur est très curieux et elle veut toujours savoir comment les choses fonctionnent.",
+    "errorIndex": 5,
+    "correctedWord": "curieuse",
+    "explanation": "Le sujet « ma petite sœur » est féminin, donc l'adjectif doit être « curieuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2859,
+    "sentence": "La neige est très blanc et elle recouvre tout le jardin quand il fait froid en hiver.",
+    "errorIndex": 4,
+    "correctedWord": "blanche",
+    "explanation": "Le sujet « la neige » est féminin, donc l'adjectif doit être « blanche ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2860,
+    "sentence": "Cette chanson est très joyeux et ma sœur veut la chanter pour le spectacle de l'école.",
+    "errorIndex": 4,
+    "correctedWord": "joyeuse",
+    "explanation": "Le sujet « cette chanson » est féminin, donc l'adjectif doit être « joyeuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2861,
+    "sentence": "Le enfants veulent aller au parc et ils peuvent y jouer jusqu'à six heures du soir.",
+    "errorIndex": 0,
+    "correctedWord": "Les",
+    "explanation": "Le nom « enfants » est au pluriel, donc le déterminant doit être « les » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2862,
+    "sentence": "Ma frère veut un nouveau vélo et il peut le demander à papa pour son anniversaire.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "Le nom « frère » est masculin, donc le déterminant possessif doit être « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2863,
+    "sentence": "Un grande maison se trouve au bout de la rue et on peut la voir depuis le parc.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "Le nom « maison » est féminin, donc le déterminant doit être « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2864,
+    "sentence": "Mon sœur veut jouer avec ses amies et elle peut aller chez elles cet après-midi.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "Le nom « sœur » est féminin, donc le déterminant possessif doit être « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2865,
+    "sentence": "Les chat de la voisine veulent sortir et ils peuvent grimper sur le mur du jardin.",
+    "errorIndex": 1,
+    "correctedWord": "chats",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « chats » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2866,
+    "sentence": "Son mère prépare le repas et elle veut faire un bon gâteau pour le dessert ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "Le nom « mère » est féminin, donc le déterminant possessif doit être « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2867,
+    "sentence": "Le fleurs du jardin sont très belles et maman veut les cueillir pour décorer la maison.",
+    "errorIndex": 0,
+    "correctedWord": "Les",
+    "explanation": "Le nom « fleurs » est au pluriel, donc le déterminant doit être « les » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2868,
+    "sentence": "Sa père travaille à la boulangerie et il peut ramener du bon pain chaque soir.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "Le nom « père » est masculin, donc le déterminant possessif doit être « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2869,
+    "sentence": "Une petit chien court dans le parc et il veut jouer avec tous les enfants qu'il voit.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "Le nom « chien » est masculin, donc le déterminant doit être « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2870,
+    "sentence": "Leur parents veulent partir en vacances et ils peuvent aller à la montagne cet été.",
+    "errorIndex": 0,
+    "correctedWord": "Leurs",
+    "explanation": "Le nom « parents » est au pluriel, donc le déterminant possessif doit être « leurs » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2871,
+    "sentence": "Le école est fermée aujourd'hui et les enfants peuvent rester à la maison pour jouer.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un nom commençant par une voyelle, on fait l'élision : « l'école » et non « le école ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2872,
+    "sentence": "Ces chien aboient très fort la nuit et les voisins ne peuvent pas dormir tranquillement.",
+    "errorIndex": 1,
+    "correctedWord": "chiens",
+    "explanation": "Le déterminant « ces » indique le pluriel, donc le nom doit être « chiens » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2873,
+    "sentence": "Ma ami veut venir à la maison et elle peut rester pour le goûter cet après-midi.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "Devant un nom féminin commençant par une voyelle, on utilise « mon » pour l'euphonie : « mon amie ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2874,
+    "sentence": "Le oiseaux chantent dans les arbres et ils veulent construire un nid pour leurs petits.",
+    "errorIndex": 0,
+    "correctedWord": "Les",
+    "explanation": "Le nom « oiseaux » est au pluriel, donc le déterminant doit être « les » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2875,
+    "sentence": "Ses livre sont sur la table et il veut les ranger dans son cartable avant de partir.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Le déterminant « ses » indique le pluriel, donc le nom doit être « livres » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2876,
+    "sentence": "Les élèves de la classe veulent sortir mais la maîtresse elle dit qu'ils ne peuvent pas encore.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « elle » reprend « la maîtresse », « ils » reprend « les élèves ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2877,
+    "sentence": "Mon père veut acheter une voiture neuve et il elle cherche sur internet tous les soirs.",
+    "errorIndex": 9,
+    "correctedWord": "en",
+    "explanation": "Pour reprendre « une voiture », on utilise « en » : « il en cherche » et non « il elle cherche ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2878,
+    "sentence": "Les poissons du bocal nagent en rond et elle ne peuvent pas sortir de leur petit aquarium.",
+    "errorIndex": 7,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les poissons » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2879,
+    "sentence": "Ma grand-mère veut nous raconter une histoire et nous lui écoutons avec beaucoup de plaisir.",
+    "errorIndex": 9,
+    "correctedWord": "l'",
+    "explanation": "Le verbe « écouter » est transitif direct : « nous l'écoutons » (COD) et non « nous lui écoutons ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2880,
+    "sentence": "Le professeur veut aider les élèves et il les donne des exercices faciles pour commencer.",
+    "errorIndex": 8,
+    "correctedWord": "leur",
+    "explanation": "Le verbe « donner à quelqu'un » utilise un COI : « il leur donne » et non « il les donne ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2881,
+    "sentence": "Les nuages sont gris et elle annoncent de la pluie pour demain et on ne pourra pas sortir.",
+    "errorIndex": 5,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les nuages » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2882,
+    "sentence": "Ma tante veut venir nous voir et je suis content parce que elle est toujours très drôle.",
+    "errorIndex": 11,
+    "correctedWord": "qu'elle",
+    "explanation": "Devant « elle », on fait l'élision : « parce qu'elle » et non « parce que elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2883,
+    "sentence": "Les arbres du parc perdent leurs feuilles et il deviennent tout nus en automne chaque année.",
+    "errorIndex": 8,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les arbres » (masculin pluriel), donc on utilise « ils » et non « il ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2884,
+    "sentence": "Ma mère veut faire un gâteau et je lui regarde cuisiner avec beaucoup d'attention.",
+    "errorIndex": 8,
+    "correctedWord": "la",
+    "explanation": "Le verbe « regarder » est transitif direct : « je la regarde » (COD) et non « je lui regarde ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2885,
+    "sentence": "Les enfants veulent des bonbons et papa il achète un gros paquet au supermarché pour eux.",
+    "errorIndex": 6,
+    "correctedWord": "leur",
+    "explanation": "Pour reprendre « les enfants » (COI de acheter pour), on utilise « leur » : « papa leur en achète ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2886,
+    "sentence": "Les filles veulent jouer à la marelle et il courent vers la cour dès que la cloche sonne.",
+    "errorIndex": 8,
+    "correctedWord": "elles",
+    "explanation": "Le pronom reprend « les filles » (féminin pluriel), donc on utilise « elles » et non « il ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2887,
+    "sentence": "Mon cousin veut montrer son dessin et il elle montre à toute la classe avec fierté.",
+    "errorIndex": 7,
+    "correctedWord": "le",
+    "explanation": "Le pronom reprend « son dessin » (COD masculin singulier) : « il le montre » et non « il elle montre ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2888,
+    "sentence": "La chienne de mon oncle est gentille et il la promène dans le parc chaque matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « il » désigne « mon oncle » et « la » reprend « la chienne » (COD féminin).",
+    "category": "pronoms"
+  },
+  {
+    "id": 2889,
+    "sentence": "Les garçons veulent aller à la piscine et elle peuvent y nager pendant deux heures.",
+    "errorIndex": 8,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les garçons » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2890,
+    "sentence": "Ma sœur veut téléphoner à sa copine et elle la appelle tous les soirs après le dîner.",
+    "errorIndex": 9,
+    "correctedWord": "l'",
+    "explanation": "Devant le verbe « appelle » commençant par une voyelle, on fait l'élision : « elle l'appelle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2891,
+    "sentence": "Les élèves travaille bien en classe et la maîtresse veut leur donner une récompense vendredi.",
+    "errorIndex": 2,
+    "correctedWord": "travaillent",
+    "explanation": "Le sujet « les élèves » est au pluriel, donc le verbe doit être « travaillent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2892,
+    "sentence": "Mon petit chat dormez sur le canapé et il ne veut pas bouger de toute la journée.",
+    "errorIndex": 3,
+    "correctedWord": "dort",
+    "explanation": "Le sujet « mon petit chat » est à la 3e personne du singulier : « dort » et non « dormez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2893,
+    "sentence": "Les papillons vole autour des fleurs et ils veulent butiner le nectar de chaque rose.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les papillons » est au pluriel, donc le verbe doit être « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2894,
+    "sentence": "Nous chante une chanson pour la fête et nous voulons que tout le monde soit content.",
+    "errorIndex": 1,
+    "correctedWord": "chantons",
+    "explanation": "Le sujet « nous » demande la 1re personne du pluriel : « chantons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2895,
+    "sentence": "Le soleil brillent très fort aujourd'hui et il peut faire très chaud cet après-midi.",
+    "errorIndex": 2,
+    "correctedWord": "brille",
+    "explanation": "Le sujet « le soleil » est au singulier, donc le verbe doit être « brille ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2896,
+    "sentence": "Les tortues avance lentement sur le chemin et elles ne veulent pas se presser du tout.",
+    "errorIndex": 2,
+    "correctedWord": "avancent",
+    "explanation": "Le sujet « les tortues » est au pluriel, donc le verbe doit être « avancent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2897,
+    "sentence": "Vous dessine un beau paysage en classe et vous pouvez utiliser toutes les couleurs.",
+    "errorIndex": 1,
+    "correctedWord": "dessinez",
+    "explanation": "Le sujet « vous » demande la 2e personne du pluriel : « dessinez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2898,
+    "sentence": "Les grenouilles saute dans la mare et elles veulent attraper les mouches qui passent.",
+    "errorIndex": 2,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les grenouilles » est au pluriel, donc le verbe doit être « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2899,
+    "sentence": "Tu chantez une jolie chanson et tu peux aussi danser en même temps si tu veux.",
+    "errorIndex": 1,
+    "correctedWord": "chantes",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier : « chantes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2900,
+    "sentence": "Les fourmis transporte des miettes de pain et elles peuvent porter dix fois leur poids.",
+    "errorIndex": 2,
+    "correctedWord": "transportent",
+    "explanation": "Le sujet « les fourmis » est au pluriel, donc le verbe doit être « transportent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2901,
+    "sentence": "Mon oncle voyagent beaucoup et il veut visiter tous les pays du monde avant d'être vieux.",
+    "errorIndex": 2,
+    "correctedWord": "voyage",
+    "explanation": "Le sujet « mon oncle » est au singulier, donc le verbe doit être « voyage ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2902,
+    "sentence": "Les dauphins nage dans la mer bleue et ils peuvent sauter très haut au-dessus des vagues.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les dauphins » est au pluriel, donc le verbe doit être « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2903,
+    "sentence": "Je écoutent de la musique dans ma chambre et je veux apprendre à jouer de la guitare.",
+    "errorIndex": 1,
+    "correctedWord": "écoute",
+    "explanation": "Le sujet « je » demande la 1re personne du singulier : « écoute ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2904,
+    "sentence": "Les hirondelles arrive au printemps et elles veulent construire leur nid sous le toit.",
+    "errorIndex": 2,
+    "correctedWord": "arrivent",
+    "explanation": "Le sujet « les hirondelles » est au pluriel, donc le verbe doit être « arrivent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2905,
+    "sentence": "Le facteur apportent le courrier chaque matin et il peut aussi livrer des colis parfois.",
+    "errorIndex": 2,
+    "correctedWord": "apporte",
+    "explanation": "Le sujet « le facteur » est au singulier, donc le verbe doit être « apporte ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2906,
+    "sentence": "Mon frère à voulu manger une glace mais il n'a pas pu parce que le magasin était fermé.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a voulu » (on peut dire « avait voulu »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2907,
+    "sentence": "Ma sœur veut aller a la bibliothèque pour emprunter un livre qu'elle pourra lire ce soir.",
+    "errorIndex": 4,
+    "correctedWord": "à",
+    "explanation": "Devant « la bibliothèque » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2908,
+    "sentence": "Le chat à pu attraper la souris et il l'a ramenée fièrement dans la cuisine.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a pu » (on peut dire « avait pu »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2909,
+    "sentence": "Papa veut nous emmener a la montagne cet hiver et nous pourrons faire du ski ensemble.",
+    "errorIndex": 5,
+    "correctedWord": "à",
+    "explanation": "Devant « la montagne » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2910,
+    "sentence": "La maîtresse à voulu nous montrer un film mais elle n'a pas pu car le projecteur était cassé.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a voulu » (on peut dire « avait voulu »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2911,
+    "sentence": "Le livre est grand est lourd et mon frère ne peut pas le porter tout seul dans son sac.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux adjectifs « grand » et « lourd », donc on utilise la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2912,
+    "sentence": "Le jardin et magnifique au printemps et maman veut y planter des roses cette année.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le jardin est magnifique » (on peut dire « était magnifique »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2913,
+    "sentence": "Ma sœur est contente est elle veut nous montrer le dessin qu'elle a fait en classe.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2914,
+    "sentence": "Le repas et prêt et nous pouvons passer à table pour manger tous ensemble en famille.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le repas est prêt » (on peut dire « était prêt »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2915,
+    "sentence": "Papa est fatigué est il veut se reposer un peu sur le canapé avant le dîner.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2916,
+    "sentence": "Les enfants on voulu jouer dehors mais ils n'ont pas pu à cause de la pluie.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les enfants ont voulu » (on peut dire « avaient voulu »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2917,
+    "sentence": "Ont veut aller au cinéma ce soir et on pourra voir le nouveau film d'animation.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On veut aller », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2918,
+    "sentence": "Mes parents on pu venir à la fête de l'école et ils ont été très contents.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « mes parents ont pu » (on peut dire « avaient pu »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2919,
+    "sentence": "Ont peut jouer dans le jardin si on veut mais il faut d'abord finir les devoirs.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On peut jouer », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2920,
+    "sentence": "Les voisins on voulu nous inviter et ils ont préparé un grand repas pour tout le monde.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les voisins ont voulu » (on peut dire « avaient voulu »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2921,
+    "sentence": "Ma sœur veut ranger sont cartable mais elle ne peut pas trouver sa trousse de crayons.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le cartable de ma sœur), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2922,
+    "sentence": "Les devoirs de ce soir son difficiles et les élèves ne peuvent pas les faire tout seuls.",
+    "errorIndex": 5,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les devoirs sont difficiles » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2923,
+    "sentence": "Mon ami veut prendre sont manteau parce qu'il fait froid dehors et il ne veut pas être malade.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le manteau de mon ami), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2924,
+    "sentence": "Les pommes du verger son mûres et nous pouvons les cueillir pour faire une tarte.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les pommes sont mûres » (on peut dire « étaient mûres »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2925,
+    "sentence": "Le village ou nous voulons aller en vacances est très joli et on peut y faire des randonnées.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (le village dans lequel), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2926,
+    "sentence": "Tu peux choisir le gâteau au chocolat où le gâteau aux fraises pour ton anniversaire.",
+    "errorIndex": 6,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux gâteaux, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2927,
+    "sentence": "La plage ou nous pouvons nous baigner est très belle et l'eau y est toujours chaude.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (la plage dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2928,
+    "sentence": "Mon frère veut un chat où un hamster mais maman ne veut pas d'animal à la maison.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux animaux, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2929,
+    "sentence": "Le chat ce cache sous le lit quand il entend l'orage et il ne veut plus sortir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se cacher) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2930,
+    "sentence": "Se jeu de société est très amusant et toute la famille veut y jouer ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « jeu », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2931,
+    "sentence": "Les enfants ce disputent souvent mais ils veulent toujours jouer ensemble après la réconciliation.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se disputer) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2932,
+    "sentence": "Se week-end, nous pourrons aller au zoo et nous voulons voir les lions et les girafes.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « week-end », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2933,
+    "sentence": "Demain, mon frère joueras au tennis avec son ami et il pourra aussi faire du vélo après.",
+    "errorIndex": 3,
+    "correctedWord": "jouera",
+    "explanation": "Le sujet « mon frère » est à la 3e personne du singulier au futur : « jouera ».",
+    "category": "futur"
+  },
+  {
+    "id": 2934,
+    "sentence": "Les enfants chanterons une chanson pour la fête et ils voudront aussi danser sur scène.",
+    "errorIndex": 2,
+    "correctedWord": "chanteront",
+    "explanation": "Le sujet « les enfants » est à la 3e personne du pluriel au futur : « chanteront » et non « chanterons ».",
+    "category": "futur"
+  },
+  {
+    "id": 2935,
+    "sentence": "Tu finiras tes devoirs et tu pourra jouer dehors avec tes amis jusqu'au dîner.",
+    "errorIndex": 6,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier au futur : « pourras ».",
+    "category": "futur"
+  },
+  {
+    "id": 2936,
+    "sentence": "Les petit lapins du jardin sautent partout et ils veulent manger les carottes de maman.",
+    "errorIndex": 1,
+    "correctedWord": "petits",
+    "explanation": "Le nom « lapins » est au pluriel, donc l'adjectif doit être au pluriel : « petits ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2937,
+    "sentence": "Les gros éléphant du zoo veulent sortir de leur enclos et ils ne peuvent pas le faire.",
+    "errorIndex": 2,
+    "correctedWord": "éléphants",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « éléphants ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2938,
+    "sentence": "Les beau château de la région attirent beaucoup de touristes qui veulent les visiter.",
+    "errorIndex": 1,
+    "correctedWord": "beaux",
+    "explanation": "Le nom « château » doit être au pluriel (« châteaux ») et l'adjectif aussi : « beaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2939,
+    "sentence": "Les vieille maison du village sont charmantes et les gens veulent les photographier.",
+    "errorIndex": 1,
+    "correctedWord": "vieilles",
+    "explanation": "Le nom « maison » doit être au pluriel (« maisons ») et l'adjectif aussi : « vieilles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2940,
+    "sentence": "Les grand arbre du parc perdent leurs feuilles et ils ne peuvent plus donner d'ombre.",
+    "errorIndex": 1,
+    "correctedWord": "grands",
+    "explanation": "Le nom « arbre » doit être au pluriel (« arbres ») et l'adjectif aussi : « grands ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2941,
+    "sentence": "La tortue de mon frère est très lent et elle ne veut jamais se dépêcher pour manger.",
+    "errorIndex": 7,
+    "correctedWord": "lente",
+    "explanation": "Le sujet « la tortue » est féminin, donc l'adjectif doit être « lente ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2942,
+    "sentence": "Cette poupée est très mignon et ma sœur veut la garder avec elle dans son lit.",
+    "errorIndex": 4,
+    "correctedWord": "mignonne",
+    "explanation": "Le sujet « cette poupée » est féminin, donc l'adjectif doit être « mignonne ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2943,
+    "sentence": "La soupe de maman est très bon et nous voulons tous en reprendre un deuxième bol.",
+    "errorIndex": 6,
+    "correctedWord": "bonne",
+    "explanation": "Le sujet « la soupe » est féminin, donc l'adjectif doit être « bonne ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2944,
+    "sentence": "Ma nouvelle robe est très léger et je peux la porter quand il fait chaud en été.",
+    "errorIndex": 5,
+    "correctedWord": "légère",
+    "explanation": "Le sujet « ma nouvelle robe » est féminin, donc l'adjectif doit être « légère ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2945,
+    "sentence": "La plage est très grand et nous pouvons courir dessus pendant des heures sans nous arrêter.",
+    "errorIndex": 4,
+    "correctedWord": "grande",
+    "explanation": "Le sujet « la plage » est féminin, donc l'adjectif doit être « grande ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2946,
+    "sentence": "Le chien de la voisine veut sortir et son maître ne peut pas le promener aujourd'hui.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "La phrase est correcte : « le » est bien le déterminant masculin singulier devant « chien ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2947,
+    "sentence": "Ses cahier sont dans le cartable et il veut les sortir pour faire ses devoirs ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "cahiers",
+    "explanation": "Le déterminant « ses » indique le pluriel, donc le nom doit être « cahiers » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2948,
+    "sentence": "Le arbre du jardin est très grand et il peut donner de l'ombre à toute la famille.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un nom commençant par une voyelle, on fait l'élision : « l'arbre » et non « le arbre ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2949,
+    "sentence": "Sa chien est très gentil et il veut toujours jouer avec les enfants du quartier.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "Le nom « chien » est masculin, donc le déterminant possessif doit être « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2950,
+    "sentence": "Leur maison sont très grandes et ils peuvent y organiser de belles fêtes pour leurs amis.",
+    "errorIndex": 0,
+    "correctedWord": "Leurs",
+    "explanation": "Le nom « maison » doit être au pluriel (« maisons ») avec « leurs » : « Leurs maisons sont très grandes ».",
+    "category": "déterminants"
   }
 ]
