@@ -15,41 +15,116 @@ Mais un problème subsiste : **qui met à jour l'agenda ?**
 Le site SAR France publie un agenda d'événements — conférences, commémorations, visites, assemblées. Jusqu'ici, le processus était le suivant :
 
 1. Un membre du bureau envoie un mail au webmaster
-2. Le webmaster ouvre `data/agenda.yaml` dans son éditeur
-3. Il saisit manuellement les 9 champs YAML de l'événement
-4. Il cherche les coordonnées GPS du lieu sur Google Maps
-5. Il commit, push, attend le build
-6. Il vérifie que rien n'est cassé
+2. Le webmaster saisit manuellement l'événement dans un fichier technique
+3. Il cherche les coordonnées GPS du lieu sur Google Maps
+4. Il publie les modifications et vérifie que rien n'est cassé
 
-C'est du travail bas niveau, répétitif, et surtout c'est un **goulot d'étranglement** : si le webmaster n'est pas disponible, l'agenda ne bouge pas.
+C'est du travail répétitif, et surtout c'est un **goulot d'étranglement** : si le webmaster n'est pas disponible, l'agenda ne bouge pas.
 
 L'objectif était simple : **permettre à n'importe quel membre du bureau d'ajouter un événement, sans compétence technique, avec un circuit de validation**.
 
 ---
 
-## La solution : GitHub Agentic Workflows
+## La solution en bref
 
-GitHub a lancé [Agentic Workflows](https://github.blog/changelog/2025-05-19-github-agentic-workflows-public-preview/) — un framework qui permet de définir un agent IA directement dans un fichier `.md` du dépôt, déclenché par des événements GitHub (issues, PR, push…). L'agent s'exécute dans GitHub Actions, piloté par [Claude d'Anthropic](https://www.anthropic.com/claude) comme moteur de raisonnement, avec des garde-fous intégrés. Claude analyse le contenu, prend des décisions (valider, corriger, rejeter) et produit les modifications — le tout encadré par les restrictions du framework.
+GitHub a lancé [Agentic Workflows](https://github.blog/changelog/2025-05-19-github-agentic-workflows-public-preview/) — un système qui permet de brancher un agent IA directement dans un projet GitHub. L'agent est piloté par [Claude d'Anthropic](https://www.anthropic.com/claude) et se déclenche automatiquement quand quelqu'un remplit un formulaire.
 
-Concrètement, le setup se résume à **deux fichiers** :
+En pratique, on écrit un fichier en langage naturel qui décrit ce que l'agent doit faire, avec ses règles et ses limites. GitHub se charge de transformer ça en processus automatisé. **Le point clé : ce fichier est prompté à ~99%.** C'est du texte structuré, pas du code.
 
-```
-.github/workflows/
-├── add-agenda-event.md        # Le prompt de l'agent (ce que j'ai écrit)
-└── add-agenda-event.lock.yml  # Le workflow compilé (généré automatiquement)
-```
-
-Le `.md` contient le prompt, les règles de sécurité, les instructions de traitement. Le `.lock.yml` est généré par `gh aw compile` — c'est le workflow GitHub Actions réel, avec toute la plomberie (MCP servers, safe outputs, firewall réseau, etc.).
-
-**Le point clé : le fichier `.md` est prompté à ~99%.** C'est du langage naturel structuré, pas du code. La seule partie "technique" est le front matter YAML qui configure les déclencheurs, les permissions et les safe outputs.
-
-Et ce n'est pas tout : **le template d'issue GitHub** (`.github/ISSUE_TEMPLATE/add-agenda-event.yml`) a lui aussi été prompté via Claude. Le formulaire avec ses champs typés, ses validations, ses placeholders — tout a été généré par Claude Opus 4.6 à partir d'une description du besoin. Au final, l'ensemble du dispositif — le workflow agent *et* le formulaire utilisateur — a été produit quasi intégralement par prompting. Le travail humain s'est concentré sur la relecture, l'ajustement des règles de sécurité et les itérations de test.
+Le formulaire que remplissent les utilisateurs a lui aussi été généré par Claude à partir d'une simple description du besoin. Au final, l'ensemble du dispositif — l'agent *et* le formulaire — a été produit quasi intégralement par prompting. Le travail humain s'est concentré sur la relecture, l'ajustement des règles de sécurité et les itérations de test.
 
 ---
 
-## Ce que fait l'agent, concrètement
+## Le résultat côté utilisateur
 
-Quand un membre du bureau crée une issue via le formulaire "Ajout d'un événement à l'agenda", voici ce qui se passe :
+Voici ce que vit un membre du bureau quand il ajoute un événement :
+
+**1. Il remplit un formulaire web**
+
+Un formulaire simple, avec des champs guidés : date, type d'événement, titre, lieu, description. Pas besoin de connaître Git, le terminal ou le YAML.
+
+**2. L'agent traite en ~2 minutes**
+
+L'agent lit la demande, vérifie les données, corrige l'orthographe, trouve les coordonnées GPS du lieu, et prépare la modification du site. Un commentaire de confirmation apparaît avec le résumé des actions et les éventuelles corrections apportées.
+
+**3. Le webmaster valide**
+
+Le webmaster reçoit une notification, vérifie en 30 secondes et approuve.
+
+**4. Le site se met à jour**
+
+Le site est recompilé et publié automatiquement en ~3 minutes.
+
+Du formulaire à la publication : **moins de 10 minutes**, dont la majorité est du temps d'attente humain.
+
+---
+
+## Ce que ça change concrètement
+
+| Tâche | Avant | Après |
+|---|---|---|
+| Saisie de l'événement | Webmaster, manuellement | Membre du bureau, via formulaire |
+| Correction orthographique | Webmaster, à l'œil | Agent IA, automatique |
+| Géocodage du lieu | Webmaster, copier-coller depuis Google Maps | Agent IA, automatique |
+| Formatage technique | Webmaster, risque d'erreur | Agent IA, format garanti |
+| Validation des données | Aucune (confiance) | Agent IA, règles strictes |
+| Circuit de validation | Mail → webmaster → publication | Formulaire → agent → webmaster → publication |
+| Délai moyen | Jours | Minutes |
+
+L'admin ne disparaît pas — il passe de **l'exécution** à la **validation**. C'est un changement de posture significatif pour la gestion d'un site associatif.
+
+---
+
+## Le coût
+
+Zéro. Ou presque.
+
+- **GitHub Actions** : gratuit pour les dépôts publics
+- **Agentic Workflows** : inclus dans GitHub (public preview)
+- **Claude** : quelques centimes par exécution
+- **Géocodage (Nominatim)** : gratuit (service OpenStreetMap)
+- **Hugo + GitHub Pages** : gratuit
+
+Pour un site associatif avec quelques événements par mois, le coût est négligeable.
+
+---
+
+## L'auto-gestion d'un site web est possible
+
+Avec ce setup, un site complet peut être géré par des non-développeurs :
+
+- **Contenu texte** : édition directe via l'interface GitHub
+- **Agenda** : formulaire + agent IA + validation humaine
+- **Traduction** : agent IA déclenché automatiquement à chaque modification du contenu français
+- **Signalement de bugs** : formulaires structurés
+- **Déploiement** : entièrement automatisé
+
+Le webmaster reste dans la boucle pour la validation, mais il n'a plus à faire le travail de saisie, de formatage, de traduction ou de géocodage. Ce sont des tâches que l'IA fait mieux et plus vite.
+
+---
+
+## Et après ?
+
+Le même principe est applicable à d'autres cas d'usage sur le site :
+
+- **Ajout de livres à la bibliothèque** — le formulaire existe déjà, l'agent reste à écrire
+- **Ajout de notices biographiques** — même logique : formulaire → agent → validation
+- **Mise à jour du diaporama** — un formulaire avec upload d'image + agent qui redimensionne et insère
+
+Plus largement, ce principe est transposable à n'importe quel site géré via Git : documentation technique, sites d'événements, portails associatifs, blogs collaboratifs. Dès qu'il y a des données structurées à maintenir et des contributeurs non-techniques, un agent IA dans le circuit de contribution simplifie considérablement les choses.
+
+---
+---
+
+## Sous le capot : la partie technique
+
+Les sections suivantes détaillent l'implémentation pour les lecteurs intéressés par les aspects techniques.
+
+---
+
+## Ce que fait l'agent, étape par étape
+
+Quand un membre du bureau crée une issue via le formulaire "Ajout d'un événement à l'agenda", voici le flux complet :
 
 ```
 Membre remplit le formulaire GitHub Issues
@@ -90,7 +165,7 @@ L'agent supprime trois tâches bas niveau que le webmaster faisait manuellement 
 
 ---
 
-## Le prompt : anatomie du fichier `.md`
+## Le prompt : anatomie du fichier agent
 
 Le cœur du système est le fichier `add-agenda-event.md`. Voici sa structure :
 
@@ -178,7 +253,7 @@ C'est ça, le "code" de l'agent. Du texte. Prompté via Claude Opus 4.6, itéré
 
 ## Le formulaire côté utilisateur
 
-L'autre pièce du puzzle est le template d'issue GitHub (`.github/ISSUE_TEMPLATE/add-agenda-event.yml`). C'est un formulaire structuré avec des champs typés :
+Le template d'issue GitHub (`.github/ISSUE_TEMPLATE/add-agenda-event.yml`) définit le formulaire structuré :
 
 ```yaml
 name: "📅 Ajout d'un événement à l'agenda"
@@ -229,69 +304,11 @@ Concrètement, pour ce workflow :
 
 ---
 
----
-
-## Le résultat en production
-
-Voici ce que voit un membre du bureau quand il ajoute un événement :
-
-**1. Il remplit le formulaire**
-
-Un formulaire web simple, avec des champs guidés. Pas de YAML, pas de Git, pas de terminal.
-
-**2. L'agent traite en ~2 minutes**
-
-L'agent lit l'issue, valide, corrige, géocode, insère, et crée la PR. Un commentaire de confirmation apparaît sur l'issue avec le résumé des actions et les éventuelles corrections apportées.
-
-**3. Le webmaster valide**
-
-La PR montre exactement le diff — les lignes ajoutées dans `data/agenda.yaml`. Le webmaster vérifie en 30 secondes et fusionne.
-
-**4. Le site se met à jour**
-
-Le pipeline Hugo se déclenche, le site est recompilé et déployé sur GitHub Pages en ~3 minutes.
-
-Du formulaire à la publication : **moins de 10 minutes**, dont la majorité est du temps d'attente humain (le webmaster qui ouvre sa notification).
-
----
-
-## Ce que ça change pour l'administration du site
-
-Le tableau ci-dessous résume l'impact concret :
-
-| Tâche | Avant | Après |
-|---|---|---|
-| Saisie de l'événement | Webmaster, manuellement dans YAML | Membre du bureau, via formulaire |
-| Correction orthographique | Webmaster, à l'œil | Agent IA, automatique |
-| Géocodage du lieu | Webmaster, Google Maps copier-coller | Agent IA, API Nominatim |
-| Formatage YAML | Webmaster, risque d'erreur | Agent IA, format garanti |
-| Validation des données | Aucune (confiance) | Agent IA, règles strictes |
-| Circuit de validation | Mail → webmaster → commit | Formulaire → agent → PR → webmaster |
-| Délai moyen | Jours | Minutes |
-
-L'admin ne disparaît pas — il passe de **l'exécution** à la **validation**. C'est un changement de posture significatif pour la gestion d'un site associatif.
-
----
-
-## Le coût
-
-Zéro. Ou presque.
-
-- **GitHub Actions** : gratuit pour les dépôts publics (2000 min/mois pour les privés)
-- **Agentic Workflows** : inclus dans GitHub (public preview)
-- **Claude** : nécessite une clé API Anthropic stockée dans les secrets du dépôt. Le coût par exécution est de l'ordre de quelques centimes (un prompt + une réponse)
-- **Nominatim** : gratuit (service OpenStreetMap, usage raisonnable)
-- **Hugo + GitHub Pages** : gratuit
-
-Pour un site associatif avec quelques événements par mois, le coût est négligeable.
-
----
-
 ## Ce que j'en retiens
 
 ### Le prompt est le code
 
-Le fichier `.md` de l'agent est le seul artefact que j'ai réellement écrit. Le workflow YAML est généré. Le formulaire d'issue est du YAML déclaratif standard. L'essentiel du travail a été de **rédiger un bon prompt** — clair, structuré, avec des règles de sécurité explicites.
+Le fichier `.md` de l'agent est le seul artefact que j'ai réellement écrit. L'essentiel du travail a été de **rédiger un bon prompt** — clair, structuré, avec des règles de sécurité explicites.
 
 C'est un changement de paradigme pour quelqu'un qui a l'habitude d'écrire du code impératif. Ici, on décrit le *quoi* et le *comment* en langage naturel, et le framework s'occupe de l'exécution.
 
@@ -299,46 +316,21 @@ C'est un changement de paradigme pour quelqu'un qui a l'habitude d'écrire du co
 
 Les règles de sécurité (injection de prompt, restriction de fichiers, firewall réseau, validation des données) ont été pensées dès le début, pas ajoutées après coup. Le framework Agentic Workflows facilite cette approche avec ses safe outputs et ses restrictions déclaratives.
 
-### L'auto-gestion d'un site web est possible
-
-Avec ce setup, un site Hugo complet peut être géré par des non-développeurs :
-
-- **Contenu texte** : édition directe des fichiers Markdown via l'interface GitHub
-- **Agenda** : formulaire + agent IA + validation humaine
-- **Traduction** : agent IA déclenché automatiquement à chaque modification du contenu français (un second workflow `translate-to-english.md` gère ça)
-- **Signalement de bugs** : templates d'issues structurés
-- **Déploiement** : entièrement automatisé
-
-Le webmaster reste dans la boucle pour la validation, mais il n'a plus à faire le travail de saisie, de formatage, de traduction ou de géocodage. Ce sont des tâches que l'IA fait mieux et plus vite.
-
 ---
 
 ## La stack technique
 
-Pour résumer les briques impliquées :
-
 | Brique | Rôle |
 |---|---|
-| [Hugo](https://gohugo.io/) | Générateur de site statique |
-| [GitHub Actions](https://github.com/features/actions) | CI/CD, orchestration des workflows |
-| [GitHub Agentic Workflows](https://github.blog/changelog/2025-05-19-github-agentic-workflows-public-preview/) | Framework agent IA dans GitHub |
 | [Claude](https://www.anthropic.com/claude) (Anthropic) | Moteur IA de l'agent + développement du prompt |
+| [GitHub Agentic Workflows](https://github.blog/changelog/2025-05-19-github-agentic-workflows-public-preview/) | Framework agent IA dans GitHub |
+
 | [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org/) | Géocodage (lieu → GPS) |
-| [Leaflet](https://leafletjs.com/) | Cartes interactives sur le site |
+| [Hugo](https://gohugo.io/) | Générateur de site statique |
 | [GitHub Pages](https://pages.github.com/) | Hébergement statique |
 | [GitHub Issues](https://docs.github.com/en/issues) | Interface formulaire pour les utilisateurs |
 
 ---
-
-## Et après ?
-
-Le même pattern est applicable à d'autres cas d'usage sur le site :
-
-- **Ajout de livres à la bibliothèque** — le template d'issue existe déjà, l'agent reste à écrire
-- **Ajout de notices biographiques** — même logique : formulaire → agent → PR → validation
-- **Mise à jour du diaporama** — un formulaire avec upload d'image + agent qui redimensionne et insère
-
-Plus largement, ce pattern est transposable à n'importe quel site statique géré via Git : documentation technique, sites d'événements, portails associatifs, blogs collaboratifs. Dès qu'il y a des données structurées à maintenir et des contributeurs non-techniques, un agent IA dans le pipeline de contribution simplifie considérablement les choses.
 
 Le code source est public : [github.com/gautric/preprod.sarfrance.org](https://github.com/gautric/preprod.sarfrance.org). Les fichiers de workflow sont dans `.github/workflows/`. N'hésitez pas à explorer.
 
