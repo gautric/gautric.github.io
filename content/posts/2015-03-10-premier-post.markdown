@@ -11,12 +11,12 @@ draft: false
 
 ## Français
 
-Bienvenue sur mon blog ! Je posterai ici mes articles techniques et mes réflexions sur divers sujets informatiques. En espérant que vous y trouverez des informations utiles et intéressantes. Bonne lecture à tous.
+Bienvenue sur ce blog. On y trouvera des articles techniques et des réflexions sur divers sujets informatiques. L'objectif : partager des retours d'expérience concrets et des informations utiles. Bonne lecture.
 
 ## English
 
-Welcome to my blog! I will be posting my technical articles and thoughts on various IT topics here. I hope you'll find useful and interesting information. Happy reading!
+Welcome to this blog. It will feature technical articles and thoughts on various IT topics. The goal: sharing concrete feedback and useful information. Happy reading!
 
 ## 日本語
 
-ようこそ、私のブログへ！ここに技術的な記事やIT関連のさまざまな考えを投稿します。役立つ情報を見つけていただければ幸いです。
+このブログへようこそ。技術的な記事やIT関連のさまざまな考察を掲載していきます。具体的なフィードバックや有益な情報を共有することが目的です。
