@@ -114,7 +114,6 @@ Le même principe est applicable à d'autres cas d'usage sur le site :
 Plus largement, ce principe est transposable à n'importe quel site géré via Git : documentation technique, sites d'événements, portails associatifs, blogs collaboratifs. Dès qu'il y a des données structurées à maintenir et des contributeurs non-techniques, un agent IA dans le circuit de contribution simplifie considérablement les choses.
 
 ---
----
 
 ## Sous le capot : la partie technique
 
