@@ -11,7 +11,7 @@ draft: false
 
 ## Français
 
-Bienvenue sur ce blog. On y trouvera des articles techniques et des réflexions sur divers sujets informatiques. L'objectif : partager des retours d'expérience concrets et des informations utiles. Bonne lecture.
+Bienvenue sur ce blog. On y trouvera des articles techniques et des retours d'expérience sur divers sujets informatiques. L'objectif : partager des informations concrètes et utiles. Bonne lecture.
 
 ## English
 

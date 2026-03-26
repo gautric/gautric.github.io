@@ -10,55 +10,53 @@ tags: ["en","jboss","eap","wildfly","websphereMQ","JCA"]
 
 # Integrating WebSphere MQ with JBoss EAP 6: Best Practices
 
-Enterprise application integration remains one of the most challenging aspects of modern IT architectures. This article explores how to effectively connect JBoss Enterprise Application Platform (EAP) 6 with IBM WebSphere MQ messaging system using Java EE standards and following industry best practices.
+Enterprise application integration remains one of the most challenging aspects of modern IT architectures. This article details how to connect **JBoss EAP 6** with **IBM WebSphere MQ** using Java EE standards and industry best practices.
 
 ## Introduction to JCA and Enterprise Integration
 
-[JBoss EAP](http://www.jboss.org/products/eap/overview/) application server is [Java EE 6 certified](http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html), which means it implements all specifications of this Java Enterprise Edition platform version. Among these specifications, the Java EE Connector Architecture (JCA) standard is implemented through the [IronJacamar](http://www.ironjacamar.org/) framework.
+[JBoss EAP](http://www.jboss.org/products/eap/overview/) is [Java EE 6 certified](http://www.oracle.com/technetwork/java/javaee/overview/compatibility-jsp-136984.html). Among the implemented specifications, the **Java EE Connector Architecture** (JCA) standard relies on the [IronJacamar](http://www.ironjacamar.org/) framework.
 
-The JCA standard enables Java EE applications to connect to external enterprise information systems such as:
+JCA enables Java EE applications to connect to external enterprise information systems:
 - JMS message brokers
 - File systems
 - Mainframes
 - Other enterprise information systems (EIS)
 
-JCA can be conceptually compared to JDBC: while JDBC is limited to relational databases, JCA has a much broader scope and can integrate with virtually any enterprise information system.
+The analogy with JDBC is relevant: JDBC is limited to relational databases, JCA covers a much broader scope.
 
 ### Key Features of the JCA Standard
 
-The JCA standard manages several critical aspects of enterprise integration:
+* **Connectivity**: establishing and managing connections to external systems (sockets, IPC, etc.)
+* **Transaction Management**: supporting both local and distributed (XA) transactions
+* **Security**: authentication and authorization for accessing remote resources
+* **Resource Management**: lifecycle and thread management
+* **Service Contracts**: standardized interfaces between the application server and external systems
 
-* **Connectivity**: Establishing and managing connections to external systems (sockets, IPC, etc.)
-* **Transaction Management**: Supporting both local and distributed (XA) transactions
-* **Security**: Authentication and authorization for accessing remote resources
-* **Resource Management**: Lifecycle and thread management
-* **Service Contracts**: Standardized interfaces between the application server and external systems
+The external system provider (here IBM for WebSphere MQ) supplies a **Resource Adapter**, which acts as a driver between the application server and the external system.
 
-To use JCA, the external system provider (in our case, IBM for WebSphere MQ) supplies a component called a **Resource Adapter**, which functions as a driver between the application server and the external system.
-
-> **Goal of this post**: Present best practices for JMS integration between WebSphere MQ (WMQ) and JBoss EAP 6 using the JCA standard for a robust and maintainable solution.
+> **Goal**: Present best practices for JMS integration between **WebSphere MQ** and **JBoss EAP 6** using the JCA standard for a robust and maintainable solution.
 
 ## Prerequisites and Technical Environment
 
-To implement this integration, you'll need the following components:
+Required components:
 
-* **A JBoss EAP server**: Available for download at [http://www.jboss.org/products/eap/download/](http://www.jboss.org/products/eap/download/)
-* **A WebSphere MQ server**: Available at [http://www.ibm.com/developerworks/downloads/ws/wmq/](http://www.ibm.com/developerworks/downloads/ws/wmq/)
-* **The WebSphere MQ Resource Adapter**: Typically available in the **/opt/mqm/java/lib/jca** directory after installing WebSphere MQ
+* **JBoss EAP**: [http://www.jboss.org/products/eap/download/](http://www.jboss.org/products/eap/download/)
+* **WebSphere MQ**: [http://www.ibm.com/developerworks/downloads/ws/wmq/](http://www.ibm.com/developerworks/downloads/ws/wmq/)
+* **WebSphere MQ Resource Adapter**: typically in **/opt/mqm/java/lib/jca** after installation
 
 {{< notice warning >}}
-Warning: These are trial or evaluation versions only. Production deployment requires purchasing a subscription for JBoss EAP and a license for IBM WebSphere MQ.
+These are trial versions only. Production deployment requires a JBoss EAP subscription and an IBM WebSphere MQ license.
 {{< /notice >}}
 
 ## Development of Integration Components
 
-To test our integration, we need to develop two essential components:
+Two components are needed to validate the integration:
 1. A client for sending JMS messages
-2. A Message-Driven Bean (MDB) for receiving messages
+2. A **Message-Driven Bean** (MDB) for receiving messages
 
 ### Message Sending Component
 
-For sending messages, we'll create a Stateless EJB. This approach is recommended in a Java EE environment, though other mechanisms like servlets could also be used.
+Sending is handled by a **Stateless EJB**. Other mechanisms (servlet, etc.) are possible.
 
 ```java
 // ..OMIT .. //
@@ -93,21 +91,22 @@ public class MoMSenderBean {
 }
 ```
 
+
 {{< notice notice >}}
-Key points to note in this code:
-1. JMS resources (ConnectionFactory and Queue) are injected via the @Resource annotation
-2. These resources are retrieved from the current module's scope
-3. A unique correlation ID (UUID) is generated for each message
+Key points:
+1. JMS resources (**ConnectionFactory** and **Queue**) are injected via `@Resource`
+2. They come from the current module's scope
+3. A unique correlation ID (UUID) is generated per message
 4. Resources are properly closed after use
 {{< /notice >}}
 
-For more information about JNDI configuration with JBoss, see the [official documentation](https://docs.jboss.org/author/display/AS72/JNDI+Reference).
+For JNDI configuration with JBoss, see the [official documentation](https://docs.jboss.org/author/display/AS72/JNDI+Reference).
 
 ### Message Receiving Component
 
-In the Java EE architecture, JMS message reception is typically handled through a Message-Driven Bean (MDB). This type of bean is specifically designed to be activated by the arrival of a message in a queue or topic.
+JMS message reception is handled by a **Message-Driven Bean** (MDB), activated upon message arrival in a queue or topic.
 
-To create an MDB, the class must implement the **javax.jms.MessageListener** interface:
+The class must implement **javax.jms.MessageListener**:
 
 ```java
 // ..OMIT .. //
@@ -123,19 +122,19 @@ public class MoMMDB implements MessageListener {
 ```
 
 {{< notice notice >}}
-While it's possible to configure the MDB directly with ActivationSpec annotations, this approach is not recommended as it mixes technical environment concerns with application code. We prefer to externalize this configuration in deployment descriptors, as we'll see later.
+Configuring the MDB with **ActivationSpec** annotations is possible but not recommended: it mixes technical environment concerns with application code. Externalizing this configuration in deployment descriptors is a better approach — a classic **separation of concerns** decision.
 {{< /notice >}}
 
 ## Application Configuration
 
-Now that we've developed the basic components, we need to configure the application to connect properly to WebSphere MQ. This configuration is primarily done through two descriptor files:
+With the components developed, the application must be configured for WebSphere MQ connectivity. Two descriptor files are involved:
 
-1. **ejb-jar.xml**: Standard Java EE component definition
+1. **ejb-jar.xml**: standard Java EE component definition
 2. **jboss-ejb3.xml**: JBoss-specific configuration for WebSphere MQ integration
 
 ### Java EE Definition (ejb-jar.xml)
 
-The **ejb-jar.xml** file defines the EJB components of our application according to the Java EE standard:
+The **ejb-jar.xml** file defines EJB components according to the Java EE standard:
 
 ```xml
 <ejb-jar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd" version="3.0">
@@ -157,13 +156,13 @@ The **ejb-jar.xml** file defines the EJB components of our application according
 </ejb-jar>
 ```
 
-This file defines:
-- A Message-Driven Bean named "MessageDrivenBean" that listens to a JMS queue
-- A Session EJB named "MoMSenderBean" that will be used to send messages
+This file declares:
+- An MDB named "MessageDrivenBean" listening to a JMS queue
+- A session EJB "MoMSenderBean" for sending messages
 
 ### JBoss-Specific Configuration (jboss-ejb3.xml)
 
-The **jboss-ejb3.xml** file contains JBoss-specific configuration for WebSphere MQ integration:
+The **jboss-ejb3.xml** file carries the WebSphere MQ integration configuration:
 
 ```xml
 <jboss:ejb-jar xmlns:jboss="http://www.jboss.com/xml/ns/javaee"
@@ -245,37 +244,32 @@ The **jboss-ejb3.xml** file contains JBoss-specific configuration for WebSphere 
 
 #### Key Configuration Elements
 
-This configuration contains several important elements to understand:
+1. **Placeholders**: all technical information is externalized via variables replaced by values from standalone.xml (`${websphere.hostName}`, `${websphere.port}`, `${websphere.queueManager}`, etc.)
 
-1. **Use of Placeholders**: All technical information is externalized via placeholders (variables) that will be replaced with values defined in the standalone.xml file:
-   - `${websphere.hostName}`: WebSphere MQ server hostname
-   - `${websphere.port}`: Listening port
-   - `${websphere.queueManager}`: Queue manager name
-   - etc.
+2. **JNDI**: the `useJNDI` property set to `true` enables queue retrieval by JNDI name
 
-2. **JNDI Usage Activation**: The `useJNDI` property is set to `true` to enable queue retrieval by its JNDI name.
+3. **JNDI Name Mapping**: application JNDI names are mapped to server-side JNDI names:
+   - Server: `java:/jboss/jms/wmq/queue/Queue`
+   - Application: `jms/queue/Queue`
 
-3. **JNDI Name Mapping**: JNDI names used in the application are mapped to JNDI names configured in the JBoss server:
-   - Server JNDI name: `java:/jboss/jms/wmq/queue/Queue`
-   - Application JNDI name: `jms/queue/Queue`
-
-4. **Resource Adapter Binding**: The MDB is explicitly bound to the WebSphere MQ Resource Adapter via the `<mdb:resource-adapter-binding>` tag.
+4. **Resource Adapter Binding**: the MDB is bound to the WebSphere MQ Resource Adapter via `<mdb:resource-adapter-binding>`
 
 {{< notice warning >}}
-In an enterprise context, it's strongly recommended to use XML configuration files rather than Java annotations. This approach facilitates environment changes (development, testing, production) without requiring code recompilation. Java code should remain as independent as possible from the runtime environment and external system implementation details.
+In an enterprise context, XML configuration files should be preferred over Java annotations. This approach facilitates environment changes (development, testing, production) without recompilation. Java code should remain independent from the runtime environment — a fundamental **separation of concerns** principle.
 {{< /notice >}}
 
 {{< notice info >}}
-If your application needs to connect to multiple JMS systems, it's recommended to create a separate jboss-ejb3.xml file for each system. This approach maintains a clear separation of configurations and simplifies maintenance.
+For applications connecting to multiple JMS systems, create a separate jboss-ejb3.xml file per system. This maintains clear configuration separation and simplifies maintenance.
 {{< /notice >}}
+
 
 ## JBoss Server Configuration
 
-After configuring the application, we now need to configure the JBoss EAP server to communicate with WebSphere MQ. This configuration is done in the **standalone.xml** file of the JBoss instance.
+With the application configured, the JBoss EAP server must be set up for WebSphere MQ communication. Configuration is done in the **standalone.xml** file.
 
 ### System Properties Definition
 
-Let's start by defining the system properties that will be used to replace the placeholders in our configuration:
+System properties replace the placeholders in the application configuration:
 
 ```xml
 <system-properties>
@@ -291,21 +285,17 @@ Let's start by defining the system properties that will be used to replace the p
 </system-properties>
 ```
 
-These properties define all the parameters needed to connect to the WebSphere MQ server:
-- Connection information (host, port)
-- Authentication credentials (username, password)
-- Channel and queue manager configuration
-- Resource Adapter name to use
+These properties cover all connection parameters: host, port, credentials, channel, queue manager and Resource Adapter.
 
 {{< notice info >}}
 WebSphere MQ offers two main transport modes:
-- **CLIENT**: The mode used here, which works over TCP/IP and doesn't require local WebSphere MQ installation
-- **BINDING**: A mode that offers better performance but requires OS-specific binary components to be installed on the same machine as JBoss
+- **CLIENT**: used here, works over TCP/IP without local WebSphere MQ installation
+- **BINDING**: better performance, but requires OS-specific binary components on the same machine as JBoss
 {{< /notice >}}
 
 ### Property Replacement Configuration
 
-JBoss EAP provides a powerful mechanism to replace placeholders with system property values in different types of configuration files. Here's how to enable it:
+JBoss EAP can replace placeholders with system property values in different configuration file types:
 
 ```xml
 <subsystem xmlns="urn:jboss:domain:ee:1.2">
@@ -315,20 +305,20 @@ JBoss EAP provides a powerful mechanism to replace placeholders with system prop
 </subsystem>
 ```
 
-This configuration enables property replacement only in JBoss-specific descriptors (like jboss-ejb3.xml), but not in standard Java EE descriptors or annotations.
+Property replacement is enabled only for JBoss-specific descriptors (jboss-ejb3.xml, etc.), not for standard Java EE descriptors or annotations.
 
-The three available options are:
-- **spec-descriptor-property-replacement**: For standard Java EE descriptor files (web.xml, ejb-jar.xml, etc.)
-- **jboss-descriptor-property-replacement**: For JBoss-specific descriptor files (jboss-web.xml, jboss-ejb3.xml, etc.)
-- **annotation-property-replacement**: For Java annotations
+The three options:
+- **spec-descriptor-property-replacement**: standard Java EE descriptors (web.xml, ejb-jar.xml, etc.)
+- **jboss-descriptor-property-replacement**: JBoss-specific descriptors (jboss-web.xml, jboss-ejb3.xml, etc.)
+- **annotation-property-replacement**: Java annotations
 
 {{< notice note >}}
-It's recommended to enable replacement only for JBoss descriptors, as this maintains a clear separation between standard Java EE configuration and runtime-specific configuration.
+Enabling replacement only for JBoss descriptors maintains a clear separation between standard Java EE configuration and runtime-specific configuration.
 {{< /notice >}}
 
 ### WebSphere MQ Resource Adapter Configuration
 
-Finally, we need to configure the WebSphere MQ Resource Adapter in the JBoss server:
+Final server-side step — declaring the Resource Adapter:
 
 ```xml
 <subsystem xmlns="urn:jboss:domain:resource-adapters:1.1">
@@ -361,48 +351,46 @@ Finally, we need to configure the WebSphere MQ Resource Adapter in the JBoss ser
 </subsystem>
 ```
 
-This configuration defines:
+This configuration declares:
 
-1. **The Resource Adapter**: Identified as "wmq.jmsra.rar", which is the RAR file provided by IBM
-2. **Transaction Support**: Configured for local transactions
-3. **The ConnectionFactory**: Exposed via JNDI under the name "java:/jboss/jms/wmq/connectionFactory"
-4. **The Queue**: Exposed via JNDI under the name "java:/jboss/jms/wmq/queue/Queue"
+1. **The Resource Adapter**: identified as "wmq.jmsra.rar", the RAR file provided by IBM
+2. **Transaction support**: local transactions
+3. **The ConnectionFactory**: exposed via JNDI as `java:/jboss/jms/wmq/connectionFactory`
+4. **The Queue**: exposed via JNDI as `java:/jboss/jms/wmq/queue/Queue`
 
 {{< notice info >}}
-Note the use of placeholders with default values (e.g., `${websphere.port:1414}`). This syntax allows specifying a default value that will be used if the system property is not defined.
+The `${websphere.port:1414}` syntax defines a default value used when the system property is not set.
 {{< /notice >}}
 
-## Deployment and Implementation
+## Deployment
 
-Once all configurations are complete, the final step is to deploy the necessary components:
+With all configurations in place, deploy:
 
-1. Copy the WebSphere MQ Resource Adapter (**wmq.jmsra.rar**) to the JBoss deployment directory: `${JBOSS_HOME}/standalone/deployments`
-2. Deploy your application (WAR or EAR) to the same directory
+1. Copy the Resource Adapter (**wmq.jmsra.rar**) to `${JBOSS_HOME}/standalone/deployments`
+2. Deploy the application (WAR or EAR) to the same directory
 
-JBoss will automatically detect these new deployments and activate them. Your application will then be able to communicate with WebSphere MQ.
+JBoss automatically detects new deployments. The application can then communicate with WebSphere MQ.
 
-## Conclusion: Benefits of This Integration Approach
+## Conclusion
 
-The integration between JBoss EAP and WebSphere MQ via the JCA standard offers numerous advantages:
+The JBoss EAP / WebSphere MQ integration via **JCA** offers several architectural benefits:
 
-1. **Modularity and Maintainability**: The clear separation between application code and integration configuration facilitates maintenance and system evolution.
+| **Criteria** | **Benefit** |
+|---|---|
+| **Decoupling** | Clean separation between application code and integration configuration |
+| **Portability** | Only standalone.xml variables change between environments |
+| **Standards** | JCA and Java EE ensure interoperability and longevity |
+| **Resource Management** | Connections, transactions and security handled by the container |
+| **Flexibility** | JMS provider can be changed without modifying application code |
 
-2. **Environment Portability**: Deployment across different environments (development, testing, production) is simplified, as only the environment variables in the standalone.xml file need to be modified.
+This approach, built on standards and **decoupling**, enables a robust and scalable integration between JBoss EAP and WebSphere MQ.
 
-3. **Standards-Based**: The approach based on JCA and Java EE standards ensures better interoperability and solution longevity.
-
-4. **Optimized Resource Management**: JCA provides advanced mechanisms for connection management, transactions, and security, improving system performance and reliability.
-
-5. **Flexibility**: This architecture allows easy switching between JMS providers if needed, by modifying only the configuration and not the application code.
-
-By following the best practices presented in this article, you can establish a robust and scalable integration between JBoss EAP and WebSphere MQ that will meet the requirements of modern enterprise applications.
-
-### Useful Resources for Further Learning
+### Resources
 
 * [Deploy the WebSphere MQ Resource Adapter (Red Hat Documentation)](https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6/html/Administration_and_Configuration_Guide/Deploy_the_WebSphere_MQ_Resource_Adapter.html)
-* [JBoss Developer Forum Discussion on WebSphere MQ](https://developer.jboss.org/message/738670)
+* [JBoss Developer Forum Discussion](https://developer.jboss.org/message/738670)
 * [WebSphere MQ Integration Wiki](https://developer.jboss.org/wiki/WebsphereMQIntegration)
-* [The installation verification test program for the WebSphere MQ resource adapter](http://www-01.ibm.com/support/knowledgecenter/SSFKSJ_7.5.0/com.ibm.mq.dev.doc/q031760_.htm)
+* [Installation Verification Test Program for the WebSphere MQ Resource Adapter](http://www-01.ibm.com/support/knowledgecenter/SSFKSJ_7.5.0/com.ibm.mq.dev.doc/q031760_.htm)
 * [French version of this article](/blog/2015/03/25/websphere-mq-jboss-eap-integration.html)
 
 ### Acknowledgements
