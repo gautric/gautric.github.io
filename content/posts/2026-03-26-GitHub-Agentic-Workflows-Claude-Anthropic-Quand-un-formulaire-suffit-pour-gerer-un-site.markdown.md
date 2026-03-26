@@ -323,16 +323,12 @@ Les règles de sécurité (injection de prompt, restriction de fichiers, firewal
 |---|---|
 | [Claude](https://www.anthropic.com/claude) (Anthropic) | Moteur IA de l'agent + développement du prompt |
 | [GitHub Agentic Workflows](https://github.blog/changelog/2025-05-19-github-agentic-workflows-public-preview/) | Framework agent IA dans GitHub |
-
 | [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org/) | Géocodage (lieu → GPS) |
 | [Hugo](https://gohugo.io/) | Générateur de site statique |
 | [GitHub Pages](https://pages.github.com/) | Hébergement statique |
 | [GitHub Issues](https://docs.github.com/en/issues) | Interface formulaire pour les utilisateurs |
 
----
-
 Le code source est public : [github.com/gautric/preprod.sarfrance.org](https://github.com/gautric/preprod.sarfrance.org). Les fichiers de workflow sont dans `.github/workflows/`. N'hésitez pas à explorer.
 
 ---
 
-*Développé avec [Claude Opus 4.6](https://www.anthropic.com/claude) d'Anthropic.*
