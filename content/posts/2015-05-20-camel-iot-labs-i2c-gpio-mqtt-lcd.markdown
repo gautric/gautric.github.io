@@ -8,67 +8,65 @@ tags: ["en", "apache", "camel","camellabs","raspberry pi","i2c","lcd","mqtt","Io
 #url: /blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html
 ---
 
-One month ago, Henryk, Claus and I started the Camel Labs project. This project provides exciting new components for the IoT community based on Apache Camel technology. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. In this lab, we will demonstrate how to build an end-to-end IoT integration with I2C devices, an MQTT broker, and an I2C LCD display using just a few lines of code.
+One month ago, Henryk, Claus and the author started the **Camel Labs** project. This project provides new components for the IoT community based on **Apache Camel**. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. This lab demonstrates how to build an end-to-end IoT integration with **I2C** devices, an **MQTT** broker, and an **I2C LCD** display using just a few lines of code.
 
 > **Lab Overview**: I2C sensor + GPIO LED + MQTT broker + I2C LCD over Raspberry Pi
 
 ![end-to-end](/img/end-to-end.png)
 
-In this lab, we will build two Camel routes:
+Two Camel routes are built in this lab:
 
-1. A route to poll accelerometer information every 2 seconds, blink an LED on each message, and send the message to an MQTT topic
-2. A route to receive messages from the MQTT topic, check the Z value to set a header with a specific color, and display the message via an I2C LCD device
+1. A route to poll accelerometer data every 2 seconds, blink an LED on each message, and send the message to an MQTT topic
+2. A route to receive messages from the MQTT topic, check the Z value to set a header with a specific color, and display the message on an I2C LCD
 
 ## Prerequisites
 
-For this lab, you will need the following components:
+Required components:
 
-* Two Raspberry Pi boards ([Buy one](http://www.raspberrypi.org/products/))
+* Two **Raspberry Pi** boards ([buy one](http://www.raspberrypi.org/products/))
   * Tested with: B model and B+
-  * Should work with: A, A+, B+, 2B
+  * Compatible with: A, A+, B+, 2B
   * Both on the same VLAN
-* Raspbian OS installed ([Download](http://www.raspberrypi.org/downloads/))
+* **Raspbian OS** ([download](http://www.raspberrypi.org/downloads/))
 * 1 LED
-* 1 220 Ω (ohms) resistor
+* 1 220 Ω resistor
 * Wires
 * 1 breadboard
-* 1 RGB LCD 16x2 [Available here](https://www.adafruit.com/products/716)
-* 1 Accelerometer LSM303 [Available here](https://www.adafruit.com/products/1120)
-* 1 ActiveMQ default installation [Installation & Configuration](http://activemq.apache.org/getting-started.html)
+* 1 **RGB LCD 16x2** [available here](https://www.adafruit.com/products/716)
+* 1 **Accelerometer LSM303** [available here](https://www.adafruit.com/products/1120)
+* 1 **ActiveMQ** default installation [installation & configuration](http://activemq.apache.org/getting-started.html)
 
-## Setting Up Your Raspberry Pi
+## Setting Up the Raspberry Pi
 
 {{< notice error >}}
-Be careful with your device! Always shut down power before wiring. Double-check all connections before powering on to avoid damaging your device.
+Always shut down power before wiring. Double-check all connections before powering on to avoid damaging the device.
 {{< /notice >}}
 
-You need to configure the [I2C module](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c) on your Raspberry Pi.
+The [I2C module](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c) must be configured on the Raspberry Pi.
 
 ### Wiring for Accelerometer and Raspberry Pi
 
 {{< notice warning >}}
-I am using the LSM303 from Adafruit, but the wiring should be similar for other models.
+The LSM303 from Adafruit is used here, but the wiring should be similar for other models.
 {{< /notice >}}
 
-You can also use Olivier LD's [wiring diagram](http://www.lediouris.net/RaspberryPI/LSM303/img/wiring.png) as a reference.
+Olivier LD's [wiring diagram](http://www.lediouris.net/RaspberryPI/LSM303/img/wiring.png) can also serve as reference.
 
 ![Wire LSM303](/img/LSM303_RPi.png)
 
 ### Wiring for LCD and Raspberry Pi
 
 {{< notice warning >}}
-With the RGB LCD 16x2 from Adafruit, you just need to plug the LCD component directly into the Raspberry Pi.
+With the RGB LCD 16x2 from Adafruit, the LCD component plugs directly into the Raspberry Pi.
 {{< /notice >}}
 
-[For more information on LCD wiring](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
+[More information on LCD wiring](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
 
 ![Wire LCD](/img/LCD_RPi.png)
 
-You can test your wiring with the [wiringpi](http://wiringpi.com) library.
+Wiring can be tested with the [wiringpi](http://wiringpi.com) library.
 
 ## Installing the Pi4J Library
-
-First, let's install the Pi4J library.
 
 Currently, version 1.0 is available directly for Raspberry Pi:
 
@@ -78,39 +76,37 @@ pi@rbpi> curl -s get.pi4j.com | sudo bash
 ```
 
 {{< notice info >}}
-You should use Public/Private key authentication for faster connections to your Raspberry Pi.
+Public/Private key authentication is recommended for faster SSH connections.
 {{< /notice >}}
 
-For more information about installation, visit the [Pi4J installation guide](http://pi4j.com/install.html#Installation).
+For more details, visit the [Pi4J installation guide](http://pi4j.com/install.html#Installation).
 
 ## Compiling the Raspberry Pi Component
 
 {{< notice error >}}
-This component is still under development. Please feel free to test it and send your feedback.
-Some aspects may change at any time (such as the URI format).
+This component is still under development. Some aspects may change at any time (URI format, etc.).
 {{< /notice >}}
 
-It's better to build the camel-raspberry component on your personal computer, as the Raspberry Pi is typically too slow for efficient compilation.
-
-Checkout the code:
+Building on a development machine is more efficient than on the Raspberry Pi:
 
 ```bash
 $> git clone https://github.com/camel-labs/camel-labs.git
 ```
 
+
 ### Creating the Accelerometer Program
 
-You need to compile the Accelerometer part program **Accel2MQTT** in the *iot/components/camel-pi4j/src/main/java/com/github/camellabs/component/pi4j* directory:
+The Accelerometer program **Accel2MQTT** is located in *iot/components/camel-pi4j/src/main/java/com/github/camellabs/component/pi4j*:
 
 <script src="https://gist.github.com/gautric/edba044d912d53e4bf31.js"></script>
 
 ### Creating the LCD Program
 
-You need to compile the LCD part program **MQTT2LCD** in the *iot/components/camel-pi4j/src/main/java/com/github/camellabs/component/pi4j* directory:
+The LCD program **MQTT2LCD** is located in the same directory:
 
 <script src="https://gist.github.com/gautric/e8eef9489d62288dedb9.js"></script>
 
-### Compilation Command Line
+### Compilation
 
 ```bash
 $> mvn package -Dmaven.test.skip=true -P CopyDependencyforLab
@@ -118,7 +114,7 @@ $> mvn package -Dmaven.test.skip=true -P CopyDependencyforLab
 
 ### Pushing Binaries to Raspberry Pi Devices
 
-Copy JAR and dependency files to your two Raspberry Pi devices:
+Copy JAR and dependency files to both Raspberry Pi devices:
 
 ```bash
 $> ssh ${PI_USER}@${PI_HOST_ACCEL} 'mkdir -p /home/pi/camel'
@@ -127,9 +123,9 @@ $> ssh ${PI_USER}@${PI_HOST_LCD} 'mkdir -p /home/pi/camel'
 $> scp iot/components/camel-pi4j/target/*.jar ${PI_USER}@${PI_HOST_LCD}:/home/pi/camel
 ```
 
-### Installing the Camel Program on Your Raspberry Pi
+### Installing the Camel Program
 
-Copy the **log4j.properties** file to the **${PI_HOST}:/home/pi/camel** directory:
+Copy the **log4j.properties** file to **${PI_HOST}:/home/pi/camel**:
 
 ```properties
 #
@@ -151,8 +147,6 @@ log4j.appender.out.layout.ConversionPattern=%d{ISO8601} [%30.30t] %-30.30c{1} %-
 
 ### Starting the MQTT Broker via ActiveMQ
 
-Run the MQTT broker using the following commands:
-
 ```bash
 $mqtt.acme.com> cd $ACTIVEMQ_HOME/bin
 $mqtt.acme.com> ./activemq start
@@ -164,11 +158,11 @@ INFO: pidfile created : '/Users/XXXXXX/Application/activemq/apache-activemq-5.11
 
 ## Starting the Accelerometer and MQTT Sender Part
 
-The first part of this lab collects [X, Y, Z values from the accelerometer via the I2C bus every 2 seconds](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L27), [flashes an LED](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L28), and [sends the X, Y, Z vector to an MQTT topic](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L30).
+The first part [collects X, Y, Z values from the accelerometer via I2C every 2 seconds](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L27), [flashes an LED](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L28), and [sends the vector to an MQTT topic](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L30).
 
 <img src="/img/LSM303_RPi_design.png" />
 
-### Command Line for Accelerometer Part
+### Command Line
 
 ```bash
 $> ssh ${PI_USER}@${PI_HOST_ACCEL}
@@ -229,11 +223,11 @@ pi@rbpi8 ~/camel $ pi4j -r com.github.camellabs.component.pi4j.Accel2MQTT
 
 ## Starting the MQTT Reception and LCD Display Part
 
-The second part of this lab [receives X, Y, Z vectors from the MQTT topic](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L34), [checks the Z value](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L41) (STABLE or ERROR zone), changes the color of the LCD display, and [sends the message to the LCD](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L60).
+The second part [receives X, Y, Z vectors from the MQTT topic](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L34), [checks the Z value](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L41) (STABLE or ERROR zone), changes the LCD color, and [sends the message to the LCD](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L60).
 
 <img src="/img/LCD_RPi_design.png" />
 
-### Command Line for LCD Part
+### Command Line
 
 ```bash
 $> ssh ${PI_USER}@${PI_HOST_LCD}
@@ -245,7 +239,7 @@ pi@rbpi> pi4j -r com.github.camellabs.component.pi4j.MQTT2LCD
 
 ```
 pi@rbpi2 ~/camel $ pi4j -r com.github.camellabs.component.pi4j.MQTT2LCD
-+ sudo java -classpath '.:classes:*:classes:/opt/pi4j/lib/*' com.github.camellabs.component.pi4j.MQTT2LCD
++ sudo java -classpath '.:classes:*:classes:/opt/pi4j/lib/*' com.github.camellobs.component.pi4j.MQTT2LCD
 19:45:33,277 [                          main] MQTT2LCD                       INFO  main
 19:45:35,516 [                          main] DefaultCamelContext            INFO  Apache Camel 2.15.2 (CamelContext: camel-1) is starting
 19:45:35,530 [                          main] ManagedManagementStrategy      INFO  JMX is enabled
@@ -303,29 +297,25 @@ pi@rbpi2 ~/camel $ pi4j -r com.github.camellabs.component.pi4j.MQTT2LCD
 19:45:57,844 [        hawtdispatch-DEFAULT-1] MCP23017LCD                    DEBUG >> Exchange[Message: [-67,-411,993]]
 ```
 
-## Final Result Video
-
-Et voilà! Here's the final result:
+## Final Result
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bT-9DUi0SPo" frameborder="0" ></iframe>
 
-**Note**: I had to change the LCD color scheme due to my low-cost camera:
+**Note**: The LCD color scheme was adjusted for the low-cost camera:
 - GREEN is now ON
 - YELLOW is still YELLOW
 - RED is now OFF
 
 ## Conclusion
 
-As you can see, integrating Camel Labs with Raspberry Pi is remarkably straightforward. The BMP180 driver is available for temperature and pressure sensing, and the TSL2561 driver is available for light sensing. The Java Camel DSL simplifies the code for assembling and integrating IoT devices. You can easily switch from an MQTT broker to a SOAP web service with minimal refactoring.
+Integrating **Camel Labs** with **Raspberry Pi** is straightforward. The **BMP180** driver is available for temperature and pressure sensing, and the **TSL2561** driver for light sensing. The Java Camel DSL simplifies the assembly and integration of IoT devices. Switching from an MQTT broker to a SOAP web service requires minimal refactoring.
 
-Raspberry Pi can integrate and assemble various electronic (I2C) devices and protocols (like MQTT) with [Camel IoT Labs components](https://github.com/camel-labs/camel-labs/tree/master/iot/components) using just a few lines of code.
+Raspberry Pi can integrate various electronic (I2C) devices and protocols (MQTT) with [Camel IoT Labs components](https://github.com/camel-labs/camel-labs/tree/master/iot/components) using just a few lines of code.
 
-*[Raspberry Pi](http://raspberrypi.org) and [Camel IoT Labs](https://github.com/camel-labs/camel-labs) make a powerful combination for IoT development!*
-
-## More Links
+## Links
 
 * More information [about me](/apropos/)
-* My colleague's blog: [Henryk Konsek](http://henryk-konsek.blogspot.fr/) (IoT, MQTT, etc.)
+* Colleague's blog: [Henryk Konsek](http://henryk-konsek.blogspot.fr/) (IoT, MQTT, etc.)
 * Thanks to [Olivier for LSM303 resources](http://www.lediouris.net/RaspberryPI/LSM303/readme.html)
 * Thanks to [Marcus Hirt for the Java LCD driver](http://hirt.se/blog/?p=464)
 * [Camel Labs on GitHub](https://github.com/camel-labs/camel-labs)

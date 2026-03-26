@@ -8,41 +8,41 @@ tags: ["fr", "wildfly"]
 #url: /blog/2015/05/04/wildfly-9-CR01-released-sortie.html
 ---
 
-La release candidate 01 de Wildfly 9.0.0 est sortie ce samedi. Elle est disponible en [téléchargement ici](http://wildfly.org/downloads/). Cette version corrige un certain nombre de bugs et apporte de nouvelles fonctionnalités que nous allons vous présenter rapidement ici. Cette version représente une étape importante avant la sortie finale et intègre des améliorations significatives en termes de performances et de stabilité. Je posterai plus tard des exemples complets pour illustrer ces nouvelles fonctionnalités.
+La release candidate 01 de **Wildfly 9.0.0** est sortie ce samedi. Elle est disponible en [téléchargement ici](http://wildfly.org/downloads/). Cette version corrige un certain nombre de bugs et apporte de nouvelles fonctionnalités présentées ci-dessous. Elle représente une étape importante avant la sortie finale, avec des améliorations en termes de performances et de stabilité. Des exemples complets seront publiés ultérieurement.
 
 ### Java EE7
 
-Wildfly 9 intègre les deux profils Web et Full du standard Java EE7. Cette implémentation complète permet aux développeurs de bénéficier de toutes les fonctionnalités de la spécification, notamment les dernières versions de JSF, JPA, JAX-RS et les autres technologies du standard.
+Wildfly 9 intègre les deux profils **Web** et **Full** du standard **Java EE7**. Cette implémentation complète donne accès à toutes les fonctionnalités de la spécification, notamment les dernières versions de JSF, JPA, JAX-RS et les autres technologies du standard.
 
 ### Le support de HTTP/2 & SPDY
 
-Le standard HTTP/2 est maintenant [officiel depuis Février](https://lists.w3.org/Archives/Public/ietf-http-wg/2015JanMar/0478.html). Wildfly 9 inclut le support de ce protocole, mais nécessite une [procédure spéciale](http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html) pour l'activation. HTTP/2 offre des améliorations significatives en termes de performances par rapport à HTTP/1.1, notamment grâce au multiplexage des requêtes et à la compression des en-têtes.
+Le standard **HTTP/2** est [officiel depuis février](https://lists.w3.org/Archives/Public/ietf-http-wg/2015JanMar/0478.html). Wildfly 9 inclut le support de ce protocole, mais nécessite une [procédure spéciale](http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html) pour l'activation. HTTP/2 offre des gains significatifs par rapport à HTTP/1.1, notamment grâce au **multiplexage des requêtes** et à la **compression des en-têtes**.
 
 {{< notice info >}}
-Je l'ai testé sans problème avec Firefox 37.0.2 et Java 8u40, je ferai un post détaillé sur ce sujet dès que possible.
+Testé sans problème avec Firefox 37.0.2 et Java 8u40. Un post détaillé sur ce sujet suivra.
 {{< /notice >}}
 
 ### Load balancer Wildfly en remplacement d'Apache
 
-Anciennement, le load balancing des Wildfly ou JBoss était effectué le plus souvent via un Apache en frontal des instances. La configuration du load balancing se fait désormais directement via le serveur HTTP Undertow. Cette approche simplifie l'architecture globale et réduit la complexité de la configuration tout en améliorant les performances.
+Auparavant, le load balancing des instances Wildfly ou JBoss passait le plus souvent par un Apache en frontal. La configuration se fait désormais directement via le serveur HTTP **Undertow**. Cette approche simplifie l'architecture et réduit la complexité de la configuration tout en améliorant les performances.
 
 ### Arrêt en douceur de Wildfly
 
-Il est maintenant possible de refuser nativement les nouvelles sessions utilisateur lorsqu'une instance s'arrête. Cela permet de ne plus interrompre les traitements des utilisateurs déjà connectés et d'assurer une transition fluide lors des mises à jour ou des redémarrages planifiés. Cette fonctionnalité est particulièrement utile dans les environnements de production à haute disponibilité.
+Il est maintenant possible de refuser nativement les nouvelles sessions utilisateur lorsqu'une instance s'arrête. Les traitements des utilisateurs déjà connectés ne sont plus interrompus, ce qui assure une transition fluide lors des mises à jour ou des redémarrages planifiés. Fonctionnalité particulièrement utile en production à haute disponibilité.
 
-### Mise à jour de Framework
+### Mise à jour de frameworks
 
-* Intégration de JBoss WS 5 basé sur CXF 3, apportant des améliorations de performances et de nouvelles fonctionnalités pour les services web
-* Remplacement de JacORB par OpenJDK Orb pour l'implémentation du protocole IIOP, offrant une meilleure compatibilité et stabilité
-* Montée de version vers IronJacamar 1.2.4.Final pour l'implémentation de JCA, avec des corrections de bugs et des optimisations
+* Intégration de **JBoss WS 5** basé sur CXF 3, avec des améliorations de performances pour les services web
+* Remplacement de **JacORB** par **OpenJDK Orb** pour l'implémentation du protocole IIOP, offrant une meilleure compatibilité
+* Montée de version vers **IronJacamar 1.2.4.Final** pour l'implémentation de JCA, avec des corrections de bugs et des optimisations
 
-### Correction de bug
+### Corrections de bugs
 
-* [86 bugs corrigés depuis la version 9.0 Beta 2](https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12313721&version=12325387), améliorant considérablement la stabilité et la fiabilité du serveur
+* [86 bugs corrigés depuis la version 9.0 Beta 2](https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12313721&version=12325387), améliorant la stabilité et la fiabilité du serveur
 
 ### Démarrage
 
-Le démarrage se fait comme les versions précédentes. Voici un exemple de log de démarrage :
+Le démarrage se fait comme pour les versions précédentes. Exemple de log :
 
 ```bash
 [mbp:~/Application/wildfly/wildfly-9.0.0.CR1]$> bin/standalone.sh
@@ -97,4 +97,4 @@ Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; sup
 ### Liens complémentaires
 
 * [L'annonce en anglais](https://developer.jboss.org/wiki/WildFly900CR1ReleaseNotes) dont est issu ce post
-* [L'annonce](http://blog.arungupta.me/wildfly-9-cr1-http2-intelligent-load-balancing-graceful-shutdown-offline-cli/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+MilesToGo+%28Miles+to+go+2.0%29) de mon collègue Arun Gupta avec des détails supplémentaires
+* [L'annonce](http://blog.arungupta.me/wildfly-9-cr1-http2-intelligent-load-balancing-graceful-shutdown-offline-cli/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+MilesToGo+%28Miles+to+go+2.0%29) d'Arun Gupta avec des détails supplémentaires
