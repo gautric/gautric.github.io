@@ -106,7 +106,7 @@ Lors de l'activation d'un signal "Signal Step", le processus va se mettre en "é
 Il se peut que le signal, pour des besoins métiers, soit lancé (bien) avant l'activation du noeud signal, donc le processus peut manquer la réception du signal, le signal sera donc perdu et le processus restera toujours bloqué. 
 Il est bien sûr possible d'avoir une branche incluant un délai afin de créer une branche de sortie et donc débloquer le processus. Mais en toute logique, la branche de délestage ne sera pas la branche nominale.
 
-![Processus avec signal bloquant](/img/jbpm-signal-processus.png)
+![Processus avec signal bloquant](/img/2021-09-26-jbpm-signal-pattern/processus-signal-bloquant.png)
 
 Mais qu'en est-il si l'on souhaite tout de même recevoir le signal à n'importe quel moment[^duree], notamment si les actions avant la réception du signal sont longues "Long running Sub-Process", et tout de même réagir à l'événement signal? 
 
@@ -118,7 +118,7 @@ Car comme nous l'avons vu précédemment, la réception du signal sera possible 
 
 Pour cela nous allons créer un sous-processus attenant au processus principal. L'idée principale de ce sous-processus est de se mettre en écoute de l'événement signal même si on ne va pas utiliser cette information tout de suite dans le processus principal.
 
-![Sous-processus de réception de signal](/img/jbpm-signal-subprocess.png)
+![Sous-processus de réception de signal](/img/2021-09-26-jbpm-signal-pattern/sous-processus-reception-signal.png)
 
 Avec ce sous-processus nous allons simplement recevoir le signal via le noeud "Signal Start Event", à n'importe quel moment du cycle de vie du processus.
 
@@ -151,11 +151,11 @@ Avec ce sous-processus de réception de signal, nous stockons dans la session (D
 Afin d'exploiter l'événement signal stocké dans les infos de l'instance de processus, nous allons modifier notre processus.
 Voici maintenant le mécanisme d'utilisation de l'événement signal. 
 
-![Flux Drools pour traitement du signal](/img/jbpm-signal-drools-flow.png)
+![Flux Drools pour traitement du signal](/img/2021-09-26-jbpm-signal-pattern/drools-flow-signal.png)
 
 Nous remplaçons l'attente du signal par une condition particulière. Cette condition, dans notre cas, est stockée dans la session Drools. 
 
-![Implémentation Drools du signal](/img/jbpm-signal-drools-impl.png)
+![Implémentation Drools du signal](/img/2021-09-26-jbpm-signal-pattern/drools-implementation-signal.png)
 
 Le noeud "Drools Step" configure le "Conditional Event" sous la forme d'une règle Drools. Ici, ce noeud vérifie la présence de l'objet String dans la session, cette chaîne de caractère devra être égale à "SUB_PROCESS_SIGNAL" pour valider la condition. 
 
@@ -166,7 +166,7 @@ L'avantage de l'utilisation du conditional event est qu'il peut être rafraîchi
 
 Voici donc, le schéma complet du processus implémentant le pattern que nous venons de voir. Ce schéma générique ne gère pour l'instant qu'un signal et un type de condition, mais il est tout à fait possible d'avoir une implémentation plus complexe en fonction du besoin métier (plusieurs signaux, plusieurs variables, plusieurs conditions).
 
-![Processus complet avec pattern de découplage](/img/jbpm-signal-full-processus.png)
+![Processus complet avec pattern de découplage](/img/2021-09-26-jbpm-signal-pattern/processus-complet-pattern.png)
 
 {{< notice warning >}}
 Ce pattern possède néanmoins le défaut de perdre la signification, dans la branche de traitement, de la source du "Conditional Event". En effet, le signal est réceptionné dans un sous-processus dédié, il est donc important de bien documenter l'élément déclencheur du "Conditional Event".

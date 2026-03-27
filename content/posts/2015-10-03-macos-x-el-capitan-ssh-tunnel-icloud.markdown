@@ -34,11 +34,11 @@ Let's see how to do it.
 
 First, ensure the "Back to My Mac" option is enabled in your iCloud account settings on the MacMini server. This service creates a secure tunnel between your devices through Apple's servers.
 
-<img src="/img/icloudbacktomymac.png" width="50%" height="50%" />
+<img src="/img/2015-10-03-macos-ssh-icloud/icloud-back-to-my-mac.png" width="50%" height="50%" />
 
 Once enabled, you should see your MacMini server available in your Finder's left panel under the "Shared" section.
 
-<img src="/img/icloudselectmacmini.png" width="25%" height="25%" />
+<img src="/img/2015-10-03-macos-ssh-icloud/finder-shared-macmini.png" width="25%" height="25%" />
 
 [More information is available at the official Apple help center](https://support.apple.com/en-us/HT204618)
 

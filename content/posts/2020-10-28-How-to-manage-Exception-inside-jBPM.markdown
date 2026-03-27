@@ -18,7 +18,7 @@ To illustrate how to use Exception/Error I propose to create a sample error proc
 
 Let's create a very common process with Work Item Handler (WIH). This pattern is frequently used when integrating external systems or services into your BPMN workflow.
 
-![BPMN process with error handling](/img/jbpm-error-exception.png)
+![BPMN process with error handling](/img/2020-10-28-jbpm-exception-handling/bpmn-process-error.png)
 
 This WIH has to implement `org.kie.api.runtime.process.WorkItemHandler` jBPM's interface and its two methods `executeWorkItem` and `abortWorkItem`. The first method is the nominal execution. The second one is called by jBPM to reset the workitem handler action.
 
@@ -43,11 +43,11 @@ In BPMN, we just have to use/copy paste the full qualified exception name to be 
 jBPM engine gonna catch this exception and create an internal signal. This signal reroutes the process instance to the error branch.
 The signal looks like `Error-${internalUniqueId}-${exceptionClassName}`, and in our case `Error-_72474602-751C-43FD-9D4F-2598A16468D1-net.a.g.jbpm.pattern.util.Exception` (don't care about the middle UUID it is internal and automatic). 
 
-![Error handling in BPMN](/img/jbpm-error-exception-handling.png)
+![Error handling in BPMN](/img/2020-10-28-jbpm-exception-handling/bpmn-error-handling.png)
 
 You can map the error instance to a process variable and reuse it inside the rest next nodes as usual. This allows you to access error details in subsequent steps of your process.
 
-![Error mapping to process variables](/img/jbpm-error-exception-mapping.png)
+![Error mapping to process variables](/img/2020-10-28-jbpm-exception-handling/bpmn-error-mapping.png)
 
 {{< notice info >}}
 In most case and in a real life, we should wrap all exceptions into normalized ones.

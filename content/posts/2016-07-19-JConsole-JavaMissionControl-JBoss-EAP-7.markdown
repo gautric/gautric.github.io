@@ -154,7 +154,7 @@ cocoa
 
 After that you could start **JMC** application and add a new connection:
 
-![JMC Connection Screen](/img/jmc-1.png)
+![JMC Connection Screen](/img/2016-07-19-jconsole-jmc-jboss-eap7/jmc-connection-screen.png)
 
 Configure correctly JVM connection parameters:
 
@@ -164,15 +164,15 @@ Configure correctly JVM connection parameters:
 4. to test connection
 5. to save and connect
 
-![JMC Connection Parameters](/img/jmc-2.png)
+![JMC Connection Parameters](/img/2016-07-19-jconsole-jmc-jboss-eap7/jmc-connection-parameters.png)
 
 Now you can now view live all informations about JVM and **JBoss EAP 7** application. The dashboard provides a comprehensive overview of the server's performance metrics.
 
-![JMC Dashboard](/img/jmc-3.png)
+![JMC Dashboard](/img/2016-07-19-jconsole-jmc-jboss-eap7/jmc-dashboard.png)
 
 You can also check all JMX MBean. This allows you to dive deeper into specific components and their attributes.
 
-![JMC MBean Browser](/img/jmc-4.png)
+![JMC MBean Browser](/img/2016-07-19-jconsole-jmc-jboss-eap7/jmc-mbean-browser.png)
 
 ## Conclusion
 

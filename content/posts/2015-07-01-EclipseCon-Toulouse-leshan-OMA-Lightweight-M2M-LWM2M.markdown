@@ -52,13 +52,13 @@ LWM2M gère également le **cycle de vie** des objets déployés :
 
 * **Provisionnement** : configuration initiale et paramétrage
 * **Enregistrement** : découverte et intégration au système
-<img src="/img/RDR.png" style="max-width:100%;" height="110" hspace="30" alt="Diagramme d'enregistrement LWM2M"/>
+<img src="/img/2015-07-01-eclipsecon-leshan-lwm2m/lwm2m-registration-diagram.png" style="max-width:100%;" height="110" hspace="30" alt="Diagramme d'enregistrement LWM2M"/>
 
 * **Gestion** : contrôle et configuration à distance
-<img src="/img/RWE.png" style="max-width:100%;" height="110" hspace="30" alt="Diagramme de gestion LWM2M"/>
+<img src="/img/2015-07-01-eclipsecon-leshan-lwm2m/lwm2m-management-diagram.png" style="max-width:100%;" height="110" hspace="30" alt="Diagramme de gestion LWM2M"/>
 
 * **Notifications** : alertes et mises à jour d'état
-<img src="/img/ONCO.png" style="max-width:100%;" height="110" hspace="30" alt="Diagramme de notification LWM2M"/>
+<img src="/img/2015-07-01-eclipsecon-leshan-lwm2m/lwm2m-notification-diagram.png" style="max-width:100%;" height="110" hspace="30" alt="Diagramme de notification LWM2M"/>
 
 
 ### Modèle de données LWM2M : Clients, Objects et Resources
@@ -209,11 +209,11 @@ Résultats obtenus avec le serveur Leshan :
 
 1. **Enregistrement du client auprès du serveur**
 
-<img src="/img/leshan_1.png" style="max-width:75%;" alt="Enregistrement du client GPIO auprès du serveur Leshan"/>
+<img src="/img/2015-07-01-eclipsecon-leshan-lwm2m/leshan-client-registration.png" style="max-width:75%;" alt="Enregistrement du client GPIO auprès du serveur Leshan"/>
 
 2. **Lecture des ressources du client**
 
-<img src="/img/leshan_2.png" style="max-width:75%;" alt="Ressources disponibles sur le client GPIO"/>
+<img src="/img/2015-07-01-eclipsecon-leshan-lwm2m/leshan-client-resources.png" style="max-width:75%;" alt="Ressources disponibles sur le client GPIO"/>
 
 {{< notice warning >}}
 L'instanciation de la GPIO / IPSO Digital Output se fait pour l'instant uniquement depuis le serveur via une requête CREATE.
@@ -221,7 +221,7 @@ L'instanciation de la GPIO / IPSO Digital Output se fait pour l'instant uniqueme
 
 3. **Création d'un objet GPIO depuis le serveur**
 
-<img src="/img/leshan_3.png" style="max-width:75%;" alt="Création d'un objet GPIO depuis le serveur"/>
+<img src="/img/2015-07-01-eclipsecon-leshan-lwm2m/leshan-gpio-creation.png" style="max-width:75%;" alt="Création d'un objet GPIO depuis le serveur"/>
 
 {{< notice warning >}}
 Les paramètres ne sont pas encore correctement envoyés lors de la création. Il faut les définir un par un après la création.
@@ -229,7 +229,7 @@ Les paramètres ne sont pas encore correctement envoyés lors de la création. I
 
 4. **Modification des propriétés de l'objet GPIO**
 
-<img src="/img/leshan_5.png" style="max-width:75%;" alt="Modification des propriétés GPIO"/>
+<img src="/img/2015-07-01-eclipsecon-leshan-lwm2m/leshan-gpio-properties.png" style="max-width:75%;" alt="Modification des propriétés GPIO"/>
 
 5. **Logs du client**
 

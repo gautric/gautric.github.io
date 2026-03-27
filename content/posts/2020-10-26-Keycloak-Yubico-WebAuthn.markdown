@@ -52,61 +52,61 @@ Il est bien sûr possible d'utiliser toute les fonctionnalités de Wildlfy/JBoss
 
 Configurer maintenant le Realm qui va contenir l'ensemble des utilisateurs et des clients (applications). Un Realm dans Keycloak est un espace isolé qui contient ses propres utilisateurs, rôles, groupes et applications.
 
-![Configuration Realm](/img/kc-2fa-configure-realm.png)
+![Configuration Realm](/img/2020-10-26-keycloak-webauthn/keycloak-configure-realm.png)
 
 Pour la demo, nous utilisons une application cliente de type Javascript donc n'oubliez pas de configurer en mode `public` l'option `Access Type`. Cette configuration est nécessaire pour les applications frontend qui s'exécutent entièrement dans le navigateur du client.
 
-![Configuration Client](/img/kc-2fa-configure-client.png)
+![Configuration Client](/img/2020-10-26-keycloak-webauthn/keycloak-configure-client.png)
 
 Dans Browser Flow il suffit de rajouter le `WebAuthn Authenticator` executor dans le flow normal. Les flows d'authentification dans Keycloak permettent de définir des séquences personnalisées d'étapes d'authentification.
 
-![Configuration Flow](/img/kc-2fa-configure-flow.png)
+![Configuration Flow](/img/2020-10-26-keycloak-webauthn/keycloak-configure-flow.png)
 
 Dans la configuration du WebAuthn, n'oubliez pas de configurer le `Relying Party Entity Name`. Ce paramètre est crucial car il identifie votre application auprès du navigateur et des dispositifs d'authentification.
 
-![Configuration 2fa](/img/kc-2fa-configure-2fa.png)
+![Configuration 2fa](/img/2020-10-26-keycloak-webauthn/keycloak-configure-2fa.png)
 
 ## Enregistrement d'un utilisateur
 
 Passons maintenant à l'enregistrement d'un utilisateur. Cette étape est nécessaire pour associer une clé physique à un compte utilisateur spécifique.
 
-![Register User](/img/kc-2fa-register-user.png)
+![Register User](/img/2020-10-26-keycloak-webauthn/keycloak-register-user.png)
 
 Le browser demande ensuite l'enregistrement de la clef pour l'authentification future (cf la dialogue box avec l'empreinte digitale). Cette étape est cruciale car elle établit l'association entre l'identité numérique de l'utilisateur et sa clé physique.
 
-![Register Key](/img/kc-2fa-register-key.png)
+![Register Key](/img/2020-10-26-keycloak-webauthn/keycloak-register-key.png)
 
 Il suffit d'insérer sa clef Yubico FIDO2 compatible WebAuthn. La clé génère alors une paire de clés cryptographiques unique pour ce site.
 
-![Yubico Key](/img/kc-yubico.jpg)
+![Yubico Key](/img/2020-10-26-keycloak-webauthn/yubico-fido2-key.jpg)
 
 Ensuite il est possible de configurer un label pour ce processus d'authentification `WebAuthn Yubico Blue`. Ce label est particulièrement utile si l'utilisateur possède plusieurs dispositifs d'authentification.
 
-![Register Key Label](/img/kc-2fa-register-key-label.png)
+![Register Key Label](/img/2020-10-26-keycloak-webauthn/keycloak-register-key-label.png)
 
 ## Authentification de l'utilisateur
 
 L'authentification de l'utilisateur est maintenant possible. Le processus commence par la saisie classique du nom d'utilisateur et du mot de passe.
 
-![Authn User](/img/kc-2fa-authn-client.png)
+![Authn User](/img/2020-10-26-keycloak-webauthn/keycloak-authn-login.png)
 
 Dans ce cas le browser demande cette fois une authentification via la clef Yubico (cf la dialogue box avec l'empreinte digitale). Cette seconde étape d'authentification garantit que même si les identifiants sont compromis, l'accès reste sécurisé.
 
-![Authn User Key](/img/kc-2fa-authn-client-key.png)
+![Authn User Key](/img/2020-10-26-keycloak-webauthn/keycloak-authn-key-prompt.png)
 
 Dans le cas où l'utilisateur s'est trompé de clef ou bien a oublié sa clef, voici le message d'erreur. Keycloak propose généralement des mécanismes de récupération alternatifs configurables par l'administrateur.
 
-![Authn User Key Failed](/img/kc-2fa-authn-client-key-failed.png)
+![Authn User Key Failed](/img/2020-10-26-keycloak-webauthn/keycloak-authn-key-failed.png)
 
 Mais dans le cas où tout ce passe bien l'utilisateur sera correctement authentifié et redirigé vers l'application cliente. Le processus complet garantit une authentification forte tout en restant relativement simple pour l'utilisateur final.
 
-![User Authentification Ok](/img/kc-2fa-authn-client-ok.png)
+![User Authentification Ok](/img/2020-10-26-keycloak-webauthn/keycloak-authn-success.png)
 
 ## Information utilisateur
 
 Si l'on retourne sur la console d'administration web des utilisateurs dans Keycloak/RHSSO, on peut vérifier que l'enregistrement de la clef Yubico a bien été fait. L'enregistrement contient notamment la clef publique de la clef Yubico. Cette clé publique est utilisée pour vérifier les signatures générées par la clé privée stockée de manière sécurisée dans le dispositif physique.
 
-![User Detail](/img/kc-2fa-user-detail.png)
+![User Detail](/img/2020-10-26-keycloak-webauthn/keycloak-user-detail.png)
 
 ## Conclusion
 

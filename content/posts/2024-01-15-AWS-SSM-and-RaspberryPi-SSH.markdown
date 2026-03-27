@@ -175,7 +175,7 @@ raspberrypi.local          : ok=12   changed=0    unreachable=0    failed=0    s
 
 Une fois l'agent AWS Systems Manager déployé sur votre flotte de Raspberry Pi, vous pouvez retrouver votre instance RaspberryPi directement dans votre console AWS. Cette intégration transparente offre une visibilité centralisée sur l'état opérationnel de chaque dispositif, vous permettant de surveiller, de diagnostiquer et de prendre des mesures à distance.
 
-![AWS Console](/img/aws-ssm.png)
+![AWS Console](/img/2024-01-15-aws-ssm-raspberrypi/aws-console-ssm-instance.png)
 
 ### Connexion SSH au-dessus de AWS SSM Session Manager
 

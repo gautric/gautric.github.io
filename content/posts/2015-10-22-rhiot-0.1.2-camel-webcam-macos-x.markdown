@@ -94,13 +94,13 @@ Let's run it now. The following output shows the Camel context starting up, init
 
 After 5s of running, you can find all images into webcam directory. The component automatically creates this directory and saves each captured frame as a separate image file. Here are some examples of the captured images:
 
-<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-1.PNG" width="66%" height="66%" />
+<img src="/img/2015-10-22-rhiot-webcam/webcam-capture-1.png" width="66%" height="66%" />
 
-<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-3.PNG" width="66%" height="66%" />
+<img src="/img/2015-10-22-rhiot-webcam/webcam-capture-2.png" width="66%" height="66%" />
 
-<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-5.PNG" width="66%" height="66%" />
+<img src="/img/2015-10-22-rhiot-webcam/webcam-capture-3.png" width="66%" height="66%" />
 
-<img src="/img/ID-mbp-g-a-net-51281-1445507888541-0-7.PNG" width="66%" height="66%" />
+<img src="/img/2015-10-22-rhiot-webcam/webcam-capture-4.png" width="66%" height="66%" />
 
 ## Conclusion
 

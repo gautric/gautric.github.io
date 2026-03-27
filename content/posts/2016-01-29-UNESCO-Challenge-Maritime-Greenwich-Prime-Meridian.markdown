@@ -35,22 +35,22 @@ Se tenir à cheval sur la ligne du Méridien, un pied dans chaque hémisphère, 
 ### Le sceau officiel du Méridien de Greenwich
 La plaque commémorative indiquant le passage du Méridien Prime (0° de longitude).
 
-<img src="/img/meridian_seal.jpg" style="max-width:75%;" />
+<img src="/img/2016-01-29-unesco-greenwich/meridian-plaque.jpg" style="max-width:75%;" />
 
 ### L'horloge de précision
 Cette horloge, située à l'Observatoire Royal de Greenwich, est un exemple des instruments de précision qui ont permis de déterminer l'heure exacte nécessaire aux calculs de longitude.
 
-<img src="/img/meridian_clock.jpg" style="max-width:75%;" />
+<img src="/img/2016-01-29-unesco-greenwich/meridian-horloge.jpg" style="max-width:75%;" />
 
 ### La Time Ball
 Cette boule rouge située sur le toit de l'Observatoire était descendue chaque jour à 13h précises, permettant aux navires sur la Tamise de régler leurs chronomètres avec précision.
 
-<img src="/img/meridian_ball.jpg" style="max-width:75%;" />
+<img src="/img/2016-01-29-unesco-greenwich/meridian-time-ball.jpg" style="max-width:75%;" />
 
 ### La ligne du Méridien
 La fameuse ligne métallique incrustée dans le sol qui marque physiquement le passage du Méridien 0°. Les visiteurs peuvent se tenir à cheval sur cette ligne, avec un pied dans l'hémisphère est et l'autre dans l'hémisphère ouest.
 
-<img src="/img/meridian_line.jpg" style="max-width:75%;" />
+<img src="/img/2016-01-29-unesco-greenwich/meridian-ligne.jpg" style="max-width:75%;" />
 
 
 ### Liens

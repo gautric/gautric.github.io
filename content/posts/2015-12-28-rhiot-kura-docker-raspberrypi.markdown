@@ -153,7 +153,7 @@ scp target/rhiot-kura-camel-1.0.0-SNAPSHOT.jar pi@{RPIz_IP_ADDR}:
 
 Follow schema below *(RaspberryPi B+, 2, Zero use same pin layout)*
 
-<img src="/img/kura-camel-rhiot-8.png" style="max-width:80%;" />
+<img src="/img/2015-12-28-rhiot-kura-docker-raspberrypi/wiring-schema-raspberrypi.png" style="max-width:80%;" />
 
 ## Run rpi-rhiot Image
 
@@ -177,7 +177,7 @@ Now, you can use and deploy Kura Platform as you want.
 Just connect to Kura Web admin console via <http://RPIz_IP_ADDR/kura>. You can manage some Kura configuration (Cloud, Clock, Timer, Bundle, etc...).
 Change gpio id/action/period as you want.
 
-<img src="/img/docker-rhiot.png" width="75%" height="66%" />
+<img src="/img/2015-12-28-rhiot-kura-docker-raspberrypi/docker-rhiot-running.png" width="75%" height="66%" />
 
 ## Debug rpi-rhiot Image
 

@@ -25,7 +25,7 @@ Je me suis dit, pourquoi ne pas :
 
 Voici en résumé l'architecture de la solution que l'on va mettre en place.
 
-![MQTT Archi](/img/mqtt-archi.png)
+![MQTT Archi](/img/2018-04-21-mqtt-autolib-node-red/architecture-mqtt.png)
 
 * Description du schéma de principe :
   * Un flux/flow Node-Red va consommer régulièrement la *DataParis API*.
@@ -220,7 +220,7 @@ Node-Red s'exécute très bien sur un RaspberryPi.
 Pour notre use-case, nous allons faire un appel toutes les 20s (cf info) sur l'API de Paris. On vérifie rapidement que l'on récupère bien un retour HTTP/200.
 On découpe ensuite la liste des stations message par message. Puis on crée dynamiquement pour chaque message, et donc chaque station, le bon adressage de Topic pour l'envoi au broker MQTT. Le composant RBE est simplement là pour faire transiter le message uniquement s'il y a effectivement un changement de contenu.
 
-![MQTT Autolib flow](/img/mqtt-autolib-flow.png)
+![MQTT Autolib flow](/img/2018-04-21-mqtt-autolib-node-red/node-red-flow.png)
 
 {{< notice info >}}
 L'API de Paris est limitée à 5000 requêtes par jour.
@@ -238,7 +238,7 @@ Le code du flow est disponible sur le repository suivant :
 
 Nous voyons bien dans l'outil de monitoring les divers topics qui dépendent directement des stations Autolib. Nous voyons aussi la connexion de deux clients MQTT, l'un étant le Node-Red, l'autre le client Mosquitto.
 
-![Monitoring](/img/mqtt-artemis-monitoring.png)
+![Monitoring](/img/2018-04-21-mqtt-autolib-node-red/artemis-monitoring-topics.png)
 
 J'ai configuré les messages MQTT afin d'être en mode "retain" à minima, c'est pour cela que l'on retrouve un préfixe technique à l'adressage des topics des stations Autolib. Cette fonctionnalité permettra de conserver une dernière valeur si HomeAssistant tombe ou bien si le flux Node-Red s'arrête.
 
@@ -275,7 +275,7 @@ Après avoir envoyé les messages dans le broker ActiveMQ Artemis, il faut que l
 
 Et pour finir, voici le résultat dans le Dashboard HomeAssistant. J'ai rajouté un petit hook dans le flow nominal afin d'avoir l'heure de la dernière mise à jour des données. Il s'agit de vérifier si tout se passe bien.
 
-![HA](/img/mqtt-homeassistant.png)
+![HA](/img/2018-04-21-mqtt-autolib-node-red/homeassistant-dashboard.png)
 
 #### Mosquitto Client
 

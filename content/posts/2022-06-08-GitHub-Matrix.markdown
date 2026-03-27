@@ -46,15 +46,15 @@ Pour cela il faut simplement rajouter la section (1) dans la GitHub Action afin 
 
 Suite à une modification (push) dans le repository, la GitHub Action va être déclenchée. Le système va automatiquement créer des jobs distincts pour chaque combinaison définie dans la matrice.
 
-![Vue d'ensemble des jobs dans la matrice](/img/gha-java-matrix.png)
+![Vue d'ensemble des jobs dans la matrice](/img/2022-06-08-github-matrix/gha-matrix-overview.png)
 
 GitHub Action va automatiquement créer autant de sous-pipeline que la matrice va prévoir. Chaque job s'exécute de manière indépendante, ce qui permet d'obtenir rapidement des résultats pour toutes les configurations.
 
-![Compilation Java 11](/img/gha-java-11.png)
+![Compilation Java 11](/img/2022-06-08-github-matrix/gha-compilation-java-11.png)
 
 Voici l'exemple d'une compilation en Java 11. On peut observer les détails spécifiques à cette version dans les logs d'exécution.
 
-![Compilation Java 17](/img/gha-java-17.png)
+![Compilation Java 17](/img/2022-06-08-github-matrix/gha-compilation-java-17.png)
 
 Et voici une compilation en Java 17. Les différences entre les deux environnements sont gérées automatiquement par GitHub Actions.
 

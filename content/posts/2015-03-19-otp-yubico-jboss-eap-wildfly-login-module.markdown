@@ -163,13 +163,13 @@ Pour que JBoss puisse communiquer avec le **Yubico Cloud** et valider les tokens
 
 2. Remplir le formulaire avec une adresse email et un OTP généré par la clé Yubico.
 
-![Formulaire de demande d'API Yubico](/img/yubico-api-1.png)
+![Formulaire de demande d'API Yubico](/img/2015-03-19-otp-yubico-jboss/yubico-api-request-form.png)
 
 3. Deux informations sont fournies en retour :
    - **Client ID** : identifiant numérique de l'application
    - **Secret Key** (Client Key) : clé secrète pour signer les requêtes
 
-![Confirmation des identifiants API Yubico](/img/yubico-api-2.png)
+![Confirmation des identifiants API Yubico](/img/2015-03-19-otp-yubico-jboss/yubico-api-credentials-confirmation.png)
 
 **Important** : Ces identifiants seront nécessaires à la [septième étape](#septième-étape--la-configuration-de-linstance-jboss) pour configurer l'instance JBoss.
 
@@ -182,11 +182,11 @@ Pour associer chaque clé à son utilisateur, il faut collecter le **PublicId** 
 
 2. Insérer la clé et appuyer sur le bouton pour générer un OTP.
 
-![Page de démonstration Yubico](/img/yubico-key-1.png)
+![Page de démonstration Yubico](/img/2015-03-19-otp-yubico-jboss/yubico-demo-page.png)
 
 3. Le système affiche les informations de la clé, dont le PublicId :
 
-![Informations de la clé Yubico](/img/yubico-key-2.png)
+![Informations de la clé Yubico](/img/2015-03-19-otp-yubico-jboss/yubico-key-info.png)
 
 4. Noter la valeur du champ **Identity**.
 

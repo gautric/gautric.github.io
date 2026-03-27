@@ -76,7 +76,7 @@ Now, you can use and deploy the Kura Platform as you wish.
 If you are on macOS, access the web interface at: <http://192.168.99.100>
 If you are on Linux, <http://127.0.0.1> should work well.
 
-<img src="/img/kura-docker.png" width="66%" height="66%" />
+<img src="/img/2015-12-23-kura-docker/kura-web-interface.png" width="66%" height="66%" />
 
 ## Important Note
 

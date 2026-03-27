@@ -30,9 +30,9 @@ The city was inscribed on the UNESCO World Heritage List in 2005, recognizing th
 
 ## Photos
 
-<img src="/img/IMG_2018.JPG" style="max-width:75%;" alt="UNESCO plaque in Le Havre" />
+<img src="/img/2015-08-04-unesco-le-havre/plaque-unesco-le-havre.jpg" style="max-width:75%;" alt="UNESCO plaque in Le Havre" />
 
-<img src="/img/IMG_2020.JPG" style="max-width:75%;" alt="UNESCO designation in Le Havre" />
+<img src="/img/2015-08-04-unesco-le-havre/designation-unesco-le-havre.jpg" style="max-width:75%;" alt="UNESCO designation in Le Havre" />
 
 ### Links
 

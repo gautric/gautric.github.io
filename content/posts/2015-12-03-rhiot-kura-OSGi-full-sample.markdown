@@ -57,15 +57,15 @@ Before setting up Camel and Rhiot into the Kura Emulator, you need to download s
 
 After downloading, create a new folder in the `target-definition` project like `camel/2.16.0` and copy all previously downloaded libraries into it.
 
-<img src="/img/kura-camel-rhiot-1.png" style="max-width:33%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/target-definition-folder.png" style="max-width:33%;" />
 
 Open the Target Definition panel and `Add...` a new `Installation` mapped to the new `camel/2.16.0` folder.
 
-<img src="/img/kura-camel-rhiot-2.png" style="max-width:100%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/target-definition-add-installation.png" style="max-width:100%;" />
 
 Verify that `Target Content` loads the Camel and Rhiot libraries correctly by clicking on the `Content` tab to check.
 
-<img src="/img/kura-camel-rhiot-3.png" style="max-width:100%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/target-definition-content-check.png" style="max-width:100%;" />
 
 Save the configuration and click the `Set as Target Definition` action (top right).
 
@@ -73,12 +73,12 @@ Save the configuration and click the `Set as Target Definition` action (top righ
 
 We have just finished setting up the `Target Definition` stack. Now we will see how to run it with the `Launch` command.
 
-<img src="/img/kura-camel-rhiot-4.png" style="max-width:33%;" />
-<img src="/img/kura-camel-rhiot-5.png" style="max-width:33%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/launch-config-1.png" style="max-width:33%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/launch-config-2.png" style="max-width:33%;" />
 
 Edit it and select the correct libraries once again.
 
-<img src="/img/kura-camel-rhiot-6.png" style="max-width:100%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/launch-libraries-selection.png" style="max-width:100%;" />
 
 To check the installation, just run the `Launch` command as usual and check bundles loading via the OSGi `ss` command.
 
@@ -92,7 +92,7 @@ true
 osgi>
 ```
 
-<img src="/img/kura-camel-rhiot-7.png" style="max-width:100%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/osgi-bundles-loaded.png" style="max-width:100%;" />
 
 *Great, everything looks good to run our example!*
 
@@ -222,7 +222,7 @@ osgi> Framework is running in emulation mode
 
 You can change some parameters via the Kura WebUI:
 
-<img src="/img/kura-camel-rhiot-7bis.png" style="max-width:100%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/kura-webui-parameters.png" style="max-width:100%;" />
 
 ## Execution IRL (In Real Life)
 
@@ -232,7 +232,7 @@ Let's run it in real life with actual hardware.
 
 Follow the schema below to connect your components:
 
-<img src="/img/kura-camel-rhiot-8.png" style="max-width:80%;" />
+<img src="/img/2015-12-03-rhiot-kura-osgi/wiring-schema-raspberrypi.png" style="max-width:80%;" />
 
 
 ### Bundles installation into RaspberryPi

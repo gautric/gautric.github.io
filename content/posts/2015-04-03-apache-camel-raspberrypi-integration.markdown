@@ -27,7 +27,7 @@ The **Raspberry Pi** is a credit card-sized computer that costs $35. With over f
 <table>
 <tr>
 <td>
-<img src="/img/raspberry_pi_logo.png" height="150" width="150" alt="Raspberry Pi Logo" />
+<img src="/img/2015-04-03-apache-camel-raspberrypi/raspberry-pi-logo.png" height="150" width="150" alt="Raspberry Pi Logo" />
 </td>
 <td>
 <ul>
@@ -50,7 +50,7 @@ The **Raspberry Pi** is a credit card-sized computer that costs $35. With over f
 <table>
 <tr>
 <td>
-<img src="/img/apache-camel-logo.jpg" height="150" width="150" alt="Apache Camel Logo"/>
+<img src="/img/2015-04-03-apache-camel-raspberrypi/apache-camel-logo.jpg" height="150" width="150" alt="Apache Camel Logo"/>
 </td>
 <td>
 <ul>
@@ -111,7 +111,7 @@ Required components:
 
 Wiring diagram:
 
-![Raspberry Pi Wiring Diagram](/img/raspberrypi-camel-2.png)
+![Raspberry Pi Wiring Diagram](/img/2015-04-03-apache-camel-raspberrypi/wiring-diagram.png)
 
 The circuit consists of:
 - An LED connected to **GPIO pin 2** (physical pin 3) with a 220Ω resistor in series
@@ -269,7 +269,7 @@ The first prototype uses Camel's **timer component** to toggle an LED at regular
 
 ### Architecture
 
-<img src="/img/camel-timer.png" alt="Timer-controlled LED architecture diagram" style="max-width:100%;" />
+<img src="/img/2015-04-03-apache-camel-raspberrypi/architecture-timer-led.png" alt="Timer-controlled LED architecture diagram" style="max-width:100%;" />
 
 The flow:
 1. A **Camel Timer** generates a message every second
@@ -321,7 +321,7 @@ The second prototype replaces the timer with a physical button, creating an inte
 
 ### Architecture
 
-<img src="/img/camel-button.png" alt="Button-controlled LED architecture diagram" style="max-width:100%;" />
+<img src="/img/2015-04-03-apache-camel-raspberrypi/architecture-button-led.png" alt="Button-controlled LED architecture diagram" style="max-width:100%;" />
 
 The flow:
 1. A **GPIO consumer** listens for button presses on GPIO pin 1

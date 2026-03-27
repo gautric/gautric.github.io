@@ -114,7 +114,7 @@ The server starts with HTTP/2 already enabled thanks to the offline configuratio
 
 After startup (~3s), the [welcome page](https://localhost:8443/) can be checked with Firefox. The network panel shows the protocol version for each request.
 
-<img src="/img/wildfly9-http2-offline.png" style="max-width:75%;" />
+<img src="/img/2015-07-03-wildfly-http2/firefox-h2-protocol.png" style="max-width:75%;" />
 
 The protocol column shows "h2", confirming HTTP/2 is active.
 

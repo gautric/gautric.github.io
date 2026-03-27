@@ -242,15 +242,15 @@ Once both containers are running, navigate to [IVT URL http://localhost:8080/WMQ
 
 #### The Application page
 
-![JBoss WebsphereMQ Application Page](/img/jboss-wmq-1.png)
+![JBoss WebsphereMQ Application Page](/img/2016-08-03-websphere-mq-jboss-eap7-docker/application-page.png)
 
 #### The Result page
 
-![JBoss WebsphereMQ Result Page](/img/jboss-wmq-2.png)
+![JBoss WebsphereMQ Result Page](/img/2016-08-03-websphere-mq-jboss-eap7-docker/result-page.png)
 
 #### The JMS inspection (View Message Contents) page
 
-![JBoss WebsphereMQ JMS Inspection Page](/img/jboss-wmq-3.png)
+![JBoss WebsphereMQ JMS Inspection Page](/img/2016-08-03-websphere-mq-jboss-eap7-docker/jms-inspection-page.png)
 
 ### Console output
 

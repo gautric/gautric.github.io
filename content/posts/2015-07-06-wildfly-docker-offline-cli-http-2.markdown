@@ -124,7 +124,7 @@ Port mapping:
 
 After startup (~3s), the welcome page is accessible at [https://localhost:8443/](https://localhost:8443/) (Linux) or [https://192.168.59.103:8443/](https://192.168.59.103:8443/) (macOS with Docker Machine). Chrome's network panel confirms the protocol.
 
-<img src="/img/wildfly9-docker-http2-offline.png" style="max-width:75%;" />
+<img src="/img/2015-07-06-wildfly-docker-http2/chrome-h2-protocol.png" style="max-width:75%;" />
 
 The "h2" protocol in the network panel confirms HTTP/2 is active.
 

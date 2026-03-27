@@ -61,7 +61,7 @@ Dès que vous avez correctment la sortie standard précédente, il est possible 
 
 Vous allez atterrir sur la page swagger du moteur Kogito, une API KYC est disponible et peut être utilisée directement via cette page ou bien un appel CURL. Cette interface Swagger permet de tester facilement les différentes règles de notre modèle KYC sans avoir à écrire de code supplémentaire.
 
-![Kogito DMN](/img/kogito_dmn.png)
+![Kogito DMN](/img/2020-06-06-execution-dmn-kyc/kogito-swagger-api.png)
 
 ## L'appel CURL
 

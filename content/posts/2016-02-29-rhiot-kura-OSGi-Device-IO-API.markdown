@@ -28,11 +28,11 @@ Recently, a colleague of mine asked me to implement a small demonstration projec
 
 Follow Design below
 
-![Design for Hall sensor and BMP180](/img/desgin-hall-sensor-bmp180.png)
+![Design for Hall sensor and BMP180](/img/2016-02-29-rhiot-kura-device-io/design-hall-sensor-bmp180.png)
 
 and the schematic
 
-![Schematic for Hall sensor and BMP180](/img/schema-hall-sensor-bmp180.png)
+![Schematic for Hall sensor and BMP180](/img/2016-02-29-rhiot-kura-device-io/schematic-hall-sensor-bmp180.png)
 
 ### Startup ActiveMQ
 
@@ -86,18 +86,18 @@ Configure the broker address (MQTT server) via the [Kura Web UI](http://RPI_IP_A
 
 Change the `broker-url` parameter with your `ActiveMQ Instance IP`
 
-![Kura Cloud Configuration](/img/kura-cloud-config.png)
+![Kura Cloud Configuration](/img/2016-02-29-rhiot-kura-device-io/kura-cloud-configuration.png)
 
 Don't forget to connect Kura Gateway to the Broker server
 
-![Kura Cloud Connection](/img/kura-cloud-config-2.png)
+![Kura Cloud Connection](/img/2016-02-29-rhiot-kura-device-io/kura-cloud-connection.png)
 
 #### Camel Route Design
 
 Here is the Camel route design. This design is intentionally simple, but could be more complex for a real-life implementation.
 The Hall sensor sends a message when a magnetic field is detected nearby. Temperature and pressure sensors retrieve their metrics. The route logs a message and metrics. The WireTap component copies messages to the GPIO provider to blink an LED. The last component pushes messages to the [Kura Cloud Service](http://eclipse.github.io/kura/doc/cloud-configuration.html). This service stores messages in a database if the network is unavailable and sends them to the cloud when network connectivity is restored.
 
-![Camel Route Design](/img/camel-route-hall-sensor-bmp180.png)
+![Camel Route Design](/img/2016-02-29-rhiot-kura-device-io/camel-route-design.png)
 
 ### Import Quickstart Sample
 

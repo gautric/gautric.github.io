@@ -52,7 +52,7 @@ Afin de pouvoir calculer le score il est nécessaire d'avoir les inputs. Pour ce
 
 Dans le contexte DMN il suffit simplement d'utiliser le type de *box* suivantes :
 
-![DMN Input](/img/dmn_input.png)
+![DMN Input](/img/2020-06-04-dmn-kyc/dmn-input.png)
 
 Il est bien sûr possible de définir des types d'entrée plus complexes, comme des structures ou des collections, selon les besoins du modèle de décision.
 
@@ -61,15 +61,15 @@ Il est bien sûr possible de définir des types d'entrée plus complexes, comme 
 Le principal élément du DMN est le concept de Decision. Cette `Decision` va calculer un résultat en fonction d'une ou plusieurs entrées.
 On utilise pour cela les *box* suivantes dans le modeleur.
 
-![DMN Decision Box](/img/dmn_decision_box.png)
+![DMN Decision Box](/img/2020-06-04-dmn-kyc/dmn-decision-box.png)
 
 On lie ensuite les `Input` avec les `Decision` pour établir les dépendances de données.
 
-![DMN Decision](/img/dmn_decision.png)
+![DMN Decision](/img/2020-06-04-dmn-kyc/dmn-decision.png)
 
 Ensuite, il est possible de lier les `Decision` entre elles, afin de remonter les sorties des premières `Decision` dans une autre `Decision`. Cette approche permet de construire des modèles de décision complexes et hiérarchisés.
 
-![DMN Decision Link](/img/dmn_decision_link.png)
+![DMN Decision Link](/img/2020-06-04-dmn-kyc/dmn-decision-link.png)
 
 Ici l'`Input` *PEP* est utilisé par la `Decision` *PEP Rule*, qui sera lui-même utilisé dans la `Decision` *KYC*.
 
@@ -80,14 +80,14 @@ Ici l'`Input` *PEP* est utilisé par la `Decision` *PEP Rule*, qui sera lui-mêm
     * par ex : A - B,  SUM(A, B, C) 
     * ex: 
     
-    ![DMN Expression Language](/img/dmn_explang.png)
+    ![DMN Expression Language](/img/2020-06-04-dmn-kyc/dmn-expression-language.png)
     
 2. Decision Table
     * Il s'agit d'une liste de règles métier qui seront exécutées selon des conditions spécifiques
     * Particulièrement utile pour représenter des règles complexes de manière tabulaire
     * ex: 
     
-    ![DMN Decision Table](/img/dmn_decisiontable.png)
+    ![DMN Decision Table](/img/2020-06-04-dmn-kyc/dmn-decision-table.png)
     
 3. Context
     * Il s'agit d'une liste de variables associées à des valeurs
@@ -95,7 +95,7 @@ Ici l'`Input` *PEP* est utilisé par la `Decision` *PEP Rule*, qui sera lui-mêm
     * Permet de structurer des décisions complexes en sous-éléments
     * ex: 
     
-    ![DMN Context](/img/dmn_context.png)
+    ![DMN Context](/img/2020-06-04-dmn-kyc/dmn-context.png)
 
 ## Les Business Knowledge Model
 
@@ -103,21 +103,21 @@ Les `Business Knowledge Model` (BKM) fournissent au modeleur la possibilité de 
 
 Comme pour les `Decision` il existe trois types de `BKM`.
 
-![DMN BKM](/img/dmn_bkm.png)
+![DMN BKM](/img/2020-06-04-dmn-kyc/dmn-bkm.png)
 
 Dans notre cas nous allons utiliser une `Decision Table` pour calculer le score pour chaque règle.
 
-![DMN Function](/img/dmn_function.png)
+![DMN Function](/img/2020-06-04-dmn-kyc/dmn-function.png)
 
 On relie ensuite le `BKM` avec la `Decision` pour établir la relation d'utilisation.
 
-![Full DMN BKM](/img/dmn_bkm_full.png)
+![Full DMN BKM](/img/2020-06-04-dmn-kyc/dmn-bkm-full.png)
 
 ## Result
 
 C'est la `Decision` KYC qui va contenir le résultat de ce petit moteur de règles. Dans notre cas, nous faisons la somme des trois appels à la `BKM` Level de chaque retour des `Decision` rule. Bien sûr, cette fonction peut être plus ou moins compliquée car elle utilise le langage de programmation FEEL *(Friendly Enough Expression Language)*. Il s'agit d'un langage qui ressemble un peu aux macros Excel, ce qui facilite son adoption par les équipes métier.
 
-![DMN Result](/img/dmn_result.png)
+![DMN Result](/img/2020-06-04-dmn-kyc/dmn-result.png)
 
 Pour résumer, les `Input` sont donc utilisés dans les `Decision`, ces `Decision` sont reliées à des `BKM` ou bien d'autres `Decision` qui au fur et à mesure se terminent vers une seule `Decision`.
 Comme on l'a vu précédemment, la `Decision` finale peut avoir plusieurs types de retour.

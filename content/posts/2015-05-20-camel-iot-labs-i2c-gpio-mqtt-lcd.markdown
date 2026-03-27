@@ -12,7 +12,7 @@ One month ago, Henryk, Claus and the author started the **Camel Labs** project. 
 
 > **Lab Overview**: I2C sensor + GPIO LED + MQTT broker + I2C LCD over Raspberry Pi
 
-![end-to-end](/img/end-to-end.png)
+![end-to-end](/img/2015-05-20-camel-iot-labs-i2c/architecture-end-to-end.png)
 
 Two Camel routes are built in this lab:
 
@@ -52,7 +52,7 @@ The LSM303 from Adafruit is used here, but the wiring should be similar for othe
 
 Olivier LD's [wiring diagram](http://www.lediouris.net/RaspberryPI/LSM303/img/wiring.png) can also serve as reference.
 
-![Wire LSM303](/img/LSM303_RPi.png)
+![Wire LSM303](/img/2015-05-20-camel-iot-labs-i2c/wiring-lsm303-raspberrypi.png)
 
 ### Wiring for LCD and Raspberry Pi
 
@@ -62,7 +62,7 @@ With the RGB LCD 16x2 from Adafruit, the LCD component plugs directly into the R
 
 [More information on LCD wiring](https://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview)
 
-![Wire LCD](/img/LCD_RPi.png)
+![Wire LCD](/img/2015-05-20-camel-iot-labs-i2c/wiring-lcd-raspberrypi.png)
 
 Wiring can be tested with the [wiringpi](http://wiringpi.com) library.
 
@@ -160,7 +160,7 @@ INFO: pidfile created : '/Users/XXXXXX/Application/activemq/apache-activemq-5.11
 
 The first part [collects X, Y, Z values from the accelerometer via I2C every 2 seconds](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L27), [flashes an LED](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L28), and [sends the vector to an MQTT topic](https://gist.github.com/gautric/edba044d912d53e4bf31#file-accel2mqtt-java-L30).
 
-<img src="/img/LSM303_RPi_design.png" />
+<img src="/img/2015-05-20-camel-iot-labs-i2c/design-accelerometer-mqtt.png" />
 
 ### Command Line
 
@@ -225,7 +225,7 @@ pi@rbpi8 ~/camel $ pi4j -r com.github.camellabs.component.pi4j.Accel2MQTT
 
 The second part [receives X, Y, Z vectors from the MQTT topic](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L34), [checks the Z value](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L41) (STABLE or ERROR zone), changes the LCD color, and [sends the message to the LCD](https://gist.github.com/gautric/e8eef9489d62288dedb9#file-mqtt2lcd-java-L60).
 
-<img src="/img/LCD_RPi_design.png" />
+<img src="/img/2015-05-20-camel-iot-labs-i2c/design-mqtt-lcd.png" />
 
 ### Command Line
 

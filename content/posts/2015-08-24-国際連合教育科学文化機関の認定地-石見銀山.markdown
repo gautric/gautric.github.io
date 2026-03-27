@@ -28,11 +28,11 @@ lang: ja
 
 ## 写真
 
-<img src="/img/IMG_2231.JPG" style="max-width:70%;" />
+<img src="/img/2015-08-24-unesco-iwami-ginzan/iwami-ginzan-vue-1.jpg" style="max-width:70%;" />
 
-<img src="/img/IMG_2241.JPG" style="max-width:70%;" />
+<img src="/img/2015-08-24-unesco-iwami-ginzan/iwami-ginzan-vue-2.jpg" style="max-width:70%;" />
 
-<img src="/img/IMG_2181.JPG" style="max-width:70%;" />
+<img src="/img/2015-08-24-unesco-iwami-ginzan/iwami-ginzan-vue-3.jpg" style="max-width:70%;" />
 
 ### リンク
 

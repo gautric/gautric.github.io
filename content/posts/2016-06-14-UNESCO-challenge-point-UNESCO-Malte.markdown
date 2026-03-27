@@ -41,11 +41,11 @@ Voici la liste des lieux inclus dans le site UNESCO :
 
 La photo finish :
 
-![Temple mégalithique de Malte](/img/MALTE_UNESCO_1.jpg)
+![Temple mégalithique de Malte](/img/2016-06-14-unesco-malte/temple-megalithique-1.jpg)
 
-![Vue d'un temple mégalithique maltais](/img/MALTE_UNESCO_2.jpg)
+![Vue d'un temple mégalithique maltais](/img/2016-06-14-unesco-malte/temple-megalithique-2.jpg)
 
-![Détail architectural d'un temple mégalithique](/img/MALTE_UNESCO_3.jpg)
+![Détail architectural d'un temple mégalithique](/img/2016-06-14-unesco-malte/temple-megalithique-3.jpg)
 
 
 ### Liens
