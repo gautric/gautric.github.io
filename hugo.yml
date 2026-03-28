@@ -78,15 +78,7 @@ params:
     imageWidth: 450
     imageHeight: 450
     imageTitle: Les Pleïades
-    buttons:
-      - name: À Propos
-        url: apropos
-      - name: Blog
-        url: blog
-      - name: Other
-        url: other
-      - name: Contact
-        url: contact
+
 
 # https://demo.getgrav.org/ceevee-skeleton/#
 
@@ -147,7 +139,7 @@ menu:
       url: /blog/
       weight: 20
     - identifier: other
-      name: Other Activities
+      name: Other
       url: /other/
       weight: 30
     - identifier: contact
