@@ -83,7 +83,7 @@ params:
         url: apropos
       - name: Blog
         url: blog
-      - name: Other Activities
+      - name: Other
         url: other
       - name: Contact
         url: contact
