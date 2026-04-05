@@ -1922,7 +1922,7 @@
   {
     "id": 1942,
     "sentence": "Tu veux aller à la mer où en montagne ?",
-    "errorIndex": 5,
+    "errorIndex": 6,
     "correctedWord": "ou",
     "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
     "category": "homophones ou/où"

@@ -970,7 +970,7 @@
   {
     "id": 2500,
     "sentence": "Vous pourrez réserver votre table demain.",
-    "errorIndex": 1,
+    "errorIndex": -1,
     "correctedWord": "pourrez",
     "explanation": "Ici, « pourrez » est correct : c'est la deuxième personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
     "category": "conjugaison pouvoir futur"
