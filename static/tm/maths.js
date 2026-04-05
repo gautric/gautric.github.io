@@ -1,6 +1,6 @@
 // Quiz de Mathématiques — Géométrie (QCM)
 
-var SESSION_SIZE = 15;
+var SESSION_SIZE = 20;
 
 var sessionState = {
   questions: [],

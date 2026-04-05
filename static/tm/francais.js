@@ -1,6 +1,6 @@
 // Quiz de Grammaire Française — CE2
 
-var SESSION_SIZE = 30;
+var SESSION_SIZE = 20;
 
 // Application state
 
