@@ -1,0 +1,2266 @@
+[
+  {
+    "id": 439,
+    "sentence": "Le chat ce cache sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi utilisé devant un verbe pronominal (se cacher). « Ce » est un déterminant démonstratif (ce livre).",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 440,
+    "sentence": "Les enfants ce lavent les mains.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se laver). On peut dire « je me lave ». « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 441,
+    "sentence": "Le soleil ce couche derrière la montagne.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se coucher). « Ce » est un déterminant démonstratif (ce soir).",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 442,
+    "sentence": "Les oiseaux ce posent sur la branche.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se poser). On peut dire « je me pose ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 443,
+    "sentence": "Le bébé ce réveille en pleurant.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se réveiller). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 444,
+    "sentence": "Les élèves ce rangent en file.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se ranger). On peut dire « je me range ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 445,
+    "sentence": "Le chien ce roule dans l'herbe.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se rouler). « Ce » est un déterminant démonstratif (ce chien).",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 446,
+    "sentence": "Ma sœur ce brosse les cheveux.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se brosser). On peut dire « je me brosse ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 447,
+    "sentence": "Les fleurs ce fanent en automne.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se faner). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 448,
+    "sentence": "Le garçon ce dépêche pour l'école.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se dépêcher). On peut dire « je me dépêche ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 449,
+    "sentence": "Les feuilles ce détachent des arbres.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se détacher). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 450,
+    "sentence": "Papa ce rase chaque matin.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se raser). On peut dire « je me rase ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 451,
+    "sentence": "Le lait ce renverse sur la table.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se renverser). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 452,
+    "sentence": "Les nuages ce dispersent lentement.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se disperser). On peut dire « je me disperse ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 453,
+    "sentence": "La porte ce ferme toute seule.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se fermer). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 454,
+    "sentence": "Le chat ce lèche les pattes.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se lécher). On peut dire « je me lèche ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 455,
+    "sentence": "Les enfants ce disputent pour le jouet.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se disputer). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 456,
+    "sentence": "Le serpent ce glisse dans l'herbe.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se glisser). On peut dire « je me glisse ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 457,
+    "sentence": "La glace ce fond au soleil.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se fondre). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 458,
+    "sentence": "Les amis ce retrouvent au parc.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se retrouver). On peut dire « je me retrouve ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 459,
+    "sentence": "Le bébé ce met à pleurer.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se mettre). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 460,
+    "sentence": "Les poules ce promènent dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se promener). On peut dire « je me promène ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 461,
+    "sentence": "Le vent ce lève dans la soirée.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se lever). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 462,
+    "sentence": "Les joueurs ce préparent pour le match.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se préparer). On peut dire « je me prépare ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 463,
+    "sentence": "La neige ce transforme en eau.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se transformer). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 464,
+    "sentence": "Le cheval ce cabre devant l'obstacle.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se cabrer). On peut dire « je me cabre ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 465,
+    "sentence": "Les papillons ce posent sur les fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se poser). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 466,
+    "sentence": "Mon frère ce couche tôt le soir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se coucher). On peut dire « je me couche ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 467,
+    "sentence": "La rivière ce jette dans la mer.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se jeter). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 468,
+    "sentence": "Les tortues ce déplacent lentement.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se déplacer). On peut dire « je me déplace ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 469,
+    "sentence": "Le clown ce maquille avant le spectacle.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se maquiller). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 470,
+    "sentence": "Se livre est très intéressant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce livre). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 471,
+    "sentence": "Se gâteau au chocolat est délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce gâteau). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 472,
+    "sentence": "Se matin, il fait très beau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce matin). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 473,
+    "sentence": "Se chien est adorable et gentil.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce chien). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 474,
+    "sentence": "Se film est drôle et amusant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce film). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 475,
+    "sentence": "Se jardin est rempli de fleurs.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce jardin). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 476,
+    "sentence": "Se soir, nous allons au cinéma.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce soir). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 477,
+    "sentence": "Se dessin est vraiment très joli.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce dessin). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 478,
+    "sentence": "Se château est immense et magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce château). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 479,
+    "sentence": "Se pantalon est trop grand pour moi.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce pantalon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 480,
+    "sentence": "Se jouet est le préféré de ma sœur.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce jouet). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 481,
+    "sentence": "Se pull est chaud et confortable.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce pull). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 482,
+    "sentence": "Se vélo est neuf et rapide.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce vélo). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 483,
+    "sentence": "Se garçon est mon meilleur ami.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce garçon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 484,
+    "sentence": "Se parc est ouvert tous les jours.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce parc). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 485,
+    "sentence": "Se bonbon est à la fraise.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce bonbon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 486,
+    "sentence": "Se chat noir porte bonheur.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce chat). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 487,
+    "sentence": "Se crayon est bien taillé.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce crayon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 488,
+    "sentence": "Se chemin mène à la rivière.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce chemin). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 489,
+    "sentence": "Se tableau est peint par un artiste.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce tableau). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 490,
+    "sentence": "Se manteau est accroché au portemanteau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce manteau). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 491,
+    "sentence": "Se repas est préparé par papa.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce repas). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 492,
+    "sentence": "Se bruit me fait peur la nuit.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce bruit). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 493,
+    "sentence": "Se cadeau est pour mon anniversaire.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce cadeau). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 494,
+    "sentence": "Se nuage ressemble à un mouton.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce nuage). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 495,
+    "sentence": "Se problème est facile à résoudre.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce problème). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 496,
+    "sentence": "Se village est très ancien.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce village). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 497,
+    "sentence": "Se papillon est orange et noir.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce papillon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 498,
+    "sentence": "Se pont traverse la rivière.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce pont). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 499,
+    "sentence": "Se trésor est caché dans la grotte.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce trésor). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 500,
+    "sentence": "Se spectacle était vraiment formidable.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce spectacle). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 576,
+    "sentence": "Se chat est très mignon.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chat-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 577,
+    "sentence": "Le chien ce lave dans la baignoire.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se laver ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 578,
+    "sentence": "Ce matin, il fait beau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est correct : c'est un déterminant démonstratif. Phrase correcte.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 579,
+    "sentence": "Elle ce regarde dans le miroir.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se regarder ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 580,
+    "sentence": "Se livre est très intéressant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce livre-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 581,
+    "sentence": "Le garçon ce promène dans le parc.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se promener ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 582,
+    "sentence": "Se soir, nous allons au cinéma.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce soir-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 583,
+    "sentence": "Les enfants ce couchent tôt.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se coucher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 584,
+    "sentence": "Se chien est très gentil.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chien-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 585,
+    "sentence": "Ma sœur ce brosse les dents.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se brosser ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 586,
+    "sentence": "Se manteau est trop grand pour lui.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce manteau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 587,
+    "sentence": "Il ce lève tôt chaque matin.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lever ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 588,
+    "sentence": "Se gâteau est délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce gâteau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 589,
+    "sentence": "Le chat ce cache sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se cacher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 590,
+    "sentence": "Se jardin est plein de fleurs.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce jardin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 591,
+    "sentence": "Maman ce repose dans sa chambre.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se reposer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 592,
+    "sentence": "Se vélo appartient à mon frère.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce vélo-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 593,
+    "sentence": "Les oiseaux ce réveillent à l'aube.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se réveiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 594,
+    "sentence": "Se tableau est très beau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce tableau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 595,
+    "sentence": "Mon ami ce dépêche pour ne pas être en retard.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se dépêcher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 596,
+    "sentence": "Se matin, il y a du brouillard.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce matin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 597,
+    "sentence": "La petite fille ce maquille en jouant.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se maquiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 598,
+    "sentence": "Se problème est difficile à résoudre.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce problème-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 599,
+    "sentence": "Le petit garçon ce lave les mains.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se laver ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 600,
+    "sentence": "Se chemin mène à la forêt.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chemin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 651,
+    "sentence": "Se livre est trop épais pour moi.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce livre-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 652,
+    "sentence": "La fille ce peigne devant le miroir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se peigner ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 653,
+    "sentence": "Se film est trop long pour les enfants.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce film-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 654,
+    "sentence": "Le bébé ce réveille à deux heures du matin.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se réveiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 655,
+    "sentence": "Se chemin est trop long.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chemin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 656,
+    "sentence": "Mon frère ce rhabille vite le matin.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se rhabiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 657,
+    "sentence": "Se travail est très bien fait.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce travail-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 658,
+    "sentence": "La chatte ce lèche les pattes.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lécher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 659,
+    "sentence": "Se garçon est mon meilleur ami.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce garçon-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 660,
+    "sentence": "Le cheval ce couche dans l'écurie.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se coucher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 661,
+    "sentence": "Se moment est très agréable.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce moment-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 662,
+    "sentence": "Ma tante ce prépare pour sortir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se préparer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 663,
+    "sentence": "Se dessin est magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce dessin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 664,
+    "sentence": "Le chaton ce cache derrière le canapé.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se cacher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 665,
+    "sentence": "Se jouet est cassé.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce jouet-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 696,
+    "sentence": "Se vélo est tout neuf.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce vélo-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 697,
+    "sentence": "Le lapin ce gratte le museau.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se gratter ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 698,
+    "sentence": "Se repas est délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce repas-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 699,
+    "sentence": "Les deux amis ce disputent pour un rien.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se disputer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 700,
+    "sentence": "Se château est très ancien.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce château-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 716,
+    "sentence": "Se chat dort tout le temps.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chat-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 717,
+    "sentence": "La tortue ce déplace très lentement.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se déplacer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 718,
+    "sentence": "Se sac est trop lourd.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce sac-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 719,
+    "sentence": "Mon grand frère ce lève très tard le week-end.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lever ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 720,
+    "sentence": "Se tableau est accroché au mur.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce tableau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 721,
+    "sentence": "Les deux enfants ce tiennent par la main.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se tenir ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 722,
+    "sentence": "Se morceau de gâteau est pour toi.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce morceau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 723,
+    "sentence": "Le petit garçon ce retourne pour voir son ami.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se retourner ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 724,
+    "sentence": "Se document est très important.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce document-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 725,
+    "sentence": "Les chatons ce roulent en boule pour dormir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se rouler ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 741,
+    "sentence": "Se jardin est plein de légumes.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce jardin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 742,
+    "sentence": "La mamie ce promène dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se promener ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 743,
+    "sentence": "Se matin est vraiment magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce matin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 744,
+    "sentence": "Les élèves ce lèvent quand le maître entre.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lever ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 745,
+    "sentence": "Se bâtiment est très haut.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce bâtiment-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 746,
+    "sentence": "Le chiot ce roule dans l'herbe.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se rouler ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 747,
+    "sentence": "Se problème n'est pas difficile.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce problème-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 748,
+    "sentence": "La petite fille ce blesse en tombant.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se blesser ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 749,
+    "sentence": "Se pont traverse la rivière.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce pont-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 750,
+    "sentence": "Le garçon ce souvient de ses leçons.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se souvenir ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1689,
+    "sentence": "Le chat ce cache sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi utilisé devant un verbe pronominal (se cacher). « Ce » est un déterminant démonstratif (ce livre).",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1690,
+    "sentence": "Les enfants ce lavent les mains.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se laver). On peut dire « je me lave ». « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1691,
+    "sentence": "Le soleil ce couche derrière la montagne.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se coucher). « Ce » est un déterminant démonstratif (ce soir).",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1692,
+    "sentence": "Les oiseaux ce posent sur la branche.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se poser). On peut dire « je me pose ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1693,
+    "sentence": "Le bébé ce réveille en pleurant.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se réveiller). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1694,
+    "sentence": "Les élèves ce rangent en file.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se ranger). On peut dire « je me range ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1695,
+    "sentence": "Le chien ce roule dans l'herbe.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se rouler). « Ce » est un déterminant démonstratif (ce chien).",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1696,
+    "sentence": "Ma sœur ce brosse les cheveux.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se brosser). On peut dire « je me brosse ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1697,
+    "sentence": "Les fleurs ce fanent en automne.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se faner). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1698,
+    "sentence": "Le garçon ce dépêche pour l'école.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se dépêcher). On peut dire « je me dépêche ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1699,
+    "sentence": "Les feuilles ce détachent des arbres.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se détacher). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1700,
+    "sentence": "Papa ce rase chaque matin.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se raser). On peut dire « je me rase ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1701,
+    "sentence": "Le lait ce renverse sur la table.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se renverser). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1702,
+    "sentence": "Les nuages ce dispersent lentement.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se disperser). On peut dire « je me disperse ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1703,
+    "sentence": "La porte ce ferme toute seule.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se fermer). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1704,
+    "sentence": "Le chat ce lèche les pattes.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se lécher). On peut dire « je me lèche ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1705,
+    "sentence": "Les enfants ce disputent pour le jouet.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se disputer). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1706,
+    "sentence": "Le serpent ce glisse dans l'herbe.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se glisser). On peut dire « je me glisse ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1707,
+    "sentence": "La glace ce fond au soleil.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se fondre). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1708,
+    "sentence": "Les amis ce retrouvent au parc.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se retrouver). On peut dire « je me retrouve ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1709,
+    "sentence": "Le bébé ce met à pleurer.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se mettre). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1710,
+    "sentence": "Les poules ce promènent dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se promener). On peut dire « je me promène ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1711,
+    "sentence": "Le vent ce lève dans la soirée.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se lever). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1712,
+    "sentence": "Les joueurs ce préparent pour le match.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se préparer). On peut dire « je me prépare ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1713,
+    "sentence": "La neige ce transforme en eau.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se transformer). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1714,
+    "sentence": "Le cheval ce cabre devant l'obstacle.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se cabrer). On peut dire « je me cabre ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1715,
+    "sentence": "Les papillons ce posent sur les fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se poser). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1716,
+    "sentence": "Mon frère ce couche tôt le soir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se coucher). On peut dire « je me couche ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1717,
+    "sentence": "La rivière ce jette dans la mer.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se jeter). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1718,
+    "sentence": "Les tortues ce déplacent lentement.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se déplacer). On peut dire « je me déplace ». « Ce » est un déterminant.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1719,
+    "sentence": "Le clown ce maquille avant le spectacle.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "« Se » est un pronom réfléchi (se maquiller). « Ce » est un déterminant démonstratif.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1720,
+    "sentence": "Se livre est très intéressant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce livre). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1721,
+    "sentence": "Se gâteau au chocolat est délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce gâteau). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1722,
+    "sentence": "Se matin, il fait très beau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce matin). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1723,
+    "sentence": "Se chien est adorable et gentil.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce chien). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1724,
+    "sentence": "Se film est drôle et amusant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce film). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1725,
+    "sentence": "Se jardin est rempli de fleurs.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce jardin). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1726,
+    "sentence": "Se soir, nous allons au cinéma.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce soir). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1727,
+    "sentence": "Se dessin est vraiment très joli.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce dessin). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1728,
+    "sentence": "Se château est immense et magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce château). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1729,
+    "sentence": "Se pantalon est trop grand pour moi.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce pantalon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1730,
+    "sentence": "Se jouet est le préféré de ma sœur.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce jouet). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1731,
+    "sentence": "Se pull est chaud et confortable.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce pull). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1732,
+    "sentence": "Se vélo est neuf et rapide.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce vélo). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1733,
+    "sentence": "Se garçon est mon meilleur ami.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce garçon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1734,
+    "sentence": "Se parc est ouvert tous les jours.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce parc). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1735,
+    "sentence": "Se bonbon est à la fraise.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce bonbon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1736,
+    "sentence": "Se chat noir porte bonheur.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce chat). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1737,
+    "sentence": "Se crayon est bien taillé.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce crayon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1738,
+    "sentence": "Se chemin mène à la rivière.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce chemin). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1739,
+    "sentence": "Se tableau est peint par un artiste.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce tableau). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1740,
+    "sentence": "Se manteau est accroché au portemanteau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce manteau). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1741,
+    "sentence": "Se repas est préparé par papa.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce repas). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1742,
+    "sentence": "Se bruit me fait peur la nuit.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce bruit). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1743,
+    "sentence": "Se cadeau est pour mon anniversaire.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce cadeau). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1744,
+    "sentence": "Se nuage ressemble à un mouton.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce nuage). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1745,
+    "sentence": "Se problème est facile à résoudre.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce problème). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1746,
+    "sentence": "Se village est très ancien.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce village). « Se » est un pronom réfléchi devant un verbe.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1747,
+    "sentence": "Se papillon est orange et noir.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce papillon). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1748,
+    "sentence": "Se pont traverse la rivière.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce pont). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1749,
+    "sentence": "Se trésor est caché dans la grotte.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif placé devant un nom (ce trésor). « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1750,
+    "sentence": "Se spectacle était vraiment formidable.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Ce » est un déterminant démonstratif (ce spectacle). On peut remplacer par « le ». « Se » est un pronom réfléchi.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1826,
+    "sentence": "Se chat est très mignon.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chat-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1827,
+    "sentence": "Le chien ce lave dans la baignoire.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se laver ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1828,
+    "sentence": "Ce matin, il fait beau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est correct : c'est un déterminant démonstratif. Phrase correcte.",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1829,
+    "sentence": "Elle ce regarde dans le miroir.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se regarder ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1830,
+    "sentence": "Se livre est très intéressant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce livre-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1831,
+    "sentence": "Le garçon ce promène dans le parc.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se promener ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1832,
+    "sentence": "Se soir, nous allons au cinéma.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce soir-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1833,
+    "sentence": "Les enfants ce couchent tôt.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se coucher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1834,
+    "sentence": "Se chien est très gentil.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chien-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1835,
+    "sentence": "Ma sœur ce brosse les dents.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se brosser ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1836,
+    "sentence": "Se manteau est trop grand pour lui.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce manteau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1837,
+    "sentence": "Il ce lève tôt chaque matin.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lever ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1838,
+    "sentence": "Se gâteau est délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce gâteau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1839,
+    "sentence": "Le chat ce cache sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se cacher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1840,
+    "sentence": "Se jardin est plein de fleurs.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce jardin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1841,
+    "sentence": "Maman ce repose dans sa chambre.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se reposer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1842,
+    "sentence": "Se vélo appartient à mon frère.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce vélo-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1843,
+    "sentence": "Les oiseaux ce réveillent à l'aube.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se réveiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1844,
+    "sentence": "Se tableau est très beau.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce tableau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1845,
+    "sentence": "Mon ami ce dépêche pour ne pas être en retard.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se dépêcher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1846,
+    "sentence": "Se matin, il y a du brouillard.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce matin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1847,
+    "sentence": "La petite fille ce maquille en jouant.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se maquiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1848,
+    "sentence": "Se problème est difficile à résoudre.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce problème-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1849,
+    "sentence": "Le petit garçon ce lave les mains.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se laver ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1850,
+    "sentence": "Se chemin mène à la forêt.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chemin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1901,
+    "sentence": "Se livre est trop épais pour moi.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce livre-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1902,
+    "sentence": "La fille ce peigne devant le miroir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se peigner ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1903,
+    "sentence": "Se film est trop long pour les enfants.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce film-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1904,
+    "sentence": "Le bébé ce réveille à deux heures du matin.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se réveiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1905,
+    "sentence": "Se chemin est trop long.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chemin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1906,
+    "sentence": "Mon frère ce rhabille vite le matin.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se rhabiller ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1907,
+    "sentence": "Se travail est très bien fait.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce travail-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1908,
+    "sentence": "La chatte ce lèche les pattes.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lécher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1909,
+    "sentence": "Se garçon est mon meilleur ami.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce garçon-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1910,
+    "sentence": "Le cheval ce couche dans l'écurie.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se coucher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1911,
+    "sentence": "Se moment est très agréable.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce moment-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1912,
+    "sentence": "Ma tante ce prépare pour sortir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se préparer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1913,
+    "sentence": "Se dessin est magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce dessin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1914,
+    "sentence": "Le chaton ce cache derrière le canapé.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se cacher ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1915,
+    "sentence": "Se jouet est cassé.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce jouet-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1946,
+    "sentence": "Se vélo est tout neuf.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce vélo-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1947,
+    "sentence": "Le lapin ce gratte le museau.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se gratter ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1948,
+    "sentence": "Se repas est délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce repas-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1949,
+    "sentence": "Les deux amis ce disputent pour un rien.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se disputer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1950,
+    "sentence": "Se château est très ancien.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce château-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1966,
+    "sentence": "Se chat dort tout le temps.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce chat-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1967,
+    "sentence": "La tortue ce déplace très lentement.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se déplacer ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1968,
+    "sentence": "Se sac est trop lourd.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce sac-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1969,
+    "sentence": "Mon grand frère ce lève très tard le week-end.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lever ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1970,
+    "sentence": "Se tableau est accroché au mur.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce tableau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1971,
+    "sentence": "Les deux enfants ce tiennent par la main.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se tenir ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1972,
+    "sentence": "Se morceau de gâteau est pour toi.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce morceau-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1973,
+    "sentence": "Le petit garçon ce retourne pour voir son ami.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se retourner ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1974,
+    "sentence": "Se document est très important.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce document-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1975,
+    "sentence": "Les chatons ce roulent en boule pour dormir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se rouler ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1991,
+    "sentence": "Se jardin est plein de légumes.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce jardin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1992,
+    "sentence": "La mamie ce promène dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se promener ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1993,
+    "sentence": "Se matin est vraiment magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce matin-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1994,
+    "sentence": "Les élèves ce lèvent quand le maître entre.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se lever ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1995,
+    "sentence": "Se bâtiment est très haut.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce bâtiment-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1996,
+    "sentence": "Le chiot ce roule dans l'herbe.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se rouler ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1997,
+    "sentence": "Se problème n'est pas difficile.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce problème-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1998,
+    "sentence": "La petite fille ce blesse en tombant.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se blesser ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 1999,
+    "sentence": "Se pont traverse la rivière.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "Ici, « ce » est un déterminant démonstratif (on peut dire « ce pont-là »). On écrit « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2000,
+    "sentence": "Le garçon ce souvient de ses leçons.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "Ici, « se » est un pronom réfléchi qui accompagne le verbe pronominal « se souvenir ». On écrit « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2591,
+    "sentence": "Ce livre est passionnant.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ce » est un déterminant démonstratif placé devant le nom « livre ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2592,
+    "sentence": "Il se lave les mains.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« se » est un pronom réfléchi placé devant le verbe « laver ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2593,
+    "sentence": "Ce matin, il fait beau.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ce » est un déterminant démonstratif placé devant le nom « matin ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2594,
+    "sentence": "Elle se brosse les dents.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« se » est un pronom réfléchi placé devant le verbe « brosser ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2595,
+    "sentence": "Ce gâteau est délicieux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ce » est un déterminant démonstratif placé devant le nom « gâteau ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2596,
+    "sentence": "Le chat se cache sous le lit.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« se » est un pronom réfléchi placé devant le verbe « cacher ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2597,
+    "sentence": "Ce soir, nous regardons un film.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ce » est un déterminant démonstratif placé devant le nom « soir ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2598,
+    "sentence": "Les enfants se préparent pour l'école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« se » est un pronom réfléchi placé devant le verbe « préparer ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2599,
+    "sentence": "Ce jardin est magnifique.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ce » est un déterminant démonstratif placé devant le nom « jardin ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2600,
+    "sentence": "Mon frère se réveille tôt.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« se » est un pronom réfléchi placé devant le verbe « réveiller ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2786,
+    "sentence": "Le matin, il ce lève très tôt parce qu'il veut arriver à l'école avant tous ses amis.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se lever) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2787,
+    "sentence": "Se gâteau au chocolat est délicieux et ma sœur veut en reprendre une deuxième part.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « gâteau », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2788,
+    "sentence": "Ma petite sœur ce brosse les dents toute seule et elle peut aussi se coiffer maintenant.",
+    "errorIndex": 3,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se brosser les dents) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2789,
+    "sentence": "Se livre est très intéressant et mon frère veut le lire après moi quand j'aurai fini.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « livre », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2790,
+    "sentence": "Les enfants ce lavent les mains avant de manger parce qu'ils ne veulent pas être malades.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se laver les mains) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2791,
+    "sentence": "Se matin, il fait très beau et nous pouvons aller jouer dans le parc avec nos amis.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « matin », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2792,
+    "sentence": "Mon chat ce cache sous le lit quand il entend du bruit et il ne veut pas sortir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se cacher) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2793,
+    "sentence": "Se film est très drôle et toute la famille veut le regarder ensemble ce soir au salon.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « film », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2794,
+    "sentence": "Les oiseaux ce posent sur les branches et ils peuvent chanter pendant des heures sans s'arrêter.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se poser) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2795,
+    "sentence": "Se jardin est magnifique au printemps et ma mère veut y planter de nouvelles fleurs cette année.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « jardin », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2796,
+    "sentence": "Papa ce dépêche le matin parce qu'il ne veut pas arriver en retard à son travail.",
+    "errorIndex": 1,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se dépêcher) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2797,
+    "sentence": "Se chien est très gentil et il veut toujours jouer avec les enfants du quartier.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « chien », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2798,
+    "sentence": "Ma sœur ce prépare pour la fête et elle veut mettre sa plus belle robe rouge.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se préparer) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2799,
+    "sentence": "Se soir, nous pouvons regarder un film en famille et maman veut préparer du popcorn.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « soir », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2800,
+    "sentence": "Les chats ce battent souvent dans le jardin et ils ne veulent pas partager leur territoire.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se battre) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2929,
+    "sentence": "Le chat ce cache sous le lit quand il entend l'orage et il ne veut plus sortir.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se cacher) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2930,
+    "sentence": "Se jeu de société est très amusant et toute la famille veut y jouer ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « jeu », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2931,
+    "sentence": "Les enfants ce disputent souvent mais ils veulent toujours jouer ensemble après la réconciliation.",
+    "errorIndex": 2,
+    "correctedWord": "se",
+    "explanation": "C'est le pronom réfléchi « se » (se disputer) et non le déterminant « ce ».",
+    "category": "homophones ce/se"
+  },
+  {
+    "id": 2932,
+    "sentence": "Se week-end, nous pourrons aller au zoo et nous voulons voir les lions et les girafes.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "C'est le déterminant démonstratif « ce » devant le nom « week-end », pas le pronom « se ».",
+    "category": "homophones ce/se"
+  }
+]

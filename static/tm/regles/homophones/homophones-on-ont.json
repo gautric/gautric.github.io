@@ -1,0 +1,2210 @@
+[
+  {
+    "id": 251,
+    "sentence": "Les enfants on mangé des crêpes.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir conjugué au présent avec « ils/elles ». On peut le remplacer par « avaient ». « On » est un pronom personnel.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 252,
+    "sentence": "Mes parents on acheté un gâteau.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir. On peut le remplacer par « avaient ». Ici, « mes parents » est le sujet, donc il faut « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 253,
+    "sentence": "Les oiseaux on chanté ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir conjugué avec « ils ». On peut dire « avaient chanté ». « On » est un pronom sujet.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 254,
+    "sentence": "Les élèves on fini leur exercice.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec le sujet « les élèves » (ils), on utilise « ont » (verbe avoir). On peut remplacer par « avaient ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 255,
+    "sentence": "Tes amis on trouvé un trésor.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir. Le sujet « tes amis » (ils) demande « ont ». On peut dire « avaient trouvé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 256,
+    "sentence": "Les chats on dormi toute la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les chats » (ils) demande le verbe avoir « ont ». On peut remplacer par « avaient dormi ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 257,
+    "sentence": "Les filles on dansé à la fête.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les filles » (elles), il faut « ont » (verbe avoir). On peut dire « avaient dansé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 258,
+    "sentence": "Les voisins on planté des fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les voisins » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient planté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 259,
+    "sentence": "Mes cousins on joué au ballon.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « mes cousins » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient joué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 260,
+    "sentence": "Les poules on pondu des œufs.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les poules » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient pondu ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 261,
+    "sentence": "Les garçons on couru dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les garçons » (ils), il faut « ont » (verbe avoir). On peut dire « avaient couru ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 262,
+    "sentence": "Les chiens on aboyé très fort.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les chiens » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient aboyé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 263,
+    "sentence": "Les arbres on perdu leurs feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les arbres » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient perdu ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 264,
+    "sentence": "Ses frères on gagné la course.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « ses frères » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient gagné ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 265,
+    "sentence": "Les nuages on caché le soleil.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les nuages » (ils), il faut « ont » (verbe avoir). On peut dire « avaient caché ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 266,
+    "sentence": "Les souris on grignoté le fromage.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les souris » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient grignoté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 267,
+    "sentence": "Les joueurs on marqué un but.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les joueurs » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient marqué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 268,
+    "sentence": "Les abeilles on fabriqué du miel.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les abeilles » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient fabriqué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 269,
+    "sentence": "Les pompiers on éteint le feu.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les pompiers » (ils), il faut « ont » (verbe avoir). On peut dire « avaient éteint ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 270,
+    "sentence": "Les canards on nagé dans le lac.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les canards » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient nagé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 271,
+    "sentence": "Les tortues on traversé la route.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les tortues » (elles), on écrit « ont » (verbe avoir). On peut dire « avaient traversé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 272,
+    "sentence": "Les musiciens on joué une belle chanson.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les musiciens » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient joué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 273,
+    "sentence": "Les fleurs on poussé dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les fleurs » (elles), il faut « ont » (verbe avoir). On peut dire « avaient poussé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 274,
+    "sentence": "Les lapins on creusé un terrier.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les lapins » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient creusé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 275,
+    "sentence": "Les invités on apporté des cadeaux.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les invités » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient apporté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 276,
+    "sentence": "Les étoiles on brillé toute la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les étoiles » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient brillé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 277,
+    "sentence": "Les pirates on découvert un coffre.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les pirates » (ils), il faut « ont » (verbe avoir). On peut dire « avaient découvert ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 278,
+    "sentence": "Les cuisiniers on préparé le repas.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les cuisiniers » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient préparé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 279,
+    "sentence": "Les papillons on volé dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les papillons » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient volé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 280,
+    "sentence": "Les clowns on fait rire les enfants.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les clowns » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient fait ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 281,
+    "sentence": "Les grenouilles on sauté dans la mare.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les grenouilles » (elles), il faut « ont » (verbe avoir). On peut dire « avaient sauté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 282,
+    "sentence": "Les hirondelles on construit leur nid.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les hirondelles » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient construit ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 283,
+    "sentence": "Ont va jouer dans le jardin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet (= quelqu'un, nous). « Ont » est le verbe avoir. Ici, c'est le sujet du verbe « va ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 284,
+    "sentence": "Ont mange à la cantine ce midi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). On ne peut pas remplacer par « avaient » ici, donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 285,
+    "sentence": "Ont part en vacances demain.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient part », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 286,
+    "sentence": "Ont aime beaucoup le chocolat.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous, quelqu'un). On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 287,
+    "sentence": "Ont regarde un film ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. Ici, c'est le sujet du verbe « regarde », donc on écrit « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 288,
+    "sentence": "Ont joue au ballon dans la cour.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « joue » est conjugué avec « on », pas avec « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 289,
+    "sentence": "Ont chante une chanson ensemble.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient chante », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 290,
+    "sentence": "Ont dessine un beau paysage.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet. Le verbe « dessine » se conjugue avec « on » (il dessine, on dessine).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 291,
+    "sentence": "Ont lit une histoire avant de dormir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 292,
+    "sentence": "Ont fait du vélo le mercredi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « fait » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 293,
+    "sentence": "Ont dort bien quand il fait froid.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient dort », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 294,
+    "sentence": "Ont prend le bus pour aller à l'école.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « prend » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 295,
+    "sentence": "Ont court vite pour ne pas être en retard.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 296,
+    "sentence": "Ont écrit une lettre au Père Noël.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous, quelqu'un). Le verbe « écrit » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 297,
+    "sentence": "Ont apprend à nager à la piscine.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient apprend », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 298,
+    "sentence": "Ont range sa chambre le samedi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « range » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 299,
+    "sentence": "Ont plante des tomates au printemps.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 300,
+    "sentence": "Ont écoute de la musique en classe.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « écoute » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 301,
+    "sentence": "Demain, ont ira au parc.",
+    "errorIndex": 1,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet (= nous). On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 302,
+    "sentence": "Après l'école, ont goûte ensemble.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « goûte » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 303,
+    "sentence": "Le soir, ont regarde les étoiles.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient regarde », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 304,
+    "sentence": "En été, ont mange des glaces.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « mange » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 305,
+    "sentence": "Le dimanche, ont se promène en forêt.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 306,
+    "sentence": "À la récréation, ont saute à la corde.",
+    "errorIndex": 3,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « saute » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 307,
+    "sentence": "Quand il pleut, ont reste à la maison.",
+    "errorIndex": 3,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient reste », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 308,
+    "sentence": "Pendant les vacances, ont voyage beaucoup.",
+    "errorIndex": 3,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « voyage » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 309,
+    "sentence": "Chez mamie, ont prépare des gâteaux.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 310,
+    "sentence": "Au marché, ont achète des fruits.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « achète » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 311,
+    "sentence": "Ce matin, ont a vu un arc-en-ciel.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On peut dire « on a vu », pas « ont a vu ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 312,
+    "sentence": "Tous ensemble, ont construit une cabane.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « construit » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 313,
+    "sentence": "Si ont veut, ont peut aller au cinéma.",
+    "errorIndex": 1,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient veut », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 501,
+    "sentence": "Les enfants on mangé leur goûter.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 502,
+    "sentence": "Ont dit qu'il va pleuvoir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 503,
+    "sentence": "Mes parents ont acheté une maison.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est correct : c'est le verbe avoir au pluriel. Phrase correcte.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 504,
+    "sentence": "On joue dans la cour après la classe.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est correct : c'est le pronom sujet. Phrase correcte.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 505,
+    "sentence": "Les élèves on fini leur exercice.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 506,
+    "sentence": "Ont dit que la fête est annulée.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 507,
+    "sentence": "Les chats on renversé le vase.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 508,
+    "sentence": "On part en vacances demain.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est correct : c'est le pronom sujet indéfini. Phrase correcte.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 509,
+    "sentence": "Mes amis on préparé une surprise.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 510,
+    "sentence": "Ont mange de la tarte ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 511,
+    "sentence": "Les garçons on couru très vite.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 512,
+    "sentence": "Ont dirait que c'est le printemps.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 513,
+    "sentence": "Les enfants on dessiné de beaux dessins.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 514,
+    "sentence": "Ont chante une chanson en classe.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 515,
+    "sentence": "Les filles on trouvé un chaton.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 516,
+    "sentence": "Ont peut aller au cinéma ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 517,
+    "sentence": "Les voisins on organisé une fête.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 518,
+    "sentence": "Ont voit les étoiles cette nuit.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 519,
+    "sentence": "Les pompiers on sauvé le chat.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 520,
+    "sentence": "Ont entend le tonnerre au loin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 521,
+    "sentence": "Les chiens on aboyé toute la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 522,
+    "sentence": "Ont va à l'école à pied.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 523,
+    "sentence": "Les oiseaux on construit leur nid.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 524,
+    "sentence": "Ont joue souvent dans ce parc.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 525,
+    "sentence": "Mes cousins on visité la tour Eiffel.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 601,
+    "sentence": "Les enfants on joué toute la journée.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 602,
+    "sentence": "Ont sait que l'école commence à huit heures.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 603,
+    "sentence": "Mes parents on décidé de déménager.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 604,
+    "sentence": "Ont pourrait aller se baigner.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 605,
+    "sentence": "Les chevaliers on combattu vaillamment.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 606,
+    "sentence": "Ont entend les cloches au loin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 607,
+    "sentence": "Les enfants on adoré le spectacle.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 608,
+    "sentence": "Ont a sonné à la porte.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 609,
+    "sentence": "Mes camarades on gagné le match.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 610,
+    "sentence": "Ont dirait qu'elle est triste.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 611,
+    "sentence": "Les fourmis on envahi le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 612,
+    "sentence": "Ont repart demain à la campagne.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 613,
+    "sentence": "Mes amis on invité toute la classe.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 614,
+    "sentence": "Ont aperçoit les montagnes au loin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 615,
+    "sentence": "Les professeurs on corrigé les contrôles.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 666,
+    "sentence": "Les enfants on ramassé des champignons.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 667,
+    "sentence": "Ont pense qu'il va neiger cette nuit.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 668,
+    "sentence": "Les sportifs on battu un record.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 669,
+    "sentence": "Ont frappe à la porte.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 670,
+    "sentence": "Les visiteurs on adoré le musée.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 671,
+    "sentence": "Ont cherche un bon restaurant.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 672,
+    "sentence": "Les élèves on réussi leur dictée.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 673,
+    "sentence": "Ont rencontre des gens sympathiques.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 674,
+    "sentence": "Les pompiers on éteint l'incendie.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 675,
+    "sentence": "Ont attend le bus depuis dix minutes.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 701,
+    "sentence": "Les enfants on été très sages.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 702,
+    "sentence": "Ont trouve des champignons dans la forêt.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 703,
+    "sentence": "Les jardiniers on planté des roses.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 704,
+    "sentence": "Ont essaie de faire de son mieux.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 705,
+    "sentence": "Les cuisiniers on préparé un festin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 726,
+    "sentence": "Les acteurs on joué sur cette scène.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 727,
+    "sentence": "Ont attend les résultats avec impatience.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 728,
+    "sentence": "Les touristes on visité le château.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 729,
+    "sentence": "Ont peut voir la mer depuis ici.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 730,
+    "sentence": "Mes camarades on ri de la blague.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1501,
+    "sentence": "Les enfants on mangé des crêpes.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir conjugué au présent avec « ils/elles ». On peut le remplacer par « avaient ». « On » est un pronom personnel.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1502,
+    "sentence": "Mes parents on acheté un gâteau.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir. On peut le remplacer par « avaient ». Ici, « mes parents » est le sujet, donc il faut « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1503,
+    "sentence": "Les oiseaux on chanté ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir conjugué avec « ils ». On peut dire « avaient chanté ». « On » est un pronom sujet.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1504,
+    "sentence": "Les élèves on fini leur exercice.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec le sujet « les élèves » (ils), on utilise « ont » (verbe avoir). On peut remplacer par « avaient ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1505,
+    "sentence": "Tes amis on trouvé un trésor.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "« Ont » est le verbe avoir. Le sujet « tes amis » (ils) demande « ont ». On peut dire « avaient trouvé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1506,
+    "sentence": "Les chats on dormi toute la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les chats » (ils) demande le verbe avoir « ont ». On peut remplacer par « avaient dormi ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1507,
+    "sentence": "Les filles on dansé à la fête.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les filles » (elles), il faut « ont » (verbe avoir). On peut dire « avaient dansé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1508,
+    "sentence": "Les voisins on planté des fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les voisins » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient planté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1509,
+    "sentence": "Mes cousins on joué au ballon.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « mes cousins » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient joué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1510,
+    "sentence": "Les poules on pondu des œufs.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les poules » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient pondu ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1511,
+    "sentence": "Les garçons on couru dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les garçons » (ils), il faut « ont » (verbe avoir). On peut dire « avaient couru ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1512,
+    "sentence": "Les chiens on aboyé très fort.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les chiens » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient aboyé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1513,
+    "sentence": "Les arbres on perdu leurs feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les arbres » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient perdu ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1514,
+    "sentence": "Ses frères on gagné la course.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « ses frères » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient gagné ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1515,
+    "sentence": "Les nuages on caché le soleil.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les nuages » (ils), il faut « ont » (verbe avoir). On peut dire « avaient caché ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1516,
+    "sentence": "Les souris on grignoté le fromage.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les souris » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient grignoté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1517,
+    "sentence": "Les joueurs on marqué un but.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les joueurs » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient marqué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1518,
+    "sentence": "Les abeilles on fabriqué du miel.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les abeilles » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient fabriqué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1519,
+    "sentence": "Les pompiers on éteint le feu.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les pompiers » (ils), il faut « ont » (verbe avoir). On peut dire « avaient éteint ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1520,
+    "sentence": "Les canards on nagé dans le lac.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les canards » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient nagé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1521,
+    "sentence": "Les tortues on traversé la route.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les tortues » (elles), on écrit « ont » (verbe avoir). On peut dire « avaient traversé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1522,
+    "sentence": "Les musiciens on joué une belle chanson.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les musiciens » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient joué ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1523,
+    "sentence": "Les fleurs on poussé dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les fleurs » (elles), il faut « ont » (verbe avoir). On peut dire « avaient poussé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1524,
+    "sentence": "Les lapins on creusé un terrier.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les lapins » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient creusé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1525,
+    "sentence": "Les invités on apporté des cadeaux.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les invités » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient apporté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1526,
+    "sentence": "Les étoiles on brillé toute la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les étoiles » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient brillé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1527,
+    "sentence": "Les pirates on découvert un coffre.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les pirates » (ils), il faut « ont » (verbe avoir). On peut dire « avaient découvert ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1528,
+    "sentence": "Les cuisiniers on préparé le repas.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les cuisiniers » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient préparé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1529,
+    "sentence": "Les papillons on volé dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les papillons » (ils), on écrit « ont » (verbe avoir). On peut dire « avaient volé ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1530,
+    "sentence": "Les clowns on fait rire les enfants.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les clowns » (ils) demande « ont » (verbe avoir). On peut remplacer par « avaient fait ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1531,
+    "sentence": "Les grenouilles on sauté dans la mare.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Avec « les grenouilles » (elles), il faut « ont » (verbe avoir). On peut dire « avaient sauté ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1532,
+    "sentence": "Les hirondelles on construit leur nid.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le sujet « les hirondelles » (elles) demande « ont » (verbe avoir). On peut remplacer par « avaient construit ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1533,
+    "sentence": "Ont va jouer dans le jardin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet (= quelqu'un, nous). « Ont » est le verbe avoir. Ici, c'est le sujet du verbe « va ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1534,
+    "sentence": "Ont mange à la cantine ce midi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). On ne peut pas remplacer par « avaient » ici, donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1535,
+    "sentence": "Ont part en vacances demain.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient part », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1536,
+    "sentence": "Ont aime beaucoup le chocolat.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous, quelqu'un). On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1537,
+    "sentence": "Ont regarde un film ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. Ici, c'est le sujet du verbe « regarde », donc on écrit « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1538,
+    "sentence": "Ont joue au ballon dans la cour.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « joue » est conjugué avec « on », pas avec « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1539,
+    "sentence": "Ont chante une chanson ensemble.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient chante », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1540,
+    "sentence": "Ont dessine un beau paysage.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet. Le verbe « dessine » se conjugue avec « on » (il dessine, on dessine).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1541,
+    "sentence": "Ont lit une histoire avant de dormir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1542,
+    "sentence": "Ont fait du vélo le mercredi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « fait » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1543,
+    "sentence": "Ont dort bien quand il fait froid.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient dort », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1544,
+    "sentence": "Ont prend le bus pour aller à l'école.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « prend » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1545,
+    "sentence": "Ont court vite pour ne pas être en retard.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1546,
+    "sentence": "Ont écrit une lettre au Père Noël.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous, quelqu'un). Le verbe « écrit » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1547,
+    "sentence": "Ont apprend à nager à la piscine.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient apprend », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1548,
+    "sentence": "Ont range sa chambre le samedi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « range » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1549,
+    "sentence": "Ont plante des tomates au printemps.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1550,
+    "sentence": "Ont écoute de la musique en classe.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « écoute » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1551,
+    "sentence": "Demain, ont ira au parc.",
+    "errorIndex": 1,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet (= nous). On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1552,
+    "sentence": "Après l'école, ont goûte ensemble.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « goûte » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1553,
+    "sentence": "Le soir, ont regarde les étoiles.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient regarde », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1554,
+    "sentence": "En été, ont mange des glaces.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « mange » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1555,
+    "sentence": "Le dimanche, ont se promène en forêt.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1556,
+    "sentence": "À la récréation, ont saute à la corde.",
+    "errorIndex": 3,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « saute » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1557,
+    "sentence": "Quand il pleut, ont reste à la maison.",
+    "errorIndex": 3,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient reste », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1558,
+    "sentence": "Pendant les vacances, ont voyage beaucoup.",
+    "errorIndex": 3,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « voyage » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1559,
+    "sentence": "Chez mamie, ont prépare des gâteaux.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas remplacer par « avaient », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1560,
+    "sentence": "Au marché, ont achète des fruits.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « achète » se conjugue avec « on », pas « ont ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1561,
+    "sentence": "Ce matin, ont a vu un arc-en-ciel.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On peut dire « on a vu », pas « ont a vu ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1562,
+    "sentence": "Tous ensemble, ont construit une cabane.",
+    "errorIndex": 2,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom sujet (= nous). Le verbe « construit » se conjugue avec « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1563,
+    "sentence": "Si ont veut, ont peut aller au cinéma.",
+    "errorIndex": 1,
+    "correctedWord": "on",
+    "explanation": "« On » est un pronom personnel sujet. On ne peut pas dire « avaient veut », donc c'est « on ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1751,
+    "sentence": "Les enfants on mangé leur goûter.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1752,
+    "sentence": "Ont dit qu'il va pleuvoir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1753,
+    "sentence": "Mes parents ont acheté une maison.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est correct : c'est le verbe avoir au pluriel. Phrase correcte.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1754,
+    "sentence": "On joue dans la cour après la classe.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est correct : c'est le pronom sujet. Phrase correcte.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1755,
+    "sentence": "Les élèves on fini leur exercice.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1756,
+    "sentence": "Ont dit que la fête est annulée.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1757,
+    "sentence": "Les chats on renversé le vase.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1758,
+    "sentence": "On part en vacances demain.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est correct : c'est le pronom sujet indéfini. Phrase correcte.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1759,
+    "sentence": "Mes amis on préparé une surprise.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1760,
+    "sentence": "Ont mange de la tarte ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1761,
+    "sentence": "Les garçons on couru très vite.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1762,
+    "sentence": "Ont dirait que c'est le printemps.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1763,
+    "sentence": "Les enfants on dessiné de beaux dessins.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1764,
+    "sentence": "Ont chante une chanson en classe.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1765,
+    "sentence": "Les filles on trouvé un chaton.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1766,
+    "sentence": "Ont peut aller au cinéma ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1767,
+    "sentence": "Les voisins on organisé une fête.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1768,
+    "sentence": "Ont voit les étoiles cette nuit.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1769,
+    "sentence": "Les pompiers on sauvé le chat.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1770,
+    "sentence": "Ont entend le tonnerre au loin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1771,
+    "sentence": "Les chiens on aboyé toute la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1772,
+    "sentence": "Ont va à l'école à pied.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1773,
+    "sentence": "Les oiseaux on construit leur nid.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1774,
+    "sentence": "Ont joue souvent dans ce parc.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1775,
+    "sentence": "Mes cousins on visité la tour Eiffel.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1851,
+    "sentence": "Les enfants on joué toute la journée.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1852,
+    "sentence": "Ont sait que l'école commence à huit heures.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1853,
+    "sentence": "Mes parents on décidé de déménager.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1854,
+    "sentence": "Ont pourrait aller se baigner.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1855,
+    "sentence": "Les chevaliers on combattu vaillamment.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1856,
+    "sentence": "Ont entend les cloches au loin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1857,
+    "sentence": "Les enfants on adoré le spectacle.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1858,
+    "sentence": "Ont a sonné à la porte.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1859,
+    "sentence": "Mes camarades on gagné le match.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1860,
+    "sentence": "Ont dirait qu'elle est triste.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1861,
+    "sentence": "Les fourmis on envahi le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1862,
+    "sentence": "Ont repart demain à la campagne.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1863,
+    "sentence": "Mes amis on invité toute la classe.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1864,
+    "sentence": "Ont aperçoit les montagnes au loin.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1865,
+    "sentence": "Les professeurs on corrigé les contrôles.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1916,
+    "sentence": "Les enfants on ramassé des champignons.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1917,
+    "sentence": "Ont pense qu'il va neiger cette nuit.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1918,
+    "sentence": "Les sportifs on battu un record.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1919,
+    "sentence": "Ont frappe à la porte.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1920,
+    "sentence": "Les visiteurs on adoré le musée.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1921,
+    "sentence": "Ont cherche un bon restaurant.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1922,
+    "sentence": "Les élèves on réussi leur dictée.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1923,
+    "sentence": "Ont rencontre des gens sympathiques.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1924,
+    "sentence": "Les pompiers on éteint l'incendie.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1925,
+    "sentence": "Ont attend le bus depuis dix minutes.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1951,
+    "sentence": "Les enfants on été très sages.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1952,
+    "sentence": "Ont trouve des champignons dans la forêt.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1953,
+    "sentence": "Les jardiniers on planté des roses.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1954,
+    "sentence": "Ont essaie de faire de son mieux.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1955,
+    "sentence": "Les cuisiniers on préparé un festin.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1976,
+    "sentence": "Les acteurs on joué sur cette scène.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1977,
+    "sentence": "Ont attend les résultats avec impatience.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1978,
+    "sentence": "Les touristes on visité le château.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1979,
+    "sentence": "Ont peut voir la mer depuis ici.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici, « on » est le pronom sujet indéfini (on peut le remplacer par « il »). On écrit « on » sans t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 1980,
+    "sentence": "Mes camarades on ri de la blague.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Ici, « ont » est le verbe avoir au pluriel (on peut le remplacer par « avaient »). On écrit « ont » avec un t.",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2561,
+    "sentence": "On mange à la cantine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« on » est un pronom sujet (3e personne du singulier), on peut le remplacer par « il ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2562,
+    "sentence": "Ils ont un nouveau ballon.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ont » est le verbe avoir conjugué au pluriel, on peut le remplacer par « avaient ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2563,
+    "sentence": "On joue dans la cour.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« on » est un pronom sujet, on peut le remplacer par « il ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2564,
+    "sentence": "Les enfants ont fini leurs devoirs.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ont » est le verbe avoir conjugué au pluriel, on peut le remplacer par « avaient ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2565,
+    "sentence": "On va au parc cet après-midi.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« on » est un pronom sujet, on peut le remplacer par « il ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2566,
+    "sentence": "Elles ont trouvé un trésor.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ont » est le verbe avoir conjugué au pluriel, on peut le remplacer par « avaient ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2567,
+    "sentence": "On chante une chanson.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« on » est un pronom sujet, on peut le remplacer par « il ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2568,
+    "sentence": "Les voisins ont un grand jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ont » est le verbe avoir conjugué au pluriel, on peut le remplacer par « avaient ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2569,
+    "sentence": "On dessine un paysage.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« on » est un pronom sujet, on peut le remplacer par « il ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2570,
+    "sentence": "Mes parents ont préparé une surprise.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ont » est le verbe avoir conjugué au pluriel, on peut le remplacer par « avaient ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2741,
+    "sentence": "Les enfants on faim après la récréation et ils mangent leur goûter dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » au pluriel : « les enfants ont faim » (on peut dire « avaient faim »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2742,
+    "sentence": "Ont joue au ballon dans la cour de récréation et on s'amuse beaucoup avec nos amis.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous), pas le verbe « avoir » : « On joue ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2743,
+    "sentence": "Mes parents on décidé de partir en vacances à la mer et ils préparent les valises.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « mes parents ont décidé » (on peut dire « avaient décidé »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2744,
+    "sentence": "Ont dit que le temps sera beau demain et on pourra aller jouer dehors toute la journée.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= quelqu'un / nous), pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2745,
+    "sentence": "Les élèves on bien travaillé aujourd'hui et la maîtresse leur a donné une image.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les élèves ont bien travaillé » (on peut dire « avaient »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2746,
+    "sentence": "Ont mange à la cantine tous les jours et on aime bien les frites du mercredi.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous), pas le verbe « avoir » : « On mange ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2747,
+    "sentence": "Les chats on attrapé une souris dans le jardin et ils l'ont ramenée à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les chats ont attrapé » (on peut dire « avaient attrapé »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2748,
+    "sentence": "Ont va au parc cet après-midi et on emmène le chien pour qu'il puisse courir librement.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous), pas le verbe « avoir » : « On va ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2749,
+    "sentence": "Les voisins on organisé une fête dans leur jardin et ils ont invité tout le quartier.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les voisins ont organisé » (on peut dire « avaient organisé »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2750,
+    "sentence": "Ont a trouvé un petit chaton dans la rue et on l'a ramené à la maison pour le soigner.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On a trouvé », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2751,
+    "sentence": "Les oiseaux on construit un nid dans le grand arbre et ils y élèvent leurs petits.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les oiseaux ont construit » (on peut dire « avaient construit »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2752,
+    "sentence": "Ont adore les glaces en été et on en mange souvent quand il fait très chaud dehors.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On adore », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2753,
+    "sentence": "Mes amis on apporté des gâteaux pour la fête et ils les ont partagés avec tout le monde.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « mes amis ont apporté » (on peut dire « avaient apporté »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2754,
+    "sentence": "Ont peut voir les étoiles ce soir parce que le ciel est très clair et sans nuages.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous / quelqu'un) : « On peut voir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2755,
+    "sentence": "Les pompiers on éteint le feu rapidement et ils ont sauvé toutes les personnes de l'immeuble.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les pompiers ont éteint » (on peut dire « avaient éteint »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2916,
+    "sentence": "Les enfants on voulu jouer dehors mais ils n'ont pas pu à cause de la pluie.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les enfants ont voulu » (on peut dire « avaient voulu »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2917,
+    "sentence": "Ont veut aller au cinéma ce soir et on pourra voir le nouveau film d'animation.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On veut aller », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2918,
+    "sentence": "Mes parents on pu venir à la fête de l'école et ils ont été très contents.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « mes parents ont pu » (on peut dire « avaient pu »).",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2919,
+    "sentence": "Ont peut jouer dans le jardin si on veut mais il faut d'abord finir les devoirs.",
+    "errorIndex": 0,
+    "correctedWord": "On",
+    "explanation": "Ici c'est le pronom « on » (= nous) : « On peut jouer », pas le verbe « avoir ».",
+    "category": "homophones on/ont"
+  },
+  {
+    "id": 2920,
+    "sentence": "Les voisins on voulu nous inviter et ils ont préparé un grand repas pour tout le monde.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "C'est le verbe « avoir » : « les voisins ont voulu » (on peut dire « avaient voulu »).",
+    "category": "homophones on/ont"
+  }
+]

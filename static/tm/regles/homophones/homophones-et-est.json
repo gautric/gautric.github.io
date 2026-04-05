@@ -1,0 +1,802 @@
+[
+  {
+    "id": 216,
+    "sentence": "Le ciel et bleu aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 217,
+    "sentence": "Mon chat est noir est blanc.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux adjectifs. On peut le remplacer par « et puis ». On écrit « et » sans accent.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 218,
+    "sentence": "La pomme et rouge et sucrée.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 219,
+    "sentence": "Il mange une pomme est une banane.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 220,
+    "sentence": "Le soleil et chaud en été.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 221,
+    "sentence": "Papa est maman sont gentils.",
+    "errorIndex": 1,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 222,
+    "sentence": "La neige et blanche et froide.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 223,
+    "sentence": "Je prends un stylo est un cahier.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 224,
+    "sentence": "Mon frère et grand et fort.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 225,
+    "sentence": "Elle aime les chats est les chiens.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux groupes nominaux. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 226,
+    "sentence": "Le gâteau et délicieux.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 227,
+    "sentence": "Il achète du pain est du lait.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 228,
+    "sentence": "Ma chambre et grande et claire.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 229,
+    "sentence": "Nous mangeons des frites est de la salade.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 230,
+    "sentence": "Le chien et gentil avec les enfants.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 231,
+    "sentence": "Elle dessine un soleil est un arbre.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 232,
+    "sentence": "La mer et belle ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 233,
+    "sentence": "Il joue avec Pierre est Paul.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux prénoms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 234,
+    "sentence": "Cette fleur et très jolie.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 235,
+    "sentence": "Maman achète des pommes est des poires.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 236,
+    "sentence": "Le livre et sur la table.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 237,
+    "sentence": "Il a un frère est une sœur.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 238,
+    "sentence": "Mon cartable et lourd ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 239,
+    "sentence": "Elle mange du riz est du poulet.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 240,
+    "sentence": "Le jardin et plein de fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 241,
+    "sentence": "Il prend son manteau est son écharpe.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 242,
+    "sentence": "La soupe et chaude ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 243,
+    "sentence": "Nous avons un chien est un chat.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 244,
+    "sentence": "Le bébé et fatigué ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 245,
+    "sentence": "Elle lit un livre est un magazine.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 246,
+    "sentence": "Mon papa et très gentil.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 247,
+    "sentence": "Il porte un pantalon est une chemise.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 248,
+    "sentence": "La classe et calme aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 249,
+    "sentence": "Elle a des billes est des cartes.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 250,
+    "sentence": "Le repas et prêt pour ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1466,
+    "sentence": "Le ciel et bleu aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1467,
+    "sentence": "Mon chat est noir est blanc.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux adjectifs. On peut le remplacer par « et puis ». On écrit « et » sans accent.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1468,
+    "sentence": "La pomme et rouge et sucrée.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1469,
+    "sentence": "Il mange une pomme est une banane.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1470,
+    "sentence": "Le soleil et chaud en été.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1471,
+    "sentence": "Papa est maman sont gentils.",
+    "errorIndex": 1,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1472,
+    "sentence": "La neige et blanche et froide.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1473,
+    "sentence": "Je prends un stylo est un cahier.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1474,
+    "sentence": "Mon frère et grand et fort.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1475,
+    "sentence": "Elle aime les chats est les chiens.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux groupes nominaux. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1476,
+    "sentence": "Le gâteau et délicieux.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1477,
+    "sentence": "Il achète du pain est du lait.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1478,
+    "sentence": "Ma chambre et grande et claire.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1479,
+    "sentence": "Nous mangeons des frites est de la salade.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1480,
+    "sentence": "Le chien et gentil avec les enfants.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1481,
+    "sentence": "Elle dessine un soleil est un arbre.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1482,
+    "sentence": "La mer et belle ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1483,
+    "sentence": "Il joue avec Pierre est Paul.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux prénoms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1484,
+    "sentence": "Cette fleur et très jolie.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1485,
+    "sentence": "Maman achète des pommes est des poires.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1486,
+    "sentence": "Le livre et sur la table.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1487,
+    "sentence": "Il a un frère est une sœur.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1488,
+    "sentence": "Mon cartable et lourd ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1489,
+    "sentence": "Elle mange du riz est du poulet.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux compléments. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1490,
+    "sentence": "Le jardin et plein de fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1491,
+    "sentence": "Il prend son manteau est son écharpe.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1492,
+    "sentence": "La soupe et chaude ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1493,
+    "sentence": "Nous avons un chien est un chat.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1494,
+    "sentence": "Le bébé et fatigué ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1495,
+    "sentence": "Elle lit un livre est un magazine.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1496,
+    "sentence": "Mon papa et très gentil.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1497,
+    "sentence": "Il porte un pantalon est une chemise.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1498,
+    "sentence": "La classe et calme aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1499,
+    "sentence": "Elle a des billes est des cartes.",
+    "errorIndex": 4,
+    "correctedWord": "et",
+    "explanation": "Ici, « et » est une conjonction qui relie deux noms. On peut le remplacer par « et aussi ». On écrit « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 1500,
+    "sentence": "Le repas et prêt pour ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici, il faut le verbe être « est » (on peut le remplacer par « était »), et non la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2551,
+    "sentence": "Le ciel est bleu et le soleil brille.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » est une conjonction qui relie deux propositions.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2552,
+    "sentence": "Mon chat est noir et blanc.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux adjectifs.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2553,
+    "sentence": "La soupe est chaude et bonne.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux adjectifs.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2554,
+    "sentence": "Il est grand et fort.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux adjectifs.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2555,
+    "sentence": "Ma trousse est rouge et bleue.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux adjectifs.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2556,
+    "sentence": "Le gâteau est prêt et il est délicieux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux propositions.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2557,
+    "sentence": "Elle est gentille et souriante.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux adjectifs.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2558,
+    "sentence": "Le livre est intéressant et amusant.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux adjectifs.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2559,
+    "sentence": "Mon père est cuisinier et ma mère est docteur.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux propositions.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2560,
+    "sentence": "La maison est propre et rangée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« est » est le verbe être conjugué ; « et » relie deux adjectifs.",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2726,
+    "sentence": "Mon frère est grand est il joue au basket avec ses amis du collège chaque mercredi.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "Ici on relie deux informations, on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2727,
+    "sentence": "La maison et grande et belle et elle se trouve au bout de la rue près du parc.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Ici c'est le verbe « être » : « la maison est grande » (on peut dire « était grande »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2728,
+    "sentence": "Papa est maman préparent le repas ensemble dans la cuisine et ils nous appellent pour manger.",
+    "errorIndex": 1,
+    "correctedWord": "et",
+    "explanation": "On relie « papa » et « maman » (deux sujets), donc on utilise « et » et non « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2729,
+    "sentence": "Le ciel et bleu et le soleil brille fort et il fait très chaud dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le ciel est bleu » (on peut dire « était bleu »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2730,
+    "sentence": "Ma sœur est contente est elle saute de joie parce qu'elle a eu une bonne note.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2731,
+    "sentence": "Le chat et noir et blanc et il dort sur le canapé du salon toute la journée.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le chat est noir » (on peut dire « était noir »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2732,
+    "sentence": "Mon ami est moi jouons ensemble dans la cour et nous nous amusons beaucoup chaque jour.",
+    "errorIndex": 2,
+    "correctedWord": "et",
+    "explanation": "On relie « mon ami » et « moi » (deux personnes), donc on utilise « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2733,
+    "sentence": "La fleur et rouge et elle sent très bon quand on la met dans un vase.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « la fleur est rouge » (on peut dire « était rouge »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2734,
+    "sentence": "Le livre est intéressant est je le lis chaque soir avant de dormir dans mon lit.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2735,
+    "sentence": "Mon chien et très gentil avec les enfants et il adore jouer avec eux dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « mon chien est très gentil » (on peut dire « était très gentil »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2736,
+    "sentence": "Les fraises est les framboises sont dans le panier et maman va faire une tarte avec.",
+    "errorIndex": 2,
+    "correctedWord": "et",
+    "explanation": "On relie « les fraises » et « les framboises » (deux noms), donc on utilise « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2737,
+    "sentence": "Le temps et beau aujourd'hui et nous allons jouer dehors dans le parc avec nos amis.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le temps est beau » (on peut dire « était beau »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2738,
+    "sentence": "Ma mère est fatiguée est elle va se reposer un peu sur le canapé du salon.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2739,
+    "sentence": "Le gâteau et délicieux et tout le monde en veut une part pour le dessert ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le gâteau est délicieux » (on peut dire « était délicieux »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2740,
+    "sentence": "Mon frère est ma sœur vont à l'école ensemble et ils prennent le même chemin chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "et",
+    "explanation": "On relie « mon frère » et « ma sœur » (deux personnes), donc on utilise « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2911,
+    "sentence": "Le livre est grand est lourd et mon frère ne peut pas le porter tout seul dans son sac.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux adjectifs « grand » et « lourd », donc on utilise la conjonction « et ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2912,
+    "sentence": "Le jardin et magnifique au printemps et maman veut y planter des roses cette année.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le jardin est magnifique » (on peut dire « était magnifique »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2913,
+    "sentence": "Ma sœur est contente est elle veut nous montrer le dessin qu'elle a fait en classe.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2914,
+    "sentence": "Le repas et prêt et nous pouvons passer à table pour manger tous ensemble en famille.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "C'est le verbe « être » : « le repas est prêt » (on peut dire « était prêt »).",
+    "category": "homophones et/est"
+  },
+  {
+    "id": 2915,
+    "sentence": "Papa est fatigué est il veut se reposer un peu sur le canapé avant le dîner.",
+    "errorIndex": 3,
+    "correctedWord": "et",
+    "explanation": "On relie deux propositions, donc on utilise la conjonction « et » et non le verbe « est ».",
+    "category": "homophones et/est"
+  }
+]

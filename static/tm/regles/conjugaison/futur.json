@@ -1,0 +1,146 @@
+[
+  {
+    "id": 2801,
+    "sentence": "Demain, les enfants joueront dans le parc et ils pourra faire du toboggan toute la journée.",
+    "errorIndex": 10,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » demande le pluriel au futur : « pourront » et non « pourra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2802,
+    "sentence": "Ma sœur mangera une glace au chocolat et elle voudras aussi goûter celle à la fraise.",
+    "errorIndex": 8,
+    "correctedWord": "voudra",
+    "explanation": "Le sujet « elle » demande la 3e personne du singulier au futur : « voudra » et non « voudras ».",
+    "category": "futur"
+  },
+  {
+    "id": 2803,
+    "sentence": "Nous irons à la plage cet été et nous pourrons construire des châteaux de sable ensemble.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « irons » et « pourrons » sont bien conjugués au futur avec « nous ».",
+    "category": "futur"
+  },
+  {
+    "id": 2804,
+    "sentence": "Mon frère joueras au football avec ses amis et il pourra marquer beaucoup de buts.",
+    "errorIndex": 2,
+    "correctedWord": "jouera",
+    "explanation": "Le sujet « mon frère » est à la 3e personne du singulier au futur : « jouera » et non « joueras ».",
+    "category": "futur"
+  },
+  {
+    "id": 2805,
+    "sentence": "Les oiseaux chanteront très fort demain matin et ils voudront réveiller tout le quartier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « chanteront » et « voudront » sont bien conjugués au futur avec « ils ».",
+    "category": "futur"
+  },
+  {
+    "id": 2806,
+    "sentence": "Tu finiras tes devoirs avant le dîner et tu pourra regarder la télévision après.",
+    "errorIndex": 9,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier au futur : « pourras » et non « pourra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2807,
+    "sentence": "Papa préparera un bon repas ce soir et il voudront nous faire une surprise avec le dessert.",
+    "errorIndex": 9,
+    "correctedWord": "voudra",
+    "explanation": "Le sujet « il » demande la 3e personne du singulier au futur : « voudra » et non « voudront ».",
+    "category": "futur"
+  },
+  {
+    "id": 2808,
+    "sentence": "Je mangerai une pomme au goûter et je voudrai aussi boire un grand verre de jus d'orange.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « mangerai » et « voudrai » sont bien conjugués au futur avec « je ».",
+    "category": "futur"
+  },
+  {
+    "id": 2809,
+    "sentence": "Les élèves travailleront bien cette semaine et ils pourrons avoir une bonne note au contrôle.",
+    "errorIndex": 8,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » demande la 3e personne du pluriel au futur : « pourront » et non « pourrons ».",
+    "category": "futur"
+  },
+  {
+    "id": 2810,
+    "sentence": "Vous partirez en vacances la semaine prochaine et vous voudrez visiter beaucoup de monuments.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « partirez » et « voudrez » sont bien conjugués au futur avec « vous ».",
+    "category": "futur"
+  },
+  {
+    "id": 2811,
+    "sentence": "Ma mère achètera des fleurs au marché et elle voudras les mettre dans un joli vase.",
+    "errorIndex": 8,
+    "correctedWord": "voudra",
+    "explanation": "Le sujet « elle » demande la 3e personne du singulier au futur : « voudra » et non « voudras ».",
+    "category": "futur"
+  },
+  {
+    "id": 2812,
+    "sentence": "Nous chanterons une chanson pour la fête et nous pourront aussi danser sur la musique.",
+    "errorIndex": 9,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la 1re personne du pluriel au futur : « pourrons » et non « pourront ».",
+    "category": "futur"
+  },
+  {
+    "id": 2813,
+    "sentence": "Le chien courra dans le jardin demain et il voudra attraper les papillons comme toujours.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « courra » et « voudra » sont bien conjugués au futur avec « il ».",
+    "category": "futur"
+  },
+  {
+    "id": 2814,
+    "sentence": "Tu dessineras un beau paysage en classe et tu voudra le montrer à tes parents ce soir.",
+    "errorIndex": 10,
+    "correctedWord": "voudras",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier au futur : « voudras » et non « voudra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2815,
+    "sentence": "Les filles danseront à la fête de l'école et elles pourra chanter aussi si elles veulent.",
+    "errorIndex": 9,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » demande la 3e personne du pluriel au futur : « pourront » et non « pourra ».",
+    "category": "futur"
+  },
+  {
+    "id": 2933,
+    "sentence": "Demain, mon frère joueras au tennis avec son ami et il pourra aussi faire du vélo après.",
+    "errorIndex": 3,
+    "correctedWord": "jouera",
+    "explanation": "Le sujet « mon frère » est à la 3e personne du singulier au futur : « jouera ».",
+    "category": "futur"
+  },
+  {
+    "id": 2934,
+    "sentence": "Les enfants chanterons une chanson pour la fête et ils voudront aussi danser sur scène.",
+    "errorIndex": 2,
+    "correctedWord": "chanteront",
+    "explanation": "Le sujet « les enfants » est à la 3e personne du pluriel au futur : « chanteront » et non « chanterons ».",
+    "category": "futur"
+  },
+  {
+    "id": 2935,
+    "sentence": "Tu finiras tes devoirs et tu pourra jouer dehors avec tes amis jusqu'au dîner.",
+    "errorIndex": 6,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier au futur : « pourras ».",
+    "category": "futur"
+  }
+]

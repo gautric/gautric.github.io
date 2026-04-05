@@ -1,0 +1,546 @@
+[
+  {
+    "id": 2951,
+    "sentence": "Mon frère a mangé toute la tarte que maman avait préparée pour le goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « mangé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2952,
+    "sentence": "Les enfants veulent mangé des crêpes au chocolat pour le goûter de cet après-midi.",
+    "errorIndex": 3,
+    "correctedWord": "manger",
+    "explanation": "Après le verbe « veulent », on utilise l'infinitif : « manger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2953,
+    "sentence": "Papa a oublier ses clés sur la table de la cuisine avant de partir au travail.",
+    "errorIndex": 2,
+    "correctedWord": "oublié",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « oublié » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2954,
+    "sentence": "Ma sœur veut regarder un film avec ses amies dans le salon ce soir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « regarder » est l'infinitif après le verbe « veut ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2955,
+    "sentence": "Le chat a attraper une souris dans le jardin et il l'a ramenée à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "attrapé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « attrapé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2956,
+    "sentence": "Nous allons joué au ballon dans la cour après avoir fini nos devoirs.",
+    "errorIndex": 2,
+    "correctedWord": "jouer",
+    "explanation": "Après le verbe « allons », on utilise l'infinitif : « jouer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2957,
+    "sentence": "La maîtresse a corrigé tous les cahiers des élèves pendant la récréation.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « corrigé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2958,
+    "sentence": "Il faut arrosé les plantes du jardin tous les soirs quand il fait chaud.",
+    "errorIndex": 2,
+    "correctedWord": "arroser",
+    "explanation": "Après « il faut », on utilise l'infinitif : « arroser » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2959,
+    "sentence": "Mon ami a dessiné un beau château fort avec des tours et un pont-levis.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dessiné » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2960,
+    "sentence": "Les élèves doivent écouté la maîtresse quand elle explique la leçon en classe.",
+    "errorIndex": 3,
+    "correctedWord": "écouter",
+    "explanation": "Après le verbe « doivent », on utilise l'infinitif : « écouter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2961,
+    "sentence": "Maman a préparé un bon repas pour toute la famille avec des légumes du jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « préparé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2962,
+    "sentence": "Tu peux aller cherché du pain à la boulangerie pour le dîner de ce soir.",
+    "errorIndex": 3,
+    "correctedWord": "chercher",
+    "explanation": "Après le verbe « aller », on utilise l'infinitif : « chercher » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2963,
+    "sentence": "Le jardinier a planter des roses rouges le long du mur du jardin.",
+    "errorIndex": 2,
+    "correctedWord": "planté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « planté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2964,
+    "sentence": "Ma sœur adore chanter sous la douche et elle peut chanter pendant des heures.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « chanter » est l'infinitif après « adore » et après « peut ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2965,
+    "sentence": "Le boulanger a oublier de mettre du sel dans la pâte à pain ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "oublié",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « oublié » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2966,
+    "sentence": "Les enfants ont commencé à rangé leurs jouets dans le coffre du salon.",
+    "errorIndex": 4,
+    "correctedWord": "ranger",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « ranger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2967,
+    "sentence": "Mon père a réparé le vélo de ma sœur dans le garage samedi dernier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « réparé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2968,
+    "sentence": "Il ne faut pas oublié de fermer la porte à clé quand on sort de la maison.",
+    "errorIndex": 4,
+    "correctedWord": "oublier",
+    "explanation": "Après « il ne faut pas », on utilise l'infinitif : « oublier » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2969,
+    "sentence": "La voisine a inviter tous les enfants du quartier pour la fête de samedi.",
+    "errorIndex": 2,
+    "correctedWord": "invité",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « invité » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2970,
+    "sentence": "Nous devons terminé nos devoirs avant de pouvoir sortir jouer dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "terminer",
+    "explanation": "Après le verbe « devons », on utilise l'infinitif : « terminer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2971,
+    "sentence": "Le professeur a demander aux élèves de sortir leurs cahiers pour la dictée.",
+    "errorIndex": 2,
+    "correctedWord": "demandé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « demandé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2972,
+    "sentence": "Ma cousine aime dessiner des animaux et elle veut devenir artiste plus tard.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dessiner » et « devenir » sont des infinitifs après « aime » et « veut ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2973,
+    "sentence": "Les oiseaux ont commencé à chanté dès que le soleil s'est levé ce matin.",
+    "errorIndex": 4,
+    "correctedWord": "chanter",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « chanter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2974,
+    "sentence": "Mon grand-père a raconter une histoire drôle et tout le monde a beaucoup ri.",
+    "errorIndex": 2,
+    "correctedWord": "raconté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « raconté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2975,
+    "sentence": "Tu dois rangé ta chambre avant de pouvoir aller jouer dehors avec tes amis.",
+    "errorIndex": 2,
+    "correctedWord": "ranger",
+    "explanation": "Après le verbe « dois », on utilise l'infinitif : « ranger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2976,
+    "sentence": "Le chien a cassé le vase du salon en courant partout dans la maison.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « cassé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2977,
+    "sentence": "Ma mère va acheté des fruits au marché pour faire une salade de fruits.",
+    "errorIndex": 2,
+    "correctedWord": "acheter",
+    "explanation": "Après le verbe « va », on utilise l'infinitif : « acheter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2978,
+    "sentence": "Le facteur a apporter un gros colis pour notre voisine ce matin très tôt.",
+    "errorIndex": 2,
+    "correctedWord": "apporté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « apporté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2979,
+    "sentence": "Les enfants adorent nagé dans la piscine quand il fait très chaud en été.",
+    "errorIndex": 3,
+    "correctedWord": "nager",
+    "explanation": "Après le verbe « adorent », on utilise l'infinitif : « nager » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2980,
+    "sentence": "La maîtresse a félicité les élèves pour leur bon travail cette semaine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « félicité » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2981,
+    "sentence": "Mon frère a essayer de grimper dans le grand arbre mais il n'a pas réussi.",
+    "errorIndex": 2,
+    "correctedWord": "essayé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « essayé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2982,
+    "sentence": "Il est interdit de touchée les animaux du zoo même s'ils ont l'air gentils.",
+    "errorIndex": 4,
+    "correctedWord": "toucher",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « toucher » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2983,
+    "sentence": "Papa a gagner le match de tennis contre son ami et il était très content.",
+    "errorIndex": 2,
+    "correctedWord": "gagné",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « gagné » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2984,
+    "sentence": "Les élèves vont présenté leur exposé devant toute la classe demain matin.",
+    "errorIndex": 2,
+    "correctedWord": "présenter",
+    "explanation": "Après le verbe « vont », on utilise l'infinitif : « présenter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2985,
+    "sentence": "Ma tante a trouvé un petit chaton abandonné dans la rue près de chez elle.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « trouvé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2986,
+    "sentence": "Le médecin a demandé à mon frère de respiré profondément pendant l'examen.",
+    "errorIndex": 8,
+    "correctedWord": "respirer",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « respirer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2987,
+    "sentence": "Maman a laisser le gâteau refroidir sur la table avant de le couper en parts.",
+    "errorIndex": 2,
+    "correctedWord": "laissé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « laissé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2988,
+    "sentence": "Tu peux commencer à découpé les images pour le collage de la classe.",
+    "errorIndex": 4,
+    "correctedWord": "découper",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « découper » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2989,
+    "sentence": "Le pompier a sauvé le chat qui était coincé dans le grand arbre du parc.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sauvé » est le participe passé après l'auxiliaire « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 2990,
+    "sentence": "Les enfants ont appris à nager cet été et ils savent maintenant plongé sous l'eau.",
+    "errorIndex": 11,
+    "correctedWord": "plonger",
+    "explanation": "Après le verbe « savent », on utilise l'infinitif : « plonger » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3126,
+    "sentence": "Les enfants ont oublié de fermé la porte du jardin et le chien s'est échappé.",
+    "errorIndex": 5,
+    "correctedWord": "fermer",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « fermer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3127,
+    "sentence": "Le professeur a demandé aux élèves de se levé pour chanter la chanson.",
+    "errorIndex": 8,
+    "correctedWord": "lever",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « lever » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3128,
+    "sentence": "Maman a commencer à préparer le repas et papa va l'aider dans la cuisine.",
+    "errorIndex": 2,
+    "correctedWord": "commencé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « commencé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3129,
+    "sentence": "Mon frère veut essayé le nouveau vélo que papa lui a offert pour Noël.",
+    "errorIndex": 3,
+    "correctedWord": "essayer",
+    "explanation": "Après le verbe « veut », on utilise l'infinitif : « essayer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3130,
+    "sentence": "La maîtresse a distribué les cahiers et elle a demandé de bien travailler.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « distribué » et « demandé » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3131,
+    "sentence": "Les enfants adorent sauté dans les flaques d'eau quand il pleut très fort.",
+    "errorIndex": 3,
+    "correctedWord": "sauter",
+    "explanation": "Après le verbe « adorent », on utilise l'infinitif : « sauter » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3132,
+    "sentence": "Papa a oublier d'acheter du lait au supermarché et maman n'est pas contente.",
+    "errorIndex": 2,
+    "correctedWord": "oublié",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « oublié » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3133,
+    "sentence": "Tu peux aller jouer dehors après avoir terminé tes devoirs de mathématiques.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « aller », « jouer » sont des infinitifs et « terminé » est un participe passé.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3134,
+    "sentence": "Le chat a renversé le vase en essayant de grimpé sur la table du salon.",
+    "errorIndex": 8,
+    "correctedWord": "grimper",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « grimper » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3135,
+    "sentence": "Ma sœur a réussi à terminé son puzzle de mille pièces en une seule journée.",
+    "errorIndex": 5,
+    "correctedWord": "terminer",
+    "explanation": "Après la préposition « à », on utilise l'infinitif : « terminer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3191,
+    "sentence": "Le chien a mordre le facteur ce matin et papa a dû s'excuser auprès de lui.",
+    "errorIndex": 2,
+    "correctedWord": "mordu",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « mordu » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3192,
+    "sentence": "Ma sœur veut apprendre à cuisiner et elle demande à maman de lui montré.",
+    "errorIndex": 12,
+    "correctedWord": "montrer",
+    "explanation": "Après la préposition « de », on utilise l'infinitif : « montrer » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3193,
+    "sentence": "Le professeur a corrigé les copies et il a rendu les résultats aux élèves.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « corrigé » et « rendu » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3194,
+    "sentence": "Les enfants veulent découpé des étoiles en papier pour décorer le sapin de Noël.",
+    "errorIndex": 3,
+    "correctedWord": "découper",
+    "explanation": "Après le verbe « veulent », on utilise l'infinitif : « découper » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3195,
+    "sentence": "Papa a repeindre la chambre de mon frère en bleu pendant les vacances.",
+    "errorIndex": 2,
+    "correctedWord": "repeint",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « repeint » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3221,
+    "sentence": "Mon père a acheter un nouveau téléphone et il est très content de son achat.",
+    "errorIndex": 3,
+    "correctedWord": "acheté",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « acheté » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3222,
+    "sentence": "Les élèves doivent copié la leçon dans leur cahier avant la fin du cours.",
+    "errorIndex": 3,
+    "correctedWord": "copier",
+    "explanation": "Après le verbe « doivent », on utilise l'infinitif : « copier » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3223,
+    "sentence": "Maman a préparé le repas et papa a lavé la vaisselle après le dîner.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « préparé » et « lavé » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3224,
+    "sentence": "Il faut pensé à prendre un parapluie parce qu'il va pleuvoir cet après-midi.",
+    "errorIndex": 2,
+    "correctedWord": "penser",
+    "explanation": "Après « il faut », on utilise l'infinitif : « penser » (on peut dire « vendre »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3225,
+    "sentence": "Le jardinier a tailler les rosiers et maintenant le jardin est très propre.",
+    "errorIndex": 2,
+    "correctedWord": "taillé",
+    "explanation": "Après l'auxiliaire « a », on utilise le participe passé : « taillé » (on peut dire « vendu »).",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3251,
+    "sentence": "Papa a terminé de réparer le vélo et il l'a rangé dans le garage ce soir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « terminé » et « rangé » sont des participes passés après « a », et « réparer » est un infinitif après « de ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3252,
+    "sentence": "Les enfants adorent dessiner et ils veulent apprendre à peindre aussi cette année.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dessiner », « apprendre » et « peindre » sont des infinitifs.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3253,
+    "sentence": "Maman a préparé le repas et elle a demandé à mon frère de mettre la table.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « préparé » et « demandé » sont des participes passés, « mettre » est un infinitif après « de ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3254,
+    "sentence": "Le professeur a expliqué la leçon et il a donné des exercices à faire pour demain.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « expliqué » et « donné » sont des participes passés, « faire » est un infinitif après « à ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3255,
+    "sentence": "Mon frère a essayé de grimper dans l'arbre mais il n'a pas réussi à monter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « essayé » et « réussi » sont des participes passés, « grimper » et « monter » sont des infinitifs.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3256,
+    "sentence": "Tu peux aller jouer dehors après avoir rangé ta chambre et terminé tes devoirs.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « aller » et « jouer » sont des infinitifs, « rangé » et « terminé » sont des participes passés.",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3257,
+    "sentence": "La voisine a invité tous les enfants et elle a organisé des jeux dans le jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « invité » et « organisé » sont des participes passés après « a ».",
+    "category": "homophones er/é"
+  },
+  {
+    "id": 3258,
+    "sentence": "Il faut penser à fermer la porte à clé avant de partir pour ne pas oublier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « penser », « fermer », « partir » et « oublier » sont des infinitifs.",
+    "category": "homophones er/é"
+  }
+]

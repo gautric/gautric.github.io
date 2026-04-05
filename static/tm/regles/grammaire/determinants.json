@@ -1,0 +1,1522 @@
+[
+  {
+    "id": 921,
+    "sentence": "Le fille joue dans le jardin.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Fille » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 922,
+    "sentence": "La garçon court dans la cour.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Garçon » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 923,
+    "sentence": "Le maison est grande et belle.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Maison » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 924,
+    "sentence": "La chien aboie très fort.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Chien » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 925,
+    "sentence": "Le fleur est rouge et parfumée.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Fleur » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 926,
+    "sentence": "La soleil brille dans le ciel.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Soleil » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 927,
+    "sentence": "Le lune éclaire la nuit.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Lune » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 928,
+    "sentence": "La livre est posé sur la table.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Livre » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 929,
+    "sentence": "Le porte est fermée à clé.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Porte » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 930,
+    "sentence": "La chat dort sur le canapé.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Chat » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 931,
+    "sentence": "Un fille est arrivée en classe.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Fille » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 932,
+    "sentence": "Une garçon joue au ballon.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Garçon » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 933,
+    "sentence": "Un pomme est tombée de l'arbre.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Pomme » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 934,
+    "sentence": "Une chien court dans le parc.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Chien » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 935,
+    "sentence": "Un étoile brille dans le ciel.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Étoile » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 936,
+    "sentence": "Une oiseau chante sur la branche.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Oiseau » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 937,
+    "sentence": "Un histoire amusante fait rire les enfants.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Histoire » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 938,
+    "sentence": "Une lapin mange une carotte.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Lapin » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 939,
+    "sentence": "Mon sœur est plus grande que moi.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "« Sœur » est un nom féminin, il faut utiliser « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 940,
+    "sentence": "Ma frère joue au football.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "« Frère » est un nom masculin, il faut utiliser « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 941,
+    "sentence": "Mon mère prépare le dîner.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "« Mère » est un nom féminin, il faut utiliser « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 942,
+    "sentence": "Ma père travaille au bureau.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "« Père » est un nom masculin, il faut utiliser « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 943,
+    "sentence": "Mon trousse est dans mon cartable.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "« Trousse » est un nom féminin, il faut utiliser « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 944,
+    "sentence": "Ma cahier est sur le bureau.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "« Cahier » est un nom masculin, il faut utiliser « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 945,
+    "sentence": "Son mère est très gentille.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "« Mère » est un nom féminin, il faut utiliser « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 946,
+    "sentence": "Sa père est grand et fort.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "« Père » est un nom masculin, il faut utiliser « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 947,
+    "sentence": "Son maison est au bout de la rue.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "« Maison » est un nom féminin, il faut utiliser « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 948,
+    "sentence": "Sa chien est un labrador.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "« Chien » est un nom masculin, il faut utiliser « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 949,
+    "sentence": "Son voiture est garée devant la maison.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "« Voiture » est un nom féminin, il faut utiliser « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 950,
+    "sentence": "Sa vélo est rouge et rapide.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "« Vélo » est un nom masculin, il faut utiliser « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 951,
+    "sentence": "Ton sœur est dans ma classe.",
+    "errorIndex": 0,
+    "correctedWord": "Ta",
+    "explanation": "« Sœur » est un nom féminin, il faut utiliser « ta » et non « ton ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 952,
+    "sentence": "Ta frère est très drôle.",
+    "errorIndex": 0,
+    "correctedWord": "Ton",
+    "explanation": "« Frère » est un nom masculin, il faut utiliser « ton » et non « ta ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 953,
+    "sentence": "Ton chambre est bien rangée.",
+    "errorIndex": 0,
+    "correctedWord": "Ta",
+    "explanation": "« Chambre » est un nom féminin, il faut utiliser « ta » et non « ton ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 954,
+    "sentence": "Ta manteau est accroché au portemanteau.",
+    "errorIndex": 0,
+    "correctedWord": "Ton",
+    "explanation": "« Manteau » est un nom masculin, il faut utiliser « ton » et non « ta ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 955,
+    "sentence": "Ton robe est très jolie.",
+    "errorIndex": 0,
+    "correctedWord": "Ta",
+    "explanation": "« Robe » est un nom féminin, il faut utiliser « ta » et non « ton ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 956,
+    "sentence": "Ces fille jouent à la marelle.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après « ces » (pluriel), le nom doit être au pluriel : « filles ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 957,
+    "sentence": "Ce maison est très ancienne.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Maison » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 958,
+    "sentence": "Cette garçon est nouveau dans l'école.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Garçon » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 959,
+    "sentence": "Ce fleur sent très bon.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Fleur » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 960,
+    "sentence": "Cette livre est passionnant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Livre » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 961,
+    "sentence": "Ce robe est magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Robe » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 962,
+    "sentence": "Cette chapeau est trop grand.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Chapeau » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 963,
+    "sentence": "Ce table est en bois de chêne.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Table » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 964,
+    "sentence": "Cette jardin est plein de fleurs.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Jardin » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 965,
+    "sentence": "Ce chaise est cassée.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Chaise » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 966,
+    "sentence": "Les fille de la classe sont sages.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après « les » (pluriel), le nom doit être au pluriel : « filles ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 967,
+    "sentence": "Des garçon jouent dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "garçons",
+    "explanation": "Après « des » (pluriel), le nom doit être au pluriel : « garçons ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 968,
+    "sentence": "Mes livre sont dans mon sac.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Après « mes » (pluriel), le nom doit être au pluriel : « livres ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 969,
+    "sentence": "Tes chaussure sont sales.",
+    "errorIndex": 1,
+    "correctedWord": "chaussures",
+    "explanation": "Après « tes » (pluriel), le nom doit être au pluriel : « chaussures ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 970,
+    "sentence": "Ses jouet sont rangés dans le coffre.",
+    "errorIndex": 1,
+    "correctedWord": "jouets",
+    "explanation": "Après « ses » (pluriel), le nom doit être au pluriel : « jouets ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 971,
+    "sentence": "Nos voisin sont très sympathiques.",
+    "errorIndex": 1,
+    "correctedWord": "voisins",
+    "explanation": "Après « nos » (pluriel), le nom doit être au pluriel : « voisins ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 972,
+    "sentence": "Vos enfant sont adorables.",
+    "errorIndex": 1,
+    "correctedWord": "enfants",
+    "explanation": "Après « vos » (pluriel), le nom doit être au pluriel : « enfants ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 973,
+    "sentence": "Leurs chat dorment au soleil.",
+    "errorIndex": 1,
+    "correctedWord": "chats",
+    "explanation": "Après « leurs » (pluriel), le nom doit être au pluriel : « chats ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 974,
+    "sentence": "Quelques minute suffisent pour finir.",
+    "errorIndex": 1,
+    "correctedWord": "minutes",
+    "explanation": "Après « quelques » (pluriel), le nom doit être au pluriel : « minutes ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 975,
+    "sentence": "Plusieurs élève sont absents aujourd'hui.",
+    "errorIndex": 1,
+    "correctedWord": "élèves",
+    "explanation": "Après « plusieurs » (pluriel), le nom doit être au pluriel : « élèves ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 976,
+    "sentence": "Certains jour il pleut beaucoup.",
+    "errorIndex": 1,
+    "correctedWord": "jours",
+    "explanation": "Après « certains » (pluriel), le nom doit être au pluriel : « jours ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 977,
+    "sentence": "Tous les matin je me lève tôt.",
+    "errorIndex": 2,
+    "correctedWord": "matins",
+    "explanation": "Après « les » (pluriel), le nom doit être au pluriel : « matins ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 978,
+    "sentence": "Chaque enfants doit ranger ses affaires.",
+    "errorIndex": 1,
+    "correctedWord": "enfant",
+    "explanation": "Après « chaque » (singulier), le nom doit être au singulier : « enfant ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 979,
+    "sentence": "Chaque élèves a un cahier.",
+    "errorIndex": 1,
+    "correctedWord": "élève",
+    "explanation": "Après « chaque » (singulier), le nom doit être au singulier : « élève ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 980,
+    "sentence": "Aucun filles n'est absente.",
+    "errorIndex": 1,
+    "correctedWord": "fille",
+    "explanation": "Après « aucun » (singulier), le nom doit être au singulier : « fille ». De plus, « aucune » serait correct au féminin.",
+    "category": "déterminants"
+  },
+  {
+    "id": 981,
+    "sentence": "Le école est fermée le mercredi.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 982,
+    "sentence": "La arbre est très grand.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 983,
+    "sentence": "Le avion vole très haut.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 984,
+    "sentence": "La eau de la rivière est froide.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 985,
+    "sentence": "Le orange est un fruit délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 986,
+    "sentence": "La étoile brille dans le ciel.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 987,
+    "sentence": "Le hiver est froid cette année.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant « hiver » (h muet), on utilise « l' » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 988,
+    "sentence": "Le été est ma saison préférée.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 989,
+    "sentence": "La image est accrochée au mur.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 990,
+    "sentence": "Le oiseau chante sur la branche.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 991,
+    "sentence": "Du pommes sont dans le panier.",
+    "errorIndex": 0,
+    "correctedWord": "Des",
+    "explanation": "« Pommes » est au pluriel, il faut utiliser « des » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 992,
+    "sentence": "Des lait est renversé sur la table.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Lait » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 993,
+    "sentence": "Du eau coule du robinet.",
+    "errorIndex": 0,
+    "correctedWord": "De l'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « de l' » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 994,
+    "sentence": "Des beurre est sur la tartine.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Beurre » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 995,
+    "sentence": "Du farine est tombée par terre.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Farine » est un nom féminin singulier, il faut utiliser « de la » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 996,
+    "sentence": "Des sucre est dans le bol.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Sucre » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 997,
+    "sentence": "Du confiture est sur la tartine.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Confiture » est un nom féminin singulier, il faut utiliser « de la » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 998,
+    "sentence": "Des pain est sur la table.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Pain » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 999,
+    "sentence": "Du salade est servie en entrée.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Salade » est un nom féminin singulier, il faut utiliser « de la » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 1000,
+    "sentence": "Des soupe est prête pour le dîner.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Soupe » est un nom féminin singulier, il faut utiliser « de la » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2171,
+    "sentence": "Le fille joue dans le jardin.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Fille » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2172,
+    "sentence": "La garçon court dans la cour.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Garçon » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2173,
+    "sentence": "Le maison est grande et belle.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Maison » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2174,
+    "sentence": "La chien aboie très fort.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Chien » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2175,
+    "sentence": "Le fleur est rouge et parfumée.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Fleur » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2176,
+    "sentence": "La soleil brille dans le ciel.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Soleil » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2177,
+    "sentence": "Le lune éclaire la nuit.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Lune » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2178,
+    "sentence": "La livre est posé sur la table.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Livre » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2179,
+    "sentence": "Le porte est fermée à clé.",
+    "errorIndex": 0,
+    "correctedWord": "La",
+    "explanation": "« Porte » est un nom féminin, il faut utiliser le déterminant féminin « la » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2180,
+    "sentence": "La chat dort sur le canapé.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "« Chat » est un nom masculin, il faut utiliser le déterminant masculin « le » et non « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2181,
+    "sentence": "Un fille est arrivée en classe.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Fille » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2182,
+    "sentence": "Une garçon joue au ballon.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Garçon » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2183,
+    "sentence": "Un pomme est tombée de l'arbre.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Pomme » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2184,
+    "sentence": "Une chien court dans le parc.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Chien » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2185,
+    "sentence": "Un étoile brille dans le ciel.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Étoile » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2186,
+    "sentence": "Une oiseau chante sur la branche.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Oiseau » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2187,
+    "sentence": "Un histoire amusante fait rire les enfants.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "« Histoire » est un nom féminin, il faut utiliser « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2188,
+    "sentence": "Une lapin mange une carotte.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "« Lapin » est un nom masculin, il faut utiliser « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2189,
+    "sentence": "Mon sœur est plus grande que moi.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "« Sœur » est un nom féminin, il faut utiliser « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2190,
+    "sentence": "Ma frère joue au football.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "« Frère » est un nom masculin, il faut utiliser « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2191,
+    "sentence": "Mon mère prépare le dîner.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "« Mère » est un nom féminin, il faut utiliser « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2192,
+    "sentence": "Ma père travaille au bureau.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "« Père » est un nom masculin, il faut utiliser « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2193,
+    "sentence": "Mon trousse est dans mon cartable.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "« Trousse » est un nom féminin, il faut utiliser « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2194,
+    "sentence": "Ma cahier est sur le bureau.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "« Cahier » est un nom masculin, il faut utiliser « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2195,
+    "sentence": "Son mère est très gentille.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "« Mère » est un nom féminin, il faut utiliser « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2196,
+    "sentence": "Sa père est grand et fort.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "« Père » est un nom masculin, il faut utiliser « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2197,
+    "sentence": "Son maison est au bout de la rue.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "« Maison » est un nom féminin, il faut utiliser « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2198,
+    "sentence": "Sa chien est un labrador.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "« Chien » est un nom masculin, il faut utiliser « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2199,
+    "sentence": "Son voiture est garée devant la maison.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "« Voiture » est un nom féminin, il faut utiliser « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2200,
+    "sentence": "Sa vélo est rouge et rapide.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "« Vélo » est un nom masculin, il faut utiliser « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2201,
+    "sentence": "Ton sœur est dans ma classe.",
+    "errorIndex": 0,
+    "correctedWord": "Ta",
+    "explanation": "« Sœur » est un nom féminin, il faut utiliser « ta » et non « ton ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2202,
+    "sentence": "Ta frère est très drôle.",
+    "errorIndex": 0,
+    "correctedWord": "Ton",
+    "explanation": "« Frère » est un nom masculin, il faut utiliser « ton » et non « ta ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2203,
+    "sentence": "Ton chambre est bien rangée.",
+    "errorIndex": 0,
+    "correctedWord": "Ta",
+    "explanation": "« Chambre » est un nom féminin, il faut utiliser « ta » et non « ton ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2204,
+    "sentence": "Ta manteau est accroché au portemanteau.",
+    "errorIndex": 0,
+    "correctedWord": "Ton",
+    "explanation": "« Manteau » est un nom masculin, il faut utiliser « ton » et non « ta ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2205,
+    "sentence": "Ton robe est très jolie.",
+    "errorIndex": 0,
+    "correctedWord": "Ta",
+    "explanation": "« Robe » est un nom féminin, il faut utiliser « ta » et non « ton ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2206,
+    "sentence": "Ces fille jouent à la marelle.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après « ces » (pluriel), le nom doit être au pluriel : « filles ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2207,
+    "sentence": "Ce maison est très ancienne.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Maison » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2208,
+    "sentence": "Cette garçon est nouveau dans l'école.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Garçon » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2209,
+    "sentence": "Ce fleur sent très bon.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Fleur » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2210,
+    "sentence": "Cette livre est passionnant.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Livre » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2211,
+    "sentence": "Ce robe est magnifique.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Robe » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2212,
+    "sentence": "Cette chapeau est trop grand.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Chapeau » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2213,
+    "sentence": "Ce table est en bois de chêne.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Table » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2214,
+    "sentence": "Cette jardin est plein de fleurs.",
+    "errorIndex": 0,
+    "correctedWord": "Ce",
+    "explanation": "« Jardin » est un nom masculin, il faut utiliser « ce » et non « cette ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2215,
+    "sentence": "Ce chaise est cassée.",
+    "errorIndex": 0,
+    "correctedWord": "Cette",
+    "explanation": "« Chaise » est un nom féminin, il faut utiliser « cette » et non « ce ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2216,
+    "sentence": "Les fille de la classe sont sages.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après « les » (pluriel), le nom doit être au pluriel : « filles ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2217,
+    "sentence": "Des garçon jouent dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "garçons",
+    "explanation": "Après « des » (pluriel), le nom doit être au pluriel : « garçons ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2218,
+    "sentence": "Mes livre sont dans mon sac.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Après « mes » (pluriel), le nom doit être au pluriel : « livres ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2219,
+    "sentence": "Tes chaussure sont sales.",
+    "errorIndex": 1,
+    "correctedWord": "chaussures",
+    "explanation": "Après « tes » (pluriel), le nom doit être au pluriel : « chaussures ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2220,
+    "sentence": "Ses jouet sont rangés dans le coffre.",
+    "errorIndex": 1,
+    "correctedWord": "jouets",
+    "explanation": "Après « ses » (pluriel), le nom doit être au pluriel : « jouets ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2221,
+    "sentence": "Nos voisin sont très sympathiques.",
+    "errorIndex": 1,
+    "correctedWord": "voisins",
+    "explanation": "Après « nos » (pluriel), le nom doit être au pluriel : « voisins ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2222,
+    "sentence": "Vos enfant sont adorables.",
+    "errorIndex": 1,
+    "correctedWord": "enfants",
+    "explanation": "Après « vos » (pluriel), le nom doit être au pluriel : « enfants ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2223,
+    "sentence": "Leurs chat dorment au soleil.",
+    "errorIndex": 1,
+    "correctedWord": "chats",
+    "explanation": "Après « leurs » (pluriel), le nom doit être au pluriel : « chats ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2224,
+    "sentence": "Quelques minute suffisent pour finir.",
+    "errorIndex": 1,
+    "correctedWord": "minutes",
+    "explanation": "Après « quelques » (pluriel), le nom doit être au pluriel : « minutes ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2225,
+    "sentence": "Plusieurs élève sont absents aujourd'hui.",
+    "errorIndex": 1,
+    "correctedWord": "élèves",
+    "explanation": "Après « plusieurs » (pluriel), le nom doit être au pluriel : « élèves ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2226,
+    "sentence": "Certains jour il pleut beaucoup.",
+    "errorIndex": 1,
+    "correctedWord": "jours",
+    "explanation": "Après « certains » (pluriel), le nom doit être au pluriel : « jours ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2227,
+    "sentence": "Tous les matin je me lève tôt.",
+    "errorIndex": 2,
+    "correctedWord": "matins",
+    "explanation": "Après « les » (pluriel), le nom doit être au pluriel : « matins ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2228,
+    "sentence": "Chaque enfants doit ranger ses affaires.",
+    "errorIndex": 1,
+    "correctedWord": "enfant",
+    "explanation": "Après « chaque » (singulier), le nom doit être au singulier : « enfant ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2229,
+    "sentence": "Chaque élèves a un cahier.",
+    "errorIndex": 1,
+    "correctedWord": "élève",
+    "explanation": "Après « chaque » (singulier), le nom doit être au singulier : « élève ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2230,
+    "sentence": "Aucun filles n'est absente.",
+    "errorIndex": 1,
+    "correctedWord": "fille",
+    "explanation": "Après « aucun » (singulier), le nom doit être au singulier : « fille ». De plus, « aucune » serait correct au féminin.",
+    "category": "déterminants"
+  },
+  {
+    "id": 2231,
+    "sentence": "Le école est fermée le mercredi.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2232,
+    "sentence": "La arbre est très grand.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2233,
+    "sentence": "Le avion vole très haut.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2234,
+    "sentence": "La eau de la rivière est froide.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2235,
+    "sentence": "Le orange est un fruit délicieux.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2236,
+    "sentence": "La étoile brille dans le ciel.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2237,
+    "sentence": "Le hiver est froid cette année.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant « hiver » (h muet), on utilise « l' » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2238,
+    "sentence": "Le été est ma saison préférée.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2239,
+    "sentence": "La image est accrochée au mur.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2240,
+    "sentence": "Le oiseau chante sur la branche.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « l' » et non « le » ou « la ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2241,
+    "sentence": "Du pommes sont dans le panier.",
+    "errorIndex": 0,
+    "correctedWord": "Des",
+    "explanation": "« Pommes » est au pluriel, il faut utiliser « des » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2242,
+    "sentence": "Des lait est renversé sur la table.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Lait » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2243,
+    "sentence": "Du eau coule du robinet.",
+    "errorIndex": 0,
+    "correctedWord": "De l'",
+    "explanation": "Devant un mot commençant par une voyelle, on utilise « de l' » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2244,
+    "sentence": "Des beurre est sur la tartine.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Beurre » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2245,
+    "sentence": "Du farine est tombée par terre.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Farine » est un nom féminin singulier, il faut utiliser « de la » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2246,
+    "sentence": "Des sucre est dans le bol.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Sucre » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2247,
+    "sentence": "Du confiture est sur la tartine.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Confiture » est un nom féminin singulier, il faut utiliser « de la » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2248,
+    "sentence": "Des pain est sur la table.",
+    "errorIndex": 0,
+    "correctedWord": "Du",
+    "explanation": "« Pain » est un nom singulier masculin, il faut utiliser « du » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2249,
+    "sentence": "Du salade est servie en entrée.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Salade » est un nom féminin singulier, il faut utiliser « de la » et non « du ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2250,
+    "sentence": "Des soupe est prête pour le dîner.",
+    "errorIndex": 0,
+    "correctedWord": "De la",
+    "explanation": "« Soupe » est un nom féminin singulier, il faut utiliser « de la » et non « des ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2641,
+    "sentence": "Le garçon mange une pomme.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Le » est un article défini masculin singulier correct devant « garçon » ; « une » est un article indéfini féminin singulier correct devant « pomme ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2642,
+    "sentence": "La fille lit un livre.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« La » est un article défini féminin singulier correct devant « fille » ; « un » est un article indéfini masculin singulier correct devant « livre ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2643,
+    "sentence": "Les enfants jouent dans les jardins.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Les » est un article défini pluriel correct devant « enfants » et « jardins ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2644,
+    "sentence": "Mon chat dort sur le canapé.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Mon » est un déterminant possessif masculin singulier correct devant « chat ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2645,
+    "sentence": "Ma mère prépare le repas.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Ma » est un déterminant possessif féminin singulier correct devant « mère ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2646,
+    "sentence": "Ses amis viennent demain.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Ses » est un déterminant possessif pluriel correct devant « amis ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2647,
+    "sentence": "Cette robe est très jolie.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Cette » est un déterminant démonstratif féminin singulier correct devant « robe ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2648,
+    "sentence": "Ce matin, il pleut.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Ce » est un déterminant démonstratif masculin singulier correct devant « matin ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2649,
+    "sentence": "Ces fleurs sentent bon.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Ces » est un déterminant démonstratif pluriel correct devant « fleurs ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2650,
+    "sentence": "Notre école est grande.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« Notre » est un déterminant possessif correct devant « école ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2861,
+    "sentence": "Le enfants veulent aller au parc et ils peuvent y jouer jusqu'à six heures du soir.",
+    "errorIndex": 0,
+    "correctedWord": "Les",
+    "explanation": "Le nom « enfants » est au pluriel, donc le déterminant doit être « les » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2862,
+    "sentence": "Ma frère veut un nouveau vélo et il peut le demander à papa pour son anniversaire.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "Le nom « frère » est masculin, donc le déterminant possessif doit être « mon » et non « ma ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2863,
+    "sentence": "Un grande maison se trouve au bout de la rue et on peut la voir depuis le parc.",
+    "errorIndex": 0,
+    "correctedWord": "Une",
+    "explanation": "Le nom « maison » est féminin, donc le déterminant doit être « une » et non « un ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2864,
+    "sentence": "Mon sœur veut jouer avec ses amies et elle peut aller chez elles cet après-midi.",
+    "errorIndex": 0,
+    "correctedWord": "Ma",
+    "explanation": "Le nom « sœur » est féminin, donc le déterminant possessif doit être « ma » et non « mon ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2865,
+    "sentence": "Les chat de la voisine veulent sortir et ils peuvent grimper sur le mur du jardin.",
+    "errorIndex": 1,
+    "correctedWord": "chats",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « chats » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2866,
+    "sentence": "Son mère prépare le repas et elle veut faire un bon gâteau pour le dessert ce soir.",
+    "errorIndex": 0,
+    "correctedWord": "Sa",
+    "explanation": "Le nom « mère » est féminin, donc le déterminant possessif doit être « sa » et non « son ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2867,
+    "sentence": "Le fleurs du jardin sont très belles et maman veut les cueillir pour décorer la maison.",
+    "errorIndex": 0,
+    "correctedWord": "Les",
+    "explanation": "Le nom « fleurs » est au pluriel, donc le déterminant doit être « les » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2868,
+    "sentence": "Sa père travaille à la boulangerie et il peut ramener du bon pain chaque soir.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "Le nom « père » est masculin, donc le déterminant possessif doit être « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2869,
+    "sentence": "Une petit chien court dans le parc et il veut jouer avec tous les enfants qu'il voit.",
+    "errorIndex": 0,
+    "correctedWord": "Un",
+    "explanation": "Le nom « chien » est masculin, donc le déterminant doit être « un » et non « une ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2870,
+    "sentence": "Leur parents veulent partir en vacances et ils peuvent aller à la montagne cet été.",
+    "errorIndex": 0,
+    "correctedWord": "Leurs",
+    "explanation": "Le nom « parents » est au pluriel, donc le déterminant possessif doit être « leurs » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2871,
+    "sentence": "Le école est fermée aujourd'hui et les enfants peuvent rester à la maison pour jouer.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un nom commençant par une voyelle, on fait l'élision : « l'école » et non « le école ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2872,
+    "sentence": "Ces chien aboient très fort la nuit et les voisins ne peuvent pas dormir tranquillement.",
+    "errorIndex": 1,
+    "correctedWord": "chiens",
+    "explanation": "Le déterminant « ces » indique le pluriel, donc le nom doit être « chiens » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2873,
+    "sentence": "Ma ami veut venir à la maison et elle peut rester pour le goûter cet après-midi.",
+    "errorIndex": 0,
+    "correctedWord": "Mon",
+    "explanation": "Devant un nom féminin commençant par une voyelle, on utilise « mon » pour l'euphonie : « mon amie ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2874,
+    "sentence": "Le oiseaux chantent dans les arbres et ils veulent construire un nid pour leurs petits.",
+    "errorIndex": 0,
+    "correctedWord": "Les",
+    "explanation": "Le nom « oiseaux » est au pluriel, donc le déterminant doit être « les » et non « le ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2875,
+    "sentence": "Ses livre sont sur la table et il veut les ranger dans son cartable avant de partir.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Le déterminant « ses » indique le pluriel, donc le nom doit être « livres » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2946,
+    "sentence": "Le chien de la voisine veut sortir et son maître ne peut pas le promener aujourd'hui.",
+    "errorIndex": 0,
+    "correctedWord": "Le",
+    "explanation": "La phrase est correcte : « le » est bien le déterminant masculin singulier devant « chien ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2947,
+    "sentence": "Ses cahier sont dans le cartable et il veut les sortir pour faire ses devoirs ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "cahiers",
+    "explanation": "Le déterminant « ses » indique le pluriel, donc le nom doit être « cahiers » avec un « s ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2948,
+    "sentence": "Le arbre du jardin est très grand et il peut donner de l'ombre à toute la famille.",
+    "errorIndex": 0,
+    "correctedWord": "L'",
+    "explanation": "Devant un nom commençant par une voyelle, on fait l'élision : « l'arbre » et non « le arbre ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2949,
+    "sentence": "Sa chien est très gentil et il veut toujours jouer avec les enfants du quartier.",
+    "errorIndex": 0,
+    "correctedWord": "Son",
+    "explanation": "Le nom « chien » est masculin, donc le déterminant possessif doit être « son » et non « sa ».",
+    "category": "déterminants"
+  },
+  {
+    "id": 2950,
+    "sentence": "Leur maison sont très grandes et ils peuvent y organiser de belles fêtes pour leurs amis.",
+    "errorIndex": 0,
+    "correctedWord": "Leurs",
+    "explanation": "Le nom « maison » doit être au pluriel (« maisons ») avec « leurs » : « Leurs maisons sont très grandes ».",
+    "category": "déterminants"
+  }
+]

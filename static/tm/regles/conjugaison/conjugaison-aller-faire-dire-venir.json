@@ -1,0 +1,522 @@
+[
+  {
+    "id": 3101,
+    "sentence": "Je vas à l'école tous les matins à pied avec ma sœur et mon voisin.",
+    "errorIndex": 1,
+    "correctedWord": "vais",
+    "explanation": "Le verbe « aller » avec « je » s'écrit « vais » et non « vas » (2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3102,
+    "sentence": "Tu vas chez le dentiste cet après-midi et maman t'accompagne en voiture.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vas » est bien la conjugaison de « aller » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3103,
+    "sentence": "Mon frère va au cinéma avec ses amis et il vont voir le nouveau film.",
+    "errorIndex": 9,
+    "correctedWord": "ils",
+    "explanation": "La phrase est correcte pour « va » mais « il vont » devrait être « ils vont » (pluriel).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3104,
+    "sentence": "Nous allont à la piscine chaque mercredi et nous nageons pendant une heure.",
+    "errorIndex": 1,
+    "correctedWord": "allons",
+    "explanation": "Le verbe « aller » avec « nous » s'écrit « allons » et non « allont ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3105,
+    "sentence": "Vous allez au parc cet après-midi et vous pourrez jouer sur les balançoires.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allez » est bien la conjugaison de « aller » avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3106,
+    "sentence": "Les enfants va à la cantine tous les jours et ils mangent avec leurs amis.",
+    "errorIndex": 2,
+    "correctedWord": "vont",
+    "explanation": "Le verbe « aller » avec « les enfants » (ils) s'écrit « vont » et non « va ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3107,
+    "sentence": "Je fais mes devoirs dans ma chambre et ensuite je vais jouer dans le jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « fais » (faire) et « vais » (aller) sont bien conjugués avec « je ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3108,
+    "sentence": "Tu fait un beau dessin pour la fête des mères et ta maman sera très contente.",
+    "errorIndex": 1,
+    "correctedWord": "fais",
+    "explanation": "Le verbe « faire » avec « tu » s'écrit « fais » et non « fait » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3109,
+    "sentence": "Ma sœur fait un gâteau au chocolat et elle le décore avec des bonbons colorés.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « fait » est bien la conjugaison de « faire » avec « elle ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3110,
+    "sentence": "Nous faison du sport tous les mardis et nous jouons au basket dans le gymnase.",
+    "errorIndex": 1,
+    "correctedWord": "faisons",
+    "explanation": "Le verbe « faire » avec « nous » s'écrit « faisons » et non « faison ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3111,
+    "sentence": "Vous faisez du bruit et le professeur vous demande de vous calmer tout de suite.",
+    "errorIndex": 1,
+    "correctedWord": "faites",
+    "explanation": "Le verbe « faire » avec « vous » s'écrit « faites » et non « faisez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3112,
+    "sentence": "Les élèves fait un exposé sur les animaux de la forêt devant toute la classe.",
+    "errorIndex": 2,
+    "correctedWord": "font",
+    "explanation": "Le verbe « faire » avec « les élèves » (ils) s'écrit « font » et non « fait ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3113,
+    "sentence": "Je dit bonjour à la maîtresse chaque matin quand j'arrive dans la classe.",
+    "errorIndex": 1,
+    "correctedWord": "dis",
+    "explanation": "Le verbe « dire » avec « je » s'écrit « dis » et non « dit » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3114,
+    "sentence": "Tu dis toujours la vérité et tes parents sont très fiers de toi pour cela.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dis » est bien la conjugaison de « dire » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3115,
+    "sentence": "Mon père dis qu'il faut se coucher tôt pour être en forme le lendemain.",
+    "errorIndex": 2,
+    "correctedWord": "dit",
+    "explanation": "Le verbe « dire » avec « mon père » (il) s'écrit « dit » et non « dis » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3116,
+    "sentence": "Nous disons merci à la dame qui nous a aidés à traverser la grande rue.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « disons » est bien la conjugaison de « dire » avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3117,
+    "sentence": "Vous disez des bêtises et la maîtresse n'est pas contente de votre comportement.",
+    "errorIndex": 1,
+    "correctedWord": "dites",
+    "explanation": "Le verbe « dire » avec « vous » s'écrit « dites » et non « disez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3118,
+    "sentence": "Les enfants dit qu'ils veulent aller au parc mais il pleut trop fort dehors.",
+    "errorIndex": 2,
+    "correctedWord": "disent",
+    "explanation": "Le verbe « dire » avec « les enfants » (ils) s'écrit « disent » et non « dit ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3119,
+    "sentence": "Je vien chez toi après l'école et nous pourrons jouer ensemble dans ta chambre.",
+    "errorIndex": 1,
+    "correctedWord": "viens",
+    "explanation": "Le verbe « venir » avec « je » s'écrit « viens » et non « vien ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3120,
+    "sentence": "Tu viens à la fête de samedi et tu pourras rencontrer tous mes amis.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viens » est bien la conjugaison de « venir » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3121,
+    "sentence": "Ma cousine viens nous voir ce week-end et elle reste dormir à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "vient",
+    "explanation": "Le verbe « venir » avec « ma cousine » (elle) s'écrit « vient » et non « viens » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3122,
+    "sentence": "Nous venon de finir nos devoirs et nous pouvons maintenant aller jouer dehors.",
+    "errorIndex": 1,
+    "correctedWord": "venons",
+    "explanation": "Le verbe « venir » avec « nous » s'écrit « venons » et non « venon ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3123,
+    "sentence": "Vous venez souvent nous rendre visite et nous sommes toujours contents de vous voir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « venez » est bien la conjugaison de « venir » avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3124,
+    "sentence": "Les amis de mon frère vient à la maison tous les samedis pour jouer ensemble.",
+    "errorIndex": 5,
+    "correctedWord": "viennent",
+    "explanation": "Le verbe « venir » avec « les amis » (ils) s'écrit « viennent » et non « vient ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3125,
+    "sentence": "Je fais un puzzle avec ma sœur et nous allons le finir avant le dîner.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « fais » (faire) et « allons » (aller) sont bien conjugués.",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3176,
+    "sentence": "Je va au parc avec mon chien et nous allons nous promener le long de la rivière.",
+    "errorIndex": 1,
+    "correctedWord": "vais",
+    "explanation": "Le verbe « aller » avec « je » s'écrit « vais » et non « va » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3177,
+    "sentence": "Les filles va à la danse tous les mercredis et elles adorent leur professeur.",
+    "errorIndex": 2,
+    "correctedWord": "vont",
+    "explanation": "Le verbe « aller » avec « les filles » (elles) s'écrit « vont » et non « va ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3178,
+    "sentence": "Tu fait toujours tes devoirs en premier et ensuite tu vas jouer dehors.",
+    "errorIndex": 1,
+    "correctedWord": "fais",
+    "explanation": "Le verbe « faire » avec « tu » s'écrit « fais » et non « fait » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3179,
+    "sentence": "Les élèves fait du bruit dans le couloir et le directeur n'est pas content.",
+    "errorIndex": 2,
+    "correctedWord": "font",
+    "explanation": "Le verbe « faire » avec « les élèves » (ils) s'écrit « font » et non « fait ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3180,
+    "sentence": "Nous faisons un gâteau pour l'anniversaire de papa et il sera très content.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « faisons » est bien la conjugaison de « faire » avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3181,
+    "sentence": "Vous faisez trop de bruit et les voisins se plaignent chaque soir.",
+    "errorIndex": 1,
+    "correctedWord": "faites",
+    "explanation": "Le verbe « faire » avec « vous » s'écrit « faites » et non « faisez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3182,
+    "sentence": "Je dit toujours merci quand quelqu'un me donne quelque chose de gentil.",
+    "errorIndex": 1,
+    "correctedWord": "dis",
+    "explanation": "Le verbe « dire » avec « je » s'écrit « dis » et non « dit » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3183,
+    "sentence": "Les enfants dit qu'ils veulent manger des frites et pas de la soupe.",
+    "errorIndex": 2,
+    "correctedWord": "disent",
+    "explanation": "Le verbe « dire » avec « les enfants » (ils) s'écrit « disent » et non « dit ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3184,
+    "sentence": "Vous disez toujours la même chose et personne ne vous écoute plus maintenant.",
+    "errorIndex": 1,
+    "correctedWord": "dites",
+    "explanation": "Le verbe « dire » avec « vous » s'écrit « dites » et non « disez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3185,
+    "sentence": "Ma mère dis qu'il faut manger des légumes pour être en bonne santé.",
+    "errorIndex": 2,
+    "correctedWord": "dit",
+    "explanation": "Le verbe « dire » avec « ma mère » (elle) s'écrit « dit » et non « dis » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3186,
+    "sentence": "Je vien de finir mon dessin et je vais le montrer à la maîtresse.",
+    "errorIndex": 1,
+    "correctedWord": "viens",
+    "explanation": "Le verbe « venir » avec « je » s'écrit « viens » et non « vien ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3187,
+    "sentence": "Les grands-parents vient nous voir chaque dimanche et ils apportent des gâteaux.",
+    "errorIndex": 2,
+    "correctedWord": "viennent",
+    "explanation": "Le verbe « venir » avec « les grands-parents » (ils) s'écrit « viennent » et non « vient ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3188,
+    "sentence": "Mon cousin viens à la maison ce week-end et nous allons jouer ensemble.",
+    "errorIndex": 2,
+    "correctedWord": "vient",
+    "explanation": "Le verbe « venir » avec « mon cousin » (il) s'écrit « vient » et non « viens » (1re/2e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3189,
+    "sentence": "Nous venon juste d'arriver et nous sommes déjà fatigués par le long voyage.",
+    "errorIndex": 1,
+    "correctedWord": "venons",
+    "explanation": "Le verbe « venir » avec « nous » s'écrit « venons » et non « venon ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3190,
+    "sentence": "Tu vas à la boulangerie acheter du pain et tu fais aussi les courses.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vas » (aller) et « fais » (faire) sont bien conjugués avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3216,
+    "sentence": "Les enfants va au cinéma avec leur père et ils vont voir un film d'aventure.",
+    "errorIndex": 2,
+    "correctedWord": "vont",
+    "explanation": "Le verbe « aller » avec « les enfants » (ils) s'écrit « vont » et non « va ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3217,
+    "sentence": "Je fais la vaisselle pendant que tu fait le ménage dans le salon.",
+    "errorIndex": 7,
+    "correctedWord": "fais",
+    "explanation": "Le verbe « faire » avec « tu » s'écrit « fais » et non « fait » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3218,
+    "sentence": "Les parents dit aux enfants de se coucher tôt pour être en forme demain.",
+    "errorIndex": 2,
+    "correctedWord": "disent",
+    "explanation": "Le verbe « dire » avec « les parents » (ils) s'écrit « disent » et non « dit ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3219,
+    "sentence": "Ma tante viens de Lyon pour nous rendre visite et elle reste trois jours.",
+    "errorIndex": 2,
+    "correctedWord": "vient",
+    "explanation": "Le verbe « venir » avec « ma tante » (elle) s'écrit « vient » et non « viens ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3220,
+    "sentence": "Nous allons au marché et nous faisons les courses pour toute la semaine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allons » (aller) et « faisons » (faire) sont bien conjugués avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3244,
+    "sentence": "Je va chez le docteur cet après-midi parce que j'ai mal à la gorge.",
+    "errorIndex": 1,
+    "correctedWord": "vais",
+    "explanation": "Le verbe « aller » avec « je » s'écrit « vais » et non « va » (3e personne).",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3245,
+    "sentence": "Les voisins fait du bruit tous les soirs et nous ne pouvons pas dormir.",
+    "errorIndex": 2,
+    "correctedWord": "font",
+    "explanation": "Le verbe « faire » avec « les voisins » (ils) s'écrit « font » et non « fait ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3246,
+    "sentence": "Mon professeur dis que je suis un bon élève et que je travaille très bien.",
+    "errorIndex": 2,
+    "correctedWord": "dit",
+    "explanation": "Le verbe « dire » avec « mon professeur » (il) s'écrit « dit » et non « dis ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3247,
+    "sentence": "Les cousins vient de Paris pour les vacances et ils restent une semaine.",
+    "errorIndex": 2,
+    "correctedWord": "viennent",
+    "explanation": "Le verbe « venir » avec « les cousins » (ils) s'écrit « viennent » et non « vient ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3248,
+    "sentence": "Nous allont au zoo demain et nous verrons les lions et les éléphants.",
+    "errorIndex": 1,
+    "correctedWord": "allons",
+    "explanation": "Le verbe « aller » avec « nous » s'écrit « allons » et non « allont ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3249,
+    "sentence": "Vous faisez la cuisine ce soir et nous faisons la vaisselle après le repas.",
+    "errorIndex": 1,
+    "correctedWord": "faites",
+    "explanation": "Le verbe « faire » avec « vous » s'écrit « faites » et non « faisez ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3250,
+    "sentence": "Tu dis toujours des choses gentilles et tout le monde t'aime beaucoup pour cela.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « dis » est bien la conjugaison de « dire » avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3288,
+    "sentence": "Je vais à l'école à pied et je fais le chemin avec mon voisin chaque matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vais » (aller) et « fais » (faire) sont bien conjugués avec « je ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3289,
+    "sentence": "Tu vas chez le dentiste et tu dis à maman que tu n'as pas peur du tout.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vas » (aller) et « dis » (dire) sont bien conjugués avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3290,
+    "sentence": "Ma sœur va à la danse et elle fait de grands progrès depuis le début de l'année.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « va » (aller) et « fait » (faire) sont bien conjugués avec « elle ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3291,
+    "sentence": "Nous allons au parc et nous disons bonjour à tous les gens que nous croisons.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allons » (aller) et « disons » (dire) sont bien conjugués avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3292,
+    "sentence": "Vous allez au cinéma et vous faites bien de choisir le film d'animation.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « allez » (aller) et « faites » (faire) sont bien conjugués avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3293,
+    "sentence": "Les enfants vont à la cantine et ils disent merci à la dame qui les sert.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vont » (aller) et « disent » (dire) sont bien conjugués avec « ils ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3294,
+    "sentence": "Je viens de finir mes devoirs et je dis à maman que je vais jouer dehors.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viens » (venir), « dis » (dire) et « vais » (aller) sont bien conjugués avec « je ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3295,
+    "sentence": "Tu viens à la maison et tu fais un gâteau avec moi pour le goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viens » (venir) et « fais » (faire) sont bien conjugués avec « tu ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3296,
+    "sentence": "Mon oncle vient de Lyon et il dit qu'il fait très chaud là-bas en été.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « vient » (venir), « dit » (dire) et « fait » (faire) sont bien conjugués avec « il ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3297,
+    "sentence": "Nous venons de rentrer et nous faisons nos devoirs avant d'aller jouer dehors.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « venons » (venir) et « faisons » (faire) sont bien conjugués avec « nous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3298,
+    "sentence": "Vous venez souvent nous voir et vous dites toujours des choses gentilles.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « venez » (venir) et « dites » (dire) sont bien conjugués avec « vous ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3299,
+    "sentence": "Les grands-parents viennent dimanche et ils font toujours de bons gâteaux pour nous.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « viennent » (venir) et « font » (faire) sont bien conjugués avec « ils ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  },
+  {
+    "id": 3300,
+    "sentence": "Les enfants disent qu'ils veulent aller au parc et ils y vont en courant.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « disent » (dire) et « vont » (aller) sont bien conjugués avec « ils ».",
+    "category": "conjugaison aller/faire/dire/venir"
+  }
+]

@@ -1,0 +1,394 @@
+[
+  {
+    "id": 3076,
+    "sentence": "Je suis content parce que maman a préparé mon gâteau préféré pour le goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » est le verbe « être » avec « je » et « a » est le verbe « avoir » avec « maman ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3077,
+    "sentence": "Tu es malade et tu as de la fièvre depuis hier soir après la promenade.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « es » (être) et « as » (avoir) sont bien conjugués avec « tu ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3078,
+    "sentence": "Mon frère est fatigué et il à mal à la tête après avoir joué au soleil.",
+    "errorIndex": 5,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » : « il a mal » (on peut dire « avait mal »), pas la préposition « à ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3079,
+    "sentence": "Nous somme très contents de partir en vacances à la mer avec toute la famille.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3080,
+    "sentence": "Vous avez un beau jardin et vous êtes très gentils de nous inviter chez vous.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « avez » (avoir) et « êtes » (être) sont bien conjugués avec « vous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3081,
+    "sentence": "Les enfants son fatigués et ils ont sommeil après cette longue journée d'école.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les enfants » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3082,
+    "sentence": "Je ai un nouveau cartable rouge et je suis très fier de le montrer à mes amis.",
+    "errorIndex": 1,
+    "correctedWord": "J'ai",
+    "explanation": "Devant une voyelle, « je » s'élide : « j'ai » et non « je ai ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3083,
+    "sentence": "Tu a un beau dessin et tu es très doué pour les arts plastiques en classe.",
+    "errorIndex": 1,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3084,
+    "sentence": "Ma sœur a huit ans et elle est en CE2 dans la même école que moi.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « a » (avoir) et « est » (être) sont bien conjugués avec « elle ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3085,
+    "sentence": "Nous avon trois chats à la maison et ils sont tous très mignons et câlins.",
+    "errorIndex": 1,
+    "correctedWord": "avons",
+    "explanation": "Le verbe « avoir » avec « nous » s'écrit « avons » et non « avon ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3086,
+    "sentence": "Vous ête en retard ce matin et le professeur n'est pas content du tout.",
+    "errorIndex": 1,
+    "correctedWord": "êtes",
+    "explanation": "Le verbe « être » avec « vous » s'écrit « êtes » et non « ête ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3087,
+    "sentence": "Les chats on faim et ils sont devant leur gamelle en attendant leur repas.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le verbe « avoir » avec « les chats » (ils) s'écrit « ont » et non « on ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3088,
+    "sentence": "Je suis en CE2 et j'ai une maîtresse très gentille qui nous apprend beaucoup.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3089,
+    "sentence": "Tu est le plus grand de la classe et tu as aussi les plus longs bras.",
+    "errorIndex": 1,
+    "correctedWord": "es",
+    "explanation": "Le verbe « être » avec « tu » s'écrit « es » et non « est » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3090,
+    "sentence": "Mon ami es très drôle et il a toujours des histoires amusantes à raconter.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Le verbe « être » avec « mon ami » (il) s'écrit « est » et non « es » (2e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3091,
+    "sentence": "Nous sommes dans le jardin et nous avons très chaud parce que le soleil brille.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sommes » (être) et « avons » (avoir) sont bien conjugués avec « nous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3092,
+    "sentence": "Vous avait raison et le film est vraiment très bien comme vous l'aviez dit.",
+    "errorIndex": 1,
+    "correctedWord": "avez",
+    "explanation": "Le verbe « avoir » au présent avec « vous » s'écrit « avez » et non « avait » (imparfait).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3093,
+    "sentence": "Les élèves sont sages aujourd'hui et ils on bien écouté la leçon de grammaire.",
+    "errorIndex": 7,
+    "correctedWord": "ont",
+    "explanation": "Le verbe « avoir » avec « ils » s'écrit « ont » et non « on » (pronom).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3094,
+    "sentence": "Je es content de te voir et j'ai un cadeau pour toi dans mon sac.",
+    "errorIndex": 1,
+    "correctedWord": "suis",
+    "explanation": "Le verbe « être » avec « je » s'écrit « suis » et non « es » (2e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3095,
+    "sentence": "Tu es très gentil et tu a un grand cœur pour aider les autres enfants.",
+    "errorIndex": 6,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3096,
+    "sentence": "Ma mère est infirmière et elle à beaucoup de travail à l'hôpital chaque jour.",
+    "errorIndex": 5,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » : « elle a » (on peut dire « avait »), pas la préposition « à ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3097,
+    "sentence": "Nous somme les meilleurs amis du monde et nous avons plein de souvenirs ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3098,
+    "sentence": "Vous êtes invités à la fête et vous avez le droit d'amener un ami avec vous.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « êtes » (être) et « avez » (avoir) sont bien conjugués avec « vous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3099,
+    "sentence": "Les voisins son très bruyants le soir et ils on un chien qui aboie sans arrêt.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les voisins » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3100,
+    "sentence": "Je suis fatigué mais j'ai encore envie de jouer un peu avant d'aller dormir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3166,
+    "sentence": "Tu est très gentil avec ta petite sœur et elle t'adore pour cela.",
+    "errorIndex": 1,
+    "correctedWord": "es",
+    "explanation": "Le verbe « être » avec « tu » s'écrit « es » et non « est » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3167,
+    "sentence": "Nous avons un grand jardin et nous sommes très contents d'y jouer chaque jour.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « avons » (avoir) et « sommes » (être) sont bien conjugués avec « nous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3168,
+    "sentence": "Les enfants son en retard et ils on oublié de mettre leur réveil ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les enfants » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3169,
+    "sentence": "Je suis le plus petit de la classe mais j'ai les meilleures notes en lecture.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3170,
+    "sentence": "Vous avait un beau chien et vous ête très gentils de le promener chaque jour.",
+    "errorIndex": 1,
+    "correctedWord": "avez",
+    "explanation": "Le verbe « avoir » au présent avec « vous » s'écrit « avez » et non « avait ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3171,
+    "sentence": "Tu a beaucoup de jouets dans ta chambre et tu es très chanceux d'en avoir autant.",
+    "errorIndex": 1,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3172,
+    "sentence": "Ma tante es très drôle et elle a toujours des histoires amusantes à raconter.",
+    "errorIndex": 2,
+    "correctedWord": "est",
+    "explanation": "Le verbe « être » avec « ma tante » (elle) s'écrit « est » et non « es » (2e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3173,
+    "sentence": "Nous somme fatigués après la promenade et nous avons envie de nous reposer.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3174,
+    "sentence": "Les chats son dehors et ils on trouvé un oiseau blessé dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les chats » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3175,
+    "sentence": "Vous ête les bienvenus chez nous et vous avez le droit de rester pour le dîner.",
+    "errorIndex": 1,
+    "correctedWord": "êtes",
+    "explanation": "Le verbe « être » avec « vous » s'écrit « êtes » et non « ête ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3211,
+    "sentence": "Tu es très gentil et tu a toujours un sourire pour les gens autour de toi.",
+    "errorIndex": 6,
+    "correctedWord": "as",
+    "explanation": "Le verbe « avoir » avec « tu » s'écrit « as » et non « a » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3212,
+    "sentence": "Nous sommes en vacances et nous avon hâte d'aller à la plage demain matin.",
+    "errorIndex": 5,
+    "correctedWord": "avons",
+    "explanation": "Le verbe « avoir » avec « nous » s'écrit « avons » et non « avon ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3213,
+    "sentence": "Les animaux du zoo son bien soignés et ils on de grands enclos pour vivre.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "Le verbe « être » avec « les animaux » (ils) s'écrit « sont » et non « son ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3214,
+    "sentence": "Vous ête très courageux d'avoir couru le marathon et vous avez bien mérité un repos.",
+    "errorIndex": 1,
+    "correctedWord": "êtes",
+    "explanation": "Le verbe « être » avec « vous » s'écrit « êtes » et non « ête ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3215,
+    "sentence": "Je suis prêt pour l'école et j'ai mis mon cartable sur mon dos.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3241,
+    "sentence": "Tu est le premier arrivé ce matin et tu as bien fait de te lever tôt.",
+    "errorIndex": 1,
+    "correctedWord": "es",
+    "explanation": "Le verbe « être » avec « tu » s'écrit « es » et non « est » (3e personne).",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3242,
+    "sentence": "Nous somme les champions de la course et nous avons gagné la médaille d'or.",
+    "errorIndex": 1,
+    "correctedWord": "sommes",
+    "explanation": "Le verbe « être » avec « nous » s'écrit « sommes » et non « somme ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3243,
+    "sentence": "Les poissons on besoin d'eau propre et ils sont très sensibles à la pollution.",
+    "errorIndex": 2,
+    "correctedWord": "ont",
+    "explanation": "Le verbe « avoir » avec « les poissons » (ils) s'écrit « ont » et non « on ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3282,
+    "sentence": "Je suis en CE2 et j'ai une maîtresse très gentille qui explique bien les leçons.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « suis » (être) et « ai » (avoir) sont bien conjugués avec « je ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3283,
+    "sentence": "Tu es mon meilleur ami et tu as toujours de bonnes idées pour jouer.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « es » (être) et « as » (avoir) sont bien conjugués avec « tu ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3284,
+    "sentence": "Mon père est boulanger et il a une boutique au centre du village depuis dix ans.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « est » (être) et « a » (avoir) sont bien conjugués avec « il ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3285,
+    "sentence": "Nous sommes en vacances et nous avons hâte d'aller à la plage demain matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sommes » (être) et « avons » (avoir) sont bien conjugués avec « nous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3286,
+    "sentence": "Vous êtes très gentils et vous avez préparé une belle surprise pour notre anniversaire.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « êtes » (être) et « avez » (avoir) sont bien conjugués avec « vous ».",
+    "category": "conjugaison être/avoir présent"
+  },
+  {
+    "id": 3287,
+    "sentence": "Les enfants sont contents et ils ont envie de jouer dehors toute la journée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sont » (être) et « ont » (avoir) sont bien conjugués avec « ils ».",
+    "category": "conjugaison être/avoir présent"
+  }
+]

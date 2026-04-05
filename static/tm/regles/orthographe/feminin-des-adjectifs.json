@@ -1,0 +1,1522 @@
+[
+  {
+    "id": 841,
+    "sentence": "Ma sœur est grand et mince.",
+    "errorIndex": 3,
+    "correctedWord": "grande",
+    "explanation": "L'adjectif « grand » doit s'accorder au féminin avec « sœur » : « grande ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 842,
+    "sentence": "La robe est bleu avec des fleurs.",
+    "errorIndex": 3,
+    "correctedWord": "bleue",
+    "explanation": "L'adjectif « bleu » doit s'accorder au féminin avec « robe » : « bleue ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 843,
+    "sentence": "Cette pomme est vert et acide.",
+    "errorIndex": 3,
+    "correctedWord": "verte",
+    "explanation": "L'adjectif « vert » doit s'accorder au féminin avec « pomme » : « verte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 844,
+    "sentence": "La chatte est gris et blanc.",
+    "errorIndex": 3,
+    "correctedWord": "grise",
+    "explanation": "L'adjectif « gris » doit s'accorder au féminin avec « chatte » : « grise ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 845,
+    "sentence": "Ma mère est content de mon travail.",
+    "errorIndex": 3,
+    "correctedWord": "contente",
+    "explanation": "L'adjectif « content » doit s'accorder au féminin avec « mère » : « contente ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 846,
+    "sentence": "La maison est petit mais jolie.",
+    "errorIndex": 3,
+    "correctedWord": "petite",
+    "explanation": "L'adjectif « petit » doit s'accorder au féminin avec « maison » : « petite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 847,
+    "sentence": "La jupe est court et légère.",
+    "errorIndex": 3,
+    "correctedWord": "courte",
+    "explanation": "L'adjectif « court » doit s'accorder au féminin avec « jupe » : « courte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 848,
+    "sentence": "La soupe est chaud et délicieuse.",
+    "errorIndex": 3,
+    "correctedWord": "chaude",
+    "explanation": "L'adjectif « chaud » doit s'accorder au féminin avec « soupe » : « chaude ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 849,
+    "sentence": "La porte est ouvert depuis ce matin.",
+    "errorIndex": 3,
+    "correctedWord": "ouverte",
+    "explanation": "L'adjectif « ouvert » doit s'accorder au féminin avec « porte » : « ouverte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 850,
+    "sentence": "La rivière est profond à cet endroit.",
+    "errorIndex": 3,
+    "correctedWord": "profonde",
+    "explanation": "L'adjectif « profond » doit s'accorder au féminin avec « rivière » : « profonde ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 851,
+    "sentence": "La chambre est noir quand on éteint.",
+    "errorIndex": 3,
+    "correctedWord": "noire",
+    "explanation": "L'adjectif « noir » doit s'accorder au féminin avec « chambre » : « noire ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 852,
+    "sentence": "La table est rond et en bois.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "L'adjectif « rond » doit s'accorder au féminin avec « table » : « ronde ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 853,
+    "sentence": "La tarte est bon et sucrée.",
+    "errorIndex": 3,
+    "correctedWord": "bonne",
+    "explanation": "L'adjectif « bon » fait « bonne » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 854,
+    "sentence": "La chienne est mignon et douce.",
+    "errorIndex": 3,
+    "correctedWord": "mignonne",
+    "explanation": "L'adjectif « mignon » fait « mignonne » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 855,
+    "sentence": "La lionne est gros et puissante.",
+    "errorIndex": 3,
+    "correctedWord": "grosse",
+    "explanation": "L'adjectif « gros » fait « grosse » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 856,
+    "sentence": "La réponse est faux et incomplète.",
+    "errorIndex": 3,
+    "correctedWord": "fausse",
+    "explanation": "L'adjectif « faux » fait « fausse » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 857,
+    "sentence": "La glace est doux et crémeuse.",
+    "errorIndex": 3,
+    "correctedWord": "douce",
+    "explanation": "L'adjectif « doux » fait « douce » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 858,
+    "sentence": "La nuit est long en hiver.",
+    "errorIndex": 3,
+    "correctedWord": "longue",
+    "explanation": "L'adjectif « long » fait « longue » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 859,
+    "sentence": "La forêt est sec en été.",
+    "errorIndex": 3,
+    "correctedWord": "sèche",
+    "explanation": "L'adjectif « sec » fait « sèche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 860,
+    "sentence": "La peau est blanc comme la neige.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "L'adjectif « blanc » fait « blanche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 861,
+    "sentence": "La vache est gras après l'été.",
+    "errorIndex": 3,
+    "correctedWord": "grasse",
+    "explanation": "L'adjectif « gras » fait « grasse » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 862,
+    "sentence": "La fille est sportif et courageuse.",
+    "errorIndex": 3,
+    "correctedWord": "sportive",
+    "explanation": "L'adjectif « sportif » fait « sportive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 863,
+    "sentence": "La chatte est attentif à chaque bruit.",
+    "errorIndex": 3,
+    "correctedWord": "attentive",
+    "explanation": "L'adjectif « attentif » fait « attentive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 864,
+    "sentence": "La directrice est actif et dynamique.",
+    "errorIndex": 3,
+    "correctedWord": "active",
+    "explanation": "L'adjectif « actif » fait « active » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 865,
+    "sentence": "La musique est vif et entraînante.",
+    "errorIndex": 3,
+    "correctedWord": "vive",
+    "explanation": "L'adjectif « vif » fait « vive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 866,
+    "sentence": "La fête est joyeux et colorée.",
+    "errorIndex": 3,
+    "correctedWord": "joyeuse",
+    "explanation": "L'adjectif « joyeux » fait « joyeuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 867,
+    "sentence": "La princesse est heureux dans son château.",
+    "errorIndex": 3,
+    "correctedWord": "heureuse",
+    "explanation": "L'adjectif « heureux » fait « heureuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 868,
+    "sentence": "La route est dangereux la nuit.",
+    "errorIndex": 3,
+    "correctedWord": "dangereuse",
+    "explanation": "L'adjectif « dangereux » fait « dangereuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 869,
+    "sentence": "La soirée est merveilleux et magique.",
+    "errorIndex": 3,
+    "correctedWord": "merveilleuse",
+    "explanation": "L'adjectif « merveilleux » fait « merveilleuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 870,
+    "sentence": "La pluie est nombreux en automne.",
+    "errorIndex": 3,
+    "correctedWord": "nombreuse",
+    "explanation": "L'adjectif « nombreux » fait « nombreuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 871,
+    "sentence": "La chanson est doux et mélodieuse.",
+    "errorIndex": 3,
+    "correctedWord": "douce",
+    "explanation": "L'adjectif « doux » fait « douce » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 872,
+    "sentence": "La boulangère est gentil avec les enfants.",
+    "errorIndex": 3,
+    "correctedWord": "gentille",
+    "explanation": "L'adjectif « gentil » fait « gentille » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 873,
+    "sentence": "La reine est cruel et méchante.",
+    "errorIndex": 3,
+    "correctedWord": "cruelle",
+    "explanation": "L'adjectif « cruel » fait « cruelle » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 874,
+    "sentence": "La tarte est pareil à celle de mamie.",
+    "errorIndex": 3,
+    "correctedWord": "pareille",
+    "explanation": "L'adjectif « pareil » fait « pareille » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 875,
+    "sentence": "La journée est naturel et agréable.",
+    "errorIndex": 3,
+    "correctedWord": "naturelle",
+    "explanation": "L'adjectif « naturel » fait « naturelle » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 876,
+    "sentence": "La situation est réel et inquiétante.",
+    "errorIndex": 3,
+    "correctedWord": "réelle",
+    "explanation": "L'adjectif « réel » fait « réelle » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 877,
+    "sentence": "La recette est ancien et traditionnelle.",
+    "errorIndex": 3,
+    "correctedWord": "ancienne",
+    "explanation": "L'adjectif « ancien » fait « ancienne » au féminin (doublement du n + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 878,
+    "sentence": "La chatte est européen et tigrée.",
+    "errorIndex": 3,
+    "correctedWord": "européenne",
+    "explanation": "L'adjectif « européen » fait « européenne » au féminin (doublement du n + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 879,
+    "sentence": "La voisine est italien et très gentille.",
+    "errorIndex": 3,
+    "correctedWord": "italienne",
+    "explanation": "L'adjectif « italien » fait « italienne » au féminin (doublement du n + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 880,
+    "sentence": "La maîtresse est premier à arriver.",
+    "errorIndex": 3,
+    "correctedWord": "première",
+    "explanation": "L'adjectif « premier » fait « première » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 881,
+    "sentence": "La lumière est léger et douce.",
+    "errorIndex": 3,
+    "correctedWord": "légère",
+    "explanation": "L'adjectif « léger » fait « légère » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 882,
+    "sentence": "La brise est léger ce matin.",
+    "errorIndex": 3,
+    "correctedWord": "légère",
+    "explanation": "L'adjectif « léger » fait « légère » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 883,
+    "sentence": "La fille est fier de son dessin.",
+    "errorIndex": 3,
+    "correctedWord": "fière",
+    "explanation": "L'adjectif « fier » fait « fière » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 884,
+    "sentence": "La journée est entier et bien remplie.",
+    "errorIndex": 3,
+    "correctedWord": "entière",
+    "explanation": "L'adjectif « entier » fait « entière » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 885,
+    "sentence": "La rue est dernier à gauche.",
+    "errorIndex": 3,
+    "correctedWord": "dernière",
+    "explanation": "L'adjectif « dernier » fait « dernière » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 886,
+    "sentence": "La poule est blanc et rousse.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "L'adjectif « blanc » fait « blanche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 887,
+    "sentence": "La neige est épais sur le toit.",
+    "errorIndex": 3,
+    "correctedWord": "épaisse",
+    "explanation": "L'adjectif « épais » fait « épaisse » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 888,
+    "sentence": "La voix est bas et grave.",
+    "errorIndex": 3,
+    "correctedWord": "basse",
+    "explanation": "L'adjectif « bas » fait « basse » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 889,
+    "sentence": "La cheminée est vieux et abîmée.",
+    "errorIndex": 3,
+    "correctedWord": "vieille",
+    "explanation": "L'adjectif « vieux » fait « vieille » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 890,
+    "sentence": "La chemise est neuf et repassée.",
+    "errorIndex": 3,
+    "correctedWord": "neuve",
+    "explanation": "L'adjectif « neuf » fait « neuve » au féminin (-f → -ve).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 891,
+    "sentence": "La jument est beau et élégante.",
+    "errorIndex": 3,
+    "correctedWord": "belle",
+    "explanation": "L'adjectif « beau » fait « belle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 892,
+    "sentence": "La tour est haut et imposante.",
+    "errorIndex": 3,
+    "correctedWord": "haute",
+    "explanation": "L'adjectif « haut » doit s'accorder au féminin avec « tour » : « haute ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 893,
+    "sentence": "La pièce est étroit et sombre.",
+    "errorIndex": 3,
+    "correctedWord": "étroite",
+    "explanation": "L'adjectif « étroit » doit s'accorder au féminin avec « pièce » : « étroite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 894,
+    "sentence": "La couverture est droit sur le lit.",
+    "errorIndex": 3,
+    "correctedWord": "droite",
+    "explanation": "L'adjectif « droit » doit s'accorder au féminin avec « couverture » : « droite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 895,
+    "sentence": "La salade est frais et croquante.",
+    "errorIndex": 3,
+    "correctedWord": "fraîche",
+    "explanation": "L'adjectif « frais » fait « fraîche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 896,
+    "sentence": "La galette est plat et dorée.",
+    "errorIndex": 3,
+    "correctedWord": "plate",
+    "explanation": "L'adjectif « plat » doit s'accorder au féminin avec « galette » : « plate ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 897,
+    "sentence": "La montagne est haut et enneigée.",
+    "errorIndex": 3,
+    "correctedWord": "haute",
+    "explanation": "L'adjectif « haut » doit s'accorder au féminin avec « montagne » : « haute ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 898,
+    "sentence": "La tortue est lent mais régulière.",
+    "errorIndex": 3,
+    "correctedWord": "lente",
+    "explanation": "L'adjectif « lent » doit s'accorder au féminin avec « tortue » : « lente ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 899,
+    "sentence": "La piscine est plein en été.",
+    "errorIndex": 3,
+    "correctedWord": "pleine",
+    "explanation": "L'adjectif « plein » doit s'accorder au féminin avec « piscine » : « pleine ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 900,
+    "sentence": "La classe est silencieux pendant l'examen.",
+    "errorIndex": 3,
+    "correctedWord": "silencieuse",
+    "explanation": "L'adjectif « silencieux » fait « silencieuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 901,
+    "sentence": "La librairie est nouveau dans le quartier.",
+    "errorIndex": 3,
+    "correctedWord": "nouvelle",
+    "explanation": "L'adjectif « nouveau » fait « nouvelle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 902,
+    "sentence": "La histoire est fou et incroyable.",
+    "errorIndex": 3,
+    "correctedWord": "folle",
+    "explanation": "L'adjectif « fou » fait « folle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 903,
+    "sentence": "La pâte est mou et collante.",
+    "errorIndex": 3,
+    "correctedWord": "molle",
+    "explanation": "L'adjectif « mou » fait « molle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 904,
+    "sentence": "La robe est violet et brillante.",
+    "errorIndex": 3,
+    "correctedWord": "violette",
+    "explanation": "L'adjectif « violet » fait « violette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 905,
+    "sentence": "La chatte est muet et discrète.",
+    "errorIndex": 3,
+    "correctedWord": "muette",
+    "explanation": "L'adjectif « muet » fait « muette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 906,
+    "sentence": "La fillette est coquet et souriante.",
+    "errorIndex": 3,
+    "correctedWord": "coquette",
+    "explanation": "L'adjectif « coquet » fait « coquette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 907,
+    "sentence": "La réponse est net et précise.",
+    "errorIndex": 3,
+    "correctedWord": "nette",
+    "explanation": "L'adjectif « net » fait « nette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 908,
+    "sentence": "La chambre est propre et complet.",
+    "errorIndex": 5,
+    "correctedWord": "complète",
+    "explanation": "L'adjectif « complet » fait « complète » au féminin (-et → -ète).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 909,
+    "sentence": "La réponse est secret et mystérieuse.",
+    "errorIndex": 3,
+    "correctedWord": "secrète",
+    "explanation": "L'adjectif « secret » fait « secrète » au féminin (-et → -ète).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 910,
+    "sentence": "La maison est protecteur et chaleureuse.",
+    "errorIndex": 3,
+    "correctedWord": "protectrice",
+    "explanation": "L'adjectif « protecteur » fait « protectrice » au féminin (-teur → -trice).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 911,
+    "sentence": "La fille est menteur et malhonnête.",
+    "errorIndex": 3,
+    "correctedWord": "menteuse",
+    "explanation": "L'adjectif « menteur » fait « menteuse » au féminin (-eur → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 912,
+    "sentence": "La danseuse est charmeur et gracieuse.",
+    "errorIndex": 3,
+    "correctedWord": "charmeuse",
+    "explanation": "L'adjectif « charmeur » fait « charmeuse » au féminin (-eur → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 913,
+    "sentence": "La couleur est vif et éclatante.",
+    "errorIndex": 3,
+    "correctedWord": "vive",
+    "explanation": "L'adjectif « vif » fait « vive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 914,
+    "sentence": "La brebis est craintif et peureuse.",
+    "errorIndex": 3,
+    "correctedWord": "craintive",
+    "explanation": "L'adjectif « craintif » fait « craintive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 915,
+    "sentence": "La potion est malin et efficace.",
+    "errorIndex": 3,
+    "correctedWord": "maligne",
+    "explanation": "L'adjectif « malin » fait « maligne » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 916,
+    "sentence": "La sauce est favori de toute la famille.",
+    "errorIndex": 3,
+    "correctedWord": "favorite",
+    "explanation": "L'adjectif « favori » fait « favorite » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 917,
+    "sentence": "La terre est meuble et humide et noir.",
+    "errorIndex": 7,
+    "correctedWord": "noire",
+    "explanation": "L'adjectif « noir » doit s'accorder au féminin avec « terre » : « noire ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 918,
+    "sentence": "La soirée est parfait pour une promenade.",
+    "errorIndex": 3,
+    "correctedWord": "parfaite",
+    "explanation": "L'adjectif « parfait » doit s'accorder au féminin avec « soirée » : « parfaite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 919,
+    "sentence": "La plage est désert en hiver.",
+    "errorIndex": 3,
+    "correctedWord": "déserte",
+    "explanation": "L'adjectif « désert » doit s'accorder au féminin avec « plage » : « déserte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 920,
+    "sentence": "La journée est court en décembre.",
+    "errorIndex": 3,
+    "correctedWord": "courte",
+    "explanation": "L'adjectif « court » doit s'accorder au féminin avec « journée » : « courte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2091,
+    "sentence": "Ma sœur est grand et mince.",
+    "errorIndex": 3,
+    "correctedWord": "grande",
+    "explanation": "L'adjectif « grand » doit s'accorder au féminin avec « sœur » : « grande ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2092,
+    "sentence": "La robe est bleu avec des fleurs.",
+    "errorIndex": 3,
+    "correctedWord": "bleue",
+    "explanation": "L'adjectif « bleu » doit s'accorder au féminin avec « robe » : « bleue ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2093,
+    "sentence": "Cette pomme est vert et acide.",
+    "errorIndex": 3,
+    "correctedWord": "verte",
+    "explanation": "L'adjectif « vert » doit s'accorder au féminin avec « pomme » : « verte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2094,
+    "sentence": "La chatte est gris et blanc.",
+    "errorIndex": 3,
+    "correctedWord": "grise",
+    "explanation": "L'adjectif « gris » doit s'accorder au féminin avec « chatte » : « grise ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2095,
+    "sentence": "Ma mère est content de mon travail.",
+    "errorIndex": 3,
+    "correctedWord": "contente",
+    "explanation": "L'adjectif « content » doit s'accorder au féminin avec « mère » : « contente ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2096,
+    "sentence": "La maison est petit mais jolie.",
+    "errorIndex": 3,
+    "correctedWord": "petite",
+    "explanation": "L'adjectif « petit » doit s'accorder au féminin avec « maison » : « petite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2097,
+    "sentence": "La jupe est court et légère.",
+    "errorIndex": 3,
+    "correctedWord": "courte",
+    "explanation": "L'adjectif « court » doit s'accorder au féminin avec « jupe » : « courte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2098,
+    "sentence": "La soupe est chaud et délicieuse.",
+    "errorIndex": 3,
+    "correctedWord": "chaude",
+    "explanation": "L'adjectif « chaud » doit s'accorder au féminin avec « soupe » : « chaude ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2099,
+    "sentence": "La porte est ouvert depuis ce matin.",
+    "errorIndex": 3,
+    "correctedWord": "ouverte",
+    "explanation": "L'adjectif « ouvert » doit s'accorder au féminin avec « porte » : « ouverte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2100,
+    "sentence": "La rivière est profond à cet endroit.",
+    "errorIndex": 3,
+    "correctedWord": "profonde",
+    "explanation": "L'adjectif « profond » doit s'accorder au féminin avec « rivière » : « profonde ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2101,
+    "sentence": "La chambre est noir quand on éteint.",
+    "errorIndex": 3,
+    "correctedWord": "noire",
+    "explanation": "L'adjectif « noir » doit s'accorder au féminin avec « chambre » : « noire ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2102,
+    "sentence": "La table est rond et en bois.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "L'adjectif « rond » doit s'accorder au féminin avec « table » : « ronde ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2103,
+    "sentence": "La tarte est bon et sucrée.",
+    "errorIndex": 3,
+    "correctedWord": "bonne",
+    "explanation": "L'adjectif « bon » fait « bonne » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2104,
+    "sentence": "La chienne est mignon et douce.",
+    "errorIndex": 3,
+    "correctedWord": "mignonne",
+    "explanation": "L'adjectif « mignon » fait « mignonne » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2105,
+    "sentence": "La lionne est gros et puissante.",
+    "errorIndex": 3,
+    "correctedWord": "grosse",
+    "explanation": "L'adjectif « gros » fait « grosse » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2106,
+    "sentence": "La réponse est faux et incomplète.",
+    "errorIndex": 3,
+    "correctedWord": "fausse",
+    "explanation": "L'adjectif « faux » fait « fausse » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2107,
+    "sentence": "La glace est doux et crémeuse.",
+    "errorIndex": 3,
+    "correctedWord": "douce",
+    "explanation": "L'adjectif « doux » fait « douce » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2108,
+    "sentence": "La nuit est long en hiver.",
+    "errorIndex": 3,
+    "correctedWord": "longue",
+    "explanation": "L'adjectif « long » fait « longue » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2109,
+    "sentence": "La forêt est sec en été.",
+    "errorIndex": 3,
+    "correctedWord": "sèche",
+    "explanation": "L'adjectif « sec » fait « sèche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2110,
+    "sentence": "La peau est blanc comme la neige.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "L'adjectif « blanc » fait « blanche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2111,
+    "sentence": "La vache est gras après l'été.",
+    "errorIndex": 3,
+    "correctedWord": "grasse",
+    "explanation": "L'adjectif « gras » fait « grasse » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2112,
+    "sentence": "La fille est sportif et courageuse.",
+    "errorIndex": 3,
+    "correctedWord": "sportive",
+    "explanation": "L'adjectif « sportif » fait « sportive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2113,
+    "sentence": "La chatte est attentif à chaque bruit.",
+    "errorIndex": 3,
+    "correctedWord": "attentive",
+    "explanation": "L'adjectif « attentif » fait « attentive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2114,
+    "sentence": "La directrice est actif et dynamique.",
+    "errorIndex": 3,
+    "correctedWord": "active",
+    "explanation": "L'adjectif « actif » fait « active » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2115,
+    "sentence": "La musique est vif et entraînante.",
+    "errorIndex": 3,
+    "correctedWord": "vive",
+    "explanation": "L'adjectif « vif » fait « vive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2116,
+    "sentence": "La fête est joyeux et colorée.",
+    "errorIndex": 3,
+    "correctedWord": "joyeuse",
+    "explanation": "L'adjectif « joyeux » fait « joyeuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2117,
+    "sentence": "La princesse est heureux dans son château.",
+    "errorIndex": 3,
+    "correctedWord": "heureuse",
+    "explanation": "L'adjectif « heureux » fait « heureuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2118,
+    "sentence": "La route est dangereux la nuit.",
+    "errorIndex": 3,
+    "correctedWord": "dangereuse",
+    "explanation": "L'adjectif « dangereux » fait « dangereuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2119,
+    "sentence": "La soirée est merveilleux et magique.",
+    "errorIndex": 3,
+    "correctedWord": "merveilleuse",
+    "explanation": "L'adjectif « merveilleux » fait « merveilleuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2120,
+    "sentence": "La pluie est nombreux en automne.",
+    "errorIndex": 3,
+    "correctedWord": "nombreuse",
+    "explanation": "L'adjectif « nombreux » fait « nombreuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2121,
+    "sentence": "La chanson est doux et mélodieuse.",
+    "errorIndex": 3,
+    "correctedWord": "douce",
+    "explanation": "L'adjectif « doux » fait « douce » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2122,
+    "sentence": "La boulangère est gentil avec les enfants.",
+    "errorIndex": 3,
+    "correctedWord": "gentille",
+    "explanation": "L'adjectif « gentil » fait « gentille » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2123,
+    "sentence": "La reine est cruel et méchante.",
+    "errorIndex": 3,
+    "correctedWord": "cruelle",
+    "explanation": "L'adjectif « cruel » fait « cruelle » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2124,
+    "sentence": "La tarte est pareil à celle de mamie.",
+    "errorIndex": 3,
+    "correctedWord": "pareille",
+    "explanation": "L'adjectif « pareil » fait « pareille » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2125,
+    "sentence": "La journée est naturel et agréable.",
+    "errorIndex": 3,
+    "correctedWord": "naturelle",
+    "explanation": "L'adjectif « naturel » fait « naturelle » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2126,
+    "sentence": "La situation est réel et inquiétante.",
+    "errorIndex": 3,
+    "correctedWord": "réelle",
+    "explanation": "L'adjectif « réel » fait « réelle » au féminin (doublement du l + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2127,
+    "sentence": "La recette est ancien et traditionnelle.",
+    "errorIndex": 3,
+    "correctedWord": "ancienne",
+    "explanation": "L'adjectif « ancien » fait « ancienne » au féminin (doublement du n + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2128,
+    "sentence": "La chatte est européen et tigrée.",
+    "errorIndex": 3,
+    "correctedWord": "européenne",
+    "explanation": "L'adjectif « européen » fait « européenne » au féminin (doublement du n + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2129,
+    "sentence": "La voisine est italien et très gentille.",
+    "errorIndex": 3,
+    "correctedWord": "italienne",
+    "explanation": "L'adjectif « italien » fait « italienne » au féminin (doublement du n + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2130,
+    "sentence": "La maîtresse est premier à arriver.",
+    "errorIndex": 3,
+    "correctedWord": "première",
+    "explanation": "L'adjectif « premier » fait « première » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2131,
+    "sentence": "La lumière est léger et douce.",
+    "errorIndex": 3,
+    "correctedWord": "légère",
+    "explanation": "L'adjectif « léger » fait « légère » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2132,
+    "sentence": "La brise est léger ce matin.",
+    "errorIndex": 3,
+    "correctedWord": "légère",
+    "explanation": "L'adjectif « léger » fait « légère » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2133,
+    "sentence": "La fille est fier de son dessin.",
+    "errorIndex": 3,
+    "correctedWord": "fière",
+    "explanation": "L'adjectif « fier » fait « fière » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2134,
+    "sentence": "La journée est entier et bien remplie.",
+    "errorIndex": 3,
+    "correctedWord": "entière",
+    "explanation": "L'adjectif « entier » fait « entière » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2135,
+    "sentence": "La rue est dernier à gauche.",
+    "errorIndex": 3,
+    "correctedWord": "dernière",
+    "explanation": "L'adjectif « dernier » fait « dernière » au féminin (-er → -ère).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2136,
+    "sentence": "La poule est blanc et rousse.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "L'adjectif « blanc » fait « blanche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2137,
+    "sentence": "La neige est épais sur le toit.",
+    "errorIndex": 3,
+    "correctedWord": "épaisse",
+    "explanation": "L'adjectif « épais » fait « épaisse » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2138,
+    "sentence": "La voix est bas et grave.",
+    "errorIndex": 3,
+    "correctedWord": "basse",
+    "explanation": "L'adjectif « bas » fait « basse » au féminin (doublement de la consonne + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2139,
+    "sentence": "La cheminée est vieux et abîmée.",
+    "errorIndex": 3,
+    "correctedWord": "vieille",
+    "explanation": "L'adjectif « vieux » fait « vieille » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2140,
+    "sentence": "La chemise est neuf et repassée.",
+    "errorIndex": 3,
+    "correctedWord": "neuve",
+    "explanation": "L'adjectif « neuf » fait « neuve » au féminin (-f → -ve).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2141,
+    "sentence": "La jument est beau et élégante.",
+    "errorIndex": 3,
+    "correctedWord": "belle",
+    "explanation": "L'adjectif « beau » fait « belle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2142,
+    "sentence": "La tour est haut et imposante.",
+    "errorIndex": 3,
+    "correctedWord": "haute",
+    "explanation": "L'adjectif « haut » doit s'accorder au féminin avec « tour » : « haute ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2143,
+    "sentence": "La pièce est étroit et sombre.",
+    "errorIndex": 3,
+    "correctedWord": "étroite",
+    "explanation": "L'adjectif « étroit » doit s'accorder au féminin avec « pièce » : « étroite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2144,
+    "sentence": "La couverture est droit sur le lit.",
+    "errorIndex": 3,
+    "correctedWord": "droite",
+    "explanation": "L'adjectif « droit » doit s'accorder au féminin avec « couverture » : « droite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2145,
+    "sentence": "La salade est frais et croquante.",
+    "errorIndex": 3,
+    "correctedWord": "fraîche",
+    "explanation": "L'adjectif « frais » fait « fraîche » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2146,
+    "sentence": "La galette est plat et dorée.",
+    "errorIndex": 3,
+    "correctedWord": "plate",
+    "explanation": "L'adjectif « plat » doit s'accorder au féminin avec « galette » : « plate ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2147,
+    "sentence": "La montagne est haut et enneigée.",
+    "errorIndex": 3,
+    "correctedWord": "haute",
+    "explanation": "L'adjectif « haut » doit s'accorder au féminin avec « montagne » : « haute ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2148,
+    "sentence": "La tortue est lent mais régulière.",
+    "errorIndex": 3,
+    "correctedWord": "lente",
+    "explanation": "L'adjectif « lent » doit s'accorder au féminin avec « tortue » : « lente ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2149,
+    "sentence": "La piscine est plein en été.",
+    "errorIndex": 3,
+    "correctedWord": "pleine",
+    "explanation": "L'adjectif « plein » doit s'accorder au féminin avec « piscine » : « pleine ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2150,
+    "sentence": "La classe est silencieux pendant l'examen.",
+    "errorIndex": 3,
+    "correctedWord": "silencieuse",
+    "explanation": "L'adjectif « silencieux » fait « silencieuse » au féminin (-eux → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2151,
+    "sentence": "La librairie est nouveau dans le quartier.",
+    "errorIndex": 3,
+    "correctedWord": "nouvelle",
+    "explanation": "L'adjectif « nouveau » fait « nouvelle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2152,
+    "sentence": "La histoire est fou et incroyable.",
+    "errorIndex": 3,
+    "correctedWord": "folle",
+    "explanation": "L'adjectif « fou » fait « folle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2153,
+    "sentence": "La pâte est mou et collante.",
+    "errorIndex": 3,
+    "correctedWord": "molle",
+    "explanation": "L'adjectif « mou » fait « molle » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2154,
+    "sentence": "La robe est violet et brillante.",
+    "errorIndex": 3,
+    "correctedWord": "violette",
+    "explanation": "L'adjectif « violet » fait « violette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2155,
+    "sentence": "La chatte est muet et discrète.",
+    "errorIndex": 3,
+    "correctedWord": "muette",
+    "explanation": "L'adjectif « muet » fait « muette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2156,
+    "sentence": "La fillette est coquet et souriante.",
+    "errorIndex": 3,
+    "correctedWord": "coquette",
+    "explanation": "L'adjectif « coquet » fait « coquette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2157,
+    "sentence": "La réponse est net et précise.",
+    "errorIndex": 3,
+    "correctedWord": "nette",
+    "explanation": "L'adjectif « net » fait « nette » au féminin (doublement du t + e).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2158,
+    "sentence": "La chambre est propre et complet.",
+    "errorIndex": 5,
+    "correctedWord": "complète",
+    "explanation": "L'adjectif « complet » fait « complète » au féminin (-et → -ète).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2159,
+    "sentence": "La réponse est secret et mystérieuse.",
+    "errorIndex": 3,
+    "correctedWord": "secrète",
+    "explanation": "L'adjectif « secret » fait « secrète » au féminin (-et → -ète).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2160,
+    "sentence": "La maison est protecteur et chaleureuse.",
+    "errorIndex": 3,
+    "correctedWord": "protectrice",
+    "explanation": "L'adjectif « protecteur » fait « protectrice » au féminin (-teur → -trice).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2161,
+    "sentence": "La fille est menteur et malhonnête.",
+    "errorIndex": 3,
+    "correctedWord": "menteuse",
+    "explanation": "L'adjectif « menteur » fait « menteuse » au féminin (-eur → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2162,
+    "sentence": "La danseuse est charmeur et gracieuse.",
+    "errorIndex": 3,
+    "correctedWord": "charmeuse",
+    "explanation": "L'adjectif « charmeur » fait « charmeuse » au féminin (-eur → -euse).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2163,
+    "sentence": "La couleur est vif et éclatante.",
+    "errorIndex": 3,
+    "correctedWord": "vive",
+    "explanation": "L'adjectif « vif » fait « vive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2164,
+    "sentence": "La brebis est craintif et peureuse.",
+    "errorIndex": 3,
+    "correctedWord": "craintive",
+    "explanation": "L'adjectif « craintif » fait « craintive » au féminin (-if → -ive).",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2165,
+    "sentence": "La potion est malin et efficace.",
+    "errorIndex": 3,
+    "correctedWord": "maligne",
+    "explanation": "L'adjectif « malin » fait « maligne » au féminin. C'est un féminin irrégulier.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2166,
+    "sentence": "La sauce est favori de toute la famille.",
+    "errorIndex": 3,
+    "correctedWord": "favorite",
+    "explanation": "L'adjectif « favori » fait « favorite » au féminin.",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2167,
+    "sentence": "La terre est meuble et humide et noir.",
+    "errorIndex": 7,
+    "correctedWord": "noire",
+    "explanation": "L'adjectif « noir » doit s'accorder au féminin avec « terre » : « noire ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2168,
+    "sentence": "La soirée est parfait pour une promenade.",
+    "errorIndex": 3,
+    "correctedWord": "parfaite",
+    "explanation": "L'adjectif « parfait » doit s'accorder au féminin avec « soirée » : « parfaite ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2169,
+    "sentence": "La plage est désert en hiver.",
+    "errorIndex": 3,
+    "correctedWord": "déserte",
+    "explanation": "L'adjectif « désert » doit s'accorder au féminin avec « plage » : « déserte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2170,
+    "sentence": "La journée est court en décembre.",
+    "errorIndex": 3,
+    "correctedWord": "courte",
+    "explanation": "L'adjectif « court » doit s'accorder au féminin avec « journée » : « courte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2631,
+    "sentence": "La chatte est noire et douce.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « noire » et « douce » sont bien au féminin pour accompagner « chatte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2632,
+    "sentence": "La princesse est courageuse.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « courageuse » est bien au féminin pour accompagner « princesse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2633,
+    "sentence": "La rivière est profonde.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « profonde » est bien au féminin pour accompagner « rivière ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2634,
+    "sentence": "La tortue est lente mais régulière.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « lente » et « régulière » sont bien au féminin pour accompagner « tortue ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2635,
+    "sentence": "La chanson est douce et mélodieuse.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « douce » et « mélodieuse » sont bien au féminin pour accompagner « chanson ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2636,
+    "sentence": "La montagne est haute et enneigée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « haute » et « enneigée » sont bien au féminin pour accompagner « montagne ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2637,
+    "sentence": "La jument est rapide et élégante.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « rapide » et « élégante » sont bien au féminin pour accompagner « jument ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2638,
+    "sentence": "La forêt est sombre et mystérieuse.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « sombre » et « mystérieuse » sont bien au féminin pour accompagner « forêt ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2639,
+    "sentence": "La mer est calme et bleue.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « calme » et « bleue » sont bien au féminin pour accompagner « mer ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2640,
+    "sentence": "La souris est petite et grise.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « petite » et « grise » sont bien au féminin pour accompagner « souris ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2846,
+    "sentence": "Ma voisine est très sportif et elle peut courir pendant une heure sans s'arrêter.",
+    "errorIndex": 4,
+    "correctedWord": "sportive",
+    "explanation": "Le sujet « ma voisine » est féminin, donc l'adjectif doit être « sportive ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2847,
+    "sentence": "La chatte de mon ami est très doux et elle veut toujours se faire caresser le soir.",
+    "errorIndex": 7,
+    "correctedWord": "douce",
+    "explanation": "Le sujet « la chatte » est féminin, donc l'adjectif doit être « douce ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2848,
+    "sentence": "Ma tante est très heureux parce qu'elle peut partir en vacances à la mer cet été.",
+    "errorIndex": 4,
+    "correctedWord": "heureuse",
+    "explanation": "Le sujet « ma tante » est féminin, donc l'adjectif doit être « heureuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2849,
+    "sentence": "La rivière est très long et elle traverse plusieurs villages avant d'arriver à la mer.",
+    "errorIndex": 4,
+    "correctedWord": "longue",
+    "explanation": "Le sujet « la rivière » est féminin, donc l'adjectif doit être « longue ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2850,
+    "sentence": "Cette histoire est très amusant et ma sœur veut que je la lui raconte encore une fois.",
+    "errorIndex": 4,
+    "correctedWord": "amusante",
+    "explanation": "Le sujet « cette histoire » est féminin, donc l'adjectif doit être « amusante ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2851,
+    "sentence": "La jument du fermier est très fort et elle peut tirer la charrette toute seule facilement.",
+    "errorIndex": 6,
+    "correctedWord": "forte",
+    "explanation": "Le sujet « la jument » est féminin, donc l'adjectif doit être « forte ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2852,
+    "sentence": "Ma copine est très créatif et elle veut dessiner un grand tableau pour la fête de l'école.",
+    "errorIndex": 4,
+    "correctedWord": "créative",
+    "explanation": "Le sujet « ma copine » est féminin, donc l'adjectif doit être « créative ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2853,
+    "sentence": "La nuit est très noir et on ne peut rien voir dehors sans une lampe de poche.",
+    "errorIndex": 4,
+    "correctedWord": "noire",
+    "explanation": "Le sujet « la nuit » est féminin, donc l'adjectif doit être « noire ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2854,
+    "sentence": "Ma grand-mère est très courageux et elle veut encore faire de longues promenades chaque jour.",
+    "errorIndex": 4,
+    "correctedWord": "courageuse",
+    "explanation": "Le sujet « ma grand-mère » est féminin, donc l'adjectif doit être « courageuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2855,
+    "sentence": "La mer est très bleu aujourd'hui et nous pouvons voir les poissons nager depuis le bateau.",
+    "errorIndex": 4,
+    "correctedWord": "bleue",
+    "explanation": "Le sujet « la mer » est féminin, donc l'adjectif doit être « bleue ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2856,
+    "sentence": "Cette tarte est vraiment délicieux et maman veut en refaire une la semaine prochaine.",
+    "errorIndex": 4,
+    "correctedWord": "délicieuse",
+    "explanation": "Le sujet « cette tarte » est féminin, donc l'adjectif doit être « délicieuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2857,
+    "sentence": "La forêt est très épais et on ne peut pas voir le ciel à travers les grands arbres.",
+    "errorIndex": 4,
+    "correctedWord": "épaisse",
+    "explanation": "Le sujet « la forêt » est féminin, donc l'adjectif doit être « épaisse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2858,
+    "sentence": "Ma petite sœur est très curieux et elle veut toujours savoir comment les choses fonctionnent.",
+    "errorIndex": 5,
+    "correctedWord": "curieuse",
+    "explanation": "Le sujet « ma petite sœur » est féminin, donc l'adjectif doit être « curieuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2859,
+    "sentence": "La neige est très blanc et elle recouvre tout le jardin quand il fait froid en hiver.",
+    "errorIndex": 4,
+    "correctedWord": "blanche",
+    "explanation": "Le sujet « la neige » est féminin, donc l'adjectif doit être « blanche ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2860,
+    "sentence": "Cette chanson est très joyeux et ma sœur veut la chanter pour le spectacle de l'école.",
+    "errorIndex": 4,
+    "correctedWord": "joyeuse",
+    "explanation": "Le sujet « cette chanson » est féminin, donc l'adjectif doit être « joyeuse ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2941,
+    "sentence": "La tortue de mon frère est très lent et elle ne veut jamais se dépêcher pour manger.",
+    "errorIndex": 7,
+    "correctedWord": "lente",
+    "explanation": "Le sujet « la tortue » est féminin, donc l'adjectif doit être « lente ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2942,
+    "sentence": "Cette poupée est très mignon et ma sœur veut la garder avec elle dans son lit.",
+    "errorIndex": 4,
+    "correctedWord": "mignonne",
+    "explanation": "Le sujet « cette poupée » est féminin, donc l'adjectif doit être « mignonne ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2943,
+    "sentence": "La soupe de maman est très bon et nous voulons tous en reprendre un deuxième bol.",
+    "errorIndex": 6,
+    "correctedWord": "bonne",
+    "explanation": "Le sujet « la soupe » est féminin, donc l'adjectif doit être « bonne ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2944,
+    "sentence": "Ma nouvelle robe est très léger et je peux la porter quand il fait chaud en été.",
+    "errorIndex": 5,
+    "correctedWord": "légère",
+    "explanation": "Le sujet « ma nouvelle robe » est féminin, donc l'adjectif doit être « légère ».",
+    "category": "féminin des adjectifs"
+  },
+  {
+    "id": 2945,
+    "sentence": "La plage est très grand et nous pouvons courir dessus pendant des heures sans nous arrêter.",
+    "errorIndex": 4,
+    "correctedWord": "grande",
+    "explanation": "Le sujet « la plage » est féminin, donc l'adjectif doit être « grande ».",
+    "category": "féminin des adjectifs"
+  }
+]

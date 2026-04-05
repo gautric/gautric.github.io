@@ -1,0 +1,802 @@
+[
+  {
+    "id": 181,
+    "sentence": "Il à trois sœurs.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 182,
+    "sentence": "Elle à un petit chat.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir conjugué à la troisième personne du singulier. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 183,
+    "sentence": "Mon frère à huit ans.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 184,
+    "sentence": "Papa va a la boulangerie.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 185,
+    "sentence": "Elle à une belle robe.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 186,
+    "sentence": "Il joue a la balle.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 187,
+    "sentence": "Ma sœur à faim.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 188,
+    "sentence": "Nous allons a la plage.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 189,
+    "sentence": "Le chien à soif.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 190,
+    "sentence": "Elle habite a Paris.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 191,
+    "sentence": "Il à un vélo rouge.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 192,
+    "sentence": "Je vais a la piscine.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 193,
+    "sentence": "Maman à préparé le repas.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 194,
+    "sentence": "Il pense a son ami.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 195,
+    "sentence": "Le bébé à sommeil.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 196,
+    "sentence": "Elle commence a lire.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 197,
+    "sentence": "Mon chat à peur du chien.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 198,
+    "sentence": "Nous jouons a cache-cache.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 199,
+    "sentence": "Papa à acheté du pain.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 200,
+    "sentence": "Elle apprend a nager.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 201,
+    "sentence": "Il à trouvé un trésor.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 202,
+    "sentence": "Je donne un os a mon chien.",
+    "errorIndex": 4,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 203,
+    "sentence": "Ma sœur à froid.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 204,
+    "sentence": "Il va a la montagne.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 205,
+    "sentence": "Le chat à attrapé une souris.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 206,
+    "sentence": "Elle joue a la marelle.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 207,
+    "sentence": "Mon ami à mal au ventre.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 208,
+    "sentence": "Nous allons a la campagne.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 209,
+    "sentence": "Il à mangé tout le gâteau.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 210,
+    "sentence": "Elle aide a ranger la classe.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 211,
+    "sentence": "Le lapin à de grandes oreilles.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 212,
+    "sentence": "Il reste a la maison.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 213,
+    "sentence": "Ma copine à gagné la course.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 214,
+    "sentence": "Il arrive a courir vite.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 215,
+    "sentence": "Le chien à faim ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1431,
+    "sentence": "Il à trois sœurs.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1432,
+    "sentence": "Elle à un petit chat.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir conjugué à la troisième personne du singulier. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1433,
+    "sentence": "Mon frère à huit ans.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1434,
+    "sentence": "Papa va a la boulangerie.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1435,
+    "sentence": "Elle à une belle robe.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1436,
+    "sentence": "Il joue a la balle.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1437,
+    "sentence": "Ma sœur à faim.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1438,
+    "sentence": "Nous allons a la plage.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1439,
+    "sentence": "Le chien à soif.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1440,
+    "sentence": "Elle habite a Paris.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1441,
+    "sentence": "Il à un vélo rouge.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1442,
+    "sentence": "Je vais a la piscine.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1443,
+    "sentence": "Maman à préparé le repas.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1444,
+    "sentence": "Il pense a son ami.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1445,
+    "sentence": "Le bébé à sommeil.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1446,
+    "sentence": "Elle commence a lire.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1447,
+    "sentence": "Mon chat à peur du chien.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1448,
+    "sentence": "Nous jouons a cache-cache.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1449,
+    "sentence": "Papa à acheté du pain.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1450,
+    "sentence": "Elle apprend a nager.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1451,
+    "sentence": "Il à trouvé un trésor.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1452,
+    "sentence": "Je donne un os a mon chien.",
+    "errorIndex": 4,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1453,
+    "sentence": "Ma sœur à froid.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1454,
+    "sentence": "Il va a la montagne.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1455,
+    "sentence": "Le chat à attrapé une souris.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1456,
+    "sentence": "Elle joue a la marelle.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1457,
+    "sentence": "Mon ami à mal au ventre.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1458,
+    "sentence": "Nous allons a la campagne.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1459,
+    "sentence": "Il à mangé tout le gâteau.",
+    "errorIndex": 1,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1460,
+    "sentence": "Elle aide a ranger la classe.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1461,
+    "sentence": "Le lapin à de grandes oreilles.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1462,
+    "sentence": "Il reste a la maison.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui indique le lieu. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1463,
+    "sentence": "Ma copine à gagné la course.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir (auxiliaire du passé composé). On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1464,
+    "sentence": "Il arrive a courir vite.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Ici, « à » est une préposition qui introduit le verbe. On écrit « à » avec un accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 1465,
+    "sentence": "Le chien à faim ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici, « a » est le verbe avoir. On peut le remplacer par « avait ». On écrit « a » sans accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2541,
+    "sentence": "Il a un beau vélo.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« a » est le verbe avoir conjugué au présent, on peut le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2542,
+    "sentence": "Elle va à la piscine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« à » est une préposition qui indique le lieu, on ne peut pas le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2543,
+    "sentence": "Mon frère a une nouvelle trousse.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« a » est le verbe avoir conjugué au présent, on peut le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2544,
+    "sentence": "Nous allons à la bibliothèque.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« à » est une préposition qui indique le lieu, on ne peut pas le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2545,
+    "sentence": "Papa a préparé le repas.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« a » est l'auxiliaire avoir au présent, on peut le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2546,
+    "sentence": "Je pense à mes amis.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« à » est une préposition, on ne peut pas le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2547,
+    "sentence": "Le chat a attrapé une souris.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« a » est l'auxiliaire avoir au présent, on peut le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2548,
+    "sentence": "Elle habite à côté de l'école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« à » est une préposition qui indique le lieu, on ne peut pas le remplacer par « avait ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2549,
+    "sentence": "Il a mal à la tête.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le premier « a » est le verbe avoir ; le second « à » est une préposition.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2550,
+    "sentence": "Ma sœur a réussi à nager.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le premier « a » est l'auxiliaire avoir ; le second « à » est une préposition.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2711,
+    "sentence": "Mon frère va a la piscine avec ses amis et il nage pendant deux heures chaque samedi.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la piscine » (lieu), on utilise la préposition « à » avec accent et non le verbe « a ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2712,
+    "sentence": "Ma sœur à un beau cartable rouge et elle le porte fièrement sur son dos chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "Ici c'est le verbe « avoir » conjugué : « ma sœur a » (on peut dire « avait »), pas la préposition « à ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2713,
+    "sentence": "Papa a donné un cadeau a maman pour son anniversaire et elle était très contente.",
+    "errorIndex": 5,
+    "correctedWord": "à",
+    "explanation": "Devant « maman » (destinataire), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2714,
+    "sentence": "Le chien à mangé toute sa gamelle et il dort maintenant sur le tapis du salon.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « le chien a mangé » (on peut dire « avait mangé »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2715,
+    "sentence": "Ma cousine habite a Paris et elle prend le métro tous les jours pour aller à son travail.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « Paris » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2716,
+    "sentence": "Le boulanger à préparé des croissants chauds et il les vend dès six heures du matin.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a préparé » (on peut dire « avait préparé »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2717,
+    "sentence": "Mon ami va a l'école en vélo et il arrive toujours en avance avant la sonnerie.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « l'école » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2718,
+    "sentence": "La maîtresse à expliqué la leçon et elle nous a demandé de faire les exercices.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a expliqué » (on peut dire « avait expliqué »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2719,
+    "sentence": "Mon père travaille a la boulangerie du village et il se lève très tôt chaque matin.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la boulangerie » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2720,
+    "sentence": "Le chat à attrapé une souris dans le jardin et il l'a ramenée à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a attrapé » (on peut dire « avait attrapé »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2721,
+    "sentence": "Ma sœur joue a la corde à sauter dans la cour et elle saute très haut.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la corde à sauter » (complément), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2722,
+    "sentence": "Le docteur à soigné mon petit frère et il lui a donné un médicament pour la toux.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a soigné » (on peut dire « avait soigné »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2723,
+    "sentence": "Maman pense a acheter du pain en rentrant du travail et elle ira à la boulangerie.",
+    "errorIndex": 2,
+    "correctedWord": "à",
+    "explanation": "Après « penser » (penser à faire quelque chose), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2724,
+    "sentence": "Mon oncle à une grande voiture bleue et il emmène toute la famille en vacances avec.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » : « mon oncle a » (on peut dire « avait »), pas la préposition « à ».",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2725,
+    "sentence": "Le facteur va a la poste chercher les lettres et il les distribue dans tout le quartier.",
+    "errorIndex": 3,
+    "correctedWord": "à",
+    "explanation": "Devant « la poste » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2906,
+    "sentence": "Mon frère à voulu manger une glace mais il n'a pas pu parce que le magasin était fermé.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a voulu » (on peut dire « avait voulu »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2907,
+    "sentence": "Ma sœur veut aller a la bibliothèque pour emprunter un livre qu'elle pourra lire ce soir.",
+    "errorIndex": 4,
+    "correctedWord": "à",
+    "explanation": "Devant « la bibliothèque » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2908,
+    "sentence": "Le chat à pu attraper la souris et il l'a ramenée fièrement dans la cuisine.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a pu » (on peut dire « avait pu »).",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2909,
+    "sentence": "Papa veut nous emmener a la montagne cet hiver et nous pourrons faire du ski ensemble.",
+    "errorIndex": 5,
+    "correctedWord": "à",
+    "explanation": "Devant « la montagne » (lieu), on utilise la préposition « à » avec accent.",
+    "category": "homophones a/à"
+  },
+  {
+    "id": 2910,
+    "sentence": "La maîtresse à voulu nous montrer un film mais elle n'a pas pu car le projecteur était cassé.",
+    "errorIndex": 2,
+    "correctedWord": "a",
+    "explanation": "C'est le verbe « avoir » au passé composé : « a voulu » (on peut dire « avait voulu »).",
+    "category": "homophones a/à"
+  }
+]

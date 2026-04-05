@@ -240,11 +240,28 @@ button:active {
 .cat-container {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.6rem;
   margin-bottom: 1.2rem;
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
   padding: 0.3rem;
+}
+
+.cat-group {
+  text-align: left;
+}
+
+.cat-group-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #6a1b9a;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 2px solid #e1bee7;
+}
+
+.cat-group .cat-option {
+  margin-left: 0.5rem;
 }
 
 .cat-option {

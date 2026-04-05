@@ -1,0 +1,882 @@
+[
+  {
+    "id": 141,
+    "sentence": "Les chat mangent du poisson.",
+    "errorIndex": 1,
+    "correctedWord": "chats",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « chats ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 142,
+    "sentence": "Les enfant jouent dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "enfants",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « enfants ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 143,
+    "sentence": "Mes ami viennent à la maison.",
+    "errorIndex": 1,
+    "correctedWord": "amis",
+    "explanation": "Après le déterminant pluriel « mes », le nom doit être au pluriel : « amis ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 144,
+    "sentence": "Les fleur poussent au printemps.",
+    "errorIndex": 1,
+    "correctedWord": "fleurs",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « fleurs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 145,
+    "sentence": "Deux chien courent dans le parc.",
+    "errorIndex": 1,
+    "correctedWord": "chiens",
+    "explanation": "Après le nombre « deux », le nom doit être au pluriel : « chiens ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 146,
+    "sentence": "Les oiseau chantent dans les arbres.",
+    "errorIndex": 1,
+    "correctedWord": "oiseaux",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « oiseaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 147,
+    "sentence": "Ses jouet sont dans la chambre.",
+    "errorIndex": 1,
+    "correctedWord": "jouets",
+    "explanation": "Après le déterminant pluriel « ses », le nom doit être au pluriel : « jouets ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 148,
+    "sentence": "Les pomme sont rouges et mûres.",
+    "errorIndex": 1,
+    "correctedWord": "pommes",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « pommes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 149,
+    "sentence": "Trois garçon jouent au ballon.",
+    "errorIndex": 1,
+    "correctedWord": "garçons",
+    "explanation": "Après le nombre « trois », le nom doit être au pluriel : « garçons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 150,
+    "sentence": "Les livre sont sur la table.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « livres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 151,
+    "sentence": "Des nuage cachent le soleil.",
+    "errorIndex": 1,
+    "correctedWord": "nuages",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « nuages ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 152,
+    "sentence": "Les maison sont grandes et belles.",
+    "errorIndex": 1,
+    "correctedWord": "maisons",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « maisons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 153,
+    "sentence": "Nos cahier sont dans le cartable.",
+    "errorIndex": 1,
+    "correctedWord": "cahiers",
+    "explanation": "Après le déterminant pluriel « nos », le nom doit être au pluriel : « cahiers ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 154,
+    "sentence": "Les arbre perdent leurs feuilles.",
+    "errorIndex": 1,
+    "correctedWord": "arbres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « arbres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 155,
+    "sentence": "Plusieurs élève sont absents.",
+    "errorIndex": 1,
+    "correctedWord": "élèves",
+    "explanation": "Après « plusieurs », le nom doit être au pluriel : « élèves ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 156,
+    "sentence": "Les voiture roulent sur la route.",
+    "errorIndex": 1,
+    "correctedWord": "voitures",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « voitures ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 157,
+    "sentence": "Tes crayon sont bien taillés.",
+    "errorIndex": 1,
+    "correctedWord": "crayons",
+    "explanation": "Après le déterminant pluriel « tes », le nom doit être au pluriel : « crayons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 158,
+    "sentence": "Les étoile brillent dans le ciel.",
+    "errorIndex": 1,
+    "correctedWord": "étoiles",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « étoiles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 159,
+    "sentence": "Cinq fille dansent sur la scène.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après le nombre « cinq », le nom doit être au pluriel : « filles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 160,
+    "sentence": "Les chaise sont autour de la table.",
+    "errorIndex": 1,
+    "correctedWord": "chaises",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « chaises ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 161,
+    "sentence": "Des papillon volent dans le jardin.",
+    "errorIndex": 1,
+    "correctedWord": "papillons",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « papillons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 162,
+    "sentence": "Les fenêtre sont ouvertes en été.",
+    "errorIndex": 1,
+    "correctedWord": "fenêtres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « fenêtres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 163,
+    "sentence": "Leurs cartable sont très lourds.",
+    "errorIndex": 1,
+    "correctedWord": "cartables",
+    "explanation": "Après le déterminant pluriel « leurs », le nom doit être au pluriel : « cartables ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 164,
+    "sentence": "Les lapin sautent dans le pré.",
+    "errorIndex": 1,
+    "correctedWord": "lapins",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « lapins ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 165,
+    "sentence": "Quatre cheval galopent dans le champ.",
+    "errorIndex": 1,
+    "correctedWord": "chevaux",
+    "explanation": "Après le nombre « quatre », le nom doit être au pluriel : « chevaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 166,
+    "sentence": "Les gâteau sont délicieux.",
+    "errorIndex": 1,
+    "correctedWord": "gâteaux",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « gâteaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 167,
+    "sentence": "Des canard nagent dans la mare.",
+    "errorIndex": 1,
+    "correctedWord": "canards",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « canards ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 168,
+    "sentence": "Les couleur de ce tableau sont vives.",
+    "errorIndex": 1,
+    "correctedWord": "couleurs",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « couleurs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 169,
+    "sentence": "Mes chaussure sont mouillées.",
+    "errorIndex": 1,
+    "correctedWord": "chaussures",
+    "explanation": "Après le déterminant pluriel « mes », le nom doit être au pluriel : « chaussures ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 170,
+    "sentence": "Les poisson nagent dans le bocal.",
+    "errorIndex": 1,
+    "correctedWord": "poissons",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « poissons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 171,
+    "sentence": "Six bougie brillent sur le gâteau.",
+    "errorIndex": 1,
+    "correctedWord": "bougies",
+    "explanation": "Après le nombre « six », le nom doit être au pluriel : « bougies ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 172,
+    "sentence": "Les route sont glissantes en hiver.",
+    "errorIndex": 1,
+    "correctedWord": "routes",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « routes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 173,
+    "sentence": "Vos dessin sont très jolis.",
+    "errorIndex": 1,
+    "correctedWord": "dessins",
+    "explanation": "Après le déterminant pluriel « vos », le nom doit être au pluriel : « dessins ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 174,
+    "sentence": "Les mouton broutent dans le pré.",
+    "errorIndex": 1,
+    "correctedWord": "moutons",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « moutons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 175,
+    "sentence": "Des fourmi marchent en file.",
+    "errorIndex": 1,
+    "correctedWord": "fourmis",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « fourmis ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 176,
+    "sentence": "Les chambre sont bien rangées.",
+    "errorIndex": 1,
+    "correctedWord": "chambres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « chambres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 177,
+    "sentence": "Ses poupée sont dans le coffre.",
+    "errorIndex": 1,
+    "correctedWord": "poupées",
+    "explanation": "Après le déterminant pluriel « ses », le nom doit être au pluriel : « poupées ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 178,
+    "sentence": "Les nuage sont gris et menaçants.",
+    "errorIndex": 1,
+    "correctedWord": "nuages",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « nuages ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 179,
+    "sentence": "Dix crayon sont dans la trousse.",
+    "errorIndex": 1,
+    "correctedWord": "crayons",
+    "explanation": "Après le nombre « dix », le nom doit être au pluriel : « crayons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 180,
+    "sentence": "Les tortue avancent lentement.",
+    "errorIndex": 1,
+    "correctedWord": "tortues",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « tortues ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1391,
+    "sentence": "Les chat mangent du poisson.",
+    "errorIndex": 1,
+    "correctedWord": "chats",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « chats ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1392,
+    "sentence": "Les enfant jouent dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "enfants",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « enfants ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1393,
+    "sentence": "Mes ami viennent à la maison.",
+    "errorIndex": 1,
+    "correctedWord": "amis",
+    "explanation": "Après le déterminant pluriel « mes », le nom doit être au pluriel : « amis ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1394,
+    "sentence": "Les fleur poussent au printemps.",
+    "errorIndex": 1,
+    "correctedWord": "fleurs",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « fleurs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1395,
+    "sentence": "Deux chien courent dans le parc.",
+    "errorIndex": 1,
+    "correctedWord": "chiens",
+    "explanation": "Après le nombre « deux », le nom doit être au pluriel : « chiens ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1396,
+    "sentence": "Les oiseau chantent dans les arbres.",
+    "errorIndex": 1,
+    "correctedWord": "oiseaux",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « oiseaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1397,
+    "sentence": "Ses jouet sont dans la chambre.",
+    "errorIndex": 1,
+    "correctedWord": "jouets",
+    "explanation": "Après le déterminant pluriel « ses », le nom doit être au pluriel : « jouets ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1398,
+    "sentence": "Les pomme sont rouges et mûres.",
+    "errorIndex": 1,
+    "correctedWord": "pommes",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « pommes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1399,
+    "sentence": "Trois garçon jouent au ballon.",
+    "errorIndex": 1,
+    "correctedWord": "garçons",
+    "explanation": "Après le nombre « trois », le nom doit être au pluriel : « garçons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1400,
+    "sentence": "Les livre sont sur la table.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « livres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1401,
+    "sentence": "Des nuage cachent le soleil.",
+    "errorIndex": 1,
+    "correctedWord": "nuages",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « nuages ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1402,
+    "sentence": "Les maison sont grandes et belles.",
+    "errorIndex": 1,
+    "correctedWord": "maisons",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « maisons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1403,
+    "sentence": "Nos cahier sont dans le cartable.",
+    "errorIndex": 1,
+    "correctedWord": "cahiers",
+    "explanation": "Après le déterminant pluriel « nos », le nom doit être au pluriel : « cahiers ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1404,
+    "sentence": "Les arbre perdent leurs feuilles.",
+    "errorIndex": 1,
+    "correctedWord": "arbres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « arbres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1405,
+    "sentence": "Plusieurs élève sont absents.",
+    "errorIndex": 1,
+    "correctedWord": "élèves",
+    "explanation": "Après « plusieurs », le nom doit être au pluriel : « élèves ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1406,
+    "sentence": "Les voiture roulent sur la route.",
+    "errorIndex": 1,
+    "correctedWord": "voitures",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « voitures ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1407,
+    "sentence": "Tes crayon sont bien taillés.",
+    "errorIndex": 1,
+    "correctedWord": "crayons",
+    "explanation": "Après le déterminant pluriel « tes », le nom doit être au pluriel : « crayons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1408,
+    "sentence": "Les étoile brillent dans le ciel.",
+    "errorIndex": 1,
+    "correctedWord": "étoiles",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « étoiles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1409,
+    "sentence": "Cinq fille dansent sur la scène.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après le nombre « cinq », le nom doit être au pluriel : « filles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1410,
+    "sentence": "Les chaise sont autour de la table.",
+    "errorIndex": 1,
+    "correctedWord": "chaises",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « chaises ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1411,
+    "sentence": "Des papillon volent dans le jardin.",
+    "errorIndex": 1,
+    "correctedWord": "papillons",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « papillons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1412,
+    "sentence": "Les fenêtre sont ouvertes en été.",
+    "errorIndex": 1,
+    "correctedWord": "fenêtres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « fenêtres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1413,
+    "sentence": "Leurs cartable sont très lourds.",
+    "errorIndex": 1,
+    "correctedWord": "cartables",
+    "explanation": "Après le déterminant pluriel « leurs », le nom doit être au pluriel : « cartables ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1414,
+    "sentence": "Les lapin sautent dans le pré.",
+    "errorIndex": 1,
+    "correctedWord": "lapins",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « lapins ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1415,
+    "sentence": "Quatre cheval galopent dans le champ.",
+    "errorIndex": 1,
+    "correctedWord": "chevaux",
+    "explanation": "Après le nombre « quatre », le nom doit être au pluriel : « chevaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1416,
+    "sentence": "Les gâteau sont délicieux.",
+    "errorIndex": 1,
+    "correctedWord": "gâteaux",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « gâteaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1417,
+    "sentence": "Des canard nagent dans la mare.",
+    "errorIndex": 1,
+    "correctedWord": "canards",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « canards ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1418,
+    "sentence": "Les couleur de ce tableau sont vives.",
+    "errorIndex": 1,
+    "correctedWord": "couleurs",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « couleurs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1419,
+    "sentence": "Mes chaussure sont mouillées.",
+    "errorIndex": 1,
+    "correctedWord": "chaussures",
+    "explanation": "Après le déterminant pluriel « mes », le nom doit être au pluriel : « chaussures ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1420,
+    "sentence": "Les poisson nagent dans le bocal.",
+    "errorIndex": 1,
+    "correctedWord": "poissons",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « poissons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1421,
+    "sentence": "Six bougie brillent sur le gâteau.",
+    "errorIndex": 1,
+    "correctedWord": "bougies",
+    "explanation": "Après le nombre « six », le nom doit être au pluriel : « bougies ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1422,
+    "sentence": "Les route sont glissantes en hiver.",
+    "errorIndex": 1,
+    "correctedWord": "routes",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « routes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1423,
+    "sentence": "Vos dessin sont très jolis.",
+    "errorIndex": 1,
+    "correctedWord": "dessins",
+    "explanation": "Après le déterminant pluriel « vos », le nom doit être au pluriel : « dessins ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1424,
+    "sentence": "Les mouton broutent dans le pré.",
+    "errorIndex": 1,
+    "correctedWord": "moutons",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « moutons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1425,
+    "sentence": "Des fourmi marchent en file.",
+    "errorIndex": 1,
+    "correctedWord": "fourmis",
+    "explanation": "Après le déterminant pluriel « des », le nom doit être au pluriel : « fourmis ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1426,
+    "sentence": "Les chambre sont bien rangées.",
+    "errorIndex": 1,
+    "correctedWord": "chambres",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « chambres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1427,
+    "sentence": "Ses poupée sont dans le coffre.",
+    "errorIndex": 1,
+    "correctedWord": "poupées",
+    "explanation": "Après le déterminant pluriel « ses », le nom doit être au pluriel : « poupées ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1428,
+    "sentence": "Les nuage sont gris et menaçants.",
+    "errorIndex": 1,
+    "correctedWord": "nuages",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « nuages ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1429,
+    "sentence": "Dix crayon sont dans la trousse.",
+    "errorIndex": 1,
+    "correctedWord": "crayons",
+    "explanation": "Après le nombre « dix », le nom doit être au pluriel : « crayons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 1430,
+    "sentence": "Les tortue avancent lentement.",
+    "errorIndex": 1,
+    "correctedWord": "tortues",
+    "explanation": "Après le déterminant pluriel « les », le nom doit être au pluriel : « tortues ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2531,
+    "sentence": "Les petits chats jouent ensemble.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « petits » et le verbe « jouent » sont bien accordés au pluriel avec « chats ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2532,
+    "sentence": "Les grandes maisons sont belles.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « grandes » et « belles » sont bien accordés au pluriel avec « maisons ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2533,
+    "sentence": "Les jolis oiseaux chantent fort.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « jolis » est bien accordé au pluriel avec le nom « oiseaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2534,
+    "sentence": "Les belles fleurs poussent au printemps.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « belles » est bien accordé au pluriel avec le nom « fleurs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2535,
+    "sentence": "Les gros nuages cachent le soleil.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « gros » est bien accordé au pluriel avec le nom « nuages ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2536,
+    "sentence": "Les longues routes traversent la campagne.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « longues » est bien accordé au pluriel avec le nom « routes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2537,
+    "sentence": "Les vieux arbres perdent leurs feuilles.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « vieux » est bien accordé au pluriel avec le nom « arbres ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2538,
+    "sentence": "Les nouveaux élèves arrivent demain.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « nouveaux » est bien accordé au pluriel avec le nom « élèves ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2539,
+    "sentence": "Le petit chat dort sur le coussin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « petit » est bien accordé au singulier avec le nom « chat ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2540,
+    "sentence": "Les gentils voisins nous saluent.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « gentils » est bien accordé au pluriel avec le nom « voisins ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2696,
+    "sentence": "Les petit chats de la voisine jouent dans le jardin et ils grimpent partout sur les arbres.",
+    "errorIndex": 1,
+    "correctedWord": "petits",
+    "explanation": "Le nom « chats » est au pluriel, donc l'adjectif doit être au pluriel : « petits ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2697,
+    "sentence": "Mes deux grande sœurs vont à la piscine et elles nagent très bien toutes les deux.",
+    "errorIndex": 2,
+    "correctedWord": "grandes",
+    "explanation": "Le nom « sœurs » est au pluriel, donc l'adjectif doit être au pluriel : « grandes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2698,
+    "sentence": "Les beau papillons volent dans le jardin et ils se posent sur les fleurs rouges.",
+    "errorIndex": 1,
+    "correctedWord": "beaux",
+    "explanation": "Le nom « papillons » est au pluriel, donc l'adjectif doit être au pluriel : « beaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2699,
+    "sentence": "Les gros chien du voisin aboient très fort la nuit et ils réveillent tout le quartier.",
+    "errorIndex": 2,
+    "correctedWord": "chiens",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « chiens ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2700,
+    "sentence": "Mes nouveau cahiers sont très jolis et je les range dans mon cartable chaque soir.",
+    "errorIndex": 1,
+    "correctedWord": "nouveaux",
+    "explanation": "Le nom « cahiers » est au pluriel, donc l'adjectif doit être au pluriel : « nouveaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2701,
+    "sentence": "Les joli maisons du village ont des jardins fleuris et elles sont toutes bien entretenues.",
+    "errorIndex": 1,
+    "correctedWord": "jolies",
+    "explanation": "Le nom « maisons » est au féminin pluriel, donc l'adjectif doit être « jolies ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2702,
+    "sentence": "Les long chemins de la campagne traversent les champs et ils mènent jusqu'à la rivière.",
+    "errorIndex": 1,
+    "correctedWord": "longs",
+    "explanation": "Le nom « chemins » est au pluriel, donc l'adjectif doit être au pluriel : « longs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2703,
+    "sentence": "Ses vieux jouet sont dans le grenier et il ne joue plus avec depuis très longtemps.",
+    "errorIndex": 2,
+    "correctedWord": "jouets",
+    "explanation": "Le déterminant « ses » et l'adjectif « vieux » indiquent le pluriel : « jouets ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2704,
+    "sentence": "Les blanc nuages flottent dans le ciel bleu et ils annoncent une belle journée de printemps.",
+    "errorIndex": 1,
+    "correctedWord": "blancs",
+    "explanation": "Le nom « nuages » est au masculin pluriel, donc l'adjectif doit être « blancs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2705,
+    "sentence": "Les grande fenêtres de la classe laissent entrer la lumière et elles donnent sur la cour.",
+    "errorIndex": 1,
+    "correctedWord": "grandes",
+    "explanation": "Le nom « fenêtres » est au féminin pluriel, donc l'adjectif doit être « grandes ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2706,
+    "sentence": "Les gentil garçons de ma classe aident toujours les autres et ils partagent leurs affaires.",
+    "errorIndex": 1,
+    "correctedWord": "gentils",
+    "explanation": "Le nom « garçons » est au pluriel, donc l'adjectif doit être au pluriel : « gentils ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2707,
+    "sentence": "Les gros éléphant du zoo mangent beaucoup de foin et ils boivent des litres d'eau.",
+    "errorIndex": 2,
+    "correctedWord": "éléphants",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « éléphants ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2708,
+    "sentence": "Les rond ballons de toutes les couleurs décorent la salle pour la fête de notre école.",
+    "errorIndex": 1,
+    "correctedWord": "ronds",
+    "explanation": "Le nom « ballons » est au pluriel, donc l'adjectif doit être au pluriel : « ronds ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2709,
+    "sentence": "Les vieille chaussures de papa sont dans le placard et il ne les met plus jamais.",
+    "errorIndex": 1,
+    "correctedWord": "vieilles",
+    "explanation": "Le nom « chaussures » est au féminin pluriel, donc l'adjectif doit être « vieilles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2710,
+    "sentence": "Les noir corbeaux se posent sur les fils électriques et ils croassent très fort le matin.",
+    "errorIndex": 1,
+    "correctedWord": "noirs",
+    "explanation": "Le nom « corbeaux » est au masculin pluriel, donc l'adjectif doit être « noirs ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2936,
+    "sentence": "Les petit lapins du jardin sautent partout et ils veulent manger les carottes de maman.",
+    "errorIndex": 1,
+    "correctedWord": "petits",
+    "explanation": "Le nom « lapins » est au pluriel, donc l'adjectif doit être au pluriel : « petits ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2937,
+    "sentence": "Les gros éléphant du zoo veulent sortir de leur enclos et ils ne peuvent pas le faire.",
+    "errorIndex": 2,
+    "correctedWord": "éléphants",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « éléphants ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2938,
+    "sentence": "Les beau château de la région attirent beaucoup de touristes qui veulent les visiter.",
+    "errorIndex": 1,
+    "correctedWord": "beaux",
+    "explanation": "Le nom « château » doit être au pluriel (« châteaux ») et l'adjectif aussi : « beaux ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2939,
+    "sentence": "Les vieille maison du village sont charmantes et les gens veulent les photographier.",
+    "errorIndex": 1,
+    "correctedWord": "vieilles",
+    "explanation": "Le nom « maison » doit être au pluriel (« maisons ») et l'adjectif aussi : « vieilles ».",
+    "category": "accords en nombre"
+  },
+  {
+    "id": 2940,
+    "sentence": "Les grand arbre du parc perdent leurs feuilles et ils ne peuvent plus donner d'ombre.",
+    "errorIndex": 1,
+    "correctedWord": "grands",
+    "explanation": "Le nom « arbre » doit être au pluriel (« arbres ») et l'adjectif aussi : « grands ».",
+    "category": "accords en nombre"
+  }
+]

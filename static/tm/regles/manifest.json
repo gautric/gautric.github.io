@@ -1,0 +1,37 @@
+{
+  "accords": {
+    "accords sujet-verbe": "accords/accords-sujet-verbe.json",
+    "accords en genre": "accords/accords-en-genre.json",
+    "accords en nombre": "accords/accords-en-nombre.json"
+  },
+  "homophones": {
+    "homophones a/à": "homophones/homophones-a.json",
+    "homophones et/est": "homophones/homophones-et-est.json",
+    "homophones on/ont": "homophones/homophones-on-ont.json",
+    "homophones son/sont": "homophones/homophones-son-sont.json",
+    "homophones ou/où": "homophones/homophones-ou-o.json",
+    "homophones ce/se": "homophones/homophones-ce-se.json",
+    "homophones er/é": "homophones/homophones-er-e.json",
+    "homophones ces/ses/c'est/s'est": "homophones/homophones-ces-ses-c-est-s-est.json",
+    "homophones la/l'a/là": "homophones/homophones-la-l-a-l.json"
+  },
+  "conjugaison": {
+    "conjugaison vouloir présent": "conjugaison/conjugaison-vouloir-present.json",
+    "conjugaison pouvoir présent": "conjugaison/conjugaison-pouvoir-present.json",
+    "conjugaison vouloir futur": "conjugaison/conjugaison-vouloir-futur.json",
+    "conjugaison pouvoir futur": "conjugaison/conjugaison-pouvoir-futur.json",
+    "conjugaison être/avoir présent": "conjugaison/conjugaison-etre-avoir-present.json",
+    "conjugaison aller/faire/dire/venir": "conjugaison/conjugaison-aller-faire-dire-venir.json",
+    "futur": "conjugaison/futur.json",
+    "présent": "conjugaison/present.json"
+  },
+  "orthographe": {
+    "pluriel des noms": "orthographe/pluriel-des-noms.json",
+    "féminin des adjectifs": "orthographe/feminin-des-adjectifs.json",
+    "mots invariables": "orthographe/mots-invariables.json"
+  },
+  "grammaire": {
+    "déterminants": "grammaire/determinants.json",
+    "pronoms": "grammaire/pronoms.json"
+  }
+}

@@ -1,0 +1,1642 @@
+[
+  {
+    "id": 751,
+    "sentence": "Les cheval galopent dans le pré.",
+    "errorIndex": 1,
+    "correctedWord": "chevaux",
+    "explanation": "Le nom « cheval » fait « chevaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 752,
+    "sentence": "J'ai acheté deux gâteau au chocolat.",
+    "errorIndex": 4,
+    "correctedWord": "gâteaux",
+    "explanation": "Après « deux », le nom doit être au pluriel : « gâteaux » (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 753,
+    "sentence": "Les animal du zoo sont nourris chaque jour.",
+    "errorIndex": 1,
+    "correctedWord": "animaux",
+    "explanation": "Le nom « animal » fait « animaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 754,
+    "sentence": "Mes parent viennent me chercher à l'école.",
+    "errorIndex": 1,
+    "correctedWord": "parents",
+    "explanation": "Après « mes » (pluriel), le nom prend un -s : « parents ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 755,
+    "sentence": "Les oiseau chantent dans les arbres.",
+    "errorIndex": 1,
+    "correctedWord": "oiseaux",
+    "explanation": "Le nom « oiseau » fait « oiseaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 756,
+    "sentence": "Il y a trois bateau sur la rivière.",
+    "errorIndex": 4,
+    "correctedWord": "bateaux",
+    "explanation": "Après « trois », le nom doit être au pluriel : « bateaux » (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 757,
+    "sentence": "Les journal sont posés sur la table.",
+    "errorIndex": 1,
+    "correctedWord": "journaux",
+    "explanation": "Le nom « journal » fait « journaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 758,
+    "sentence": "Nous avons ramassé des caillou dans le jardin.",
+    "errorIndex": 4,
+    "correctedWord": "cailloux",
+    "explanation": "Le nom « caillou » fait « cailloux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 759,
+    "sentence": "Les genou de mon pantalon sont usés.",
+    "errorIndex": 1,
+    "correctedWord": "genoux",
+    "explanation": "Le nom « genou » fait « genoux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 760,
+    "sentence": "Plusieurs bijou brillent dans la vitrine.",
+    "errorIndex": 1,
+    "correctedWord": "bijoux",
+    "explanation": "Le nom « bijou » fait « bijoux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 761,
+    "sentence": "Les hibou hululent la nuit.",
+    "errorIndex": 1,
+    "correctedWord": "hiboux",
+    "explanation": "Le nom « hibou » fait « hiboux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 762,
+    "sentence": "Il a des pou dans les cheveux.",
+    "errorIndex": 3,
+    "correctedWord": "poux",
+    "explanation": "Le nom « pou » fait « poux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 763,
+    "sentence": "Les chapeau sont accrochés au portemanteau.",
+    "errorIndex": 1,
+    "correctedWord": "chapeaux",
+    "explanation": "Le nom « chapeau » fait « chapeaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 764,
+    "sentence": "Mes ami jouent dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "amis",
+    "explanation": "Après « mes » (pluriel), le nom prend un -s : « amis ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 765,
+    "sentence": "Les travail de la maison sont terminés.",
+    "errorIndex": 1,
+    "correctedWord": "travaux",
+    "explanation": "Le nom « travail » fait « travaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 766,
+    "sentence": "J'ai trouvé des chou dans le potager.",
+    "errorIndex": 4,
+    "correctedWord": "choux",
+    "explanation": "Le nom « chou » fait « choux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 767,
+    "sentence": "Les tableau sont accrochés au mur.",
+    "errorIndex": 1,
+    "correctedWord": "tableaux",
+    "explanation": "Le nom « tableau » fait « tableaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 768,
+    "sentence": "Les noyau des cerises sont durs.",
+    "errorIndex": 1,
+    "correctedWord": "noyaux",
+    "explanation": "Le nom « noyau » fait « noyaux » au pluriel (pluriel en -aux pour les noms en -au).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 769,
+    "sentence": "Deux château se dressent sur la colline.",
+    "errorIndex": 1,
+    "correctedWord": "châteaux",
+    "explanation": "Le nom « château » fait « châteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 770,
+    "sentence": "Les manteau sont rangés dans le placard.",
+    "errorIndex": 1,
+    "correctedWord": "manteaux",
+    "explanation": "Le nom « manteau » fait « manteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 771,
+    "sentence": "Les cadeau de Noël sont sous le sapin.",
+    "errorIndex": 1,
+    "correctedWord": "cadeaux",
+    "explanation": "Le nom « cadeau » fait « cadeaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 772,
+    "sentence": "Les tuyau du jardin sont percés.",
+    "errorIndex": 1,
+    "correctedWord": "tuyaux",
+    "explanation": "Le nom « tuyau » fait « tuyaux » au pluriel (pluriel en -aux pour les noms en -au).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 773,
+    "sentence": "Les vitrail de l'église sont magnifiques.",
+    "errorIndex": 1,
+    "correctedWord": "vitraux",
+    "explanation": "Le nom « vitrail » fait « vitraux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 774,
+    "sentence": "Les corail des mers chaudes sont colorés.",
+    "errorIndex": 1,
+    "correctedWord": "coraux",
+    "explanation": "Le nom « corail » fait « coraux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 775,
+    "sentence": "Mes frère sont plus grands que moi.",
+    "errorIndex": 1,
+    "correctedWord": "frères",
+    "explanation": "Après « mes » (pluriel), le nom prend un -s : « frères ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 776,
+    "sentence": "Les crayon de couleur sont dans la trousse.",
+    "errorIndex": 1,
+    "correctedWord": "crayons",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « crayons ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 777,
+    "sentence": "Les étoile brillent dans le ciel.",
+    "errorIndex": 1,
+    "correctedWord": "étoiles",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « étoiles ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 778,
+    "sentence": "Les fleur du jardin sont très belles.",
+    "errorIndex": 1,
+    "correctedWord": "fleurs",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « fleurs ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 779,
+    "sentence": "Les maison du village sont anciennes.",
+    "errorIndex": 1,
+    "correctedWord": "maisons",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « maisons ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 780,
+    "sentence": "Les voiture roulent sur la route.",
+    "errorIndex": 1,
+    "correctedWord": "voitures",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « voitures ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 781,
+    "sentence": "Les pomme sont mûres et juteuses.",
+    "errorIndex": 1,
+    "correctedWord": "pommes",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « pommes ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 782,
+    "sentence": "Les garçon jouent au football.",
+    "errorIndex": 1,
+    "correctedWord": "garçons",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « garçons ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 783,
+    "sentence": "Les fille sautent à la corde.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « filles ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 784,
+    "sentence": "Les livre sont rangés sur l'étagère.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « livres ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 785,
+    "sentence": "Les arbre perdent leurs feuilles en automne.",
+    "errorIndex": 1,
+    "correctedWord": "arbres",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « arbres ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 786,
+    "sentence": "Les nuage cachent le soleil.",
+    "errorIndex": 1,
+    "correctedWord": "nuages",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « nuages ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 787,
+    "sentence": "Les fenêtre de la classe sont ouvertes.",
+    "errorIndex": 1,
+    "correctedWord": "fenêtres",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « fenêtres ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 788,
+    "sentence": "Les chaise sont autour de la table.",
+    "errorIndex": 1,
+    "correctedWord": "chaises",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « chaises ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 789,
+    "sentence": "Les cahier des élèves sont corrigés.",
+    "errorIndex": 1,
+    "correctedWord": "cahiers",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « cahiers ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 790,
+    "sentence": "Les route de campagne sont sinueuses.",
+    "errorIndex": 1,
+    "correctedWord": "routes",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « routes ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 791,
+    "sentence": "Trois souris grise vivent dans le grenier.",
+    "errorIndex": 2,
+    "correctedWord": "grises",
+    "explanation": "L'adjectif « grise » doit s'accorder au pluriel avec « souris » : « grises ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 792,
+    "sentence": "Les rideau de la chambre sont fermés.",
+    "errorIndex": 1,
+    "correctedWord": "rideaux",
+    "explanation": "Le nom « rideau » fait « rideaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 793,
+    "sentence": "Les gâteau de mamie sont délicieux.",
+    "errorIndex": 1,
+    "correctedWord": "gâteaux",
+    "explanation": "Le nom « gâteau » fait « gâteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 794,
+    "sentence": "Les morceau de pain sont sur la table.",
+    "errorIndex": 1,
+    "correctedWord": "morceaux",
+    "explanation": "Le nom « morceau » fait « morceaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 795,
+    "sentence": "Les drapeau flottent au vent.",
+    "errorIndex": 1,
+    "correctedWord": "drapeaux",
+    "explanation": "Le nom « drapeau » fait « drapeaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 796,
+    "sentence": "Les agneau broutent dans le champ.",
+    "errorIndex": 1,
+    "correctedWord": "agneaux",
+    "explanation": "Le nom « agneau » fait « agneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 797,
+    "sentence": "Les chameau traversent le désert.",
+    "errorIndex": 1,
+    "correctedWord": "chameaux",
+    "explanation": "Le nom « chameau » fait « chameaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 798,
+    "sentence": "Les anneau sont en or.",
+    "errorIndex": 1,
+    "correctedWord": "anneaux",
+    "explanation": "Le nom « anneau » fait « anneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 799,
+    "sentence": "Les rateau sont dans le garage.",
+    "errorIndex": 1,
+    "correctedWord": "râteaux",
+    "explanation": "Le nom « rateau » fait « râteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 800,
+    "sentence": "Les poteau sont plantés le long de la route.",
+    "errorIndex": 1,
+    "correctedWord": "poteaux",
+    "explanation": "Le nom « poteau » fait « poteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 801,
+    "sentence": "Les seau sont remplis d'eau.",
+    "errorIndex": 1,
+    "correctedWord": "seaux",
+    "explanation": "Le nom « seau » fait « seaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 802,
+    "sentence": "Les couteau sont bien aiguisés.",
+    "errorIndex": 1,
+    "correctedWord": "couteaux",
+    "explanation": "Le nom « couteau » fait « couteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 803,
+    "sentence": "Les marteau sont dans la boîte à outils.",
+    "errorIndex": 1,
+    "correctedWord": "marteaux",
+    "explanation": "Le nom « marteau » fait « marteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 804,
+    "sentence": "Les ciseau sont sur le bureau.",
+    "errorIndex": 1,
+    "correctedWord": "ciseaux",
+    "explanation": "Le nom « ciseau » fait « ciseaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 805,
+    "sentence": "Les ruisseau coulent dans la vallée.",
+    "errorIndex": 1,
+    "correctedWord": "ruisseaux",
+    "explanation": "Le nom « ruisseau » fait « ruisseaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 806,
+    "sentence": "Les traineau glissent sur la neige.",
+    "errorIndex": 1,
+    "correctedWord": "traîneaux",
+    "explanation": "Le nom « traineau » fait « traîneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 807,
+    "sentence": "Les panneau indiquent la direction.",
+    "errorIndex": 1,
+    "correctedWord": "panneaux",
+    "explanation": "Le nom « panneau » fait « panneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 808,
+    "sentence": "Les cheveu de ma sœur sont longs.",
+    "errorIndex": 1,
+    "correctedWord": "cheveux",
+    "explanation": "Le nom « cheveu » fait « cheveux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 809,
+    "sentence": "Les jeu vidéo sont amusants.",
+    "errorIndex": 1,
+    "correctedWord": "jeux",
+    "explanation": "Le nom « jeu » fait « jeux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 810,
+    "sentence": "Les feu de camp réchauffent les campeurs.",
+    "errorIndex": 1,
+    "correctedWord": "feux",
+    "explanation": "Le nom « feu » fait « feux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 811,
+    "sentence": "Les lieu de vacances sont magnifiques.",
+    "errorIndex": 1,
+    "correctedWord": "lieux",
+    "explanation": "Le nom « lieu » fait « lieux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 812,
+    "sentence": "Les pneu de la voiture sont usés.",
+    "errorIndex": 1,
+    "correctedWord": "pneus",
+    "explanation": "Le nom « pneu » fait « pneus » au pluriel. C'est une exception : il prend un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 813,
+    "sentence": "Les bleu de son dessin sont très jolis.",
+    "errorIndex": 1,
+    "correctedWord": "bleus",
+    "explanation": "Le nom « bleu » fait « bleus » au pluriel. C'est une exception : il prend un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 814,
+    "sentence": "Les landau sont garés devant le parc.",
+    "errorIndex": 1,
+    "correctedWord": "landaus",
+    "explanation": "Le nom « landau » fait « landaus » au pluriel. C'est une exception : il prend un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 815,
+    "sentence": "Les souris manges le fromage.",
+    "errorIndex": 2,
+    "correctedWord": "mangent",
+    "explanation": "Le sujet « les souris » est au pluriel (3e personne), le verbe doit être « mangent » et non « manges ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 816,
+    "sentence": "Les voixs des chanteurs sont belles.",
+    "errorIndex": 1,
+    "correctedWord": "voix",
+    "explanation": "Le nom « voix » ne change pas au pluriel. Les noms terminés par -x sont invariables. Il ne faut pas ajouter de -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 817,
+    "sentence": "Les bruits des voiture résonnent la nuit.",
+    "errorIndex": 3,
+    "correctedWord": "voitures",
+    "explanation": "Après « des » (pluriel), le nom doit être au pluriel : « voitures ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 818,
+    "sentence": "Les noixs sont tombées de l'arbre.",
+    "errorIndex": 1,
+    "correctedWord": "noix",
+    "explanation": "Le nom « voix » ne change pas au pluriel. Les noms terminés par -x sont invariables. Il ne faut pas ajouter de -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 819,
+    "sentence": "Les croixs sont plantées au bord du chemin.",
+    "errorIndex": 1,
+    "correctedWord": "croix",
+    "explanation": "Le nom « croix » ne change pas au pluriel. Les noms terminés par -x sont invariables. Il ne faut pas ajouter de -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 820,
+    "sentence": "Les souris blanche se cachent sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "blanches",
+    "explanation": "L'adjectif « blanche » doit s'accorder au pluriel avec « souris » : « blanches ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 821,
+    "sentence": "Les brebis sont dans le prés.",
+    "errorIndex": 5,
+    "correctedWord": "pré.",
+    "explanation": "« Pré » est un nom singulier ici (dans le pré). Il ne prend pas de -s après « le ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 822,
+    "sentence": "Les perdrix grise se cachent dans les buissons.",
+    "errorIndex": 2,
+    "correctedWord": "grises",
+    "explanation": "L'adjectif « grise » doit s'accorder au pluriel avec « perdrix » : « grises ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 823,
+    "sentence": "Plusieurs bal sont organisés cet été.",
+    "errorIndex": 1,
+    "correctedWord": "bals",
+    "explanation": "Le nom « bal » fait « bals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 824,
+    "sentence": "Les carnaval de la ville sont très joyeux.",
+    "errorIndex": 1,
+    "correctedWord": "carnavals",
+    "explanation": "Le nom « carnaval » fait « carnavals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 825,
+    "sentence": "Les festival de musique attirent du monde.",
+    "errorIndex": 1,
+    "correctedWord": "festivals",
+    "explanation": "Le nom « festival » fait « festivals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 826,
+    "sentence": "Les récital de piano sont ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "récitals",
+    "explanation": "Le nom « récital » fait « récitals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 827,
+    "sentence": "Les régal de la cantine sont les frites.",
+    "errorIndex": 1,
+    "correctedWord": "régals",
+    "explanation": "Le nom « régal » fait « régals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 828,
+    "sentence": "Les détail du plan sont importants.",
+    "errorIndex": 1,
+    "correctedWord": "détails",
+    "explanation": "Le nom « détail » fait « détails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 829,
+    "sentence": "Les portail du château sont immenses.",
+    "errorIndex": 1,
+    "correctedWord": "portails",
+    "explanation": "Le nom « portail » fait « portails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 830,
+    "sentence": "Les éventail sont très colorés.",
+    "errorIndex": 1,
+    "correctedWord": "éventails",
+    "explanation": "Le nom « éventail » fait « éventails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 831,
+    "sentence": "Les rail du train sont en acier.",
+    "errorIndex": 1,
+    "correctedWord": "rails",
+    "explanation": "Le nom « rail » fait « rails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 832,
+    "sentence": "Les chandail de laine sont chauds.",
+    "errorIndex": 1,
+    "correctedWord": "chandails",
+    "explanation": "Le nom « chandail » fait « chandails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 833,
+    "sentence": "Les épouvantail font peur aux oiseaux.",
+    "errorIndex": 1,
+    "correctedWord": "épouvantails",
+    "explanation": "Le nom « épouvantail » fait « épouvantails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 834,
+    "sentence": "Les travail de peinture sont terminés.",
+    "errorIndex": 1,
+    "correctedWord": "travaux",
+    "explanation": "Le nom « travail » fait « travaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 835,
+    "sentence": "Les émails de maman sont envoyés.",
+    "errorIndex": 1,
+    "correctedWord": "émaux",
+    "explanation": "Le nom « émail » fait « émaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 836,
+    "sentence": "Les monsieur sont assis dans la salle.",
+    "errorIndex": 1,
+    "correctedWord": "messieurs",
+    "explanation": "Le nom « monsieur » fait « messieurs » au pluriel. C'est un pluriel irrégulier.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 837,
+    "sentence": "Les madame attendent à la porte.",
+    "errorIndex": 1,
+    "correctedWord": "mesdames",
+    "explanation": "Le nom « madame » fait « mesdames » au pluriel. C'est un pluriel irrégulier.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 838,
+    "sentence": "Les œil du chat brillent dans le noir.",
+    "errorIndex": 1,
+    "correctedWord": "yeux",
+    "explanation": "Le nom « œil » fait « yeux » au pluriel. C'est un pluriel irrégulier.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 839,
+    "sentence": "Les ciel d'orage sont impressionnants.",
+    "errorIndex": 1,
+    "correctedWord": "ciels",
+    "explanation": "Le nom « ciel » fait « ciels » au pluriel quand il désigne l'aspect du ciel.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 840,
+    "sentence": "Les aïeul de Pierre vivaient à la campagne.",
+    "errorIndex": 1,
+    "correctedWord": "aïeux",
+    "explanation": "Le nom « aïeul » fait « aïeux » au pluriel quand il désigne les ancêtres.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2001,
+    "sentence": "Les cheval galopent dans le pré.",
+    "errorIndex": 1,
+    "correctedWord": "chevaux",
+    "explanation": "Le nom « cheval » fait « chevaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2002,
+    "sentence": "J'ai acheté deux gâteau au chocolat.",
+    "errorIndex": 4,
+    "correctedWord": "gâteaux",
+    "explanation": "Après « deux », le nom doit être au pluriel : « gâteaux » (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2003,
+    "sentence": "Les animal du zoo sont nourris chaque jour.",
+    "errorIndex": 1,
+    "correctedWord": "animaux",
+    "explanation": "Le nom « animal » fait « animaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2004,
+    "sentence": "Mes parent viennent me chercher à l'école.",
+    "errorIndex": 1,
+    "correctedWord": "parents",
+    "explanation": "Après « mes » (pluriel), le nom prend un -s : « parents ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2005,
+    "sentence": "Les oiseau chantent dans les arbres.",
+    "errorIndex": 1,
+    "correctedWord": "oiseaux",
+    "explanation": "Le nom « oiseau » fait « oiseaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2006,
+    "sentence": "Il y a trois bateau sur la rivière.",
+    "errorIndex": 4,
+    "correctedWord": "bateaux",
+    "explanation": "Après « trois », le nom doit être au pluriel : « bateaux » (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2007,
+    "sentence": "Les journal sont posés sur la table.",
+    "errorIndex": 1,
+    "correctedWord": "journaux",
+    "explanation": "Le nom « journal » fait « journaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2008,
+    "sentence": "Nous avons ramassé des caillou dans le jardin.",
+    "errorIndex": 4,
+    "correctedWord": "cailloux",
+    "explanation": "Le nom « caillou » fait « cailloux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2009,
+    "sentence": "Les genou de mon pantalon sont usés.",
+    "errorIndex": 1,
+    "correctedWord": "genoux",
+    "explanation": "Le nom « genou » fait « genoux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2010,
+    "sentence": "Plusieurs bijou brillent dans la vitrine.",
+    "errorIndex": 1,
+    "correctedWord": "bijoux",
+    "explanation": "Le nom « bijou » fait « bijoux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2011,
+    "sentence": "Les hibou hululent la nuit.",
+    "errorIndex": 1,
+    "correctedWord": "hiboux",
+    "explanation": "Le nom « hibou » fait « hiboux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2012,
+    "sentence": "Il a des pou dans les cheveux.",
+    "errorIndex": 3,
+    "correctedWord": "poux",
+    "explanation": "Le nom « pou » fait « poux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2013,
+    "sentence": "Les chapeau sont accrochés au portemanteau.",
+    "errorIndex": 1,
+    "correctedWord": "chapeaux",
+    "explanation": "Le nom « chapeau » fait « chapeaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2014,
+    "sentence": "Mes ami jouent dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "amis",
+    "explanation": "Après « mes » (pluriel), le nom prend un -s : « amis ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2015,
+    "sentence": "Les travail de la maison sont terminés.",
+    "errorIndex": 1,
+    "correctedWord": "travaux",
+    "explanation": "Le nom « travail » fait « travaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2016,
+    "sentence": "J'ai trouvé des chou dans le potager.",
+    "errorIndex": 4,
+    "correctedWord": "choux",
+    "explanation": "Le nom « chou » fait « choux » au pluriel (pluriel en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2017,
+    "sentence": "Les tableau sont accrochés au mur.",
+    "errorIndex": 1,
+    "correctedWord": "tableaux",
+    "explanation": "Le nom « tableau » fait « tableaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2018,
+    "sentence": "Les noyau des cerises sont durs.",
+    "errorIndex": 1,
+    "correctedWord": "noyaux",
+    "explanation": "Le nom « noyau » fait « noyaux » au pluriel (pluriel en -aux pour les noms en -au).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2019,
+    "sentence": "Deux château se dressent sur la colline.",
+    "errorIndex": 1,
+    "correctedWord": "châteaux",
+    "explanation": "Le nom « château » fait « châteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2020,
+    "sentence": "Les manteau sont rangés dans le placard.",
+    "errorIndex": 1,
+    "correctedWord": "manteaux",
+    "explanation": "Le nom « manteau » fait « manteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2021,
+    "sentence": "Les cadeau de Noël sont sous le sapin.",
+    "errorIndex": 1,
+    "correctedWord": "cadeaux",
+    "explanation": "Le nom « cadeau » fait « cadeaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2022,
+    "sentence": "Les tuyau du jardin sont percés.",
+    "errorIndex": 1,
+    "correctedWord": "tuyaux",
+    "explanation": "Le nom « tuyau » fait « tuyaux » au pluriel (pluriel en -aux pour les noms en -au).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2023,
+    "sentence": "Les vitrail de l'église sont magnifiques.",
+    "errorIndex": 1,
+    "correctedWord": "vitraux",
+    "explanation": "Le nom « vitrail » fait « vitraux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2024,
+    "sentence": "Les corail des mers chaudes sont colorés.",
+    "errorIndex": 1,
+    "correctedWord": "coraux",
+    "explanation": "Le nom « corail » fait « coraux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2025,
+    "sentence": "Mes frère sont plus grands que moi.",
+    "errorIndex": 1,
+    "correctedWord": "frères",
+    "explanation": "Après « mes » (pluriel), le nom prend un -s : « frères ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2026,
+    "sentence": "Les crayon de couleur sont dans la trousse.",
+    "errorIndex": 1,
+    "correctedWord": "crayons",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « crayons ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2027,
+    "sentence": "Les étoile brillent dans le ciel.",
+    "errorIndex": 1,
+    "correctedWord": "étoiles",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « étoiles ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2028,
+    "sentence": "Les fleur du jardin sont très belles.",
+    "errorIndex": 1,
+    "correctedWord": "fleurs",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « fleurs ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2029,
+    "sentence": "Les maison du village sont anciennes.",
+    "errorIndex": 1,
+    "correctedWord": "maisons",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « maisons ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2030,
+    "sentence": "Les voiture roulent sur la route.",
+    "errorIndex": 1,
+    "correctedWord": "voitures",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « voitures ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2031,
+    "sentence": "Les pomme sont mûres et juteuses.",
+    "errorIndex": 1,
+    "correctedWord": "pommes",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « pommes ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2032,
+    "sentence": "Les garçon jouent au football.",
+    "errorIndex": 1,
+    "correctedWord": "garçons",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « garçons ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2033,
+    "sentence": "Les fille sautent à la corde.",
+    "errorIndex": 1,
+    "correctedWord": "filles",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « filles ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2034,
+    "sentence": "Les livre sont rangés sur l'étagère.",
+    "errorIndex": 1,
+    "correctedWord": "livres",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « livres ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2035,
+    "sentence": "Les arbre perdent leurs feuilles en automne.",
+    "errorIndex": 1,
+    "correctedWord": "arbres",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « arbres ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2036,
+    "sentence": "Les nuage cachent le soleil.",
+    "errorIndex": 1,
+    "correctedWord": "nuages",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « nuages ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2037,
+    "sentence": "Les fenêtre de la classe sont ouvertes.",
+    "errorIndex": 1,
+    "correctedWord": "fenêtres",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « fenêtres ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2038,
+    "sentence": "Les chaise sont autour de la table.",
+    "errorIndex": 1,
+    "correctedWord": "chaises",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « chaises ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2039,
+    "sentence": "Les cahier des élèves sont corrigés.",
+    "errorIndex": 1,
+    "correctedWord": "cahiers",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « cahiers ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2040,
+    "sentence": "Les route de campagne sont sinueuses.",
+    "errorIndex": 1,
+    "correctedWord": "routes",
+    "explanation": "Après « les » (pluriel), le nom prend un -s : « routes ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2041,
+    "sentence": "Trois souris grise vivent dans le grenier.",
+    "errorIndex": 2,
+    "correctedWord": "grises",
+    "explanation": "L'adjectif « grise » doit s'accorder au pluriel avec « souris » : « grises ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2042,
+    "sentence": "Les rideau de la chambre sont fermés.",
+    "errorIndex": 1,
+    "correctedWord": "rideaux",
+    "explanation": "Le nom « rideau » fait « rideaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2043,
+    "sentence": "Les gâteau de mamie sont délicieux.",
+    "errorIndex": 1,
+    "correctedWord": "gâteaux",
+    "explanation": "Le nom « gâteau » fait « gâteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2044,
+    "sentence": "Les morceau de pain sont sur la table.",
+    "errorIndex": 1,
+    "correctedWord": "morceaux",
+    "explanation": "Le nom « morceau » fait « morceaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2045,
+    "sentence": "Les drapeau flottent au vent.",
+    "errorIndex": 1,
+    "correctedWord": "drapeaux",
+    "explanation": "Le nom « drapeau » fait « drapeaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2046,
+    "sentence": "Les agneau broutent dans le champ.",
+    "errorIndex": 1,
+    "correctedWord": "agneaux",
+    "explanation": "Le nom « agneau » fait « agneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2047,
+    "sentence": "Les chameau traversent le désert.",
+    "errorIndex": 1,
+    "correctedWord": "chameaux",
+    "explanation": "Le nom « chameau » fait « chameaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2048,
+    "sentence": "Les anneau sont en or.",
+    "errorIndex": 1,
+    "correctedWord": "anneaux",
+    "explanation": "Le nom « anneau » fait « anneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2049,
+    "sentence": "Les rateau sont dans le garage.",
+    "errorIndex": 1,
+    "correctedWord": "râteaux",
+    "explanation": "Le nom « rateau » fait « râteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2050,
+    "sentence": "Les poteau sont plantés le long de la route.",
+    "errorIndex": 1,
+    "correctedWord": "poteaux",
+    "explanation": "Le nom « poteau » fait « poteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2051,
+    "sentence": "Les seau sont remplis d'eau.",
+    "errorIndex": 1,
+    "correctedWord": "seaux",
+    "explanation": "Le nom « seau » fait « seaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2052,
+    "sentence": "Les couteau sont bien aiguisés.",
+    "errorIndex": 1,
+    "correctedWord": "couteaux",
+    "explanation": "Le nom « couteau » fait « couteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2053,
+    "sentence": "Les marteau sont dans la boîte à outils.",
+    "errorIndex": 1,
+    "correctedWord": "marteaux",
+    "explanation": "Le nom « marteau » fait « marteaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2054,
+    "sentence": "Les ciseau sont sur le bureau.",
+    "errorIndex": 1,
+    "correctedWord": "ciseaux",
+    "explanation": "Le nom « ciseau » fait « ciseaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2055,
+    "sentence": "Les ruisseau coulent dans la vallée.",
+    "errorIndex": 1,
+    "correctedWord": "ruisseaux",
+    "explanation": "Le nom « ruisseau » fait « ruisseaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2056,
+    "sentence": "Les traineau glissent sur la neige.",
+    "errorIndex": 1,
+    "correctedWord": "traîneaux",
+    "explanation": "Le nom « traineau » fait « traîneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2057,
+    "sentence": "Les panneau indiquent la direction.",
+    "errorIndex": 1,
+    "correctedWord": "panneaux",
+    "explanation": "Le nom « panneau » fait « panneaux » au pluriel (pluriel en -aux pour les noms en -eau).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2058,
+    "sentence": "Les cheveu de ma sœur sont longs.",
+    "errorIndex": 1,
+    "correctedWord": "cheveux",
+    "explanation": "Le nom « cheveu » fait « cheveux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2059,
+    "sentence": "Les jeu vidéo sont amusants.",
+    "errorIndex": 1,
+    "correctedWord": "jeux",
+    "explanation": "Le nom « jeu » fait « jeux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2060,
+    "sentence": "Les feu de camp réchauffent les campeurs.",
+    "errorIndex": 1,
+    "correctedWord": "feux",
+    "explanation": "Le nom « feu » fait « feux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2061,
+    "sentence": "Les lieu de vacances sont magnifiques.",
+    "errorIndex": 1,
+    "correctedWord": "lieux",
+    "explanation": "Le nom « lieu » fait « lieux » au pluriel (pluriel en -eux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2062,
+    "sentence": "Les pneu de la voiture sont usés.",
+    "errorIndex": 1,
+    "correctedWord": "pneus",
+    "explanation": "Le nom « pneu » fait « pneus » au pluriel. C'est une exception : il prend un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2063,
+    "sentence": "Les bleu de son dessin sont très jolis.",
+    "errorIndex": 1,
+    "correctedWord": "bleus",
+    "explanation": "Le nom « bleu » fait « bleus » au pluriel. C'est une exception : il prend un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2064,
+    "sentence": "Les landau sont garés devant le parc.",
+    "errorIndex": 1,
+    "correctedWord": "landaus",
+    "explanation": "Le nom « landau » fait « landaus » au pluriel. C'est une exception : il prend un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2065,
+    "sentence": "Les souris manges le fromage.",
+    "errorIndex": 2,
+    "correctedWord": "mangent",
+    "explanation": "Le sujet « les souris » est au pluriel (3e personne), le verbe doit être « mangent » et non « manges ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2066,
+    "sentence": "Les voixs des chanteurs sont belles.",
+    "errorIndex": 1,
+    "correctedWord": "voix",
+    "explanation": "Le nom « voix » ne change pas au pluriel. Les noms terminés par -x sont invariables. Il ne faut pas ajouter de -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2067,
+    "sentence": "Les bruits des voiture résonnent la nuit.",
+    "errorIndex": 3,
+    "correctedWord": "voitures",
+    "explanation": "Après « des » (pluriel), le nom doit être au pluriel : « voitures ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2068,
+    "sentence": "Les noixs sont tombées de l'arbre.",
+    "errorIndex": 1,
+    "correctedWord": "noix",
+    "explanation": "Le nom « voix » ne change pas au pluriel. Les noms terminés par -x sont invariables. Il ne faut pas ajouter de -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2069,
+    "sentence": "Les croixs sont plantées au bord du chemin.",
+    "errorIndex": 1,
+    "correctedWord": "croix",
+    "explanation": "Le nom « croix » ne change pas au pluriel. Les noms terminés par -x sont invariables. Il ne faut pas ajouter de -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2070,
+    "sentence": "Les souris blanche se cachent sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "blanches",
+    "explanation": "L'adjectif « blanche » doit s'accorder au pluriel avec « souris » : « blanches ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2071,
+    "sentence": "Les brebis sont dans le prés.",
+    "errorIndex": 5,
+    "correctedWord": "pré.",
+    "explanation": "« Pré » est un nom singulier ici (dans le pré). Il ne prend pas de -s après « le ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2072,
+    "sentence": "Les perdrix grise se cachent dans les buissons.",
+    "errorIndex": 2,
+    "correctedWord": "grises",
+    "explanation": "L'adjectif « grise » doit s'accorder au pluriel avec « perdrix » : « grises ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2073,
+    "sentence": "Plusieurs bal sont organisés cet été.",
+    "errorIndex": 1,
+    "correctedWord": "bals",
+    "explanation": "Le nom « bal » fait « bals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2074,
+    "sentence": "Les carnaval de la ville sont très joyeux.",
+    "errorIndex": 1,
+    "correctedWord": "carnavals",
+    "explanation": "Le nom « carnaval » fait « carnavals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2075,
+    "sentence": "Les festival de musique attirent du monde.",
+    "errorIndex": 1,
+    "correctedWord": "festivals",
+    "explanation": "Le nom « festival » fait « festivals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2076,
+    "sentence": "Les récital de piano sont ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "récitals",
+    "explanation": "Le nom « récital » fait « récitals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2077,
+    "sentence": "Les régal de la cantine sont les frites.",
+    "errorIndex": 1,
+    "correctedWord": "régals",
+    "explanation": "Le nom « régal » fait « régals » au pluriel. C'est une exception des noms en -al.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2078,
+    "sentence": "Les détail du plan sont importants.",
+    "errorIndex": 1,
+    "correctedWord": "détails",
+    "explanation": "Le nom « détail » fait « détails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2079,
+    "sentence": "Les portail du château sont immenses.",
+    "errorIndex": 1,
+    "correctedWord": "portails",
+    "explanation": "Le nom « portail » fait « portails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2080,
+    "sentence": "Les éventail sont très colorés.",
+    "errorIndex": 1,
+    "correctedWord": "éventails",
+    "explanation": "Le nom « éventail » fait « éventails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2081,
+    "sentence": "Les rail du train sont en acier.",
+    "errorIndex": 1,
+    "correctedWord": "rails",
+    "explanation": "Le nom « rail » fait « rails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2082,
+    "sentence": "Les chandail de laine sont chauds.",
+    "errorIndex": 1,
+    "correctedWord": "chandails",
+    "explanation": "Le nom « chandail » fait « chandails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2083,
+    "sentence": "Les épouvantail font peur aux oiseaux.",
+    "errorIndex": 1,
+    "correctedWord": "épouvantails",
+    "explanation": "Le nom « épouvantail » fait « épouvantails » au pluriel. Les noms en -ail prennent généralement un -s.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2084,
+    "sentence": "Les travail de peinture sont terminés.",
+    "errorIndex": 1,
+    "correctedWord": "travaux",
+    "explanation": "Le nom « travail » fait « travaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2085,
+    "sentence": "Les émails de maman sont envoyés.",
+    "errorIndex": 1,
+    "correctedWord": "émaux",
+    "explanation": "Le nom « émail » fait « émaux » au pluriel. C'est un pluriel irrégulier en -aux.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2086,
+    "sentence": "Les monsieur sont assis dans la salle.",
+    "errorIndex": 1,
+    "correctedWord": "messieurs",
+    "explanation": "Le nom « monsieur » fait « messieurs » au pluriel. C'est un pluriel irrégulier.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2087,
+    "sentence": "Les madame attendent à la porte.",
+    "errorIndex": 1,
+    "correctedWord": "mesdames",
+    "explanation": "Le nom « madame » fait « mesdames » au pluriel. C'est un pluriel irrégulier.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2088,
+    "sentence": "Les œil du chat brillent dans le noir.",
+    "errorIndex": 1,
+    "correctedWord": "yeux",
+    "explanation": "Le nom « œil » fait « yeux » au pluriel. C'est un pluriel irrégulier.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2089,
+    "sentence": "Les ciel d'orage sont impressionnants.",
+    "errorIndex": 1,
+    "correctedWord": "ciels",
+    "explanation": "Le nom « ciel » fait « ciels » au pluriel quand il désigne l'aspect du ciel.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2090,
+    "sentence": "Les aïeul de Pierre vivaient à la campagne.",
+    "errorIndex": 1,
+    "correctedWord": "aïeux",
+    "explanation": "Le nom « aïeul » fait « aïeux » au pluriel quand il désigne les ancêtres.",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2621,
+    "sentence": "Les chiens courent dans le parc.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « chiens » est bien au pluriel avec la marque « -s ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2622,
+    "sentence": "Les gâteaux sont sur la table.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « gâteaux » est bien au pluriel avec la marque « -x ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2623,
+    "sentence": "Les animaux dorment la nuit.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « animaux » est bien au pluriel (animal → animaux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2624,
+    "sentence": "Les journaux sont sur le bureau.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « journaux » est bien au pluriel (journal → journaux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2625,
+    "sentence": "Les bijoux brillent au soleil.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « bijoux » est bien au pluriel avec la marque « -x ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2626,
+    "sentence": "Les cailloux roulent sur le chemin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « cailloux » est bien au pluriel avec la marque « -x ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2627,
+    "sentence": "Les genoux sont pliés.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « genoux » est bien au pluriel avec la marque « -x ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2628,
+    "sentence": "Les hiboux chantent la nuit.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « hiboux » est bien au pluriel avec la marque « -x ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2629,
+    "sentence": "Les chevaux galopent dans le pré.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « chevaux » est bien au pluriel (cheval → chevaux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2630,
+    "sentence": "Les bateaux naviguent sur la mer.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le nom « bateaux » est bien au pluriel avec la marque « -x ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2831,
+    "sentence": "Les enfant du quartier veulent jouer au ballon dans le parc après l'école chaque jour.",
+    "errorIndex": 1,
+    "correctedWord": "enfants",
+    "explanation": "Le déterminant « les » indique le pluriel, donc le nom doit être « enfants » avec un « s ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2832,
+    "sentence": "Mes deux sœur peuvent nager très bien et elles vont à la piscine tous les samedis.",
+    "errorIndex": 2,
+    "correctedWord": "sœurs",
+    "explanation": "« Deux » indique le pluriel, donc le nom doit être « sœurs » avec un « s ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2833,
+    "sentence": "Les cheval du manège galopent dans le pré et ils veulent courir encore plus vite.",
+    "errorIndex": 1,
+    "correctedWord": "chevaux",
+    "explanation": "Le pluriel de « cheval » est « chevaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2834,
+    "sentence": "Tous les animal du zoo mangent bien et les soigneurs peuvent s'occuper d'eux chaque jour.",
+    "errorIndex": 2,
+    "correctedWord": "animaux",
+    "explanation": "Le pluriel de « animal » est « animaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2835,
+    "sentence": "Les gâteau de maman sont délicieux et nous voulons toujours en manger plusieurs au goûter.",
+    "errorIndex": 1,
+    "correctedWord": "gâteaux",
+    "explanation": "Le pluriel de « gâteau » est « gâteaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2836,
+    "sentence": "Les oiseau chantent dans les arbres et ils peuvent voler très haut dans le ciel bleu.",
+    "errorIndex": 1,
+    "correctedWord": "oiseaux",
+    "explanation": "Le pluriel de « oiseau » est « oiseaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2837,
+    "sentence": "Mes ami veulent venir à la maison samedi et ils pourront jouer dans le jardin avec moi.",
+    "errorIndex": 1,
+    "correctedWord": "amis",
+    "explanation": "Le déterminant « mes » indique le pluriel, donc le nom doit être « amis » avec un « s ».",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2838,
+    "sentence": "Les journal sont sur la table du salon et papa veut les lire tranquillement ce dimanche.",
+    "errorIndex": 1,
+    "correctedWord": "journaux",
+    "explanation": "Le pluriel de « journal » est « journaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2839,
+    "sentence": "Les bateau naviguent sur la mer et ils peuvent aller très loin jusqu'aux autres pays.",
+    "errorIndex": 1,
+    "correctedWord": "bateaux",
+    "explanation": "Le pluriel de « bateau » est « bateaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2840,
+    "sentence": "Les caillou du chemin sont très gros et on ne peut pas marcher dessus sans chaussures.",
+    "errorIndex": 1,
+    "correctedWord": "cailloux",
+    "explanation": "Le pluriel de « caillou » est « cailloux » (pluriel irrégulier en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2841,
+    "sentence": "Les chapeau des clowns sont très colorés et ils veulent les lancer en l'air pour amuser les enfants.",
+    "errorIndex": 1,
+    "correctedWord": "chapeaux",
+    "explanation": "Le pluriel de « chapeau » est « chapeaux » (les noms en -eau prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2842,
+    "sentence": "Les genou de mon frère sont sales parce qu'il a voulu jouer dans la boue du jardin.",
+    "errorIndex": 1,
+    "correctedWord": "genoux",
+    "explanation": "Le pluriel de « genou » est « genoux » (pluriel irrégulier en -oux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2843,
+    "sentence": "Les travail de la classe sont affichés au mur et la maîtresse veut les montrer aux parents.",
+    "errorIndex": 1,
+    "correctedWord": "travaux",
+    "explanation": "Le pluriel de « travail » est « travaux » (pluriel irrégulier en -aux).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2844,
+    "sentence": "Les jeu de société sont dans le placard et nous pouvons en choisir un pour ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "jeux",
+    "explanation": "Le pluriel de « jeu » est « jeux » (les noms en -eu prennent un « x » au pluriel).",
+    "category": "pluriel des noms"
+  },
+  {
+    "id": 2845,
+    "sentence": "Les hibou dorment le jour et ils peuvent voir très bien la nuit pour chasser les souris.",
+    "errorIndex": 1,
+    "correctedWord": "hiboux",
+    "explanation": "Le pluriel de « hibou » est « hiboux » (pluriel irrégulier en -oux).",
+    "category": "pluriel des noms"
+  }
+]

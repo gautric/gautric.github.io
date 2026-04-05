@@ -1,0 +1,1018 @@
+[
+  {
+    "id": 1076,
+    "sentence": "Je pourrons finir ce travail demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au futur simple : « pourrai ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1077,
+    "sentence": "Tu pourra venir me chercher ?",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1078,
+    "sentence": "Il pourrai courir plus vite avec des chaussures neuves.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1079,
+    "sentence": "Elle pourront finir son livre ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1080,
+    "sentence": "Nous pourrez partir en vacances en août.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1081,
+    "sentence": "Vous pourrons choisir votre hôtel.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1082,
+    "sentence": "Ils pourra nager dans la mer.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1083,
+    "sentence": "Elles pourrai jouer dehors demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1084,
+    "sentence": "Je pourrai venir te voir samedi.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Ici, « pourrai » est correct : c'est la première personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1085,
+    "sentence": "Tu pourrons rentrer à pied.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1086,
+    "sentence": "Mon chien pourra sauter plus haut.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1087,
+    "sentence": "Ma sœur pourront finir son gâteau.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « ma sœur » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1088,
+    "sentence": "Nous pourra faire du ski en hiver.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1089,
+    "sentence": "Vous pourra prendre le bus.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1090,
+    "sentence": "Les enfants pourrons jouer jusqu'à vingt heures.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1091,
+    "sentence": "Je pourra terminer mes devoirs ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au futur simple : « pourrai ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1092,
+    "sentence": "Tu pourrez venir à ma fête ?",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1093,
+    "sentence": "Il pourront prendre son vélo demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1094,
+    "sentence": "Nous pourrons aller au musée dimanche.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Ici, « pourrons » est correct : c'est la première personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1095,
+    "sentence": "Vous pourront réserver vos places.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1096,
+    "sentence": "Ils pourrai dormir sous les étoiles.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1097,
+    "sentence": "Elle pourra chanter sur scène.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1098,
+    "sentence": "Je pourrais t'aider si tu veux.",
+    "errorIndex": 1,
+    "correctedWord": "pourrais",
+    "explanation": "Ici, « pourrais » est correct : c'est la première personne du singulier du verbe pouvoir au conditionnel. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1099,
+    "sentence": "Tu pourrons partir avant la pluie.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1100,
+    "sentence": "Les oiseaux pourront voler vers le sud.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Ici, « pourront » est correct : c'est la troisième personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1161,
+    "sentence": "Je pourrais venir te voir ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pourrais",
+    "explanation": "Ici, « pourrais » est correct : c'est la première personne du singulier du verbe pouvoir au conditionnel. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1162,
+    "sentence": "Tu pourra terminer ton devoir demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1163,
+    "sentence": "Il pourrons aller à la pêche.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1164,
+    "sentence": "Elle pourront visiter sa famille.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1165,
+    "sentence": "Nous pourra sortir après la pluie.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1166,
+    "sentence": "Vous pourrons utiliser la salle de sport.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1167,
+    "sentence": "Ils pourrai partir à l'aventure.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1168,
+    "sentence": "Elles pourrons chanter sur scène.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1169,
+    "sentence": "Mon frère pourra conduire bientôt.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1170,
+    "sentence": "Les élèves pourrons lire leur poème.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « les élèves » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1171,
+    "sentence": "Je pourrai rentrer avant la nuit.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Ici, « pourrai » est correct : c'est la première personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1172,
+    "sentence": "Tu pourront prendre le vélo de papa.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1173,
+    "sentence": "Il pourrez aider son ami.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1174,
+    "sentence": "Nous pourrez organiser un pique-nique.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1175,
+    "sentence": "Vous pourra visiter l'exposition.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1201,
+    "sentence": "Je pourons sortir après le déjeuner.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au futur simple : « pourrai ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1202,
+    "sentence": "Tu pourront prendre le vélo demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1203,
+    "sentence": "Il pourrons aller au cinéma ce week-end.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1204,
+    "sentence": "Elle pourront écrire sa lettre demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1205,
+    "sentence": "Nous pourra inviter nos amis.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1206,
+    "sentence": "Vous pourrons choisir votre programme.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1207,
+    "sentence": "Ils pourrai partir en excursion.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1208,
+    "sentence": "Elles pourra apprendre cette danse.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1209,
+    "sentence": "Les garçons pourront participer au tournoi.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Ici, « pourront » est correct : c'est la troisième personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1210,
+    "sentence": "Ma cousine pourra venir nous rendre visite.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1231,
+    "sentence": "Je pourrai t'accompagner à l'aéroport.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Ici, « pourrai » est correct : c'est la première personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1232,
+    "sentence": "Tu pourrons finir ton modèle réduit.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1233,
+    "sentence": "Il pourrez attraper ce papillon.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1234,
+    "sentence": "Nous pourra visiter cette exposition.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1235,
+    "sentence": "Vous pourra assister au spectacle.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1236,
+    "sentence": "Elles pourra participer au tournoi.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1237,
+    "sentence": "Les chats pourrons dormir dehors en été.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « les chats » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1238,
+    "sentence": "Mon ami pourra jouer avec moi demain.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1239,
+    "sentence": "Tu pourrait venir nous rejoindre.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1240,
+    "sentence": "Ils pourrons s'entraîner tous les jours.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 1250,
+    "sentence": "Vous pourrez réserver votre table demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Ici, « pourrez » est correct : c'est la deuxième personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2326,
+    "sentence": "Je pourrons finir ce travail demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au futur simple : « pourrai ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2327,
+    "sentence": "Tu pourra venir me chercher ?",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2328,
+    "sentence": "Il pourrai courir plus vite avec des chaussures neuves.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2329,
+    "sentence": "Elle pourront finir son livre ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2330,
+    "sentence": "Nous pourrez partir en vacances en août.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2331,
+    "sentence": "Vous pourrons choisir votre hôtel.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2332,
+    "sentence": "Ils pourra nager dans la mer.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2333,
+    "sentence": "Elles pourrai jouer dehors demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2334,
+    "sentence": "Je pourrai venir te voir samedi.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Ici, « pourrai » est correct : c'est la première personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2335,
+    "sentence": "Tu pourrons rentrer à pied.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2336,
+    "sentence": "Mon chien pourra sauter plus haut.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2337,
+    "sentence": "Ma sœur pourront finir son gâteau.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « ma sœur » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2338,
+    "sentence": "Nous pourra faire du ski en hiver.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2339,
+    "sentence": "Vous pourra prendre le bus.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2340,
+    "sentence": "Les enfants pourrons jouer jusqu'à vingt heures.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2341,
+    "sentence": "Je pourra terminer mes devoirs ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au futur simple : « pourrai ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2342,
+    "sentence": "Tu pourrez venir à ma fête ?",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2343,
+    "sentence": "Il pourront prendre son vélo demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2344,
+    "sentence": "Nous pourrons aller au musée dimanche.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Ici, « pourrons » est correct : c'est la première personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2345,
+    "sentence": "Vous pourront réserver vos places.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2346,
+    "sentence": "Ils pourrai dormir sous les étoiles.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2347,
+    "sentence": "Elle pourra chanter sur scène.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2348,
+    "sentence": "Je pourrais t'aider si tu veux.",
+    "errorIndex": 1,
+    "correctedWord": "pourrais",
+    "explanation": "Ici, « pourrais » est correct : c'est la première personne du singulier du verbe pouvoir au conditionnel. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2349,
+    "sentence": "Tu pourrons partir avant la pluie.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2350,
+    "sentence": "Les oiseaux pourront voler vers le sud.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Ici, « pourront » est correct : c'est la troisième personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2411,
+    "sentence": "Je pourrais venir te voir ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pourrais",
+    "explanation": "Ici, « pourrais » est correct : c'est la première personne du singulier du verbe pouvoir au conditionnel. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2412,
+    "sentence": "Tu pourra terminer ton devoir demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2413,
+    "sentence": "Il pourrons aller à la pêche.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2414,
+    "sentence": "Elle pourront visiter sa famille.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2415,
+    "sentence": "Nous pourra sortir après la pluie.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2416,
+    "sentence": "Vous pourrons utiliser la salle de sport.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2417,
+    "sentence": "Ils pourrai partir à l'aventure.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2418,
+    "sentence": "Elles pourrons chanter sur scène.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2419,
+    "sentence": "Mon frère pourra conduire bientôt.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2420,
+    "sentence": "Les élèves pourrons lire leur poème.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « les élèves » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2421,
+    "sentence": "Je pourrai rentrer avant la nuit.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Ici, « pourrai » est correct : c'est la première personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2422,
+    "sentence": "Tu pourront prendre le vélo de papa.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2423,
+    "sentence": "Il pourrez aider son ami.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2424,
+    "sentence": "Nous pourrez organiser un pique-nique.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2425,
+    "sentence": "Vous pourra visiter l'exposition.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2451,
+    "sentence": "Je pourons sortir après le déjeuner.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au futur simple : « pourrai ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2452,
+    "sentence": "Tu pourront prendre le vélo demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2453,
+    "sentence": "Il pourrons aller au cinéma ce week-end.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2454,
+    "sentence": "Elle pourront écrire sa lettre demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2455,
+    "sentence": "Nous pourra inviter nos amis.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2456,
+    "sentence": "Vous pourrons choisir votre programme.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2457,
+    "sentence": "Ils pourrai partir en excursion.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2458,
+    "sentence": "Elles pourra apprendre cette danse.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2459,
+    "sentence": "Les garçons pourront participer au tournoi.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Ici, « pourront » est correct : c'est la troisième personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2460,
+    "sentence": "Ma cousine pourra venir nous rendre visite.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2481,
+    "sentence": "Je pourrai t'accompagner à l'aéroport.",
+    "errorIndex": 1,
+    "correctedWord": "pourrai",
+    "explanation": "Ici, « pourrai » est correct : c'est la première personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2482,
+    "sentence": "Tu pourrons finir ton modèle réduit.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2483,
+    "sentence": "Il pourrez attraper ce papillon.",
+    "errorIndex": 1,
+    "correctedWord": "pourra",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir au futur simple se conjugue « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2484,
+    "sentence": "Nous pourra visiter cette exposition.",
+    "errorIndex": 1,
+    "correctedWord": "pourrons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au futur simple : « pourrons ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2485,
+    "sentence": "Vous pourra assister au spectacle.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au futur simple : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2486,
+    "sentence": "Elles pourra participer au tournoi.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2487,
+    "sentence": "Les chats pourrons dormir dehors en été.",
+    "errorIndex": 2,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « les chats » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2488,
+    "sentence": "Mon ami pourra jouer avec moi demain.",
+    "errorIndex": 2,
+    "correctedWord": "pourra",
+    "explanation": "Ici, « pourra » est correct : c'est la troisième personne du singulier du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2489,
+    "sentence": "Tu pourrait venir nous rejoindre.",
+    "errorIndex": 1,
+    "correctedWord": "pourras",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au futur simple : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2490,
+    "sentence": "Ils pourrons s'entraîner tous les jours.",
+    "errorIndex": 1,
+    "correctedWord": "pourront",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir au futur simple se conjugue « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2500,
+    "sentence": "Vous pourrez réserver votre table demain.",
+    "errorIndex": 1,
+    "correctedWord": "pourrez",
+    "explanation": "Ici, « pourrez » est correct : c'est la deuxième personne du pluriel du verbe pouvoir au futur simple. Phrase correcte.",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2611,
+    "sentence": "Je pourrai venir samedi.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué au futur à la première personne du singulier : « pourrai ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2613,
+    "sentence": "Il pourra jouer après les devoirs.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué au futur à la troisième personne du singulier : « pourra ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2615,
+    "sentence": "Vous pourrez regarder le film.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué au futur à la deuxième personne du pluriel : « pourrez ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2617,
+    "sentence": "Ils pourront courir dans le parc.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué au futur à la troisième personne du pluriel : « pourront ».",
+    "category": "conjugaison pouvoir futur"
+  },
+  {
+    "id": 2619,
+    "sentence": "Tu pourras m'aider demain.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué au futur à la deuxième personne du singulier : « pourras ».",
+    "category": "conjugaison pouvoir futur"
+  }
+]

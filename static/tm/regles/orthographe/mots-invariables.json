@@ -1,0 +1,466 @@
+[
+  {
+    "id": 3046,
+    "sentence": "Les enfants sont toujour contents quand ils peuvent aller jouer dans le parc.",
+    "errorIndex": 3,
+    "correctedWord": "toujours",
+    "explanation": "« Toujours » est un mot invariable qui s'écrit toujours avec un « s » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3047,
+    "sentence": "Ma sœur court trés vite et elle peut gagner toutes les courses à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "très",
+    "explanation": "« Très » est un mot invariable qui s'écrit avec un accent grave : « très » et non « trés ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3048,
+    "sentence": "Mon frère mange baucoup de chocolat et maman lui dit d'arrêter chaque fois.",
+    "errorIndex": 3,
+    "correctedWord": "beaucoup",
+    "explanation": "« Beaucoup » est un mot invariable : « beaucoup » et non « baucoup ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3049,
+    "sentence": "Les élèves travaillent bien et la maîtresse est aussi très contente d'eux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « aussi » et « très » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3050,
+    "sentence": "Papa rentre souvant tard du travail et nous mangeons sans lui le soir.",
+    "errorIndex": 2,
+    "correctedWord": "souvent",
+    "explanation": "« Souvent » est un mot invariable : « souvent » et non « souvant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3051,
+    "sentence": "Les enfants jouent dehors et ensuit ils rentrent pour prendre leur goûter.",
+    "errorIndex": 4,
+    "correctedWord": "ensuite",
+    "explanation": "« Ensuite » est un mot invariable qui s'écrit avec un « e » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3052,
+    "sentence": "Ma mère est maintenant dans le jardin et elle arrose les fleurs tranquillement.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « maintenant » et « tranquillement » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3053,
+    "sentence": "Mon ami habite asez loin de l'école et il prend le bus chaque matin.",
+    "errorIndex": 3,
+    "correctedWord": "assez",
+    "explanation": "« Assez » est un mot invariable avec deux « s » : « assez » et non « asez ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3054,
+    "sentence": "Les oiseaux chantent dehord et on peut les entendre depuis la fenêtre du salon.",
+    "errorIndex": 3,
+    "correctedWord": "dehors",
+    "explanation": "« Dehors » est un mot invariable qui s'écrit avec un « s » : « dehors » et non « dehord ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3055,
+    "sentence": "Ma sœur veut aller chez sa copine parceque elle s'ennuie toute seule à la maison.",
+    "errorIndex": 6,
+    "correctedWord": "parce",
+    "explanation": "« Parce que » s'écrit en deux mots : « parce que » et non « parceque ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3056,
+    "sentence": "Les enfants sont allors sortis dans la cour pour jouer pendant la récréation.",
+    "errorIndex": 3,
+    "correctedWord": "alors",
+    "explanation": "« Alors » est un mot invariable : « alors » et non « allors ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3057,
+    "sentence": "Mon père travaille beaucoups et il rentre fatigué chaque soir à la maison.",
+    "errorIndex": 3,
+    "correctedWord": "beaucoup",
+    "explanation": "« Beaucoup » est un mot invariable qui ne prend jamais de « s » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3058,
+    "sentence": "Nous allons dabord faire nos devoirs et après nous pourrons jouer dehors.",
+    "errorIndex": 2,
+    "correctedWord": "d'abord",
+    "explanation": "« D'abord » s'écrit en deux mots avec une apostrophe : « d'abord » et non « dabord ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3059,
+    "sentence": "Les chats dorment pendant longtemps et ils se réveillent seulement pour manger.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « longtemps » et « seulement » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3060,
+    "sentence": "Ma cousine vient quelquefoi nous voir le dimanche et nous jouons ensemble.",
+    "errorIndex": 3,
+    "correctedWord": "quelquefois",
+    "explanation": "« Quelquefois » est un mot invariable qui s'écrit avec un « s » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3061,
+    "sentence": "Le chien court vraiement vite et personne ne peut l'attraper dans le jardin.",
+    "errorIndex": 3,
+    "correctedWord": "vraiment",
+    "explanation": "« Vraiment » est un mot invariable : « vraiment » et non « vraiement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3062,
+    "sentence": "Les enfants sont partis et finallement la maison est calme et silencieuse.",
+    "errorIndex": 4,
+    "correctedWord": "finalement",
+    "explanation": "« Finalement » est un mot invariable avec un seul « l » : « finalement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3063,
+    "sentence": "Mon frère veut jouer aussie et il demande à ses amis de l'attendre.",
+    "errorIndex": 4,
+    "correctedWord": "aussi",
+    "explanation": "« Aussi » est un mot invariable qui s'écrit sans « e » à la fin.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3064,
+    "sentence": "Les élèves doivent écrire propremant sur leur cahier pour avoir une bonne note.",
+    "errorIndex": 4,
+    "correctedWord": "proprement",
+    "explanation": "« Proprement » est un mot invariable : « proprement » et non « propremant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3065,
+    "sentence": "Ma mère dit que nous devons manger lentement et ne pas avaler trop vite.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « lentement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3066,
+    "sentence": "Le chat se cache derière le canapé quand il entend un bruit bizarre.",
+    "errorIndex": 4,
+    "correctedWord": "derrière",
+    "explanation": "« Derrière » est un mot invariable avec deux « r » : « derrière » et non « derière ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3067,
+    "sentence": "Les enfants jouent enssemble dans la cour et ils s'amusent beaucoup.",
+    "errorIndex": 3,
+    "correctedWord": "ensemble",
+    "explanation": "« Ensemble » est un mot invariable : « ensemble » et non « enssemble ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3068,
+    "sentence": "Mon ami arrive tojours en avance à l'école et il attend les autres devant la porte.",
+    "errorIndex": 3,
+    "correctedWord": "toujours",
+    "explanation": "« Toujours » est un mot invariable : « toujours » et non « tojours ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3069,
+    "sentence": "Papa conduit doucement sur la route parce qu'il pleut et la chaussée est glissante.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « doucement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3070,
+    "sentence": "Les enfants sont surment fatigués après cette longue journée de promenade en forêt.",
+    "errorIndex": 3,
+    "correctedWord": "sûrement",
+    "explanation": "« Sûrement » est un mot invariable : « sûrement » et non « surment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3071,
+    "sentence": "Ma sœur chante mieu que moi et elle veut devenir chanteuse quand elle sera grande.",
+    "errorIndex": 3,
+    "correctedWord": "mieux",
+    "explanation": "« Mieux » est un mot invariable qui s'écrit avec un « x » : « mieux » et non « mieu ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3072,
+    "sentence": "Le professeur parle dousement pour ne pas réveiller les enfants qui dorment.",
+    "errorIndex": 3,
+    "correctedWord": "doucement",
+    "explanation": "« Doucement » est un mot invariable : « doucement » et non « dousement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3073,
+    "sentence": "Les oiseaux volent au dessu des arbres et ils cherchent de la nourriture.",
+    "errorIndex": 4,
+    "correctedWord": "dessus",
+    "explanation": "« Dessus » est un mot invariable avec deux « s » : « dessus » et non « dessu ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3074,
+    "sentence": "Mon frère court rapiddement et il peut gagner la course facilement.",
+    "errorIndex": 3,
+    "correctedWord": "rapidement",
+    "explanation": "« Rapidement » est un mot invariable : « rapidement » et non « rapiddement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3075,
+    "sentence": "Les enfants jouent calmement dans le salon pendant que maman se repose un peu.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « calmement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3156,
+    "sentence": "Mon ami habite pres de l'école et il vient à pied tous les matins.",
+    "errorIndex": 3,
+    "correctedWord": "près",
+    "explanation": "« Près » est un mot invariable qui s'écrit avec un accent grave : « près » et non « pres ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3157,
+    "sentence": "Les enfants jouent dehors malgrés la pluie et ils s'amusent quand même.",
+    "errorIndex": 4,
+    "correctedWord": "malgré",
+    "explanation": "« Malgré » est un mot invariable qui ne prend pas de « s » : « malgré » et non « malgrés ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3158,
+    "sentence": "Ma sœur est partie ailleur jouer et elle reviendra pour le dîner ce soir.",
+    "errorIndex": 4,
+    "correctedWord": "ailleurs",
+    "explanation": "« Ailleurs » est un mot invariable qui s'écrit avec un « s » : « ailleurs ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3159,
+    "sentence": "Le chat dort paisiblement sur le canapé et il ne bouge jamais de la journée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « paisiblement » et « jamais » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3160,
+    "sentence": "Mon frère mange trop de bonbons et il a souvant mal au ventre après.",
+    "errorIndex": 9,
+    "correctedWord": "souvent",
+    "explanation": "« Souvent » est un mot invariable : « souvent » et non « souvant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3161,
+    "sentence": "Les oiseaux chantent depui ce matin et ils ne s'arrêtent pas du tout.",
+    "errorIndex": 3,
+    "correctedWord": "depuis",
+    "explanation": "« Depuis » est un mot invariable qui s'écrit avec un « s » : « depuis » et non « depui ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3162,
+    "sentence": "Papa conduit prudemant sur la route mouillée pour ne pas avoir d'accident.",
+    "errorIndex": 2,
+    "correctedWord": "prudemment",
+    "explanation": "« Prudemment » est un mot invariable avec deux « m » : « prudemment » et non « prudemant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3163,
+    "sentence": "Les enfants sont partis et la maison est enfain calme et silencieuse ce soir.",
+    "errorIndex": 7,
+    "correctedWord": "enfin",
+    "explanation": "« Enfin » est un mot invariable : « enfin » et non « enfain ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3164,
+    "sentence": "Ma mère dit que nous devons parler polimment aux adultes et dire bonjour.",
+    "errorIndex": 7,
+    "correctedWord": "poliment",
+    "explanation": "« Poliment » est un mot invariable avec un seul « m » : « poliment » et non « polimment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3165,
+    "sentence": "Le professeur explique clairement la leçon et tous les élèves comprennent bien.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « clairement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3206,
+    "sentence": "Les enfants jouent silencieusement dans le salon pendant que bébé dort en haut.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « silencieusement » et « pendant » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3207,
+    "sentence": "Mon frère court extremement vite et personne ne peut le rattraper à la course.",
+    "errorIndex": 3,
+    "correctedWord": "extrêmement",
+    "explanation": "« Extrêmement » est un mot invariable avec un accent circonflexe : « extrêmement ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3208,
+    "sentence": "Les oiseaux chantent jolimment et on les entend depuis la fenêtre de la cuisine.",
+    "errorIndex": 3,
+    "correctedWord": "joliment",
+    "explanation": "« Joliment » est un mot invariable avec un seul « m » : « joliment » et non « jolimment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3209,
+    "sentence": "Papa travaille enormément et il rentre très tard à la maison chaque soir.",
+    "errorIndex": 2,
+    "correctedWord": "énormément",
+    "explanation": "« Énormément » est un mot invariable avec un accent : « énormément » et non « enormément ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3210,
+    "sentence": "Ma sœur parle courament anglais et elle peut aussi parler un peu d'espagnol.",
+    "errorIndex": 3,
+    "correctedWord": "couramment",
+    "explanation": "« Couramment » est un mot invariable avec deux « m » : « couramment » et non « courament ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3236,
+    "sentence": "Les enfants marchent gentimment en rang dans le couloir pour aller à la cantine.",
+    "errorIndex": 3,
+    "correctedWord": "gentiment",
+    "explanation": "« Gentiment » est un mot invariable avec un seul « m » : « gentiment » et non « gentimment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3237,
+    "sentence": "Mon ami parle sufisamment fort pour que tout le monde l'entende en classe.",
+    "errorIndex": 3,
+    "correctedWord": "suffisamment",
+    "explanation": "« Suffisamment » est un mot invariable avec deux « f » : « suffisamment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3238,
+    "sentence": "Les élèves écrivent soigneusement dans leur cahier et la maîtresse est contente.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « soigneusement » est bien orthographié.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3239,
+    "sentence": "Papa dit que nous devons manger correctemant à table et ne pas faire de bruit.",
+    "errorIndex": 7,
+    "correctedWord": "correctement",
+    "explanation": "« Correctement » est un mot invariable : « correctement » et non « correctemant ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3240,
+    "sentence": "Le chien aboie méchemment quand un inconnu s'approche de la maison le soir.",
+    "errorIndex": 3,
+    "correctedWord": "méchamment",
+    "explanation": "« Méchamment » est un mot invariable : « méchamment » et non « méchemment ».",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3274,
+    "sentence": "Les enfants jouent toujours ensemble dans la cour et ils s'amusent beaucoup.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « toujours » et « ensemble » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3275,
+    "sentence": "Ma sœur court très vite et elle arrive souvent en première à la course.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « très », « vite » et « souvent » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3276,
+    "sentence": "Papa conduit prudemment sur la route et il fait toujours attention aux piétons.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « prudemment » et « toujours » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3277,
+    "sentence": "Les élèves travaillent sérieusement et la maîtresse est vraiment contente d'eux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « sérieusement » et « vraiment » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3278,
+    "sentence": "Mon ami habite assez loin de l'école mais il arrive toujours à l'heure.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « assez », « loin » et « toujours » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3279,
+    "sentence": "Nous mangeons d'abord la soupe et ensuite nous prenons le dessert tranquillement.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « d'abord », « ensuite » et « tranquillement » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3280,
+    "sentence": "Le chat dort paisiblement derrière le canapé et il ne bouge jamais de là.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « paisiblement », « derrière » et « jamais » sont bien orthographiés.",
+    "category": "mots invariables"
+  },
+  {
+    "id": 3281,
+    "sentence": "Ma cousine parle couramment anglais et elle voyage beaucoup à l'étranger.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « couramment » et « beaucoup » sont bien orthographiés.",
+    "category": "mots invariables"
+  }
+]

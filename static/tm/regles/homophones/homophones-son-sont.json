@@ -1,0 +1,2202 @@
+[
+  {
+    "id": 314,
+    "sentence": "Les oiseaux son dans le nid.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "« Sont » est le verbe être conjugué au présent avec « ils/elles ». On peut le remplacer par « étaient ». « Son » est un déterminant possessif.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 315,
+    "sentence": "Les enfants son contents de jouer.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les enfants » (ils), il faut « sont » (verbe être). On peut dire « étaient contents ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 316,
+    "sentence": "Les fleurs son jolies au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les fleurs » (elles) demande « sont » (verbe être). On peut remplacer par « étaient jolies ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 317,
+    "sentence": "Les gâteaux son délicieux.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les gâteaux » (ils), on écrit « sont » (verbe être). On peut dire « étaient délicieux ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 318,
+    "sentence": "Les chats son endormis sur le canapé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les chats » (ils) demande « sont » (verbe être). On peut remplacer par « étaient endormis ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 319,
+    "sentence": "Les livres son rangés sur l'étagère.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les livres » (ils), il faut « sont » (verbe être). On peut dire « étaient rangés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 320,
+    "sentence": "Les nuages son gris aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les nuages » (ils) demande « sont » (verbe être). On peut remplacer par « étaient gris ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 321,
+    "sentence": "Les élèves son attentifs en classe.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les élèves » (ils), on écrit « sont » (verbe être). On peut dire « étaient attentifs ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 322,
+    "sentence": "Les pommes son mûres dans le verger.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les pommes » (elles) demande « sont » (verbe être). On peut remplacer par « étaient mûres ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 323,
+    "sentence": "Les jouets son cassés depuis hier.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les jouets » (ils), il faut « sont » (verbe être). On peut dire « étaient cassés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 324,
+    "sentence": "Les poissons son dans l'aquarium.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les poissons » (ils) demande « sont » (verbe être). On peut remplacer par « étaient dans ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 325,
+    "sentence": "Les fenêtres son ouvertes à cause de la chaleur.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les fenêtres » (elles), on écrit « sont » (verbe être). On peut dire « étaient ouvertes ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 326,
+    "sentence": "Les chaussures son mouillées par la pluie.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les chaussures » (elles) demande « sont » (verbe être). On peut remplacer par « étaient mouillées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 327,
+    "sentence": "Les arbres son très grands dans la forêt.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les arbres » (ils), il faut « sont » (verbe être). On peut dire « étaient très grands ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 328,
+    "sentence": "Les routes son glissantes en hiver.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les routes » (elles) demande « sont » (verbe être). On peut remplacer par « étaient glissantes ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 329,
+    "sentence": "Les crayons son taillés et prêts.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les crayons » (ils), on écrit « sont » (verbe être). On peut dire « étaient taillés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 330,
+    "sentence": "Les étoiles son visibles ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les étoiles » (elles) demande « sont » (verbe être). On peut remplacer par « étaient visibles ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 331,
+    "sentence": "Les portes son fermées à clé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les portes » (elles), il faut « sont » (verbe être). On peut dire « étaient fermées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 332,
+    "sentence": "Les légumes son bons pour la santé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les légumes » (ils) demande « sont » (verbe être). On peut remplacer par « étaient bons ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 333,
+    "sentence": "Les photos son accrochées au mur.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les photos » (elles), on écrit « sont » (verbe être). On peut dire « étaient accrochées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 334,
+    "sentence": "Les vacances son finies depuis lundi.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les vacances » (elles) demande « sont » (verbe être). On peut remplacer par « étaient finies ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 335,
+    "sentence": "Les animaux son nourris chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les animaux » (ils), il faut « sont » (verbe être). On peut dire « étaient nourris ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 336,
+    "sentence": "Les dessins son affichés dans le couloir.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les dessins » (ils) demande « sont » (verbe être). On peut remplacer par « étaient affichés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 337,
+    "sentence": "Les bougies son allumées sur le gâteau.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les bougies » (elles), on écrit « sont » (verbe être). On peut dire « étaient allumées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 338,
+    "sentence": "Les trains son en retard ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les trains » (ils) demande « sont » (verbe être). On peut remplacer par « étaient en retard ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 339,
+    "sentence": "Les cahiers son dans le cartable.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les cahiers » (ils), il faut « sont » (verbe être). On peut dire « étaient dans le cartable ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 340,
+    "sentence": "Les fraises son rouges et sucrées.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les fraises » (elles) demande « sont » (verbe être). On peut remplacer par « étaient rouges ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 341,
+    "sentence": "Les ballons son gonflés pour la fête.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les ballons » (ils), on écrit « sont » (verbe être). On peut dire « étaient gonflés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 342,
+    "sentence": "Les lumières son éteintes dans la maison.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les lumières » (elles) demande « sont » (verbe être). On peut remplacer par « étaient éteintes ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 343,
+    "sentence": "Les places son réservées pour le spectacle.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les places » (elles), il faut « sont » (verbe être). On peut dire « étaient réservées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 344,
+    "sentence": "Les devoirs son terminés pour demain.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les devoirs » (ils) demande « sont » (verbe être). On peut remplacer par « étaient terminés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 345,
+    "sentence": "Les cerises son mûres en juin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les cerises » (elles), on écrit « sont » (verbe être). On peut dire « étaient mûres ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 346,
+    "sentence": "Il a perdu sont cartable à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut le remplacer par « mon » ou « ton ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 347,
+    "sentence": "Elle range sont bureau chaque soir.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon bureau ». « Sont » est le verbe être conjugué avec ils/elles.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 348,
+    "sentence": "Le chien mange sont repas.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon repas ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 349,
+    "sentence": "Papa a garé sont vélo dans le garage.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon vélo ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 350,
+    "sentence": "Marie a oublié sont manteau.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon manteau ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 351,
+    "sentence": "Le chat dort dans sont panier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon panier ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 352,
+    "sentence": "Il a rangé sont livre dans le sac.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon livre ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 353,
+    "sentence": "L'oiseau construit sont nid dans l'arbre.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon nid ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 354,
+    "sentence": "Elle a retrouvé sont crayon sous la table.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon crayon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 355,
+    "sentence": "Le garçon a mis sont bonnet.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon bonnet ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 356,
+    "sentence": "Maman prépare sont sac pour le travail.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon sac ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 357,
+    "sentence": "Le bébé tient sont doudou très fort.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon doudou ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 358,
+    "sentence": "L'élève a fini sont exercice.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon exercice ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 359,
+    "sentence": "Le jardinier arrose sont jardin.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon jardin ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 360,
+    "sentence": "Elle a lavé sont pull préféré.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon pull ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 361,
+    "sentence": "Le peintre nettoie sont pinceau.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon pinceau ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 362,
+    "sentence": "Il a cassé sont jouet préféré.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon jouet ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 363,
+    "sentence": "Le facteur distribue sont courrier.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon courrier ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 364,
+    "sentence": "La fille a décoré sont cahier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon cahier ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 365,
+    "sentence": "Le cuisinier goûte sont plat.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon plat ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 366,
+    "sentence": "Le musicien accorde sont violon.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon violon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 367,
+    "sentence": "Elle a perdu sont écharpe rouge.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon écharpe ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 368,
+    "sentence": "Le pilote vérifie sont avion.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon avion ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 369,
+    "sentence": "Il promène sont chien chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon chien ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 370,
+    "sentence": "Le clown a perdu sont nez rouge.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon nez ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 371,
+    "sentence": "Elle a oublié sont parapluie à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon parapluie ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 372,
+    "sentence": "Le boulanger prépare sont pain.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon pain ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 373,
+    "sentence": "Il a nettoyé sont bureau avant de partir.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon bureau ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 374,
+    "sentence": "Le roi porte sont manteau doré.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon manteau ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 375,
+    "sentence": "Elle a trouvé sont chat sous le lit.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon chat ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 376,
+    "sentence": "Le docteur range sont stéthoscope.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon stéthoscope ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 526,
+    "sentence": "Le chat a perdu sont collier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 527,
+    "sentence": "Les élèves son dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 528,
+    "sentence": "Il range sont cartable après l'école.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 529,
+    "sentence": "Les chats son sur le canapé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 530,
+    "sentence": "Elle aime sont chien.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 531,
+    "sentence": "Les fleurs son très belles ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 532,
+    "sentence": "Il a oublié sont livre à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 533,
+    "sentence": "Les enfants sont fatigués après la récréation.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est correct : c'est le verbe être au pluriel. Phrase correcte.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 534,
+    "sentence": "Le garçon cherche sont vélo.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 535,
+    "sentence": "Les nuages son très gris aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 536,
+    "sentence": "Papa a pris sont parapluie.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 537,
+    "sentence": "Les oiseaux son partis vers le sud.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 538,
+    "sentence": "Léa a oublié sont manteau.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 539,
+    "sentence": "Les jouets sont éparpillés sur le sol.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est correct : c'est le verbe être au pluriel. Phrase correcte.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 540,
+    "sentence": "Mon frère a cassé sont jouet.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 541,
+    "sentence": "Les enfants son très contents.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 542,
+    "sentence": "Il prend sont goûter après l'école.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 543,
+    "sentence": "Les lapins son dans leur cage.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 544,
+    "sentence": "Elle a perdu sont crayon.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 545,
+    "sentence": "Les maisons son joliment décorées.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 546,
+    "sentence": "Il a retrouvé sont chat.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 547,
+    "sentence": "Les portes son ouvertes.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 548,
+    "sentence": "Le chien dort dans sont panier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 549,
+    "sentence": "Les élèves son attentifs en classe.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 550,
+    "sentence": "Il a prêté sont vélo à son ami.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 616,
+    "sentence": "Le chien dort dans sont niche.",
+    "errorIndex": 4,
+    "correctedWord": "sa",
+    "explanation": "Ici, le possessif correct est « sa » (féminin). Mais si l'erreur attendue est son/sont : « sont » est incorrect, ce devrait être « son » — le déterminant possessif. On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 617,
+    "sentence": "Les pommes sont mûres en automne.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est correct : c'est le verbe être au pluriel. Phrase correcte.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 618,
+    "sentence": "Mon ami a oublié sont stylo.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 619,
+    "sentence": "Les devoirs son trop difficiles.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 620,
+    "sentence": "Il a retrouvé sont ballon dans le jardin.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 621,
+    "sentence": "Les livres son posés sur l'étagère.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 622,
+    "sentence": "La fille range sont sac à dos.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 623,
+    "sentence": "Les étoiles son visibles cette nuit.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 624,
+    "sentence": "Le petit chat sort de sont panier.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 625,
+    "sentence": "Les vaches son dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 626,
+    "sentence": "Il montre sont dessin à la maîtresse.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 627,
+    "sentence": "Les canards son au bord du lac.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 628,
+    "sentence": "Ma cousine a perdu sont téléphone.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 629,
+    "sentence": "Les fleurs son arrosées chaque jour.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 630,
+    "sentence": "Il nourrit sont lapin le matin.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 676,
+    "sentence": "Le cheval mange sont foin chaque matin.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 677,
+    "sentence": "Les volets son fermés depuis ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 678,
+    "sentence": "Il a perdu sont chapeau dans le vent.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 679,
+    "sentence": "Les clés son sur la table de la cuisine.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 680,
+    "sentence": "Elle a posé sont livre sur l'étagère.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 681,
+    "sentence": "Les enfants son couchés depuis une heure.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 682,
+    "sentence": "Mon cousin a cassé sont verre.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 683,
+    "sentence": "Les fenêtres son ouvertes à cause de la chaleur.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 684,
+    "sentence": "Le garçon a oublié sont imperméable.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 685,
+    "sentence": "Les ballons son rouges et bleus.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 706,
+    "sentence": "Il nourrit sont poisson rouge chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 707,
+    "sentence": "Les habits son séchés sur le fil.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 708,
+    "sentence": "Léo a rangé sont cartable dans l'armoire.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 709,
+    "sentence": "Les chaussures son sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 710,
+    "sentence": "Il promène sont chien le soir.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 731,
+    "sentence": "La fille range sont manteau dans l'armoire.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 732,
+    "sentence": "Les cadeaux son sous le sapin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 733,
+    "sentence": "Il met sont écharpe avant de sortir.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 734,
+    "sentence": "Les arbres son couverts de neige.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 735,
+    "sentence": "Le petit garçon tient sont doudou.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1564,
+    "sentence": "Les oiseaux son dans le nid.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "« Sont » est le verbe être conjugué au présent avec « ils/elles ». On peut le remplacer par « étaient ». « Son » est un déterminant possessif.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1565,
+    "sentence": "Les enfants son contents de jouer.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les enfants » (ils), il faut « sont » (verbe être). On peut dire « étaient contents ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1566,
+    "sentence": "Les fleurs son jolies au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les fleurs » (elles) demande « sont » (verbe être). On peut remplacer par « étaient jolies ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1567,
+    "sentence": "Les gâteaux son délicieux.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les gâteaux » (ils), on écrit « sont » (verbe être). On peut dire « étaient délicieux ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1568,
+    "sentence": "Les chats son endormis sur le canapé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les chats » (ils) demande « sont » (verbe être). On peut remplacer par « étaient endormis ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1569,
+    "sentence": "Les livres son rangés sur l'étagère.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les livres » (ils), il faut « sont » (verbe être). On peut dire « étaient rangés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1570,
+    "sentence": "Les nuages son gris aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les nuages » (ils) demande « sont » (verbe être). On peut remplacer par « étaient gris ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1571,
+    "sentence": "Les élèves son attentifs en classe.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les élèves » (ils), on écrit « sont » (verbe être). On peut dire « étaient attentifs ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1572,
+    "sentence": "Les pommes son mûres dans le verger.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les pommes » (elles) demande « sont » (verbe être). On peut remplacer par « étaient mûres ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1573,
+    "sentence": "Les jouets son cassés depuis hier.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les jouets » (ils), il faut « sont » (verbe être). On peut dire « étaient cassés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1574,
+    "sentence": "Les poissons son dans l'aquarium.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les poissons » (ils) demande « sont » (verbe être). On peut remplacer par « étaient dans ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1575,
+    "sentence": "Les fenêtres son ouvertes à cause de la chaleur.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les fenêtres » (elles), on écrit « sont » (verbe être). On peut dire « étaient ouvertes ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1576,
+    "sentence": "Les chaussures son mouillées par la pluie.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les chaussures » (elles) demande « sont » (verbe être). On peut remplacer par « étaient mouillées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1577,
+    "sentence": "Les arbres son très grands dans la forêt.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les arbres » (ils), il faut « sont » (verbe être). On peut dire « étaient très grands ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1578,
+    "sentence": "Les routes son glissantes en hiver.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les routes » (elles) demande « sont » (verbe être). On peut remplacer par « étaient glissantes ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1579,
+    "sentence": "Les crayons son taillés et prêts.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les crayons » (ils), on écrit « sont » (verbe être). On peut dire « étaient taillés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1580,
+    "sentence": "Les étoiles son visibles ce soir.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les étoiles » (elles) demande « sont » (verbe être). On peut remplacer par « étaient visibles ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1581,
+    "sentence": "Les portes son fermées à clé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les portes » (elles), il faut « sont » (verbe être). On peut dire « étaient fermées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1582,
+    "sentence": "Les légumes son bons pour la santé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les légumes » (ils) demande « sont » (verbe être). On peut remplacer par « étaient bons ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1583,
+    "sentence": "Les photos son accrochées au mur.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les photos » (elles), on écrit « sont » (verbe être). On peut dire « étaient accrochées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1584,
+    "sentence": "Les vacances son finies depuis lundi.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les vacances » (elles) demande « sont » (verbe être). On peut remplacer par « étaient finies ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1585,
+    "sentence": "Les animaux son nourris chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les animaux » (ils), il faut « sont » (verbe être). On peut dire « étaient nourris ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1586,
+    "sentence": "Les dessins son affichés dans le couloir.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les dessins » (ils) demande « sont » (verbe être). On peut remplacer par « étaient affichés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1587,
+    "sentence": "Les bougies son allumées sur le gâteau.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les bougies » (elles), on écrit « sont » (verbe être). On peut dire « étaient allumées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1588,
+    "sentence": "Les trains son en retard ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les trains » (ils) demande « sont » (verbe être). On peut remplacer par « étaient en retard ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1589,
+    "sentence": "Les cahiers son dans le cartable.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les cahiers » (ils), il faut « sont » (verbe être). On peut dire « étaient dans le cartable ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1590,
+    "sentence": "Les fraises son rouges et sucrées.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les fraises » (elles) demande « sont » (verbe être). On peut remplacer par « étaient rouges ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1591,
+    "sentence": "Les ballons son gonflés pour la fête.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les ballons » (ils), on écrit « sont » (verbe être). On peut dire « étaient gonflés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1592,
+    "sentence": "Les lumières son éteintes dans la maison.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les lumières » (elles) demande « sont » (verbe être). On peut remplacer par « étaient éteintes ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1593,
+    "sentence": "Les places son réservées pour le spectacle.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les places » (elles), il faut « sont » (verbe être). On peut dire « étaient réservées ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1594,
+    "sentence": "Les devoirs son terminés pour demain.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Le sujet « les devoirs » (ils) demande « sont » (verbe être). On peut remplacer par « étaient terminés ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1595,
+    "sentence": "Les cerises son mûres en juin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Avec « les cerises » (elles), on écrit « sont » (verbe être). On peut dire « étaient mûres ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1596,
+    "sentence": "Il a perdu sont cartable à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut le remplacer par « mon » ou « ton ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1597,
+    "sentence": "Elle range sont bureau chaque soir.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon bureau ». « Sont » est le verbe être conjugué avec ils/elles.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1598,
+    "sentence": "Le chien mange sont repas.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon repas ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1599,
+    "sentence": "Papa a garé sont vélo dans le garage.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon vélo ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1600,
+    "sentence": "Marie a oublié sont manteau.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon manteau ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1601,
+    "sentence": "Le chat dort dans sont panier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon panier ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1602,
+    "sentence": "Il a rangé sont livre dans le sac.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon livre ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1603,
+    "sentence": "L'oiseau construit sont nid dans l'arbre.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon nid ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1604,
+    "sentence": "Elle a retrouvé sont crayon sous la table.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon crayon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1605,
+    "sentence": "Le garçon a mis sont bonnet.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon bonnet ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1606,
+    "sentence": "Maman prépare sont sac pour le travail.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon sac ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1607,
+    "sentence": "Le bébé tient sont doudou très fort.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon doudou ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1608,
+    "sentence": "L'élève a fini sont exercice.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon exercice ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1609,
+    "sentence": "Le jardinier arrose sont jardin.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon jardin ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1610,
+    "sentence": "Elle a lavé sont pull préféré.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon pull ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1611,
+    "sentence": "Le peintre nettoie sont pinceau.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon pinceau ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1612,
+    "sentence": "Il a cassé sont jouet préféré.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon jouet ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1613,
+    "sentence": "Le facteur distribue sont courrier.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon courrier ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1614,
+    "sentence": "La fille a décoré sont cahier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon cahier ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1615,
+    "sentence": "Le cuisinier goûte sont plat.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon plat ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1616,
+    "sentence": "Le musicien accorde sont violon.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon violon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1617,
+    "sentence": "Elle a perdu sont écharpe rouge.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon écharpe ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1618,
+    "sentence": "Le pilote vérifie sont avion.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon avion ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1619,
+    "sentence": "Il promène sont chien chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon chien ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1620,
+    "sentence": "Le clown a perdu sont nez rouge.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon nez ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1621,
+    "sentence": "Elle a oublié sont parapluie à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon parapluie ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1622,
+    "sentence": "Le boulanger prépare sont pain.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon pain ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1623,
+    "sentence": "Il a nettoyé sont bureau avant de partir.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon bureau ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1624,
+    "sentence": "Le roi porte sont manteau doré.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon manteau ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1625,
+    "sentence": "Elle a trouvé sont chat sous le lit.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif. On peut dire « mon chat ». « Sont » est le verbe être.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1626,
+    "sentence": "Le docteur range sont stéthoscope.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "« Son » est un déterminant possessif (= le sien). On peut remplacer par « mon stéthoscope ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1776,
+    "sentence": "Le chat a perdu sont collier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1777,
+    "sentence": "Les élèves son dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1778,
+    "sentence": "Il range sont cartable après l'école.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1779,
+    "sentence": "Les chats son sur le canapé.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1780,
+    "sentence": "Elle aime sont chien.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1781,
+    "sentence": "Les fleurs son très belles ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1782,
+    "sentence": "Il a oublié sont livre à l'école.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1783,
+    "sentence": "Les enfants sont fatigués après la récréation.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est correct : c'est le verbe être au pluriel. Phrase correcte.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1784,
+    "sentence": "Le garçon cherche sont vélo.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1785,
+    "sentence": "Les nuages son très gris aujourd'hui.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1786,
+    "sentence": "Papa a pris sont parapluie.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1787,
+    "sentence": "Les oiseaux son partis vers le sud.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1788,
+    "sentence": "Léa a oublié sont manteau.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1789,
+    "sentence": "Les jouets sont éparpillés sur le sol.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est correct : c'est le verbe être au pluriel. Phrase correcte.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1790,
+    "sentence": "Mon frère a cassé sont jouet.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1791,
+    "sentence": "Les enfants son très contents.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1792,
+    "sentence": "Il prend sont goûter après l'école.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1793,
+    "sentence": "Les lapins son dans leur cage.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1794,
+    "sentence": "Elle a perdu sont crayon.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1795,
+    "sentence": "Les maisons son joliment décorées.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1796,
+    "sentence": "Il a retrouvé sont chat.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1797,
+    "sentence": "Les portes son ouvertes.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1798,
+    "sentence": "Le chien dort dans sont panier.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1799,
+    "sentence": "Les élèves son attentifs en classe.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1800,
+    "sentence": "Il a prêté sont vélo à son ami.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1866,
+    "sentence": "Le chien dort dans sont niche.",
+    "errorIndex": 4,
+    "correctedWord": "sa",
+    "explanation": "Ici, le possessif correct est « sa » (féminin). Mais si l'erreur attendue est son/sont : « sont » est incorrect, ce devrait être « son » — le déterminant possessif. On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1867,
+    "sentence": "Les pommes sont mûres en automne.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est correct : c'est le verbe être au pluriel. Phrase correcte.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1868,
+    "sentence": "Mon ami a oublié sont stylo.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1869,
+    "sentence": "Les devoirs son trop difficiles.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1870,
+    "sentence": "Il a retrouvé sont ballon dans le jardin.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1871,
+    "sentence": "Les livres son posés sur l'étagère.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1872,
+    "sentence": "La fille range sont sac à dos.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1873,
+    "sentence": "Les étoiles son visibles cette nuit.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1874,
+    "sentence": "Le petit chat sort de sont panier.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1875,
+    "sentence": "Les vaches son dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1876,
+    "sentence": "Il montre sont dessin à la maîtresse.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1877,
+    "sentence": "Les canards son au bord du lac.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1878,
+    "sentence": "Ma cousine a perdu sont téléphone.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1879,
+    "sentence": "Les fleurs son arrosées chaque jour.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1880,
+    "sentence": "Il nourrit sont lapin le matin.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1926,
+    "sentence": "Le cheval mange sont foin chaque matin.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1927,
+    "sentence": "Les volets son fermés depuis ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1928,
+    "sentence": "Il a perdu sont chapeau dans le vent.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1929,
+    "sentence": "Les clés son sur la table de la cuisine.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1930,
+    "sentence": "Elle a posé sont livre sur l'étagère.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1931,
+    "sentence": "Les enfants son couchés depuis une heure.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1932,
+    "sentence": "Mon cousin a cassé sont verre.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1933,
+    "sentence": "Les fenêtres son ouvertes à cause de la chaleur.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1934,
+    "sentence": "Le garçon a oublié sont imperméable.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1935,
+    "sentence": "Les ballons son rouges et bleus.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1956,
+    "sentence": "Il nourrit sont poisson rouge chaque matin.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1957,
+    "sentence": "Les habits son séchés sur le fil.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1958,
+    "sentence": "Léo a rangé sont cartable dans l'armoire.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1959,
+    "sentence": "Les chaussures son sous le lit.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1960,
+    "sentence": "Il promène sont chien le soir.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1981,
+    "sentence": "La fille range sont manteau dans l'armoire.",
+    "errorIndex": 3,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1982,
+    "sentence": "Les cadeaux son sous le sapin.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1983,
+    "sentence": "Il met sont écharpe avant de sortir.",
+    "errorIndex": 2,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1984,
+    "sentence": "Les arbres son couverts de neige.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "Ici, « sont » est le verbe être au pluriel (on peut le remplacer par « étaient »). On écrit « sont » avec un t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 1985,
+    "sentence": "Le petit garçon tient sont doudou.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "Ici, « son » est un déterminant possessif (on peut le remplacer par « le »). On écrit « son » sans t.",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2571,
+    "sentence": "Son cartable est très lourd.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« son » est un déterminant possessif, on peut le remplacer par « mon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2572,
+    "sentence": "Les arbres sont grands.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« sont » est le verbe être conjugué au pluriel, on peut le remplacer par « étaient ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2573,
+    "sentence": "Son chien court dans le jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« son » est un déterminant possessif, on peut le remplacer par « mon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2574,
+    "sentence": "Les fleurs sont belles.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« sont » est le verbe être conjugué au pluriel, on peut le remplacer par « étaient ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2575,
+    "sentence": "Son vélo est rouge.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« son » est un déterminant possessif, on peut le remplacer par « mon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2576,
+    "sentence": "Les enfants sont contents.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« sont » est le verbe être conjugué au pluriel, on peut le remplacer par « étaient ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2577,
+    "sentence": "Son frère joue au football.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« son » est un déterminant possessif, on peut le remplacer par « mon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2578,
+    "sentence": "Les nuages sont gris aujourd'hui.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« sont » est le verbe être conjugué au pluriel, on peut le remplacer par « étaient ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2579,
+    "sentence": "Son livre est passionnant.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« son » est un déterminant possessif, on peut le remplacer par « mon ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2580,
+    "sentence": "Les oiseaux sont sur la branche.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« sont » est le verbe être conjugué au pluriel, on peut le remplacer par « étaient ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2756,
+    "sentence": "Mon frère veut aller au parc et sont chien veut aussi courir sur la grande pelouse.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le chien de mon frère), pas le verbe « être » « sont ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2757,
+    "sentence": "Les enfants son contents parce qu'ils peuvent aller jouer dehors après avoir fini leurs devoirs.",
+    "errorIndex": 2,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les enfants sont contents » (on peut dire « étaient contents »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2758,
+    "sentence": "Ma sœur veut prendre sont vélo pour aller chez sa copine qui habite au bout de la rue.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le vélo de ma sœur), pas le verbe « être » « sont ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2759,
+    "sentence": "Les gâteaux de maman son délicieux et tout le monde peut en manger autant qu'il veut.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les gâteaux sont délicieux » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2760,
+    "sentence": "Papa ne peut pas trouver sont téléphone et il le cherche partout dans toute la maison.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le téléphone de papa), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2761,
+    "sentence": "Les fleurs du jardin son très belles et maman veut les cueillir pour décorer le salon.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les fleurs sont très belles » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2762,
+    "sentence": "Le petit garçon veut montrer sont dessin à la maîtresse parce qu'il est très fier de lui.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le dessin du garçon), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2763,
+    "sentence": "Les jouets de ma sœur son rangés dans le coffre et elle ne veut pas les prêter.",
+    "errorIndex": 5,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les jouets sont rangés » (on peut dire « étaient rangés »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2764,
+    "sentence": "Mon ami peut venir avec sont frère à la fête et ils pourront jouer avec nous.",
+    "errorIndex": 5,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le frère de mon ami), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2765,
+    "sentence": "Les chats de la voisine son noirs et blancs et ils peuvent grimper très haut dans les arbres.",
+    "errorIndex": 5,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les chats sont noirs » (on peut dire « étaient noirs »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2766,
+    "sentence": "Ma cousine veut ranger sont cartable avant de sortir jouer avec ses amies dans la cour.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le cartable de ma cousine), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2767,
+    "sentence": "Les résultats du contrôle son bons et les élèves peuvent être fiers de leur travail.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les résultats sont bons » (on peut dire « étaient bons »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2768,
+    "sentence": "Le bébé ne veut pas lâcher sont doudou et il pleure très fort quand on le lui prend.",
+    "errorIndex": 6,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le doudou du bébé), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2769,
+    "sentence": "Les routes du village son étroites et les voitures ne peuvent pas rouler très vite dessus.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les routes sont étroites » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2770,
+    "sentence": "Mon père veut réparer sont vélo ce week-end parce que la roue avant est crevée.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le vélo de mon père), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2921,
+    "sentence": "Ma sœur veut ranger sont cartable mais elle ne peut pas trouver sa trousse de crayons.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le cartable de ma sœur), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2922,
+    "sentence": "Les devoirs de ce soir son difficiles et les élèves ne peuvent pas les faire tout seuls.",
+    "errorIndex": 5,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les devoirs sont difficiles » (on peut dire « étaient »).",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2923,
+    "sentence": "Mon ami veut prendre sont manteau parce qu'il fait froid dehors et il ne veut pas être malade.",
+    "errorIndex": 4,
+    "correctedWord": "son",
+    "explanation": "C'est le déterminant possessif « son » (= le manteau de mon ami), pas le verbe « être ».",
+    "category": "homophones son/sont"
+  },
+  {
+    "id": 2924,
+    "sentence": "Les pommes du verger son mûres et nous pouvons les cueillir pour faire une tarte.",
+    "errorIndex": 4,
+    "correctedWord": "sont",
+    "explanation": "C'est le verbe « être » au pluriel : « les pommes sont mûres » (on peut dire « étaient mûres »).",
+    "category": "homophones son/sont"
+  }
+]

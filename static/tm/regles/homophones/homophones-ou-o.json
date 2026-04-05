@@ -1,0 +1,2266 @@
+[
+  {
+    "id": 377,
+    "sentence": "La ville ou je suis né est jolie.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu ou un moment. « Ou » exprime un choix (on peut le remplacer par « ou bien »). Ici, on parle d'un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 378,
+    "sentence": "Le parc ou nous jouons est grand.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 379,
+    "sentence": "La maison ou j'habite est bleue.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit où on habite.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 380,
+    "sentence": "L'école ou je vais est près de chez moi.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien je vais », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 381,
+    "sentence": "Le magasin ou maman fait les courses est fermé.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 382,
+    "sentence": "La chambre ou je dors est petite.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 383,
+    "sentence": "Le jardin ou poussent les fleurs est joli.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit des fleurs.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 384,
+    "sentence": "La plage ou nous allons est magnifique.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien nous allons », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 385,
+    "sentence": "Le pays ou il fait chaud me plaît.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 386,
+    "sentence": "La forêt ou vivent les animaux est protégée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 387,
+    "sentence": "Le moment ou il est arrivé était drôle.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » peut aussi indiquer un moment dans le temps. On ne peut pas dire « ou bien il est arrivé ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 388,
+    "sentence": "Le jour ou il a neigé était magique.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un moment. « Ou » exprime un choix. Ici, on parle d'un moment précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 389,
+    "sentence": "La rue ou habite mon ami est calme.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 390,
+    "sentence": "Le village ou vit ma grand-mère est petit.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 391,
+    "sentence": "La piscine ou je nage est chauffée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien je nage », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 392,
+    "sentence": "Le château ou vivait le roi est immense.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit du roi.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 393,
+    "sentence": "La bibliothèque ou je lis est silencieuse.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 394,
+    "sentence": "Le terrain ou nous jouons au foot est boueux.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 395,
+    "sentence": "La cuisine ou maman prépare le repas sent bon.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien maman prépare », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 396,
+    "sentence": "Le grenier ou sont rangés les jouets est sombre.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit des jouets.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 397,
+    "sentence": "L'endroit ou nous pique-niquons est ombragé.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 398,
+    "sentence": "Le lac ou nagent les canards est gelé.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 399,
+    "sentence": "La montagne ou nous skions est enneigée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien nous skions », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 400,
+    "sentence": "Le chemin ou passe le facteur est étroit.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle du chemin du facteur.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 401,
+    "sentence": "La cour ou jouent les enfants est grande.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 402,
+    "sentence": "Le soir ou la lune brille est calme.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un moment. « Ou » exprime un choix. Ici, on parle d'un moment précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 403,
+    "sentence": "La grotte ou se cache le trésor est profonde.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien se cache », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 404,
+    "sentence": "Le banc ou je m'assois est en bois.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 405,
+    "sentence": "La ferme ou vivent les vaches est grande.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 406,
+    "sentence": "Le coin ou le chat se repose est douillet.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit du chat.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 407,
+    "sentence": "L'île ou nous avons voyagé était belle.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien nous avons voyagé », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 408,
+    "sentence": "Tu veux du chocolat où de la vanille ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités (on peut le remplacer par « ou bien »). « Où » indique un lieu ou un moment.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 409,
+    "sentence": "Il mange une pomme où une banane.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien une banane ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 410,
+    "sentence": "Tu préfères le rouge où le bleu ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 411,
+    "sentence": "On joue au foot où au basket ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien au basket ». « Où » indique un lieu ou un moment.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 412,
+    "sentence": "Je prendrai du jus où de l'eau.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 413,
+    "sentence": "Tu viens lundi où mardi ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien mardi ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 414,
+    "sentence": "Elle veut un chat où un chien.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien un chien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 415,
+    "sentence": "On part à la mer où à la montagne ?",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien à la montagne ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 416,
+    "sentence": "Tu veux lire où dessiner ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux activités. On peut remplacer par « ou bien dessiner ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 417,
+    "sentence": "Il fait beau où il pleut dehors ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien il pleut ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 418,
+    "sentence": "Tu prends le bus où le vélo ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien le vélo ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 419,
+    "sentence": "On mange des pâtes où du riz ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien du riz ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 420,
+    "sentence": "Tu veux jouer dedans où dehors ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien dehors ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 421,
+    "sentence": "Il est grand où petit ce chien ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien petit ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 422,
+    "sentence": "Tu aimes les fraises où les cerises ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien les cerises ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 423,
+    "sentence": "On regarde un film où un dessin animé ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien un dessin animé ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 424,
+    "sentence": "Tu veux du pain où des biscuits ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien des biscuits ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 425,
+    "sentence": "Elle porte une jupe où un pantalon.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien un pantalon ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 426,
+    "sentence": "On prend le train où la voiture ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien la voiture ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 427,
+    "sentence": "Tu écris au stylo où au crayon ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien au crayon ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 428,
+    "sentence": "Il veut un gâteau où une tarte ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien une tarte ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 429,
+    "sentence": "Tu dors chez toi où chez mamie ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien chez mamie ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 430,
+    "sentence": "On peint en rouge où en vert ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux couleurs. On peut remplacer par « ou bien en vert ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 431,
+    "sentence": "Tu ranges ta chambre où tu joues ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien tu joues ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 432,
+    "sentence": "Il est content où triste aujourd'hui ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien triste ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 433,
+    "sentence": "On va au zoo où au musée ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien au musée ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 434,
+    "sentence": "Tu veux un bonbon où un chocolat ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien un chocolat ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 435,
+    "sentence": "Elle chante où elle danse à la fête ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien elle danse ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 436,
+    "sentence": "On achète des roses où des tulipes ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien des tulipes ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 437,
+    "sentence": "Tu bois du lait où du jus ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien du jus ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 438,
+    "sentence": "Il pleut où il fait beau demain ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien il fait beau ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 551,
+    "sentence": "Tu veux de la limonade ou de l'eau ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est correct : c'est une conjonction de coordination qui exprime un choix. Phrase correcte.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 552,
+    "sentence": "Ou habites-tu ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu (on peut dire « en quel endroit »). On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 553,
+    "sentence": "Je ne sais pas ou il est parti.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 554,
+    "sentence": "Tu viens ou tu restes ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est correct : c'est une conjonction de coordination. Phrase correcte.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 555,
+    "sentence": "Ou est mon cartable ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif (on peut dire « en quel endroit »). On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 556,
+    "sentence": "Elle veut un chat où un chien.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 557,
+    "sentence": "Ou vas-tu cet été ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 558,
+    "sentence": "Il mange une pomme où une orange.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 559,
+    "sentence": "Je ne sais plus ou j'ai mis mes clés.",
+    "errorIndex": 5,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 560,
+    "sentence": "Tu préfères le rouge où le bleu ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 561,
+    "sentence": "Ou avez-vous trouvé ce livre ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 562,
+    "sentence": "On peut aller au parc où à la piscine.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 563,
+    "sentence": "Ou se trouve la bibliothèque ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 564,
+    "sentence": "Elle prend du lait où du jus d'orange.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 565,
+    "sentence": "Dis-moi ou tu habites.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » introduit une proposition relative de lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 566,
+    "sentence": "Il veut un vélo où une trottinette.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 567,
+    "sentence": "Ou as-tu posé mon stylo ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 568,
+    "sentence": "Tu lis un roman où une bande dessinée ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 569,
+    "sentence": "Ou sont mes chaussures ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 570,
+    "sentence": "Veux-tu du fromage où du jambon ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 571,
+    "sentence": "La maison ou il habite est grande.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 572,
+    "sentence": "Il choisit la ville où il veut vivre où il reste ici.",
+    "errorIndex": 8,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 573,
+    "sentence": "Ou est passé mon cahier ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 574,
+    "sentence": "Il mange des pâtes où du riz.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 575,
+    "sentence": "Je me demande ou elle a rangé mes affaires.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 631,
+    "sentence": "Ou peux-tu bien être passé ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu (on peut dire « en quel endroit »). On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 632,
+    "sentence": "Veux-tu du thé où du café ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 633,
+    "sentence": "La ville ou il est né est très belle.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 634,
+    "sentence": "Il faut choisir entre le rouge où le vert.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 635,
+    "sentence": "Ou ranger ce cartable ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 636,
+    "sentence": "Je vais au marché où à la boulangerie.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 637,
+    "sentence": "Le pays or il fait bon vivre est loin.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 638,
+    "sentence": "Il prend le bus où il marche.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 639,
+    "sentence": "Ou a-t-on rangé la télécommande ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 640,
+    "sentence": "Elle veut aller à la mer où à la montagne.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 641,
+    "sentence": "Montre-moi ou tu as trouvé ça.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 642,
+    "sentence": "Tu veux jouer aux cartes où aux billes ?",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 643,
+    "sentence": "Ou es-tu quand on a besoin de toi ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 644,
+    "sentence": "Il peut travailler ici où là-bas.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 645,
+    "sentence": "Je ne comprends pas or tu veux en venir.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 646,
+    "sentence": "Tu manges une glace où un gâteau ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 647,
+    "sentence": "Ou range-t-on les parapluies ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 648,
+    "sentence": "Il court où il marche selon son humeur.",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 649,
+    "sentence": "La pièce or il répète est grande.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 650,
+    "sentence": "Tu lis où tu dessines ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 686,
+    "sentence": "Ou est passée ma gomme ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 687,
+    "sentence": "Elle mange une banane où une poire.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 688,
+    "sentence": "La maison or nous habitons est vieille.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 689,
+    "sentence": "Il lit où il dessine après le dîner.",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 690,
+    "sentence": "Ou as-tu mis mon manteau ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 691,
+    "sentence": "Je cherche ma trousse partout, or est-elle ?",
+    "errorIndex": 5,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 692,
+    "sentence": "Tu veux aller à la mer où en montagne ?",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 693,
+    "sentence": "Ou vivait ta grand-mère avant ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 694,
+    "sentence": "Il aime les chiens où les chats.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 695,
+    "sentence": "Je ne sais pas or j'ai laissé mon vélo.",
+    "errorIndex": 5,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 711,
+    "sentence": "Ou dorment les ours en hiver ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 712,
+    "sentence": "Nous mangeons des céréales où du pain.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 713,
+    "sentence": "Ou part-on en vacances cette année ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 714,
+    "sentence": "Tu veux du chocolat où de la vanille ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 715,
+    "sentence": "Je me demande or elle est allée.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 736,
+    "sentence": "Ou a-t-on posé les clés du garage ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 737,
+    "sentence": "Elle prend ses livres où ses cahiers.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 738,
+    "sentence": "Le village or nous sommes nés est petit.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 739,
+    "sentence": "Il dort dans son lit où sur le canapé.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 740,
+    "sentence": "Ou se trouve le bureau du directeur ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1627,
+    "sentence": "La ville ou je suis né est jolie.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu ou un moment. « Ou » exprime un choix (on peut le remplacer par « ou bien »). Ici, on parle d'un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1628,
+    "sentence": "Le parc ou nous jouons est grand.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1629,
+    "sentence": "La maison ou j'habite est bleue.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit où on habite.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1630,
+    "sentence": "L'école ou je vais est près de chez moi.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien je vais », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1631,
+    "sentence": "Le magasin ou maman fait les courses est fermé.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1632,
+    "sentence": "La chambre ou je dors est petite.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1633,
+    "sentence": "Le jardin ou poussent les fleurs est joli.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit des fleurs.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1634,
+    "sentence": "La plage ou nous allons est magnifique.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien nous allons », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1635,
+    "sentence": "Le pays ou il fait chaud me plaît.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1636,
+    "sentence": "La forêt ou vivent les animaux est protégée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1637,
+    "sentence": "Le moment ou il est arrivé était drôle.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » peut aussi indiquer un moment dans le temps. On ne peut pas dire « ou bien il est arrivé ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1638,
+    "sentence": "Le jour ou il a neigé était magique.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un moment. « Ou » exprime un choix. Ici, on parle d'un moment précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1639,
+    "sentence": "La rue ou habite mon ami est calme.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1640,
+    "sentence": "Le village ou vit ma grand-mère est petit.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1641,
+    "sentence": "La piscine ou je nage est chauffée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien je nage », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1642,
+    "sentence": "Le château ou vivait le roi est immense.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit du roi.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1643,
+    "sentence": "La bibliothèque ou je lis est silencieuse.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1644,
+    "sentence": "Le terrain ou nous jouons au foot est boueux.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1645,
+    "sentence": "La cuisine ou maman prépare le repas sent bon.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien maman prépare », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1646,
+    "sentence": "Le grenier ou sont rangés les jouets est sombre.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit des jouets.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1647,
+    "sentence": "L'endroit ou nous pique-niquons est ombragé.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1648,
+    "sentence": "Le lac ou nagent les canards est gelé.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1649,
+    "sentence": "La montagne ou nous skions est enneigée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien nous skions », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1650,
+    "sentence": "Le chemin ou passe le facteur est étroit.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle du chemin du facteur.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1651,
+    "sentence": "La cour ou jouent les enfants est grande.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1652,
+    "sentence": "Le soir ou la lune brille est calme.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un moment. « Ou » exprime un choix. Ici, on parle d'un moment précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1653,
+    "sentence": "La grotte ou se cache le trésor est profonde.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien se cache », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1654,
+    "sentence": "Le banc ou je m'assois est en bois.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle d'un endroit précis.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1655,
+    "sentence": "La ferme ou vivent les vaches est grande.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas remplacer par « ou bien », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1656,
+    "sentence": "Le coin ou le chat se repose est douillet.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. « Ou » exprime un choix. Ici, on parle de l'endroit du chat.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1657,
+    "sentence": "L'île ou nous avons voyagé était belle.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "« Où » indique un lieu. On ne peut pas dire « ou bien nous avons voyagé », donc c'est « où ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1658,
+    "sentence": "Tu veux du chocolat où de la vanille ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités (on peut le remplacer par « ou bien »). « Où » indique un lieu ou un moment.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1659,
+    "sentence": "Il mange une pomme où une banane.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien une banane ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1660,
+    "sentence": "Tu préfères le rouge où le bleu ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1661,
+    "sentence": "On joue au foot où au basket ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien au basket ». « Où » indique un lieu ou un moment.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1662,
+    "sentence": "Je prendrai du jus où de l'eau.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1663,
+    "sentence": "Tu viens lundi où mardi ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien mardi ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1664,
+    "sentence": "Elle veut un chat où un chien.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien un chien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1665,
+    "sentence": "On part à la mer où à la montagne ?",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien à la montagne ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1666,
+    "sentence": "Tu veux lire où dessiner ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux activités. On peut remplacer par « ou bien dessiner ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1667,
+    "sentence": "Il fait beau où il pleut dehors ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien il pleut ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1668,
+    "sentence": "Tu prends le bus où le vélo ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien le vélo ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1669,
+    "sentence": "On mange des pâtes où du riz ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien du riz ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1670,
+    "sentence": "Tu veux jouer dedans où dehors ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien dehors ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1671,
+    "sentence": "Il est grand où petit ce chien ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien petit ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1672,
+    "sentence": "Tu aimes les fraises où les cerises ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien les cerises ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1673,
+    "sentence": "On regarde un film où un dessin animé ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien un dessin animé ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1674,
+    "sentence": "Tu veux du pain où des biscuits ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien des biscuits ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1675,
+    "sentence": "Elle porte une jupe où un pantalon.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien un pantalon ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1676,
+    "sentence": "On prend le train où la voiture ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien la voiture ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1677,
+    "sentence": "Tu écris au stylo où au crayon ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien au crayon ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1678,
+    "sentence": "Il veut un gâteau où une tarte ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien une tarte ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1679,
+    "sentence": "Tu dors chez toi où chez mamie ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien chez mamie ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1680,
+    "sentence": "On peint en rouge où en vert ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux couleurs. On peut remplacer par « ou bien en vert ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1681,
+    "sentence": "Tu ranges ta chambre où tu joues ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien tu joues ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1682,
+    "sentence": "Il est content où triste aujourd'hui ?",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien triste ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1683,
+    "sentence": "On va au zoo où au musée ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien au musée ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1684,
+    "sentence": "Tu veux un bonbon où un chocolat ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux options. On peut remplacer par « ou bien un chocolat ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1685,
+    "sentence": "Elle chante où elle danse à la fête ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien elle danse ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1686,
+    "sentence": "On achète des roses où des tulipes ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien des tulipes ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1687,
+    "sentence": "Tu bois du lait où du jus ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix. On peut dire « ou bien du jus ». « Où » indique un lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1688,
+    "sentence": "Il pleut où il fait beau demain ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "« Ou » exprime un choix entre deux possibilités. On peut remplacer par « ou bien il fait beau ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1801,
+    "sentence": "Tu veux de la limonade ou de l'eau ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est correct : c'est une conjonction de coordination qui exprime un choix. Phrase correcte.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1802,
+    "sentence": "Ou habites-tu ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu (on peut dire « en quel endroit »). On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1803,
+    "sentence": "Je ne sais pas ou il est parti.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1804,
+    "sentence": "Tu viens ou tu restes ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est correct : c'est une conjonction de coordination. Phrase correcte.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1805,
+    "sentence": "Ou est mon cartable ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif (on peut dire « en quel endroit »). On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1806,
+    "sentence": "Elle veut un chat où un chien.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1807,
+    "sentence": "Ou vas-tu cet été ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1808,
+    "sentence": "Il mange une pomme où une orange.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1809,
+    "sentence": "Je ne sais plus ou j'ai mis mes clés.",
+    "errorIndex": 5,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1810,
+    "sentence": "Tu préfères le rouge où le bleu ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1811,
+    "sentence": "Ou avez-vous trouvé ce livre ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1812,
+    "sentence": "On peut aller au parc où à la piscine.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1813,
+    "sentence": "Ou se trouve la bibliothèque ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1814,
+    "sentence": "Elle prend du lait où du jus d'orange.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1815,
+    "sentence": "Dis-moi ou tu habites.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » introduit une proposition relative de lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1816,
+    "sentence": "Il veut un vélo où une trottinette.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1817,
+    "sentence": "Ou as-tu posé mon stylo ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1818,
+    "sentence": "Tu lis un roman où une bande dessinée ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1819,
+    "sentence": "Ou sont mes chaussures ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1820,
+    "sentence": "Veux-tu du fromage où du jambon ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1821,
+    "sentence": "La maison ou il habite est grande.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1822,
+    "sentence": "Il choisit la ville où il veut vivre où il reste ici.",
+    "errorIndex": 8,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1823,
+    "sentence": "Ou est passé mon cahier ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1824,
+    "sentence": "Il mange des pâtes où du riz.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1825,
+    "sentence": "Je me demande ou elle a rangé mes affaires.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1881,
+    "sentence": "Ou peux-tu bien être passé ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu (on peut dire « en quel endroit »). On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1882,
+    "sentence": "Veux-tu du thé où du café ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1883,
+    "sentence": "La ville ou il est né est très belle.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1884,
+    "sentence": "Il faut choisir entre le rouge où le vert.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1885,
+    "sentence": "Ou ranger ce cartable ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1886,
+    "sentence": "Je vais au marché où à la boulangerie.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1887,
+    "sentence": "Le pays or il fait bon vivre est loin.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1888,
+    "sentence": "Il prend le bus où il marche.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1889,
+    "sentence": "Ou a-t-on rangé la télécommande ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1890,
+    "sentence": "Elle veut aller à la mer où à la montagne.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1891,
+    "sentence": "Montre-moi ou tu as trouvé ça.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1892,
+    "sentence": "Tu veux jouer aux cartes où aux billes ?",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1893,
+    "sentence": "Ou es-tu quand on a besoin de toi ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1894,
+    "sentence": "Il peut travailler ici où là-bas.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1895,
+    "sentence": "Je ne comprends pas or tu veux en venir.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1896,
+    "sentence": "Tu manges une glace où un gâteau ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1897,
+    "sentence": "Ou range-t-on les parapluies ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1898,
+    "sentence": "Il court où il marche selon son humeur.",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1899,
+    "sentence": "La pièce or il répète est grande.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1900,
+    "sentence": "Tu lis où tu dessines ?",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1936,
+    "sentence": "Ou est passée ma gomme ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1937,
+    "sentence": "Elle mange une banane où une poire.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1938,
+    "sentence": "La maison or nous habitons est vieille.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1939,
+    "sentence": "Il lit où il dessine après le dîner.",
+    "errorIndex": 2,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1940,
+    "sentence": "Ou as-tu mis mon manteau ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1941,
+    "sentence": "Je cherche ma trousse partout, or est-elle ?",
+    "errorIndex": 5,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1942,
+    "sentence": "Tu veux aller à la mer où en montagne ?",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1943,
+    "sentence": "Ou vivait ta grand-mère avant ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1944,
+    "sentence": "Il aime les chiens où les chats.",
+    "errorIndex": 3,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1945,
+    "sentence": "Je ne sais pas or j'ai laissé mon vélo.",
+    "errorIndex": 5,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1961,
+    "sentence": "Ou dorment les ours en hiver ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1962,
+    "sentence": "Nous mangeons des céréales où du pain.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1963,
+    "sentence": "Ou part-on en vacances cette année ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1964,
+    "sentence": "Tu veux du chocolat où de la vanille ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1965,
+    "sentence": "Je me demande or elle est allée.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1986,
+    "sentence": "Ou a-t-on posé les clés du garage ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1987,
+    "sentence": "Elle prend ses livres où ses cahiers.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime un choix. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1988,
+    "sentence": "Le village or nous sommes nés est petit.",
+    "errorIndex": 3,
+    "correctedWord": "où",
+    "explanation": "Ici, « où » est un pronom relatif qui indique un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1989,
+    "sentence": "Il dort dans son lit où sur le canapé.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "Ici, « ou » est une conjonction de coordination qui exprime une alternative. On écrit « ou » sans accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 1990,
+    "sentence": "Ou se trouve le bureau du directeur ?",
+    "errorIndex": 0,
+    "correctedWord": "Où",
+    "explanation": "Ici, « où » est un adverbe interrogatif qui demande un lieu. On écrit « où » avec un accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2581,
+    "sentence": "Tu veux du chocolat ou de la vanille ?",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ou » exprime un choix entre deux options, on peut le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2582,
+    "sentence": "Où habites-tu ?",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« où » indique un lieu ou une question de lieu.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2583,
+    "sentence": "On va au cinéma ou au parc ?",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ou » exprime un choix, on peut le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2584,
+    "sentence": "La ville où je suis né est jolie.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« où » indique un lieu, on ne peut pas le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2585,
+    "sentence": "Tu préfères le rouge ou le bleu ?",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ou » exprime un choix entre deux options, on peut le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2586,
+    "sentence": "L'école où je vais est grande.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« où » indique un lieu, on ne peut pas le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2587,
+    "sentence": "Viens lundi ou mardi.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ou » exprime un choix, on peut le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2588,
+    "sentence": "Le jardin où nous jouons est immense.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« où » indique un lieu, on ne peut pas le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2589,
+    "sentence": "Tu veux un chat ou un chien ?",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« ou » exprime un choix, on peut le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2590,
+    "sentence": "La maison où habite mamie est ancienne.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "« où » indique un lieu, on ne peut pas le remplacer par « ou bien ».",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2771,
+    "sentence": "Je ne sais pas ou ma sœur a rangé mes crayons et je veux les retrouver pour dessiner.",
+    "errorIndex": 4,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (endroit), donc on utilise « où » avec accent et non « ou » (choix).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2772,
+    "sentence": "Tu veux une pomme où une banane pour le goûter après l'école cet après-midi ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux fruits, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2773,
+    "sentence": "Le parc ou nous pouvons jouer au ballon est très grand et il y a beaucoup d'arbres.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (le parc dans lequel), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2774,
+    "sentence": "Mon frère veut du chocolat où de la confiture sur sa tartine pour le petit déjeuner.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux choses, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2775,
+    "sentence": "La maison ou habite ma grand-mère est très vieille et elle veut la faire réparer bientôt.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (la maison dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2776,
+    "sentence": "Tu peux prendre le bus où le tramway pour aller à l'école, les deux passent devant.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux transports, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2777,
+    "sentence": "Le jour ou nous pourrons aller à la mer, je veux construire un grand château de sable.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un moment dans le temps, donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2778,
+    "sentence": "Papa veut acheter un chat où un chien pour la famille mais maman hésite encore beaucoup.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux animaux, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2779,
+    "sentence": "L'école ou je vais tous les jours est près de la boulangerie et je peux y aller à pied.",
+    "errorIndex": 1,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (l'école dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2780,
+    "sentence": "Ma sœur peut choisir la robe rouge où la robe bleue pour la fête de samedi prochain.",
+    "errorIndex": 6,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux robes, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2781,
+    "sentence": "Le village ou mes grands-parents habitent est très joli et on peut y voir des montagnes.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (le village dans lequel), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2782,
+    "sentence": "Tu veux jouer dehors où rester à la maison pour lire un livre cet après-midi ?",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux activités, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2783,
+    "sentence": "Le moment ou papa rentre du travail est toujours joyeux et nous voulons lui raconter notre journée.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un moment dans le temps, donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2784,
+    "sentence": "Mon ami peut venir lundi où mardi pour jouer à la maison avec moi et mon frère.",
+    "errorIndex": 4,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux jours, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2785,
+    "sentence": "La forêt ou nous pouvons nous promener est pleine de champignons en automne et c'est magnifique.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (la forêt dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2925,
+    "sentence": "Le village ou nous voulons aller en vacances est très joli et on peut y faire des randonnées.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (le village dans lequel), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2926,
+    "sentence": "Tu peux choisir le gâteau au chocolat où le gâteau aux fraises pour ton anniversaire.",
+    "errorIndex": 6,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux gâteaux, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2927,
+    "sentence": "La plage ou nous pouvons nous baigner est très belle et l'eau y est toujours chaude.",
+    "errorIndex": 2,
+    "correctedWord": "où",
+    "explanation": "On parle d'un lieu (la plage dans laquelle), donc on utilise « où » avec accent.",
+    "category": "homophones ou/où"
+  },
+  {
+    "id": 2928,
+    "sentence": "Mon frère veut un chat où un hamster mais maman ne veut pas d'animal à la maison.",
+    "errorIndex": 5,
+    "correctedWord": "ou",
+    "explanation": "On propose un choix entre deux animaux, donc on utilise « ou » sans accent (= ou bien).",
+    "category": "homophones ou/où"
+  }
+]

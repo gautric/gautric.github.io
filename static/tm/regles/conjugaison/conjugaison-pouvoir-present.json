@@ -1,0 +1,1066 @@
+[
+  {
+    "id": 1026,
+    "sentence": "Je pouvoir aller à la fête.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1027,
+    "sentence": "Tu peux venir chez moi demain.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la deuxième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1028,
+    "sentence": "Il pouvons finir son travail.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1029,
+    "sentence": "Elle peux nager très vite.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est à la troisième personne du singulier, le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1030,
+    "sentence": "Nous pouvez venir ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1031,
+    "sentence": "Vous pouvons partir maintenant.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1032,
+    "sentence": "Ils peut courir vite.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1033,
+    "sentence": "Elles pouvons danser toute la nuit.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1034,
+    "sentence": "Je peux t'aider à porter ton sac.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1035,
+    "sentence": "Tu pouvons lire cette histoire.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1036,
+    "sentence": "Mon chat peut sauter très haut.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Ici, « peut » est correct : c'est la troisième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1037,
+    "sentence": "Ma cousine peuvent nager dans la mer.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « ma cousine » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1038,
+    "sentence": "Nous pouvons jouer dehors.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Ici, « pouvons » est correct : c'est la première personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1039,
+    "sentence": "Vous peux rester pour le dîner.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1040,
+    "sentence": "Les enfants pouvons courir dans le parc.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1041,
+    "sentence": "Je peut finir mon dessin ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1042,
+    "sentence": "Tu peuvent venir avec nous.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1043,
+    "sentence": "Il pouvez manger tout seul.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1044,
+    "sentence": "Nous peuvent partir tôt demain.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1045,
+    "sentence": "Vous pouvez choisir votre dessert.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Ici, « pouvez » est correct : c'est la deuxième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1046,
+    "sentence": "Ils pouvons aider à préparer le repas.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1047,
+    "sentence": "Elle peuvent chanter très bien.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1048,
+    "sentence": "Je peux résoudre ce problème.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1049,
+    "sentence": "Tu pouvez partir maintenant.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1050,
+    "sentence": "Les oiseaux peuvent voler très haut.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Ici, « peuvent » est correct : c'est la troisième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1121,
+    "sentence": "Je pouvoir aider maman.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1122,
+    "sentence": "Tu pouvons finir ton repas.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1123,
+    "sentence": "Il peuvent marcher jusqu'à l'école.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1124,
+    "sentence": "Elle pouvons écrire sans fautes.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1125,
+    "sentence": "Nous peux partir à midi.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1126,
+    "sentence": "Vous pouvons prendre la voiture.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1127,
+    "sentence": "Ils peut chanter en chœur.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1128,
+    "sentence": "Ma grand-mère peux marcher sans canne.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « ma grand-mère » est à la troisième personne du singulier, le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1129,
+    "sentence": "Nous pouvons aller à la bibliothèque.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Ici, « pouvons » est correct : c'est la première personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1130,
+    "sentence": "Les filles peux jouer ensemble.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les filles » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1131,
+    "sentence": "Je peut dessiner un paysage.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1132,
+    "sentence": "Tu pouvez rester pour le goûter.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1133,
+    "sentence": "Il pouvons courir plus vite que moi.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1134,
+    "sentence": "Vous peut sortir dans cinq minutes.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1135,
+    "sentence": "Elles peuvent apprendre cette chanson facilement.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Ici, « peuvent » est correct : c'est la troisième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1136,
+    "sentence": "Mon ami peut venir dormir à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Ici, « peut » est correct : c'est la troisième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1137,
+    "sentence": "Ils pouvons faire du vélo ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1138,
+    "sentence": "Tu peuvent lire cette histoire toute seule.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1139,
+    "sentence": "Je peux réciter cette poésie par cœur.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1140,
+    "sentence": "Nous peuvent préparer le repas ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1191,
+    "sentence": "Je pouvez aider à mettre la table.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1192,
+    "sentence": "Tu peuvent finir ton repas.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1193,
+    "sentence": "Il pouvez lire sans lunettes.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1194,
+    "sentence": "Elle pouvons faire du vélo.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1195,
+    "sentence": "Nous pouvons préparer le goûter ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Ici, « pouvons » est correct : c'est la première personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1196,
+    "sentence": "Vous peux choisir votre place.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1197,
+    "sentence": "Ils pouvons aller au marché.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1198,
+    "sentence": "Elles peut participer au concours.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1199,
+    "sentence": "Mon voisin peut jardiner toute la journée.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Ici, « peut » est correct : c'est la troisième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1200,
+    "sentence": "Les enfants peuvent colorier ce dessin.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Ici, « peuvent » est correct : c'est la troisième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1226,
+    "sentence": "Je peux courir cinq kilomètres.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1227,
+    "sentence": "Tu pouvons prendre le bus numéro cinq.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1228,
+    "sentence": "Elle pouvez réciter cette poésie.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1229,
+    "sentence": "Nous peuvent cuisiner ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1230,
+    "sentence": "Vous peuvent prendre votre temps.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1246,
+    "sentence": "Je pouvons t'expliquer cette règle.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1247,
+    "sentence": "Tu pouvez faire ce calcul de tête.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1248,
+    "sentence": "Nous peut rentrer à pied.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 1249,
+    "sentence": "Les enfants peux choisir leur activité.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2276,
+    "sentence": "Je pouvoir aller à la fête.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2277,
+    "sentence": "Tu peux venir chez moi demain.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la deuxième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2278,
+    "sentence": "Il pouvons finir son travail.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2279,
+    "sentence": "Elle peux nager très vite.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est à la troisième personne du singulier, le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2280,
+    "sentence": "Nous pouvez venir ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2281,
+    "sentence": "Vous pouvons partir maintenant.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2282,
+    "sentence": "Ils peut courir vite.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2283,
+    "sentence": "Elles pouvons danser toute la nuit.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2284,
+    "sentence": "Je peux t'aider à porter ton sac.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2285,
+    "sentence": "Tu pouvons lire cette histoire.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2286,
+    "sentence": "Mon chat peut sauter très haut.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Ici, « peut » est correct : c'est la troisième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2287,
+    "sentence": "Ma cousine peuvent nager dans la mer.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « ma cousine » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2288,
+    "sentence": "Nous pouvons jouer dehors.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Ici, « pouvons » est correct : c'est la première personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2289,
+    "sentence": "Vous peux rester pour le dîner.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2290,
+    "sentence": "Les enfants pouvons courir dans le parc.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2291,
+    "sentence": "Je peut finir mon dessin ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2292,
+    "sentence": "Tu peuvent venir avec nous.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2293,
+    "sentence": "Il pouvez manger tout seul.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2294,
+    "sentence": "Nous peuvent partir tôt demain.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2295,
+    "sentence": "Vous pouvez choisir votre dessert.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Ici, « pouvez » est correct : c'est la deuxième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2296,
+    "sentence": "Ils pouvons aider à préparer le repas.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2297,
+    "sentence": "Elle peuvent chanter très bien.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2298,
+    "sentence": "Je peux résoudre ce problème.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2299,
+    "sentence": "Tu pouvez partir maintenant.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2300,
+    "sentence": "Les oiseaux peuvent voler très haut.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Ici, « peuvent » est correct : c'est la troisième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2371,
+    "sentence": "Je pouvoir aider maman.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2372,
+    "sentence": "Tu pouvons finir ton repas.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2373,
+    "sentence": "Il peuvent marcher jusqu'à l'école.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2374,
+    "sentence": "Elle pouvons écrire sans fautes.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2375,
+    "sentence": "Nous peux partir à midi.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2376,
+    "sentence": "Vous pouvons prendre la voiture.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2377,
+    "sentence": "Ils peut chanter en chœur.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2378,
+    "sentence": "Ma grand-mère peux marcher sans canne.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « ma grand-mère » est à la troisième personne du singulier, le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2379,
+    "sentence": "Nous pouvons aller à la bibliothèque.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Ici, « pouvons » est correct : c'est la première personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2380,
+    "sentence": "Les filles peux jouer ensemble.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les filles » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2381,
+    "sentence": "Je peut dessiner un paysage.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2382,
+    "sentence": "Tu pouvez rester pour le goûter.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2383,
+    "sentence": "Il pouvons courir plus vite que moi.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2384,
+    "sentence": "Vous peut sortir dans cinq minutes.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2385,
+    "sentence": "Elles peuvent apprendre cette chanson facilement.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Ici, « peuvent » est correct : c'est la troisième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2386,
+    "sentence": "Mon ami peut venir dormir à la maison.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Ici, « peut » est correct : c'est la troisième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2387,
+    "sentence": "Ils pouvons faire du vélo ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2388,
+    "sentence": "Tu peuvent lire cette histoire toute seule.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2389,
+    "sentence": "Je peux réciter cette poésie par cœur.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2390,
+    "sentence": "Nous peuvent préparer le repas ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2441,
+    "sentence": "Je pouvez aider à mettre la table.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2442,
+    "sentence": "Tu peuvent finir ton repas.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2443,
+    "sentence": "Il pouvez lire sans lunettes.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2444,
+    "sentence": "Elle pouvons faire du vélo.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2445,
+    "sentence": "Nous pouvons préparer le goûter ensemble.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Ici, « pouvons » est correct : c'est la première personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2446,
+    "sentence": "Vous peux choisir votre place.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2447,
+    "sentence": "Ils pouvons aller au marché.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2448,
+    "sentence": "Elles peut participer au concours.",
+    "errorIndex": 1,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « elles » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2449,
+    "sentence": "Mon voisin peut jardiner toute la journée.",
+    "errorIndex": 2,
+    "correctedWord": "peut",
+    "explanation": "Ici, « peut » est correct : c'est la troisième personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2450,
+    "sentence": "Les enfants peuvent colorier ce dessin.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Ici, « peuvent » est correct : c'est la troisième personne du pluriel du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2476,
+    "sentence": "Je peux courir cinq kilomètres.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Ici, « peux » est correct : c'est la première personne du singulier du verbe pouvoir au présent. Phrase correcte.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2477,
+    "sentence": "Tu pouvons prendre le bus numéro cinq.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2478,
+    "sentence": "Elle pouvez réciter cette poésie.",
+    "errorIndex": 1,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe pouvoir se conjugue « peut » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2479,
+    "sentence": "Nous peuvent cuisiner ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2480,
+    "sentence": "Vous peuvent prendre votre temps.",
+    "errorIndex": 1,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel du verbe pouvoir au présent : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2496,
+    "sentence": "Je pouvons t'expliquer cette règle.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « je » demande la première personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2497,
+    "sentence": "Tu pouvez faire ce calcul de tête.",
+    "errorIndex": 1,
+    "correctedWord": "peux",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier du verbe pouvoir au présent : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2498,
+    "sentence": "Nous peut rentrer à pied.",
+    "errorIndex": 1,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel du verbe pouvoir au présent : « pouvons ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2499,
+    "sentence": "Les enfants peux choisir leur activité.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe pouvoir se conjugue « peuvent » au présent.",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2601,
+    "sentence": "Je peux porter ce sac.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué à la première personne du singulier : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2603,
+    "sentence": "Il peut courir très vite.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué à la troisième personne du singulier : « peut ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2605,
+    "sentence": "Vous pouvez entrer.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué à la deuxième personne du pluriel : « pouvez ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2607,
+    "sentence": "Ils peuvent nager dans la piscine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué à la troisième personne du pluriel : « peuvent ».",
+    "category": "conjugaison pouvoir présent"
+  },
+  {
+    "id": 2609,
+    "sentence": "Tu peux venir demain.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le verbe « pouvoir » est bien conjugué à la deuxième personne du singulier : « peux ».",
+    "category": "conjugaison pouvoir présent"
+  }
+]

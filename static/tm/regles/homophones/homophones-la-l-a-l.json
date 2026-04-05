@@ -1,0 +1,418 @@
+[
+  {
+    "id": 3021,
+    "sentence": "Maman est la dans la cuisine et elle prépare le repas pour toute la famille.",
+    "errorIndex": 2,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « maman est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3022,
+    "sentence": "La maîtresse là félicité pour son bon travail en classe cette semaine.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la maîtresse l'a félicité » (= avait félicité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3023,
+    "sentence": "La petite fille joue dans le jardin avec son chien et elle est très contente.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article défini féminin devant « petite fille ».",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3024,
+    "sentence": "Mon frère est la depuis ce matin et il attend ses amis pour jouer au ballon.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « il est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3025,
+    "sentence": "Papa là vu au supermarché et il lui a dit bonjour en passant dans le rayon.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « papa l'a vu » (= avait vu).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3026,
+    "sentence": "La robe de ma sœur est très jolie et elle la porte souvent le dimanche.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : le premier « la » est l'article, le second est le pronom COD.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3027,
+    "sentence": "Le chat est la sur le canapé et il dort depuis ce matin sans bouger.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « le chat est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3028,
+    "sentence": "Ma cousine là appelé au téléphone pour lui souhaiter un joyeux anniversaire.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « ma cousine l'a appelé » (= avait appelé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3029,
+    "sentence": "Pose ton cartable la sur la table et viens manger ton goûter dans la cuisine.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « pose-le là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3030,
+    "sentence": "Le docteur là examiné et il lui a dit qu'il allait beaucoup mieux maintenant.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le docteur l'a examiné » (= avait examiné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3031,
+    "sentence": "La maison de mes grands-parents est là-bas au bout de la route près de la rivière.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là-bas » indique un lieu éloigné.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3032,
+    "sentence": "Ma sœur est la dans sa chambre et elle fait ses devoirs avant le dîner.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « elle est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3033,
+    "sentence": "Le professeur là puni parce qu'il avait fait une bêtise pendant la récréation.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le professeur l'a puni » (= avait puni).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3034,
+    "sentence": "Regarde la étoile qui brille tout en haut dans le ciel ce soir.",
+    "errorIndex": 1,
+    "correctedWord": "l'",
+    "explanation": "Devant un nom féminin commençant par une voyelle, « la » s'élide en « l' » : « l'étoile ».",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3035,
+    "sentence": "C'est la que j'ai trouvé la balle que tu avais perdue dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « c'est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3036,
+    "sentence": "Maman là grondé parce qu'il n'avait pas rangé sa chambre avant de sortir.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « maman l'a grondé » (= avait grondé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3037,
+    "sentence": "La voiture de papa est garée là devant la maison depuis hier soir.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là » indique un lieu.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3038,
+    "sentence": "Le chien est la devant la porte et il attend qu'on lui ouvre pour entrer.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « le chien est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3039,
+    "sentence": "La voisine là invité à jouer chez elle et ils ont passé un bon après-midi.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la voisine l'a invité » (= avait invité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3040,
+    "sentence": "Ne reste pas la sous la pluie, viens vite te mettre à l'abri dans la maison.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « ne reste pas là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3041,
+    "sentence": "Mon oncle là accompagné à l'école ce matin parce que maman était malade.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « mon oncle l'a accompagné » (= avait accompagné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3042,
+    "sentence": "La tarte aux pommes de maman est la meilleure et tout le monde en veut.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article défini dans les deux cas.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3043,
+    "sentence": "Qui est la derrière la porte ? C'est peut-être le facteur avec un colis.",
+    "errorIndex": 2,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « qui est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3044,
+    "sentence": "Le dentiste là soigné et maintenant il n'a plus mal aux dents du tout.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le dentiste l'a soigné » (= avait soigné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3045,
+    "sentence": "Viens la tout de suite, maman veut te parler avant que tu sortes jouer.",
+    "errorIndex": 1,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « viens là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3146,
+    "sentence": "Ta clé est la sur la commode, je l'ai vue en passant dans le couloir.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3147,
+    "sentence": "La maîtresse là encouragé à continuer ses efforts et il est très motivé.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « l'a encouragé » (= avait encouragé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3148,
+    "sentence": "La balle est la derrière le buisson et personne ne peut la voir d'ici.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3149,
+    "sentence": "Mon père là réparé en une heure et maintenant le vélo roule comme neuf.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « l'a réparé » (= avait réparé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3150,
+    "sentence": "La bibliothèque est là au coin de la rue et on peut y aller à pied.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là » indique un lieu.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3151,
+    "sentence": "Maman là aidé à faire ses devoirs et maintenant il a tout compris.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « maman l'a aidé » (= avait aidé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3152,
+    "sentence": "Ton manteau est la sur le porte-manteau, prends-le avant de sortir dehors.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3153,
+    "sentence": "Le chat là griffé quand il a voulu le caresser et il a eu très mal.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le chat l'a griffé » (= avait griffé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3154,
+    "sentence": "La trousse de ma sœur est la dans son cartable et elle ne la trouve pas.",
+    "errorIndex": 6,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3155,
+    "sentence": "La directrice là félicité devant toute la classe pour son excellent travail.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la directrice l'a félicité » (= avait félicité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3201,
+    "sentence": "Reste la et ne bouge pas, je reviens dans cinq minutes avec ton goûter.",
+    "errorIndex": 1,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « reste là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3202,
+    "sentence": "Le médecin là ausculté et il a dit que tout allait bien pour sa santé.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « le médecin l'a ausculté » (= avait ausculté).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3203,
+    "sentence": "La clé est la dans le tiroir de la commode, tu peux aller la chercher.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3204,
+    "sentence": "Sa maman là consolé quand il est tombé et elle lui a mis un pansement.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « sa maman l'a consolé » (= avait consolé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3205,
+    "sentence": "La maison de ma grand-mère est là-bas derrière les grands arbres du chemin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article et « là-bas » indique un lieu éloigné.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3231,
+    "sentence": "Assieds-toi la et attends que je revienne avec ton verre de jus d'orange.",
+    "errorIndex": 1,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « assieds-toi là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3232,
+    "sentence": "La directrice là récompensé pour ses bons résultats et il est très fier.",
+    "errorIndex": 2,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « la directrice l'a récompensé » (= avait récompensé).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3233,
+    "sentence": "Mon cartable est la par terre et je dois le ranger avant que maman le voie.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3234,
+    "sentence": "Papa là porté sur ses épaules parce qu'il était trop fatigué pour marcher.",
+    "errorIndex": 1,
+    "correctedWord": "l'a",
+    "explanation": "C'est le pronom « l' » + verbe « a » : « papa l'a porté » (= avait porté).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3235,
+    "sentence": "La balle est la sous le banc et personne ne veut aller la chercher.",
+    "errorIndex": 3,
+    "correctedWord": "là",
+    "explanation": "On indique un lieu : « est là » (= à cet endroit), pas « la » (article).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3267,
+    "sentence": "Maman est là dans la cuisine et elle prépare la tarte aux pommes pour le dessert.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « là » indique un lieu et « la » est l'article défini.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3268,
+    "sentence": "Le docteur l'a examiné et il lui a dit qu'il allait beaucoup mieux maintenant.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « l'a » est le pronom « l' » + verbe « a » (= l'avait examiné).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3269,
+    "sentence": "La voiture est garée là devant la maison et papa l'a lavée ce matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « la » est l'article, « là » indique un lieu, « l'a » est pronom + verbe avoir.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3270,
+    "sentence": "C'est là que j'ai trouvé la balle et je l'ai ramenée à la maison.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « là » indique un lieu et « la » est l'article ou le pronom.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3271,
+    "sentence": "La maîtresse l'a félicité devant toute la classe et il était très content.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « l'a » est le pronom « l' » + verbe « a » (= l'avait félicité).",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3272,
+    "sentence": "Pose ton sac là sur la chaise et viens manger, la soupe est prête.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « là » indique un lieu et « la » est l'article défini.",
+    "category": "homophones la/l'a/là"
+  },
+  {
+    "id": 3273,
+    "sentence": "Sa maman l'a accompagné à l'école et elle l'a embrassé devant la porte.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « l'a » est le pronom « l' » + verbe « a » dans les deux cas.",
+    "category": "homophones la/l'a/là"
+  }
+]

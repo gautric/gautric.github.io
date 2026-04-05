@@ -1,0 +1,842 @@
+[
+  {
+    "id": 101,
+    "sentence": "La petit fille joue dehors.",
+    "errorIndex": 1,
+    "correctedWord": "petite",
+    "explanation": "Le nom « fille » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 102,
+    "sentence": "Une joli fleur pousse dans le jardin.",
+    "errorIndex": 1,
+    "correctedWord": "jolie",
+    "explanation": "Le nom « fleur » est féminin, donc l'adjectif doit être au féminin : « jolie ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 103,
+    "sentence": "Le chat est noir et la chatte est noir aussi.",
+    "errorIndex": 8,
+    "correctedWord": "noire",
+    "explanation": "Le nom « chatte » est féminin, donc l'adjectif doit être au féminin : « noire ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 104,
+    "sentence": "Ma grande sœur est gentil.",
+    "errorIndex": 4,
+    "correctedWord": "gentille",
+    "explanation": "Le sujet « ma grande sœur » est féminin, donc l'adjectif doit être au féminin : « gentille ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 105,
+    "sentence": "La maison est grand et belle.",
+    "errorIndex": 3,
+    "correctedWord": "grande",
+    "explanation": "Le nom « maison » est féminin, donc l'adjectif doit être au féminin : « grande ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 106,
+    "sentence": "Une blanc colombe vole dans le ciel.",
+    "errorIndex": 1,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « colombe » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 107,
+    "sentence": "La robe est bleu et longue.",
+    "errorIndex": 3,
+    "correctedWord": "bleue",
+    "explanation": "Le nom « robe » est féminin, donc l'adjectif doit être au féminin : « bleue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 108,
+    "sentence": "Ma chienne est gros et gentille.",
+    "errorIndex": 3,
+    "correctedWord": "grosse",
+    "explanation": "Le nom « chienne » est féminin, donc l'adjectif doit être au féminin : « grosse ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 109,
+    "sentence": "La lune est rond et brillante.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "Le nom « lune » est féminin, donc l'adjectif doit être au féminin : « ronde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 110,
+    "sentence": "Une gros araignée est sur le mur.",
+    "errorIndex": 1,
+    "correctedWord": "grosse",
+    "explanation": "Le nom « araignée » est féminin, donc l'adjectif doit être au féminin : « grosse ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 111,
+    "sentence": "La pomme est vert et juteuse.",
+    "errorIndex": 3,
+    "correctedWord": "verte",
+    "explanation": "Le nom « pomme » est féminin, donc l'adjectif doit être au féminin : « verte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 112,
+    "sentence": "Ma copine est fort en maths.",
+    "errorIndex": 3,
+    "correctedWord": "forte",
+    "explanation": "Le sujet « ma copine » est féminin, donc l'adjectif doit être au féminin : « forte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 113,
+    "sentence": "La rivière est profond et large.",
+    "errorIndex": 3,
+    "correctedWord": "profonde",
+    "explanation": "Le nom « rivière » est féminin, donc l'adjectif doit être au féminin : « profonde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 114,
+    "sentence": "Une nouveau voiture est dans le garage.",
+    "errorIndex": 1,
+    "correctedWord": "nouvelle",
+    "explanation": "Le nom « voiture » est féminin, donc l'adjectif doit être au féminin : « nouvelle ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 115,
+    "sentence": "La porte est ouvert depuis ce matin.",
+    "errorIndex": 3,
+    "correctedWord": "ouverte",
+    "explanation": "Le nom « porte » est féminin, donc l'adjectif doit être au féminin : « ouverte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 116,
+    "sentence": "Ma chambre est petit mais jolie.",
+    "errorIndex": 3,
+    "correctedWord": "petite",
+    "explanation": "Le nom « chambre » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 117,
+    "sentence": "La chaise est cassé depuis hier.",
+    "errorIndex": 3,
+    "correctedWord": "cassée",
+    "explanation": "Le nom « chaise » est féminin, donc l'adjectif doit être au féminin : « cassée ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 118,
+    "sentence": "Une long promenade dans la forêt.",
+    "errorIndex": 1,
+    "correctedWord": "longue",
+    "explanation": "Le nom « promenade » est féminin, donc l'adjectif doit être au féminin : « longue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 119,
+    "sentence": "La soupe est chaud et bonne.",
+    "errorIndex": 3,
+    "correctedWord": "chaude",
+    "explanation": "Le nom « soupe » est féminin, donc l'adjectif doit être au féminin : « chaude ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 120,
+    "sentence": "Ma jupe est court et rouge.",
+    "errorIndex": 3,
+    "correctedWord": "courte",
+    "explanation": "Le nom « jupe » est féminin, donc l'adjectif doit être au féminin : « courte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 121,
+    "sentence": "La montagne est haut et enneigée.",
+    "errorIndex": 3,
+    "correctedWord": "haute",
+    "explanation": "Le nom « montagne » est féminin, donc l'adjectif doit être au féminin : « haute ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 122,
+    "sentence": "Une bon idée pour le projet.",
+    "errorIndex": 1,
+    "correctedWord": "bonne",
+    "explanation": "Le nom « idée » est féminin, donc l'adjectif doit être au féminin : « bonne ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 123,
+    "sentence": "La table est rond et grande.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "Le nom « table » est féminin, donc l'adjectif doit être au féminin : « ronde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 124,
+    "sentence": "Ma tortue est lent mais adorable.",
+    "errorIndex": 3,
+    "correctedWord": "lente",
+    "explanation": "Le nom « tortue » est féminin, donc l'adjectif doit être au féminin : « lente ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 125,
+    "sentence": "La fenêtre est fermé à cause du vent.",
+    "errorIndex": 3,
+    "correctedWord": "fermée",
+    "explanation": "Le nom « fenêtre » est féminin, donc l'adjectif doit être au féminin : « fermée ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 126,
+    "sentence": "Une beau journée commence.",
+    "errorIndex": 1,
+    "correctedWord": "belle",
+    "explanation": "Le nom « journée » est féminin, donc l'adjectif doit être au féminin : « belle ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 127,
+    "sentence": "La mer est bleu et calme.",
+    "errorIndex": 3,
+    "correctedWord": "bleue",
+    "explanation": "Le nom « mer » est féminin, donc l'adjectif doit être au féminin : « bleue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 128,
+    "sentence": "Ma poule est blanc et rousse.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « poule » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 129,
+    "sentence": "La glace est froid et délicieuse.",
+    "errorIndex": 3,
+    "correctedWord": "froide",
+    "explanation": "Le nom « glace » est féminin, donc l'adjectif doit être au féminin : « froide ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 130,
+    "sentence": "Une petit souris grise court vite.",
+    "errorIndex": 1,
+    "correctedWord": "petite",
+    "explanation": "Le nom « souris » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 131,
+    "sentence": "La tarte est bon et sucrée.",
+    "errorIndex": 3,
+    "correctedWord": "bonne",
+    "explanation": "Le nom « tarte » est féminin, donc l'adjectif doit être au féminin : « bonne ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 132,
+    "sentence": "Ma voisine est très amusant.",
+    "errorIndex": 4,
+    "correctedWord": "amusante",
+    "explanation": "Le sujet « ma voisine » est féminin, donc l'adjectif doit être au féminin : « amusante ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 133,
+    "sentence": "La piscine est plein en été.",
+    "errorIndex": 3,
+    "correctedWord": "pleine",
+    "explanation": "Le nom « piscine » est féminin, donc l'adjectif doit être au féminin : « pleine ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 134,
+    "sentence": "Une gris souris mange du fromage.",
+    "errorIndex": 1,
+    "correctedWord": "grise",
+    "explanation": "Le nom « souris » est féminin, donc l'adjectif doit être au féminin : « grise ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 135,
+    "sentence": "La neige est blanc et froide.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « neige » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 136,
+    "sentence": "Ma grand-mère est très doux.",
+    "errorIndex": 4,
+    "correctedWord": "douce",
+    "explanation": "Le sujet « ma grand-mère » est féminin, donc l'adjectif doit être au féminin : « douce ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 137,
+    "sentence": "La salade est frais et croquante.",
+    "errorIndex": 3,
+    "correctedWord": "fraîche",
+    "explanation": "Le nom « salade » est féminin, donc l'adjectif doit être au féminin : « fraîche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 138,
+    "sentence": "Une vieux dame traverse la rue.",
+    "errorIndex": 1,
+    "correctedWord": "vieille",
+    "explanation": "Le nom « dame » est féminin, donc l'adjectif doit être au féminin : « vieille ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 139,
+    "sentence": "La nuit est long en hiver.",
+    "errorIndex": 3,
+    "correctedWord": "longue",
+    "explanation": "Le nom « nuit » est féminin, donc l'adjectif doit être au féminin : « longue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 140,
+    "sentence": "Ma trousse est plein de crayons.",
+    "errorIndex": 3,
+    "correctedWord": "pleine",
+    "explanation": "Le nom « trousse » est féminin, donc l'adjectif doit être au féminin : « pleine ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1351,
+    "sentence": "La petit fille joue dehors.",
+    "errorIndex": 1,
+    "correctedWord": "petite",
+    "explanation": "Le nom « fille » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1352,
+    "sentence": "Une joli fleur pousse dans le jardin.",
+    "errorIndex": 1,
+    "correctedWord": "jolie",
+    "explanation": "Le nom « fleur » est féminin, donc l'adjectif doit être au féminin : « jolie ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1353,
+    "sentence": "Le chat est noir et la chatte est noir aussi.",
+    "errorIndex": 8,
+    "correctedWord": "noire",
+    "explanation": "Le nom « chatte » est féminin, donc l'adjectif doit être au féminin : « noire ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1354,
+    "sentence": "Ma grande sœur est gentil.",
+    "errorIndex": 4,
+    "correctedWord": "gentille",
+    "explanation": "Le sujet « ma grande sœur » est féminin, donc l'adjectif doit être au féminin : « gentille ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1355,
+    "sentence": "La maison est grand et belle.",
+    "errorIndex": 3,
+    "correctedWord": "grande",
+    "explanation": "Le nom « maison » est féminin, donc l'adjectif doit être au féminin : « grande ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1356,
+    "sentence": "Une blanc colombe vole dans le ciel.",
+    "errorIndex": 1,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « colombe » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1357,
+    "sentence": "La robe est bleu et longue.",
+    "errorIndex": 3,
+    "correctedWord": "bleue",
+    "explanation": "Le nom « robe » est féminin, donc l'adjectif doit être au féminin : « bleue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1358,
+    "sentence": "Ma chienne est gros et gentille.",
+    "errorIndex": 3,
+    "correctedWord": "grosse",
+    "explanation": "Le nom « chienne » est féminin, donc l'adjectif doit être au féminin : « grosse ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1359,
+    "sentence": "La lune est rond et brillante.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "Le nom « lune » est féminin, donc l'adjectif doit être au féminin : « ronde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1360,
+    "sentence": "Une gros araignée est sur le mur.",
+    "errorIndex": 1,
+    "correctedWord": "grosse",
+    "explanation": "Le nom « araignée » est féminin, donc l'adjectif doit être au féminin : « grosse ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1361,
+    "sentence": "La pomme est vert et juteuse.",
+    "errorIndex": 3,
+    "correctedWord": "verte",
+    "explanation": "Le nom « pomme » est féminin, donc l'adjectif doit être au féminin : « verte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1362,
+    "sentence": "Ma copine est fort en maths.",
+    "errorIndex": 3,
+    "correctedWord": "forte",
+    "explanation": "Le sujet « ma copine » est féminin, donc l'adjectif doit être au féminin : « forte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1363,
+    "sentence": "La rivière est profond et large.",
+    "errorIndex": 3,
+    "correctedWord": "profonde",
+    "explanation": "Le nom « rivière » est féminin, donc l'adjectif doit être au féminin : « profonde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1364,
+    "sentence": "Une nouveau voiture est dans le garage.",
+    "errorIndex": 1,
+    "correctedWord": "nouvelle",
+    "explanation": "Le nom « voiture » est féminin, donc l'adjectif doit être au féminin : « nouvelle ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1365,
+    "sentence": "La porte est ouvert depuis ce matin.",
+    "errorIndex": 3,
+    "correctedWord": "ouverte",
+    "explanation": "Le nom « porte » est féminin, donc l'adjectif doit être au féminin : « ouverte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1366,
+    "sentence": "Ma chambre est petit mais jolie.",
+    "errorIndex": 3,
+    "correctedWord": "petite",
+    "explanation": "Le nom « chambre » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1367,
+    "sentence": "La chaise est cassé depuis hier.",
+    "errorIndex": 3,
+    "correctedWord": "cassée",
+    "explanation": "Le nom « chaise » est féminin, donc l'adjectif doit être au féminin : « cassée ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1368,
+    "sentence": "Une long promenade dans la forêt.",
+    "errorIndex": 1,
+    "correctedWord": "longue",
+    "explanation": "Le nom « promenade » est féminin, donc l'adjectif doit être au féminin : « longue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1369,
+    "sentence": "La soupe est chaud et bonne.",
+    "errorIndex": 3,
+    "correctedWord": "chaude",
+    "explanation": "Le nom « soupe » est féminin, donc l'adjectif doit être au féminin : « chaude ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1370,
+    "sentence": "Ma jupe est court et rouge.",
+    "errorIndex": 3,
+    "correctedWord": "courte",
+    "explanation": "Le nom « jupe » est féminin, donc l'adjectif doit être au féminin : « courte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1371,
+    "sentence": "La montagne est haut et enneigée.",
+    "errorIndex": 3,
+    "correctedWord": "haute",
+    "explanation": "Le nom « montagne » est féminin, donc l'adjectif doit être au féminin : « haute ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1372,
+    "sentence": "Une bon idée pour le projet.",
+    "errorIndex": 1,
+    "correctedWord": "bonne",
+    "explanation": "Le nom « idée » est féminin, donc l'adjectif doit être au féminin : « bonne ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1373,
+    "sentence": "La table est rond et grande.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "Le nom « table » est féminin, donc l'adjectif doit être au féminin : « ronde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1374,
+    "sentence": "Ma tortue est lent mais adorable.",
+    "errorIndex": 3,
+    "correctedWord": "lente",
+    "explanation": "Le nom « tortue » est féminin, donc l'adjectif doit être au féminin : « lente ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1375,
+    "sentence": "La fenêtre est fermé à cause du vent.",
+    "errorIndex": 3,
+    "correctedWord": "fermée",
+    "explanation": "Le nom « fenêtre » est féminin, donc l'adjectif doit être au féminin : « fermée ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1376,
+    "sentence": "Une beau journée commence.",
+    "errorIndex": 1,
+    "correctedWord": "belle",
+    "explanation": "Le nom « journée » est féminin, donc l'adjectif doit être au féminin : « belle ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1377,
+    "sentence": "La mer est bleu et calme.",
+    "errorIndex": 3,
+    "correctedWord": "bleue",
+    "explanation": "Le nom « mer » est féminin, donc l'adjectif doit être au féminin : « bleue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1378,
+    "sentence": "Ma poule est blanc et rousse.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « poule » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1379,
+    "sentence": "La glace est froid et délicieuse.",
+    "errorIndex": 3,
+    "correctedWord": "froide",
+    "explanation": "Le nom « glace » est féminin, donc l'adjectif doit être au féminin : « froide ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1380,
+    "sentence": "Une petit souris grise court vite.",
+    "errorIndex": 1,
+    "correctedWord": "petite",
+    "explanation": "Le nom « souris » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1381,
+    "sentence": "La tarte est bon et sucrée.",
+    "errorIndex": 3,
+    "correctedWord": "bonne",
+    "explanation": "Le nom « tarte » est féminin, donc l'adjectif doit être au féminin : « bonne ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1382,
+    "sentence": "Ma voisine est très amusant.",
+    "errorIndex": 4,
+    "correctedWord": "amusante",
+    "explanation": "Le sujet « ma voisine » est féminin, donc l'adjectif doit être au féminin : « amusante ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1383,
+    "sentence": "La piscine est plein en été.",
+    "errorIndex": 3,
+    "correctedWord": "pleine",
+    "explanation": "Le nom « piscine » est féminin, donc l'adjectif doit être au féminin : « pleine ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1384,
+    "sentence": "Une gris souris mange du fromage.",
+    "errorIndex": 1,
+    "correctedWord": "grise",
+    "explanation": "Le nom « souris » est féminin, donc l'adjectif doit être au féminin : « grise ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1385,
+    "sentence": "La neige est blanc et froide.",
+    "errorIndex": 3,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « neige » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1386,
+    "sentence": "Ma grand-mère est très doux.",
+    "errorIndex": 4,
+    "correctedWord": "douce",
+    "explanation": "Le sujet « ma grand-mère » est féminin, donc l'adjectif doit être au féminin : « douce ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1387,
+    "sentence": "La salade est frais et croquante.",
+    "errorIndex": 3,
+    "correctedWord": "fraîche",
+    "explanation": "Le nom « salade » est féminin, donc l'adjectif doit être au féminin : « fraîche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1388,
+    "sentence": "Une vieux dame traverse la rue.",
+    "errorIndex": 1,
+    "correctedWord": "vieille",
+    "explanation": "Le nom « dame » est féminin, donc l'adjectif doit être au féminin : « vieille ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1389,
+    "sentence": "La nuit est long en hiver.",
+    "errorIndex": 3,
+    "correctedWord": "longue",
+    "explanation": "Le nom « nuit » est féminin, donc l'adjectif doit être au féminin : « longue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 1390,
+    "sentence": "Ma trousse est plein de crayons.",
+    "errorIndex": 3,
+    "correctedWord": "pleine",
+    "explanation": "Le nom « trousse » est féminin, donc l'adjectif doit être au féminin : « pleine ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2521,
+    "sentence": "La petite fille joue dehors.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « petite » est bien accordé au féminin avec le nom « fille ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2522,
+    "sentence": "Une jolie fleur pousse dans le jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « jolie » est bien accordé au féminin avec le nom « fleur ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2523,
+    "sentence": "La maison est grande et belle.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « grande » et « belle » sont bien accordés au féminin avec le nom « maison ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2524,
+    "sentence": "La robe est bleue et longue.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « bleue » et « longue » sont bien accordés au féminin avec le nom « robe ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2525,
+    "sentence": "Une blanche colombe vole dans le ciel.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « blanche » est bien accordé au féminin avec le nom « colombe ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2526,
+    "sentence": "Ma chienne est grosse et gentille.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « grosse » et « gentille » sont bien accordés au féminin avec le nom « chienne ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2527,
+    "sentence": "La lune est ronde et brillante.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « ronde » et « brillante » sont bien accordés au féminin avec le nom « lune ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2528,
+    "sentence": "La pomme est verte et juteuse.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « verte » et « juteuse » sont bien accordés au féminin avec le nom « pomme ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2529,
+    "sentence": "Le grand garçon court dans la cour.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "L'adjectif « grand » est bien accordé au masculin avec le nom « garçon ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2530,
+    "sentence": "Ma grande sœur est gentille.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Les adjectifs « grande » et « gentille » sont bien accordés au féminin avec le nom « sœur ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2681,
+    "sentence": "La petit fille de notre voisine joue dehors avec son chien dans le jardin tous les jours.",
+    "errorIndex": 1,
+    "correctedWord": "petite",
+    "explanation": "Le nom « fille » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2682,
+    "sentence": "Une joli fleur rouge pousse dans le jardin de ma grand-mère près de la grande fontaine.",
+    "errorIndex": 1,
+    "correctedWord": "jolie",
+    "explanation": "Le nom « fleur » est féminin, donc l'adjectif doit être au féminin : « jolie ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2683,
+    "sentence": "Ma grande sœur est très gentil avec moi quand elle m'aide à faire mes devoirs le soir.",
+    "errorIndex": 5,
+    "correctedWord": "gentille",
+    "explanation": "Le sujet « ma grande sœur » est féminin, donc l'adjectif doit être « gentille ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2684,
+    "sentence": "La vieille maison au bout de la rue est très grand et elle a un beau jardin derrière.",
+    "errorIndex": 11,
+    "correctedWord": "grande",
+    "explanation": "Le nom « maison » est féminin, donc l'adjectif doit être au féminin : « grande ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2685,
+    "sentence": "Une blanc colombe vole dans le ciel bleu au-dessus de notre maison chaque matin au printemps.",
+    "errorIndex": 1,
+    "correctedWord": "blanche",
+    "explanation": "Le nom « colombe » est féminin, donc l'adjectif doit être au féminin : « blanche ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2686,
+    "sentence": "La belle robe de maman est bleu et elle la porte souvent quand elle sort le dimanche.",
+    "errorIndex": 6,
+    "correctedWord": "bleue",
+    "explanation": "Le nom « robe » est féminin, donc l'adjectif doit être au féminin : « bleue ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2687,
+    "sentence": "Ma chienne est très gros et elle court partout dans le jardin quand on la laisse sortir.",
+    "errorIndex": 4,
+    "correctedWord": "grosse",
+    "explanation": "Le nom « chienne » est féminin, donc l'adjectif doit être au féminin : « grosse ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2688,
+    "sentence": "La lune est rond et brillante ce soir et elle éclaire tout le jardin de sa lumière.",
+    "errorIndex": 3,
+    "correctedWord": "ronde",
+    "explanation": "Le nom « lune » est féminin, donc l'adjectif doit être au féminin : « ronde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2689,
+    "sentence": "La pomme que maman a achetée au marché est vert et elle est aussi très juteuse.",
+    "errorIndex": 8,
+    "correctedWord": "verte",
+    "explanation": "Le nom « pomme » est féminin, donc l'adjectif doit être au féminin : « verte ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2690,
+    "sentence": "La souris est tout petit et elle se cache sous le meuble du salon pour manger son fromage.",
+    "errorIndex": 4,
+    "correctedWord": "petite",
+    "explanation": "Le nom « souris » est féminin, donc l'adjectif doit être au féminin : « petite ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2691,
+    "sentence": "Ma nouvelle voisine est très sportif et elle court dans le parc chaque matin avant le travail.",
+    "errorIndex": 5,
+    "correctedWord": "sportive",
+    "explanation": "Le sujet « ma nouvelle voisine » est féminin, donc l'adjectif doit être « sportive ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2692,
+    "sentence": "La rivière est profond et dangereuse à cet endroit et il ne faut pas y nager seul.",
+    "errorIndex": 3,
+    "correctedWord": "profonde",
+    "explanation": "Le nom « rivière » est féminin, donc l'adjectif doit être au féminin : « profonde ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2693,
+    "sentence": "Cette chanson est très beau et ma sœur la chante souvent quand elle est dans sa chambre.",
+    "errorIndex": 4,
+    "correctedWord": "belle",
+    "explanation": "Le nom « chanson » est féminin, donc l'adjectif doit être au féminin : « belle ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2694,
+    "sentence": "La tortue de mon frère est très lent mais elle arrive toujours à manger sa salade.",
+    "errorIndex": 7,
+    "correctedWord": "lente",
+    "explanation": "Le nom « tortue » est féminin, donc l'adjectif doit être au féminin : « lente ».",
+    "category": "accords en genre"
+  },
+  {
+    "id": 2695,
+    "sentence": "La montagne est très haut et on peut la voir depuis notre maison quand le ciel est clair.",
+    "errorIndex": 4,
+    "correctedWord": "haute",
+    "explanation": "Le nom « montagne » est féminin, donc l'adjectif doit être au féminin : « haute ».",
+    "category": "accords en genre"
+  }
+]

@@ -1,0 +1,2042 @@
+[
+  {
+    "id": 1,
+    "sentence": "Les enfants joue dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "jouent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être conjugué au pluriel : « jouent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2,
+    "sentence": "Le chien aboient très fort.",
+    "errorIndex": 2,
+    "correctedWord": "aboie",
+    "explanation": "Le sujet « le chien » est au singulier, donc le verbe doit être au singulier : « aboie ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 3,
+    "sentence": "Ma sœur mangent une pomme.",
+    "errorIndex": 2,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « ma sœur » est au singulier, donc le verbe doit être au singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 4,
+    "sentence": "Les oiseaux chante le matin.",
+    "errorIndex": 2,
+    "correctedWord": "chantent",
+    "explanation": "Le sujet « les oiseaux » est au pluriel, donc le verbe doit être au pluriel : « chantent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 5,
+    "sentence": "Mon frère dessinent un arbre.",
+    "errorIndex": 2,
+    "correctedWord": "dessine",
+    "explanation": "Le sujet « mon frère » est au singulier, donc le verbe doit être au singulier : « dessine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 6,
+    "sentence": "Les filles danse dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "dansent",
+    "explanation": "Le sujet « les filles » est au pluriel, donc le verbe doit être au pluriel : « dansent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 7,
+    "sentence": "Nous mange à la cantine.",
+    "errorIndex": 1,
+    "correctedWord": "mangeons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « mangeons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 8,
+    "sentence": "Les chats dort sur le coussin.",
+    "errorIndex": 2,
+    "correctedWord": "dorment",
+    "explanation": "Le sujet « les chats » est au pluriel, donc le verbe doit être au pluriel : « dorment ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 9,
+    "sentence": "Les élèves écoute la maîtresse.",
+    "errorIndex": 2,
+    "correctedWord": "écoutent",
+    "explanation": "Le sujet « les élèves » est au pluriel, donc le verbe doit être au pluriel : « écoutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 10,
+    "sentence": "Papa prépares le dîner.",
+    "errorIndex": 1,
+    "correctedWord": "prépare",
+    "explanation": "Le sujet « papa » est à la troisième personne du singulier, donc le verbe prend la terminaison « -e » : « prépare ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 11,
+    "sentence": "Vous chante très bien.",
+    "errorIndex": 1,
+    "correctedWord": "chantez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « chantez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 12,
+    "sentence": "Les poules picore dans le champ.",
+    "errorIndex": 2,
+    "correctedWord": "picorent",
+    "explanation": "Le sujet « les poules » est au pluriel, donc le verbe doit être au pluriel : « picorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 13,
+    "sentence": "Tu regardent la télévision.",
+    "errorIndex": 1,
+    "correctedWord": "regardes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « regardes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 14,
+    "sentence": "Le bébé pleurent dans son lit.",
+    "errorIndex": 2,
+    "correctedWord": "pleure",
+    "explanation": "Le sujet « le bébé » est au singulier, donc le verbe doit être au singulier : « pleure ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 15,
+    "sentence": "Les garçons grimpe dans les arbres.",
+    "errorIndex": 2,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les garçons » est au pluriel, donc le verbe doit être au pluriel : « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 16,
+    "sentence": "Je mangeons du chocolat.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 17,
+    "sentence": "Les lapins saute dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les lapins » est au pluriel, donc le verbe doit être au pluriel : « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 18,
+    "sentence": "Maman cuisinent un bon gâteau.",
+    "errorIndex": 1,
+    "correctedWord": "cuisine",
+    "explanation": "Le sujet « maman » est au singulier, donc le verbe doit être au singulier : « cuisine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 19,
+    "sentence": "Les canards nage dans la mare.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les canards » est au pluriel, donc le verbe doit être au pluriel : « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 20,
+    "sentence": "Il jouent avec ses amis.",
+    "errorIndex": 1,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 21,
+    "sentence": "Les vaches broute dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "broutent",
+    "explanation": "Le sujet « les vaches » est au pluriel, donc le verbe doit être au pluriel : « broutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 22,
+    "sentence": "Elle marchent vers la maison.",
+    "errorIndex": 1,
+    "correctedWord": "marche",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « marche ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 23,
+    "sentence": "Les poissons nage dans le bocal.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les poissons » est au pluriel, donc le verbe doit être au pluriel : « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 24,
+    "sentence": "Mon ami jouent au ballon.",
+    "errorIndex": 2,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « mon ami » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 25,
+    "sentence": "Les abeilles butine les fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "butinent",
+    "explanation": "Le sujet « les abeilles » est au pluriel, donc le verbe doit être au pluriel : « butinent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 26,
+    "sentence": "Nous regardes un film.",
+    "errorIndex": 1,
+    "correctedWord": "regardons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « regardons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 27,
+    "sentence": "Les chevaux galope dans le champ.",
+    "errorIndex": 2,
+    "correctedWord": "galopent",
+    "explanation": "Le sujet « les chevaux » est au pluriel, donc le verbe doit être au pluriel : « galopent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 28,
+    "sentence": "Tu chantez une chanson.",
+    "errorIndex": 1,
+    "correctedWord": "chantes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « chantes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 29,
+    "sentence": "Le soleil brillent dans le ciel.",
+    "errorIndex": 2,
+    "correctedWord": "brille",
+    "explanation": "Le sujet « le soleil » est au singulier, donc le verbe doit être au singulier : « brille ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 30,
+    "sentence": "Les papillons vole dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les papillons » est au pluriel, donc le verbe doit être au pluriel : « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 31,
+    "sentence": "Mon père travaillent au bureau.",
+    "errorIndex": 2,
+    "correctedWord": "travaille",
+    "explanation": "Le sujet « mon père » est au singulier, donc le verbe doit être au singulier : « travaille ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 32,
+    "sentence": "Les souris grignote le fromage.",
+    "errorIndex": 2,
+    "correctedWord": "grignotent",
+    "explanation": "Le sujet « les souris » est au pluriel, donc le verbe doit être au pluriel : « grignotent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 33,
+    "sentence": "Vous dessine un soleil.",
+    "errorIndex": 1,
+    "correctedWord": "dessinez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « dessinez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 34,
+    "sentence": "La maîtresse expliquent la leçon.",
+    "errorIndex": 2,
+    "correctedWord": "explique",
+    "explanation": "Le sujet « la maîtresse » est au singulier, donc le verbe doit être au singulier : « explique ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 35,
+    "sentence": "Les grenouilles saute dans la mare.",
+    "errorIndex": 2,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les grenouilles » est au pluriel, donc le verbe doit être au pluriel : « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 36,
+    "sentence": "Je dessinent un chat.",
+    "errorIndex": 1,
+    "correctedWord": "dessine",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « dessine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 37,
+    "sentence": "Les nuages cache le soleil.",
+    "errorIndex": 2,
+    "correctedWord": "cachent",
+    "explanation": "Le sujet « les nuages » est au pluriel, donc le verbe doit être au pluriel : « cachent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 38,
+    "sentence": "Elle jouent à la poupée.",
+    "errorIndex": 1,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 39,
+    "sentence": "Les tortues avance lentement.",
+    "errorIndex": 2,
+    "correctedWord": "avancent",
+    "explanation": "Le sujet « les tortues » est au pluriel, donc le verbe doit être au pluriel : « avancent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 40,
+    "sentence": "Mon cousin lisent un livre.",
+    "errorIndex": 2,
+    "correctedWord": "lit",
+    "explanation": "Le sujet « mon cousin » est au singulier, donc le verbe doit être au singulier : « lit ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 41,
+    "sentence": "Les étoiles brille dans la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "brillent",
+    "explanation": "Le sujet « les étoiles » est au pluriel, donc le verbe doit être au pluriel : « brillent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 42,
+    "sentence": "Nous chante en classe.",
+    "errorIndex": 1,
+    "correctedWord": "chantons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « chantons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 43,
+    "sentence": "Les moutons broute dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "broutent",
+    "explanation": "Le sujet « les moutons » est au pluriel, donc le verbe doit être au pluriel : « broutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 44,
+    "sentence": "Il mangent une tartine.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être au singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 45,
+    "sentence": "Les fleurs pousse au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "poussent",
+    "explanation": "Le sujet « les fleurs » est au pluriel, donc le verbe doit être au pluriel : « poussent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 46,
+    "sentence": "Tu écoutez la musique.",
+    "errorIndex": 1,
+    "correctedWord": "écoutes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « écoutes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 47,
+    "sentence": "Le vent soufflent très fort.",
+    "errorIndex": 2,
+    "correctedWord": "souffle",
+    "explanation": "Le sujet « le vent » est au singulier, donc le verbe doit être au singulier : « souffle ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 48,
+    "sentence": "Les fourmis transporte des miettes.",
+    "errorIndex": 2,
+    "correctedWord": "transportent",
+    "explanation": "Le sujet « les fourmis » est au pluriel, donc le verbe doit être au pluriel : « transportent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 49,
+    "sentence": "Ma mère préparent le repas.",
+    "errorIndex": 2,
+    "correctedWord": "prépare",
+    "explanation": "Le sujet « ma mère » est au singulier, donc le verbe doit être au singulier : « prépare ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 50,
+    "sentence": "Les arbres perd leurs feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "perdent",
+    "explanation": "Le sujet « les arbres » est au pluriel, donc le verbe doit être au pluriel : « perdent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 51,
+    "sentence": "Vous joue dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "jouez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « jouez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 52,
+    "sentence": "Les coccinelles vole sur les roses.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les coccinelles » est au pluriel, donc le verbe doit être au pluriel : « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 53,
+    "sentence": "Le maître corrigent les cahiers.",
+    "errorIndex": 2,
+    "correctedWord": "corrige",
+    "explanation": "Le sujet « le maître » est au singulier, donc le verbe doit être au singulier : « corrige ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 54,
+    "sentence": "Les dauphins nage dans la mer.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les dauphins » est au pluriel, donc le verbe doit être au pluriel : « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 55,
+    "sentence": "Je chantez une chanson.",
+    "errorIndex": 1,
+    "correctedWord": "chante",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « chante ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 56,
+    "sentence": "Les escargots avance sous la pluie.",
+    "errorIndex": 2,
+    "correctedWord": "avancent",
+    "explanation": "Le sujet « les escargots » est au pluriel, donc le verbe doit être au pluriel : « avancent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 57,
+    "sentence": "Mon grand-père racontent des histoires.",
+    "errorIndex": 2,
+    "correctedWord": "raconte",
+    "explanation": "Le sujet « mon grand-père » est au singulier, donc le verbe doit être au singulier : « raconte ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 58,
+    "sentence": "Les hirondelles arrive au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "arrivent",
+    "explanation": "Le sujet « les hirondelles » est au pluriel, donc le verbe doit être au pluriel : « arrivent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 59,
+    "sentence": "Tu dessinent un bateau.",
+    "errorIndex": 1,
+    "correctedWord": "dessines",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « dessines ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 60,
+    "sentence": "La pluie tombent sur le toit.",
+    "errorIndex": 2,
+    "correctedWord": "tombe",
+    "explanation": "Le sujet « la pluie » est au singulier, donc le verbe doit être au singulier : « tombe ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 61,
+    "sentence": "Les enfants adore le chocolat.",
+    "errorIndex": 2,
+    "correctedWord": "adorent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être au pluriel : « adorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 62,
+    "sentence": "Nous écoutez la radio.",
+    "errorIndex": 1,
+    "correctedWord": "écoutons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « écoutons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 63,
+    "sentence": "Les chenilles mange les feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "mangent",
+    "explanation": "Le sujet « les chenilles » est au pluriel, donc le verbe doit être au pluriel : « mangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 64,
+    "sentence": "Elle regardent par la fenêtre.",
+    "errorIndex": 1,
+    "correctedWord": "regarde",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « regarde ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 65,
+    "sentence": "Les lions rugit dans la savane.",
+    "errorIndex": 2,
+    "correctedWord": "rugissent",
+    "explanation": "Le sujet « les lions » est au pluriel, donc le verbe doit être au pluriel : « rugissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 66,
+    "sentence": "Mon chat grimpent dans les arbres.",
+    "errorIndex": 2,
+    "correctedWord": "grimpe",
+    "explanation": "Le sujet « mon chat » est au singulier, donc le verbe doit être au singulier : « grimpe ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 67,
+    "sentence": "Les bateaux navigue sur la mer.",
+    "errorIndex": 2,
+    "correctedWord": "naviguent",
+    "explanation": "Le sujet « les bateaux » est au pluriel, donc le verbe doit être au pluriel : « naviguent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 68,
+    "sentence": "Vous mangeons à midi.",
+    "errorIndex": 1,
+    "correctedWord": "mangez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « mangez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 69,
+    "sentence": "Les singes grimpe aux arbres.",
+    "errorIndex": 2,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les singes » est au pluriel, donc le verbe doit être au pluriel : « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 70,
+    "sentence": "Le facteur apportent le courrier.",
+    "errorIndex": 2,
+    "correctedWord": "apporte",
+    "explanation": "Le sujet « le facteur » est au singulier, donc le verbe doit être au singulier : « apporte ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 71,
+    "sentence": "Les loups hurle la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "hurlent",
+    "explanation": "Le sujet « les loups » est au pluriel, donc le verbe doit être au pluriel : « hurlent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 72,
+    "sentence": "Je regardent un dessin animé.",
+    "errorIndex": 1,
+    "correctedWord": "regarde",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « regarde ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 73,
+    "sentence": "Les pigeons roucoule sur le toit.",
+    "errorIndex": 2,
+    "correctedWord": "roucoulent",
+    "explanation": "Le sujet « les pigeons » est au pluriel, donc le verbe doit être au pluriel : « roucoulent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 74,
+    "sentence": "Ma cousine jouent avec moi.",
+    "errorIndex": 2,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « ma cousine » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 75,
+    "sentence": "Les voitures roule sur la route.",
+    "errorIndex": 2,
+    "correctedWord": "roulent",
+    "explanation": "Le sujet « les voitures » est au pluriel, donc le verbe doit être au pluriel : « roulent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 76,
+    "sentence": "Tu mangeons des frites.",
+    "errorIndex": 1,
+    "correctedWord": "manges",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « manges ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 77,
+    "sentence": "Les chèvres grimpe sur les rochers.",
+    "errorIndex": 2,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les chèvres » est au pluriel, donc le verbe doit être au pluriel : « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 78,
+    "sentence": "Le jardinier arrosent les plantes.",
+    "errorIndex": 2,
+    "correctedWord": "arrose",
+    "explanation": "Le sujet « le jardinier » est au singulier, donc le verbe doit être au singulier : « arrose ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 79,
+    "sentence": "Les écureuils ramasse des noisettes.",
+    "errorIndex": 2,
+    "correctedWord": "ramassent",
+    "explanation": "Le sujet « les écureuils » est au pluriel, donc le verbe doit être au pluriel : « ramassent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 80,
+    "sentence": "Nous dessinez un paysage.",
+    "errorIndex": 1,
+    "correctedWord": "dessinons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « dessinons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 81,
+    "sentence": "Les moineaux picore les graines.",
+    "errorIndex": 2,
+    "correctedWord": "picorent",
+    "explanation": "Le sujet « les moineaux » est au pluriel, donc le verbe doit être au pluriel : « picorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 82,
+    "sentence": "Il chantent sous la douche.",
+    "errorIndex": 1,
+    "correctedWord": "chante",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être au singulier : « chante ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 83,
+    "sentence": "Les cerises mûrit en été.",
+    "errorIndex": 2,
+    "correctedWord": "mûrissent",
+    "explanation": "Le sujet « les cerises » est au pluriel, donc le verbe doit être au pluriel : « mûrissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 84,
+    "sentence": "Ma tante habitent à Paris.",
+    "errorIndex": 2,
+    "correctedWord": "habite",
+    "explanation": "Le sujet « ma tante » est au singulier, donc le verbe doit être au singulier : « habite ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 85,
+    "sentence": "Les avions vole très haut.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les avions » est au pluriel, donc le verbe doit être au pluriel : « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 86,
+    "sentence": "Vous écris une lettre.",
+    "errorIndex": 1,
+    "correctedWord": "écrivez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « écrivez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 87,
+    "sentence": "Les canaris chante dans la cage.",
+    "errorIndex": 2,
+    "correctedWord": "chantent",
+    "explanation": "Le sujet « les canaris » est au pluriel, donc le verbe doit être au pluriel : « chantent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 88,
+    "sentence": "Le boulanger préparent le pain.",
+    "errorIndex": 2,
+    "correctedWord": "prépare",
+    "explanation": "Le sujet « le boulanger » est au singulier, donc le verbe doit être au singulier : « prépare ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 89,
+    "sentence": "Les enfants range leur chambre.",
+    "errorIndex": 2,
+    "correctedWord": "rangent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être au pluriel : « rangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 90,
+    "sentence": "Je écoutent de la musique.",
+    "errorIndex": 1,
+    "correctedWord": "écoute",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « écoute ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 91,
+    "sentence": "Les cygnes glisse sur le lac.",
+    "errorIndex": 2,
+    "correctedWord": "glissent",
+    "explanation": "Le sujet « les cygnes » est au pluriel, donc le verbe doit être au pluriel : « glissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 92,
+    "sentence": "Mon oncle voyagent beaucoup.",
+    "errorIndex": 2,
+    "correctedWord": "voyage",
+    "explanation": "Le sujet « mon oncle » est au singulier, donc le verbe doit être au singulier : « voyage ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 93,
+    "sentence": "Les roses fleurit au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "fleurissent",
+    "explanation": "Le sujet « les roses » est au pluriel, donc le verbe doit être au pluriel : « fleurissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 94,
+    "sentence": "Tu jouent au football.",
+    "errorIndex": 1,
+    "correctedWord": "joues",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « joues ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 95,
+    "sentence": "Les pompiers arrive très vite.",
+    "errorIndex": 2,
+    "correctedWord": "arrivent",
+    "explanation": "Le sujet « les pompiers » est au pluriel, donc le verbe doit être au pluriel : « arrivent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 96,
+    "sentence": "Elle mangeons une salade.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 97,
+    "sentence": "Les koalas dort dans les arbres.",
+    "errorIndex": 2,
+    "correctedWord": "dorment",
+    "explanation": "Le sujet « les koalas » est au pluriel, donc le verbe doit être au pluriel : « dorment ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 98,
+    "sentence": "Nous joue au ballon.",
+    "errorIndex": 1,
+    "correctedWord": "jouons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « jouons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 99,
+    "sentence": "Les girafes mange des feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "mangent",
+    "explanation": "Le sujet « les girafes » est au pluriel, donc le verbe doit être au pluriel : « mangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 100,
+    "sentence": "Le docteur soignent les malades.",
+    "errorIndex": 2,
+    "correctedWord": "soigne",
+    "explanation": "Le sujet « le docteur » est au singulier, donc le verbe doit être au singulier : « soigne ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1251,
+    "sentence": "Les enfants joue dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "jouent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être conjugué au pluriel : « jouent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1252,
+    "sentence": "Le chien aboient très fort.",
+    "errorIndex": 2,
+    "correctedWord": "aboie",
+    "explanation": "Le sujet « le chien » est au singulier, donc le verbe doit être au singulier : « aboie ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1253,
+    "sentence": "Ma sœur mangent une pomme.",
+    "errorIndex": 2,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « ma sœur » est au singulier, donc le verbe doit être au singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1254,
+    "sentence": "Les oiseaux chante le matin.",
+    "errorIndex": 2,
+    "correctedWord": "chantent",
+    "explanation": "Le sujet « les oiseaux » est au pluriel, donc le verbe doit être au pluriel : « chantent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1255,
+    "sentence": "Mon frère dessinent un arbre.",
+    "errorIndex": 2,
+    "correctedWord": "dessine",
+    "explanation": "Le sujet « mon frère » est au singulier, donc le verbe doit être au singulier : « dessine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1256,
+    "sentence": "Les filles danse dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "dansent",
+    "explanation": "Le sujet « les filles » est au pluriel, donc le verbe doit être au pluriel : « dansent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1257,
+    "sentence": "Nous mange à la cantine.",
+    "errorIndex": 1,
+    "correctedWord": "mangeons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « mangeons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1258,
+    "sentence": "Les chats dort sur le coussin.",
+    "errorIndex": 2,
+    "correctedWord": "dorment",
+    "explanation": "Le sujet « les chats » est au pluriel, donc le verbe doit être au pluriel : « dorment ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1259,
+    "sentence": "Les élèves écoute la maîtresse.",
+    "errorIndex": 2,
+    "correctedWord": "écoutent",
+    "explanation": "Le sujet « les élèves » est au pluriel, donc le verbe doit être au pluriel : « écoutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1260,
+    "sentence": "Papa prépares le dîner.",
+    "errorIndex": 1,
+    "correctedWord": "prépare",
+    "explanation": "Le sujet « papa » est à la troisième personne du singulier, donc le verbe prend la terminaison « -e » : « prépare ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1261,
+    "sentence": "Vous chante très bien.",
+    "errorIndex": 1,
+    "correctedWord": "chantez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « chantez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1262,
+    "sentence": "Les poules picore dans le champ.",
+    "errorIndex": 2,
+    "correctedWord": "picorent",
+    "explanation": "Le sujet « les poules » est au pluriel, donc le verbe doit être au pluriel : « picorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1263,
+    "sentence": "Tu regardent la télévision.",
+    "errorIndex": 1,
+    "correctedWord": "regardes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « regardes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1264,
+    "sentence": "Le bébé pleurent dans son lit.",
+    "errorIndex": 2,
+    "correctedWord": "pleure",
+    "explanation": "Le sujet « le bébé » est au singulier, donc le verbe doit être au singulier : « pleure ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1265,
+    "sentence": "Les garçons grimpe dans les arbres.",
+    "errorIndex": 2,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les garçons » est au pluriel, donc le verbe doit être au pluriel : « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1266,
+    "sentence": "Je mangeons du chocolat.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1267,
+    "sentence": "Les lapins saute dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les lapins » est au pluriel, donc le verbe doit être au pluriel : « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1268,
+    "sentence": "Maman cuisinent un bon gâteau.",
+    "errorIndex": 1,
+    "correctedWord": "cuisine",
+    "explanation": "Le sujet « maman » est au singulier, donc le verbe doit être au singulier : « cuisine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1269,
+    "sentence": "Les canards nage dans la mare.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les canards » est au pluriel, donc le verbe doit être au pluriel : « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1270,
+    "sentence": "Il jouent avec ses amis.",
+    "errorIndex": 1,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1271,
+    "sentence": "Les vaches broute dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "broutent",
+    "explanation": "Le sujet « les vaches » est au pluriel, donc le verbe doit être au pluriel : « broutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1272,
+    "sentence": "Elle marchent vers la maison.",
+    "errorIndex": 1,
+    "correctedWord": "marche",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « marche ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1273,
+    "sentence": "Les poissons nage dans le bocal.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les poissons » est au pluriel, donc le verbe doit être au pluriel : « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1274,
+    "sentence": "Mon ami jouent au ballon.",
+    "errorIndex": 2,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « mon ami » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1275,
+    "sentence": "Les abeilles butine les fleurs.",
+    "errorIndex": 2,
+    "correctedWord": "butinent",
+    "explanation": "Le sujet « les abeilles » est au pluriel, donc le verbe doit être au pluriel : « butinent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1276,
+    "sentence": "Nous regardes un film.",
+    "errorIndex": 1,
+    "correctedWord": "regardons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « regardons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1277,
+    "sentence": "Les chevaux galope dans le champ.",
+    "errorIndex": 2,
+    "correctedWord": "galopent",
+    "explanation": "Le sujet « les chevaux » est au pluriel, donc le verbe doit être au pluriel : « galopent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1278,
+    "sentence": "Tu chantez une chanson.",
+    "errorIndex": 1,
+    "correctedWord": "chantes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « chantes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1279,
+    "sentence": "Le soleil brillent dans le ciel.",
+    "errorIndex": 2,
+    "correctedWord": "brille",
+    "explanation": "Le sujet « le soleil » est au singulier, donc le verbe doit être au singulier : « brille ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1280,
+    "sentence": "Les papillons vole dans le jardin.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les papillons » est au pluriel, donc le verbe doit être au pluriel : « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1281,
+    "sentence": "Mon père travaillent au bureau.",
+    "errorIndex": 2,
+    "correctedWord": "travaille",
+    "explanation": "Le sujet « mon père » est au singulier, donc le verbe doit être au singulier : « travaille ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1282,
+    "sentence": "Les souris grignote le fromage.",
+    "errorIndex": 2,
+    "correctedWord": "grignotent",
+    "explanation": "Le sujet « les souris » est au pluriel, donc le verbe doit être au pluriel : « grignotent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1283,
+    "sentence": "Vous dessine un soleil.",
+    "errorIndex": 1,
+    "correctedWord": "dessinez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « dessinez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1284,
+    "sentence": "La maîtresse expliquent la leçon.",
+    "errorIndex": 2,
+    "correctedWord": "explique",
+    "explanation": "Le sujet « la maîtresse » est au singulier, donc le verbe doit être au singulier : « explique ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1285,
+    "sentence": "Les grenouilles saute dans la mare.",
+    "errorIndex": 2,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les grenouilles » est au pluriel, donc le verbe doit être au pluriel : « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1286,
+    "sentence": "Je dessinent un chat.",
+    "errorIndex": 1,
+    "correctedWord": "dessine",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « dessine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1287,
+    "sentence": "Les nuages cache le soleil.",
+    "errorIndex": 2,
+    "correctedWord": "cachent",
+    "explanation": "Le sujet « les nuages » est au pluriel, donc le verbe doit être au pluriel : « cachent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1288,
+    "sentence": "Elle jouent à la poupée.",
+    "errorIndex": 1,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1289,
+    "sentence": "Les tortues avance lentement.",
+    "errorIndex": 2,
+    "correctedWord": "avancent",
+    "explanation": "Le sujet « les tortues » est au pluriel, donc le verbe doit être au pluriel : « avancent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1290,
+    "sentence": "Mon cousin lisent un livre.",
+    "errorIndex": 2,
+    "correctedWord": "lit",
+    "explanation": "Le sujet « mon cousin » est au singulier, donc le verbe doit être au singulier : « lit ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1291,
+    "sentence": "Les étoiles brille dans la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "brillent",
+    "explanation": "Le sujet « les étoiles » est au pluriel, donc le verbe doit être au pluriel : « brillent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1292,
+    "sentence": "Nous chante en classe.",
+    "errorIndex": 1,
+    "correctedWord": "chantons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « chantons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1293,
+    "sentence": "Les moutons broute dans le pré.",
+    "errorIndex": 2,
+    "correctedWord": "broutent",
+    "explanation": "Le sujet « les moutons » est au pluriel, donc le verbe doit être au pluriel : « broutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1294,
+    "sentence": "Il mangent une tartine.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être au singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1295,
+    "sentence": "Les fleurs pousse au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "poussent",
+    "explanation": "Le sujet « les fleurs » est au pluriel, donc le verbe doit être au pluriel : « poussent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1296,
+    "sentence": "Tu écoutez la musique.",
+    "errorIndex": 1,
+    "correctedWord": "écoutes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « écoutes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1297,
+    "sentence": "Le vent soufflent très fort.",
+    "errorIndex": 2,
+    "correctedWord": "souffle",
+    "explanation": "Le sujet « le vent » est au singulier, donc le verbe doit être au singulier : « souffle ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1298,
+    "sentence": "Les fourmis transporte des miettes.",
+    "errorIndex": 2,
+    "correctedWord": "transportent",
+    "explanation": "Le sujet « les fourmis » est au pluriel, donc le verbe doit être au pluriel : « transportent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1299,
+    "sentence": "Ma mère préparent le repas.",
+    "errorIndex": 2,
+    "correctedWord": "prépare",
+    "explanation": "Le sujet « ma mère » est au singulier, donc le verbe doit être au singulier : « prépare ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1300,
+    "sentence": "Les arbres perd leurs feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "perdent",
+    "explanation": "Le sujet « les arbres » est au pluriel, donc le verbe doit être au pluriel : « perdent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1301,
+    "sentence": "Vous joue dans la cour.",
+    "errorIndex": 1,
+    "correctedWord": "jouez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « jouez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1302,
+    "sentence": "Les coccinelles vole sur les roses.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les coccinelles » est au pluriel, donc le verbe doit être au pluriel : « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1303,
+    "sentence": "Le maître corrigent les cahiers.",
+    "errorIndex": 2,
+    "correctedWord": "corrige",
+    "explanation": "Le sujet « le maître » est au singulier, donc le verbe doit être au singulier : « corrige ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1304,
+    "sentence": "Les dauphins nage dans la mer.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les dauphins » est au pluriel, donc le verbe doit être au pluriel : « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1305,
+    "sentence": "Je chantez une chanson.",
+    "errorIndex": 1,
+    "correctedWord": "chante",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « chante ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1306,
+    "sentence": "Les escargots avance sous la pluie.",
+    "errorIndex": 2,
+    "correctedWord": "avancent",
+    "explanation": "Le sujet « les escargots » est au pluriel, donc le verbe doit être au pluriel : « avancent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1307,
+    "sentence": "Mon grand-père racontent des histoires.",
+    "errorIndex": 2,
+    "correctedWord": "raconte",
+    "explanation": "Le sujet « mon grand-père » est au singulier, donc le verbe doit être au singulier : « raconte ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1308,
+    "sentence": "Les hirondelles arrive au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "arrivent",
+    "explanation": "Le sujet « les hirondelles » est au pluriel, donc le verbe doit être au pluriel : « arrivent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1309,
+    "sentence": "Tu dessinent un bateau.",
+    "errorIndex": 1,
+    "correctedWord": "dessines",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « dessines ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1310,
+    "sentence": "La pluie tombent sur le toit.",
+    "errorIndex": 2,
+    "correctedWord": "tombe",
+    "explanation": "Le sujet « la pluie » est au singulier, donc le verbe doit être au singulier : « tombe ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1311,
+    "sentence": "Les enfants adore le chocolat.",
+    "errorIndex": 2,
+    "correctedWord": "adorent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être au pluriel : « adorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1312,
+    "sentence": "Nous écoutez la radio.",
+    "errorIndex": 1,
+    "correctedWord": "écoutons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « écoutons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1313,
+    "sentence": "Les chenilles mange les feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "mangent",
+    "explanation": "Le sujet « les chenilles » est au pluriel, donc le verbe doit être au pluriel : « mangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1314,
+    "sentence": "Elle regardent par la fenêtre.",
+    "errorIndex": 1,
+    "correctedWord": "regarde",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « regarde ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1315,
+    "sentence": "Les lions rugit dans la savane.",
+    "errorIndex": 2,
+    "correctedWord": "rugissent",
+    "explanation": "Le sujet « les lions » est au pluriel, donc le verbe doit être au pluriel : « rugissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1316,
+    "sentence": "Mon chat grimpent dans les arbres.",
+    "errorIndex": 2,
+    "correctedWord": "grimpe",
+    "explanation": "Le sujet « mon chat » est au singulier, donc le verbe doit être au singulier : « grimpe ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1317,
+    "sentence": "Les bateaux navigue sur la mer.",
+    "errorIndex": 2,
+    "correctedWord": "naviguent",
+    "explanation": "Le sujet « les bateaux » est au pluriel, donc le verbe doit être au pluriel : « naviguent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1318,
+    "sentence": "Vous mangeons à midi.",
+    "errorIndex": 1,
+    "correctedWord": "mangez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « mangez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1319,
+    "sentence": "Les singes grimpe aux arbres.",
+    "errorIndex": 2,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les singes » est au pluriel, donc le verbe doit être au pluriel : « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1320,
+    "sentence": "Le facteur apportent le courrier.",
+    "errorIndex": 2,
+    "correctedWord": "apporte",
+    "explanation": "Le sujet « le facteur » est au singulier, donc le verbe doit être au singulier : « apporte ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1321,
+    "sentence": "Les loups hurle la nuit.",
+    "errorIndex": 2,
+    "correctedWord": "hurlent",
+    "explanation": "Le sujet « les loups » est au pluriel, donc le verbe doit être au pluriel : « hurlent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1322,
+    "sentence": "Je regardent un dessin animé.",
+    "errorIndex": 1,
+    "correctedWord": "regarde",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « regarde ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1323,
+    "sentence": "Les pigeons roucoule sur le toit.",
+    "errorIndex": 2,
+    "correctedWord": "roucoulent",
+    "explanation": "Le sujet « les pigeons » est au pluriel, donc le verbe doit être au pluriel : « roucoulent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1324,
+    "sentence": "Ma cousine jouent avec moi.",
+    "errorIndex": 2,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « ma cousine » est au singulier, donc le verbe doit être au singulier : « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1325,
+    "sentence": "Les voitures roule sur la route.",
+    "errorIndex": 2,
+    "correctedWord": "roulent",
+    "explanation": "Le sujet « les voitures » est au pluriel, donc le verbe doit être au pluriel : « roulent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1326,
+    "sentence": "Tu mangeons des frites.",
+    "errorIndex": 1,
+    "correctedWord": "manges",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « manges ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1327,
+    "sentence": "Les chèvres grimpe sur les rochers.",
+    "errorIndex": 2,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les chèvres » est au pluriel, donc le verbe doit être au pluriel : « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1328,
+    "sentence": "Le jardinier arrosent les plantes.",
+    "errorIndex": 2,
+    "correctedWord": "arrose",
+    "explanation": "Le sujet « le jardinier » est au singulier, donc le verbe doit être au singulier : « arrose ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1329,
+    "sentence": "Les écureuils ramasse des noisettes.",
+    "errorIndex": 2,
+    "correctedWord": "ramassent",
+    "explanation": "Le sujet « les écureuils » est au pluriel, donc le verbe doit être au pluriel : « ramassent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1330,
+    "sentence": "Nous dessinez un paysage.",
+    "errorIndex": 1,
+    "correctedWord": "dessinons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « dessinons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1331,
+    "sentence": "Les moineaux picore les graines.",
+    "errorIndex": 2,
+    "correctedWord": "picorent",
+    "explanation": "Le sujet « les moineaux » est au pluriel, donc le verbe doit être au pluriel : « picorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1332,
+    "sentence": "Il chantent sous la douche.",
+    "errorIndex": 1,
+    "correctedWord": "chante",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être au singulier : « chante ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1333,
+    "sentence": "Les cerises mûrit en été.",
+    "errorIndex": 2,
+    "correctedWord": "mûrissent",
+    "explanation": "Le sujet « les cerises » est au pluriel, donc le verbe doit être au pluriel : « mûrissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1334,
+    "sentence": "Ma tante habitent à Paris.",
+    "errorIndex": 2,
+    "correctedWord": "habite",
+    "explanation": "Le sujet « ma tante » est au singulier, donc le verbe doit être au singulier : « habite ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1335,
+    "sentence": "Les avions vole très haut.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les avions » est au pluriel, donc le verbe doit être au pluriel : « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1336,
+    "sentence": "Vous écris une lettre.",
+    "errorIndex": 1,
+    "correctedWord": "écrivez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « écrivez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1337,
+    "sentence": "Les canaris chante dans la cage.",
+    "errorIndex": 2,
+    "correctedWord": "chantent",
+    "explanation": "Le sujet « les canaris » est au pluriel, donc le verbe doit être au pluriel : « chantent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1338,
+    "sentence": "Le boulanger préparent le pain.",
+    "errorIndex": 2,
+    "correctedWord": "prépare",
+    "explanation": "Le sujet « le boulanger » est au singulier, donc le verbe doit être au singulier : « prépare ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1339,
+    "sentence": "Les enfants range leur chambre.",
+    "errorIndex": 2,
+    "correctedWord": "rangent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être au pluriel : « rangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1340,
+    "sentence": "Je écoutent de la musique.",
+    "errorIndex": 1,
+    "correctedWord": "écoute",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « écoute ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1341,
+    "sentence": "Les cygnes glisse sur le lac.",
+    "errorIndex": 2,
+    "correctedWord": "glissent",
+    "explanation": "Le sujet « les cygnes » est au pluriel, donc le verbe doit être au pluriel : « glissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1342,
+    "sentence": "Mon oncle voyagent beaucoup.",
+    "errorIndex": 2,
+    "correctedWord": "voyage",
+    "explanation": "Le sujet « mon oncle » est au singulier, donc le verbe doit être au singulier : « voyage ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1343,
+    "sentence": "Les roses fleurit au printemps.",
+    "errorIndex": 2,
+    "correctedWord": "fleurissent",
+    "explanation": "Le sujet « les roses » est au pluriel, donc le verbe doit être au pluriel : « fleurissent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1344,
+    "sentence": "Tu jouent au football.",
+    "errorIndex": 1,
+    "correctedWord": "joues",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « joues ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1345,
+    "sentence": "Les pompiers arrive très vite.",
+    "errorIndex": 2,
+    "correctedWord": "arrivent",
+    "explanation": "Le sujet « les pompiers » est au pluriel, donc le verbe doit être au pluriel : « arrivent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1346,
+    "sentence": "Elle mangeons une salade.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être au singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1347,
+    "sentence": "Les koalas dort dans les arbres.",
+    "errorIndex": 2,
+    "correctedWord": "dorment",
+    "explanation": "Le sujet « les koalas » est au pluriel, donc le verbe doit être au pluriel : « dorment ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1348,
+    "sentence": "Nous joue au ballon.",
+    "errorIndex": 1,
+    "correctedWord": "jouons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « jouons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1349,
+    "sentence": "Les girafes mange des feuilles.",
+    "errorIndex": 2,
+    "correctedWord": "mangent",
+    "explanation": "Le sujet « les girafes » est au pluriel, donc le verbe doit être au pluriel : « mangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 1350,
+    "sentence": "Le docteur soignent les malades.",
+    "errorIndex": 2,
+    "correctedWord": "soigne",
+    "explanation": "Le sujet « le docteur » est au singulier, donc le verbe doit être au singulier : « soigne ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2501,
+    "sentence": "Les enfants jouent dans la cour.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « les enfants » est au pluriel et le verbe « jouent » est bien conjugué au pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2502,
+    "sentence": "Le chien aboie très fort.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « le chien » est au singulier et le verbe « aboie » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2503,
+    "sentence": "Ma sœur mange une pomme.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « ma sœur » est au singulier et le verbe « mange » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2504,
+    "sentence": "Les oiseaux chantent le matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « les oiseaux » est au pluriel et le verbe « chantent » est bien conjugué au pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2505,
+    "sentence": "Nous mangeons à la cantine.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « nous » est bien accordé avec le verbe « mangeons » à la première personne du pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2506,
+    "sentence": "Vous chantez très bien.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « vous » est bien accordé avec le verbe « chantez » à la deuxième personne du pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2507,
+    "sentence": "Tu regardes la télévision.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « tu » est bien accordé avec le verbe « regardes » à la deuxième personne du singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2508,
+    "sentence": "Je mange du chocolat.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « je » est bien accordé avec le verbe « mange » à la première personne du singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2509,
+    "sentence": "Les chats dorment sur le coussin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « les chats » est au pluriel et le verbe « dorment » est bien conjugué au pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2510,
+    "sentence": "Papa prépare le dîner.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « papa » est au singulier et le verbe « prépare » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2511,
+    "sentence": "Les élèves écoutent la maîtresse.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « les élèves » est au pluriel et le verbe « écoutent » est bien conjugué au pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2512,
+    "sentence": "Il joue avec ses amis.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « il » est au singulier et le verbe « joue » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2513,
+    "sentence": "Elle marche vers la maison.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « elle » est au singulier et le verbe « marche » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2514,
+    "sentence": "Les papillons volent dans le jardin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « les papillons » est au pluriel et le verbe « volent » est bien conjugué au pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2515,
+    "sentence": "Mon père travaille au bureau.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « mon père » est au singulier et le verbe « travaille » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2516,
+    "sentence": "Les pompiers arrivent très vite.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « les pompiers » est au pluriel et le verbe « arrivent » est bien conjugué au pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2517,
+    "sentence": "Maman cuisine un bon gâteau.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « maman » est au singulier et le verbe « cuisine » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2518,
+    "sentence": "Les grenouilles sautent dans la mare.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « les grenouilles » est au pluriel et le verbe « sautent » est bien conjugué au pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2519,
+    "sentence": "Le soleil brille dans le ciel.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « le soleil » est au singulier et le verbe « brille » est bien conjugué au singulier.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2520,
+    "sentence": "Nous dessinons un paysage.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "Le sujet « nous » est bien accordé avec le verbe « dessinons » à la première personne du pluriel.",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2661,
+    "sentence": "Les enfants joue dans le grand jardin derrière la maison pendant que leurs parents les surveillent.",
+    "errorIndex": 2,
+    "correctedWord": "jouent",
+    "explanation": "Le sujet « les enfants » est au pluriel, donc le verbe doit être « jouent » et non « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2662,
+    "sentence": "Mon petit frère dessinent un beau paysage avec ses crayons de couleur sur la grande table.",
+    "errorIndex": 3,
+    "correctedWord": "dessine",
+    "explanation": "Le sujet « mon petit frère » est au singulier, donc le verbe doit être « dessine » et non « dessinent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2663,
+    "sentence": "Les oiseaux du parc chante très fort le matin quand le soleil se lève dans le ciel.",
+    "errorIndex": 4,
+    "correctedWord": "chantent",
+    "explanation": "Le sujet « les oiseaux du parc » est au pluriel, donc le verbe doit être « chantent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2664,
+    "sentence": "Ma grande sœur mangent une pomme rouge chaque matin avant de partir à son collège.",
+    "errorIndex": 3,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « ma grande sœur » est au singulier, donc le verbe doit être « mange » et non « mangent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2665,
+    "sentence": "Nous mange à la cantine de notre école tous les jours avec nos amis de la classe.",
+    "errorIndex": 1,
+    "correctedWord": "mangeons",
+    "explanation": "Le sujet « nous » demande la première personne du pluriel : « mangeons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2666,
+    "sentence": "Les chats de la ferme dort sur le vieux coussin dans la grange toute la journée.",
+    "errorIndex": 5,
+    "correctedWord": "dorment",
+    "explanation": "Le sujet « les chats de la ferme » est au pluriel, donc le verbe doit être « dorment ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2667,
+    "sentence": "Vous chante très bien cette jolie chanson que la maîtresse vous a apprise la semaine dernière.",
+    "errorIndex": 1,
+    "correctedWord": "chantez",
+    "explanation": "Le sujet « vous » demande la deuxième personne du pluriel : « chantez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2668,
+    "sentence": "Les poules du poulailler picore les grains de blé que le fermier leur donne chaque matin.",
+    "errorIndex": 4,
+    "correctedWord": "picorent",
+    "explanation": "Le sujet « les poules du poulailler » est au pluriel, donc le verbe doit être « picorent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2669,
+    "sentence": "Tu regardent la télévision dans le salon pendant que maman prépare le dîner dans la cuisine.",
+    "errorIndex": 1,
+    "correctedWord": "regardes",
+    "explanation": "Le sujet « tu » demande la deuxième personne du singulier : « regardes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2670,
+    "sentence": "Le petit bébé pleurent dans son lit parce que il a faim et il veut son biberon.",
+    "errorIndex": 3,
+    "correctedWord": "pleure",
+    "explanation": "Le sujet « le petit bébé » est au singulier, donc le verbe doit être « pleure ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2671,
+    "sentence": "Les grands garçons de la cour grimpe dans les arbres du parc pendant la récréation.",
+    "errorIndex": 6,
+    "correctedWord": "grimpent",
+    "explanation": "Le sujet « les grands garçons de la cour » est au pluriel, donc le verbe doit être « grimpent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2672,
+    "sentence": "Je mangeons du chocolat avec ma sœur après le repas quand maman nous le permet.",
+    "errorIndex": 1,
+    "correctedWord": "mange",
+    "explanation": "Le sujet « je » demande la première personne du singulier : « mange ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2673,
+    "sentence": "Les petits lapins du jardin saute dans le pré vert derrière la maison de mes grands-parents.",
+    "errorIndex": 5,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les petits lapins du jardin » est au pluriel, donc le verbe doit être « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2674,
+    "sentence": "Maman cuisinent un bon gâteau au chocolat pour notre anniversaire avec beaucoup de crème.",
+    "errorIndex": 1,
+    "correctedWord": "cuisine",
+    "explanation": "Le sujet « maman » est au singulier, donc le verbe doit être « cuisine ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2675,
+    "sentence": "Les canards du lac nage dans la mare avec leurs petits canetons chaque matin au printemps.",
+    "errorIndex": 4,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les canards du lac » est au pluriel, donc le verbe doit être « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2676,
+    "sentence": "Il jouent avec ses amis dans le parc tous les samedis après-midi quand il fait beau.",
+    "errorIndex": 1,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « il » est au singulier, donc le verbe doit être « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2677,
+    "sentence": "Les vaches de la ferme broute dans le grand pré vert pendant que le fermier les surveille.",
+    "errorIndex": 5,
+    "correctedWord": "broutent",
+    "explanation": "Le sujet « les vaches de la ferme » est au pluriel, donc le verbe doit être « broutent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2678,
+    "sentence": "Elle marchent vers la grande maison blanche au bout de la rue avec son panier de courses.",
+    "errorIndex": 1,
+    "correctedWord": "marche",
+    "explanation": "Le sujet « elle » est au singulier, donc le verbe doit être « marche ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2679,
+    "sentence": "Les jolis poissons rouges nage dans le grand bocal posé sur la table du salon.",
+    "errorIndex": 4,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les jolis poissons rouges » est au pluriel, donc le verbe doit être « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2680,
+    "sentence": "Mon meilleur ami jouent au ballon avec moi dans la cour de récréation chaque jour.",
+    "errorIndex": 3,
+    "correctedWord": "joue",
+    "explanation": "Le sujet « mon meilleur ami » est au singulier, donc le verbe doit être « joue ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2891,
+    "sentence": "Les élèves travaille bien en classe et la maîtresse veut leur donner une récompense vendredi.",
+    "errorIndex": 2,
+    "correctedWord": "travaillent",
+    "explanation": "Le sujet « les élèves » est au pluriel, donc le verbe doit être « travaillent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2892,
+    "sentence": "Mon petit chat dormez sur le canapé et il ne veut pas bouger de toute la journée.",
+    "errorIndex": 3,
+    "correctedWord": "dort",
+    "explanation": "Le sujet « mon petit chat » est à la 3e personne du singulier : « dort » et non « dormez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2893,
+    "sentence": "Les papillons vole autour des fleurs et ils veulent butiner le nectar de chaque rose.",
+    "errorIndex": 2,
+    "correctedWord": "volent",
+    "explanation": "Le sujet « les papillons » est au pluriel, donc le verbe doit être « volent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2894,
+    "sentence": "Nous chante une chanson pour la fête et nous voulons que tout le monde soit content.",
+    "errorIndex": 1,
+    "correctedWord": "chantons",
+    "explanation": "Le sujet « nous » demande la 1re personne du pluriel : « chantons ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2895,
+    "sentence": "Le soleil brillent très fort aujourd'hui et il peut faire très chaud cet après-midi.",
+    "errorIndex": 2,
+    "correctedWord": "brille",
+    "explanation": "Le sujet « le soleil » est au singulier, donc le verbe doit être « brille ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2896,
+    "sentence": "Les tortues avance lentement sur le chemin et elles ne veulent pas se presser du tout.",
+    "errorIndex": 2,
+    "correctedWord": "avancent",
+    "explanation": "Le sujet « les tortues » est au pluriel, donc le verbe doit être « avancent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2897,
+    "sentence": "Vous dessine un beau paysage en classe et vous pouvez utiliser toutes les couleurs.",
+    "errorIndex": 1,
+    "correctedWord": "dessinez",
+    "explanation": "Le sujet « vous » demande la 2e personne du pluriel : « dessinez ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2898,
+    "sentence": "Les grenouilles saute dans la mare et elles veulent attraper les mouches qui passent.",
+    "errorIndex": 2,
+    "correctedWord": "sautent",
+    "explanation": "Le sujet « les grenouilles » est au pluriel, donc le verbe doit être « sautent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2899,
+    "sentence": "Tu chantez une jolie chanson et tu peux aussi danser en même temps si tu veux.",
+    "errorIndex": 1,
+    "correctedWord": "chantes",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier : « chantes ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2900,
+    "sentence": "Les fourmis transporte des miettes de pain et elles peuvent porter dix fois leur poids.",
+    "errorIndex": 2,
+    "correctedWord": "transportent",
+    "explanation": "Le sujet « les fourmis » est au pluriel, donc le verbe doit être « transportent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2901,
+    "sentence": "Mon oncle voyagent beaucoup et il veut visiter tous les pays du monde avant d'être vieux.",
+    "errorIndex": 2,
+    "correctedWord": "voyage",
+    "explanation": "Le sujet « mon oncle » est au singulier, donc le verbe doit être « voyage ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2902,
+    "sentence": "Les dauphins nage dans la mer bleue et ils peuvent sauter très haut au-dessus des vagues.",
+    "errorIndex": 2,
+    "correctedWord": "nagent",
+    "explanation": "Le sujet « les dauphins » est au pluriel, donc le verbe doit être « nagent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2903,
+    "sentence": "Je écoutent de la musique dans ma chambre et je veux apprendre à jouer de la guitare.",
+    "errorIndex": 1,
+    "correctedWord": "écoute",
+    "explanation": "Le sujet « je » demande la 1re personne du singulier : « écoute ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2904,
+    "sentence": "Les hirondelles arrive au printemps et elles veulent construire leur nid sous le toit.",
+    "errorIndex": 2,
+    "correctedWord": "arrivent",
+    "explanation": "Le sujet « les hirondelles » est au pluriel, donc le verbe doit être « arrivent ».",
+    "category": "accords sujet-verbe"
+  },
+  {
+    "id": 2905,
+    "sentence": "Le facteur apportent le courrier chaque matin et il peut aussi livrer des colis parfois.",
+    "errorIndex": 2,
+    "correctedWord": "apporte",
+    "explanation": "Le sujet « le facteur » est au singulier, donc le verbe doit être « apporte ».",
+    "category": "accords sujet-verbe"
+  }
+]

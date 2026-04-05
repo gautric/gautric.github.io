@@ -1,0 +1,122 @@
+[
+  {
+    "id": 2816,
+    "sentence": "Les enfants veulent aller au parc et ils peut courir sur la grande pelouse verte.",
+    "errorIndex": 8,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « ils » demande le pluriel au présent : « peuvent » et non « peut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2817,
+    "sentence": "Ma sœur veut un nouveau livre et elle peux le lire dans sa chambre avant de dormir.",
+    "errorIndex": 7,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « elle » demande la 3e personne du singulier : « peut » et non « peux ».",
+    "category": "présent"
+  },
+  {
+    "id": 2818,
+    "sentence": "Nous voulons jouer dehors mais nous ne pouvez pas parce qu'il pleut très fort aujourd'hui.",
+    "errorIndex": 7,
+    "correctedWord": "pouvons",
+    "explanation": "Le sujet « nous » demande la 1re personne du pluriel : « pouvons » et non « pouvez ».",
+    "category": "présent"
+  },
+  {
+    "id": 2819,
+    "sentence": "Mon frère veulent un chien mais papa dit qu'il ne peut pas en avoir pour le moment.",
+    "errorIndex": 2,
+    "correctedWord": "veut",
+    "explanation": "Le sujet « mon frère » est au singulier : « veut » et non « veulent ».",
+    "category": "présent"
+  },
+  {
+    "id": 2820,
+    "sentence": "Tu veux venir avec nous au cinéma et tu peux demander la permission à tes parents.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « veux » et « peux » sont bien conjugués au présent avec « tu ».",
+    "category": "présent"
+  },
+  {
+    "id": 2821,
+    "sentence": "Les filles de ma classe veut jouer à la corde à sauter pendant la récréation.",
+    "errorIndex": 5,
+    "correctedWord": "veulent",
+    "explanation": "Le sujet « les filles de ma classe » est au pluriel : « veulent » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2822,
+    "sentence": "Vous voulez regarder un film et vous pouvons choisir celui que vous préférez ce soir.",
+    "errorIndex": 7,
+    "correctedWord": "pouvez",
+    "explanation": "Le sujet « vous » demande la 2e personne du pluriel : « pouvez » et non « pouvons ».",
+    "category": "présent"
+  },
+  {
+    "id": 2823,
+    "sentence": "Je veut manger une glace au chocolat parce qu'il fait très chaud dehors aujourd'hui.",
+    "errorIndex": 1,
+    "correctedWord": "veux",
+    "explanation": "Le sujet « je » demande la 1re personne du singulier : « veux » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2824,
+    "sentence": "Le chat veut sortir dans le jardin mais il ne peuvent pas parce que la porte est fermée.",
+    "errorIndex": 10,
+    "correctedWord": "peut",
+    "explanation": "Le sujet « il » est au singulier : « peut » et non « peuvent ».",
+    "category": "présent"
+  },
+  {
+    "id": 2825,
+    "sentence": "Nous voulons aider maman à préparer le repas et nous pouvons mettre la table ensemble.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « voulons » et « pouvons » sont bien conjugués au présent avec « nous ».",
+    "category": "présent"
+  },
+  {
+    "id": 2826,
+    "sentence": "Les garçons peut jouer au ballon dans la cour mais ils ne veulent pas rester trop longtemps.",
+    "errorIndex": 2,
+    "correctedWord": "peuvent",
+    "explanation": "Le sujet « les garçons » est au pluriel : « peuvent » et non « peut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2827,
+    "sentence": "Ma mère veux nous emmener au zoo et elle peut y aller samedi prochain avec nous.",
+    "errorIndex": 2,
+    "correctedWord": "veut",
+    "explanation": "Le sujet « ma mère » est à la 3e personne du singulier : « veut » et non « veux ».",
+    "category": "présent"
+  },
+  {
+    "id": 2828,
+    "sentence": "Tu veut un morceau de gâteau au chocolat que maman a préparé pour le goûter ?",
+    "errorIndex": 1,
+    "correctedWord": "veux",
+    "explanation": "Le sujet « tu » demande la 2e personne du singulier : « veux » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2829,
+    "sentence": "Les élèves peuvent sortir en récréation quand ils veut et la maîtresse les surveille dehors.",
+    "errorIndex": 8,
+    "correctedWord": "veulent",
+    "explanation": "Le sujet « ils » demande le pluriel : « veulent » et non « veut ».",
+    "category": "présent"
+  },
+  {
+    "id": 2830,
+    "sentence": "Vous pouvez venir à la maison demain et vous voulez apporter un jeu de société pour jouer.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « pouvez » et « voulez » sont bien conjugués au présent avec « vous ».",
+    "category": "présent"
+  }
+]

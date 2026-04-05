@@ -1,0 +1,202 @@
+[
+  {
+    "id": 2651,
+    "sentence": "Marie aime les animaux et elle les nourrit chaque matin avant de partir à son école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « elle » reprend « Marie » et « les » reprend « les animaux ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2652,
+    "sentence": "Mon frère adore le football et il y joue tous les mercredis avec ses copains du quartier.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « il » reprend « mon frère » et « y » reprend « au football ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2653,
+    "sentence": "Les filles de ma classe sont gentilles et il les aide toujours quand elles ont un problème.",
+    "errorIndex": 7,
+    "correctedWord": "il",
+    "explanation": "La phrase est correcte grammaticalement : « il » peut désigner une autre personne qui aide les filles.",
+    "category": "pronoms"
+  },
+  {
+    "id": 2654,
+    "sentence": "Papa a préparé un bon repas et nous lui avons dit merci parce que il cuisine très bien.",
+    "errorIndex": 11,
+    "correctedWord": "qu'il",
+    "explanation": "Devant « il », on fait l'élision : « parce qu'il » et non « parce que il ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2655,
+    "sentence": "Ma petite sœur a peur du noir et elle pleure souvent quand il fait sombre dans sa chambre.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « elle » reprend « ma petite sœur » et « il » est impersonnel dans « il fait sombre ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2656,
+    "sentence": "Les garçons du village jouent au ballon et elle courent très vite sur le grand terrain.",
+    "errorIndex": 7,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les garçons » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2657,
+    "sentence": "Le chat de la voisine dort sur le mur et elle ronronne doucement au soleil chaque après-midi.",
+    "errorIndex": 9,
+    "correctedWord": "il",
+    "explanation": "Le pronom reprend « le chat » (masculin singulier), donc on utilise « il » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2658,
+    "sentence": "Maman a acheté des fraises au marché et nous en avons mangé beaucoup au goûter.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « en » reprend « des fraises » (quantité partitive).",
+    "category": "pronoms"
+  },
+  {
+    "id": 2659,
+    "sentence": "La maîtresse explique la leçon et elle les demande de bien écouter en classe.",
+    "errorIndex": 6,
+    "correctedWord": "leur",
+    "explanation": "Le verbe « demander à quelqu'un » utilise un COI : « elle leur demande » et non « elle les demande ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2660,
+    "sentence": "Mon grand-père raconte des histoires et nous lui écoutons avec attention chaque soir au salon.",
+    "errorIndex": 6,
+    "correctedWord": "l'",
+    "explanation": "Le verbe « écouter » est transitif direct : « nous l'écoutons » (COD) et non « nous lui écoutons ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2876,
+    "sentence": "Les élèves de la classe veulent sortir mais la maîtresse elle dit qu'ils ne peuvent pas encore.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « elle » reprend « la maîtresse », « ils » reprend « les élèves ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2877,
+    "sentence": "Mon père veut acheter une voiture neuve et il elle cherche sur internet tous les soirs.",
+    "errorIndex": 9,
+    "correctedWord": "en",
+    "explanation": "Pour reprendre « une voiture », on utilise « en » : « il en cherche » et non « il elle cherche ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2878,
+    "sentence": "Les poissons du bocal nagent en rond et elle ne peuvent pas sortir de leur petit aquarium.",
+    "errorIndex": 7,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les poissons » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2879,
+    "sentence": "Ma grand-mère veut nous raconter une histoire et nous lui écoutons avec beaucoup de plaisir.",
+    "errorIndex": 9,
+    "correctedWord": "l'",
+    "explanation": "Le verbe « écouter » est transitif direct : « nous l'écoutons » (COD) et non « nous lui écoutons ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2880,
+    "sentence": "Le professeur veut aider les élèves et il les donne des exercices faciles pour commencer.",
+    "errorIndex": 8,
+    "correctedWord": "leur",
+    "explanation": "Le verbe « donner à quelqu'un » utilise un COI : « il leur donne » et non « il les donne ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2881,
+    "sentence": "Les nuages sont gris et elle annoncent de la pluie pour demain et on ne pourra pas sortir.",
+    "errorIndex": 5,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les nuages » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2882,
+    "sentence": "Ma tante veut venir nous voir et je suis content parce que elle est toujours très drôle.",
+    "errorIndex": 11,
+    "correctedWord": "qu'elle",
+    "explanation": "Devant « elle », on fait l'élision : « parce qu'elle » et non « parce que elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2883,
+    "sentence": "Les arbres du parc perdent leurs feuilles et il deviennent tout nus en automne chaque année.",
+    "errorIndex": 8,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les arbres » (masculin pluriel), donc on utilise « ils » et non « il ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2884,
+    "sentence": "Ma mère veut faire un gâteau et je lui regarde cuisiner avec beaucoup d'attention.",
+    "errorIndex": 8,
+    "correctedWord": "la",
+    "explanation": "Le verbe « regarder » est transitif direct : « je la regarde » (COD) et non « je lui regarde ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2885,
+    "sentence": "Les enfants veulent des bonbons et papa il achète un gros paquet au supermarché pour eux.",
+    "errorIndex": 6,
+    "correctedWord": "leur",
+    "explanation": "Pour reprendre « les enfants » (COI de acheter pour), on utilise « leur » : « papa leur en achète ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2886,
+    "sentence": "Les filles veulent jouer à la marelle et il courent vers la cour dès que la cloche sonne.",
+    "errorIndex": 8,
+    "correctedWord": "elles",
+    "explanation": "Le pronom reprend « les filles » (féminin pluriel), donc on utilise « elles » et non « il ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2887,
+    "sentence": "Mon cousin veut montrer son dessin et il elle montre à toute la classe avec fierté.",
+    "errorIndex": 7,
+    "correctedWord": "le",
+    "explanation": "Le pronom reprend « son dessin » (COD masculin singulier) : « il le montre » et non « il elle montre ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2888,
+    "sentence": "La chienne de mon oncle est gentille et il la promène dans le parc chaque matin.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « il » désigne « mon oncle » et « la » reprend « la chienne » (COD féminin).",
+    "category": "pronoms"
+  },
+  {
+    "id": 2889,
+    "sentence": "Les garçons veulent aller à la piscine et elle peuvent y nager pendant deux heures.",
+    "errorIndex": 8,
+    "correctedWord": "ils",
+    "explanation": "Le pronom reprend « les garçons » (masculin pluriel), donc on utilise « ils » et non « elle ».",
+    "category": "pronoms"
+  },
+  {
+    "id": 2890,
+    "sentence": "Ma sœur veut téléphoner à sa copine et elle la appelle tous les soirs après le dîner.",
+    "errorIndex": 9,
+    "correctedWord": "l'",
+    "explanation": "Devant le verbe « appelle » commençant par une voyelle, on fait l'élision : « elle l'appelle ».",
+    "category": "pronoms"
+  }
+]

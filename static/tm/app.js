@@ -15,45 +15,120 @@ var sessionState = {
   results: []
 };
 
+/**
+ * Manifest chargé depuis regles/manifest.json.
+ * Structure : { groupName: { categoryName: "group/file.json", ... }, ... }
+ * @type {Object|null}
+ */
+var manifest = null;
+
+/**
+ * Cache des fichiers de règles déjà chargés.
+ * Clé = chemin relatif (ex: "accords/accords-sujet-verbe.json"), valeur = tableau de phrases validées.
+ * @type {Object}
+ */
+var rulesCache = {};
+
 // ---------------------------------------------------------------------------
 // DataLoader
 // ---------------------------------------------------------------------------
 
 /**
- * Charge phrases.json et valide la structure.
- * @returns {Promise<Array<{id: number, sentence: string, errorIndex: number, correctedWord: string, explanation: string, category: string}>>} Tableau de phrases validées
+ * Charge le manifest (regles/manifest.json).
+ * @returns {Promise<Object>}
  */
-async function loadPhrases() {
+async function loadManifest() {
+  if (manifest) return manifest;
   var response;
   try {
-    response = await fetch('phrases.json');
+    response = await fetch('regles/manifest.json');
   } catch (err) {
-    throw new Error('Impossible de charger phrases.json : ' + err.message);
+    throw new Error('Impossible de charger le manifest : ' + err.message);
   }
   if (!response.ok) {
-    throw new Error('Impossible de charger phrases.json (HTTP ' + response.status + ')');
+    throw new Error('Impossible de charger le manifest (HTTP ' + response.status + ')');
   }
-  var data;
+  manifest = await response.json();
+  return manifest;
+}
+
+/**
+ * Charge un fichier de règles individuel et met en cache.
+ * @param {string} relativePath - Chemin relatif depuis regles/ (ex: "accords/accords-sujet-verbe.json")
+ * @returns {Promise<Array>}
+ */
+async function loadRuleFile(relativePath) {
+  if (rulesCache[relativePath]) return rulesCache[relativePath];
+  var response;
   try {
-    data = await response.json();
+    response = await fetch('regles/' + relativePath);
   } catch (err) {
-    throw new Error('phrases.json contient du JSON invalide : ' + err.message);
+    throw new Error('Impossible de charger regles/' + relativePath + ' : ' + err.message);
   }
+  if (!response.ok) {
+    throw new Error('Impossible de charger regles/' + relativePath + ' (HTTP ' + response.status + ')');
+  }
+  var data = await response.json();
   if (!Array.isArray(data)) {
-    throw new Error('phrases.json doit contenir un tableau de phrases');
+    throw new Error('regles/' + relativePath + ' doit contenir un tableau');
   }
   var valid = [];
   for (var i = 0; i < data.length; i++) {
     if (validatePhrase(data[i])) {
       valid.push(data[i]);
     } else {
-      console.warn('Phrase ignorée (invalide) :', data[i]);
+      console.warn('Phrase ignorée (invalide) dans ' + relativePath + ' :', data[i]);
     }
   }
-  if (valid.length < SESSION_SIZE) {
-    throw new Error('Pas assez de phrases valides (' + valid.length + '/SESSION_SIZE minimum)');
-  }
+  rulesCache[relativePath] = valid;
   return valid;
+}
+
+/**
+ * Charge toutes les phrases (tous les fichiers du manifest).
+ * @returns {Promise<Array>}
+ */
+async function loadAllPhrases() {
+  var m = await loadManifest();
+  var promises = [];
+  var groupNames = Object.keys(m);
+  for (var g = 0; g < groupNames.length; g++) {
+    var cats = Object.keys(m[groupNames[g]]);
+    for (var c = 0; c < cats.length; c++) {
+      promises.push(loadRuleFile(m[groupNames[g]][cats[c]]));
+    }
+  }
+  var results = await Promise.all(promises);
+  var all = [];
+  for (var r = 0; r < results.length; r++) {
+    all = all.concat(results[r]);
+  }
+  return all;
+}
+
+/**
+ * Charge les phrases pour une liste de catégories sélectionnées.
+ * @param {Array<string>} categoryNames - Noms de catégories (ex: ["accords sujet-verbe", "homophones a/à"])
+ * @returns {Promise<Array>}
+ */
+async function loadPhrasesByCategories(categoryNames) {
+  var m = await loadManifest();
+  var promises = [];
+  var groupNames = Object.keys(m);
+  for (var g = 0; g < groupNames.length; g++) {
+    var cats = Object.keys(m[groupNames[g]]);
+    for (var c = 0; c < cats.length; c++) {
+      if (categoryNames.indexOf(cats[c]) !== -1) {
+        promises.push(loadRuleFile(m[groupNames[g]][cats[c]]));
+      }
+    }
+  }
+  var results = await Promise.all(promises);
+  var all = [];
+  for (var r = 0; r < results.length; r++) {
+    all = all.concat(results[r]);
+  }
+  return all;
 }
 
 
@@ -83,11 +158,13 @@ function validatePhrase(phrase) {
 // ---------------------------------------------------------------------------
 
 /**
- * Sélectionne 20 phrases aléatoires sans doublon (Fisher-Yates shuffle).
- * @param {Array<{id: number, sentence: string, errorIndex: number, correctedWord: string, explanation: string, category: string}>} allPhrases
- * @returns {Array<{id: number, sentence: string, errorIndex: number, correctedWord: string, explanation: string, category: string}>}
+ * Sélectionne N phrases aléatoires sans doublon (Fisher-Yates shuffle).
+ * @param {Array} allPhrases
+ * @param {number} [count] - Nombre de phrases à sélectionner (défaut SESSION_SIZE)
+ * @returns {Array}
  */
-function selectSessionPhrases(allPhrases) {
+function selectSessionPhrases(allPhrases, count) {
+  var n = count || SESSION_SIZE;
   var copy = allPhrases.slice();
   for (var i = copy.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -95,7 +172,7 @@ function selectSessionPhrases(allPhrases) {
     copy[i] = copy[j];
     copy[j] = tmp;
   }
-  return copy.slice(0, SESSION_SIZE);
+  return copy.slice(0, n);
 }
 
 /**
@@ -122,25 +199,30 @@ function splitSentence(sentence) {
 // ---------------------------------------------------------------------------
 
 /**
- * Extrait les catégories uniques depuis les phrases chargées.
- * @returns {Array<string>}
+ * Retourne la structure groupée des catégories depuis le manifest.
+ * @returns {Object} { groupName: [catName, ...], ... }
  */
-function getCategories() {
-  var phrases = window._allPhrases || [];
-  var seen = {};
-  var cats = [];
-  for (var i = 0; i < phrases.length; i++) {
-    if (!seen[phrases[i].category]) {
-      seen[phrases[i].category] = true;
-      cats.push(phrases[i].category);
-    }
+function getGroupedCategories() {
+  if (!manifest) return {};
+  var result = {};
+  var groupNames = Object.keys(manifest);
+  for (var g = 0; g < groupNames.length; g++) {
+    result[groupNames[g]] = Object.keys(manifest[groupNames[g]]).sort();
   }
-  cats.sort();
-  return cats;
+  return result;
 }
 
+/** Labels lisibles pour les groupes */
+var GROUP_LABELS = {
+  accords: 'Accords',
+  homophones: 'Homophones',
+  conjugaison: 'Conjugaison',
+  orthographe: 'Orthographe',
+  grammaire: 'Grammaire'
+};
+
 /**
- * Affiche l'écran d'accueil avec titre, sélecteur de catégories (max 3) et bouton "Commencer".
+ * Affiche l'écran d'accueil avec titre, sélecteur de catégories groupées et bouton "Commencer".
  */
 function showWelcomeScreen() {
   var MAX_SELECTION = 3;
@@ -167,7 +249,8 @@ function showWelcomeScreen() {
   selectorLabel.textContent = 'Choisis jusqu\'à ' + MAX_SELECTION + ' types de règles, ou joue avec toutes :';
   accueil.appendChild(selectorLabel);
 
-  var categories = getCategories();
+  var grouped = getGroupedCategories();
+  var groupNames = Object.keys(grouped);
 
   // "Toutes" toggle
   var allLabel = document.createElement('label');
@@ -184,20 +267,35 @@ function showWelcomeScreen() {
   catContainer.className = 'cat-container';
   var checkboxes = [];
 
-  for (var i = 0; i < categories.length; i++) {
-    (function (cat) {
-      var label = document.createElement('label');
-      label.className = 'cat-option';
-      var cb = document.createElement('input');
-      cb.type = 'checkbox';
-      cb.value = cat;
-      cb.disabled = true; // disabled when "Toutes" is checked
-      cb.className = 'cat-checkbox';
-      label.appendChild(cb);
-      label.appendChild(document.createTextNode(' ' + cat));
-      catContainer.appendChild(label);
-      checkboxes.push(cb);
-    })(categories[i]);
+  for (var g = 0; g < groupNames.length; g++) {
+    var groupName = groupNames[g];
+    var cats = grouped[groupName];
+
+    var groupDiv = document.createElement('div');
+    groupDiv.className = 'cat-group';
+
+    var groupTitle = document.createElement('div');
+    groupTitle.className = 'cat-group-title';
+    groupTitle.textContent = GROUP_LABELS[groupName] || groupName;
+    groupDiv.appendChild(groupTitle);
+
+    for (var c = 0; c < cats.length; c++) {
+      (function (cat) {
+        var label = document.createElement('label');
+        label.className = 'cat-option';
+        var cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.value = cat;
+        cb.disabled = true;
+        cb.className = 'cat-checkbox';
+        label.appendChild(cb);
+        label.appendChild(document.createTextNode(' ' + cat));
+        groupDiv.appendChild(label);
+        checkboxes.push(cb);
+      })(cats[c]);
+    }
+
+    catContainer.appendChild(groupDiv);
   }
   accueil.appendChild(catContainer);
 
@@ -213,7 +311,6 @@ function showWelcomeScreen() {
         if (checkboxes[j].checked) checkedCount++;
       }
     }
-    // Enforce max selection
     if (!isAll) {
       for (var j = 0; j < checkboxes.length; j++) {
         if (!checkboxes[j].checked) {
@@ -228,13 +325,11 @@ function showWelcomeScreen() {
       }
     }
     allLabel.classList.toggle('selected', isAll);
-    // Enable start button if "all" or at least 1 category selected
     btn.disabled = !isAll && checkedCount === 0;
   }
 
   allCb.addEventListener('change', function () {
     if (!allCb.checked) {
-      // Uncheck "all" → enable individual checkboxes
       for (var j = 0; j < checkboxes.length; j++) {
         checkboxes[j].disabled = false;
       }
@@ -244,7 +339,6 @@ function showWelcomeScreen() {
 
   for (var k = 0; k < checkboxes.length; k++) {
     checkboxes[k].addEventListener('change', function () {
-      // If a category is checked, uncheck "all"
       allCb.checked = false;
       updateState();
     });
@@ -531,21 +625,39 @@ function showResultScreen(results, score, total) {
 // ---------------------------------------------------------------------------
 
 /**
- * Démarre une nouvelle session : filtre par catégories si sélectionnées, sélectionne les phrases, réinitialise l'état.
+ * Démarre une nouvelle session : charge les phrases nécessaires, sélectionne, réinitialise l'état.
  * @param {Array<string>} selectedCategories - Catégories choisies (vide = toutes)
  */
-function startSession(selectedCategories) {
-  var pool = window._allPhrases || [];
-  if (selectedCategories && selectedCategories.length > 0) {
-    pool = pool.filter(function (p) {
-      return selectedCategories.indexOf(p.category) !== -1;
-    });
+async function startSession(selectedCategories) {
+  // Afficher un indicateur de chargement
+  var accueil = document.getElementById('ecran-accueil');
+  var btn = accueil.querySelector('.btn-commencer');
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Chargement…';
   }
-  sessionState.phrases = selectSessionPhrases(pool);
-  sessionState.currentIndex = 0;
-  sessionState.score = 0;
-  sessionState.results = [];
-  showQuestionScreen(sessionState.phrases[0], 1, sessionState.phrases.length);
+
+  try {
+    var pool;
+    if (selectedCategories && selectedCategories.length > 0) {
+      pool = await loadPhrasesByCategories(selectedCategories);
+    } else {
+      pool = await loadAllPhrases();
+    }
+
+    if (pool.length < SESSION_SIZE) {
+      var effectiveSize = pool.length;
+      sessionState.phrases = selectSessionPhrases(pool, effectiveSize);
+    } else {
+      sessionState.phrases = selectSessionPhrases(pool, SESSION_SIZE);
+    }
+    sessionState.currentIndex = 0;
+    sessionState.score = 0;
+    sessionState.results = [];
+    showQuestionScreen(sessionState.phrases[0], 1, sessionState.phrases.length);
+  } catch (err) {
+    accueil.innerHTML = '<h1>Erreur</h1><p>' + err.message + '</p>';
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -554,12 +666,11 @@ function startSession(selectedCategories) {
 
 /**
  * Point d'entrée de l'application.
- * Charge les phrases, affiche l'écran d'accueil, gère le flux complet.
+ * Charge le manifest, affiche l'écran d'accueil.
  */
 function init() {
-  loadPhrases()
-    .then(function (phrases) {
-      window._allPhrases = phrases;
+  loadManifest()
+    .then(function () {
       showWelcomeScreen();
     })
     .catch(function (err) {

@@ -1,0 +1,466 @@
+[
+  {
+    "id": 2991,
+    "sentence": "Ses livres sur l'étagère sont très intéressants et je veux tous les lire.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif (= les livres de quelqu'un).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2992,
+    "sentence": "Ces mon ami qui a gagné la course et il est très fier de sa victoire.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On présente quelqu'un : « c'est mon ami » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2993,
+    "sentence": "Mon frère c'est lavé les mains avant de passer à table pour le dîner.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se laver » au passé composé : « il s'est lavé » et non « c'est lavé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2994,
+    "sentence": "Ces fleurs dans le jardin sont magnifiques et maman veut les cueillir pour le salon.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces fleurs-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2995,
+    "sentence": "Ma sœur a perdu ces crayons de couleur et elle les cherche partout dans la maison.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les crayons de ma sœur (possessif) : « ses crayons » et non « ces crayons ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2996,
+    "sentence": "S'est très joli ce dessin que tu as fait en classe pour la fête des mères.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est très joli » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2997,
+    "sentence": "Le chat s'est caché sous le lit parce qu'il a entendu un bruit très fort.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est caché » est le verbe pronominal « se cacher » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2998,
+    "sentence": "Mon ami a oublié ces affaires à l'école et il doit y retourner les chercher.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les affaires de mon ami (possessif) : « ses affaires » et non « ces affaires ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 2999,
+    "sentence": "Ces beau de voir les enfants jouer ensemble dans le parc sans se disputer.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est beau » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3000,
+    "sentence": "La petite fille c'est endormie sur le canapé en regardant un dessin animé.",
+    "errorIndex": 3,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'endormir » au passé composé : « s'est endormie ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3001,
+    "sentence": "Ces gâteaux dans la vitrine de la boulangerie ont l'air vraiment délicieux.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces gâteaux-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3002,
+    "sentence": "Mon frère a rangé ces jouets dans le coffre avant de partir à l'école.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les jouets de mon frère (possessif) : « ses jouets » et non « ces jouets ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3003,
+    "sentence": "S'est l'heure de partir à l'école et il ne faut pas arriver en retard.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On constate quelque chose : « c'est l'heure » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3004,
+    "sentence": "Le chien c'est blessé la patte en courant dans le jardin sur les cailloux.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se blesser » au passé composé : « s'est blessé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3005,
+    "sentence": "Ma cousine a mis ces chaussures neuves pour aller à la fête de samedi.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les chaussures de ma cousine (possessif) : « ses chaussures » et non « ces chaussures ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3006,
+    "sentence": "C'est la plus belle journée de l'été et nous voulons en profiter au maximum.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « c'est » (= cela est) introduit un jugement.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3007,
+    "sentence": "Le bébé c'est réveillé en pleurant au milieu de la nuit à cause du bruit.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se réveiller » au passé composé : « s'est réveillé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3008,
+    "sentence": "Ces normal d'avoir peur du noir quand on est petit et qu'on dort tout seul.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est normal » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3009,
+    "sentence": "Mon père a pris ses clés et son portefeuille avant de sortir de la maison.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif (= les clés de mon père).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3010,
+    "sentence": "La maîtresse c'est trompée de page et elle a dû recommencer l'exercice.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se tromper » au passé composé : « s'est trompée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3011,
+    "sentence": "Mon ami a perdu ces lunettes à la piscine et il ne peut plus rien voir.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les lunettes de mon ami (possessif) : « ses lunettes » et non « ces lunettes ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3012,
+    "sentence": "Ces arbres dans le parc sont très vieux et ils ont plus de cent ans.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces arbres-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3013,
+    "sentence": "S'est dommage que tu ne puisses pas venir à la fête de mon anniversaire.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est dommage » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3014,
+    "sentence": "Le garçon c'est assis sur le banc du parc pour lire son livre tranquillement.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'asseoir » au passé composé : « s'est assis ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3015,
+    "sentence": "Ma sœur a rangé ces vêtements dans l'armoire après les avoir lavés et pliés.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les vêtements de ma sœur (possessif) : « ses vêtements » et non « ces vêtements ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3016,
+    "sentence": "Ces difficile de courir quand il fait très chaud dehors en plein été.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est difficile » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3017,
+    "sentence": "Le petit garçon s'est perdu dans le supermarché et il a pleuré très fort.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est perdu » est le verbe pronominal « se perdre » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3018,
+    "sentence": "Mon cousin a oublié ces cahiers à la maison et il ne peut pas faire ses devoirs.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les cahiers de mon cousin (possessif) : « ses cahiers » et non « ces cahiers ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3019,
+    "sentence": "S'est bientôt les vacances et tous les enfants sont très contents de partir.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On constate quelque chose : « c'est bientôt » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3020,
+    "sentence": "La chatte c'est installée sur le coussin et elle ronronne doucement au soleil.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'installer » au passé composé : « s'est installée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3136,
+    "sentence": "Ces mon tour de jouer et je vais lancer les dés pour avancer mon pion.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On présente une situation : « c'est mon tour » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3137,
+    "sentence": "Le garçon c'est dépêché pour ne pas arriver en retard à l'école ce matin.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se dépêcher » au passé composé : « s'est dépêché ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3138,
+    "sentence": "Ma sœur a perdu ces gants dans la cour de récréation et elle a froid aux mains.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les gants de ma sœur (possessif) : « ses gants » et non « ces gants ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3139,
+    "sentence": "S'est super de pouvoir jouer dehors quand il fait beau et chaud en été.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est super » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3140,
+    "sentence": "Le bébé c'est endormi dans les bras de maman après avoir bu son biberon.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'endormir » au passé composé : « s'est endormi ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3141,
+    "sentence": "Mon ami a oublié ces baskets au gymnase et il ne peut pas faire de sport.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les baskets de mon ami (possessif) : « ses baskets » et non « ces baskets ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3142,
+    "sentence": "Ces enfants dans la cour jouent très bien ensemble et ils partagent leurs jouets.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces enfants-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3143,
+    "sentence": "La fille c'est retournée en entendant son nom et elle a vu sa maman.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se retourner » au passé composé : « s'est retournée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3144,
+    "sentence": "Ces pas grave si tu as fait une erreur, tu pourras recommencer demain.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est pas grave » (= cela est), pas « ces » (démonstratif pluriel).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3145,
+    "sentence": "Mon cousin a rangé ces affaires dans son sac avant de partir en vacances.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les affaires de mon cousin (possessif) : « ses affaires » et non « ces affaires ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3196,
+    "sentence": "Ces mon anniversaire aujourd'hui et maman a préparé un gâteau au chocolat.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On présente une situation : « c'est mon anniversaire » (= cela est), pas « ces ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3197,
+    "sentence": "Le garçon c'est fait mal en tombant de vélo et il pleure dans la cour.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se faire mal » au passé composé : « s'est fait mal ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3198,
+    "sentence": "Ma copine a perdu ces boucles d'oreilles à la piscine et elle est triste.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les boucles de ma copine (possessif) : « ses boucles » et non « ces boucles ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3199,
+    "sentence": "S'est vrai que les vacances commencent bientôt et tout le monde est content.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On constate quelque chose : « c'est vrai » (= cela est), pas « s'est » (verbe pronominal).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3200,
+    "sentence": "La petite fille c'est brûlée en touchant la casserole chaude sur la cuisinière.",
+    "errorIndex": 3,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se brûler » au passé composé : « s'est brûlée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3226,
+    "sentence": "Ces la meilleure tarte que j'ai jamais mangée et je veux la recette.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est la meilleure » (= cela est), pas « ces ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3227,
+    "sentence": "Le chien c'est échappé du jardin et les voisins l'ont retrouvé dans la rue.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « s'échapper » au passé composé : « s'est échappé ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3228,
+    "sentence": "Mon frère a oublié ces clés dans la voiture et il ne peut pas ouvrir la porte.",
+    "errorIndex": 4,
+    "correctedWord": "ses",
+    "explanation": "Ce sont les clés de mon frère (possessif) : « ses clés » et non « ces clés ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3229,
+    "sentence": "S'est gentil de ta part de m'aider à porter mes sacs de courses.",
+    "errorIndex": 0,
+    "correctedWord": "C'est",
+    "explanation": "On exprime un jugement : « c'est gentil » (= cela est), pas « s'est ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3230,
+    "sentence": "La fille c'est coupée avec les ciseaux en découpant du papier pour le bricolage.",
+    "errorIndex": 2,
+    "correctedWord": "s'est",
+    "explanation": "C'est le verbe pronominal « se couper » au passé composé : « s'est coupée ».",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3259,
+    "sentence": "C'est mon meilleur ami et il vient souvent jouer à la maison le mercredi.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « c'est » (= cela est) présente quelqu'un.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3260,
+    "sentence": "Ma sœur a pris ses affaires et elle s'est dépêchée pour ne pas rater le bus.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif et « s'est dépêchée » est le verbe pronominal au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3261,
+    "sentence": "Ces arbres sont magnifiques en automne quand leurs feuilles deviennent rouges et dorées.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif pluriel (= ces arbres-là).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3262,
+    "sentence": "Le chat s'est endormi sur le coussin et il ronronne doucement près de la cheminée.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est endormi » est le verbe pronominal « s'endormir » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3263,
+    "sentence": "Mon cousin a rangé ses cahiers dans son cartable et il est prêt pour l'école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ses » est le possessif (= les cahiers de mon cousin).",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3264,
+    "sentence": "C'est bientôt les vacances et tous les enfants sont impatients de partir en voyage.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « c'est » (= cela est) constate une situation.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3265,
+    "sentence": "La petite fille s'est assise sur le banc et elle attend sa maman devant l'école.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « s'est assise » est le verbe pronominal « s'asseoir » au passé composé.",
+    "category": "homophones ces/ses/c'est/s'est"
+  },
+  {
+    "id": 3266,
+    "sentence": "Ces gâteaux sont délicieux et ses amis en veulent tous une deuxième part.",
+    "errorIndex": -1,
+    "correctedWord": "",
+    "explanation": "La phrase est correcte : « ces » est le démonstratif (ces gâteaux-là) et « ses » est le possessif (les amis de quelqu'un).",
+    "category": "homophones ces/ses/c'est/s'est"
+  }
+]
