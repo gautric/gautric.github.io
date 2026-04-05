@@ -1,14 +1,18 @@
+/* === Pixel Art Font === */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 /* === Reset & Base === */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Press Start 2P', monospace;
 }
 
 body {
-  font-family: 'Segoe UI', 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
-  font-size: 1.3rem;
-  line-height: 1.6;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
   color: #333;
   background: linear-gradient(135deg, #fce4ec 0%, #e3f2fd 50%, #fff9c4 100%);
   min-height: 100vh;
@@ -39,13 +43,13 @@ main {
 
 /* === Typography === */
 h1 {
-  font-size: 2.2rem;
+  font-size: 1.4rem;
   color: #6a1b9a;
   margin-bottom: 0.5rem;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: #1565c0;
   margin-bottom: 1rem;
 }
@@ -56,8 +60,8 @@ p {
 
 /* === Buttons === */
 button {
-  font-family: inherit;
-  font-size: 1.2rem;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.8rem;
   font-weight: 600;
   padding: 0.8rem 2rem;
   border: none;
@@ -89,7 +93,7 @@ button:active {
   margin: 0.25rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 0.85rem;
   transition: background 0.15s, transform 0.1s;
   background: #e8eaf6;
   user-select: none;
@@ -183,7 +187,7 @@ button:active {
 
 /* === Score === */
 .score {
-  font-size: 2.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #6a1b9a;
   margin: 1rem 0;
@@ -395,7 +399,7 @@ button:disabled:hover {
   max-width: 350px;
   padding: 1.2rem 2rem;
   border-radius: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
   text-align: center;
@@ -453,7 +457,7 @@ button:disabled:hover {
   text-align: left;
   padding: 0.9rem 1.2rem;
   border-radius: 1rem;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   font-weight: 500;
   background: #e8eaf6;
   color: #333;

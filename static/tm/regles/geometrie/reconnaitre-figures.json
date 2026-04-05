@@ -1,0 +1,260 @@
+[
+  {
+    "id": 101,
+    "question": "Figure géométrique fermée dont tous les points sont à la même distance du centre.",
+    "choices": ["Un carré", "Un cercle", "Un disque", "Un polygone"],
+    "correctIndex": 1,
+    "explanation": "Le cercle est l'ensemble des points situés à une même distance (le rayon) d'un point fixe appelé centre.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 102,
+    "question": "Segment reliant le centre du cercle à un point situé sur le cercle.",
+    "choices": ["Le diamètre", "La corde", "Le rayon", "L'arc"],
+    "correctIndex": 2,
+    "explanation": "Le rayon relie le centre à un point du cercle. Tous les rayons d'un même cercle ont la même longueur.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 103,
+    "question": "Segment qui passe par le centre du cercle et dont les deux extrémités sont sur le cercle.",
+    "choices": ["Le rayon", "La corde", "Le diamètre", "L'axe de symétrie"],
+    "correctIndex": 2,
+    "explanation": "Le diamètre passe par le centre et mesure le double du rayon. C'est la plus longue corde du cercle.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 104,
+    "question": "Segment dont les deux extrémités sont situées sur le cercle.",
+    "choices": ["Le rayon", "Le diamètre", "La tangente", "La corde"],
+    "correctIndex": 3,
+    "explanation": "Une corde relie deux points du cercle. Le diamètre est une corde particulière qui passe par le centre.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 105,
+    "question": "Figure géométrique fermée qui a trois côtés, trois sommets et trois angles.",
+    "choices": ["Un quadrilatère", "Un pentagone", "Un triangle", "Un polygone"],
+    "correctIndex": 2,
+    "explanation": "Un triangle est un polygone à trois côtés. La somme de ses angles est toujours égale à 180°.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 106,
+    "question": "Triangle qui possède un angle droit.",
+    "choices": ["Un triangle isocèle", "Un triangle équilatéral", "Un triangle quelconque", "Un triangle rectangle"],
+    "correctIndex": 3,
+    "explanation": "Le triangle rectangle a un angle de 90°. Le côté opposé à l'angle droit s'appelle l'hypoténuse.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 107,
+    "question": "Triangle qui a au moins deux côtés de même longueur.",
+    "choices": ["Un triangle rectangle", "Un triangle isocèle", "Un triangle équilatéral", "Un triangle quelconque"],
+    "correctIndex": 1,
+    "explanation": "Le triangle isocèle possède au moins deux côtés égaux. Les deux angles à la base sont aussi égaux.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 108,
+    "question": "Triangle qui a ses trois côtés de même longueur et ses trois angles égaux à 60°.",
+    "choices": ["Un triangle isocèle", "Un triangle rectangle", "Un triangle équilatéral", "Un triangle scalène"],
+    "correctIndex": 2,
+    "explanation": "Le triangle équilatéral a trois côtés égaux et trois angles de 60°. C'est un cas particulier du triangle isocèle.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 109,
+    "question": "Quadrilatère qui a quatre côtés de même longueur et quatre angles droits.",
+    "choices": ["Un rectangle", "Un losange", "Un carré", "Un parallélogramme"],
+    "correctIndex": 2,
+    "explanation": "Le carré cumule les propriétés du rectangle (quatre angles droits) et du losange (quatre côtés égaux).",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 110,
+    "question": "Quadrilatère qui possède quatre angles droits.",
+    "choices": ["Un losange", "Un trapèze", "Un parallélogramme", "Un rectangle"],
+    "correctIndex": 3,
+    "explanation": "Le rectangle a quatre angles droits et ses côtés opposés sont parallèles et de même longueur.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 111,
+    "question": "Quadrilatère dont les quatre côtés ont la même longueur.",
+    "choices": ["Un rectangle", "Un losange", "Un trapèze", "Un carré"],
+    "correctIndex": 1,
+    "explanation": "Le losange a quatre côtés égaux et ses côtés opposés sont parallèles. Le carré est un losange particulier.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 112,
+    "question": "Quadrilatère dont les côtés opposés sont parallèles et de même longueur.",
+    "choices": ["Un trapèze", "Un parallélogramme", "Un losange", "Un rectangle"],
+    "correctIndex": 1,
+    "explanation": "Le parallélogramme a ses côtés opposés parallèles deux à deux. Le rectangle, le losange et le carré en sont des cas particuliers.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 113,
+    "question": "Quadrilatère qui possède exactement une paire de côtés parallèles.",
+    "choices": ["Un parallélogramme", "Un rectangle", "Un trapèze", "Un losange"],
+    "correctIndex": 2,
+    "explanation": "Le trapèze a exactement deux côtés parallèles, appelés les bases.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 114,
+    "question": "Angle qui mesure exactement 90°.",
+    "choices": ["Un angle aigu", "Un angle obtus", "Un angle plat", "Un angle droit"],
+    "correctIndex": 3,
+    "explanation": "L'angle droit mesure 90°. On le repère grâce à un petit carré dans le coin de l'angle.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 115,
+    "question": "Angle dont la mesure est strictement inférieure à 90°.",
+    "choices": ["Un angle droit", "Un angle obtus", "Un angle aigu", "Un angle plat"],
+    "correctIndex": 2,
+    "explanation": "L'angle aigu est plus petit qu'un angle droit. Il mesure entre 0° et 90° (exclu).",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 116,
+    "question": "Angle dont la mesure est strictement comprise entre 90° et 180°.",
+    "choices": ["Un angle aigu", "Un angle droit", "Un angle obtus", "Un angle plat"],
+    "correctIndex": 2,
+    "explanation": "L'angle obtus est plus grand qu'un angle droit mais plus petit qu'un angle plat.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 117,
+    "question": "Figure géométrique plane fermée, délimitée par des segments de droite.",
+    "choices": ["Un cercle", "Un disque", "Un polygone", "Un angle"],
+    "correctIndex": 2,
+    "explanation": "Un polygone est une figure fermée formée de segments. Le triangle, le carré et l'hexagone sont des polygones.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 118,
+    "question": "Polygone à quatre côtés, quatre sommets et quatre angles.",
+    "choices": ["Un triangle", "Un pentagone", "Un hexagone", "Un quadrilatère"],
+    "correctIndex": 3,
+    "explanation": "Le quadrilatère a quatre côtés. Le carré, le rectangle, le losange et le trapèze en sont des exemples.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 119,
+    "question": "Polygone à cinq côtés, cinq sommets et cinq angles.",
+    "choices": ["Un hexagone", "Un quadrilatère", "Un pentagone", "Un octogone"],
+    "correctIndex": 2,
+    "explanation": "Le préfixe « penta » vient du grec et signifie cinq.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 120,
+    "question": "Polygone à six côtés, six sommets et six angles.",
+    "choices": ["Un pentagone", "Un octogone", "Un hexagone", "Un décagone"],
+    "correctIndex": 2,
+    "explanation": "Le préfixe « hexa » vient du grec et signifie six.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 121,
+    "question": "Ligne qui n'a ni début ni fin et se prolonge à l'infini dans les deux sens.",
+    "choices": ["Un segment", "Une demi-droite", "Une droite", "Un rayon"],
+    "correctIndex": 2,
+    "explanation": "La droite est illimitée des deux côtés. On la note entre parenthèses, par exemple (AB).",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 122,
+    "question": "Portion de droite limitée par deux points appelés extrémités.",
+    "choices": ["Une droite", "Une demi-droite", "Un segment", "Un rayon"],
+    "correctIndex": 2,
+    "explanation": "Le segment a une longueur mesurable. On le note entre crochets, par exemple [AB].",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 123,
+    "question": "Ligne qui part d'un point (origine) et se prolonge à l'infini dans un seul sens.",
+    "choices": ["Un segment", "Une droite", "Une diagonale", "Une demi-droite"],
+    "correctIndex": 3,
+    "explanation": "La demi-droite a une origine mais pas de fin. On la note [AB) : crochet pour l'origine, parenthèse pour l'infini.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 124,
+    "question": "Deux droites qui se coupent en formant quatre angles droits.",
+    "choices": [
+      "Des droites parallèles",
+      "Des droites sécantes",
+      "Des droites perpendiculaires",
+      "Des droites confondues"
+    ],
+    "correctIndex": 2,
+    "explanation": "Les droites perpendiculaires forment des angles de 90° à leur point d'intersection.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 125,
+    "question": "Deux droites qui ne se coupent jamais et gardent toujours le même écart.",
+    "choices": [
+      "Des droites perpendiculaires",
+      "Des droites sécantes",
+      "Des droites confondues",
+      "Des droites parallèles"
+    ],
+    "correctIndex": 3,
+    "explanation": "Les droites parallèles ne se croisent jamais, même prolongées à l'infini.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 126,
+    "question": "Point où deux côtés d'un polygone se rencontrent.",
+    "choices": ["Un centre", "Un milieu", "Un sommet", "Un angle"],
+    "correctIndex": 2,
+    "explanation": "Un sommet est le point de jonction de deux côtés. Un triangle a 3 sommets, un quadrilatère en a 4.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 127,
+    "question": "Droite qui partage une figure en deux parties exactement superposables par pliage.",
+    "choices": ["Une diagonale", "Une médiane", "Un axe de symétrie", "Une bissectrice"],
+    "correctIndex": 2,
+    "explanation": "L'axe de symétrie permet de plier la figure pour que les deux moitiés se recouvrent parfaitement.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 128,
+    "question": "Longueur totale du contour d'une figure.",
+    "choices": ["L'aire", "La diagonale", "Le périmètre", "Le rayon"],
+    "correctIndex": 2,
+    "explanation": "Le périmètre se calcule en additionnant la longueur de tous les côtés d'un polygone.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 129,
+    "question": "Mesure de la surface intérieure d'une figure, exprimée en unités carrées.",
+    "choices": ["Le périmètre", "L'aire", "Le volume", "La diagonale"],
+    "correctIndex": 1,
+    "explanation": "L'aire s'exprime en cm², m², etc. Elle mesure l'espace occupé à l'intérieur de la figure.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 130,
+    "question": "Surface plane délimitée par un cercle (contour inclus).",
+    "choices": ["Un cercle", "Un disque", "Une sphère", "Un anneau"],
+    "correctIndex": 1,
+    "explanation": "Le disque est la surface intérieure du cercle. Le cercle est la ligne, le disque est la surface.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 131,
+    "question": "Segment reliant deux sommets non consécutifs d'un polygone.",
+    "choices": ["Un côté", "Un axe de symétrie", "Une diagonale", "Une médiane"],
+    "correctIndex": 2,
+    "explanation": "La diagonale relie deux sommets qui ne sont pas voisins. Un rectangle a deux diagonales de même longueur.",
+    "category": "reconnaître une figure"
+  }
+]
