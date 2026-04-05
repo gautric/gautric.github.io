@@ -235,6 +235,12 @@ function showWelcomeScreen() {
   question.setAttribute('hidden', '');
   resultat.setAttribute('hidden', '');
 
+  var backLink = document.createElement('a');
+  backLink.href = 'index.html';
+  backLink.textContent = '← Retour au choix des matières';
+  backLink.className = 'back-link';
+  accueil.appendChild(backLink);
+
   var titre = document.createElement('h1');
   titre.textContent = 'Quiz de Grammaire CE2';
   accueil.appendChild(titre);

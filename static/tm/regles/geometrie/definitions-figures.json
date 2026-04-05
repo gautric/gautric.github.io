@@ -1,0 +1,392 @@
+[
+  {
+    "id": 1,
+    "question": "Qu'est-ce qu'un cercle ?",
+    "choices": [
+      "Une figure géométrique fermée dont tous les points sont à la même distance du centre",
+      "Une figure géométrique fermée qui a quatre côtés égaux",
+      "Une ligne courbe qui ne se referme jamais",
+      "Une figure géométrique qui a un nombre infini de côtés droits"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le cercle est l'ensemble des points du plan situés à une même distance (le rayon) d'un point fixe appelé centre.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 2,
+    "question": "Qu'est-ce que le rayon d'un cercle ?",
+    "choices": [
+      "Un segment reliant deux points quelconques du cercle",
+      "Un segment reliant le centre du cercle à un point du cercle",
+      "La distance entre deux cercles",
+      "La ligne courbe qui forme le cercle"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le rayon est un segment qui relie le centre du cercle à un point situé sur le cercle. Tous les rayons d'un même cercle ont la même longueur.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 3,
+    "question": "Qu'est-ce que le diamètre d'un cercle ?",
+    "choices": [
+      "La moitié du rayon",
+      "La ligne courbe qui forme le cercle",
+      "Un segment qui passe par le centre et relie deux points du cercle",
+      "La distance entre le centre et l'extérieur du cercle"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le diamètre est un segment qui passe par le centre du cercle et dont les deux extrémités sont sur le cercle. Il mesure le double du rayon.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 4,
+    "question": "Qu'est-ce qu'un triangle ?",
+    "choices": [
+      "Une figure géométrique ouverte à trois côtés",
+      "Une figure géométrique fermée qui a quatre côtés",
+      "Une figure géométrique fermée qui a trois côtés",
+      "Une figure géométrique fermée dont tous les côtés sont égaux"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un triangle est un polygone à trois côtés, trois sommets et trois angles. La somme de ses angles est toujours égale à 180°.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 5,
+    "question": "Qu'est-ce qu'un triangle rectangle ?",
+    "choices": [
+      "Un triangle qui a tous ses côtés égaux",
+      "Un triangle qui a un angle droit",
+      "Un triangle qui a trois angles droits",
+      "Un triangle qui a la forme d'un rectangle"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un triangle rectangle est un triangle qui possède un angle droit (90°). Le côté opposé à l'angle droit s'appelle l'hypoténuse.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 6,
+    "question": "Qu'est-ce qu'un triangle isocèle ?",
+    "choices": [
+      "Un triangle qui a ses trois côtés de longueurs différentes",
+      "Un triangle qui a un angle droit",
+      "Un triangle qui a au moins deux côtés de même longueur",
+      "Un triangle qui a trois côtés de même longueur"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un triangle isocèle possède au moins deux côtés de même longueur. Les deux angles à la base de ces côtés égaux sont aussi égaux.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 7,
+    "question": "Qu'est-ce qu'un triangle équilatéral ?",
+    "choices": [
+      "Un triangle qui a un seul côté plus long que les autres",
+      "Un triangle qui a un angle droit",
+      "Un triangle qui a deux côtés de même longueur",
+      "Un triangle qui a ses trois côtés de même longueur"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un triangle équilatéral a ses trois côtés de même longueur et ses trois angles égaux (chacun mesure 60°). C'est aussi un triangle isocèle particulier.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 8,
+    "question": "Qu'est-ce qu'un carré ?",
+    "choices": [
+      "Un quadrilatère qui a quatre côtés égaux",
+      "Un quadrilatère qui a quatre angles droits",
+      "Un quadrilatère qui a quatre côtés égaux et quatre angles droits",
+      "Un quadrilatère qui a deux paires de côtés parallèles"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le carré est un quadrilatère qui a quatre côtés de même longueur ET quatre angles droits. C'est à la fois un rectangle et un losange.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 9,
+    "question": "Qu'est-ce qu'un rectangle ?",
+    "choices": [
+      "Un quadrilatère qui a quatre côtés de même longueur",
+      "Un quadrilatère qui a quatre angles droits",
+      "Un quadrilatère qui a deux côtés parallèles",
+      "Un quadrilatère qui a exactement deux angles droits"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un rectangle est un quadrilatère qui possède quatre angles droits. Ses côtés opposés sont parallèles et de même longueur.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 10,
+    "question": "Qu'est-ce qu'un losange ?",
+    "choices": [
+      "Un quadrilatère qui a quatre angles droits",
+      "Un quadrilatère qui a quatre côtés de même longueur",
+      "Un quadrilatère qui a deux côtés parallèles seulement",
+      "Un quadrilatère qui a tous ses angles aigus"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un losange est un quadrilatère dont les quatre côtés ont la même longueur. Ses côtés opposés sont parallèles. Un carré est un losange particulier.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 11,
+    "question": "Qu'est-ce qu'un parallélogramme ?",
+    "choices": [
+      "Un quadrilatère dont les côtés opposés sont parallèles et de même longueur",
+      "Un quadrilatère qui a quatre angles droits",
+      "Un quadrilatère qui a quatre côtés de même longueur",
+      "Un quadrilatère qui a un seul axe de symétrie"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un parallélogramme est un quadrilatère dont les côtés opposés sont parallèles deux à deux et de même longueur. Le rectangle, le losange et le carré sont des parallélogrammes particuliers.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 12,
+    "question": "Qu'est-ce qu'un angle droit ?",
+    "choices": [
+      "Un angle qui mesure 180°",
+      "Un angle qui mesure moins de 90°",
+      "Un angle qui mesure 90°",
+      "Un angle qui mesure plus de 90°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un angle droit mesure exactement 90°. On le repère grâce à un petit carré dessiné dans le coin de l'angle.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 13,
+    "question": "Qu'est-ce qu'un polygone ?",
+    "choices": [
+      "Une figure géométrique formée uniquement de lignes courbes",
+      "Une figure géométrique fermée formée de segments de droite",
+      "Une figure géométrique qui a toujours quatre côtés",
+      "Un cercle avec plusieurs rayons"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un polygone est une figure géométrique plane fermée, délimitée par des segments de droite. Le triangle, le carré et l'hexagone sont des polygones.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 14,
+    "question": "Qu'est-ce qu'un quadrilatère ?",
+    "choices": [
+      "Un polygone qui a trois côtés",
+      "Un polygone qui a cinq côtés",
+      "Un polygone qui a quatre côtés",
+      "Un polygone qui a six côtés"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un quadrilatère est un polygone à quatre côtés, quatre sommets et quatre angles. Le carré, le rectangle, le losange et le trapèze sont des quadrilatères.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 15,
+    "question": "Qu'est-ce qu'une droite ?",
+    "choices": [
+      "Un trait qui a un début et une fin",
+      "Un trait qui a un début mais pas de fin",
+      "Un trait qui n'a ni début ni fin et qui est illimité des deux côtés",
+      "Un trait courbe qui va dans une seule direction"
+    ],
+    "correctIndex": 2,
+    "explanation": "Une droite est une ligne qui va à l'infini dans les deux sens. Elle n'a ni début ni fin. On la note avec deux lettres majuscules entre parenthèses, par exemple (AB).",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 16,
+    "question": "Qu'est-ce qu'un segment ?",
+    "choices": [
+      "Une portion de droite limitée par deux points appelés extrémités",
+      "Une droite qui n'a pas de fin",
+      "Une ligne courbe entre deux points",
+      "Un trait qui part d'un point et va à l'infini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un segment est une portion de droite délimitée par deux points, appelés extrémités. On le note avec des crochets, par exemple [AB]. Il a une longueur mesurable.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 17,
+    "question": "Que sont des droites perpendiculaires ?",
+    "choices": [
+      "Deux droites qui ne se croisent jamais",
+      "Deux droites qui se croisent en formant un angle droit",
+      "Deux droites qui vont dans la même direction",
+      "Deux droites qui se croisent en formant un angle aigu"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deux droites perpendiculaires se coupent en formant quatre angles droits (90°). On utilise une équerre pour vérifier la perpendicularité.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 18,
+    "question": "Que sont des droites parallèles ?",
+    "choices": [
+      "Deux droites qui se croisent en un point",
+      "Deux droites qui se croisent en formant un angle droit",
+      "Deux droites qui ne se croisent jamais et gardent toujours le même écart",
+      "Deux droites qui se croisent deux fois"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deux droites parallèles ne se coupent jamais, même prolongées à l'infini. Elles gardent toujours la même distance entre elles.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 19,
+    "question": "Qu'est-ce qu'un trapèze ?",
+    "choices": [
+      "Un quadrilatère qui a quatre côtés parallèles deux à deux",
+      "Un quadrilatère qui a exactement deux côtés parallèles",
+      "Un quadrilatère qui a quatre angles droits",
+      "Un triangle qui a un côté plus long que les autres"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un trapèze est un quadrilatère qui possède exactement une paire de côtés parallèles. Ces deux côtés parallèles sont appelés les bases du trapèze.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 20,
+    "question": "Qu'est-ce qu'un sommet ?",
+    "choices": [
+      "Le milieu d'un côté d'une figure",
+      "Le point le plus haut d'une figure",
+      "Un point où deux côtés d'une figure se rencontrent",
+      "Le centre d'un polygone"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un sommet est un point où deux côtés d'un polygone se rejoignent. Un triangle a 3 sommets, un quadrilatère en a 4, un pentagone en a 5.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 21,
+    "question": "Qu'est-ce qu'un axe de symétrie ?",
+    "choices": [
+      "Une droite qui coupe une figure en deux parties quelconques",
+      "Une droite qui partage une figure en deux parties superposables par pliage",
+      "Le plus grand côté d'une figure",
+      "Une droite qui passe par tous les sommets d'une figure"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un axe de symétrie est une droite qui partage une figure en deux parties exactement superposables. Si on plie la figure le long de cet axe, les deux moitiés se recouvrent parfaitement.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 22,
+    "question": "Qu'est-ce qu'un pentagone ?",
+    "choices": [
+      "Un polygone à quatre côtés",
+      "Un polygone à six côtés",
+      "Un polygone à cinq côtés",
+      "Un polygone à huit côtés"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un pentagone est un polygone à cinq côtés, cinq sommets et cinq angles. Le préfixe « penta » vient du grec et signifie cinq.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 23,
+    "question": "Qu'est-ce qu'un hexagone ?",
+    "choices": [
+      "Un polygone à cinq côtés",
+      "Un polygone à six côtés",
+      "Un polygone à sept côtés",
+      "Un polygone à huit côtés"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un hexagone est un polygone à six côtés, six sommets et six angles. Le préfixe « hexa » vient du grec et signifie six.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 24,
+    "question": "Qu'est-ce qu'un angle aigu ?",
+    "choices": [
+      "Un angle qui mesure exactement 90°",
+      "Un angle qui mesure plus de 90°",
+      "Un angle qui mesure moins de 90°",
+      "Un angle qui mesure 180°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un angle aigu est un angle dont la mesure est strictement inférieure à 90°. Il est plus petit qu'un angle droit.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 25,
+    "question": "Qu'est-ce qu'un angle obtus ?",
+    "choices": [
+      "Un angle qui mesure moins de 90°",
+      "Un angle qui mesure exactement 90°",
+      "Un angle qui mesure entre 90° et 180°",
+      "Un angle qui mesure exactement 180°"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un angle obtus est un angle dont la mesure est strictement comprise entre 90° et 180°. Il est plus grand qu'un angle droit.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 26,
+    "question": "Qu'est-ce que le périmètre d'une figure ?",
+    "choices": [
+      "La surface à l'intérieur de la figure",
+      "La longueur du contour de la figure",
+      "Le nombre de côtés de la figure",
+      "La distance entre le centre et un sommet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le périmètre est la longueur totale du contour d'une figure. Pour un polygone, on additionne la longueur de tous ses côtés.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 27,
+    "question": "Qu'est-ce que l'aire d'une figure ?",
+    "choices": [
+      "La longueur du contour de la figure",
+      "Le nombre de sommets de la figure",
+      "La mesure de la surface à l'intérieur de la figure",
+      "La longueur du plus grand côté"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'aire est la mesure de la surface intérieure d'une figure. Elle s'exprime en unités carrées (cm², m², etc.).",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 28,
+    "question": "Qu'est-ce qu'une demi-droite ?",
+    "choices": [
+      "Un trait qui a un début et une fin",
+      "Un trait qui part d'un point (origine) et se prolonge à l'infini dans un seul sens",
+      "La moitié d'un segment",
+      "Un trait qui va à l'infini dans les deux sens"
+    ],
+    "correctIndex": 1,
+    "explanation": "Une demi-droite a une origine (un point de départ) et se prolonge à l'infini dans une seule direction. On la note avec un crochet et une parenthèse, par exemple [AB).",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 29,
+    "question": "Qu'est-ce qu'un disque ?",
+    "choices": [
+      "La ligne courbe qui forme le cercle",
+      "Un segment qui passe par le centre du cercle",
+      "La surface intérieure délimitée par un cercle",
+      "Un cercle qui a un très grand rayon"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le disque est la surface plane délimitée par un cercle. Le cercle est le contour, le disque est la surface à l'intérieur (cercle inclus).",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 30,
+    "question": "Qu'est-ce qu'une diagonale d'un polygone ?",
+    "choices": [
+      "Un côté du polygone",
+      "Un segment reliant deux sommets non consécutifs du polygone",
+      "L'axe de symétrie du polygone",
+      "Le plus long côté du polygone"
+    ],
+    "correctIndex": 1,
+    "explanation": "Une diagonale est un segment qui relie deux sommets d'un polygone qui ne sont pas voisins (non consécutifs). Un rectangle a deux diagonales qui se coupent en leur milieu.",
+    "category": "définitions de figures"
+  }
+]

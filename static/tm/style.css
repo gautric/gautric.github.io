@@ -379,3 +379,149 @@ button:disabled:hover {
     font-size: 0.95rem;
   }
 }
+
+/* === Hub === */
+.hub-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+.hub-btn {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  padding: 1.2rem 2rem;
+  border-radius: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.hub-btn:hover {
+  transform: translateY(-3px);
+}
+
+.hub-btn-francais {
+  background: #6a1b9a;
+  box-shadow: 0 4px 12px rgba(106, 27, 154, 0.35);
+}
+
+.hub-btn-francais:hover {
+  box-shadow: 0 6px 18px rgba(106, 27, 154, 0.45);
+}
+
+.hub-btn-maths {
+  background: #1565c0;
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.35);
+}
+
+.hub-btn-maths:hover {
+  box-shadow: 0 6px 18px rgba(21, 101, 192, 0.45);
+}
+
+/* === Back Link === */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #7e57c2;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* === QCM Choices === */
+.choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1.2rem 0;
+}
+
+.choice-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.9rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: #e8eaf6;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  border: 2px solid transparent;
+}
+
+.choice-btn:hover {
+  background: #c5cae9;
+  transform: translateY(-1px);
+}
+
+.choice-btn.disabled {
+  pointer-events: none;
+  opacity: 0.85;
+  cursor: default;
+}
+
+.choice-btn.disabled:hover {
+  transform: none;
+}
+
+.choice-btn.choice-correct {
+  background: #a5d6a7;
+  color: #1b5e20;
+  border-color: #4caf50;
+  font-weight: 700;
+}
+
+.choice-btn.choice-incorrect {
+  background: #ef9a9a;
+  color: #b71c1c;
+  border-color: #ef5350;
+  font-weight: 700;
+}
+
+/* === Hub link button in results === */
+.btn-hub-link {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background: #1565c0;
+  box-shadow: 0 3px 8px rgba(21, 101, 192, 0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-hub-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(21, 101, 192, 0.4);
+}
+
+@media (max-width: 600px) {
+  .hub-btn {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .choice-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+}
