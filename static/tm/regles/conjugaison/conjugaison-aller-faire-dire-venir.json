@@ -17,10 +17,10 @@
   },
   {
     "id": 3103,
-    "sentence": "Mon frère va au cinéma avec ses amis et il vont voir le nouveau film.",
-    "errorIndex": 9,
-    "correctedWord": "ils",
-    "explanation": "La phrase est correcte pour « va » mais « il vont » devrait être « ils vont » (pluriel).",
+    "sentence": "Mon frère va au cinéma avec ses amis et ils va voir le nouveau film.",
+    "errorIndex": 10,
+    "correctedWord": "vont",
+    "explanation": "Le verbe « aller » avec « ils » s'écrit « vont » et non « va » (3e personne du singulier).",
     "category": "conjugaison aller/faire/dire/venir"
   },
   {
