@@ -388,5 +388,18 @@
     "correctIndex": 1,
     "explanation": "Une diagonale est un segment qui relie deux sommets d'un polygone qui ne sont pas voisins (non consécutifs). Un rectangle a deux diagonales qui se coupent en leur milieu.",
     "category": "définitions de figures"
+  },
+  {
+    "id": 31,
+    "question": "Qu'est-ce qu'une corde d'un cercle ?",
+    "choices": [
+      "Un segment reliant le centre du cercle à un point du cercle",
+      "Un segment reliant deux points du cercle",
+      "La ligne courbe qui forme le cercle",
+      "Un segment qui passe obligatoirement par le centre du cercle"
+    ],
+    "correctIndex": 1,
+    "explanation": "Une corde est un segment dont les deux extrémités sont situées sur le cercle. Le diamètre est une corde particulière : c'est la plus longue, car elle passe par le centre.",
+    "category": "définitions de figures"
   }
 ]
