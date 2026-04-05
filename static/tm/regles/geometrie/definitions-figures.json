@@ -401,5 +401,57 @@
     "correctIndex": 1,
     "explanation": "Une corde est un segment dont les deux extrémités sont situées sur le cercle. Le diamètre est une corde particulière : c'est la plus longue, car elle passe par le centre.",
     "category": "définitions de figures"
+  },
+  {
+    "id": 32,
+    "question": "Qu'est-ce qu'un heptagone ?",
+    "choices": [
+      "Un polygone à six côtés",
+      "Un polygone à sept côtés",
+      "Un polygone à huit côtés",
+      "Un polygone à cinq côtés"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un heptagone est un polygone à sept côtés, sept sommets et sept angles. Le préfixe « hepta » vient du grec et signifie sept.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 33,
+    "question": "Qu'est-ce qu'un octogone ?",
+    "choices": [
+      "Un polygone à six côtés",
+      "Un polygone à sept côtés",
+      "Un polygone à neuf côtés",
+      "Un polygone à huit côtés"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un octogone est un polygone à huit côtés, huit sommets et huit angles. Le préfixe « octo » vient du grec et signifie huit. Le panneau STOP a la forme d'un octogone régulier.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 34,
+    "question": "Qu'est-ce qu'un décagone ?",
+    "choices": [
+      "Un polygone à huit côtés",
+      "Un polygone à dix côtés",
+      "Un polygone à douze côtés",
+      "Un polygone à neuf côtés"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un décagone est un polygone à dix côtés, dix sommets et dix angles. Le préfixe « déca » vient du grec et signifie dix.",
+    "category": "définitions de figures"
+  },
+  {
+    "id": 35,
+    "question": "Qu'est-ce qu'un dodécagone ?",
+    "choices": [
+      "Un polygone à dix côtés",
+      "Un polygone à onze côtés",
+      "Un polygone à douze côtés",
+      "Un polygone à quatorze côtés"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un dodécagone est un polygone à douze côtés, douze sommets et douze angles. Le préfixe « dodéca » vient du grec et signifie douze.",
+    "category": "définitions de figures"
   }
 ]

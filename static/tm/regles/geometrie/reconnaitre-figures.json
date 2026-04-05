@@ -256,5 +256,37 @@
     "correctIndex": 2,
     "explanation": "La diagonale relie deux sommets qui ne sont pas voisins. Un rectangle a deux diagonales de même longueur.",
     "category": "reconnaître une figure"
+  },
+  {
+    "id": 132,
+    "question": "Polygone à sept côtés, sept sommets et sept angles.",
+    "choices": ["Un hexagone", "Un heptagone", "Un octogone", "Un pentagone"],
+    "correctIndex": 1,
+    "explanation": "Le préfixe « hepta » vient du grec et signifie sept.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 133,
+    "question": "Polygone à huit côtés, huit sommets et huit angles. Le panneau STOP en a la forme.",
+    "choices": ["Un heptagone", "Un hexagone", "Un décagone", "Un octogone"],
+    "correctIndex": 3,
+    "explanation": "Le préfixe « octo » vient du grec et signifie huit. Le panneau STOP est un octogone régulier.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 134,
+    "question": "Polygone à dix côtés, dix sommets et dix angles.",
+    "choices": ["Un octogone", "Un dodécagone", "Un décagone", "Un heptagone"],
+    "correctIndex": 2,
+    "explanation": "Le préfixe « déca » vient du grec et signifie dix.",
+    "category": "reconnaître une figure"
+  },
+  {
+    "id": 135,
+    "question": "Polygone à douze côtés, douze sommets et douze angles.",
+    "choices": ["Un décagone", "Un dodécagone", "Un octogone", "Un hexagone"],
+    "correctIndex": 1,
+    "explanation": "Le préfixe « dodéca » vient du grec et signifie douze.",
+    "category": "reconnaître une figure"
   }
 ]
