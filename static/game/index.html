@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キロのゴースト倉庫番</title>
+  <script type="module" crossorigin src="./assets/index-QECpJ8-Z.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DDkP2Ho7.css">
+</head>
+<body>
+  <div id="game-container">
+    <div id="ui-overlay">
+
+      <!-- Menu Screen -->
+      <div id="menu-screen">
+        <div class="title-wrapper">
+          <h1 class="game-title" data-i18n="title">キロのゴースト<br>倉庫番</h1>
+        </div>
+        <div class="menu-ghost" data-testid="menu-ghost"><img src="data:image/svg+xml,%3csvg%20width='1200'%20height='1200'%20viewBox='0%200%201200%201200'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cmask%20id='mask0_1106_4856'%20maskUnits='userSpaceOnUse'%20x='272'%20y='202'%20width='655'%20height='796'%3e%3cpath%20d='M926.578%20202.793H272.637V997.857H926.578V202.793Z'%20fill='white'/%3e%3c/mask%3e%3cg%20mask='url(%23mask0_1106_4856)'%3e%3cpath%20d='M398.554%20818.914C316.315%201001.03%20491.477%201046.74%20620.672%20940.156C658.687%201059.66%20801.052%20970.473%20852.234%20877.795C964.787%20673.567%20919.318%20465.357%20907.64%20422.374C827.637%20129.443%20427.623%20128.946%20358.8%20423.865C342.651%20475.544%20342.402%20534.18%20333.458%20595.051C328.986%20625.86%20325.507%20645.488%20313.83%20677.785C306.873%20696.424%20297.68%20712.819%20282.773%20740.645C259.915%20783.881%20269.604%20867.113%20387.87%20823.883L399.051%20818.914H398.554Z'%20fill='white'/%3e%3cpath%20d='M636.123%20549.353C603.328%20549.353%20598.359%20510.097%20598.359%20486.742C598.359%20465.623%20602.086%20448.977%20609.293%20438.293C615.504%20428.852%20624.697%20424.131%20636.123%20424.131C647.555%20424.131%20657.492%20428.852%20664.447%20438.541C672.398%20449.474%20676.623%20466.12%20676.623%20486.742C676.623%20525.998%20661.471%20549.353%20636.375%20549.353H636.123Z'%20fill='black'/%3e%3cpath%20d='M771.24%20549.353C738.445%20549.353%20733.477%20510.097%20733.477%20486.742C733.477%20465.623%20737.203%20448.977%20744.41%20438.293C750.621%20428.852%20759.814%20424.131%20771.24%20424.131C782.672%20424.131%20792.609%20428.852%20799.564%20438.541C807.516%20449.474%20811.74%20466.12%20811.74%20486.742C811.74%20525.998%20796.588%20549.353%20771.492%20549.353H771.24Z'%20fill='black'/%3e%3c/g%3e%3c/svg%3e" alt="Kiro Ghost" class="menu-ghost-img"></div>
+        <div class="menu-buttons"></div>
+        <div class="how-to-play-modal" id="how-to-play" style="display:none">
+          <h3 data-i18n="how_title">遊び方</h3>
+          <p data-i18n="how_1">箱をすべてターゲットに押そう！</p>
+          <p data-i18n="how_2">矢印キー: 移動</p>
+          <p data-i18n="how_3">Q/E: カメラ回転</p>
+          <p data-i18n="how_4">Z: 元に戻す | R: リスタート</p>
+          <p data-i18n="how_5">M: ミュート | Esc: ポーズ</p>
+          <p data-i18n="how_6">マウス: ドラッグで回転、スクロールでズーム</p>
+          <p data-i18n="how_7">J: 日本語 / English</p>
+        </div>
+      </div>
+
+      <!-- Level Select Screen -->
+      <div id="level-select-screen">
+        <h2 data-i18n="select_level">レベル選択</h2>
+        <div class="level-grid"></div>
+        <div class="level-nav" style="display:none">
+          <button class="pixel-btn" id="level-prev" data-i18n="prev" data-testid="btn-<-prev">&lt; 前へ</button>
+          <span class="page-label" id="level-page-label"></span>
+          <button class="pixel-btn" id="level-next" data-i18n="next" data-testid="btn-next->">次へ &gt;</button>
+        </div>
+        <div class="level-select-back"></div>
+      </div>
+
+      <!-- HUD -->
+      <div id="hud">
+        <div class="hud-row"><span class="hud-label" data-i18n="level">レベル:</span> <span id="hud-level">-</span></div>
+        <div class="hud-row"><span class="hud-label" data-i18n="moves">手数:</span> <span id="hud-moves">0</span></div>
+        <div class="hud-row"><span class="hud-label" data-i18n="pushes">押し:</span> <span id="hud-pushes">0</span></div>
+        <div class="hud-row"><span class="hud-label" data-i18n="time">時間:</span> <span id="hud-timer">00:00</span></div>
+        <div class="hud-row"><span class="hud-label" data-i18n="music">音楽:</span> <span id="hud-music" class="hud-toggle" data-testid="btn-music-toggle">オン</span></div>
+      </div>
+
+      <!-- Pause Menu -->
+      <div id="pause-menu">
+        <h2 data-i18n="paused">ポーズ中</h2>
+        <div class="pause-buttons"></div>
+      </div>
+
+      <!-- Level Complete -->
+      <div id="level-complete">
+        <h2 data-i18n="level_complete">レベルクリア！</h2>
+        <div class="stars" id="complete-stars"></div>
+        <div class="stats">
+          <div><span data-i18n="complete_moves">手数:</span> <span id="complete-moves"></span></div>
+          <div><span data-i18n="complete_pushes">押し:</span> <span id="complete-pushes"></span></div>
+          <div><span data-i18n="complete_time">時間:</span> <span id="complete-time"></span></div>
+        </div>
+        <div class="complete-buttons"></div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
