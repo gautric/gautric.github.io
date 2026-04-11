@@ -4,11 +4,12 @@ import {scene, clock, renderer, camera, composer, pixelAlignFrustum, getPixelSiz
 import {initUI} from './ui.js';
 
 const eventBus = new EventBus();
-const langMgr = new LanguageManager(eventBus);
+const langMgr = new LanguageManager(eventBus, 'ja');
 const engine = new GameEngine(eventBus);
 engine.init(scene);
 
 const ui = initUI(engine, eventBus, langMgr);
+eventBus.emit('languageChange', 'ja');
 
 engine.execute(new RandomiseCommand(engine));
 engine._emitStats();

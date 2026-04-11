@@ -58,6 +58,7 @@ export function initUI(engine, eventBus, langMgr) {
   // Language change
   eventBus.on('languageChange',()=>{
     document.getElementById('hud-title').textContent=langMgr.t('title');
+    document.title=langMgr.t('title');
     document.getElementById('lbl-generation').textContent=langMgr.t('generation');
     document.getElementById('lbl-population').textContent=langMgr.t('population');
     document.getElementById('lbl-speed').textContent=langMgr.t('speed');
