@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+<title>Game of Life 3D</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-dark:#151729;--grid-floor:#1a1f3a;--cell-alive:#68b7e9;--cell-glow:#4f7e8b;
+  --accent:#ffc100;--hud-bg:rgba(21,23,41,0.85);--hud-text:#c8d0e0;
+  --font-pixel-en:'Press Start 2P',monospace;--font-pixel-ja:'DotGothic16',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{overflow:hidden;background:var(--bg-dark);font-family:var(--font-pixel-en);color:var(--hud-text)}
+body.lang-ja .hud,body.lang-ja #compass-canvas,body.lang-ja #minimap-label,body.lang-ja #lang-badge,body.lang-ja #shortcuts-bar{font-family:var(--font-pixel-ja)}
+body.lang-en .hud,body.lang-en #compass-canvas,body.lang-en #minimap-label,body.lang-en #lang-badge,body.lang-en #shortcuts-bar{font-family:var(--font-pixel-en)}
+canvas{display:block}
+
+#hud{position:fixed;top:12px;left:12px;background:var(--hud-bg);padding:14px 18px;border-radius:6px;border:1px solid rgba(200,208,224,0.1);z-index:100;min-width:220px}
+#hud-title{font-size:10px;color:var(--accent);margin-bottom:10px;letter-spacing:1px}
+.hud-row{display:flex;justify-content:space-between;align-items:center;margin:6px 0;font-size:7px}
+.hud-row label{opacity:0.7;min-width:80px}
+.hud-row span{color:var(--cell-alive)}
+.hud-row input[type=range]{width:70px;accent-color:var(--accent);height:4px}
+.hud-row select{background:var(--bg-dark);color:var(--hud-text);border:1px solid rgba(200,208,224,0.2);font-family:inherit;font-size:7px;padding:2px 4px;border-radius:3px}
+
+#lang-badge{position:fixed;top:12px;right:12px;background:var(--hud-bg);color:var(--accent);font-size:10px;padding:6px 10px;border:1px solid var(--accent);border-radius:4px;cursor:pointer;z-index:100;transition:background 0.2s;font-family:var(--font-pixel-en)}
+#lang-badge:hover{background:rgba(255,193,0,0.15)}
+
+#minimap-wrap{position:fixed;bottom:12px;left:12px;z-index:100}
+#minimap-label{font-size:7px;opacity:0.6;margin-bottom:4px;text-align:center}
+#minimap{border:1px solid rgba(200,208,224,0.15);border-radius:4px;background:rgba(21,23,41,0.8);image-rendering:pixelated}
+
+#compass-wrap{position:fixed;bottom:12px;right:12px;z-index:100;text-align:center}
+#compass-canvas{border-radius:50%;background:rgba(21,23,41,0.8);border:1px solid rgba(200,208,224,0.15)}
+
+#shortcuts-bar{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);font-size:6px;opacity:0.4;z-index:100;white-space:nowrap}
+</style>
+</head>
+<body class="lang-en">
+
+<!-- ============ HTML OVERLAYS ============ -->
+<div id="hud" class="hud">
+  <div id="hud-title">Game of Life 3D</div>
+  <div class="hud-row"><label id="lbl-generation">Generation</label><span id="val-generation">0</span></div>
+  <div class="hud-row"><label id="lbl-population">Population</label><span id="val-population">0 / 1600</span></div>
+  <div class="hud-row"><label id="lbl-speed">Speed</label><input type="range" id="speed-slider" min="50" max="1000" value="200" step="50"></div>
+  <div class="hud-row"><label id="lbl-rule">Rule</label><select id="rule-select"><option value="conway">Conway</option><option value="highlife">HighLife</option><option value="daynight">Day &amp; Night</option></select></div>
+  <div class="hud-row"><label id="lbl-pixelSize">Pixel Size</label><input type="range" id="pixel-slider" min="1" max="16" value="6" step="1"></div>
+  <div class="hud-row"><label id="lbl-gridSize">Grid Size</label><input type="range" id="grid-slider" min="10" max="80" value="40" step="5"><span id="val-gridSize">40</span></div>
+</div>
+
+<div id="lang-badge">EN</div>
+
+<div id="minimap-wrap">
+  <div id="minimap-label">Minimap</div>
+  <canvas id="minimap" width="140" height="140"></canvas>
+</div>
+
+<div id="compass-wrap">
+  <canvas id="compass-canvas" width="80" height="80"></canvas>
+</div>
+
+<div id="shortcuts-bar">Space: Play/Pause · N: Step · R: Random · C: Clear · J: 言語</div>
+
+<!-- ============ IMPORTS ============ -->
+<script type="importmap">
+{
+  "imports":{
+    "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+// === MAIN MODULE START ===
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPixelatedPass} from 'three/addons/postprocessing/RenderPixelatedPass.js';
+import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+
+// ============ I18N DATA ============
+const i18n = {
+  en:{title:"Game of Life 3D",generation:"Generation",population:"Population",speed:"Speed",rule:"Rule",pixelSize:"Pixel Size",
+    play:"Play",pause:"Pause",step:"Step",randomise:"Random",clear:"Clear",gridSize:"Grid Size",
+    rules:{conway:"Conway",highlife:"HighLife",daynight:"Day & Night"},
+    compass:{n:"N",s:"S",e:"E",w:"W"},minimap:"Minimap",lang:"EN",
+    shortcuts:"Space: Play/Pause · N: Step · R: Random · C: Clear · J: 言語"},
+  ja:{title:"ライフゲーム 3D",generation:"世代",population:"個体数",speed:"速度",rule:"ルール",pixelSize:"ピクセル",
+    play:"再生",pause:"一時停止",step:"一手",randomise:"ランダム",clear:"クリア",gridSize:"グリッド",
+    rules:{conway:"コンウェイ",highlife:"ハイライフ",daynight:"デイ＆ナイト"},
+    compass:{n:"北",s:"南",e:"東",w:"西"},minimap:"全体図",lang:"JP",
+    shortcuts:"Space: 再生 · N: 一手 · R: ランダム · C: クリア · J: Lang"}
+};
+
+// ============ OBSERVER / EVENT BUS ============
+class EventBus {
+  constructor(){this._m={}}
+  on(e,fn){(this._m[e]||(this._m[e]=[])).push(fn)}
+  off(e,fn){if(this._m[e])this._m[e]=this._m[e].filter(f=>f!==fn)}
+  emit(e,...a){(this._m[e]||[]).forEach(fn=>fn(...a))}
+}
+const eventBus = new EventBus();
+
+// ============ LANGUAGE MANAGER ============
+class LanguageManager {
+  constructor(bus,lang='en'){this.bus=bus;this.currentLang=lang}
+  toggle(){this.currentLang=this.currentLang==='en'?'ja':'en';document.body.className='lang-'+this.currentLang;this.bus.emit('languageChange',this.currentLang)}
+  t(key){return key.split('.').reduce((o,k)=>o?.[k],i18n[this.currentLang])??key}
+}
+const langMgr = new LanguageManager(eventBus);
+
+// ============ RULE STRATEGIES ============
+class ClassicConwayRule {
+  apply(alive,n){return alive?(n===2||n===3):(n===3)}
+}
+class HighLifeRule {
+  apply(alive,n){return alive?(n===2||n===3):(n===3||n===6)}
+}
+class DayAndNightRule {
+  apply(alive,n){return alive?[3,4,6,7,8].includes(n):[3,6,7,8].includes(n)}
+}
+const RULES={conway:new ClassicConwayRule(),highlife:new HighLifeRule(),daynight:new DayAndNightRule()};
+
+// ============ CELL STATES (State Pattern) ============
+class CellState {
+  enter(cell){}
+  update(cell,dt){}
+}
+class AliveState extends CellState {
+  enter(cell){cell.mesh.visible=true;cell.mesh.scale.set(1,1,1);cell.mesh.material.color.setHex(0x68b7e9);cell.mesh.material.emissive.setHex(0x4f7e8b)}
+  update(cell,dt){cell.mesh.position.y=0.4+Math.sin(performance.now()*0.003)*0.03}
+}
+class DeadState extends CellState {
+  enter(cell){cell.mesh.visible=false;cell.mesh.scale.set(0,0,0)}
+  update(){}
+}
+class BorningState extends CellState {
+  enter(cell){cell.mesh.visible=true;cell._tw=0;cell.mesh.material.color.setHex(0x44cc66);cell.mesh.material.emissive.setHex(0x227733)}
+  update(cell,dt){cell._tw=Math.min(cell._tw+dt/0.2,1);const s=cell._tw;cell.mesh.scale.set(s,s,s);cell.mesh.position.y=0.4*s;if(cell._tw>=1)cell.setState(new AliveState())}
+}
+class DyingState extends CellState {
+  enter(cell){cell._tw=1;cell.mesh.material.color.setHex(0xdd4444);cell.mesh.material.emissive.setHex(0x882222)}
+  update(cell,dt){cell._tw=Math.max(cell._tw-dt/0.2,0);const s=cell._tw;cell.mesh.scale.set(s,s,s);cell.mesh.position.y=0.4*s;if(cell._tw<=0)cell.setState(new DeadState())}
+}
+
+// ============ FLYWEIGHT SHARED RESOURCES ============
+let GRID_SIZE = 40;
+let GRID_HALF = GRID_SIZE / 2;
+const sharedGeo = new THREE.BoxGeometry(0.8, 0.8, 0.8);
+const sharedMat = new THREE.MeshPhongMaterial({color:0x68b7e9, emissive:0x4f7e8b, shininess:10, specular:0xffffff});
+
+// ============ CELL ============
+class Cell {
+  constructor(mesh,gx,gz){this.mesh=mesh;this.gx=gx;this.gz=gz;this.alive=false;this.nextAlive=false;this.state=null;this._tw=0;this.setState(new DeadState())}
+  setState(s){this.state=s;s.enter(this)}
+  update(dt){this.state.update(this,dt)}
+}
+
+// ============ CELL FACTORY (Factory + Flyweight) ============
+class CellFactory {
+  static create(x,z,scene){
+    const mesh=new THREE.Mesh(sharedGeo,sharedMat.clone());
+    mesh.castShadow=true;mesh.receiveShadow=true;
+    mesh.position.set(x-GRID_HALF+0.5,0,z-GRID_HALF+0.5);
+    mesh.visible=false;scene.add(mesh);
+    return new Cell(mesh,x,z);
+  }
+}
+
+// ============ COMMANDS ============
+class ToggleCellCommand {
+  constructor(engine,gx,gz){this.engine=engine;this.gx=gx;this.gz=gz;this.prev=null}
+  execute(){const c=this.engine.grid[this.gz]?.[this.gx];if(!c)return;this.prev=c.alive;c.alive=!c.alive;c.setState(c.alive?new BorningState():new DyingState())}
+  undo(){const c=this.engine.grid[this.gz]?.[this.gx];if(!c)return;c.alive=this.prev;c.setState(c.alive?new BorningState():new DyingState())}
+}
+class RandomiseCommand {
+  constructor(engine){this.engine=engine;this.prev=null}
+  execute(){this.prev=this.engine.grid.map(r=>r.map(c=>c.alive));for(const row of this.engine.grid)for(const c of row){c.alive=Math.random()<0.3;c.setState(c.alive?new BorningState():new DyingState())}}
+  undo(){this.engine.grid.forEach((row,z)=>row.forEach((c,x)=>{c.alive=this.prev[z][x];c.setState(c.alive?new BorningState():new DyingState())}))}
+}
+class ClearCommand {
+  constructor(engine){this.engine=engine;this.prev=null}
+  execute(){this.prev=this.engine.grid.map(r=>r.map(c=>c.alive));for(const row of this.engine.grid)for(const c of row){c.alive=false;c.setState(new DyingState())}}
+  undo(){this.engine.grid.forEach((row,z)=>row.forEach((c,x)=>{c.alive=this.prev[z][x];c.setState(c.alive?new BorningState():new DyingState())}))}
+}
+
+// ============ GAME ENGINE (Singleton) ============
+class GameEngine {
+  constructor(){
+    if(GameEngine._inst)return GameEngine._inst;GameEngine._inst=this;
+    this.grid=[];this.rule=RULES.conway;this.playing=false;this.tickInterval=0.2;
+    this.lastTick=0;this.generation=0;this.cmdHistory=[];
+  }
+  init(scene){
+    this.scene=scene;this.grid=[];
+    for(let z=0;z<GRID_SIZE;z++){const row=[];for(let x=0;x<GRID_SIZE;x++)row.push(CellFactory.create(x,z,scene));this.grid.push(row)}
+  }
+  rebuild(newSize){
+    for(const row of this.grid)for(const c of row)this.scene.remove(c.mesh);
+    GRID_SIZE=newSize;GRID_HALF=GRID_SIZE/2;
+    this.grid=[];
+    for(let z=0;z<GRID_SIZE;z++){const row=[];for(let x=0;x<GRID_SIZE;x++)row.push(CellFactory.create(x,z,this.scene));this.grid.push(row)}
+    // rebuild floor
+    floorMesh.geometry.dispose();floorMesh.material.map.dispose();floorMesh.material.dispose();
+    floorMesh.geometry=new THREE.PlaneGeometry(GRID_SIZE,GRID_SIZE);
+    floorMesh.material=new THREE.MeshPhongMaterial({map:makeCheckerTex(4,GRID_SIZE/2)});
+    this.generation=0;this.cmdHistory=[];this._emitStats();
+  }
+  execute(cmd){cmd.execute();this.cmdHistory.push(cmd);this._emitStats()}
+  undo(){const cmd=this.cmdHistory.pop();if(cmd)cmd.undo();this._emitStats()}
+  countNeighbors(gx,gz){
+    let n=0;
+    for(let dz=-1;dz<=1;dz++)for(let dx=-1;dx<=1;dx++){if(!dx&&!dz)continue;
+      const nx=(gx+dx+GRID_SIZE)%GRID_SIZE,nz=(gz+dz+GRID_SIZE)%GRID_SIZE;
+      if(this.grid[nz][nx].alive)n++}
+    return n;
+  }
+  step(){
+    for(let z=0;z<GRID_SIZE;z++)for(let x=0;x<GRID_SIZE;x++)
+      this.grid[z][x].nextAlive=this.rule.apply(this.grid[z][x].alive,this.countNeighbors(x,z));
+    for(let z=0;z<GRID_SIZE;z++)for(let x=0;x<GRID_SIZE;x++){
+      const c=this.grid[z][x];
+      if(c.nextAlive!==c.alive){c.alive=c.nextAlive;c.setState(c.alive?new BorningState():new DyingState())}
+    }
+    this.generation++;this._emitStats();
+  }
+  update(elapsed){if(!this.playing)return;if(elapsed-this.lastTick>=this.tickInterval){this.lastTick=elapsed;this.step()}}
+  getPopulation(){let n=0;for(const r of this.grid)for(const c of r)if(c.alive)n++;return n}
+  _emitStats(){eventBus.emit('stats',{gen:this.generation,pop:this.getPopulation(),total:GRID_SIZE*GRID_SIZE})}
+}
+const engine = new GameEngine();
+
+// ============ SCENE MANAGER (Facade) ============
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x151729);
+const clock = new THREE.Clock();
+
+// --- Renderer ---
+const renderer = new THREE.WebGLRenderer();
+renderer.shadowMap.enabled = true;
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// --- Isometric Orthographic Camera ---
+let aspect = window.innerWidth / window.innerHeight;
+const D = 20;
+const camera = new THREE.OrthographicCamera(-D*aspect, D*aspect, D, -D, 0.1, 1000);
+camera.position.set(30, 30, 30);
+camera.lookAt(0, 0, 0);
+camera.zoom = 1.2;
+camera.updateProjectionMatrix();
+
+// --- OrbitControls ---
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableRotate=true;controls.enablePan=true;controls.enableZoom=true;
+controls.maxZoom=4;controls.minZoom=0.5;
+controls.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};
+controls.addEventListener('change',()=>eventBus.emit('cameraChange',camera));
+
+// --- Lights ---
+scene.add(new THREE.AmbientLight(0x757f8e, 3));
+const dirLight = new THREE.DirectionalLight(0xfffecd, 1.5);
+dirLight.position.set(-50, 80, 30);dirLight.castShadow=true;
+dirLight.shadow.mapSize.set(2048,2048);
+dirLight.shadow.camera.left=-30;dirLight.shadow.camera.right=30;
+dirLight.shadow.camera.top=30;dirLight.shadow.camera.bottom=-30;
+scene.add(dirLight);
+const spot = new THREE.SpotLight(0xffc100, 10, 40, Math.PI/16, 0.02, 2);
+spot.position.set(-10, 15, 0);spot.castShadow=true;scene.add(spot);
+
+// --- Post-Processing ---
+const composer = new EffectComposer(renderer);
+let renderPixelatedPass = new RenderPixelatedPass(6, scene, camera);
+renderPixelatedPass.normalEdgeStrength = 0.3;
+renderPixelatedPass.depthEdgeStrength = 0.4;
+composer.addPass(renderPixelatedPass);
+composer.addPass(new OutputPass());
+
+let pixelSize = 6;
+let pixelAlignedPanning = true;
+
+// --- Checker texture (procedural) ---
+function makeCheckerTex(size, reps) {
+  const c = document.createElement('canvas');c.width=size;c.height=size;
+  const ctx=c.getContext('2d');const s=size/2;
+  ctx.fillStyle='#2a2f4a';ctx.fillRect(0,0,size,size);
+  ctx.fillStyle='#1a1f3a';ctx.fillRect(0,0,s,s);ctx.fillRect(s,s,s,s);
+  const t=new THREE.CanvasTexture(c);
+  t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(reps,reps);
+  t.minFilter=t.magFilter=THREE.NearestFilter;t.generateMipmaps=false;
+  t.colorSpace=THREE.SRGBColorSpace;return t;
+}
+
+// --- Floor ---
+const floorMesh = new THREE.Mesh(
+  new THREE.PlaneGeometry(GRID_SIZE, GRID_SIZE),
+  new THREE.MeshPhongMaterial({map:makeCheckerTex(4, GRID_SIZE/2)})
+);
+floorMesh.rotation.x=-Math.PI/2;floorMesh.receiveShadow=true;scene.add(floorMesh);
+
+// --- Init grid ---
+engine.init(scene);
+
+// --- Pixel-align helper (from Three.js example) ---
+function pixelAlignFrustum(cam, ar, pxW, pxH) {
+  const wsW=(cam.right-cam.left)/cam.zoom, wsH=(cam.top-cam.bottom)/cam.zoom;
+  const pw=wsW/pxW, ph=wsH/pxH;
+  const cp=new THREE.Vector3();cam.getWorldPosition(cp);
+  const cq=new THREE.Quaternion();cam.getWorldQuaternion(cq);
+  const cr=new THREE.Vector3(1,0,0).applyQuaternion(cq);
+  const cu=new THREE.Vector3(0,1,0).applyQuaternion(cq);
+  const prx=cp.dot(cr)/pw, pry=cp.dot(cu)/ph;
+  const fx=prx-Math.round(prx), fy=pry-Math.round(pry);
+  cam.left=-ar*D-(fx*pw);cam.right=ar*D-(fx*pw);
+  cam.top=D-(fy*ph);cam.bottom=-D-(fy*ph);
+  cam.updateProjectionMatrix();
+}
+
+// --- Resize ---
+function onResize(){
+  aspect=window.innerWidth/window.innerHeight;
+  camera.left=-D*aspect;camera.right=D*aspect;camera.top=D;camera.bottom=-D;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth,window.innerHeight);
+  composer.setSize(window.innerWidth,window.innerHeight);
+}
+window.addEventListener('resize',onResize);
+
+// ============ COMPASS ============
+const compassCanvas = document.getElementById('compass-canvas');
+const cctx = compassCanvas.getContext('2d');
+function updateCompass(){
+  const w=80,h=80,cx=w/2,cy=h/2;
+  cctx.clearRect(0,0,w,h);
+  const az=Math.atan2(camera.position.x,camera.position.z);
+  const dirs=[
+    {k:'n',a:0},{k:'e',a:Math.PI/2},{k:'s',a:Math.PI},{k:'w',a:-Math.PI/2}
+  ];
+  cctx.save();cctx.translate(cx,cy);cctx.rotate(az);
+  // arrow
+  cctx.beginPath();cctx.moveTo(0,-28);cctx.lineTo(6,8);cctx.lineTo(-6,8);cctx.closePath();
+  cctx.fillStyle='#ffc100';cctx.fill();
+  cctx.beginPath();cctx.moveTo(0,28);cctx.lineTo(6,-8);cctx.lineTo(-6,-8);cctx.closePath();
+  cctx.fillStyle='rgba(200,208,224,0.3)';cctx.fill();
+  // labels
+  cctx.fillStyle='#c8d0e0';cctx.textAlign='center';cctx.textBaseline='middle';
+  const fs=document.body.classList.contains('lang-ja')?'10px DotGothic16':'7px Press Start 2P';
+  cctx.font=fs;
+  dirs.forEach(d=>{
+    const a=d.a;const r=34;
+    cctx.fillText(langMgr.t('compass.'+d.k), Math.sin(a)*r, -Math.cos(a)*r);
+  });
+  cctx.restore();
+}
+
+// ============ MINIMAP ============
+const minimapCanvas = document.getElementById('minimap');
+const mctx = minimapCanvas.getContext('2d');
+let minimapFrame = 0;
+function renderMinimap(){
+  const w=140,h=140,cs=w/GRID_SIZE;
+  mctx.fillStyle='#0d0f1a';mctx.fillRect(0,0,w,h);
+  for(let z=0;z<GRID_SIZE;z++)for(let x=0;x<GRID_SIZE;x++){
+    mctx.fillStyle=engine.grid[z][x].alive?'#68b7e9':'#1a1f3a';
+    mctx.fillRect(x*cs,z*cs,cs-0.3,cs-0.3);
+  }
+  // camera frustum indicator
+  const target=controls.target;
+  const fx=(target.x+GRID_HALF)/GRID_SIZE*w;
+  const fz=(target.z+GRID_HALF)/GRID_SIZE*h;
+  const fSize=w/(camera.zoom*2);
+  mctx.strokeStyle='#ffc100';mctx.lineWidth=1.5;
+  mctx.save();mctx.translate(fx,fz);
+  const az=Math.atan2(camera.position.x-target.x,camera.position.z-target.z);
+  mctx.rotate(az);
+  mctx.strokeRect(-fSize,-fSize,fSize*2,fSize*2);
+  mctx.restore();
+}
+
+// ============ HUD BINDINGS ============
+eventBus.on('stats',s=>{
+  document.getElementById('val-generation').textContent=s.gen;
+  document.getElementById('val-population').textContent=s.pop+' / '+s.total;
+});
+document.getElementById('speed-slider').addEventListener('input',e=>{engine.tickInterval=parseInt(e.target.value)/1000});
+document.getElementById('pixel-slider').addEventListener('input',e=>{
+  pixelSize=parseInt(e.target.value);renderPixelatedPass.setPixelSize(pixelSize);
+});
+document.getElementById('rule-select').addEventListener('change',e=>{engine.rule=RULES[e.target.value]});
+document.getElementById('grid-slider').addEventListener('input',e=>{
+  const v=parseInt(e.target.value);document.getElementById('val-gridSize').textContent=v;
+  engine.rebuild(v);engine.execute(new RandomiseCommand(engine));
+});
+
+// Language change handler
+eventBus.on('languageChange',()=>{
+  document.getElementById('hud-title').textContent=langMgr.t('title');
+  document.getElementById('lbl-generation').textContent=langMgr.t('generation');
+  document.getElementById('lbl-population').textContent=langMgr.t('population');
+  document.getElementById('lbl-speed').textContent=langMgr.t('speed');
+  document.getElementById('lbl-rule').textContent=langMgr.t('rule');
+  document.getElementById('lbl-pixelSize').textContent=langMgr.t('pixelSize');
+  document.getElementById('lbl-gridSize').textContent=langMgr.t('gridSize');
+  document.getElementById('shortcuts-bar').textContent=langMgr.t('shortcuts');
+  document.getElementById('lang-badge').textContent=langMgr.t('lang');
+  document.getElementById('minimap-label').textContent=langMgr.t('minimap');
+  const sel=document.getElementById('rule-select');
+  sel.options[0].text=langMgr.t('rules.conway');
+  sel.options[1].text=langMgr.t('rules.highlife');
+  sel.options[2].text=langMgr.t('rules.daynight');
+  updateCompass();renderMinimap();
+});
+
+// ============ RAYCASTING ============
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+let pointerDown = new THREE.Vector2();
+renderer.domElement.addEventListener('pointerdown',e=>{pointerDown.set(e.clientX,e.clientY)});
+renderer.domElement.addEventListener('pointerup',e=>{
+  if(Math.abs(e.clientX-pointerDown.x)>4||Math.abs(e.clientY-pointerDown.y)>4)return;
+  mouse.x=(e.clientX/window.innerWidth)*2-1;
+  mouse.y=-(e.clientY/window.innerHeight)*2+1;
+  raycaster.setFromCamera(mouse,camera);
+  const hits=raycaster.intersectObject(floorMesh);
+  if(hits.length>0){
+    const p=hits[0].point;
+    const gx=Math.floor(p.x+GRID_HALF);
+    const gz=Math.floor(p.z+GRID_HALF);
+    if(gx>=0&&gx<GRID_SIZE&&gz>=0&&gz<GRID_SIZE)engine.execute(new ToggleCellCommand(engine,gx,gz));
+  }
+});
+
+// ============ KEYBOARD ============
+window.addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT')return;
+  switch(e.key.toLowerCase()){
+    case' ':e.preventDefault();engine.playing=!engine.playing;break;
+    case'n':engine.step();break;
+    case'r':engine.execute(new RandomiseCommand(engine));engine.generation=0;break;
+    case'c':engine.execute(new ClearCommand(engine));engine.generation=0;break;
+    case'1':document.getElementById('rule-select').value='conway';engine.rule=RULES.conway;break;
+    case'2':document.getElementById('rule-select').value='highlife';engine.rule=RULES.highlife;break;
+    case'3':document.getElementById('rule-select').value='daynight';engine.rule=RULES.daynight;break;
+    case'j':langMgr.toggle();break;
+    case'z':if(e.ctrlKey||e.metaKey)engine.undo();break;
+  }
+});
+document.getElementById('lang-badge').addEventListener('click',()=>langMgr.toggle());
+
+// ============ ANIMATION LOOP ============
+function animate(){
+  const dt=clock.getDelta();
+  const elapsed=clock.getElapsedTime();
+
+  engine.update(elapsed);
+  for(const row of engine.grid)for(const c of row)c.update(dt);
+
+  // pixel-align
+  const rs=renderer.getSize(new THREE.Vector2());
+  const ar=rs.x/rs.y;
+  if(pixelAlignedPanning){
+    pixelAlignFrustum(camera,ar,Math.floor(rs.x/pixelSize),Math.floor(rs.y/pixelSize));
+  }
+
+  // minimap every 5 frames
+  minimapFrame++;
+  if(minimapFrame%5===0)renderMinimap();
+
+  composer.render();
+  updateCompass();
+}
+renderer.setAnimationLoop(animate);
+
+// Initial state
+engine.execute(new RandomiseCommand(engine));
+engine._emitStats();
+updateCompass();
+renderMinimap();
+
+</script>
+</body>
+</html>
