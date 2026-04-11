@@ -4,6 +4,11 @@ layout: single
 ShowToc: false
 ---
 
+## Games
+
+* **[Game of Life 3D](/game/gol/)** — A 3D implementation of Conway's Game of Life, with multiple rulesets (Conway, HighLife, Day & Night), adjustable grid and speed, minimap, and bilingual interface (EN/JA).
+* **[Kiro's Ghost Sokoban](/game/sokoban/)** — A ghost-themed Sokoban puzzle game with multiple levels, 3D view, undo/restart, and bilingual interface (EN/JA).
+
 ## Olympic Games & Major Sporting Events
 
 * **[Milano Cortina 2026](https://www.linkedin.com/posts/activity-7431616363661537280-EdVv)** — EVS Volunteer
