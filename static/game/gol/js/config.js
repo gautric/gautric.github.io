@@ -50,8 +50,6 @@ export const CELL_BORN_GLOW = 0x227733;
 export const CELL_DYING_COLOR = 0xdd4444;
 export const CELL_DYING_GLOW = 0x882222;
 export const CELL_FLOAT_Y = 0.4;
-export const CELL_BOB_SPEED = 0.003;
-export const CELL_BOB_AMP = 0.03;
 export const CELL_TRANSITION_DURATION = 0.2;
 
 // Randomise density

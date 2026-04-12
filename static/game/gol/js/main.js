@@ -23,6 +23,7 @@ function animate(){
 
   engine.update(elapsed);
   for(const row of engine.grid) for(const c of row) c.update(dt);
+  if(engine.pool) engine.pool.needsUpdate();
 
   const rs = renderer.getSize(new THREE.Vector2());
   const ar = rs.x / rs.y;
