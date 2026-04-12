@@ -1,22 +1,11 @@
 import * as THREE from 'three';
+import {i18n} from './i18n.js';
+import {DEFAULT_GRID_SIZE, CELL_SIZE, CELL_ALIVE_COLOR, CELL_GLOW_COLOR, CELL_SHININESS, CELL_SPECULAR,
+  CELL_BORN_COLOR, CELL_BORN_GLOW, CELL_DYING_COLOR, CELL_DYING_GLOW,
+  CELL_FLOAT_Y, CELL_BOB_SPEED, CELL_BOB_AMP, CELL_TRANSITION_DURATION,
+  RANDOM_DENSITY, DEFAULT_TICK_INTERVAL} from './config.js';
 
-// ============ I18N DATA ============
-export const i18n = {
-  en:{title:"Game of Life 3D",generation:"Generation",population:"Population",speed:"Speed",rule:"Rule",pixelSize:"Pixel Size",
-    play:"Play",pause:"Pause",step:"Step",randomise:"Random",clear:"Clear",gridSize:"Grid Size",
-    rules:{conway:"Conway",highlife:"HighLife",daynight:"Day & Night"},
-    compass:{n:"N",s:"S",e:"E",w:"W"},minimap:"Minimap",lang:"EN",
-    keysTitle:"Keys",langLabel:"Language",
-    keys:{playpause:"Play / Pause",step:"Step",random:"Random",clear:"Clear",light:"Toggle Light",reset:"Reset Camera",top:"Top View",lang:"Language",rules:"Switch Rule",undo:"Undo"},
-    shortcuts:"Space: Play/Pause · N: Step · R: Random · C: Clear · J: 言語"},
-  ja:{title:"ライフゲーム 3D",generation:"世代",population:"個体数",speed:"速度",rule:"ルール",pixelSize:"ピクセル",
-    play:"再生",pause:"一時停止",step:"一手",randomise:"ランダム",clear:"クリア",gridSize:"グリッド",
-    rules:{conway:"コンウェイ",highlife:"ハイライフ",daynight:"デイ＆ナイト"},
-    compass:{n:"北",s:"南",e:"東",w:"西"},minimap:"全体図",lang:"JP",
-    keysTitle:"キー",langLabel:"言語",
-    keys:{playpause:"再生 / 一時停止",step:"一手",random:"ランダム",clear:"クリア",light:"ライト切替",reset:"カメラリセット",top:"上から表示",lang:"言語",rules:"ルール切替",undo:"元に戻す"},
-    shortcuts:"Space: 再生 · N: 一手 · R: ランダム · C: クリア · J: Lang"}
-};
+export {i18n};
 
 // ============ OBSERVER / EVENT BUS ============
 export class EventBus {
@@ -42,28 +31,36 @@ export const RULES={conway:new ClassicConwayRule(),highlife:new HighLifeRule(),d
 // ============ CELL STATES ============
 class CellState { enter(cell){} update(cell,dt){} }
 export class AliveState extends CellState {
-  enter(cell){cell.mesh.visible=true;cell.mesh.scale.set(1,1,1);cell.mesh.material.color.setHex(0x68b7e9);cell.mesh.material.emissive.setHex(0x4f7e8b)}
-  update(cell,dt){cell.mesh.position.y=0.4+Math.sin(performance.now()*0.003)*0.03}
+  enter(cell){cell.mesh.visible=true;cell.mesh.scale.set(1,1,1);cell.mesh.material.color.setHex(CELL_ALIVE_COLOR);cell.mesh.material.emissive.setHex(CELL_GLOW_COLOR);cell.mesh.position.y=CELL_FLOAT_Y}
+  update(){}
 }
 export class DeadState extends CellState {
   enter(cell){cell.mesh.visible=false;cell.mesh.scale.set(0,0,0)}
   update(){}
 }
 export class BorningState extends CellState {
-  enter(cell){cell.mesh.visible=true;cell._tw=0;cell.mesh.material.color.setHex(0x44cc66);cell.mesh.material.emissive.setHex(0x227733)}
-  update(cell,dt){cell._tw=Math.min(cell._tw+dt/0.2,1);const s=cell._tw;cell.mesh.scale.set(s,s,s);cell.mesh.position.y=0.4*s;if(cell._tw>=1)cell.setState(new AliveState())}
+  enter(cell){
+    cell.mesh.visible=true;
+    if(!transitionState.enabled){cell.mesh.scale.set(1,1,1);cell.mesh.position.y=CELL_FLOAT_Y;cell.setState(new AliveState());return}
+    cell._tw=0;cell.mesh.material.color.setHex(CELL_BORN_COLOR);cell.mesh.material.emissive.setHex(CELL_BORN_GLOW)
+  }
+  update(cell,dt){cell._tw=Math.min(cell._tw+dt/CELL_TRANSITION_DURATION,1);const s=cell._tw;cell.mesh.scale.set(s,s,s);cell.mesh.position.y=CELL_FLOAT_Y*s;if(cell._tw>=1)cell.setState(new AliveState())}
 }
 export class DyingState extends CellState {
-  enter(cell){cell._tw=1;cell.mesh.material.color.setHex(0xdd4444);cell.mesh.material.emissive.setHex(0x882222)}
-  update(cell,dt){cell._tw=Math.max(cell._tw-dt/0.2,0);const s=cell._tw;cell.mesh.scale.set(s,s,s);cell.mesh.position.y=0.4*s;if(cell._tw<=0)cell.setState(new DeadState())}
+  enter(cell){
+    if(!transitionState.enabled){cell.mesh.visible=false;cell.mesh.scale.set(0,0,0);cell.setState(new DeadState());return}
+    cell._tw=1;cell.mesh.material.color.setHex(CELL_DYING_COLOR);cell.mesh.material.emissive.setHex(CELL_DYING_GLOW)
+  }
+  update(cell,dt){cell._tw=Math.max(cell._tw-dt/CELL_TRANSITION_DURATION,0);const s=cell._tw;cell.mesh.scale.set(s,s,s);cell.mesh.position.y=CELL_FLOAT_Y*s;if(cell._tw<=0)cell.setState(new DeadState())}
 }
 
 // ============ GRID SIZE (mutable) ============
-export const gridState = { size: 40, get half(){ return this.size/2 } };
+export const gridState = { size: DEFAULT_GRID_SIZE, get half(){ return this.size/2 } };
+export const transitionState = { enabled: true };
 
 // ============ FLYWEIGHT ============
-const sharedGeo = new THREE.BoxGeometry(0.8,0.8,0.8);
-const sharedMat = new THREE.MeshPhongMaterial({color:0x68b7e9,emissive:0x4f7e8b,shininess:10,specular:0xffffff});
+const sharedGeo = new THREE.BoxGeometry(CELL_SIZE,CELL_SIZE,CELL_SIZE);
+const sharedMat = new THREE.MeshPhongMaterial({color:CELL_ALIVE_COLOR,emissive:CELL_GLOW_COLOR,shininess:CELL_SHININESS,specular:CELL_SPECULAR});
 
 // ============ CELL ============
 export class Cell {
@@ -91,7 +88,7 @@ export class ToggleCellCommand {
 }
 export class RandomiseCommand {
   constructor(engine){this.engine=engine;this.prev=null}
-  execute(){this.prev=this.engine.grid.map(r=>r.map(c=>c.alive));for(const row of this.engine.grid)for(const c of row){c.alive=Math.random()<0.3;c.setState(c.alive?new BorningState():new DyingState())}}
+  execute(){this.prev=this.engine.grid.map(r=>r.map(c=>c.alive));for(const row of this.engine.grid)for(const c of row){c.alive=Math.random()<RANDOM_DENSITY;c.setState(c.alive?new BorningState():new DyingState())}}
   undo(){this.engine.grid.forEach((row,z)=>row.forEach((c,x)=>{c.alive=this.prev[z][x];c.setState(c.alive?new BorningState():new DyingState())}))}
 }
 export class ClearCommand {
@@ -105,7 +102,7 @@ export class GameEngine {
   constructor(eventBus){
     if(GameEngine._inst)return GameEngine._inst;GameEngine._inst=this;
     this.eventBus=eventBus;this.grid=[];this.rule=RULES.conway;this.playing=false;
-    this.tickInterval=0.2;this.lastTick=0;this.generation=0;this.cmdHistory=[];
+    this.tickInterval=DEFAULT_TICK_INTERVAL;this.lastTick=0;this.generation=0;this.cmdHistory=[];
   }
   init(scene){
     this.scene=scene;this.grid=[];

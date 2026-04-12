@@ -1,0 +1,60 @@
+export const i18n = {
+  en: {
+    title: "Game of Life 3D",
+    generation: "Generation",
+    population: "Population",
+    speed: "Speed",
+    rule: "Rule",
+    pixelSize: "Pixel Size",
+    play: "Play",
+    pause: "Pause",
+    step: "Step",
+    randomise: "Random",
+    clear: "Clear",
+    gridSize: "Grid Size",
+    rules: { conway: "Conway", highlife: "HighLife", daynight: "Day & Night" },
+    compass: { n: "N", s: "S", e: "E", w: "W" },
+    minimap: "Minimap",
+    lang: "EN",
+    transition: "Transitions",
+    transitionOn: "ON",
+    transitionOff: "OFF",
+    keysTitle: "Keys",
+    langLabel: "Language",
+    keys: {
+      playpause: "Play / Pause", step: "Step", random: "Random", clear: "Clear",
+      light: "Toggle Light", reset: "Reset Camera", top: "Top View",
+      lang: "Language", rules: "Switch Rule", undo: "Undo"
+    },
+    shortcuts: "Space: Play/Pause · N: Step · R: Random · C: Clear · J: 言語"
+  },
+  ja: {
+    title: "ライフゲーム 3D",
+    generation: "世代",
+    population: "個体数",
+    speed: "速度",
+    rule: "ルール",
+    pixelSize: "ピクセル",
+    play: "再生",
+    pause: "一時停止",
+    step: "一手",
+    randomise: "ランダム",
+    clear: "クリア",
+    gridSize: "グリッド",
+    rules: { conway: "コンウェイ", highlife: "ハイライフ", daynight: "デイ＆ナイト" },
+    compass: { n: "北", s: "南", e: "東", w: "西" },
+    minimap: "全体図",
+    lang: "JP",
+    transition: "トランジション",
+    transitionOn: "ON",
+    transitionOff: "OFF",
+    keysTitle: "キー",
+    langLabel: "言語",
+    keys: {
+      playpause: "再生 / 一時停止", step: "一手", random: "ランダム", clear: "クリア",
+      light: "ライト切替", reset: "カメラリセット", top: "上から表示",
+      lang: "言語", rules: "ルール切替", undo: "元に戻す"
+    },
+    shortcuts: "Space: 再生 · N: 一手 · R: ランダム · C: クリア · J: Lang"
+  }
+};

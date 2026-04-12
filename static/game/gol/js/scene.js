@@ -4,10 +4,16 @@ import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
 import {RenderPixelatedPass} from 'three/addons/postprocessing/RenderPixelatedPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 import {gridState} from './engine.js';
+import {BG_COLOR, CAMERA_D, CAMERA_INITIAL, CAMERA_ZOOM, ORBIT_MAX_ZOOM, ORBIT_MIN_ZOOM,
+  AMBIENT_COLOR, AMBIENT_INTENSITY, DIR_LIGHT_COLOR, DIR_LIGHT_INTENSITY,
+  DIR_LIGHT_SHADOW_SIZE, DIR_LIGHT_SHADOW_EXTENT, DIR_LIGHT_OFFSET, DIR_LIGHT_Y,
+  SPOT_COLOR, SPOT_INTENSITY, SPOT_DISTANCE, SPOT_ANGLE, SPOT_PENUMBRA, SPOT_DECAY, SPOT_POSITION,
+  DEFAULT_PIXEL_SIZE, NORMAL_EDGE_STRENGTH, DEPTH_EDGE_STRENGTH,
+  CHECKER_SIZE, CHECKER_DARK, CHECKER_LIGHT} from './config.js';
 
-export const D = 20;
+export const D = CAMERA_D;
 export const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x151729);
+scene.background = new THREE.Color(BG_COLOR);
 export const clock = new THREE.Clock();
 
 // Renderer
@@ -19,44 +25,44 @@ document.body.appendChild(renderer.domElement);
 // Isometric Orthographic Camera
 export let aspect = window.innerWidth / window.innerHeight;
 export const camera = new THREE.OrthographicCamera(-D*aspect, D*aspect, D, -D, 0.1, 1000);
-camera.position.set(30, 30, 30);
+camera.position.set(CAMERA_INITIAL.x, CAMERA_INITIAL.y, CAMERA_INITIAL.z);
 camera.lookAt(0, 0, 0);
-camera.zoom = 1.2;
+camera.zoom = CAMERA_ZOOM;
 camera.updateProjectionMatrix();
 
 // OrbitControls
 export const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableRotate=true;controls.enablePan=true;controls.enableZoom=true;
-controls.maxZoom=4;controls.minZoom=0.5;
+controls.maxZoom=ORBIT_MAX_ZOOM;controls.minZoom=ORBIT_MIN_ZOOM;
 controls.mouseButtons={LEFT:THREE.MOUSE.ROTATE,MIDDLE:THREE.MOUSE.DOLLY,RIGHT:THREE.MOUSE.PAN};
 
 // Lights
-scene.add(new THREE.AmbientLight(0x757f8e, 5));
-export const dirLight = new THREE.DirectionalLight(0xfffecd, 3);
+scene.add(new THREE.AmbientLight(AMBIENT_COLOR, AMBIENT_INTENSITY));
+export const dirLight = new THREE.DirectionalLight(DIR_LIGHT_COLOR, DIR_LIGHT_INTENSITY);
 dirLight.castShadow=true;
-dirLight.shadow.mapSize.set(2048,2048);
-dirLight.shadow.camera.left=-30;dirLight.shadow.camera.right=30;
-dirLight.shadow.camera.top=30;dirLight.shadow.camera.bottom=-30;
+dirLight.shadow.mapSize.set(DIR_LIGHT_SHADOW_SIZE,DIR_LIGHT_SHADOW_SIZE);
+dirLight.shadow.camera.left=-DIR_LIGHT_SHADOW_EXTENT;dirLight.shadow.camera.right=DIR_LIGHT_SHADOW_EXTENT;
+dirLight.shadow.camera.top=DIR_LIGHT_SHADOW_EXTENT;dirLight.shadow.camera.bottom=-DIR_LIGHT_SHADOW_EXTENT;
 scene.add(dirLight);
-export const spot = new THREE.SpotLight(0xffc100, 20, 40, Math.PI/16, 0.02, 2);
-spot.position.set(-10, 15, 0);spot.castShadow=true;scene.add(spot);
+export const spot = new THREE.SpotLight(SPOT_COLOR, SPOT_INTENSITY, SPOT_DISTANCE, SPOT_ANGLE, SPOT_PENUMBRA, SPOT_DECAY);
+spot.position.set(SPOT_POSITION.x, SPOT_POSITION.y, SPOT_POSITION.z);spot.castShadow=true;scene.add(spot);
 
 // Keep directional light to the left of the camera
 export function updateLightPosition(){
   const left = new THREE.Vector3(-1,0,0).applyQuaternion(camera.quaternion);
-  dirLight.position.copy(camera.position).addScaledVector(left, 60).y = 80;
+  dirLight.position.copy(camera.position).addScaledVector(left, DIR_LIGHT_OFFSET).y = DIR_LIGHT_Y;
   dirLight.target.position.set(0,0,0);
 }
 
 // Post-Processing
 export const composer = new EffectComposer(renderer);
-export const renderPixelatedPass = new RenderPixelatedPass(1, scene, camera);
-renderPixelatedPass.normalEdgeStrength = 0.3;
-renderPixelatedPass.depthEdgeStrength = 0.4;
+export const renderPixelatedPass = new RenderPixelatedPass(DEFAULT_PIXEL_SIZE, scene, camera);
+renderPixelatedPass.normalEdgeStrength = NORMAL_EDGE_STRENGTH;
+renderPixelatedPass.depthEdgeStrength = DEPTH_EDGE_STRENGTH;
 composer.addPass(renderPixelatedPass);
 composer.addPass(new OutputPass());
 
-export let pixelSize = 1;
+export let pixelSize = DEFAULT_PIXEL_SIZE;
 export function getPixelSize(){ return pixelSize; }
 export function setPixelSize(v){ pixelSize = v; renderPixelatedPass.setPixelSize(v); }
 
@@ -64,8 +70,8 @@ export function setPixelSize(v){ pixelSize = v; renderPixelatedPass.setPixelSize
 export function makeCheckerTex(size, reps) {
   const c = document.createElement('canvas');c.width=size;c.height=size;
   const ctx=c.getContext('2d');const s=size/2;
-  ctx.fillStyle='#2a2f4a';ctx.fillRect(0,0,size,size);
-  ctx.fillStyle='#1a1f3a';ctx.fillRect(0,0,s,s);ctx.fillRect(s,s,s,s);
+  ctx.fillStyle=CHECKER_DARK;ctx.fillRect(0,0,size,size);
+  ctx.fillStyle=CHECKER_LIGHT;ctx.fillRect(0,0,s,s);ctx.fillRect(s,s,s,s);
   const t=new THREE.CanvasTexture(c);
   t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(reps,reps);
   t.minFilter=t.magFilter=THREE.NearestFilter;t.generateMipmaps=false;

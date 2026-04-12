@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
 <title>ライフゲーム 3D</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="lang-ja">
@@ -13,10 +13,11 @@
   <div id="hud-title">Game of Life 3D</div>
   <div class="hud-row"><label id="lbl-generation">Generation</label><span id="val-generation">0</span></div>
   <div class="hud-row"><label id="lbl-population">Population</label><span id="val-population">0 / 1600</span></div>
-  <div class="hud-row"><label id="lbl-speed">Speed</label><input type="range" id="speed-slider" min="50" max="1000" value="200" step="50"><span id="val-speed">200</span></div>
+  <div class="hud-row"><label id="lbl-speed">Speed</label><input type="range" id="speed-slider"><span id="val-speed"></span></div>
   <div class="hud-row"><label id="lbl-rule">Rule</label><select id="rule-select"><option value="conway">Conway</option><option value="highlife">HighLife</option><option value="daynight">Day &amp; Night</option></select></div>
-  <div class="hud-row"><label id="lbl-pixelSize">Pixel Size</label><input type="range" id="pixel-slider" min="1" max="16" value="1" step="1"><span id="val-pixelSize">1</span></div>
-  <div class="hud-row"><label id="lbl-gridSize">Grid Size</label><input type="range" id="grid-slider" min="10" max="80" value="40" step="5"><span id="val-gridSize">40</span></div>
+  <div class="hud-row"><label id="lbl-pixelSize">Pixel Size</label><input type="range" id="pixel-slider"><span id="val-pixelSize"></span></div>
+  <div class="hud-row"><label id="lbl-gridSize">Grid Size</label><input type="range" id="grid-slider"><span id="val-gridSize"></span></div>
+  <div class="hud-row"><label id="lbl-transition">Transitions</label><span id="transition-badge" style="cursor:pointer">ON</span></div>
   <div class="hud-row"><label id="lbl-lang">Language</label><span id="lang-badge" style="cursor:pointer">EN</span></div>
 </div>
 

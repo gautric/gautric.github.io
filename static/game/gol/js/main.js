@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {EventBus, LanguageManager, GameEngine, RandomiseCommand} from './engine.js';
 import {scene, clock, renderer, camera, composer, pixelAlignFrustum, getPixelSize, updateLightPosition, D} from './scene.js';
 import {initUI} from './ui.js';
+import {MINIMAP_FRAME_INTERVAL} from './config.js';
 
 const eventBus = new EventBus();
 const langMgr = new LanguageManager(eventBus, 'ja');
@@ -29,7 +30,7 @@ function animate(){
   pixelAlignFrustum(camera, ar, Math.floor(rs.x/ps), Math.floor(rs.y/ps));
 
   ui.incMinimapFrame();
-  if(ui.minimapFrame % 5 === 0) ui.renderMinimap();
+  if(ui.minimapFrame % MINIMAP_FRAME_INTERVAL === 0) ui.renderMinimap();
 
   composer.render();
   ui.updateCompass();

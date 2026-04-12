@@ -1,23 +1,29 @@
 import * as THREE from 'three';
-import {gridState, RULES, ToggleCellCommand, RandomiseCommand, ClearCommand} from './engine.js';
+import {gridState, transitionState, RULES, ToggleCellCommand, RandomiseCommand, ClearCommand} from './engine.js';
 import {camera, controls, renderer, floorMesh, makeCheckerTex, setPixelSize, dirLight, spot} from './scene.js';
+import {MINIMAP_SIZE, MINIMAP_BG, MINIMAP_ALIVE, MINIMAP_DEAD, MINIMAP_FRAME_INTERVAL,
+  COMPASS_SIZE, COMPASS_NEEDLE_COLOR, COMPASS_BACK_COLOR, COMPASS_TEXT_COLOR,
+  COMPASS_FONT, COMPASS_NEEDLE_LEN, COMPASS_NEEDLE_HALF,
+  COMPASS_NEEDLE_TAIL, COMPASS_LABEL_R, CLICK_THRESHOLD,
+  CAMERA_INITIAL, CAMERA_ZOOM, CAMERA_TOP_Y,
+  SPEED_SLIDER, PIXEL_SLIDER, GRID_SLIDER} from './config.js';
 
 export function initUI(engine, eventBus, langMgr) {
   // ============ COMPASS ============
   const cctx = document.getElementById('compass-canvas').getContext('2d');
   function updateCompass(){
-    const w=80,h=80,cx=w/2,cy=h/2;
+    const w=COMPASS_SIZE,h=COMPASS_SIZE,cx=w/2,cy=h/2;
     cctx.clearRect(0,0,w,h);
     const az=Math.atan2(camera.position.x,camera.position.z);
     const dirs=[{k:'n',a:0},{k:'e',a:Math.PI/2},{k:'s',a:Math.PI},{k:'w',a:-Math.PI/2}];
     cctx.save();cctx.translate(cx,cy);cctx.rotate(az);
-    cctx.beginPath();cctx.moveTo(0,-28);cctx.lineTo(6,8);cctx.lineTo(-6,8);cctx.closePath();
-    cctx.fillStyle='#ffc100';cctx.fill();
-    cctx.beginPath();cctx.moveTo(0,28);cctx.lineTo(6,-8);cctx.lineTo(-6,-8);cctx.closePath();
-    cctx.fillStyle='rgba(200,208,224,0.3)';cctx.fill();
-    cctx.fillStyle='#c8d0e0';cctx.textAlign='center';cctx.textBaseline='middle';
-    cctx.font=document.body.classList.contains('lang-ja')?'10px DotGothic16':'7px Press Start 2P';
-    dirs.forEach(d=>{const r=34;cctx.fillText(langMgr.t('compass.'+d.k),Math.sin(d.a)*r,-Math.cos(d.a)*r)});
+    cctx.beginPath();cctx.moveTo(0,-COMPASS_NEEDLE_LEN);cctx.lineTo(COMPASS_NEEDLE_HALF,COMPASS_NEEDLE_TAIL);cctx.lineTo(-COMPASS_NEEDLE_HALF,COMPASS_NEEDLE_TAIL);cctx.closePath();
+    cctx.fillStyle=COMPASS_NEEDLE_COLOR;cctx.fill();
+    cctx.beginPath();cctx.moveTo(0,COMPASS_NEEDLE_LEN);cctx.lineTo(COMPASS_NEEDLE_HALF,-COMPASS_NEEDLE_TAIL);cctx.lineTo(-COMPASS_NEEDLE_HALF,-COMPASS_NEEDLE_TAIL);cctx.closePath();
+    cctx.fillStyle=COMPASS_BACK_COLOR;cctx.fill();
+    cctx.fillStyle=COMPASS_TEXT_COLOR;cctx.textAlign='center';cctx.textBaseline='middle';
+    cctx.font=COMPASS_FONT;
+    dirs.forEach(d=>{const r=COMPASS_LABEL_R;cctx.fillText(langMgr.t('compass.'+d.k),Math.sin(d.a)*r,-Math.cos(d.a)*r)});
     cctx.restore();
   }
 
@@ -25,22 +31,32 @@ export function initUI(engine, eventBus, langMgr) {
   const mctx = document.getElementById('minimap').getContext('2d');
   let minimapFrame = 0;
   function renderMinimap(){
-    const w=140,h=140,cs=w/gridState.size;
-    mctx.fillStyle='#0d0f1a';mctx.fillRect(0,0,w,h);
+    const w=MINIMAP_SIZE,h=MINIMAP_SIZE,cs=w/gridState.size;
+    mctx.fillStyle=MINIMAP_BG;mctx.fillRect(0,0,w,h);
     for(let z=0;z<gridState.size;z++)for(let x=0;x<gridState.size;x++){
-      mctx.fillStyle=engine.grid[z]?.[x]?.alive?'#68b7e9':'#1a1f3a';
+      mctx.fillStyle=engine.grid[z]?.[x]?.alive?MINIMAP_ALIVE:MINIMAP_DEAD;
       mctx.fillRect(x*cs,z*cs,cs-0.3,cs-0.3);
     }
     const target=controls.target;
     const fx=(target.x+gridState.half)/gridState.size*w;
     const fz=(target.z+gridState.half)/gridState.size*h;
     const fSize=w/(camera.zoom*2);
-    mctx.strokeStyle='#ffc100';mctx.lineWidth=1.5;
+    mctx.strokeStyle=COMPASS_NEEDLE_COLOR;mctx.lineWidth=1.5;
     mctx.save();mctx.translate(fx,fz);
     mctx.rotate(Math.atan2(camera.position.x-target.x,camera.position.z-target.z));
     mctx.strokeRect(-fSize,-fSize,fSize*2,fSize*2);
     mctx.restore();
   }
+
+  // ============ SLIDER INIT ============
+  function initSlider(id, cfg, valId) {
+    const el = document.getElementById(id);
+    el.min = cfg.min; el.max = cfg.max; el.value = cfg.value; el.step = cfg.step;
+    document.getElementById(valId).textContent = cfg.value;
+  }
+  initSlider('speed-slider', SPEED_SLIDER, 'val-speed');
+  initSlider('pixel-slider', PIXEL_SLIDER, 'val-pixelSize');
+  initSlider('grid-slider', GRID_SLIDER, 'val-gridSize');
 
   // ============ HUD BINDINGS ============
   eventBus.on('stats',s=>{
@@ -48,12 +64,15 @@ export function initUI(engine, eventBus, langMgr) {
     document.getElementById('val-population').textContent=s.pop+' / '+s.total;
   });
   document.getElementById('speed-slider').addEventListener('input',e=>{const v=parseInt(e.target.value);document.getElementById('val-speed').textContent=v;engine.tickInterval=v/1000});
+  document.getElementById('speed-slider').addEventListener('change',e=>e.target.blur());
   document.getElementById('pixel-slider').addEventListener('input',e=>{const v=parseInt(e.target.value);document.getElementById('val-pixelSize').textContent=v;setPixelSize(v)});
-  document.getElementById('rule-select').addEventListener('change',e=>{engine.rule=RULES[e.target.value]});
+  document.getElementById('pixel-slider').addEventListener('change',e=>e.target.blur());
+  document.getElementById('rule-select').addEventListener('change',e=>{engine.rule=RULES[e.target.value];e.target.blur()});
   document.getElementById('grid-slider').addEventListener('input',e=>{
     const v=parseInt(e.target.value);document.getElementById('val-gridSize').textContent=v;
     engine.rebuild(v,floorMesh,makeCheckerTex);engine.execute(new RandomiseCommand(engine));
   });
+  document.getElementById('grid-slider').addEventListener('change',e=>e.target.blur());
 
   // Language change
   eventBus.on('languageChange',()=>{
@@ -83,6 +102,8 @@ export function initUI(engine, eventBus, langMgr) {
     sel.options[1].text=langMgr.t('rules.highlife');
     sel.options[2].text=langMgr.t('rules.daynight');
     document.getElementById('minimap-label').textContent=langMgr.t('minimap');
+    document.getElementById('lbl-transition').textContent=langMgr.t('transition');
+    document.getElementById('transition-badge').textContent=langMgr.t(transitionState.enabled?'transitionOn':'transitionOff');
     updateCompass();renderMinimap();
   });
 
@@ -94,7 +115,7 @@ export function initUI(engine, eventBus, langMgr) {
   let pointerDown=new THREE.Vector2();
   renderer.domElement.addEventListener('pointerdown',e=>pointerDown.set(e.clientX,e.clientY));
   renderer.domElement.addEventListener('pointerup',e=>{
-    if(Math.abs(e.clientX-pointerDown.x)>4||Math.abs(e.clientY-pointerDown.y)>4)return;
+    if(Math.abs(e.clientX-pointerDown.x)>CLICK_THRESHOLD||Math.abs(e.clientY-pointerDown.y)>CLICK_THRESHOLD)return;
     mouse.x=(e.clientX/window.innerWidth)*2-1;
     mouse.y=-(e.clientY/window.innerHeight)*2+1;
     raycaster.setFromCamera(mouse,camera);
@@ -118,12 +139,16 @@ export function initUI(engine, eventBus, langMgr) {
       case'3':document.getElementById('rule-select').value='daynight';engine.rule=RULES.daynight;break;
       case'j':langMgr.toggle();break;
       case'l':dirLight.visible=!dirLight.visible;spot.visible=!spot.visible;renderer.shadowMap.enabled=dirLight.visible;break;
-      case'p':camera.position.set(30,30,30);camera.zoom=1.2;camera.updateProjectionMatrix();controls.target.set(0,0,0);controls.update();break;
-      case't':camera.position.set(0,60,0);camera.zoom=1.2;camera.updateProjectionMatrix();controls.target.set(0,0,0);controls.update();break;
+      case'p':camera.position.set(CAMERA_INITIAL.x,CAMERA_INITIAL.y,CAMERA_INITIAL.z);camera.zoom=CAMERA_ZOOM;camera.updateProjectionMatrix();controls.target.set(0,0,0);controls.update();break;
+      case't':camera.position.set(0,CAMERA_TOP_Y,0);camera.zoom=CAMERA_ZOOM;camera.updateProjectionMatrix();controls.target.set(0,0,0);controls.update();break;
       case'z':if(e.ctrlKey||e.metaKey)engine.undo();break;
     }
   });
   document.getElementById('lang-badge').addEventListener('click',()=>langMgr.toggle());
+  document.getElementById('transition-badge').addEventListener('click',()=>{
+    transitionState.enabled=!transitionState.enabled;
+    document.getElementById('transition-badge').textContent=langMgr.t(transitionState.enabled?'transitionOn':'transitionOff');
+  });
 
   return { updateCompass, renderMinimap, get minimapFrame(){ return minimapFrame }, incMinimapFrame(){ minimapFrame++ } };
 }
