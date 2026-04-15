@@ -25,8 +25,9 @@ minify:
 params:  
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Greg. I/O
-  description: "Greg. I/O"
-  keywords: [Blog, AWS, GenAI, Cloud, Architecture]
+  description: "Blog de Greg. A. — AWS Solution Architect. Cloud, Agentic, IoT et architecture logicielle."
+  keywords: [Blog, AWS, GenAI, Cloud, Architecture, Agentic, Java, IoT, Raspberry Pi]
+  images: ["/img/og-default.png"]
   # author: Me
   # author: ["Me", "You"] # multiple authors
   #images: ["<link or path of image for opengraph, twitter-cards>"]

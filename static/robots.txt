@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /public/
+
+Sitemap: https://g.autric.net/sitemap.xml
