@@ -1,0 +1,262 @@
+[
+  {
+    "id": 200,
+    "question": "Quelle est la somme des angles d'un triangle ?",
+    "choices": [
+      "180° (ou π radians)",
+      "90° (ou π/2 radians)",
+      "360° (ou 2π radians)",
+      "270° (ou 3π/2 radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dans tout triangle, la somme des trois angles intérieurs est toujours égale à 180°, c'est-à-dire π radians.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 201,
+    "question": "Quelle est la somme des angles d'un quadrilatère ?",
+    "choices": [
+      "360° (ou 2π radians)",
+      "180° (ou π radians)",
+      "540° (ou 3π radians)",
+      "720° (ou 4π radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La somme des angles intérieurs d'un quadrilatère (carré, rectangle, losange, trapèze, etc.) vaut toujours 360°, soit 2π radians.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 202,
+    "question": "Combien mesure chaque angle d'un triangle équilatéral ?",
+    "choices": [
+      "60° (ou π/3 radians)",
+      "45° (ou π/4 radians)",
+      "90° (ou π/2 radians)",
+      "30° (ou π/6 radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un triangle équilatéral a trois côtés égaux et trois angles égaux. Comme la somme fait 180°, chaque angle mesure 180°/3 = 60°.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 203,
+    "question": "Quelle est la propriété des angles d'un triangle rectangle ?",
+    "choices": [
+      "Un angle est droit (90° = π/2 rad) et la somme des deux autres vaut 90° (π/2 rad)",
+      "Les trois angles sont égaux",
+      "Deux angles sont droits",
+      "Tous les angles sont aigus"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un triangle rectangle possède un angle droit de 90° (π/2 rad). La somme totale étant 180° (π rad), les deux autres angles sont aigus et leur somme fait 90° (π/2 rad).",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 204,
+    "question": "Quelle est la propriété des angles d'un triangle isocèle ?",
+    "choices": [
+      "Les deux angles à la base sont égaux",
+      "Tous les angles sont égaux",
+      "Un angle est forcément droit",
+      "Les trois angles sont différents"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un triangle isocèle a deux côtés de même longueur, et les deux angles opposés à ces côtés (les angles à la base) sont égaux.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 205,
+    "question": "Combien mesure chaque angle d'un carré ?",
+    "choices": [
+      "90° (ou π/2 radians)",
+      "60° (ou π/3 radians)",
+      "45° (ou π/4 radians)",
+      "120° (ou 2π/3 radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un carré a quatre angles droits, chacun mesurant 90° (π/2 rad). La somme fait donc 4 × 90° = 360° (2π rad).",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 206,
+    "question": "Quelle est la somme des angles d'un pentagone (5 côtés) ?",
+    "choices": [
+      "540° (ou 3π radians)",
+      "360° (ou 2π radians)",
+      "720° (ou 4π radians)",
+      "180° (ou π radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pour un polygone à n côtés, la somme des angles vaut (n − 2) × 180°. Pour n = 5 : 3 × 180° = 540°.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 207,
+    "question": "Quelle est la somme des angles d'un hexagone (6 côtés) ?",
+    "choices": [
+      "720° (ou 4π radians)",
+      "360° (ou 2π radians)",
+      "540° (ou 3π radians)",
+      "900° (ou 5π radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Formule : (n − 2) × 180°. Pour n = 6 : 4 × 180° = 720°.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 208,
+    "question": "Combien vaut π radians en degrés ?",
+    "choices": [
+      "180° (π rad)",
+      "90° (π/2 rad)",
+      "360° (2π rad)",
+      "45° (π/4 rad)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un demi-tour complet vaut π radians, soit 180°. Un tour complet vaut 2π rad = 360°.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 209,
+    "question": "Comment appelle-t-on un angle qui mesure exactement 90° (π/2 radians) ?",
+    "choices": [
+      "Un angle droit",
+      "Un angle aigu",
+      "Un angle obtus",
+      "Un angle plat"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un angle droit mesure 90° (π/2 rad). Un angle aigu est plus petit que 90°, un angle obtus est entre 90° et 180°, et un angle plat vaut 180°.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 210,
+    "question": "Comment appelle-t-on un angle qui mesure moins de 90° (π/2 radians) ?",
+    "choices": [
+      "Un angle aigu",
+      "Un angle obtus",
+      "Un angle droit",
+      "Un angle plat"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un angle aigu est un angle dont la mesure est strictement comprise entre 0° (0 rad) et 90° (π/2 rad).",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 211,
+    "question": "Comment appelle-t-on un angle qui mesure entre 90° (π/2 rad) et 180° (π rad) ?",
+    "choices": [
+      "Un angle obtus",
+      "Un angle aigu",
+      "Un angle droit",
+      "Un angle plein"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un angle obtus a une mesure strictement comprise entre 90° (π/2 rad) et 180° (π rad).",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 212,
+    "question": "Combien mesure un angle plat ?",
+    "choices": [
+      "180° (ou π radians)",
+      "90° (ou π/2 radians)",
+      "360° (ou 2π radians)",
+      "270° (ou 3π/2 radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un angle plat correspond à une demi-rotation : ses côtés forment une ligne droite. Il mesure 180°, soit π radians.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 213,
+    "question": "Quelle propriété caractérise les diagonales d'un rectangle ?",
+    "choices": [
+      "Elles ont la même longueur et se coupent en leur milieu",
+      "Elles sont perpendiculaires",
+      "Elles ont des longueurs différentes",
+      "Elles ne se croisent pas"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dans un rectangle, les deux diagonales sont de même longueur et se coupent en leur milieu (qui est le centre du rectangle).",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 214,
+    "question": "Quelle propriété caractérise les diagonales d'un losange ?",
+    "choices": [
+      "Elles sont perpendiculaires et se coupent en leur milieu",
+      "Elles ont toujours la même longueur",
+      "Elles sont parallèles",
+      "Elles ne se croisent pas"
+    ],
+    "correctIndex": 0,
+    "explanation": "Les diagonales d'un losange sont perpendiculaires et se coupent en leur milieu. Elles sont aussi les axes de symétrie du losange.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 215,
+    "question": "Quelle propriété caractérise les diagonales d'un carré ?",
+    "choices": [
+      "Elles sont égales, perpendiculaires et se coupent en leur milieu",
+      "Elles sont parallèles",
+      "Elles sont égales mais pas perpendiculaires",
+      "Elles sont perpendiculaires mais de longueurs différentes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le carré est à la fois un rectangle et un losange : ses diagonales ont la même longueur, sont perpendiculaires et se coupent en leur milieu.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 216,
+    "question": "Dans un cercle, que vaut le diamètre par rapport au rayon ?",
+    "choices": [
+      "Le diamètre est égal à deux fois le rayon",
+      "Le diamètre est égal à la moitié du rayon",
+      "Le diamètre est égal au rayon",
+      "Le diamètre est égal à π fois le rayon"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le diamètre traverse le cercle en passant par le centre : d = 2 × r.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 217,
+    "question": "Que dit le théorème de Pythagore dans un triangle rectangle ?",
+    "choices": [
+      "Le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés",
+      "La somme des angles vaut 180°",
+      "Tous les côtés sont égaux",
+      "L'hypoténuse est le plus petit côté"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dans un triangle rectangle : a² + b² = c², où c est l'hypoténuse (le côté opposé à l'angle droit).",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 218,
+    "question": "Combien mesure un tour complet ?",
+    "choices": [
+      "360° (ou 2π radians)",
+      "180° (ou π radians)",
+      "90° (ou π/2 radians)",
+      "720° (ou 4π radians)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un tour complet correspond à une rotation pleine : 360° ou 2π radians.",
+    "category": "propriétés des figures"
+  },
+  {
+    "id": 219,
+    "question": "Dans un triangle équilatéral, combien vaut chaque angle en radians ?",
+    "choices": [
+      "π/3 (soit 60°)",
+      "π/2 (soit 90°)",
+      "π/4 (soit 45°)",
+      "π/6 (soit 30°)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chaque angle vaut 60° = π/3 radians (car 180° = π, donc 60° = π/3).",
+    "category": "propriétés des figures"
+  }
+]

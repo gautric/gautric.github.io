@@ -1,6 +1,7 @@
 {
   "géométrie": {
     "définitions de figures": "geometrie/definitions-figures.json",
-    "reconnaître une figure": "geometrie/reconnaitre-figures.json"
+    "reconnaître une figure": "geometrie/reconnaitre-figures.json",
+    "propriétés des figures": "geometrie/proprietes-figures.json"
   }
 }
