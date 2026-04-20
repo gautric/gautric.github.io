@@ -1,0 +1,222 @@
+{
+  "Atlas": {
+    "en": {
+      "designation": "27 Tauri",
+      "magnitude": 3.63,
+      "spectral": "B8III",
+      "distance": 444,
+      "luminosity": 1260,
+      "mass": 5.04,
+      "description": "Binary star system; the primary is a rapidly rotating blue-white giant.",
+      "mythology": "Named after the Titan condemned to hold up the heavens, father of the Pleiades."
+    },
+    "ja": {
+      "designation": "27 Tauri",
+      "magnitude": 3.63,
+      "spectral": "B8III",
+      "distance": 444,
+      "luminosity": 1260,
+      "mass": 5.04,
+      "description": "連星系で、主星は高速回転する青白色巨星。",
+      "mythology": "天空を支える巨人ティーターン、プレイアデス姉妹の父。"
+    }
+  },
+  "Pleione": {
+    "en": {
+      "designation": "28 Tauri",
+      "magnitude": 5.05,
+      "spectral": "B8Vne",
+      "distance": 450,
+      "luminosity": 184,
+      "mass": 2.89,
+      "description": "Variable star rotating near breakup velocity, with two gaseous disks.",
+      "mythology": "Oceanid nymph, wife of Atlas and mother of the seven Pleiades sisters."
+    },
+    "ja": {
+      "designation": "28 Tauri",
+      "magnitude": 5.05,
+      "spectral": "B8Vne",
+      "distance": 450,
+      "luminosity": 184,
+      "mass": 2.89,
+      "description": "崩壊速度に近い高速回転を持つ変光星。二つのガス円盤を有する。",
+      "mythology": "オーケアニスのニンフ、アトラースの妻でプレイアデス七姉妹の母。"
+    }
+  },
+  "Alcyone": {
+    "en": {
+      "designation": "η Tauri",
+      "magnitude": 2.87,
+      "spectral": "B7IIIe",
+      "distance": 440,
+      "luminosity": 1750,
+      "mass": 6.0,
+      "description": "Brightest star in the Pleiades; a blue-white giant with a gaseous disk.",
+      "mythology": "Daughter of Atlas, she bore several children to Poseidon, god of the sea."
+    },
+    "ja": {
+      "designation": "η Tauri",
+      "magnitude": 2.87,
+      "spectral": "B7IIIe",
+      "distance": 440,
+      "luminosity": 1750,
+      "mass": 6.0,
+      "description": "プレイアデス星団で最も明るい青白色巨星。ガス円盤を持つ。",
+      "mythology": "アトラースの娘。海神ポセイドーンとの間に数人の子をもうけた。"
+    }
+  },
+  "Merope": {
+    "en": {
+      "designation": "23 Tauri",
+      "magnitude": 4.18,
+      "spectral": "B6IV(e)",
+      "distance": 440,
+      "luminosity": 927,
+      "mass": 4.25,
+      "description": "Blue-white subgiant and Beta Cephei variable with regular pulsations.",
+      "mythology": "The youngest sister who married the mortal Sisyphus, becoming the faintest Pleiad."
+    },
+    "ja": {
+      "designation": "23 Tauri",
+      "magnitude": 4.18,
+      "spectral": "B6IV(e)",
+      "distance": 440,
+      "luminosity": 927,
+      "mass": 4.25,
+      "description": "青白色準巨星。ケフェウス座β型変光星で規則的な脈動を持つ。",
+      "mythology": "人間シーシュポスと結婚した末の姉妹。最も暗いプレイアデスとされる。"
+    }
+  },
+  "Electra": {
+    "en": {
+      "designation": "17 Tauri",
+      "magnitude": 3.70,
+      "spectral": "B6IIIe",
+      "distance": 444,
+      "luminosity": 940,
+      "mass": 4.65,
+      "description": "Third-brightest star in the Pleiades; a blue-white giant visible to the naked eye.",
+      "mythology": "Mother of Dardanus by Zeus, ancestor of the Trojan royal line."
+    },
+    "ja": {
+      "designation": "17 Tauri",
+      "magnitude": 3.70,
+      "spectral": "B6IIIe",
+      "distance": 444,
+      "luminosity": 940,
+      "mass": 4.65,
+      "description": "プレイアデスで三番目に明るい青白色巨星。肉眼で観測可能。",
+      "mythology": "ゼウスとの間にダルダノスを生み、トロイア王家の祖となった。"
+    }
+  },
+  "Celaeno": {
+    "en": {
+      "designation": "16 Tauri",
+      "magnitude": 5.45,
+      "spectral": "B7IV",
+      "distance": 442,
+      "luminosity": 344,
+      "mass": 4.0,
+      "description": "Blue-white subgiant sometimes called 'the Lost Pleiad'.",
+      "mythology": "Bore Lycus and Nycteus to Poseidon; linked to the founding of Thebes."
+    },
+    "ja": {
+      "designation": "16 Tauri",
+      "magnitude": 5.45,
+      "spectral": "B7IV",
+      "distance": 442,
+      "luminosity": 344,
+      "mass": 4.0,
+      "description": "青白色準巨星。「失われたプレイアデス」と呼ばれることもある。",
+      "mythology": "ポセイドーンとの間にリュコスとニュクテウスをもうけ、テーバイ建国に関わる。"
+    }
+  },
+  "Maia": {
+    "en": {
+      "designation": "20 Tauri",
+      "magnitude": 3.87,
+      "spectral": "B8III",
+      "distance": 444,
+      "luminosity": 501,
+      "mass": 4.74,
+      "description": "Fourth-brightest Pleiad; a chemically peculiar giant surrounded by reflection nebula NGC 1432.",
+      "mythology": "Eldest of the seven sisters, mother of Hermes the messenger god by Zeus."
+    },
+    "ja": {
+      "designation": "20 Tauri",
+      "magnitude": 3.87,
+      "spectral": "B8III",
+      "distance": 444,
+      "luminosity": 501,
+      "mass": 4.74,
+      "description": "四番目に明るいプレイアデス。反射星雲NGC 1432に包まれた化学特異星。",
+      "mythology": "七姉妹の長女。ゼウスとの間に伝令神ヘルメースを生んだ。"
+    }
+  },
+  "Taygeta": {
+    "en": {
+      "designation": "19 Tauri",
+      "magnitude": 4.30,
+      "spectral": "B6IV",
+      "distance": 410,
+      "luminosity": 600,
+      "mass": 4.41,
+      "description": "Triple star system; the primary is a blue-white subgiant that has evolved off the main sequence.",
+      "mythology": "Bore Lacedaemon to Zeus, establishing the lineage of Sparta."
+    },
+    "ja": {
+      "designation": "19 Tauri",
+      "magnitude": 4.30,
+      "spectral": "B6IV",
+      "distance": 410,
+      "luminosity": 600,
+      "mass": 4.41,
+      "description": "三重星系。主星は主系列から進化した青白色準巨星。",
+      "mythology": "ゼウスとの間にラケダイモーンを生み、スパルタの王統を開いた。"
+    }
+  },
+  "Asterope": {
+    "en": {
+      "designation": "21 Tauri",
+      "magnitude": 5.76,
+      "spectral": "B8V",
+      "distance": 431,
+      "luminosity": 100,
+      "mass": 2.93,
+      "description": "Blue-white main-sequence star; part of the Sterope double star with 22 Tauri.",
+      "mythology": "Mother of King Oenomaus by Ares, the god of war."
+    },
+    "ja": {
+      "designation": "21 Tauri",
+      "magnitude": 5.76,
+      "spectral": "B8V",
+      "distance": 431,
+      "luminosity": 100,
+      "mass": 2.93,
+      "description": "青白色主系列星。22 Tauriと共にステロペ二重星を構成する。",
+      "mythology": "軍神アレースとの間にオイノマオス王を生んだとされる。"
+    }
+  },
+  "Sterope": {
+    "en": {
+      "designation": "22 Tauri",
+      "magnitude": 6.43,
+      "spectral": "A0V",
+      "distance": 444,
+      "luminosity": 40,
+      "mass": 2.3,
+      "description": "White main-sequence star; the fainter component of the Sterope double star.",
+      "mythology": "Shares mythology with Asterope; sometimes considered one and the same sister."
+    },
+    "ja": {
+      "designation": "22 Tauri",
+      "magnitude": 6.43,
+      "spectral": "A0V",
+      "distance": 444,
+      "luminosity": 40,
+      "mass": 2.3,
+      "description": "白色主系列星。ステロペ二重星の暗い方の成分。",
+      "mythology": "アステロペと同一視されることもある姉妹。"
+    }
+  }
+}

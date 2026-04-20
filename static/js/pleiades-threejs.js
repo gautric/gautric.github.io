@@ -22,8 +22,7 @@
     bgColor: 0xf5f5f5,
     borderRadius: '0',
 
-    // Drift animation
-    driftDuration: 5000,
+    // Fade
     fadeInDuration: 2000,
 
     // Star rendering multipliers
@@ -68,7 +67,7 @@
     labelScrambleDuration: 600,
     labelScrambleChars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789',
     labelScrambleCharsJa: 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン',
-    labelHitRadius: 0.6,
+    labelHitRadius: 0.01,
 
     // 3D parallax (drag)
     parallaxScale: 0.12,
@@ -232,6 +231,7 @@
 
   var Animations = {
     cardinal: {
+      duration: 5000,
       ease: easeOutQuart,
       init: function (star) {
         var dir = Math.floor(Math.random() * 4);
@@ -253,7 +253,103 @@
       }
     },
 
+    circleCardinal: {
+      duration: 5000,
+      ease: easeOutQuart,
+      init: function (star) {
+        var dir = Math.floor(Math.random() * 4);
+        var d = CONFIG.entryDistanceMin + Math.random() * CONFIG.entryDistanceRange;
+        var spread = (Math.random() - 0.5) * CONFIG.entrySpread;
+        switch (dir) {
+          case 0: star.startX = spread; star.startY =  d; break;
+          case 1: star.startX =  d;     star.startY = spread; break;
+          case 2: star.startX = spread; star.startY = -d; break;
+          default: star.startX = -d;    star.startY = spread; break;
+        }
+        var mx = (star.startX + star.targetX) / 2;
+        var my = (star.startY + star.targetY) / 2;
+        var dx = star.targetX - star.startX;
+        var dy = star.targetY - star.startY;
+        var sign = (Math.random() < 0.5) ? 1 : -1;
+        star.cpX = mx + sign * dy * 1.2;
+        star.cpY = my - sign * dx * 1.2;
+        setStarPosition(star, star.startX, star.startY);
+      },
+      update: function (star, eased, elapsed) {
+        var t = eased;
+        var inv = 1 - t;
+        var x = inv * inv * star.startX + 2 * inv * t * star.cpX + t * t * star.targetX;
+        var y = inv * inv * star.startY + 2 * inv * t * star.cpY + t * t * star.targetY;
+        setStarPosition(star, x, y);
+        applyStarOpacity(star, elapsed, computeEdgeFade(x, y));
+      }
+    },
+
+    whirlpoolCardinal: {
+      duration: 7000,
+      ease: easeOutQuart,
+      init: function (star) {
+        var angle = Math.random() * Math.PI * 2;
+        var dist = 12 + Math.random() * 6;
+        star.startX = Math.cos(angle) * dist;
+        star.startY = Math.sin(angle) * dist;
+        star.spiralRevs = 0.9 + Math.random() * 0.6;
+        star.spiralDir = (Math.random() < 0.5) ? 1 : -1;
+        star.spiralRadius = Math.sqrt(
+          (star.startX - star.targetX) * (star.startX - star.targetX) +
+          (star.startY - star.targetY) * (star.startY - star.targetY)
+        ) * 0.5;
+        star.spiralStartAngle = Math.atan2(
+          star.startY - star.targetY, star.startX - star.targetX
+        );
+        setStarPosition(star, star.startX, star.startY);
+      },
+      update: function (star, eased, elapsed) {
+        var t = eased;
+        var totalAngle = star.spiralDir * star.spiralRevs * Math.PI * 2;
+        var currentAngle = star.spiralStartAngle + totalAngle * t;
+        var radius = star.spiralRadius * (1 - t);
+        var x = star.targetX + Math.cos(currentAngle) * radius;
+        var y = star.targetY + Math.sin(currentAngle) * radius;
+        setStarPosition(star, x, y);
+        applyStarOpacity(star, elapsed, computeEdgeFade(x, y));
+      }
+    },
+
+    whirlpool: {
+      duration: 6000,
+      ease: easeOutQuart,
+      init: function (star) {
+        star.startX = 0;
+        star.startY = 0;
+        star.spiralDir = (Math.random() < 0.5) ? 1 : -1;
+        star.spiralRevs = 0.9 + Math.random() * 0.6;
+        star.spiralStartAngle = Math.random() * Math.PI * 2;
+        star.spiralRadius = Math.sqrt(
+          star.targetX * star.targetX + star.targetY * star.targetY
+        ) * (0.8 + Math.random() * 0.6);
+        star.spiralDelay = Math.random() * 0.3;
+        setStarPosition(star, 0, 0);
+      },
+      update: function (star, eased, elapsed) {
+        var t = Math.max(0, (eased - star.spiralDelay) / (1 - star.spiralDelay));
+        if (t <= 0) { setStarPosition(star, 0, 0); applyStarOpacity(star, elapsed, computeEdgeFade(0, 0)); return; }
+        if (t > 1) t = 1;
+        var totalAngle = star.spiralDir * star.spiralRevs * Math.PI * 2;
+        var currentAngle = star.spiralStartAngle + totalAngle * t;
+        var expand = t;
+        var cx = star.targetX * t;
+        var cy = star.targetY * t;
+        var radius = star.spiralRadius * expand * (1 - t);
+        var x = cx + Math.cos(currentAngle) * radius;
+        var y = cy + Math.sin(currentAngle) * radius;
+        setStarPosition(star, x, y);
+        applyStarOpacity(star, elapsed, computeEdgeFade(x, y));
+      }
+    },
+
     nope: {
+      duration: 0,
       ease: function (t) { return 1; },
       init: function (star) {
         star.startX = star.targetX;
@@ -268,7 +364,8 @@
     }
   };
 
-  var currentAnim = Animations.nope;
+  var animKeys = ['cardinal', 'circleCardinal', 'whirlpoolCardinal', 'whirlpool'];
+  var currentAnim = Animations[animKeys[Math.floor(Math.random() * animKeys.length)]];
 
   function buildStarEntry(star, scene) {
     var sizeCorrection = CONFIG.parallaxMedian / star.dist;
@@ -333,7 +430,8 @@
       requestAnimationFrame(animate);
       if (startTime < 0) startTime = now;
       var elapsed = now - startTime;
-      var progress = Math.min(elapsed / CONFIG.driftDuration, 1);
+      var duration = currentAnim.duration;
+      var progress = duration > 0 ? Math.min(elapsed / duration, 1) : 1;
       var eased = currentAnim.ease(progress);
 
       for (var i = 0; i < stars.length; i++) {
@@ -662,7 +760,84 @@
   };
 
   /* =============================================================
-     8. INIT — setup scene and start
+     8. STAR CARD — id card overlay on hover (fullscreen only)
+     ============================================================= */
+  var CARD_CSS =
+    'position:absolute;pointer-events:none;opacity:0;' +
+    'background:rgba(10,10,15,0.88);color:#e0e0e0;' +
+    'font-family:"Courier New",monospace;font-size:12px;' +
+    'padding:14px 18px;border-radius:6px;' +
+    'border:1px solid rgba(255,255,255,0.12);' +
+    'backdrop-filter:blur(6px);white-space:normal;' +
+    'transition:opacity 0.2s ease;line-height:1.6;' +
+    'width:250px;box-sizing:border-box';
+
+  var StarCard = {
+    el: null,
+    data: null,
+    active: null,
+
+    init: function (container) {
+      this.el = document.createElement('div');
+      this.el.style.cssText = CARD_CSS;
+      container.appendChild(this.el);
+
+      var self = this;
+      fetch('/js/pleiades-stars.json')
+        .then(function (r) { return r.json(); })
+        .then(function (d) { self.data = d; });
+    },
+
+    _row: function (label, value, unit) {
+      return '<span style="color:#888">' + label + '</span> ' +
+        value + (unit ? ' <span style="color:#666">' + unit + '</span>' : '');
+    },
+
+    show: function (star, lang) {
+      if (!this.data) return;
+      var info = this.data[star.name];
+      if (!info) return;
+      var d = info[lang] || info.en;
+
+      var nameStr = lang === 'ja' ? star.nameJa : star.name;
+      var html =
+        '<div style="font-size:16px;font-weight:bold;color:#fff;letter-spacing:2px;margin-bottom:6px">' +
+          nameStr.toUpperCase() +
+          ' <span style="font-size:11px;color:#888;font-weight:normal">' + d.designation + '</span>' +
+        '</div>' +
+        '<div style="color:#aaa;font-size:11px;font-style:italic;margin-bottom:8px">' +
+          d.mythology +
+        '</div>' +
+        '<div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:6px;font-size:11px">' +
+          this._row('Mag', d.magnitude) + '<br>' +
+          this._row('Type', d.spectral) + '<br>' +
+          this._row('Dist', d.distance, 'ly') + '<br>' +
+          this._row('Lum', d.luminosity, 'L☉') + '<br>' +
+          this._row('Mass', d.mass, 'M☉') +
+        '</div>' +
+        '<div style="border-top:1px solid rgba(255,255,255,0.1);margin-top:6px;padding-top:6px;color:#aaa;font-size:11px">' +
+          d.description +
+        '</div>';
+
+      this.el.innerHTML = html;
+      this.el.style.opacity = '1';
+      this.active = star.name;
+
+      this.el.style.right = '';
+      this.el.style.left = '14px';
+      this.el.style.top = '';
+      this.el.style.bottom = '14px';
+    },
+
+    hide: function () {
+      if (!this.active) return;
+      this.active = null;
+      this.el.style.opacity = '0';
+    }
+  };
+
+  /* =============================================================
+     9. INIT — setup scene and start
      ============================================================= */
   var container = document.getElementById('pleiades-container');
   if (!container) return;
@@ -700,6 +875,7 @@
   bgStars.points.material.opacity = 0;
   var stars = buildConstellation(scene);
   LabelDisplay.init(container, stars);
+  StarCard.init(container);
 
   var animateLoop = createLoop(renderer, scene, camera, stars, controls);
   requestAnimationFrame(animateLoop);
@@ -713,21 +889,23 @@
     // Hit test in screen space: project each star and compare pixel distance
     var hit = null;
     var hitDist = Infinity;
-    var hitRadius = CONFIG.labelHitRadius * rect.width / 10; // convert world units to approx pixels
     for (var i = 0; i < stars.length; i++) {
       var s = stars[i];
       var p = projectStar(s, camera, renderer.domElement);
       var dx = mx - p.x;
       var dy = my - p.y;
       var dist = Math.sqrt(dx * dx + dy * dy);
-      var radius = Math.max(hitRadius, s.haloScale * 0.5 * rect.width / 10);
-      if (dist < radius && dist < hitDist) { hit = s; hitDist = dist; }
+      if (dist < 10 && dist < hitDist) { hit = s; hitDist = dist; }
     }
 
     if (hit) {
       LabelDisplay.showHover(hit);
+      if (isFullscreen()) {
+        StarCard.show(hit, LabelDisplay.lang);
+      }
     } else {
       LabelDisplay.hideHover();
+      StarCard.hide();
     }
   }
 
@@ -735,7 +913,7 @@
     if (e.buttons > 0) return;
     onMouseMove(e);
   });
-  renderer.domElement.addEventListener('mouseleave', function () { LabelDisplay.hideHover(); });
+  renderer.domElement.addEventListener('mouseleave', function () { LabelDisplay.hideHover(); StarCard.hide(); });
   window.addEventListener('keydown', function (e) {
     if (e.key === 'j' || e.key === 'J') { LabelDisplay.toggleLang(); }
     if (e.key === 'r' || e.key === 'R') { controls.reset(); LabelDisplay.hideHover(); }
@@ -759,6 +937,8 @@
   }
 
   document.addEventListener('fullscreenchange', function () {
+    controls.enableZoom = isFullscreen();
+    if (!isFullscreen()) StarCard.hide();
     resize();
     if (!isFullscreen()) animateLoop.restart();
   });
