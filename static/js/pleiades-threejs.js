@@ -346,7 +346,7 @@
   var LABEL_CSS = 'position:absolute;pointer-events:none;opacity:0;' +
     'font-family:"Courier New",monospace;font-size:14px;letter-spacing:3px;' +
     'color:#222;text-transform:uppercase;white-space:nowrap;' +
-    'border-bottom:0.5px solid #222;padding-bottom:1px';
+    'padding-bottom:1px';
 
   /**
    * LabelUnit — manages a label (DOM div), segment (SVG line from star
@@ -386,11 +386,11 @@
         }
         el.style.top = ly + 'px';
 
-        var underlineY = ly + el.offsetHeight - 0.5;
+        var centerY = ly + el.offsetHeight / 2;
         segment.setAttribute('x1', sx);
         segment.setAttribute('y1', sy);
         segment.setAttribute('x2', lx);
-        segment.setAttribute('y2', underlineY);
+        segment.setAttribute('y2', centerY);
       },
 
       /** Show label + segment */
