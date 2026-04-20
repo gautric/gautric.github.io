@@ -1,7 +1,7 @@
 ---
 title: "De WordPress à Hugo — La migration de sarfrance.org avec Claude via Kiro"
 date: 2026-03-17
-draft: false
+categories: ["blog"]
 tags: ["hugo", "aws", "github", "wordpress", "migration", "genAI", "kiro", "claude", "anthropic", "fr"]
 ---
 

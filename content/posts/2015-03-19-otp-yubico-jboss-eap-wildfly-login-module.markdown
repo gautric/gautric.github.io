@@ -1,9 +1,8 @@
 ---
-title:  "Yubico OTP et JBoss EAP 6 ou Wildfly 8"
-date:   2015-03-19
+title: "Yubico OTP et JBoss EAP 6 ou Wildfly 8"
+date: 2015-03-19
 categories: ["blog"]
-tags: ["fr","otp","yubico","yubikey","jboss","eap","wildfly"]
-#url: /blog/2015/03/19/otp-yubico-jboss-eap-wildfly-login-module.html
+tags: ["fr", "otp", "yubico", "yubikey", "jboss", "eap", "wildfly"]
 ---
 
 # Intégration de l'authentification forte avec Yubikey dans JBoss

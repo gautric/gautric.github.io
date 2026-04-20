@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Wildfly 9.0 Offline CLI and HTTP/2"
-date:   2015-07-03 13:58:00
+title: "Wildfly 9.0 Offline CLI and HTTP/2"
+date: 2015-07-03 13:58:00
 categories: ["blog"]
-tags: ["en","wildfly","Offline","CLI","HTTP/2","JDK8"]
-#url: /blog/2015/07/03/wildfly-offline-cli-http-2.html
+tags: ["en", "wildfly", "Offline", "CLI", "HTTP/2", "JDK8"]
 ---
 
 The Wildfly community has released [**Wildfly 9.0.0.Final**](http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/). As mentioned in a [previous post about Wildfly](/blog/2015/05/04/wildfly-9-CR01-released-sortie.html), this version brings several notable features. Two of them combine well: **offline CLI** and **HTTP/2** support. In a datacenter context, the initial configuration should ideally happen without starting the full process or opening unnecessary ports. This post shows how to set up HTTP/2 using offline mode — useful for starting a JBoss instance with HTTP/2 already enabled.

@@ -1,8 +1,8 @@
 ---
-title:  "Activate & Deactivate PoE Camera via Cisco Router"
-date:   2025-04-06 09:00:00
+title: "Activate & Deactivate PoE Camera via Cisco Router"
+date: 2025-04-06 09:00:00
 categories: ["blog"]
-tags: ["en","Cisco","PoE","WebCam"]
+tags: ["en", "Cisco", "PoE", "WebCam"]
 ---
 
 In this post, we'll explore how to activate or deactivate a surveillance camera via a Cisco router using Power over Ethernet (PoE) functionality. I've implemented a DIY surveillance installation at home using a PoE camera connected to a Cisco Small Business router. Specifically, I'm using the [Cisco Smart Switch SG250-10P](https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO), which offers robust PoE capabilities that allow you to control power delivery to connected devices.

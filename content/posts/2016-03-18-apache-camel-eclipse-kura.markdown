@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Camel is going into Eclipse Kura"
-date:   2016-03-18 14:00:00
+title: "Camel is going into Eclipse Kura"
+date: 2016-03-18 14:00:00
 categories: ["blog"]
 tags: ["en", "Eclipse", "Kura", "Camel"]
-#url: /blog/2016/03/18/apache-camel-eclipse-kura.html
 ---
 
 Today, I am going to talk about some exciting news in the IoT development world. This is a technical post, but without any code samples or hardware setup instructions. The [Eclipse Kura Project](http://www.eclipse.org/kura/) has accepted a [GitHub Pull Request](https://github.com/eclipse/kura/pull/72) that introduces a powerful new component to the `develop` branch. This new component is the [Camel Framework](http://camel.apache.org) from the [Apache Foundation](http://apache.org/).

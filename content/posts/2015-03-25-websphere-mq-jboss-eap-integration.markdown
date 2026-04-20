@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Best Practices Websphere MQ/JBoss EAP 6"
-date:   2015-03-25 13:58:00
+title: "Best Practices Websphere MQ/JBoss EAP 6"
+date: 2015-03-25 13:58:00
 categories: ["blog"]
 tags: ["fr", "jboss", "eap", "wildfly", "websphereMQ", "JCA"]
-#url: /blog/2015/03/25/websphere-mq-jboss-eap-integration.html
 ---
 
 # Intégration de WebSphere MQ avec JBoss EAP 6 : bonnes pratiques

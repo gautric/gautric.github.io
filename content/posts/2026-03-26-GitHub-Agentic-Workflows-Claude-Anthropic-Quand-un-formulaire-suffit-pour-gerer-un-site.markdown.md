@@ -2,8 +2,8 @@
 title: "GitHub Agentic Workflows & Claude Anthropic — Quand un formulaire suffit pour gérer un site"
 date: 2026-03-26
 description: "Retour d'expérience sur la mise en place d'un workflow agentique pour automatiser l'ajout d'événements à l'agenda du site SAR France. Du formulaire GitHub Issues à la publication, en passant par un agent Claude qui valide, corrige et géocode — le tout prompté à 99%."
+categories: ["blog"]
 tags: ["github", "agentic-workflows", "claude", "hugo", "automation", "ai"]
-draft: false
 ---
 
 ## Le contexte

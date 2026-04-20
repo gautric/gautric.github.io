@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Keycloak, les clefs Yubico et le standard Webauthn"
-date:   2020-10-26 15:00:00
-tags: ["fr" ,"Keycloak", "Yubico" ,"2fa", "webauthn"]
+title: "Keycloak, les clefs Yubico et le standard Webauthn"
+date: 2020-10-26 15:00:00
 categories: ["blog"]
-##url: /blog/2020/10/26/Keycloak-Yubico-WebAuthn.html
+tags: ["fr", "Keycloak", "Yubico", "2fa", "webauthn"]
 ---
 
 Depuis quelque temps j'interviens chez mes clients afin de mener des études d'architecture autour de Keycloak/RHSSO. Comme son nom l'indique, il s'agit d'une solution de [SSO](https://en.wikipedia.org/wiki/Single_sign-on) c'est à dire d'un système unique d'authentification et d'authorisation. Le projet Keycloak a débuté en 2014 et est donc relativement mature, la communauté autour de ce projet est très importante et continue de croître, ce qui en fait une solution fiable et pérenne pour la gestion des identités.

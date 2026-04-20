@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "UNESCO Challenge, point UNESCO, Le Havre"
-date:   2015-08-04 13:58:00
+title: "UNESCO Challenge, point UNESCO, Le Havre"
+date: 2015-08-04 13:58:00
 categories: ["blog"]
-tags: ["en","UNESCO","challenge","miscellaneous","voyage"]
-#url: /blog/2015/08/04/UNESCO-challenge-point-UNESCO-Havre.html
+tags: ["en", "UNESCO", "challenge", "miscellaneous", "voyage"]
 ---
 
 Le Havre (Seine-Maritime, France) is a **UNESCO World Heritage Site**, visited during a work assignment in the city.

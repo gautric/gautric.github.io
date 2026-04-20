@@ -1,9 +1,8 @@
 ---
-title:  "Pattern Découpler la Réception et Utilisation des Signaux avec jBPM & Drools"
-date:   2021-09-26 15:00:00
+title: "Pattern Découpler la Réception et Utilisation des Signaux avec jBPM & Drools"
+date: 2021-09-26 15:00:00
 categories: ["blog"]
-tags: ["fr","jBPM","Drools","Pattern","Signal","Reception"]
-##url: /blog/2021/09/26/Pattern-Signal-jBPM.html
+tags: ["fr", "jBPM", "Drools", "Pattern", "Signal", "Reception"]
 ---
 
 Pour mon activité professionnelle, je me déplace[^2020] chez les clients afin d'expertiser les solutions qu'ils mettent en place dans leur système d'information et notamment le produit [RHPAM](https://developers.redhat.com/products/rhpam/overview)[^jbpm]. Pour le compte d'un client donc, j'ai travaillé sur les processus métiers qu'il a mis en place chez lui. Ces processus de type BPMN permettent de gérer des processus de gestion sur lesquels nous n'allons pas nous étendre ici. Nous allons plutôt nous concentrer sur un patron de conception particulièrement intéressant tant par sa fonctionnalité que par son implémentation technique.

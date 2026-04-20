@@ -1,10 +1,8 @@
 ---
-layout: post
-title:  "MQTTiser l'API Autolib avec Node-Red"
-date:   2018-04-21 15:00:00
+title: "MQTTiser l'API Autolib avec Node-Red"
+date: 2018-04-21 15:00:00
 categories: ["blog"]
-tags: ["fr","MQTT", "node-red", "flow", "api", "Paris", "Autolib"]
-##url: /blog/2018/04/21/MQTTiser-l-API-Autolib-avec-Node-Red.html
+tags: ["fr", "MQTT", "node-red", "flow", "api", "Paris", "Autolib"]
 ---
 
 {{< notice warning >}}

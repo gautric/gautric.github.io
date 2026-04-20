@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Exécution d'un moteur de KYC en DMN avec Kogito"
-date:   2020-06-06 15:00:00
+title: "Exécution d'un moteur de KYC en DMN avec Kogito"
+date: 2020-06-06 15:00:00
 categories: ["blog"]
-tags: ["fr","DMN","Kogito", "KYC"]
-##url: /blog/2020/06/06/Execution-d'un-KYC-en-DMN.html
+tags: ["fr", "DMN", "Kogito", "KYC"]
 ---
 
 Dans le précédent [post sur ce blog](/blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html) nous avons vu rapidement comment créer sa définition et modélisation des règles d'un KYC basé sur le standard [DMN](https://fr.wikipedia.org/wiki/Decision_Model_and_Notation). Nous allons voir comment faire tourner cet exemple et exécuter sur un moteur implémentant le standard DMN. Cette approche permet de passer d'une modélisation théorique à une implémentation concrète et fonctionnelle.

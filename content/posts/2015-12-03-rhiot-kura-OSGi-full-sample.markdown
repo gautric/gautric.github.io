@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Rhiot Kura Gateway Sample (Emulator & RaspberryPi) "
-date:   2015-12-03 14:00:00
+title: "Rhiot Kura Gateway Sample (Emulator & RaspberryPi) "
+date: 2015-12-03 14:00:00
 categories: ["blog"]
 tags: ["en", "rhiot", "RaspberryPi", "Kura", "Gateway"]
-#url: /blog/2015/12/03/rhiot-kura-OSGi-full-sample.html
 ---
 
 For a while, I have been developing during my free time for the [Rhiot project](http://rhiot.io) with my Red Hat colleague [Henryk](http://henryk-konsek.blogspot.fr/). We started by developing several [Camel components](http://camel.apache.org/components.html#Components-ExternalComponents) such as kura, pi4j, and bluetooth with other volunteers. Now we are focusing on developing and integrating these components for the [Kura Platform](http://www.eclipse.org/kura/). Kura is an [OSGi Platform](http://www.osgi.org) designed specifically for IoT, capable of running on RaspberryPi, BeagleBone, or Intel Edison devices.

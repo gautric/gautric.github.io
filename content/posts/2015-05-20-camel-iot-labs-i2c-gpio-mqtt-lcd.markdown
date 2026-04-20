@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Camel IoT Labs i2c gpio mqtt lcd"
-date:   2015-05-20 13:58:00
+title: "Camel IoT Labs i2c gpio mqtt lcd"
+date: 2015-05-20 13:58:00
 categories: ["blog"]
-tags: ["en", "apache", "camel","camellabs","raspberry pi","i2c","lcd","mqtt","IoT"]
-#url: /blog/2015/05/20/camel-iot-labs-i2c-gpio-mqtt-lcd.html
+tags: ["en", "apache", "camel", "camellabs", "raspberry pi", "i2c", "lcd", "mqtt", "IoT"]
 ---
 
 One month ago, Henryk, Claus and the author started the **Camel Labs** project. This project provides new components for the IoT community based on **Apache Camel**. These components connect electronic devices (I2C, SPI, GPIO, Tinkerforge) and cloud services (PubNub, Cloudlet, MQTT) together. This lab demonstrates how to build an end-to-end IoT integration with **I2C** devices, an **MQTT** broker, and an **I2C LCD** display using just a few lines of code.

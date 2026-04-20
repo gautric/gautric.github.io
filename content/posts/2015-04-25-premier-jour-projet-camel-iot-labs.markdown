@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Les premiers jours du projet Camel IoT Labs"
-date:   2015-04-25 13:58:00
+title: "Les premiers jours du projet Camel IoT Labs"
+date: 2015-04-25 13:58:00
 categories: ["blog"]
 tags: ["fr", "camel", "IoT", "RaspberryPi", "pi4j", "DeviceIO", "Tinkerforge", "Kura"]
-#url: /blog/2015/04/25/premier-jour-projet-camel-iot-labs.html
 ---
 
 L'**Internet des Objets** (IoT) prend une place croissante dans l'industrie informatique et au-delà. Des montres connectées [Withings](http://www.withings.com/fr/withings-activite.html) aux [Raspberry Pi](http://raspberrypi.org) vendus à plus de 5 millions d'unités, en passant par les cartes [Arduino](http://www.arduino.cc/) à bas coût et les modules [Tessel](https://tessel.io/), la baisse du coût de production des composants électroniques a permis une large diffusion de ces technologies.

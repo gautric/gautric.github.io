@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian"
-date:   2016-01-29 13:58:00
+title: "UNESCO Challenge, point UNESCO, Maritime Greenwich, Prime Meridian"
+date: 2016-01-29 13:58:00
 categories: ["blog"]
 tags: ["fr", "UNESCO", "challenge", "miscellaneous", "voyage"]
-#url: /blog/2016/01/29/UNESCO-Challenge-Maritime-Greenwich-Prime-Meridian.html
 ---
 
 En ce début d'année 2016, je me suis rendu à Londres avec Madame. Nous avons pris le temps d'aller voir le Méridien de Greenwich qui est le méridien 0°. Ce lieu historique, situé dans le quartier de Greenwich au sud-est de Londres, représente un point de référence fondamental pour la navigation et la cartographie mondiale.

@@ -1,12 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Premier post"
-date:   2015-03-10 18:02:10
+title: "Premier post"
+date: 2015-03-10 18:02:10
 categories: ["blog"]
-tags: ["en","fr","ja","divers"]
-#url: /blog/2015/03/10/premier-post.html
-draft: false
+tags: ["en", "fr", "ja", "divers"]
 ---
 
 ## Français

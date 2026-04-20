@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Lancement de JBoss EAP 7"
-date:   2016-06-27 14:00:00
+title: "Lancement de JBoss EAP 7"
+date: 2016-06-27 14:00:00
 categories: ["blog"]
 tags: ["fr", "JBoss", "redhat", "EAP7"]
-#url: /blog/2016/06/27/Lancement-JBoss-EAP-7.html
 ---
 
 Cela fait exactement 5 ans que je travaille pour [Red Hat](https://www.redhat.com) et pour mon cadeau d'anniversaire [Red Hat](https://www.redhat.com) vient de sortir sa nouvelle version de son serveur d'application phare à savoir [JBoss EAP 7](https://en.wikipedia.org/wiki/JBoss_Enterprise_Application_Platform).

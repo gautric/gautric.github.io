@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Sortie de wildfly 9.0 CR-01"
-date:   2015-05-04 13:58:00
+title: "Sortie de wildfly 9.0 CR-01"
+date: 2015-05-04 13:58:00
 categories: ["blog"]
 tags: ["fr", "wildfly"]
-#url: /blog/2015/05/04/wildfly-9-CR01-released-sortie.html
 ---
 
 La release candidate 01 de **Wildfly 9.0.0** est sortie ce samedi. Elle est disponible en [téléchargement ici](http://wildfly.org/downloads/). Cette version corrige un certain nombre de bugs et apporte de nouvelles fonctionnalités présentées ci-dessous. Elle représente une étape importante avant la sortie finale, avec des améliorations en termes de performances et de stabilité. Des exemples complets seront publiés ultérieurement.

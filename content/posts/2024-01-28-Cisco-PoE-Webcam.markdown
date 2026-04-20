@@ -1,9 +1,8 @@
 ---
-title:  "Activer & Désactiver sa camera PoE via son routeur Cisco"
-date:   2024-01-28 09:00:00
-#categories: ["blog"]
-tags: ["fr","Cisco","PoE","WebCam"]
-#url: /blog/2024/01/28/activer-desactiver-sa-camera-poe-via-son-routeur-cisco
+title: "Activer & Désactiver sa camera PoE via son routeur Cisco"
+date: 2024-01-28 09:00:00
+categories: ["blog"]
+tags: ["fr", "Cisco", "PoE", "WebCam"]
 ---
 
 Dans cet article, nous allons découvrir comment activer ou désactiver une caméra via un routeur Cisco. Chez moi, j'ai mis en place une installation permettant la télésurveillance en mode DIY. J'utilise une caméra en mode PoE avec un routeur Small Business de la marque Cisco. Plus précisément, il s'agit du [Cisco Commutateur Intelligent SG250-10P](https://www.amazon.fr/Cisco-SG250-10P-10-Ports-Gigabit-Switch/dp/B01GZ1VXYO), qui offre la fonctionnalité PoE (Power over Ethernet) permettant d'alimenter des périphériques directement via le câble réseau, éliminant ainsi le besoin d'une alimentation séparée.

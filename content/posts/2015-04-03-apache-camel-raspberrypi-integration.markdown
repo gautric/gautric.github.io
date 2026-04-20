@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Apache Camel RaspberryPi PoC"
-date:   2015-04-03 13:58:00
+title: "Apache Camel RaspberryPi PoC"
+date: 2015-04-03 13:58:00
 categories: ["blog"]
 tags: ["en", "apache", "camel", "raspberry pi", "ProofOfConcept"]
-#url: /blog/2015/04/03/apache-camel-raspberrypi-integration.html
 ---
 
 # Integrating Apache Camel with Raspberry Pi for IoT

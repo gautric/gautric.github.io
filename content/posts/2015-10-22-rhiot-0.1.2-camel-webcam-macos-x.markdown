@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "RHIoT 0.1.2 Webcam component on MacOS X in Groovy"
-date:   2015-10-22 13:58:00
+title: "RHIoT 0.1.2 Webcam component on MacOS X in Groovy"
+date: 2015-10-22 13:58:00
 categories: ["blog"]
 tags: ["en", "rhiot", "MacOS X", "camel", "webcam", "groovy"]
-#url: /blog/2015/10/22/rhiot-0.1.2-camel-webcam-macos-x.html
 ---
 
 My tech leader on [RHIoT project](http://rhiot.io) (ex-camellabs) [Henryk](http://henryk-konsek.blogspot.fr/2015/10/rhiot-012-is-out.html) had just release the last version of RHIoT project : 0.1.2.

@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Camel XML XPath XSLT Aggregator"
-date:   2016-12-03 15:00:00
+title: "Camel XML XPath XSLT Aggregator"
+date: 2016-12-03 15:00:00
 categories: ["blog"]
-tags: ["en","Camel","XML","XPath","XSLT","Aggregator","Route"]
-##url: /blog/2016/12/03/Camel-XML-XsltAggregationStrategy.html
+tags: ["en", "Camel", "XML", "XPath", "XSLT", "Aggregator", "Route"]
 ---
 
 This month I went to [Greece](https://en.wikipedia.org/wiki/Greece) for a customer of mine. I worked at Athens on [Camel](http://camel.apache.org/) integration with Mainframe legacy systems. The customer wanted to use XML message format throughout the entire Camel route process. Their primary goal was to reuse some Camel routes as new service components, allowing for greater flexibility and modularity in their integration architecture.

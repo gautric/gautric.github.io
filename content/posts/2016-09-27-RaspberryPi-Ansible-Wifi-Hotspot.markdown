@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Setup a Hotspot Wifi with Ansible into a RaspberryPi 3"
-date:   2016-09-27 15:00:00
+title: "Setup a Hotspot Wifi with Ansible into a RaspberryPi 3"
+date: 2016-09-27 15:00:00
 categories: ["blog"]
-tags: ["en","RaspberryPi","Ansible","Wifi","HOWTO","Hotspot"]
-##url: /blog/2016/09/27/RaspberryPi-Ansible-Wifi-Hotspot.html
+tags: ["en", "RaspberryPi", "Ansible", "Wifi", "HOWTO", "Hotspot"]
 ---
 
 This September, RaspberryPi foundation has sold [ten (10) Millions of unit](https://www.raspberrypi.org/blog/ten-millionth-raspberry-pi-new-kit/). This small computer is amazing, you can setup very quickly several cool IoT projects. Since 2012, I bought all versions [(B 256Mo, B 512Mo, B+, 2B, 3B)](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications) of RaspberryPi. I am a big fan of this product and you can find into [this blog](/blog/) some projects I've made on top of this little computer.

@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "RHIoT Webcam and websocket components on MacbookPro in Groovy"
-date:   2015-10-23 13:58:00
+title: "RHIoT Webcam and websocket components on MacbookPro in Groovy"
+date: 2015-10-23 13:58:00
 categories: ["blog"]
 tags: ["en", "rhiot", "MacbookPro", "camel", "webcam", "websocket", "groovy", "javafx"]
-#url: /blog/2015/10/23/rhiot-camel-webcam-websocket-macbookpro.html
 ---
 
 Yesterday, we've played with our MacBook Pro's webcam. Today, we gonna see how to send images through a websocket

@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Leshan et le standard Lightweight M2M à l'EclipseCon"
-date:   2015-07-01 13:58:00
+title: "Leshan et le standard Lightweight M2M à l'EclipseCon"
+date: 2015-07-01 13:58:00
 categories: ["blog"]
-tags: ["fr","eclipsecon","CoAP","leshan","M2M","lightweight","Toulouse"]
-#url: /blog/2015/07/01/EclipseCon-Toulouse-leshan-OMA-Lightweight-M2M-LWM2M.html
+tags: ["fr", "eclipsecon", "CoAP", "leshan", "M2M", "lightweight", "Toulouse"]
 ---
 
 # Découverte du protocole LWM2M pour l'Internet des Objets

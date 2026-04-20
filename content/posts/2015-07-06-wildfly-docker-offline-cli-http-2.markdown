@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2"
-date:   2015-07-09 13:58:00
+title: "Wildfly 9.0 w/ Docker, Offline CLI and HTTP/2"
+date: 2015-07-09 13:58:00
 categories: ["blog"]
-tags: ["en","wildfly","Docker","Offline","CLI","HTTP/2","JDK8"]
-#url: /blog/2015/07/09/wildfly-docker-offline-cli-http-2.html
+tags: ["en", "wildfly", "Docker", "Offline", "CLI", "HTTP/2", "JDK8"]
 ---
 
 Following the release of [**Wildfly 9.0.0.Final**](http://wildfly.org/news/2015/07/02/WildFly9-Final-Released/) and the [previous post on enabling HTTP/2 via offline CLI](/blog/2015/07/03/wildfly-offline-cli-http-2.html), this article covers the same setup inside a **Docker** container. Docker simplifies middleware infrastructure deployment: open source, rich CLI tooling, automated build process, and straightforward runtime management.

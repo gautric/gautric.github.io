@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "SSH to MacOS X (El Capitan) through iCloud tunnel"
-date:   2015-10-03 13:58:00
+title: "SSH to MacOS X (El Capitan) through iCloud tunnel"
+date: 2015-10-03 13:58:00
 categories: ["blog"]
-tags: ["en","MacOS", "SSH", "tunnel", "iCloud", "El-Capitan"]
-#url: /blog/2015/10/03/macos-x-el-capitan-ssh-tunnel-icould.html
+tags: ["en", "MacOS", "SSH", "tunnel", "iCloud", "El-Capitan"]
 ---
 
 {{< notice warning >}}

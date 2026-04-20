@@ -1,9 +1,8 @@
 ---
-title:  "AWS SSM, Ansible et Raspberry Pi via SSH"
-date:   2024-01-15 09:00:00
+title: "AWS SSM, Ansible et Raspberry Pi via SSH"
+date: 2024-01-15 09:00:00
 categories: ["blog"]
-tags: ["fr","AWS","RaspberryPi","SSM","Ansible","SSH"]
-##url: /blog/2024/01/15/AWS-SSM-and-RaspberryPi-SSH.html
+tags: ["fr", "AWS", "RaspberryPi", "SSM", "Ansible", "SSH"]
 ---
 
 Dans ce nouvel article de 2024, découvrez comment AWS Systems Manager (SSM) s'intègre de manière utile avec le Raspberry Pi (testé avec les modèles 3, Zero et 5). Explorez les possibilités de cette combinaison, idéale pour les projets d'informatique personnelle décentralisée. Que vous soyez un passionné du Cloud, un amateur d'IoT ou simplement curieux, cet article vous réserve des surprises !

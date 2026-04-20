@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Java Regex Group Name"
-date:   2015-06-18 13:58:00
+title: "Java Regex Group Name"
+date: 2015-06-18 13:58:00
 categories: ["blog"]
-tags: ["fr","java","regex","group name"]
-#url: /blog/2015/06/18/java-regex-name-group.html
+tags: ["fr", "java", "regex", "group name"]
 ---
 
 

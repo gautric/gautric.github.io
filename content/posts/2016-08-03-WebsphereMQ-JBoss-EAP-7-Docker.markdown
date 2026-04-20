@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "JBoss EAP 7 connected to WebsphereMQ running on Docker"
-date:   2016-08-03 14:00:00
+title: "JBoss EAP 7 connected to WebsphereMQ running on Docker"
+date: 2016-08-03 14:00:00
 categories: ["blog"]
 tags: ["en", "JBoss", "redhat", "EAP7", "WebsphereMQ", "Docker"]
-##url: /blog/2016/08/03/WebsphereMQ-JBoss-EAP-7-Docker.html
 ---
 
 Last year for a previous customer I wrote an article/post about [WebsphereMQ Best Practice with JBoss EAP 6](/blog/2015/03/26/websphere-mq-jboss-eap-integration-english-version.html). Today we will make almost the same setup but with JBoss EAP 7, WebsphereMQ Sample IVT application, and both running on Docker. This tutorial demonstrates how to configure and connect these enterprise technologies in a containerized environment. I assume you have basic knowledge of Docker commands and concepts.

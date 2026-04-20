@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Device IO and i2cdetect implementation"
-date:   2016-03-09 14:00:00
+title: "Device IO and i2cdetect implementation"
+date: 2016-03-09 14:00:00
 categories: ["blog"]
 tags: ["en", "RaspberryPi", "DIO", "DeviceIO", "I2C", "API"]
-#url: /blog/2016/03/09/rhiot-Device-IO-API-i2cdetect-impl.html
 ---
 
 Today, we're going to implement a quick tool available on the RaspberryPi using Java [Device IO API](https://wiki.openjdk.java.net/display/dio/Main). The `i2cdetect` utility is a simple [I²C](https://en.wikipedia.org/wiki/I%C2%B2C) device scanner for your RaspberryPi that browses all I²C addresses to find which I²C devices are connected to your board. This tutorial demonstrates how to recompile the Device IO API and implement the `i2cdetect` functionality in Java, providing a platform-independent way to interact with I²C devices.

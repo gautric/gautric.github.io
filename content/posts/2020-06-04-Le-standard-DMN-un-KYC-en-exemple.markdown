@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Le standard DMN, un KYC en exemple"
-date:   2020-06-04 15:00:00
+title: "Le standard DMN, un KYC en exemple"
+date: 2020-06-04 15:00:00
 categories: ["blog"]
-tags: ["fr","DMN","standard", "KYC"]
-##url: /blog/2020/06/04/Le-standard-DMN-un-KYC-en-exemple.html
+tags: ["fr", "DMN", "standard", "KYC"]
 ---
 
 Pendant un certain temps les moteurs de règles étaient fortement dépendant des fournisseurs de solution. Mais depuis que le standard DMN pour Decision Model and Notation est maintenant disponible l'ensemble des éditeurs Opensource ou Closed Source fournissent une implémentation de ce standard.

@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "How to manage Exception inside a jBPM WorkItemHandler custom component"
-date:   2020-10-28 15:00:00
+title: "How to manage Exception inside a jBPM WorkItemHandler custom component"
+date: 2020-10-28 15:00:00
 categories: ["blog"]
-tags: ["en" ,"jBPM", "WorkItemHandler", "Exception"]
-##url: /blog/2020/10/28/How-to-manage-Exception-inside-jBPM.html
+tags: ["en", "jBPM", "WorkItemHandler", "Exception"]
 ---
 
 When we develop a BPMN process we have to handle correctly Error. An Error can be raised by any component during the processus instance and specially into a Work Item Handler node. This kind of node in jBPM is a Java component implementing the WorkItemHandler interface. Usually in Java program we manage error via Exception mechanism.

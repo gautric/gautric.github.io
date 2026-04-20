@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Rhiot Kura Device IO GPIO and I2C"
-date:   2016-02-29 14:00:00
+title: "Rhiot Kura Device IO GPIO and I2C"
+date: 2016-02-29 14:00:00
 categories: ["blog"]
 tags: ["en", "rhiot", "RaspberryPi", "Kura", "Gateway", "DIO", "DeviceIO", "I2C", "API"]
-#url: /blog/2016/02/29/rhiot-kura-OSGi-Device-IO-API.html
 ---
 
 Recently, a colleague of mine asked me to implement a small demonstration project. I decided to develop a new component for the Rhiot project. This component is the [DeviceIO](http://openjdk.java.net/projects/dio/) [I2C](https://en.wikipedia.org/wiki/I%C2%B2C) [Camel](http://camel.apache.org) component, which builds upon my previous work on Camel-pi4j that I had already developed for the Rhiot project. In this article, we'll explore how to use this component within the Kura Platform via the Camel Framework. For this demonstration, we'll need some hardware devices, specifically a [RaspberryPi](https://www.raspberrypi.org/) and an [ActiveMQ](http://activemq.apache.org/) broker.

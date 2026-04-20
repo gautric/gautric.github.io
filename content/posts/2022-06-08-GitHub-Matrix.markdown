@@ -1,9 +1,8 @@
 ---
-title:  "Quarkus & Java 11-17 et GitHub Action feat. Matrix"
-date:   2022-06-08 15:00:00
+title: "Quarkus & Java 11-17 et GitHub Action feat. Matrix"
+date: 2022-06-08 15:00:00
 categories: ["blog"]
-tags: ["fr","Java","CI/CD","Quarkus"]
-##url: /blog/2022/06/08/GitHub-Matrix.html
+tags: ["fr", "Java", "CI/CD", "Quarkus"]
 ---
 
 La construction des applications modernes et dites cloud natives passent obligatoirement par la case CI/CD. Les pipelines de type GitHub Action d'applications permettent de standardiser les processus de constructions, de tests, de versionning ainsi que de déploiement des applications. L'avantage des pipelines de constructions est le rapide feedback aux développeurs des erreurs dans la chaîne de traitement. Ainsi, il est facile de modifier un élément de configuration pour voir le résultat. 

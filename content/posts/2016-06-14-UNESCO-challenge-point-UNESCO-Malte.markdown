@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "UNESCO Challenge, point UNESCO, Malte - Malta"
-date:   2016-06-14 13:58:00
+title: "UNESCO Challenge, point UNESCO, Malte - Malta"
+date: 2016-06-14 13:58:00
 categories: ["blog"]
-tags: ["fr", "UNESCO", "challenge", "miscellaneous","voyage"]
-#url: /blog/2016/06/14/UNESCO-challenge-point-UNESCO-Malte.html
+tags: ["fr", "UNESCO", "challenge", "miscellaneous", "voyage"]
 ---
 
 Récemment, je suis parti à Malte avec Madame, ce petit pays en taille possède un riche patrimoine culturel.

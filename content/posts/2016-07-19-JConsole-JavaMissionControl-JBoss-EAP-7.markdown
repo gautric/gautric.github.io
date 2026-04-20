@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "JConsole & Java Mission Control with JBoss EAP 7"
-date:   2016-07-19 14:00:00
+title: "JConsole & Java Mission Control with JBoss EAP 7"
+date: 2016-07-19 14:00:00
 categories: ["blog"]
 tags: ["en", "JBoss", "redhat", "jvm", "jmc"]
-#url: /blog/2016/07/19/JConsole-JavaMissionControl-JBoss-EAP-7.html
 ---
 
 During Red Hat summit, [Red Hat releases the new version of its JBoss Application Server](http://middlewareblog.redhat.com/2016/06/27/announcing-jboss-eap-7/#more-432). JBoss App Server provides a new JMX Remote Management protocol to connect with. A common JMX tool is [JConsole](http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html) and we will see how to use it with remote mode. We also configure an other tool called [Java Mission Control](http://www.oracle.com/technetwork/java/javaseproducts/mission-control/java-mission-control-1998576.html) for a cooler JMX monitoring solution. These tools provide powerful capabilities for monitoring and troubleshooting Java applications in production environments.

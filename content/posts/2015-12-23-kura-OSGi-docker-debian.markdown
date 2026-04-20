@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Kura over Docker"
-date:   2015-12-23 14:00:00
+title: "Kura over Docker"
+date: 2015-12-23 14:00:00
 categories: ["blog"]
 tags: ["en", "Kura", "Docker"]
-#url: /blog/2015/12/23/kura-OSGi-docker-debian.html
 ---
 
 [Rhiot project](http://rhiot.io) has recently decided to primarily support the [Kura Eclipse Platform](https://eclipse.org/kura/). Our project provides code and extensions for Kura, such as Camel integration and many other features. We've developed new Camel components specifically dedicated to the Kura Platform (gpio, cloud, wifi). We chose this platform because it's an OSGi compliant software focused on the IoT universe, supported by the [Eclipse Foundation](http://eclipse.org) and [Eurotech](https://www.eurotech.com).

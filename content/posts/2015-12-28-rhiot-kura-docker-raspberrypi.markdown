@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "Rhiot over Kura over Docker over RaspberryPi ;-)"
-date:   2015-12-28 14:00:00
+title: "Rhiot over Kura over Docker over RaspberryPi ;-)"
+date: 2015-12-28 14:00:00
 categories: ["blog"]
 tags: ["en", "Rhiot", "Kura", "Docker", "RaspberryPi"]
-#url: /blog/2015/12/28/rhiot-kura-docker-raspberrypi.html
 ---
 
 During this Christmas day, Santa Claus brings us lot of presents (I hope for you too), I received 2 [RaspberryPi Zero](https://www.raspberrypi.org/blog/raspberry-pi-zero/) — thanks brother! I will show you something interesting after this special day. We gonna test how to use [Rhiot project](http://rhiot.io) into [Kura Eclipse Platform](https://eclipse.org/kura/) running inside [Docker](https://docker.com) container deployed into a real [RaspberryPi Zero](https://www.raspberrypi.org/blog/raspberry-pi-zero/) device (in this order). If you don't have yet a RaspberryPi (B+, 2 or zero) device you can use [my previous post](/blog/2015/12/23/kura-OSGi-docker-debian.html).

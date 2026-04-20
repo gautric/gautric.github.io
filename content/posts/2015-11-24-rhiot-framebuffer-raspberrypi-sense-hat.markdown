@@ -1,11 +1,8 @@
 ---
-layout: post
-css: blog
-title:  "RHIoT RaspberryPi Sense-Hat display"
-date:   2015-11-24 13:58:00
+title: "RHIoT RaspberryPi Sense-Hat display"
+date: 2015-11-24 13:58:00
 categories: ["blog"]
 tags: ["en", "rhiot", "RaspberryPi", "Sense-Hat", "camel", "display", "framebuffer"]
-#url: /blog/2015/11/24/rhiot-framebuffer-raspberrypi-sense-hat.html
 ---
 
 Recently, I bought the new official [Sense-HAT](https://www.raspberrypi.org/products/sense-hat/) from [RaspberryPi foundation](https://www.raspberrypi.org). This [HAT](https://www.raspberrypi.org/blog/introducing-raspberry-pi-hats/) (Hardware Attached on Top) add-on for the RaspberryPi device includes lots of cool features and sensors. The Sense-HAT comes with an 8x8 RGB565 pixel display, a Joystick, a Gyroscope, Accelerometer, Magnetometer, Temperature, Barometric pressure and Humidity sensors. 

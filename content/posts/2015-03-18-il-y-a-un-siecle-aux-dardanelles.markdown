@@ -1,10 +1,9 @@
 ---
-title:  "Il y a un siècle aux Dardanelles"
-date:   2015-03-18 13:58:00
-categories: ["blog"]
-tags: ["fr","histoire","divers"]
+title: "Il y a un siècle aux Dardanelles"
+date: 2015-03-18 13:58:00
 description: Il y a cent ans, « Le bouvet » navire de la Royale (Marine Française) était en expédition Franco-Britanique aux Dardanelles suivant les plans du premier Lord de l'Amirauté
-#url: /blog/2015/03/18/il-y-a-un-siecle-aux-dardanelles.html
+categories: ["blog"]
+tags: ["fr", "histoire", "divers"]
 ---
 
 Le 18 mars 1915 marque l'un des épisodes les plus tragiques de la Première Guerre mondiale pour la **Marine française**. Cet article commémore le centenaire du naufrage du cuirassé « Le Bouvet » et rend hommage aux marins disparus lors de cette opération aux conséquences désastreuses.
