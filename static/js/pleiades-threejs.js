@@ -366,6 +366,7 @@
     return {
       el: el,
       segment: segment,
+      scrambleTimer: null,
 
       /** Set label text content */
       setText: function (text) {
@@ -444,7 +445,6 @@
     hover: null,        // LabelUnit
     hoverActive: null,
     hoverStar: null,
-    scrambleTimer: null,
 
     // All-labels state
     entries: [],        // { unit, star }
@@ -470,7 +470,7 @@
     },
 
     _scrambleChars: function () {
-      return this.lang === 'ja' ? CONFIG.labelScrambleCharsJa : CONFIG.labelScrambleChars;
+      return CONFIG.labelScrambleChars + CONFIG.labelScrambleCharsJa;
     },
 
     _showLabel: function (unit, star) {
@@ -513,8 +513,7 @@
 
     // --- hover ---
 
-    _scrambleReveal: function (target, chars) {
-      var self = this;
+    _scrambleReveal: function (unit, target, chars) {
       var len = target.length;
       var duration = CONFIG.labelScrambleDuration;
       var startTime = performance.now();
@@ -522,8 +521,8 @@
       for (var i = 0; i < len; i++) {
         display[i] = chars[Math.floor(Math.random() * chars.length)];
       }
-      self.hover.el.textContent = display.join('');
-      if (self.scrambleTimer) cancelAnimationFrame(self.scrambleTimer);
+      unit.el.textContent = display.join('');
+      if (unit.scrambleTimer) cancelAnimationFrame(unit.scrambleTimer);
 
       function tick() {
         var elapsed = performance.now() - startTime;
@@ -532,10 +531,10 @@
         for (var i = 0; i < len; i++) {
           display[i] = i < revealed ? target[i] : chars[Math.floor(Math.random() * chars.length)];
         }
-        self.hover.el.textContent = display.join('');
-        if (progress < 1) self.scrambleTimer = requestAnimationFrame(tick);
+        unit.el.textContent = display.join('');
+        if (progress < 1) unit.scrambleTimer = requestAnimationFrame(tick);
       }
-      self.scrambleTimer = requestAnimationFrame(tick);
+      unit.scrambleTimer = requestAnimationFrame(tick);
     },
 
     showHover: function (star) {
@@ -544,7 +543,7 @@
       this.hoverActive = name;
       this.hoverStar = star;
       this._showLabel(this.hover, star);
-      this._scrambleReveal(name.toUpperCase(), this._scrambleChars());
+      this._scrambleReveal(this.hover, name.toUpperCase(), this._scrambleChars());
     },
 
     hideHover: function () {
@@ -552,9 +551,9 @@
       this.hoverActive = null;
       this.hoverStar = null;
       this.hover.hide();
-      if (this.scrambleTimer) {
-        cancelAnimationFrame(this.scrambleTimer);
-        this.scrambleTimer = null;
+      if (this.hover.scrambleTimer) {
+        cancelAnimationFrame(this.hover.scrambleTimer);
+        this.hover.scrambleTimer = null;
       }
     },
 
@@ -562,11 +561,18 @@
 
     toggleAll: function () {
       this.visible = !this.visible;
+      var chars = this._scrambleChars();
       for (var i = 0; i < this.entries.length; i++) {
+        var entry = this.entries[i];
         if (this.visible) {
-          this._showLabel(this.entries[i].unit, this.entries[i].star);
+          this._showLabel(entry.unit, entry.star);
+          this._scrambleReveal(entry.unit, this._starName(entry.star).toUpperCase(), chars);
         } else {
-          this.entries[i].unit.hide();
+          if (entry.unit.scrambleTimer) {
+            cancelAnimationFrame(entry.unit.scrambleTimer);
+            entry.unit.scrambleTimer = null;
+          }
+          entry.unit.hide();
         }
       }
       this.hideHover();
@@ -578,8 +584,12 @@
       this.lang = this.lang === 'en' ? 'ja' : 'en';
       this.hideHover();
       if (this.visible) {
+        var chars = this._scrambleChars();
         for (var i = 0; i < this.entries.length; i++) {
-          this.entries[i].unit.setText(this._starName(this.entries[i].star));
+          var entry = this.entries[i];
+          var name = this._starName(entry.star).toUpperCase();
+          entry.unit.setText(name);
+          this._scrambleReveal(entry.unit, name, chars);
         }
       }
     },
