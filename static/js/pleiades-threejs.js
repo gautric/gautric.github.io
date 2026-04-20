@@ -186,18 +186,6 @@
   var glowTexCore = Textures.glow(0.15);
   var burstTex    = Textures.starburst();
 
-  function cardinalStart() {
-    var dir = Math.floor(Math.random() * 4);
-    var d = CONFIG.entryDistanceMin + Math.random() * CONFIG.entryDistanceRange;
-    var spread = (Math.random() - 0.5) * CONFIG.entrySpread;
-    switch (dir) {
-      case 0: return { x: spread, y:  d };
-      case 1: return { x:  d, y: spread };
-      case 2: return { x: spread, y: -d };
-      default: return { x: -d, y: spread };
-    }
-  }
-
   function createSprite(tex, color, size, scene) {
     var sprite = new THREE.Sprite(new THREE.SpriteMaterial({
       map: tex, color: color, transparent: true, depthWrite: false, opacity: 0
@@ -206,6 +194,81 @@
     scene.add(sprite);
     return sprite;
   }
+
+  /* =============================================================
+     5b. STARTUP ANIMATIONS — pluggable entry animation strategies
+     Each animation provides:
+       ease(t)              — easing curve [0,1] → [0,1]
+       init(star)           — set startX/startY and initial sprite positions
+       update(star, e, dt)  — per-frame position + opacity (e = eased, dt = elapsed ms)
+     ============================================================= */
+
+  function easeOutQuart(t) {
+    return 1 - Math.pow(1 - t, 4);
+  }
+
+  function setStarPosition(star, x, y) {
+    star.halo.position.x = x;  star.halo.position.y = y;
+    star.core.position.x = x;  star.core.position.y = y;
+    if (star.burst) { star.burst.position.x = x; star.burst.position.y = y; }
+  }
+
+  function computeEdgeFade(x, y) {
+    var edgeDist = Math.max(Math.abs(x), Math.abs(y));
+    return 1 - Math.max(0, Math.min(
+      (edgeDist - CONFIG.edgeFadeInner) / (CONFIG.edgeFadeOuter - CONFIG.edgeFadeInner), 1));
+  }
+
+  function applyStarOpacity(star, elapsed, edgeFade) {
+    var fadeIn = Math.min(elapsed / CONFIG.fadeInDuration, 1);
+    var opacity = fadeIn * edgeFade;
+    star.halo.material.opacity = CONFIG.haloOpacity * opacity;
+    star.core.material.opacity = CONFIG.coreOpacity * opacity;
+    if (star.burst) {
+      var bf = Math.max(0, Math.min((elapsed - CONFIG.burstFadeDelay) / CONFIG.burstFadeDuration, 1));
+      star.burst.material.opacity = CONFIG.burstOpacity * bf * edgeFade;
+    }
+  }
+
+  var Animations = {
+    cardinal: {
+      ease: easeOutQuart,
+      init: function (star) {
+        var dir = Math.floor(Math.random() * 4);
+        var d = CONFIG.entryDistanceMin + Math.random() * CONFIG.entryDistanceRange;
+        var spread = (Math.random() - 0.5) * CONFIG.entrySpread;
+        switch (dir) {
+          case 0: star.startX = spread; star.startY =  d; break;
+          case 1: star.startX =  d;     star.startY = spread; break;
+          case 2: star.startX = spread; star.startY = -d; break;
+          default: star.startX = -d;    star.startY = spread; break;
+        }
+        setStarPosition(star, star.startX, star.startY);
+      },
+      update: function (star, eased, elapsed) {
+        var x = star.startX + (star.targetX - star.startX) * eased;
+        var y = star.startY + (star.targetY - star.startY) * eased;
+        setStarPosition(star, x, y);
+        applyStarOpacity(star, elapsed, computeEdgeFade(x, y));
+      }
+    },
+
+    nope: {
+      ease: function (t) { return 1; },
+      init: function (star) {
+        star.startX = star.targetX;
+        star.startY = star.targetY;
+        setStarPosition(star, star.targetX, star.targetY);
+      },
+      update: function (star) {
+        star.halo.material.opacity = CONFIG.haloOpacity;
+        star.core.material.opacity = CONFIG.coreOpacity;
+        if (star.burst) star.burst.material.opacity = CONFIG.burstOpacity;
+      }
+    }
+  };
+
+  var currentAnim = Animations.nope;
 
   function buildStarEntry(star, scene) {
     var sizeCorrection = CONFIG.parallaxMedian / star.dist;
@@ -220,20 +283,21 @@
     if (burst) burst.material.rotation = CONFIG.burstRotation;
 
     var depth = (star.dist - CONFIG.parallaxMedian) * CONFIG.parallaxScale;
-    var start = cardinalStart();
-    halo.position.set(start.x, start.y, depth);
-    core.position.set(start.x, start.y, depth);
-    if (burst) burst.position.set(start.x, start.y, depth);
+    halo.position.z = depth;
+    core.position.z = depth;
+    if (burst) burst.position.z = depth;
 
-    return {
+    var entry = {
       name: star.name, nameJa: star.nameJa,
       halo: halo, core: core, burst: burst,
-      startX: start.x, startY: start.y,
+      startX: 0, startY: 0,
       targetX: star.tx, targetY: star.ty, depth: depth,
       haloScale: hs, coreScale: cs, burstScale: bs,
       twinkleOffset: Math.random() * 100,
       twinkleSpeed: CONFIG.twinkleSpeedBase + Math.random() * CONFIG.twinkleSpeedRange
     };
+    currentAnim.init(entry);
+    return entry;
   }
 
   function buildConstellation(scene) {
@@ -247,34 +311,7 @@
   /* =============================================================
      6. ANIMATION — render loop
      ============================================================= */
-  function easeOutQuart(t) {
-    return 1 - Math.pow(1 - t, 4);
-  }
-
   var driftComplete = false;
-
-  function driftStar(s, eased) {
-    var x = s.startX + (s.targetX - s.startX) * eased;
-    var y = s.startY + (s.targetY - s.startY) * eased;
-    s.halo.position.x = x;  s.halo.position.y = y;
-    s.core.position.x = x;  s.core.position.y = y;
-    if (s.burst) { s.burst.position.x = x; s.burst.position.y = y; }
-    return { x: x, y: y };
-  }
-
-  function fadeStar(s, elapsed, x, y) {
-    var edgeDist = Math.max(Math.abs(x), Math.abs(y));
-    var edgeFade = 1 - Math.max(0, Math.min(
-      (edgeDist - CONFIG.edgeFadeInner) / (CONFIG.edgeFadeOuter - CONFIG.edgeFadeInner), 1));
-    var fadeIn = Math.min(elapsed / CONFIG.fadeInDuration, 1);
-    var opacity = fadeIn * edgeFade;
-    s.halo.material.opacity = CONFIG.haloOpacity * opacity;
-    s.core.material.opacity = CONFIG.coreOpacity * opacity;
-    if (s.burst) {
-      var bf = Math.max(0, Math.min((elapsed - CONFIG.burstFadeDelay) / CONFIG.burstFadeDuration, 1));
-      s.burst.material.opacity = CONFIG.burstOpacity * bf * edgeFade;
-    }
-  }
 
   function twinkleStar(s, now, progress) {
     if (progress < CONFIG.twinkleStart) return;
@@ -297,11 +334,10 @@
       if (startTime < 0) startTime = now;
       var elapsed = now - startTime;
       var progress = Math.min(elapsed / CONFIG.driftDuration, 1);
-      var eased = easeOutQuart(progress);
+      var eased = currentAnim.ease(progress);
 
       for (var i = 0; i < stars.length; i++) {
-        var pos = driftStar(stars[i], eased);
-        fadeStar(stars[i], elapsed, pos.x, pos.y);
+        currentAnim.update(stars[i], eased, elapsed);
         twinkleStar(stars[i], now, progress);
       }
 
@@ -329,9 +365,7 @@
       startTime = -1;
       bgStars.points.material.opacity = 0;
       for (var i = 0; i < stars.length; i++) {
-        var start = cardinalStart();
-        stars[i].startX = start.x;
-        stars[i].startY = start.y;
+        currentAnim.init(stars[i]);
       }
       LabelDisplay.hideHover();
       if (LabelDisplay.visible) LabelDisplay.toggleAll();
