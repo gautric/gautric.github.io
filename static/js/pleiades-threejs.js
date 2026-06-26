@@ -348,6 +348,126 @@
       }
     },
 
+    firework: {
+      duration: 7000,
+      // Linear time base: each star runs its own launch/burst schedule inside update().
+      ease: function (t) { return t; },
+      sparkLife: 1500,          // ms — lifespan of the sub-particles after a burst
+      sparkCountMin: 10,
+      sparkCountRange: 6,
+      init: function (star, scene) {
+        // ±30% jitter around a base value, so every curve is unique.
+        function rand30(base) { return base * (0.7 + Math.random() * 0.6); }
+
+        // Each star is an independent rocket with its own launch point on the bottom edge.
+        star.startX = (Math.random() - 0.5) * 8;
+        star.startY = -9;
+
+        // Fraction of the flight at which the apex occurs (> 0.5 so the rise lasts
+        // longer than the fall). Also drives the apex height. Jittered per star.
+        var up = 0.70 + (Math.random() - 0.5) * 0.12;   // ~0.64..0.76
+        star.fwPeak = up;
+
+        // Single ballistic parabola y(u) = A u^2 + B u + C through start -> apex -> target.
+        // Continuous velocity at the top: the star never stops, it arcs through.
+        var A = (star.targetY - star.startY) / (1 - 2 * up);
+        star.fwA = A;
+        star.fwB = -2 * A * up;
+        star.fwC = star.startY;
+
+        // Explosion point = top of the curve (where the parabola peaks).
+        star.apexX = star.startX + (star.targetX - star.startX) * up;
+        star.apexY = -A * up * up + star.startY;
+
+        // Own staggered timing, flight span jittered ±30%.
+        star.fwDelay = Math.random() * 0.25;
+        star.fwFlight = rand30(0.55);
+
+        // The burst fires when the star reaches the apex. With the ease-out time
+        // remap (see update), the apex parameter `up` is reached at progress pEx.
+        var pEx = 1 - Math.sqrt(1 - up);
+        star.explosionMs = (star.fwDelay + star.fwFlight * pEx) * this.duration;
+
+        // Sub-particles (sparks): created once, kinematics reset on every (re)start.
+        if (!star.sparks) {
+          star.sparks = [];
+          var n = this.sparkCountMin + Math.floor(Math.random() * this.sparkCountRange);
+          for (var c = 0; c < n; c++) {
+            var spr = createSprite(glowTexCore, 0x111111, 0.12 + Math.random() * 0.12, scene);
+            spr.position.z = star.depth;
+            star.sparks.push({ sprite: spr, ang: 0, spd: 0, grav: 0 });
+          }
+        }
+        for (var k = 0; k < star.sparks.length; k++) {
+          var sp = star.sparks[k];
+          sp.ang = Math.random() * Math.PI * 2;
+          sp.spd = 0.8 + Math.random() * 1.8;     // radial reach
+          sp.grav = 1.5 + Math.random() * 1.5;    // downward pull
+          sp.sprite.material.opacity = 0;
+        }
+        star._sparksShown = false;
+        setStarPosition(star, star.startX, star.startY);
+      },
+      update: function (star, eased, elapsed) {
+        var t0 = star.fwDelay;
+        var t1 = t0 + star.fwFlight;        // landing on target
+        var x, y, op;
+
+        if (eased < t0) {
+          // Still on the launch pad.
+          x = star.startX; y = star.startY; op = 0;
+        } else if (eased < t1) {
+          // Single continuous parabola. The time parameter is eased-out so the star
+          // launches fast, arcs smoothly through the apex (velocity never hits zero
+          // there), and decelerates gently as it settles onto its target.
+          var p = (eased - t0) / star.fwFlight;
+          var u = 1 - (1 - p) * (1 - p);   // easeOutQuad: smooth slow-down at the end
+          x = star.startX + (star.targetX - star.startX) * u;
+          y = star.fwA * u * u + star.fwB * u + star.fwC;
+          op = Math.min(0.25 + u * 1.5, 1);
+        } else {
+          // Arrived: rest on target at full brightness.
+          x = star.targetX; y = star.targetY; op = 1;
+        }
+
+        setStarPosition(star, x, y);
+        op *= computeEdgeFade(x, y);
+        star.halo.material.opacity = CONFIG.haloOpacity * op;
+        star.core.material.opacity = CONFIG.coreOpacity * op;
+        if (star.burst) star.burst.material.opacity = CONFIG.burstOpacity * op;
+
+        this._updateSparks(star, elapsed);
+      },
+      // Radial spark burst at the explosion point, with gravity sag and fade-out.
+      _updateSparks: function (star, elapsed) {
+        if (!star.sparks) return;
+        var age = elapsed - star.explosionMs;
+
+        if (age < 0 || age > this.sparkLife) {
+          if (star._sparksShown) {
+            for (var i = 0; i < star.sparks.length; i++) {
+              star.sparks[i].sprite.material.opacity = 0;
+            }
+            star._sparksShown = false;
+          }
+          return;
+        }
+
+        star._sparksShown = true;
+        var p = age / this.sparkLife;
+        var fade = 1 - p;
+        for (var k = 0; k < star.sparks.length; k++) {
+          var sp = star.sparks[k];
+          var r = sp.spd * p;
+          var sx = star.apexX + Math.cos(sp.ang) * r;
+          var sy = star.apexY + Math.sin(sp.ang) * r - sp.grav * p * p;
+          sp.sprite.position.x = sx;
+          sp.sprite.position.y = sy;
+          sp.sprite.material.opacity = 0.7 * fade * computeEdgeFade(sx, sy);
+        }
+      }
+    },
+
     nope: {
       duration: 0,
       ease: function (t) { return 1; },
@@ -364,7 +484,8 @@
     }
   };
 
-  var animKeys = ['cardinal', 'circleCardinal', 'whirlpoolCardinal', 'whirlpool'];
+  var animKeys = ['cardinal', 'circleCardinal', 'whirlpoolCardinal', 'whirlpool', 'firework'];
+
   var currentAnim = Animations[animKeys[Math.floor(Math.random() * animKeys.length)]];
 
   function buildStarEntry(star, scene) {
@@ -393,7 +514,7 @@
       twinkleOffset: Math.random() * 100,
       twinkleSpeed: CONFIG.twinkleSpeedBase + Math.random() * CONFIG.twinkleSpeedRange
     };
-    currentAnim.init(entry);
+    currentAnim.init(entry, scene);
     return entry;
   }
 
@@ -463,7 +584,7 @@
       startTime = -1;
       bgStars.points.material.opacity = 0;
       for (var i = 0; i < stars.length; i++) {
-        currentAnim.init(stars[i]);
+        currentAnim.init(stars[i], scene);
       }
       LabelDisplay.hideHover();
       if (LabelDisplay.visible) LabelDisplay.toggleAll();
