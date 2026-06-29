@@ -468,6 +468,210 @@
       }
     },
 
+    // -------------------------------------------------------------
+    // billiard — a single star enters from outside the canvas and
+    // bounces physically off the walls. Each wall contact spawns the
+    // next star at the impact point with a random speed and direction.
+    // Stars also collide elastically with one another. Once every star
+    // is in play, they all ease smoothly onto their constellation
+    // targets, so the final layout is always correct.
+    // -------------------------------------------------------------
+    billiard: {
+      duration: 9000,
+      ease: function (t) { return t; },   // timeline driven manually via elapsed
+
+      settleStart: 6000,   // ms — balls begin homing onto their targets
+      settleDur: 3000,     // ms — duration of the homing ease (ends at duration)
+      wall: 4.0,           // half-extent of the table (bounce boundary)
+      radius: 0.32,        // ball radius used for ball-ball collisions
+      speedMin: 3.2,       // world units / second
+      speedRange: 3.0,
+      bornFade: 600,       // ms — fade-in of a freshly spawned ball
+      spawnCooldown: 450,  // ms — minimum gap between two spawns (one star per bounce, paced)
+
+      init: function (star, scene) {
+        // (Re)create the shared simulation on the first star of a run.
+        if (!this._sim || this._sim.count >= this._sim.total) {
+          this._sim = {
+            total: STARS_DATA.length,
+            count: 0,
+            activeCount: 0,
+            balls: [],
+            lastElapsed: 0,
+            lastSpawn: -Infinity
+          };
+        }
+        var sim = this._sim;
+        var idx = sim.count++;
+
+        // Reset per-star ball state.
+        star.bx = 0; star.by = 0;
+        star.vx = 0; star.vy = 0;
+        star.bilActive = false;
+        star.bilEntered = false;
+        star.bilBorn = 0;
+        star.bilSettleInit = false;
+        star.bilSettleFromX = 0;
+        star.bilSettleFromY = 0;
+        sim.balls.push(star);
+
+        if (idx === 0) {
+          // The opening ball arrives from just outside one edge, aimed
+          // inward with a touch of lateral drift.
+          var wall = this.wall;
+          var side = Math.floor(Math.random() * 4);
+          var along = (Math.random() - 0.5) * 2 * wall * 0.6;
+          var margin = wall + 2;
+          var spd = 4.5 + Math.random() * 1.5;
+          var lat = (Math.random() - 0.5) * spd * 0.6;
+          switch (side) {
+            case 0: star.bx = along;  star.by = margin;  star.vx = lat;  star.vy = -spd; break;
+            case 1: star.bx = margin; star.by = along;   star.vx = -spd; star.vy = lat;  break;
+            case 2: star.bx = along;  star.by = -margin; star.vx = lat;  star.vy = spd;  break;
+            default: star.bx = -margin; star.by = along; star.vx = spd;  star.vy = lat;  break;
+          }
+          star.bilActive = true;
+          star.bilEntered = false;   // becomes true once it crosses inside
+          star.bilBorn = 0;
+          sim.activeCount = 1;
+        }
+
+        setStarPosition(star, star.bx, star.by);
+        star.halo.material.opacity = 0;
+        star.core.material.opacity = 0;
+        if (star.burst) star.burst.material.opacity = 0;
+      },
+
+      // Activate the next dormant ball at a wall-impact point with a
+      // random heading and speed.
+      _spawn: function (sim, x, y, elapsed) {
+        for (var i = 0; i < sim.balls.length; i++) {
+          var b = sim.balls[i];
+          if (!b.bilActive) {
+            var ang = Math.random() * Math.PI * 2;
+            var spd = this.speedMin + Math.random() * this.speedRange;
+            b.bilActive = true;
+            b.bilEntered = true;
+            b.bx = x; b.by = y;
+            b.vx = Math.cos(ang) * spd;
+            b.vy = Math.sin(ang) * spd;
+            b.bilBorn = elapsed;
+            sim.activeCount++;
+            sim.lastSpawn = elapsed;
+            return;
+          }
+        }
+      },
+
+      // Advance the whole simulation by dt (called once per frame).
+      _stepAll: function (sim, dt, elapsed) {
+        if (elapsed >= this.settleStart) return;
+        var dts = Math.min(dt, 40) / 1000;
+        var wall = this.wall;
+        var balls = sim.balls;
+        var i, b;
+
+        // Integration + physical wall reflection.
+        for (i = 0; i < balls.length; i++) {
+          b = balls[i];
+          if (!b.bilActive) continue;
+          b.bx += b.vx * dts;
+          b.by += b.vy * dts;
+
+          if (!b.bilEntered) {
+            if (b.bx > -wall && b.bx < wall && b.by > -wall && b.by < wall) {
+              b.bilEntered = true;
+            }
+            continue;   // no bounce while still entering from outside
+          }
+
+          var bounced = false;
+          if (b.bx > wall)       { b.bx = wall;  b.vx = -Math.abs(b.vx); bounced = true; }
+          else if (b.bx < -wall) { b.bx = -wall; b.vx =  Math.abs(b.vx); bounced = true; }
+          if (b.by > wall)       { b.by = wall;  b.vy = -Math.abs(b.vy); bounced = true; }
+          else if (b.by < -wall) { b.by = -wall; b.vy =  Math.abs(b.vy); bounced = true; }
+
+          if (bounced && sim.activeCount < sim.total &&
+              (elapsed - sim.lastSpawn) >= this.spawnCooldown) {
+            this._spawn(sim, b.bx, b.by, elapsed);
+          }
+        }
+
+        // Elastic ball-ball collisions (equal mass) for a real-table feel.
+        var minD = this.radius * 2, minD2 = minD * minD;
+        for (i = 0; i < balls.length; i++) {
+          var a = balls[i];
+          if (!a.bilActive || !a.bilEntered) continue;
+          for (var j = i + 1; j < balls.length; j++) {
+            var c = balls[j];
+            if (!c.bilActive || !c.bilEntered) continue;
+            var dx = c.bx - a.bx, dy = c.by - a.by;
+            var d2 = dx * dx + dy * dy;
+            if (d2 > 0 && d2 < minD2) {
+              var d = Math.sqrt(d2);
+              var nx = dx / d, ny = dy / d;
+              var vn = (c.vx - a.vx) * nx + (c.vy - a.vy) * ny;
+              if (vn < 0) {                 // only resolve if approaching
+                a.vx += vn * nx; a.vy += vn * ny;
+                c.vx -= vn * nx; c.vy -= vn * ny;
+              }
+              var overlap = (minD - d) / 2;  // push apart so they don't stick
+              a.bx -= nx * overlap; a.by -= ny * overlap;
+              c.bx += nx * overlap; c.by += ny * overlap;
+            }
+          }
+        }
+      },
+
+      update: function (star, eased, elapsed) {
+        var sim = this._sim;
+
+        // Step physics once per frame (on the first star processed).
+        if (elapsed > sim.lastElapsed) {
+          this._stepAll(sim, elapsed - sim.lastElapsed, elapsed);
+          sim.lastElapsed = elapsed;
+        }
+
+        if (elapsed >= this.settleStart) {
+          // Homing phase: ease from the last bouncing position onto target.
+          if (!star.bilSettleInit) {
+            star.bilSettleInit = true;
+            if (!star.bilActive) {
+              // Safety net: any ball that never spawned slides in from a wall.
+              var w = this.wall;
+              star.bx = (Math.random() < 0.5 ? -w : w);
+              star.by = (Math.random() - 0.5) * 2 * w;
+              star.bilActive = true;
+            }
+            star.bilSettleFromX = star.bx;
+            star.bilSettleFromY = star.by;
+          }
+          var st = Math.min((elapsed - this.settleStart) / this.settleDur, 1);
+          var e = easeOutQuart(st);
+          var x = star.bilSettleFromX + (star.targetX - star.bilSettleFromX) * e;
+          var y = star.bilSettleFromY + (star.targetY - star.bilSettleFromY) * e;
+          setStarPosition(star, x, y);
+          applyStarOpacity(star, elapsed, computeEdgeFade(x, y));
+          return;
+        }
+
+        // Bouncing phase.
+        setStarPosition(star, star.bx, star.by);
+        if (!star.bilActive) {
+          star.halo.material.opacity = 0;
+          star.core.material.opacity = 0;
+          if (star.burst) star.burst.material.opacity = 0;
+          return;
+        }
+        var fin = Math.min((elapsed - star.bilBorn) / this.bornFade, 1);
+        if (fin < 0) fin = 0;
+        var op = fin * computeEdgeFade(star.bx, star.by);
+        star.halo.material.opacity = CONFIG.haloOpacity * op;
+        star.core.material.opacity = CONFIG.coreOpacity * op;
+        if (star.burst) star.burst.material.opacity = CONFIG.burstOpacity * op * 0.8;
+      }
+    },
+
     nope: {
       duration: 0,
       ease: function (t) { return 1; },
@@ -484,8 +688,7 @@
     }
   };
 
-  var animKeys = ['cardinal', 'circleCardinal', 'whirlpoolCardinal', 'whirlpool', 'firework'];
-
+  var animKeys = ['cardinal', 'circleCardinal', 'whirlpoolCardinal', 'whirlpool', 'firework', 'billiard'];
   var currentAnim = Animations[animKeys[Math.floor(Math.random() * animKeys.length)]];
 
   function buildStarEntry(star, scene) {
