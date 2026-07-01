@@ -6,21 +6,21 @@ ShowToc: false
 
 ## Profile
 
-I am **Greg.** (alias Grégoire), a **Solution Architect** at [AWS WWPS](https://aws.amazon.com/government-education/worldwide/), focused on helping organizations understand, adopt, and extract business value from Cloud, AI, and Automation technologies.
+I am **Greg.**, a **AI & Cloud Solution Architect** at [AWS WWPS](https://aws.amazon.com/government-education/worldwide/), focused on helping organizations understand, adopt, and extract business value from Cloud, AI, and Automation technologies.
 
 With over 20 years of experience spanning public sector, financial services, healthcare, manufacturing, and telecom, I bridge the gap between business strategy and technical execution. My approach is grounded in a simple principle: technology should serve business outcomes, not the other way around.
 
 I specialize in:
 
-* **Cloud Architecture** — designing scalable, secure, and cost-efficient solutions on AWS
 * **AI/LLM & GenAI Integration** — embedding generative AI into real-world business processes (RAG, MCP, Bedrock Agents)
 * **Agentic Workflows** — designing and implementing autonomous agent pipelines (GitHub Agentic Workflows, AWS Bedrock Agents) to automate complex, previously manual back-office and operational processes
+* **Cloud Architecture** — designing scalable, secure, and cost-efficient solutions on AWS
 * **Business Automation** — modeling and automating complex business rules and processes at scale (BPM, DMN, Rule Engines)
 * **Modern Application Design** — microservices, event-driven architectures, API-first design, Kubernetes
 
 Having delivered projects for organizations ranging from small nonprofits to institutions managing processes for 70 million people, I am equally comfortable advising a CTO on transformation strategy and rolling up my sleeves to architect and implement the solution.
 
-Prior to AWS, I served as a **Senior Cloud Architect** at [Red Hat](https://www.redhat.com) for over a decade, and as a **Tech Leader** at [Capgemini](https://www.capgemini.com) for several years.
+Prior to AWS, I served as a **Cloud Architect** at [Red Hat](https://www.redhat.com) for over a decade, and as a **Tech Leader** at [Capgemini](https://www.capgemini.com) for several years.
 
 ## What I Can Do For Your Organization
 
