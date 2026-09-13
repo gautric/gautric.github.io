@@ -10,7 +10,7 @@ ShowToc: false
 
 * **[Kiro's Ghost Sokoban](/game/sokoban/)** — A ghost-themed Sokoban puzzle game with multiple levels, 3D view, undo/restart, and bilingual interface (EN/JA).
 
-* **[HP 48 GX — WebAssembly](/hp48/x48ng.html)** — The x48ng HP 48 emulator compiled to WebAssembly and served as a static page, with serial support and state persistence.
+* **[HP 48 GX — WebAssembly](/hp48/)** — The x48ng HP 48 emulator compiled to WebAssembly and served as a static page, with serial support and state persistence.
 
 ## Olympic Games & Major Sporting Events
 
