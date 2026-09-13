@@ -1,0 +1,332 @@
+/*
+  HP 48 GX WebAssembly — page-specific styles.
+
+  The shared site chrome — PaperMod :root theme variables, body, a, .nav, .logo,
+  #menu, .main, .post-header/.post-title/.post-meta/.post-content and .footer —
+  comes from the site-wide stylesheet, linked BEFORE this file in shell.html:
+    https://g.autric.net/assets/css/stylesheet.css
+  Only the rules below are specific to the emulator page (the calculator canvas,
+  the HOME tree panel, the serial controls). They inherit the theme CSS custom
+  properties (--radius, --border, --code-bg, --theme, --primary, --secondary,
+  --tertiary, --content, --gap ...) from that stylesheet, so keep it linked.
+*/
+/* Widen the content column for the emulator. PaperMod's reading column
+   (--main-width ≈ 720px of content) is too narrow: calculator (~365px) +
+   burger toggle (~37px) + HOME panel (300px) + gaps ≈ 735px must share ONE
+   row, so at 720px the panel (or toggle) is forced to wrap underneath. This
+   page is a single-purpose tool, not an article, so give <main> a wider cap.
+   Scoped to this page only (x48ng.css is linked solely here); the top nav and
+   the footer live OUTSIDE <main>, so their width is untouched. On real mobile
+   the viewport caps the width and the row still wraps to stack vertically. */
+.main {
+  max-width: 880px;
+}
+/* Stage is a row: calculator column on the left, then the always-visible
+   burger toggle directly to its right (the "hide/show" control lives to the
+   right of the HP 48, per spec), then the HOME tree panel. The panel is LAST
+   in the flow so that when the row is too wide it is the panel — not the
+   toggle — that flex-wraps below the calculator; the toggle stays on the top
+   row next to the calc. Same wrap gives the mobile layout (panel underneath). */
+#stage {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+/* The calculator column keeps the ORIGINAL centered-column layout so the
+   canvas-sizing contract below is untouched (canvas is never stretched by
+   a flex cross-axis: align-items:center, and min-width:0 lets the column
+   shrink without forcing a width onto the canvas). */
+#calc-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+/* Right-side HOME tree panel. */
+#tree-panel {
+  flex: 0 0 300px;
+  width: 300px;
+  max-width: 90vw;
+  max-height: calc(100vh - 260px);
+  overflow: auto;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  font-size: 14px;
+}
+#tree-panel.hidden {
+  display: none;
+}
+#tree-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--code-bg);
+}
+#tree-panel-header .title {
+  font-weight: 700;
+  font-size: 15px;
+}
+#tree-panel-header .hdr-btns {
+  display: flex;
+  gap: 0.3rem;
+}
+#tree-root {
+  padding: 0.5rem 0.5rem 0.75rem;
+}
+#tree-empty {
+  color: var(--secondary);
+  font-size: 13px;
+  padding: 0.25rem;
+}
+#tree-panel-footer {
+  padding: 0.5rem 0.75rem 0.75rem;
+  border-top: 1px solid var(--border);
+}
+/* Collapsible tree. */
+.tree ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 1.05em;
+}
+.tree > ul {
+  padding-left: 0;
+}
+.tree li {
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.tree .node {
+  display: inline-flex;
+  gap: 0.3em;
+  align-items: baseline;
+}
+.tree .twist {
+  width: 1em;
+  display: inline-block;
+  text-align: center;
+  color: var(--secondary);
+  user-select: none;
+}
+.tree .twist.clickable {
+  cursor: pointer;
+}
+.tree .name {
+  font-weight: 600;
+}
+.tree .folder > .node > .name {
+  color: #1a56c4;
+}
+.tree .meta {
+  color: var(--secondary);
+  font-size: 12px;
+}
+/* Per-node download button (binary HPHP48 object export). Hidden until the row
+   is hovered to keep the tree uncluttered. */
+.tree .dl {
+  font: inherit;
+  font-size: 12px;
+  line-height: 1;
+  box-sizing: border-box;
+  width: 24px;
+  height: 20px;
+  padding: 0;
+  margin-left: 0.15em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--theme);
+  color: var(--primary);
+  cursor: pointer;
+  visibility: hidden;
+}
+.tree .node:hover .dl {
+  visibility: visible;
+}
+.tree .dl:hover {
+  background: var(--tertiary);
+}
+/* Delete button (leaves only): a danger tint so it reads apart from download.
+   Shares the .dl box (same width/height as ⤓ and T3). */
+.tree .dl.del {
+  border-color: rgba(196, 26, 26, 0.35);
+  color: #c41a1a;
+}
+.tree .dl.del svg {
+  display: block;
+}
+.tree .dl.del:hover {
+  background: rgba(196, 26, 26, 0.12);
+  border-color: #c41a1a;
+}
+/* Drag-and-drop upload: a folder row lights up while a file hovers over it. */
+.tree .folder > .node {
+  border-radius: var(--radius);
+}
+.tree .node.drop-target {
+  outline: 2px dashed #1a56c4;
+  outline-offset: 1px;
+  background: rgba(26, 86, 196, 0.09);
+}
+/* While a file is being dragged over the panel, the whole tree goes grey so the
+   one highlighted drop-target folder clearly shows where the file will land. */
+.tree.dragging .name,
+.tree.dragging .folder > .node > .name,
+.tree.dragging .meta,
+.tree.dragging .twist {
+  color: var(--secondary);
+  transition: color 0.1s ease;
+}
+.tree.dragging .dl {
+  opacity: 0.35;
+}
+/* The active drop target pops back out of the grey: blue name + stronger fill. */
+.tree.dragging .node.drop-target {
+  background: rgba(26, 86, 196, 0.16);
+}
+.tree.dragging .node.drop-target > .name,
+.tree.dragging .node.drop-target > .twist {
+  color: #1a56c4;
+}
+#dnd-hint {
+  color: var(--secondary);
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+}
+/* Panel buttons (share the serial-button look). */
+.panel-btn {
+  font: inherit;
+  font-size: 13px;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--theme);
+  color: var(--primary);
+  cursor: pointer;
+  line-height: 1.2;
+}
+.panel-btn:hover:not(:disabled) {
+  background: var(--tertiary);
+}
+#clear-btn {
+  width: 100%;
+  border-color: #e0b4b4;
+  color: #a5352f;
+}
+#clear-btn:hover:not(:disabled) {
+  background: #f7e4e4;
+}
+/* Always-visible burger toggle, immediately to the right of the calculator
+   (before the tree panel in the flow, so the panel is what wraps, not this). */
+#tree-toggle {
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0.35rem 0.55rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  color: var(--primary);
+  cursor: pointer;
+  align-self: flex-start;
+}
+#tree-toggle:hover {
+  background: var(--tertiary);
+}
+/* SDL renders here. image-rendering:pixelated keeps the LCD crisp when
+   the browser scales the canvas.
+
+   CRITICAL — do NOT give the canvas a CSS-imposed box size (border,
+   padding, or an explicit width/height). The Emscripten SDL3 port
+   (Emscripten_CreateWindow) probes the canvas by setting its backing
+   store to 1x1, then reads its *CSS* size; if that isn't exactly 1x1 it
+   assumes "external CSS controls the size" and OVERRIDES the requested
+   SDL window size with the measured CSS box. A 1px border alone made the
+   canvas measure 3x3 (getBoundingClientRect includes borders) → SDL built
+   a ~3px window and the calculator rendered as a single dot.
+   Keeping only decoration that does not change the border-box (radius,
+   shadow, background) lets SDL own the size: it sets the backing store to
+   window*devicePixelRatio and the CSS size to the logical window size.
+   max-width/height only cap the result and never enlarge the 1x1 probe,
+   so they are safe and keep the tall skin inside the viewport.
+
+   width:auto !important overrides ONLY the inline width SDL sets after the
+   probe (emscripten_set_element_css_size), and lets the browser derive it
+   from the height while preserving the intrinsic aspect ratio. We keep the
+   height (SDL's inline logical height on Retina, else the intrinsic height)
+   as the ceiling so the skin is never upscaled past its crisp logical size
+   — overriding height too would make the browser treat the 2x backing
+   store as the intrinsic CSS size and blur the skin on tall monitors.
+   max-height then shrinks it uniformly on short viewports; width follows.
+   This only affects on-screen size, never the backing store: LCD stays sharp. */
+canvas.emscripten {
+  border-radius: var(--radius);
+  background: #000;
+  image-rendering: pixelated;
+  outline: none;
+  display: block;
+  width: auto !important;
+  max-width: 100%;
+  /* leave room for the site nav + post header + footer + controls */
+  max-height: calc(100vh - 260px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+#status {
+  min-height: 1.2em;
+  font-size: 0.85rem;
+  color: var(--secondary);
+}
+#status.error {
+  color: #c0392b;
+}
+progress {
+  width: 320px;
+  max-width: 90vw;
+}
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#serial-btn {
+  font: inherit;
+  font-size: 14px;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  color: var(--primary);
+  cursor: pointer;
+}
+#serial-btn:hover:not(:disabled) {
+  background: var(--tertiary);
+}
+#serial-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+#serial-status {
+  color: var(--secondary);
+}
+#serial-status.on {
+  color: #2f855a;
+}
+#serial-status.err {
+  color: #c0392b;
+}
