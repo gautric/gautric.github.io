@@ -56,7 +56,9 @@ params:
 
   assets:
     # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
+    # URL stable pour la feuille de style : /assets/css/stylesheet.css
+    # (sans hash), afin de pouvoir la reutiliser depuis l'exterieur du site.
+    disableFingerprinting: true
     favicon: "apple-icon-180x180.png"
     favicon16x16: "android-icon-36x36.png"
     favicon32x32: "android-icon-36x36.png"
