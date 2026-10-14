@@ -12,6 +12,10 @@ ShowToc: false
 
 * **[HP 48 GX — WebAssembly](/hp48/)** — The x48ng HP 48 emulator compiled to WebAssembly and served as a static page, with serial support and state persistence.
 
+## Science & Visualization
+
+* **[Célérité — 3D visualization](https://celerite.autric.net/)** — A 3D view of the [Observatoire de Paris - PSL](https://celerite.observatoiredeparis.psl.eu/) laser experiment. On 9 October 2026, to mark the 100th anniversary of the joint direction of its Paris and Meudon sites, the Observatoire fired a green laser beam between its two domes. The project renders this [light-speed measurement experiment](https://observatoiredeparis.psl.eu/vendredi-9-octobre-levez-les.html) in 3D. See also the [LinkedIn post](https://www.linkedin.com/posts/ugcPost-7514617937786433536-K7lT/).
+
 ## Olympic Games & Major Sporting Events
 
 * **[Milano Cortina 2026](https://www.linkedin.com/posts/activity-7431616363661537280-EdVv)** — EVS Volunteer
