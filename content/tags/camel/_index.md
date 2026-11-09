@@ -1,0 +1,20 @@
+---
+title: "Camel"
+aliases:
+  - "/tags/aggregator/"
+  - "/tags/aggregator/page/1/"
+  - "/tags/apache/"
+  - "/tags/apache/page/1/"
+  - "/tags/camellabs/"
+  - "/tags/camellabs/page/1/"
+  - "/tags/proofofconcept/"
+  - "/tags/proofofconcept/page/1/"
+  - "/tags/route/"
+  - "/tags/route/page/1/"
+  - "/tags/xml/"
+  - "/tags/xml/page/1/"
+  - "/tags/xpath/"
+  - "/tags/xpath/page/1/"
+  - "/tags/xslt/"
+  - "/tags/xslt/page/1/"
+---

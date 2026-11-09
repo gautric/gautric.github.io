@@ -67,6 +67,10 @@
           </span>
           {{- end }}
         </h3>
+        {{- /* Description du front matter, sinon résumé tronqué (partial seo/description.html) */}}
+        {{- with partial "seo/description.html" . }}
+        <p class="archive-description">{{ . }}</p>
+        {{- end }}
         <div class="archive-meta">
           {{- partial "post_meta.html" . -}}
         </div>

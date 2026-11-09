@@ -1,6 +1,8 @@
 ---
 title: Contact
 layout: single
+description: "Contacter l'auteur du blog Greg. I/O par e-mail ou via le formulaire, pour toute question sur le cloud, l'IA, l'IoT ou l'architecture logicielle."
+schemaType: ContactPage
 ---
 
 Pour me contacter directement, vous pouvez m'envoyer un email à l'adresse composée comme suit :

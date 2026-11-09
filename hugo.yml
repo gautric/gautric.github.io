@@ -167,10 +167,10 @@ markup:
   
 permalinks:
   page:
-    posts: /blog/:year/:month/:day/:slug
+    blog: /blog/:year/:month/:day/:slug
     # tutorials: /training/:slug/
   section:
-    posts: /blog/
+    blog: /blog/
     # tutorials: /training/
 
 outputs:

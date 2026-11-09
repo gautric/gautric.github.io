@@ -1,0 +1,28 @@
+{{- /*
+  Surcharge du sitemap intégré de Hugo.
+  - exclut les pages `robotsNoIndex: true` (une page noindex n'a rien à faire
+    dans le sitemap) en plus de `sitemap.disable: true` ;
+  - dédoublonne les URL (sécurité si deux contenus produisent la même URL) ;
+  - <lastmod> seulement, changefreq et priority étant ignorés par Google et Bing.
+*/ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{{- $seen := dict }}
+{{- range where .Pages "Sitemap.Disable" "ne" true }}
+  {{- if and .Permalink (ne .Params.robotsNoIndex true) (not (index $seen .Permalink)) }}
+    {{- $seen = merge $seen (dict .Permalink true) }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML (.Lastmod.Format "2006-01-02T15:04:05-07:00") }}</lastmod>
+    {{- end }}
+    {{- if .IsTranslated }}
+      {{- range .AllTranslations }}
+    <xhtml:link rel="alternate" hreflang="{{ (partial "seo/lang.html" .).lang }}" href="{{ .Permalink }}"/>
+      {{- end }}
+    {{- end }}
+  </url>
+  {{- end }}
+{{- end }}
+</urlset>

@@ -1,0 +1,13 @@
+{{- /*
+  Tags d'une page sans les tags de langue ("fr", "en", "ja"), qui servent au
+  filtre des archives mais n'apportent rien comme mots-clés ou article:tag.
+  Retourne une liste de chaînes (front matter `keywords` prioritaire).
+*/ -}}
+{{- $langTags := slice "fr" "en" "ja" }}
+{{- $out := slice }}
+{{- range (.Params.keywords | default .Params.tags) }}
+  {{- if not (in $langTags (lower .)) }}
+    {{- $out = $out | append . }}
+  {{- end }}
+{{- end }}
+{{- return $out }}

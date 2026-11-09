@@ -1,0 +1,27 @@
+{{- /*
+  Image de partage d'une page (og:image, twitter:image, JSON-LD).
+
+  1. front matter cover.image (cover.relative: true pour une image du bundle)
+  2. images du bundle (*feature*, *cover*, *thumbnail*) ou front matter `images`
+  3. première image de params.images du site
+
+  Retourne un dict : url (absolue, vide si aucune image) et alt.
+*/ -}}
+{{- $url := "" }}
+{{- $alt := "" }}
+{{- with .Params.cover }}
+  {{- with .image }}
+    {{- if eq $.Params.cover.relative true }}
+      {{- $url = path.Join $.RelPermalink . | absURL }}
+    {{- else }}
+      {{- $url = . | absURL }}
+    {{- end }}
+  {{- end }}
+  {{- $alt = .alt | default "" }}
+{{- end }}
+{{- if not $url }}
+  {{- with partial "templates/_funcs/get-page-images" . }}
+    {{- $url = (index . 0).Permalink }}
+  {{- end }}
+{{- end }}
+{{- return (dict "url" $url "alt" ($alt | default .Title | default site.Title | plainify)) }}

@@ -1,0 +1,13 @@
+/* Description de chaque article dans le listing des archives (/blog/) */
+.archive-description {
+    margin: 2px 0 4px;
+    color: var(--secondary);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Titre de chaque article dans le listing des archives, en gras */
+.archive-entry-title.entry-hint-parent {
+    font-weight: 700;
+}

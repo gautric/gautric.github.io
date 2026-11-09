@@ -1,0 +1,20 @@
+---
+title: "Homelab"
+aliases:
+  - "/tags/avahi/"
+  - "/tags/avahi/page/1/"
+  - "/tags/bash/"
+  - "/tags/bash/page/1/"
+  - "/tags/bonjour/"
+  - "/tags/bonjour/page/1/"
+  - "/tags/dns-sd/"
+  - "/tags/dns-sd/page/1/"
+  - "/tags/firefox/"
+  - "/tags/firefox/page/1/"
+  - "/tags/mdns/"
+  - "/tags/mdns/page/1/"
+  - "/tags/reseau/"
+  - "/tags/reseau/page/1/"
+  - "/tags/zeroconf/"
+  - "/tags/zeroconf/page/1/"
+---

@@ -1,0 +1,27 @@
+{{- /*
+  Surcharge de themes/PaperMod/layouts/partials/templates/twitter_cards.html.
+  Même image et même description que Open Graph (partials seo/*), texte
+  alternatif de l'image, twitter:creator renseigné avec le compte du site.
+*/ -}}
+{{- $image := partial "seo/image.html" . }}
+{{- with $image.url }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ . }}">
+<meta name="twitter:image:alt" content="{{ $image.alt }}">
+{{- else }}
+<meta name="twitter:card" content="summary">
+{{- end }}
+<meta name="twitter:title" content="{{ .Title | default site.Title | plainify }}">
+<meta name="twitter:description" content="{{ partial "seo/description.html" . }}">
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- with .twitter }}
+      {{- $content := . }}
+      {{- if not (strings.HasPrefix . "@") }}
+        {{- $content = printf "@%v" . }}
+      {{- end }}
+<meta name="twitter:site" content="{{ $content }}">
+<meta name="twitter:creator" content="{{ $content }}">
+    {{- end }}
+  {{- end }}
+{{- end }}

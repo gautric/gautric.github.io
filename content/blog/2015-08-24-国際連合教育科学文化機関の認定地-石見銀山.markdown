@@ -1,0 +1,39 @@
+---
+title: "石見銀山 Iwami Ginzan Silver Mine — UNESCO Challenge"
+slug: "unesco-challenge-国際連合教育科学文化機関の認定地-iwami-ginzan-silver-mine-石見銀山"
+date: 2015-08-24 13:58:00
+description: "島根県大田市の石見銀山を訪問。2007年にユネスコ世界遺産に登録された、16世紀から20世紀にかけての銀鉱山と文化的景観の概要、登録情報、現地の写真を紹介。"
+categories: ["blog"]
+tags: ["ja", "UNESCO"]
+aliases:
+  - "/blog/2015/08/24/国際連合教育科学文化機関の認定地-石見銀山.html"
+---
+
+**石見銀山**は、島根県大田市にある歴史的な銀鉱山で、2007年にユネスコ世界遺産に登録された。16世紀から20世紀にかけて採掘された銀山とその周辺の文化的景観が評価されている。
+
+### 石見銀山
+
+## ユネスコによる要約
+
+石見銀山は、16世紀から20世紀にかけて操業された銀鉱山で、当時の日本の銀生産量の約3分の1を占めていた。鉱山跡だけでなく、鉱山町、街道、港など、銀の生産と輸送に関わる文化的景観が残されている。
+
+|||
+|-|-|
+|**Title (ja)**|石見銀山|
+|**Title (en)**|Iwami Ginzan Silver Mine and its Cultural Landscape|
+|**Id**|1246|
+|**Record date**|2007|
+|**Visit Date**|2015-08-21|
+|**Interest**|High|
+
+## 写真
+
+<img alt="石見銀山の風景（1）" src="/img/2015-08-24-unesco-iwami-ginzan/iwami-ginzan-vue-1.jpg" style="max-width:70%;" />
+
+<img alt="石見銀山の風景（2）" src="/img/2015-08-24-unesco-iwami-ginzan/iwami-ginzan-vue-2.jpg" style="max-width:70%;" />
+
+<img alt="石見銀山の風景（3）" src="/img/2015-08-24-unesco-iwami-ginzan/iwami-ginzan-vue-3.jpg" style="max-width:70%;" />
+
+### リンク
+
+ * [石見銀山 — ユネスコ世界遺産](http://whc.unesco.org/en/list/1246)

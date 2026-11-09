@@ -1,0 +1,38 @@
+{{- /*
+  Langue d'une page, utilisée par <html lang>, og:locale et le JSON-LD.
+
+  Ordre de priorité :
+    1. front matter `locale` (ex. en_US, ja_JP)
+    2. tag de langue du blog ("en", "ja") si la page ne porte pas aussi "fr"
+       (convention déjà utilisée par le filtre de langue des archives)
+    3. langue du site (languageCode / locale de hugo.yml), "fr" par défaut
+
+  Retourne un dict : lang (BCP 47, ex. "fr-FR") et locale (Open Graph, ex. "fr_FR").
+  Compatible Hugo 0.157 (CI) et >= 0.158 (Language.Locale).
+*/ -}}
+{{- $defaults := dict "fr" "fr_FR" "en" "en_US" "ja" "ja_JP" }}
+{{- $siteCode := "" }}
+{{- if ge hugo.Version "0.158.0" }}
+  {{- $siteCode = site.Language.Locale }}
+{{- else }}
+  {{- $siteCode = site.Language.LanguageCode }}
+{{- end }}
+{{- $code := $siteCode | default "fr" }}
+{{- with .Params.locale }}
+  {{- $code = . }}
+{{- else }}
+  {{- $tags := apply (.Params.tags | default slice) "lower" "." }}
+  {{- if not (in $tags "fr") }}
+    {{- if in $tags "en" }}{{ $code = "en" }}{{ else if in $tags "ja" }}{{ $code = "ja" }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- $code = replace $code "-" "_" }}
+{{- $parts := split $code "_" }}
+{{- $short := lower (index $parts 0) }}
+{{- $locale := "" }}
+{{- if ge (len $parts) 2 }}
+  {{- $locale = printf "%s_%s" $short (upper (index $parts 1)) }}
+{{- else }}
+  {{- $locale = index $defaults $short | default $short }}
+{{- end }}
+{{- return (dict "lang" (replace $locale "_" "-") "locale" $locale "short" $short) }}

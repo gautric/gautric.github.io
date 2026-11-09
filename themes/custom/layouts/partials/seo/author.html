@@ -1,0 +1,24 @@
+{{- /*
+  Auteur d'une page pour la meta author et le JSON-LD.
+
+  Nom : front matter `author`, sinon params.author, sinon params.seo.author.name
+  (valeur par défaut dans themes/custom/hugo.toml, surchargeable dans hugo.yml).
+  URL : params.seo.author.url (page À propos par défaut).
+  sameAs : params.seo.author.sameAs, sinon les URL de params.socialIcons.
+
+  Retourne un dict : name (chaîne, vide si inconnu), url, sameAs (liste).
+*/ -}}
+{{- $name := .Params.author | default site.Params.author | default site.Params.seo.author.name | default "" }}
+{{- if reflect.IsSlice $name }}
+  {{- $name = delimit $name ", " }}
+{{- end }}
+{{- $url := (site.Params.seo.author.url | default "/apropos/") | absURL }}
+{{- $sameAs := slice }}
+{{- with site.Params.seo.author.sameAs }}
+  {{- $sameAs = . }}
+{{- else }}
+  {{- range site.Params.socialIcons }}
+    {{- with .url }}{{ $sameAs = $sameAs | append (trim . " ") }}{{ end }}
+  {{- end }}
+{{- end }}
+{{- return (dict "name" $name "url" $url "sameAs" $sameAs) }}

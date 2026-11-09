@@ -2,6 +2,9 @@
 title: À Propos
 layout: apropos
 ShowToc: false
+description: "Greg. A., AI & Cloud Solutions Architect at AWS: generative AI, agentic workflows, cloud architecture and business automation for organizations."
+locale: en_US
+schemaType: ProfilePage
 ---
 
 ## Profile

@@ -1,0 +1,9 @@
+# Valeurs par défaut du thème custom, fusionnées avec hugo.yml.
+# hugo.yml reste prioritaire : toute clé définie ici peut y être surchargée.
+
+[params.seo.author]
+  # Nom de l'auteur dans la meta author et le JSON-LD (BlogPosting, ProfilePage).
+  # Même forme que la description du site. À remplacer par le nom complet si souhaité.
+  name = "Greg. A."
+  # Page de présentation de l'auteur (author.url du JSON-LD).
+  url = "/apropos/"

@@ -1,0 +1,114 @@
+{{- /*
+  Surcharge de themes/PaperMod/layouts/partials/templates/schema_json.html.
+
+  Données structurées schema.org, construites en dict puis sérialisées avec
+  jsonify (échappement JSON garanti) :
+  - accueil : WebSite + Person (auteur, sameAs vers les réseaux sociaux) ;
+  - articles (section blog) : BlogPosting avec auteur, dates ISO 8601,
+    image, langue de la page ; articleBody retiré (poids de page, inutile
+    pour les résultats enrichis) ;
+  - autres pages : type du front matter `schemaType` (ProfilePage, ContactPage…),
+    WebPage par défaut ; ProfilePage porte l'auteur en mainEntity ;
+  - listes et taxonomies : CollectionPage ;
+  - toutes les pages sauf l'accueil : BreadcrumbList Accueil > section > page.
+*/ -}}
+{{- if ne .Kind "404" }}
+{{- $ISO := "2006-01-02T15:04:05-07:00" }}
+{{- $lang := partial "seo/lang.html" . }}
+{{- $author := partial "seo/author.html" . }}
+{{- $image := partial "seo/image.html" . }}
+{{- $desc := partial "seo/description.html" . }}
+{{- $home := site.Home.Permalink }}
+{{- $websiteId := printf "%s#website" $home }}
+
+{{- /* Auteur / éditeur */}}
+{{- $person := dict }}
+{{- $personRef := dict }}
+{{- if $author.name }}
+  {{- $personId := printf "%s#author" $author.url }}
+  {{- $person = dict "@type" "Person" "@id" $personId "name" $author.name "url" $author.url }}
+  {{- with $author.sameAs }}{{ $person = merge $person (dict "sameAs" .) }}{{ end }}
+  {{- with site.Params.profileMode.subtitle }}{{ $person = merge $person (dict "jobTitle" (. | plainify | htmlUnescape)) }}{{ end }}
+  {{- $personRef = dict "@type" "Person" "@id" $personId "name" $author.name "url" $author.url }}
+{{- else }}
+  {{- $personRef = dict "@type" "Organization" "name" site.Title "url" $home }}
+{{- end }}
+
+{{- if .IsHome }}
+  {{- $website := dict "@type" "WebSite" "@id" $websiteId "url" $home "name" site.Title "description" $desc "inLanguage" $lang.lang "publisher" $personRef }}
+  {{- $graph := slice $website }}
+  {{- with $person }}{{ $graph = $graph | append . }}{{ end }}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS }}
+</script>
+{{- else }}
+
+  {{- /* BreadcrumbList : Accueil, ancêtres (hors accueil), page courante */}}
+  {{- $items := slice (dict "@type" "ListItem" "position" 1 "name" "Accueil" "item" $home) }}
+  {{- $pos := 1 }}
+  {{- range .Ancestors.Reverse }}
+    {{- if not .IsHome }}
+      {{- $pos = add $pos 1 }}
+      {{- $name := .LinkTitle }}
+      {{- $rel := .RelPermalink }}
+      {{- range site.Menus.main }}{{ if eq .URL $rel }}{{ $name = .Name }}{{ end }}{{ end }}
+      {{- $items = $items | append (dict "@type" "ListItem" "position" $pos "name" ($name | plainify | htmlUnescape) "item" .Permalink) }}
+    {{- end }}
+  {{- end }}
+  {{- $items = $items | append (dict "@type" "ListItem" "position" (add $pos 1) "name" (.LinkTitle | plainify | htmlUnescape) "item" .Permalink) }}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items | jsonify | safeJS }}
+</script>
+
+  {{- if and .IsPage (eq .Section "blog") }}
+    {{- /* Article de blog */}}
+    {{- $post := dict
+      "@context" "https://schema.org"
+      "@type" "BlogPosting"
+      "@id" (printf "%s#article" .Permalink)
+      "headline" (.Title | plainify | htmlUnescape | truncate 110 "…" | htmlUnescape)
+      "name" (.Title | plainify | htmlUnescape)
+      "description" $desc
+      "url" .Permalink
+      "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+      "inLanguage" $lang.lang
+      "author" $personRef
+      "publisher" $personRef
+      "wordCount" .WordCount
+      "isPartOf" (dict "@type" "Blog" "@id" (printf "%s#blog" ((site.GetPage "/blog").Permalink | default $home)) "name" site.Title "url" ((site.GetPage "/blog").Permalink | default $home))
+    }}
+    {{- with .PublishDate }}{{ $post = merge $post (dict "datePublished" (.Format $ISO)) }}{{ end }}
+    {{- with .Lastmod }}{{ $post = merge $post (dict "dateModified" (.Format $ISO)) }}{{ end }}
+    {{- with $image.url }}{{ $post = merge $post (dict "image" (slice .)) }}{{ end }}
+    {{- with partial "seo/keywords.html" . }}{{ $post = merge $post (dict "keywords" .) }}{{ end }}
+<script type="application/ld+json">
+{{ $post | jsonify | safeJS }}
+</script>
+
+  {{- else if .IsPage }}
+    {{- /* Page simple : À propos, Contact, Other… */}}
+    {{- $type := .Params.schemaType | default "WebPage" }}
+    {{- $page := dict
+      "@context" "https://schema.org"
+      "@type" $type
+      "@id" .Permalink
+      "url" .Permalink
+      "name" (.Title | plainify | htmlUnescape)
+      "description" $desc
+      "inLanguage" $lang.lang
+      "isPartOf" (dict "@type" "WebSite" "@id" $websiteId "url" $home "name" site.Title)
+    }}
+    {{- with .Lastmod }}{{ $page = merge $page (dict "dateModified" (.Format $ISO)) }}{{ end }}
+    {{- if and (eq $type "ProfilePage") $person }}{{ $page = merge $page (dict "mainEntity" $person) }}{{ end }}
+<script type="application/ld+json">
+{{ $page | jsonify | safeJS }}
+</script>
+
+  {{- else }}
+    {{- /* Section, taxonomie, terme */}}
+<script type="application/ld+json">
+{{ dict "@context" "https://schema.org" "@type" "CollectionPage" "@id" .Permalink "url" .Permalink "name" (.Title | plainify | htmlUnescape) "description" $desc "inLanguage" $lang.lang "isPartOf" (dict "@type" "WebSite" "@id" $websiteId "url" $home "name" site.Title) | jsonify | safeJS }}
+</script>
+  {{- end }}
+{{- end }}
+{{- end }}
